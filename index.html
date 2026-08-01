@@ -92,7 +92,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .hrow:hover{background:#fafbff;}
 .hrow .caret{width:14px;flex-shrink:0;color:#bbb;font-size:10px;transition:transform .15s;}
 .hrow.expanded .caret{transform:rotate(90deg);color:#2563eb;}
-.hrow .sym{font-weight:700;width:56px;flex-shrink:0;}
+.hrow .sym{font-weight:700;min-width:56px;flex-shrink:0;display:flex;align-items:center;white-space:nowrap;}
 .hrow .name{color:#555;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .hrow .price{width:80px;text-align:right;font-weight:600;}
 .hrow .chg{width:72px;text-align:right;font-size:12px;font-weight:600;}
@@ -176,6 +176,41 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 /* REPORTS TOOLBAR */
 .reports-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
 
+/* THEME TOGGLE */
+.theme-toggle{width:38px;height:38px;border-radius:50%;border:1px solid #e5e5e5;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;margin-right:12px;transition:background .15s;}
+.theme-toggle:hover{background:#f0f4ff;}
+
+/* CORE / BUILD BADGE TAGS (holdings table) */
+.tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.3px;padding:2px 6px;border-radius:4px;margin-left:6px;flex-shrink:0;cursor:help;}
+.tag-core{background:#fef3c7;color:#92400e;}
+.tag-build{background:#dcfce7;color:#15803d;}
+
+/* BUILD TARGET PROGRESS BARS */
+.target-row{margin-bottom:18px;}
+.target-row:last-child{margin-bottom:0;}
+.target-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
+.target-head .name{font-size:13px;font-weight:700;}
+.target-head .sub{font-size:11px;color:#888;}
+.target-bar-wrap{background:#f0f0f0;border-radius:5px;height:10px;position:relative;overflow:visible;}
+.target-bar{height:10px;border-radius:5px;transition:width .3s;}
+.target-bar.status-red{background:#dc2626;}
+.target-bar.status-amber{background:#d97706;}
+.target-bar.status-green{background:#16a34a;}
+.target-marker{position:absolute;top:-3px;bottom:-3px;width:2px;background:#1a1a1a;}
+.target-foot{display:flex;justify-content:space-between;margin-top:5px;font-size:11px;}
+.target-foot .status-label.status-red{color:#dc2626;font-weight:700;}
+.target-foot .status-label.status-amber{color:#d97706;font-weight:700;}
+.target-foot .status-label.status-green{color:#16a34a;font-weight:700;}
+
+/* $ / % DISPLAY TOGGLE */
+.unit-toggle{display:flex;border:1px solid #ddd;border-radius:8px;overflow:hidden;}
+.unit-toggle button{padding:9px 14px;border:none;background:#fafafa;font-size:13px;font-weight:700;color:#888;cursor:pointer;}
+.unit-toggle button.active{background:#2563eb;color:#fff;}
+
+/* LAST UPDATED INDICATOR */
+.updated-item{margin-left:auto;display:flex;align-items:center;gap:6px;}
+.updated-item .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;}
+
 @media(max-width:768px){
   .tab-btn{min-width:70px;font-size:12px;padding:12px 8px;}
   .trow .name{display:none;}
@@ -183,6 +218,59 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
   .blue-metrics{grid-template-columns:1fr;}
   .summary-item{padding:9px 14px;}
 }
+
+/* ============ DARK MODE ============ */
+body[data-theme="dark"]{background:#0f1115;color:#e8e9ec;}
+body[data-theme="dark"] .header{background:#161920;border-bottom-color:#262a33;}
+body[data-theme="dark"] .header h1{color:#e8e9ec;}
+body[data-theme="dark"] .header p{color:#8b909c;}
+body[data-theme="dark"] .theme-toggle{background:#1a1d24;border-color:#2a2e37;color:#e8e9ec;}
+body[data-theme="dark"] .theme-toggle:hover{background:#20242e;}
+body[data-theme="dark"] .tabs{background:#161920;border-bottom-color:#262a33;}
+body[data-theme="dark"] .tab-btn{color:#8b909c;}
+body[data-theme="dark"] .tab-btn:hover{color:#e8e9ec;background:#1a1d24;}
+body[data-theme="dark"] .section-title{color:#e8e9ec;}
+body[data-theme="dark"] .metric{background:#1a1d24;border-color:#262a33;}
+body[data-theme="dark"] .metric .val{color:#e8e9ec;}
+body[data-theme="dark"] .metric .lbl,body[data-theme="dark"] .metric .sub{color:#8b909c;}
+body[data-theme="dark"] .card{background:#1a1d24;border-color:#262a33;}
+body[data-theme="dark"] .card h3{color:#e8e9ec;}
+body[data-theme="dark"] .trow{border-bottom-color:#262a33;}
+body[data-theme="dark"] .trow .name{color:#b7bcc7;}
+body[data-theme="dark"] .search-input,body[data-theme="dark"] .category-select{background:#20242e;border-color:#2a2e37;color:#e8e9ec;}
+body[data-theme="dark"] .search-count{color:#8b909c;}
+body[data-theme="dark"] .hhead{color:#8b909c;border-bottom-color:#262a33;}
+body[data-theme="dark"] .hrow-wrap{border-bottom-color:#262a33;}
+body[data-theme="dark"] .hrow:hover{background:#20242e;}
+body[data-theme="dark"] .hrow .name{color:#b7bcc7;}
+body[data-theme="dark"] .hdetail-grid{background:#20242e;}
+body[data-theme="dark"] .hdetail-item .lbl{color:#8b909c;}
+body[data-theme="dark"] .hdetail-item .val{color:#e8e9ec;}
+body[data-theme="dark"] .no-results{color:#8b909c;}
+body[data-theme="dark"] .thesis-card{background:#1a1d24;border-color:#262a33;}
+body[data-theme="dark"] .thesis-name{color:#b7bcc7;}
+body[data-theme="dark"] .thesis-meta{color:#8b909c;}
+body[data-theme="dark"] .thesis-body{background:#20242e;color:#d1d4da;}
+body[data-theme="dark"] .thesis-conviction{color:#8b909c;}
+body[data-theme="dark"] .slider-wrap{background:#20242e;}
+body[data-theme="dark"] .slider-wrap label{color:#e8e9ec;}
+body[data-theme="dark"] .blue-card{background:#111d33;border-color:#1e3a5f;}
+body[data-theme="dark"] .news-item{background:#1a1d24;border-color:#262a33;}
+body[data-theme="dark"] .news-item .meta{color:#8b909c;}
+body[data-theme="dark"] .report-card{background:#1a1d24;border-color:#262a33;}
+body[data-theme="dark"] .report-card .title{color:#e8e9ec;}
+body[data-theme="dark"] .report-card .date{color:#8b909c;}
+body[data-theme="dark"] .alloc-bar-wrap{background:#262a33;}
+body[data-theme="dark"] .alloc-label{color:#b7bcc7;}
+body[data-theme="dark"] .quality-row{border-bottom-color:#262a33;}
+body[data-theme="dark"] .quality-row .item{color:#d1d4da;}
+body[data-theme="dark"] .pill-btn{background:#1a1d24;border-color:#2a2e37;color:#b7bcc7;}
+body[data-theme="dark"] .pill-btn:hover{background:#20242e;}
+body[data-theme="dark"] .unit-toggle{border-color:#2a2e37;}
+body[data-theme="dark"] .unit-toggle button{background:#1a1d24;color:#8b909c;}
+body[data-theme="dark"] .target-bar-wrap{background:#262a33;}
+body[data-theme="dark"] .target-marker{background:#e8e9ec;}
+body[data-theme="dark"] .target-head .sub{color:#8b909c;}
 </style>
 </head>
 <body>
@@ -198,7 +286,10 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
     <h1>Portfolio Command Center</h1>
     <p>James Wilbur &nbsp;•&nbsp; Private &nbsp;•&nbsp; Quotes via Robinhood &nbsp;•&nbsp; As of Aug 1, 2026</p>
   </div>
-  <div class="avatar">JW</div>
+  <div style="display:flex;align-items:center;">
+    <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
+    <div class="avatar">JW</div>
+  </div>
 </div>
 
 <!-- STICKY TABS + SUMMARY BAR -->
@@ -217,6 +308,7 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
     <div class="summary-item"><span class="lbl">Day P/L</span><span class="val" id="sum-day">—</span></div>
     <div class="summary-item"><span class="lbl">Day %</span><span class="val" id="sum-day-pct">—</span></div>
     <div class="summary-item"><span class="lbl">Cash</span><span class="val">2.6%</span></div>
+    <div class="summary-item updated-item"><span class="dot"></span><span class="lbl">Updated</span><span class="val" id="sum-updated" style="font-weight:600;font-size:12px;">—</span></div>
   </div>
 </div>
 
@@ -298,15 +390,28 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
       </div>
     </div>
 
-    <!-- Allocation bars -->
+    <!-- Allocation bars + donut -->
     <div class="card">
       <h3>Allocation by Asset Class</h3>
-      <div class="alloc-row"><div class="alloc-label">U.S. individual stocks</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:74.3%"></div></div><div class="alloc-pct">74.3%</div></div>
-      <div class="alloc-row"><div class="alloc-label">Target-date / mixed</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:9.2%;background:#7c3aed"></div></div><div class="alloc-pct">9.2%</div></div>
-      <div class="alloc-row"><div class="alloc-label">U.S. small &amp; mid cap</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:7.8%;background:#0891b2"></div></div><div class="alloc-pct">7.8%</div></div>
-      <div class="alloc-row"><div class="alloc-label">U.S. diversified funds</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:3.9%;background:#16a34a"></div></div><div class="alloc-pct">3.9%</div></div>
-      <div class="alloc-row"><div class="alloc-label">International equity</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:2.4%;background:#d97706"></div></div><div class="alloc-pct">2.4%</div></div>
-      <div class="alloc-row"><div class="alloc-label">Cash &amp; equivalents</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:2.5%;background:#888"></div></div><div class="alloc-pct">2.5%</div></div>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
+        <div style="flex:1;min-width:220px;">
+          <div class="alloc-row"><div class="alloc-label">U.S. individual stocks</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:74.3%"></div></div><div class="alloc-pct">74.3%</div></div>
+          <div class="alloc-row"><div class="alloc-label">Target-date / mixed</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:9.2%;background:#7c3aed"></div></div><div class="alloc-pct">9.2%</div></div>
+          <div class="alloc-row"><div class="alloc-label">U.S. small &amp; mid cap</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:7.8%;background:#0891b2"></div></div><div class="alloc-pct">7.8%</div></div>
+          <div class="alloc-row"><div class="alloc-label">U.S. diversified funds</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:3.9%;background:#16a34a"></div></div><div class="alloc-pct">3.9%</div></div>
+          <div class="alloc-row"><div class="alloc-label">International equity</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:2.4%;background:#d97706"></div></div><div class="alloc-pct">2.4%</div></div>
+          <div class="alloc-row"><div class="alloc-label">Cash &amp; equivalents</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:2.5%;background:#888"></div></div><div class="alloc-pct">2.5%</div></div>
+        </div>
+        <div style="width:180px;height:180px;flex-shrink:0;position:relative;margin:0 auto;">
+          <canvas id="allocDonut" width="180" height="180"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Build target progress -->
+    <div class="card">
+      <h3>Build Position Progress — vs. Target Weight</h3>
+      <div id="build-targets-list"></div>
     </div>
 
     <!-- Holdings table -->
@@ -318,6 +423,13 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
           <option value="all">All categories</option>
         </select>
         <span class="search-count" id="holdings-count"></span>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <span style="font-size:11px;color:#888;white-space:nowrap;">Day Chg:</span>
+          <div class="unit-toggle" id="unitToggle">
+            <button class="active" onclick="setUnitMode('pct',this)">%</button>
+            <button onclick="setUnitMode('dollar',this)">$</button>
+          </div>
+        </div>
       </div>
       <div class="hhead">
         <span style="width:14px;"></span>
@@ -686,6 +798,7 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 
 </div><!-- /content -->
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
 // === PORTFOLIO DATA with live Robinhood quotes (pulled Aug 1, 2026) ===
 const holdings = [
@@ -743,6 +856,42 @@ const decliners = holdings.filter(h => h.ticker !== 'CASH' && h.dayDollar < 0).l
 const top5 = holdings.filter(h=>h.ticker!=='CASH').sort((a,b)=>b.mv-a.mv).slice(0,5);
 const top5pct = top5.reduce((s,h)=>s+h.wt,0);
 
+// ---- BUILD TARGET PROGRESS ----
+const buildTargets = [
+  {ticker:'AVUV', name:'Avantis U.S. Small Cap Value ETF', low:8, high:10},
+  {ticker:'VXUS', name:'Vanguard Total Intl Stock ETF',    low:6, high:8},
+];
+function renderBuildTargets(){
+  const el = document.getElementById('build-targets-list');
+  el.innerHTML = buildTargets.map(t=>{
+    const h = holdings.find(x=>x.ticker===t.ticker);
+    const current = h ? h.wt : 0;
+    const scaleMax = t.high * 1.2;
+    const barPct = Math.min(current/scaleMax, 1) * 100;
+    const markerPct = (t.low/scaleMax) * 100;
+    let status, label;
+    if(current >= t.low){ status='green'; label='On Target'; }
+    else if(current >= t.low*0.5){ status='amber'; label='Building'; }
+    else { status='red'; label='Early Stage — Large Gap'; }
+    const gap = t.low - current;
+    const gapText = gap > 0 ? `${gap.toFixed(1)}pp to target range` : 'Within target range';
+    return `<div class="target-row">
+      <div class="target-head">
+        <span class="name">${t.ticker} <span style="font-weight:400;color:#888;">— ${t.name}</span></span>
+        <span class="sub">${current.toFixed(1)}% current &nbsp;•&nbsp; ${t.low}–${t.high}% target</span>
+      </div>
+      <div class="target-bar-wrap">
+        <div class="target-bar status-${status}" style="width:${barPct}%"></div>
+        <div class="target-marker" style="left:${markerPct}%"></div>
+      </div>
+      <div class="target-foot">
+        <span class="status-label status-${status}">${label}</span>
+        <span style="color:#888;">${gapText}</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
 // ---- TODAY ----
 document.getElementById('total-val').textContent = '$'+fmt(totalMV,0);
 const dayEl = document.getElementById('day-change');
@@ -751,6 +900,7 @@ dayEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
 document.getElementById('day-pct').textContent = (totalDayChange>=0?'+':'')+((totalDayChange/totalMV)*100).toFixed(2)+'%';
 document.getElementById('breadth').textContent = advancers+' / '+decliners;
 document.getElementById('top5-concentration').textContent = top5pct.toFixed(1)+'%';
+renderBuildTargets();
 
 // Contributors
 const sorted = [...holdings].filter(h=>h.ticker!=='CASH').sort((a,b)=>Math.abs(b.dayDollar)-Math.abs(a.dayDollar));
@@ -774,6 +924,7 @@ sumDayEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
 const sumDayPctEl = document.getElementById('sum-day-pct');
 sumDayPctEl.textContent = (totalDayChange>=0?'+':'')+((totalDayChange/totalMV)*100).toFixed(2)+'%';
 sumDayPctEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
+document.getElementById('sum-updated').textContent = 'Jul 31, 4:00 PM ET';
 
 // ---- PORTFOLIO ----
 document.getElementById('port-total').textContent = '$'+fmt(totalMV,0);
@@ -784,6 +935,16 @@ portDay.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
 // ---- HOLDINGS TABLE: sortable, filterable, expandable ----
 let holdSort = {key:'mv', dir:'desc'};
 let expandedTickers = new Set();
+let unitMode = 'pct';
+const coreForeverHolds = new Set(['AMZN','JPM','GS','AAPL','MA']);
+const buildPositions = new Set(['AVUV','VXUS']);
+
+function setUnitMode(mode, btn){
+  unitMode = mode;
+  btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  renderHoldings();
+}
 
 // Populate category dropdown, ordered to match the Allocation by Asset Class card above
 function populateCategoryFilter(){
@@ -855,12 +1016,18 @@ function renderHoldings(){
     const up = h.dayPct >= 0;
     const isExpanded = expandedTickers.has(h.ticker);
     const priceDisp = h.ticker==='CASH' ? '43,000' : h.price.toFixed(2);
-    const chgDisp = h.ticker==='CASH' ? '—' : (up?'+':'')+h.dayPct.toFixed(2)+'%';
+    let chgDisp;
+    if(h.ticker==='CASH'){ chgDisp = '—'; }
+    else if(unitMode==='dollar'){ chgDisp = (h.dayDollar>=0?'+':'')+fmtDollar(h.dayDollar); }
+    else { chgDisp = (up?'+':'')+h.dayPct.toFixed(2)+'%'; }
     const chgClass = h.ticker==='CASH' ? '' : (up?'up-color':'dn-color');
+    let tagHtml = '';
+    if(coreForeverHolds.has(h.ticker)) tagHtml = `<span class="tag tag-core" title="Core forever hold — quality at a reasonable price, held for long-term compounding">CORE</span>`;
+    else if(buildPositions.has(h.ticker)) tagHtml = `<span class="tag tag-build" title="Actively building toward target weight">BUILD</span>`;
     return `<div class="hrow-wrap">
       <div class="hrow ${isExpanded?'expanded':''}" onclick="toggleRow('${h.ticker}')">
         <span class="caret">▶</span>
-        <div class="sym">${h.ticker}</div>
+        <div class="sym">${h.ticker}${tagHtml}</div>
         <div class="name">${h.name}</div>
         <div class="price">$${priceDisp}</div>
         <div class="chg ${chgClass}">${chgDisp}</div>
@@ -871,6 +1038,7 @@ function renderHoldings(){
         <div class="hdetail-grid">
           <div class="hdetail-item"><div class="lbl">Shares</div><div class="val">${h.ticker==='CASH'?'—':h.qty.toLocaleString()}</div></div>
           <div class="hdetail-item"><div class="lbl">Category</div><div class="val">${h.cat}</div></div>
+          <div class="hdetail-item"><div class="lbl">Position Type</div><div class="val">${coreForeverHolds.has(h.ticker)?'Core Forever Hold':buildPositions.has(h.ticker)?'Actively Building':h.ticker==='CASH'?'Cash Reserve':'Satellite'}</div></div>
           <div class="hdetail-item"><div class="lbl">Day $ Chg</div><div class="val ${chgClass}">${h.ticker==='CASH'?'—':(h.dayDollar>=0?'+':'')+fmtDollar(h.dayDollar)}</div></div>
           <div class="hdetail-item"><div class="lbl">Div Yield</div><div class="val">${h.div ? h.div.toFixed(2)+'%' : '—'}</div></div>
           <div class="hdetail-item"><div class="lbl">Annual Div $</div><div class="val">${h.div ? '$'+fmt(h.divAnnual,0) : '—'}</div></div>
@@ -881,6 +1049,81 @@ function renderHoldings(){
   }).join('');
 }
 renderHoldings();
+
+// ---- ALLOCATION DONUT CHART ----
+// Wrapped in try/catch: if the Chart.js CDN fails to load (network issue, ad-blocker,
+// corporate firewall) this must NOT take down the rest of the dashboard's script.
+try {
+  if (typeof Chart === 'undefined') throw new Error('Chart.js failed to load from CDN');
+
+  const allocCategoryOrder = ['U.S. individual stocks','Target-date / mixed','U.S. small & mid cap','U.S. diversified funds','International equity','Cash & equivalents'];
+  const allocColors = {
+    'U.S. individual stocks':'#2563eb',
+    'Target-date / mixed':'#7c3aed',
+    'U.S. small & mid cap':'#0891b2',
+    'U.S. diversified funds':'#16a34a',
+    'International equity':'#d97706',
+    'Cash & equivalents':'#888888'
+  };
+  const allocByCategory = allocCategoryOrder.map(cat => holdings.filter(h=>h.cat===cat).reduce((s,h)=>s+h.mv,0));
+
+  const centerTextPlugin = {
+    id: 'centerText',
+    beforeDraw(chart){
+      const {ctx, chartArea:{width, height, top, left}} = chart;
+      ctx.save();
+      const isDark = document.body.getAttribute('data-theme') === 'dark';
+      ctx.font = '700 22px -apple-system, BlinkMacSystemFont, sans-serif';
+      ctx.fillStyle = isDark ? '#e8e9ec' : '#1a1a1a';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText('100%', left+width/2, top+height/2 - 8);
+      ctx.font = '600 10px -apple-system, BlinkMacSystemFont, sans-serif';
+      ctx.fillStyle = isDark ? '#8b909c' : '#888';
+      ctx.fillText('ALLOCATED', left+width/2, top+height/2 + 12);
+      ctx.restore();
+    }
+  };
+
+  window.allocChart = new Chart(document.getElementById('allocDonut'), {
+    type: 'doughnut',
+    data: {
+      labels: allocCategoryOrder,
+      datasets: [{
+        data: allocByCategory,
+        backgroundColor: allocCategoryOrder.map(c=>allocColors[c]),
+        borderWidth: 2,
+        borderColor: '#fff'
+      }]
+    },
+    options: {
+      cutout: '72%',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const pct = (ctx.parsed / totalMV * 100).toFixed(1);
+              return `${ctx.label}: ${pct}%`;
+            }
+          }
+        }
+      }
+    },
+    plugins: [centerTextPlugin]
+  });
+} catch(chartErr) {
+  console.warn('Allocation donut chart unavailable:', chartErr.message);
+  const canvas = document.getElementById('allocDonut');
+  if(canvas) canvas.parentElement.style.display = 'none';
+}
+
+function updateAllocChartColors(){
+  if(!window.allocChart) return;
+  const isDark = document.body.getAttribute('data-theme') === 'dark';
+  window.allocChart.data.datasets[0].borderColor = isDark ? '#1a1d24' : '#fff';
+  window.allocChart.update();
+}
 
 // ---- TICKER BAR ----
 const tickers = [...holdings].filter(h=>h.ticker!=='CASH' && h.ticker!=='TLXIX' && h.ticker!=='FSSNX' && h.ticker!=='FSMDX').sort((a,b)=>b.mv-a.mv);
@@ -1020,6 +1263,19 @@ function filterReports(type, btn){
   btn.parentElement.querySelectorAll('.pill-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderReports();
+}
+
+// ---- THEME TOGGLE (session only, no persistence) ----
+function toggleTheme(){
+  const isDark = document.body.getAttribute('data-theme') === 'dark';
+  if(isDark){
+    document.body.removeAttribute('data-theme');
+    document.getElementById('themeToggle').textContent = '🌙';
+  } else {
+    document.body.setAttribute('data-theme','dark');
+    document.getElementById('themeToggle').textContent = '☀️';
+  }
+  if(window.allocChart) updateAllocChartColors();
 }
 
 // ---- TAB SWITCH ----
