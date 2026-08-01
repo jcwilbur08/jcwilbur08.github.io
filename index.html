@@ -137,9 +137,15 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 
 /* NEWS */
 .news-item{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:14px;margin-bottom:10px;}
-.news-item .headline{font-size:13px;font-weight:600;margin-bottom:5px;}
+.news-item .headline{font-size:13px;font-weight:600;margin-bottom:5px;display:block;color:#1a1a1a;text-decoration:none;}
+.news-item .headline:hover{color:#2563eb;text-decoration:underline;}
 .news-item .ticker-tag{display:inline-block;background:#dbeafe;color:#1d4ed8;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:6px;}
 .news-item .meta{font-size:11px;color:#888;}
+.news-item .meta a{color:#888;text-decoration:none;}
+.news-item .meta a:hover{color:#2563eb;text-decoration:underline;}
+.news-toolbar{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
+.news-updated{font-size:11px;color:#888;margin-bottom:16px;display:flex;align-items:center;gap:6px;}
+.news-updated .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;}
 
 /* REPORT CARDS */
 .report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
@@ -256,7 +262,10 @@ body[data-theme="dark"] .slider-wrap{background:#20242e;}
 body[data-theme="dark"] .slider-wrap label{color:#e8e9ec;}
 body[data-theme="dark"] .blue-card{background:#111d33;border-color:#1e3a5f;}
 body[data-theme="dark"] .news-item{background:#1a1d24;border-color:#262a33;}
+body[data-theme="dark"] .news-item .headline{color:#e8e9ec;}
 body[data-theme="dark"] .news-item .meta{color:#8b909c;}
+body[data-theme="dark"] .news-item .meta a{color:#8b909c;}
+body[data-theme="dark"] .news-updated{color:#8b909c;}
 body[data-theme="dark"] .report-card{background:#1a1d24;border-color:#262a33;}
 body[data-theme="dark"] .report-card .title{color:#e8e9ec;}
 body[data-theme="dark"] .report-card .date{color:#8b909c;}
@@ -764,36 +773,9 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
   <!-- NEWS -->
   <div id="news" class="tab-pane">
     <div class="section-title">Smart News — Portfolio-Ranked Intelligence</div>
-    <p style="font-size:13px;color:#888;margin-bottom:20px;">Stories ranked by your portfolio weight. Holdings-linked news first, then market, then earnings.</p>
-
-    <div class="news-item">
-      <div><span class="ticker-tag">AMZN</span><span class="headline">Amazon Q2 earnings beat: AWS revenue +28% YoY, ad revenue accelerates</span></div>
-      <div class="meta">Reuters &nbsp;•&nbsp; 2h ago</div>
-    </div>
-    <div class="news-item">
-      <div><span class="ticker-tag">JPM</span><span class="headline">JPMorgan raises full-year NII guidance on strong investment banking activity</span></div>
-      <div class="meta">Bloomberg &nbsp;•&nbsp; 3h ago</div>
-    </div>
-    <div class="news-item">
-      <div><span class="ticker-tag">GS</span><span class="headline">Goldman Sachs Q2 profit tops estimates; trading revenue surges</span></div>
-      <div class="meta">Financial Times &nbsp;•&nbsp; 4h ago</div>
-    </div>
-    <div class="news-item">
-      <div><span class="ticker-tag">META</span><span class="headline">Meta's Llama 4 outperforms rivals in independent benchmarks; ad revenue up 22%</span></div>
-      <div class="meta">TechCrunch &nbsp;•&nbsp; 5h ago</div>
-    </div>
-    <div class="news-item">
-      <div><span class="ticker-tag">AVGO</span><span class="headline">Broadcom custom AI chip orders from hyperscalers accelerate into 2027</span></div>
-      <div class="meta">Barron's &nbsp;•&nbsp; 6h ago</div>
-    </div>
-    <div class="news-item">
-      <div><span class="ticker-tag">GEV</span><span class="headline">GE Vernova wins $4B grid modernization contract; backlog reaches record high</span></div>
-      <div class="meta">WSJ &nbsp;•&nbsp; 8h ago</div>
-    </div>
-    <div class="news-item">
-      <div><span class="ticker-tag">AVUV</span><span class="headline">Small-cap value factor outperforms in July amid rate cut expectations</span></div>
-      <div class="meta">Morningstar &nbsp;•&nbsp; 1d ago</div>
-    </div>
+    <p style="font-size:13px;color:#888;margin-bottom:12px;">Stories ranked by portfolio weight. Holdings-linked news first, then factor/market context. Each headline links to the original source.</p>
+    <div class="news-updated"><span class="dot"></span>Last refreshed Aug 1, 2026 (market close Fri, Jul 31)</div>
+    <div id="news-list"></div>
   </div>
 
 </div><!-- /content -->
@@ -1264,6 +1246,82 @@ function filterReports(type, btn){
   btn.classList.add('active');
   renderReports();
 }
+
+// ---- SMART NEWS (real headlines, portfolio-ranked, each linking to its original source) ----
+const newsItems = [
+  {
+    ticker: 'AMZN',
+    headline: "Q2 revenue up 20% as AWS growth accelerates to 37% — its fastest pace in 18 quarters. Shares jumped roughly 15% and 2026 capex guidance was raised to about $220B on AI-driven demand.",
+    source: 'Amazon.com 8-K / SEC filing',
+    time: 'Jul 31',
+    url: 'https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260730.htm'
+  },
+  {
+    ticker: 'AAPL',
+    headline: "Fiscal Q3 revenue and iPhone sales beat estimates, but shares fell roughly 7–9% after management guided Q4 revenue growth to just 9–11%, citing memory-driven supply constraints.",
+    source: 'Apple Inc. 10-Q / SEC filing',
+    time: 'Jul 31',
+    url: 'https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm'
+  },
+  {
+    ticker: 'META',
+    headline: "Q2 revenue rose 28% and topped estimates, but EPS missed on legal and severance charges. Free cash flow collapsed 91% on AI capex, and shares fell about 9% on weak Q3 guidance.",
+    source: 'Benzinga',
+    time: 'Jul 30',
+    url: 'https://www.benzinga.com/markets/prediction-markets/26/07/60817468/meta-drops-9-as-free-cash-flow-collapses-91-ai-agent-pitch-falls-flat'
+  },
+  {
+    ticker: 'MA',
+    headline: "Q2 adjusted EPS of $5.04 beat the $4.77 consensus on 14% revenue growth; multiple analysts raised price targets despite a brief pre-market dip.",
+    source: 'Yahoo Finance',
+    time: 'Jul 30',
+    url: 'https://finance.yahoo.com/markets/stocks/articles/mastercard-stock-climbs-q2-earnings-162303555.html'
+  },
+  {
+    ticker: 'GS',
+    headline: "Equities-trading revenue surged 72% to a record $7.4B last quarter, putting the firm's traders on pace for their best year ever alongside a resurgent investment-banking business.",
+    source: 'CNBC',
+    time: 'Aug 1',
+    url: 'https://www.cnbc.com/2026/08/01/goldman-traders-are-on-pace-for-a-record-year-a-close-up-look-at-how-theyre-doing-it.html'
+  },
+  {
+    ticker: 'AVGO',
+    headline: "Signed a five-year, $200B-plus AI chip partnership with Samsung covering next-gen memory, sub-2nm foundry capacity, and advanced packaging for Broadcom's custom accelerators.",
+    source: 'CNBC',
+    time: 'Jul 25',
+    url: 'https://www.cnbc.com/2026/07/25/samsung-electronics-wins-200-billion-broadcom-ai-chip-partnership.html'
+  },
+  {
+    ticker: 'GEV',
+    headline: "Q2 revenue grew 22% and backlog hit a record $176B on data-center power demand, but EPS missed estimates and shares fell about 9% on the print.",
+    source: 'The Motley Fool',
+    time: 'Aug 1',
+    url: 'https://www.fool.com/investing/2026/08/01/scott-straziks-ge-vernova-has-a-176-billion-backlo/'
+  },
+  {
+    ticker: 'QCOM',
+    headline: "Handset revenue tumbled nearly 20% year-over-year on memory shortages and a faster-than-expected loss of Apple modem share, clouding an otherwise solid quarter.",
+    source: 'Yahoo Finance',
+    time: 'Jul 31',
+    url: 'https://finance.yahoo.com/markets/stocks/articles/why-investors-shouldn-t-sweat-150002057.html'
+  },
+  {
+    ticker: 'AVUV',
+    headline: "Small-cap value is having a moment as capital rotates out of AI-exposed semis: the Russell 2000 Value ETF is up more than 22% this month alone.",
+    source: 'CNBC',
+    time: 'Jul 29',
+    url: 'https://www.cnbc.com/2026/07/29/value-stocks-get-a-moment-in-the-sun-sell-semis-buy-ketchup.html'
+  }
+];
+
+function renderNews(){
+  const el = document.getElementById('news-list');
+  el.innerHTML = newsItems.map(n => `<div class="news-item">
+      <a class="headline" href="${n.url}" target="_blank" rel="noopener"><span class="ticker-tag">${n.ticker}</span>${n.headline}</a>
+      <div class="meta"><a href="${n.url}" target="_blank" rel="noopener">${n.source}</a> &nbsp;•&nbsp; ${n.time}</div>
+    </div>`).join('');
+}
+renderNews();
 
 // ---- THEME TOGGLE (session only, no persistence) ----
 function toggleTheme(){
