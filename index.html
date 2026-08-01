@@ -25,11 +25,23 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .header p{font-size:12px;color:#888;margin-top:2px;}
 .avatar{width:42px;height:42px;border-radius:50%;background:#2563eb;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:14px;}
 
+/* STICKY GROUP (tabs + summary bar travel together) */
+.sticky-group{position:sticky;top:0;z-index:20;}
+
 /* TABS */
-.tabs{background:#fff;border-bottom:1px solid #e5e5e5;display:flex;overflow-x:auto;position:sticky;top:0;z-index:10;}
+.tabs{background:#fff;border-bottom:1px solid #e5e5e5;display:flex;overflow-x:auto;}
 .tab-btn{flex:1;min-width:90px;padding:14px 12px;border:none;background:transparent;color:#888;font-size:13px;font-weight:600;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;}
 .tab-btn:hover{color:#1a1a1a;background:#f9f9f9;}
 .tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+
+/* SUMMARY BAR (sticky, visible across all tabs) */
+.summary-bar{background:#1a1a1a;border-bottom:1px solid #000;display:flex;align-items:center;gap:0;overflow-x:auto;padding:0 20px;}
+.summary-item{display:flex;align-items:center;gap:8px;padding:9px 20px;border-right:1px solid #333;white-space:nowrap;}
+.summary-item:last-child{border-right:none;}
+.summary-item .lbl{font-size:10px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.5px;}
+.summary-item .val{font-size:13px;font-weight:700;color:#fff;}
+.summary-item .val.up-color{color:#4ade80!important;}
+.summary-item .val.dn-color{color:#f87171!important;}
 
 /* CONTENT */
 .content{max-width:1100px;margin:0 auto;padding:24px 20px;}
@@ -61,6 +73,35 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .trow .chg{width:72px;text-align:right;font-size:12px;font-weight:600;}
 .trow .mv{width:90px;text-align:right;font-weight:600;}
 .trow .wt{width:50px;text-align:right;color:#888;font-size:12px;}
+
+/* HOLDINGS TABLE - sortable + expandable */
+.holdings-toolbar{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap;}
+.search-input{flex:1;min-width:180px;padding:9px 14px;border:1px solid #ddd;border-radius:8px;font-size:13px;color:#1a1a1a;background:#fafafa;}
+.search-input:focus{outline:none;border-color:#2563eb;background:#fff;}
+.search-count{font-size:12px;color:#888;white-space:nowrap;}
+.hhead{display:flex;gap:8px;font-size:11px;font-weight:700;color:#888;padding:0 0 10px;border-bottom:1px solid #f0f0f0;text-transform:uppercase;letter-spacing:.5px;}
+.hhead .hcol{cursor:pointer;user-select:none;display:flex;align-items:center;gap:3px;}
+.hhead .hcol:hover{color:#2563eb;}
+.hhead .hcol .arrow{font-size:9px;opacity:0;}
+.hhead .hcol.sorted .arrow{opacity:1;color:#2563eb;}
+.hrow-wrap{border-bottom:1px solid #f0f0f0;}
+.hrow-wrap:last-child{border-bottom:none;}
+.hrow{display:flex;align-items:center;padding:11px 0;font-size:13px;gap:8px;cursor:pointer;}
+.hrow:hover{background:#fafbff;}
+.hrow .caret{width:14px;flex-shrink:0;color:#bbb;font-size:10px;transition:transform .15s;}
+.hrow.expanded .caret{transform:rotate(90deg);color:#2563eb;}
+.hrow .sym{font-weight:700;width:56px;flex-shrink:0;}
+.hrow .name{color:#555;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.hrow .price{width:80px;text-align:right;font-weight:600;}
+.hrow .chg{width:72px;text-align:right;font-size:12px;font-weight:600;}
+.hrow .mv{width:90px;text-align:right;font-weight:600;}
+.hrow .wt{width:50px;text-align:right;color:#888;font-size:12px;}
+.hdetail{display:none;padding:2px 0 14px 22px;font-size:12px;}
+.hdetail.open{display:block;}
+.hdetail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;background:#f8f9fa;border-radius:8px;padding:12px 14px;}
+.hdetail-item .lbl{color:#888;font-size:10px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px;}
+.hdetail-item .val{color:#1a1a1a;font-weight:700;font-size:13px;}
+.no-results{padding:24px 0;text-align:center;color:#888;font-size:13px;}
 
 /* BADGE */
 .badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.3px;}
@@ -130,10 +171,15 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 .pill-btn:hover{background:#f0f4ff;border-color:#2563eb;color:#2563eb;}
 .pill-btn.active{background:#2563eb;color:#fff;border-color:#2563eb;}
 
+/* REPORTS TOOLBAR */
+.reports-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
+
 @media(max-width:768px){
   .tab-btn{min-width:70px;font-size:12px;padding:12px 8px;}
   .trow .name{display:none;}
+  .hrow .name{display:none;}
   .blue-metrics{grid-template-columns:1fr;}
+  .summary-item{padding:9px 14px;}
 }
 </style>
 </head>
@@ -153,15 +199,23 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
   <div class="avatar">JW</div>
 </div>
 
-<!-- TAB BAR -->
-<div class="tabs">
-  <button class="tab-btn active" onclick="switchTab('today',this)">🏠 Today</button>
-  <button class="tab-btn" onclick="switchTab('portfolio',this)">📋 Portfolio</button>
-  <button class="tab-btn" onclick="switchTab('retirement',this)">⏰ Retirement</button>
-  <button class="tab-btn" onclick="switchTab('income',this)">💰 Income</button>
-  <button class="tab-btn" onclick="switchTab('research',this)">🔍 Research</button>
-  <button class="tab-btn" onclick="switchTab('reports',this)">📊 Reports</button>
-  <button class="tab-btn" onclick="switchTab('news',this)">📰 News</button>
+<!-- STICKY TABS + SUMMARY BAR -->
+<div class="sticky-group">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('today',this)">🏠 Today</button>
+    <button class="tab-btn" onclick="switchTab('portfolio',this)">📋 Portfolio</button>
+    <button class="tab-btn" onclick="switchTab('retirement',this)">⏰ Retirement</button>
+    <button class="tab-btn" onclick="switchTab('income',this)">💰 Income</button>
+    <button class="tab-btn" onclick="switchTab('research',this)">🔍 Research</button>
+    <button class="tab-btn" onclick="switchTab('reports',this)">📊 Reports</button>
+    <button class="tab-btn" onclick="switchTab('news',this)">📰 News</button>
+  </div>
+  <div class="summary-bar">
+    <div class="summary-item"><span class="lbl">Value</span><span class="val" id="sum-total">—</span></div>
+    <div class="summary-item"><span class="lbl">Day P/L</span><span class="val" id="sum-day">—</span></div>
+    <div class="summary-item"><span class="lbl">Day %</span><span class="val" id="sum-day-pct">—</span></div>
+    <div class="summary-item"><span class="lbl">Cash</span><span class="val">2.6%</span></div>
+  </div>
 </div>
 
 <div class="content">
@@ -256,13 +310,18 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
     <!-- Holdings table -->
     <div class="card">
       <h3>All Holdings</h3>
-      <div style="display:flex;gap:6px;font-size:11px;font-weight:700;color:#888;padding:0 0 10px;border-bottom:1px solid #f0f0f0;text-transform:uppercase;letter-spacing:.5px;">
-        <span style="width:60px;">Ticker</span>
-        <span style="flex:1;">Name</span>
-        <span style="width:80px;text-align:right;">Price</span>
-        <span style="width:72px;text-align:right;">Day Chg</span>
-        <span style="width:90px;text-align:right;">Mkt Value</span>
-        <span style="width:50px;text-align:right;">Wt%</span>
+      <div class="holdings-toolbar">
+        <input type="text" class="search-input" id="holdings-search" placeholder="Filter by ticker or name…" oninput="renderHoldings()">
+        <span class="search-count" id="holdings-count"></span>
+      </div>
+      <div class="hhead">
+        <span style="width:14px;"></span>
+        <span class="hcol" style="width:56px;" onclick="setSort('ticker')">Ticker<span class="arrow">▼</span></span>
+        <span class="hcol" style="flex:1;" onclick="setSort('name')">Name<span class="arrow">▼</span></span>
+        <span class="hcol" style="width:80px;text-align:right;justify-content:flex-end;" onclick="setSort('price')">Price<span class="arrow">▼</span></span>
+        <span class="hcol" style="width:72px;text-align:right;justify-content:flex-end;" onclick="setSort('dayPct')">Day Chg<span class="arrow">▼</span></span>
+        <span class="hcol" style="width:90px;text-align:right;justify-content:flex-end;" onclick="setSort('mv')">Mkt Value<span class="arrow">▼</span></span>
+        <span class="hcol" style="width:50px;text-align:right;justify-content:flex-end;" onclick="setSort('wt')">Wt%<span class="arrow">▼</span></span>
       </div>
       <div id="holdings-list"></div>
     </div>
@@ -574,11 +633,12 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
     <div class="section-title" id="reports-title">Report Library</div>
     <p style="font-size:13px;color:#888;margin-bottom:16px;">Every card links to the actual report file. Opens in a new tab.</p>
 
-    <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;">
+    <div class="reports-toolbar">
       <button class="pill-btn active" onclick="filterReports('all',this)">All</button>
       <button class="pill-btn" onclick="filterReports('daily',this)">Daily</button>
       <button class="pill-btn" onclick="filterReports('weekly',this)">Weekly</button>
       <button class="pill-btn" onclick="filterReports('research',this)">Research</button>
+      <input type="text" class="search-input" id="reports-search" placeholder="Search reports…" oninput="renderReports()" style="max-width:240px;margin-left:auto;">
     </div>
 
     <div class="report-grid" id="report-grid"></div>
@@ -622,7 +682,7 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 </div><!-- /content -->
 
 <script>
-// === PORTFOLIO DATA with live Robinhood quotes ===
+// === PORTFOLIO DATA with live Robinhood quotes (pulled Aug 1, 2026) ===
 const holdings = [
   {ticker:'AMZN', name:'Amazon Inc',              qty:521,   price:271.57, prev:235.50, cat:'U.S. individual stocks',  div:0},
   {ticker:'JPM',  name:'JPMorgan Chase',          qty:358,   price:351.84, prev:350.85, cat:'U.S. individual stocks',  div:1.74},
@@ -701,24 +761,105 @@ sorted.slice(0,6).forEach(h=>{
   </div>`;
 });
 
+// ---- SUMMARY BAR (sticky, shown across all tabs) ----
+document.getElementById('sum-total').textContent = '$'+fmt(totalMV,0);
+const sumDayEl = document.getElementById('sum-day');
+sumDayEl.textContent = (totalDayChange>=0?'+':'')+fmtDollar(totalDayChange);
+sumDayEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
+const sumDayPctEl = document.getElementById('sum-day-pct');
+sumDayPctEl.textContent = (totalDayChange>=0?'+':'')+((totalDayChange/totalMV)*100).toFixed(2)+'%';
+sumDayPctEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
+
 // ---- PORTFOLIO ----
 document.getElementById('port-total').textContent = '$'+fmt(totalMV,0);
 const portDay = document.getElementById('port-day');
 portDay.textContent = (totalDayChange>=0?'+':'')+fmtDollar(totalDayChange);
 portDay.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
 
-const holdList = document.getElementById('holdings-list');
-[...holdings].sort((a,b)=>b.mv-a.mv).forEach(h=>{
-  const up = h.dayPct >= 0;
-  holdList.innerHTML += `<div class="trow">
-    <div class="sym">${h.ticker}</div>
-    <div class="name">${h.name}</div>
-    <div class="price">$${h.ticker==='CASH'?'43,000':h.price.toFixed(2)}</div>
-    <div class="chg ${h.ticker==='CASH'?'':''+( up?'up-color':'dn-color')}">${h.ticker==='CASH'?'—':(up?'+':'')+h.dayPct.toFixed(2)+'%'}</div>
-    <div class="mv">$${fmt(h.mv,0)}</div>
-    <div class="wt">${h.wt.toFixed(1)}%</div>
-  </div>`;
-});
+// ---- HOLDINGS TABLE: sortable, filterable, expandable ----
+let holdSort = {key:'mv', dir:'desc'};
+let expandedTickers = new Set();
+
+function setSort(key){
+  if(holdSort.key === key){
+    holdSort.dir = holdSort.dir === 'desc' ? 'asc' : 'desc';
+  } else {
+    holdSort.key = key;
+    holdSort.dir = (key==='ticker'||key==='name') ? 'asc' : 'desc';
+  }
+  renderHoldings();
+}
+
+function toggleRow(ticker){
+  if(expandedTickers.has(ticker)) expandedTickers.delete(ticker);
+  else expandedTickers.add(ticker);
+  renderHoldings();
+}
+
+function renderHoldings(){
+  const q = (document.getElementById('holdings-search').value || '').trim().toLowerCase();
+  let rows = holdings.filter(h =>
+    !q || h.ticker.toLowerCase().includes(q) || h.name.toLowerCase().includes(q) || h.cat.toLowerCase().includes(q)
+  );
+
+  const key = holdSort.key, dir = holdSort.dir === 'asc' ? 1 : -1;
+  rows = [...rows].sort((a,b)=>{
+    let av = a[key], bv = b[key];
+    if(typeof av === 'string'){ av = av.toLowerCase(); bv = bv.toLowerCase(); }
+    if(av < bv) return -1*dir;
+    if(av > bv) return 1*dir;
+    return 0;
+  });
+
+  // update sort header arrow states
+  document.querySelectorAll('.hhead .hcol').forEach(el=>el.classList.remove('sorted'));
+  const activeHead = [...document.querySelectorAll('.hhead .hcol')].find(el=>{
+    const onclickAttr = el.getAttribute('onclick') || '';
+    return onclickAttr.includes(`'${key}'`);
+  });
+  if(activeHead){
+    activeHead.classList.add('sorted');
+    activeHead.querySelector('.arrow').textContent = dir===1 ? '▲' : '▼';
+  }
+
+  const listEl = document.getElementById('holdings-list');
+  document.getElementById('holdings-count').textContent = q ? `${rows.length} of ${holdings.length} positions` : '';
+
+  if(rows.length === 0){
+    listEl.innerHTML = '<div class="no-results">No holdings match your filter.</div>';
+    return;
+  }
+
+  listEl.innerHTML = rows.map(h=>{
+    const up = h.dayPct >= 0;
+    const isExpanded = expandedTickers.has(h.ticker);
+    const priceDisp = h.ticker==='CASH' ? '43,000' : h.price.toFixed(2);
+    const chgDisp = h.ticker==='CASH' ? '—' : (up?'+':'')+h.dayPct.toFixed(2)+'%';
+    const chgClass = h.ticker==='CASH' ? '' : (up?'up-color':'dn-color');
+    return `<div class="hrow-wrap">
+      <div class="hrow ${isExpanded?'expanded':''}" onclick="toggleRow('${h.ticker}')">
+        <span class="caret">▶</span>
+        <div class="sym">${h.ticker}</div>
+        <div class="name">${h.name}</div>
+        <div class="price">$${priceDisp}</div>
+        <div class="chg ${chgClass}">${chgDisp}</div>
+        <div class="mv">$${fmt(h.mv,0)}</div>
+        <div class="wt">${h.wt.toFixed(1)}%</div>
+      </div>
+      <div class="hdetail ${isExpanded?'open':''}">
+        <div class="hdetail-grid">
+          <div class="hdetail-item"><div class="lbl">Shares</div><div class="val">${h.ticker==='CASH'?'—':h.qty.toLocaleString()}</div></div>
+          <div class="hdetail-item"><div class="lbl">Category</div><div class="val">${h.cat}</div></div>
+          <div class="hdetail-item"><div class="lbl">Day $ Chg</div><div class="val ${chgClass}">${h.ticker==='CASH'?'—':(h.dayDollar>=0?'+':'')+fmtDollar(h.dayDollar)}</div></div>
+          <div class="hdetail-item"><div class="lbl">Div Yield</div><div class="val">${h.div ? h.div.toFixed(2)+'%' : '—'}</div></div>
+          <div class="hdetail-item"><div class="lbl">Annual Div $</div><div class="val">${h.div ? '$'+fmt(h.divAnnual,0) : '—'}</div></div>
+          <div class="hdetail-item"><div class="lbl">Portfolio Wt</div><div class="val">${h.wt.toFixed(2)}%</div></div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+renderHoldings();
 
 // ---- TICKER BAR ----
 const tickers = [...holdings].filter(h=>h.ticker!=='CASH' && h.ticker!=='TLXIX' && h.ticker!=='FSSNX' && h.ticker!=='FSMDX').sort((a,b)=>b.mv-a.mv);
@@ -828,26 +969,36 @@ const typeLabel = {daily:'Daily', weekly:'Weekly', research:'Research'};
 const grid = document.getElementById('report-grid');
 document.getElementById('reports-title').textContent = 'Report Library — '+reports.length+' Reports';
 
-function renderReports(filter){
+let reportsTypeFilter = 'all';
+
+function renderReports(){
+  const q = (document.getElementById('reports-search').value || '').trim().toLowerCase();
+  const filtered = reports.filter(r =>
+    (reportsTypeFilter==='all' || r.type===reportsTypeFilter) &&
+    (!q || r.title.toLowerCase().includes(q) || r.date.toLowerCase().includes(q))
+  );
   grid.innerHTML = '';
-  reports
-    .filter(r => filter==='all' || r.type===filter)
-    .forEach(r=>{
-      const ext = r.file.split('.').pop().toUpperCase();
-      grid.innerHTML += `<a class="report-card" href="${r.file}" target="_blank" rel="noopener">
-        <div class="fmt">${ext}</div>
-        <div class="date">${fmtReportDate(r.date)}</div>
-        <div class="title">${r.title}</div>
-        <div class="type type-${r.type}">${typeLabel[r.type]}</div>
-      </a>`;
-    });
+  if(filtered.length === 0){
+    grid.innerHTML = '<div class="no-results">No reports match your search.</div>';
+    return;
+  }
+  filtered.forEach(r=>{
+    const ext = r.file.split('.').pop().toUpperCase();
+    grid.innerHTML += `<a class="report-card" href="${r.file}" target="_blank" rel="noopener">
+      <div class="fmt">${ext}</div>
+      <div class="date">${fmtReportDate(r.date)}</div>
+      <div class="title">${r.title}</div>
+      <div class="type type-${r.type}">${typeLabel[r.type]}</div>
+    </a>`;
+  });
 }
-renderReports('all');
+renderReports();
 
 function filterReports(type, btn){
+  reportsTypeFilter = type;
   btn.parentElement.querySelectorAll('.pill-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
-  renderReports(type);
+  renderReports();
 }
 
 // ---- TAB SWITCH ----
