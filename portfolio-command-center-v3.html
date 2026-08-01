@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Command Center</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:14px;}
+
+/* SCROLLING TICKER */
+.ticker-bar{background:#1a1a1a;color:#fff;padding:8px 0;overflow:hidden;white-space:nowrap;}
+.ticker-track{display:inline-flex;animation:scroll 40s linear infinite;}
+.ticker-track:hover{animation-play-state:paused;}
+.ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 28px;border-right:1px solid #333;}
+.ticker-item .sym{font-weight:700;font-size:13px;letter-spacing:.3px;}
+.ticker-item .pr{font-size:13px;}
+.ticker-item .up{color:#22c55e;font-size:12px;}
+.ticker-item .dn{color:#ef4444;font-size:12px;}
+@keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
+
+/* HEADER */
+.header{background:#fff;border-bottom:1px solid #e5e5e5;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;}
+.header h1{font-size:22px;font-weight:700;color:#1a1a1a;}
+.header p{font-size:12px;color:#888;margin-top:2px;}
+.avatar{width:42px;height:42px;border-radius:50%;background:#2563eb;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:14px;}
+
+/* TABS */
+.tabs{background:#fff;border-bottom:1px solid #e5e5e5;display:flex;overflow-x:auto;position:sticky;top:0;z-index:10;}
+.tab-btn{flex:1;min-width:90px;padding:14px 12px;border:none;background:transparent;color:#888;font-size:13px;font-weight:600;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;}
+.tab-btn:hover{color:#1a1a1a;background:#f9f9f9;}
+.tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
+
+/* CONTENT */
+.content{max-width:1100px;margin:0 auto;padding:24px 20px;}
+.tab-pane{display:none;}
+.tab-pane.active{display:block;}
+
+/* SECTION HEADER */
+.section-title{font-size:18px;font-weight:700;margin-bottom:20px;color:#1a1a1a;}
+
+/* METRIC CARDS */
+.metrics-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:24px;}
+.metric{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:18px;text-align:center;}
+.metric .lbl{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.metric .val{font-size:22px;font-weight:700;color:#1a1a1a;}
+.metric .sub{font-size:11px;color:#888;margin-top:4px;}
+.up-color{color:#16a34a!important;}
+.dn-color{color:#dc2626!important;}
+
+/* CARDS */
+.card{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:20px;margin-bottom:16px;}
+.card h3{font-size:15px;font-weight:700;margin-bottom:16px;color:#1a1a1a;}
+
+/* TABLE ROWS */
+.trow{display:flex;align-items:center;padding:11px 0;border-bottom:1px solid #f0f0f0;font-size:13px;gap:8px;}
+.trow:last-child{border-bottom:none;}
+.trow .sym{font-weight:700;width:60px;flex-shrink:0;}
+.trow .name{color:#555;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+.trow .price{width:80px;text-align:right;font-weight:600;}
+.trow .chg{width:72px;text-align:right;font-size:12px;font-weight:600;}
+.trow .mv{width:90px;text-align:right;font-weight:600;}
+.trow .wt{width:50px;text-align:right;color:#888;font-size:12px;}
+
+/* BADGE */
+.badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.3px;}
+.badge-hold{background:#dbeafe;color:#1d4ed8;}
+.badge-build{background:#dcfce7;color:#15803d;}
+.badge-watch{background:#fef9c3;color:#854d0e;}
+.badge-review{background:#fee2e2;color:#b91c1c;}
+
+/* THESIS CARD */
+.thesis-card{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:18px;margin-bottom:12px;}
+.thesis-header{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
+.thesis-ticker{font-size:18px;font-weight:700;}
+.thesis-name{color:#555;font-size:13px;}
+.thesis-meta{display:flex;gap:16px;font-size:12px;color:#888;margin-bottom:10px;}
+.thesis-body{font-size:13px;color:#333;line-height:1.6;background:#f8f9fa;border-radius:8px;padding:12px;}
+.thesis-conviction{font-size:12px;color:#555;margin-top:8px;}
+
+/* SLIDER */
+.slider-wrap{margin-bottom:18px;background:#f8f9fa;padding:14px;border-radius:8px;}
+.slider-wrap label{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:8px;}
+input[type=range]{width:100%;height:5px;border-radius:3px;background:#ddd;outline:none;-webkit-appearance:none;appearance:none;}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#2563eb;cursor:pointer;}
+input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radius:6px;font-size:13px;color:#1a1a1a;background:#fff;}
+
+/* BLUE HIGHLIGHT CARD */
+.blue-card{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:20px;margin-bottom:16px;}
+.blue-card h3{color:#1d4ed8;font-size:14px;font-weight:700;margin-bottom:14px;}
+.blue-metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.blue-metric .lbl{font-size:11px;color:#3b82f6;font-weight:600;margin-bottom:4px;}
+.blue-metric .val{font-size:20px;font-weight:700;color:#1d4ed8;}
+
+/* NEWS */
+.news-item{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:14px;margin-bottom:10px;}
+.news-item .headline{font-size:13px;font-weight:600;margin-bottom:5px;}
+.news-item .ticker-tag{display:inline-block;background:#dbeafe;color:#1d4ed8;font-size:11px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:6px;}
+.news-item .meta{font-size:11px;color:#888;}
+
+/* REPORT CARDS */
+.report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
+.report-card{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:16px;}
+.report-card .date{font-size:11px;color:#888;margin-bottom:6px;}
+.report-card .title{font-size:14px;font-weight:700;color:#1a1a1a;}
+.report-card .type{display:inline-block;margin-top:8px;font-size:11px;font-weight:700;padding:2px 8px;border-radius:4px;}
+.type-daily{background:#dcfce7;color:#15803d;}
+.type-weekly{background:#dbeafe;color:#1d4ed8;}
+.type-research{background:#f3e8ff;color:#7c3aed;}
+
+/* ALLOCATION BAR */
+.alloc-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.alloc-label{font-size:12px;color:#555;width:180px;flex-shrink:0;}
+.alloc-bar-wrap{flex:1;background:#f0f0f0;border-radius:4px;height:8px;}
+.alloc-bar{height:8px;border-radius:4px;background:#2563eb;}
+.alloc-pct{font-size:12px;font-weight:700;width:40px;text-align:right;}
+
+/* CASH BADGE */
+.on-track{color:#15803d;font-weight:700;}
+.quality-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:13px;}
+.quality-row:last-child{border-bottom:none;}
+.quality-row .item{color:#333;}
+.status-ok{color:#15803d;font-size:12px;font-weight:700;}
+.status-warn{color:#d97706;font-size:12px;font-weight:700;}
+.status-build{color:#2563eb;font-size:12px;font-weight:700;}
+
+@media(max-width:768px){
+  .tab-btn{min-width:70px;font-size:12px;padding:12px 8px;}
+  .trow .name{display:none;}
+  .blue-metrics{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- SCROLLING TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-track" id="tickerTrack"></div>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <h1>Portfolio Command Center</h1>
+    <p>James Wilbur &nbsp;•&nbsp; Private &nbsp;•&nbsp; Quotes via Robinhood &nbsp;•&nbsp; As of Aug 1, 2026</p>
+  </div>
+  <div class="avatar">JW</div>
+</div>
+
+<!-- TAB BAR -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="switchTab('today',this)">🏠 Today</button>
+  <button class="tab-btn" onclick="switchTab('portfolio',this)">📋 Portfolio</button>
+  <button class="tab-btn" onclick="switchTab('retirement',this)">⏰ Retirement</button>
+  <button class="tab-btn" onclick="switchTab('income',this)">💰 Income</button>
+  <button class="tab-btn" onclick="switchTab('research',this)">🔍 Research</button>
+  <button class="tab-btn" onclick="switchTab('reports',this)">📊 Reports</button>
+  <button class="tab-btn" onclick="switchTab('news',this)">📰 News</button>
+</div>
+
+<div class="content">
+
+  <!-- TODAY -->
+  <div id="today" class="tab-pane active">
+    <div class="section-title">Daily Command Center</div>
+
+    <div class="metrics-row">
+      <div class="metric">
+        <div class="lbl">Portfolio Value</div>
+        <div class="val" id="total-val">—</div>
+        <div class="sub">Morningstar baseline</div>
+      </div>
+      <div class="metric">
+        <div class="lbl">Day's Gain / Loss</div>
+        <div class="val up-color" id="day-change">—</div>
+        <div class="sub" id="day-pct">—</div>
+      </div>
+      <div class="metric">
+        <div class="lbl">Advancers / Decliners</div>
+        <div class="val" id="breadth">—</div>
+        <div class="sub">Equity positions</div>
+      </div>
+      <div class="metric">
+        <div class="lbl">Cash Position</div>
+        <div class="val">$43,000</div>
+        <div class="sub on-track">2.6% — On Track (2–4%)</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Dollar Drivers — Top Contributors</h3>
+      <div id="contributors-list"></div>
+    </div>
+
+    <div class="card">
+      <h3>Portfolio Quality Checklist</h3>
+      <div class="quality-row">
+        <div class="item">Multi-stock concentration (AMZN, JPM, GS, AAPL, MA &gt;6%)</div>
+        <div class="status-warn">Review</div>
+      </div>
+      <div class="quality-row">
+        <div class="item">Cash reserve — 2.6% vs 2–4% target</div>
+        <div class="status-ok">On Track</div>
+      </div>
+      <div class="quality-row">
+        <div class="item">AVUV + VXUS — staged build priority</div>
+        <div class="status-build">Building</div>
+      </div>
+      <div class="quality-row">
+        <div class="item">GEV satellite — starter position (6 shares)</div>
+        <div class="status-ok">On Track</div>
+      </div>
+      <div class="quality-row">
+        <div class="item">Top-5 concentration</div>
+        <div class="status-warn" id="top5-concentration">—</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PORTFOLIO -->
+  <div id="portfolio" class="tab-pane">
+    <div class="section-title">Holdings — Live Quotes via Robinhood</div>
+
+    <div class="metrics-row" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));">
+      <div class="metric">
+        <div class="lbl">Total Value</div>
+        <div class="val" id="port-total">—</div>
+      </div>
+      <div class="metric">
+        <div class="lbl">Positions</div>
+        <div class="val">35</div>
+      </div>
+      <div class="metric">
+        <div class="lbl">Day Change</div>
+        <div class="val up-color" id="port-day">—</div>
+      </div>
+    </div>
+
+    <!-- Allocation bars -->
+    <div class="card">
+      <h3>Allocation by Asset Class</h3>
+      <div class="alloc-row"><div class="alloc-label">U.S. individual stocks</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:73.8%"></div></div><div class="alloc-pct">73.8%</div></div>
+      <div class="alloc-row"><div class="alloc-label">Target-date / mixed</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:9.9%;background:#7c3aed"></div></div><div class="alloc-pct">9.9%</div></div>
+      <div class="alloc-row"><div class="alloc-label">U.S. small &amp; mid cap</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:7.5%;background:#0891b2"></div></div><div class="alloc-pct">7.5%</div></div>
+      <div class="alloc-row"><div class="alloc-label">U.S. diversified funds</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:3.6%;background:#16a34a"></div></div><div class="alloc-pct">3.6%</div></div>
+      <div class="alloc-row"><div class="alloc-label">International equity</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:2.6%;background:#d97706"></div></div><div class="alloc-pct">2.6%</div></div>
+      <div class="alloc-row"><div class="alloc-label">Cash &amp; equivalents</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:2.6%;background:#888"></div></div><div class="alloc-pct">2.6%</div></div>
+    </div>
+
+    <!-- Holdings table -->
+    <div class="card">
+      <h3>All Holdings</h3>
+      <div style="display:flex;gap:6px;font-size:11px;font-weight:700;color:#888;padding:0 0 10px;border-bottom:1px solid #f0f0f0;text-transform:uppercase;letter-spacing:.5px;">
+        <span style="width:60px;">Ticker</span>
+        <span style="flex:1;">Name</span>
+        <span style="width:80px;text-align:right;">Price</span>
+        <span style="width:72px;text-align:right;">Day Chg</span>
+        <span style="width:90px;text-align:right;">Mkt Value</span>
+        <span style="width:50px;text-align:right;">Wt%</span>
+      </div>
+      <div id="holdings-list"></div>
+    </div>
+  </div>
+
+  <!-- RETIREMENT -->
+  <div id="retirement" class="tab-pane">
+    <div class="section-title">Retirement Planning — 11-Year Horizon</div>
+
+    <div class="blue-card">
+      <h3>Projected Outcomes</h3>
+      <div class="blue-metrics">
+        <div class="blue-metric"><div class="lbl">Projected Portfolio Value</div><div class="val" id="proj-fv">$4.52M</div></div>
+        <div class="blue-metric"><div class="lbl">Portfolio-Supported Income</div><div class="val" id="proj-income">$158.1k</div></div>
+        <div class="blue-metric"><div class="lbl">Annual Pension</div><div class="val" id="pension-disp">$88.5k</div></div>
+        <div class="blue-metric"><div class="lbl">Combined Annual Income</div><div class="val" id="combined-income">$246.6k</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Adjust Assumptions</h3>
+      <div class="slider-wrap">
+        <label><span>Years to Retirement</span><span id="years-val">11</span></label>
+        <input type="range" id="ret-years" min="1" max="30" value="11" oninput="calcRetirement()">
+      </div>
+      <div class="slider-wrap">
+        <label><span>Portfolio Return</span><span id="return-val">9.0%</span></label>
+        <input type="range" id="ret-return" min="1" max="15" step="0.5" value="9" oninput="calcRetirement()">
+      </div>
+      <div class="slider-wrap">
+        <label><span>Planning Withdrawal Rate</span><span id="withdrawal-val">3.5%</span></label>
+        <input type="range" id="ret-withdrawal" min="2" max="5" step="0.1" value="3.5" oninput="calcRetirement()">
+      </div>
+      <div class="slider-wrap">
+        <label><span>Annual Contribution</span><span id="contrib-val">$18,000</span></label>
+        <input type="range" id="ret-contrib" min="0" max="60000" step="1000" value="18000" oninput="calcRetirement()">
+      </div>
+      <div class="slider-wrap">
+        <label><span>Annual Pension</span><span id="pension-slider-val">$88,500</span></label>
+        <input type="range" id="ret-pension" min="0" max="200000" step="5000" value="88500" oninput="calcRetirement()">
+      </div>
+    </div>
+  </div>
+
+  <!-- INCOME -->
+  <div id="income" class="tab-pane">
+    <div class="section-title">Income Intelligence</div>
+
+    <div class="metrics-row">
+      <div class="metric">
+        <div class="lbl">Current Annual Dividend</div>
+        <div class="val">$22,516</div>
+        <div class="sub">$1,876/month</div>
+      </div>
+      <div class="metric">
+        <div class="lbl">Projected in 11 Years</div>
+        <div class="val" id="proj-div">$58,101</div>
+        <div class="sub" id="proj-div-mo">$4,842/month</div>
+      </div>
+      <div class="metric">
+        <div class="lbl">Portfolio Yield</div>
+        <div class="val">1.38%</div>
+      </div>
+      <div class="metric">
+        <div class="lbl">Income Concentration</div>
+        <div class="val">43%</div>
+        <div class="sub">Top 5 contributors</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Dividend Assumptions</h3>
+      <div class="slider-wrap">
+        <label><span>Annual Dividend Growth</span><span id="div-growth-val">9.0%</span></label>
+        <input type="range" id="div-growth" min="1" max="20" step="0.5" value="9" oninput="calcDividends()">
+      </div>
+      <div class="slider-wrap">
+        <label><span>Projection Period</span><span id="div-years-val">11 years</span></label>
+        <input type="range" id="div-years" min="1" max="20" value="11" oninput="calcDividends()">
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Income by Category</h3>
+      <div class="trow"><div class="sym">Stocks</div><div class="name">U.S. individual stocks</div><div class="mv">$16,124</div></div>
+      <div class="trow"><div class="sym">TLXIX</div><div class="name">Target-date / mixed</div><div class="mv">$2,412</div></div>
+      <div class="trow"><div class="sym">Sm/Mid</div><div class="name">U.S. small &amp; mid cap</div><div class="mv">$1,596</div></div>
+      <div class="trow"><div class="sym">VXUS</div><div class="name">International equity</div><div class="mv">$1,279</div></div>
+      <div class="trow"><div class="sym">Funds</div><div class="name">U.S. diversified funds</div><div class="mv">$1,105</div></div>
+    </div>
+
+    <div class="card">
+      <h3>Top Dividend Contributors</h3>
+      <div class="trow"><div class="sym">TLXIX</div><div class="name">Nuveen Lifecycle Index</div><div class="mv">$2,412</div><div class="wt">1.50%</div></div>
+      <div class="trow"><div class="sym">JPM</div><div class="name">JPMorgan Chase</div><div class="mv">$2,191</div><div class="wt">1.74%</div></div>
+      <div class="trow"><div class="sym">GS</div><div class="name">Goldman Sachs</div><div class="mv">$1,774</div><div class="wt">1.66%</div></div>
+      <div class="trow"><div class="sym">AMT</div><div class="name">American Tower</div><div class="mv">$1,657</div><div class="wt">4.15%</div></div>
+      <div class="trow"><div class="sym">XOM</div><div class="name">ExxonMobil</div><div class="mv">$1,610</div><div class="wt">2.75%</div></div>
+      <div class="trow"><div class="sym">VXUS</div><div class="name">Vanguard Intl Stock ETF</div><div class="mv">$1,279</div><div class="wt">2.00%</div></div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <div id="research" class="tab-pane">
+    <div class="section-title">Research Center — Living Investment Record</div>
+
+    <div class="metrics-row" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));">
+      <div class="metric"><div class="lbl">Active Theses</div><div class="val">22</div></div>
+      <div class="metric"><div class="lbl">Core Forever Holds</div><div class="val">8</div></div>
+      <div class="metric"><div class="lbl">Build Positions</div><div class="val">4</div></div>
+      <div class="metric"><div class="lbl">Under Review</div><div class="val">3</div></div>
+    </div>
+
+    <!-- Filter pills -->
+    <div style="display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;">
+      <button class="pill-btn active" onclick="filterThesis('all',this)">All</button>
+      <button class="pill-btn" onclick="filterThesis('HOLD',this)">Hold</button>
+      <button class="pill-btn" onclick="filterThesis('BUILD',this)">Build</button>
+      <button class="pill-btn" onclick="filterThesis('WATCH',this)">Watch</button>
+      <button class="pill-btn" onclick="filterThesis('REVIEW',this)">Review</button>
+    </div>
+    <style>
+      .pill-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;font-size:13px;font-weight:600;cursor:pointer;color:#555;}
+      .pill-btn:hover{background:#f0f4ff;border-color:#2563eb;color:#2563eb;}
+      .pill-btn.active{background:#2563eb;color:#fff;border-color:#2563eb;}
+    </style>
+
+    <div id="thesis-list">
+
+      <div class="thesis-card" data-status="HOLD">
+        <div class="thesis-header">
+          <div class="thesis-ticker">AVGO</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div>
+            <div class="thesis-name">Broadcom Inc</div>
+          </div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~5–6%</span>
+          <span>Reviewed: July 2026</span>
+        </div>
+        <div class="thesis-body">
+          Broadcom is a dominant semiconductor and infrastructure software franchise with an extraordinary FCF profile. Its VMware acquisition has transformed the company into a recurring-revenue software powerhouse. The AI custom ASIC opportunity (XPU) alongside hyperscaler relationships provides durable long-cycle growth. Capital allocation is exemplary — consistent dividend growth and opportunistic buybacks. Key risk: high valuation and execution on VMware cross-sell targets. Given meaningful existing position, preference is NOT to add further for AI-chip exposure — favor NVDA or TSM for incremental AI allocation.
+        </div>
+        <div class="thesis-conviction">Source: FY2025 10-K, Q2 FY2026 10-Q, Morningstar report (June 2026)</div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD">
+        <div class="thesis-header">
+          <div class="thesis-ticker">META</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">Meta Platforms</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~3–4%</span>
+          <span>Last added: July 2026 (13 shares @ $599)</span>
+        </div>
+        <div class="thesis-body">
+          Meta controls the most powerful digital advertising duopoly with Facebook and Instagram, complemented by the fastest-growing platform in Reels and WhatsApp. AI investments are being monetized rapidly through ad-ranking improvements and Llama-based tooling. Reality Labs remains a long-term optionality bet. FCF generation is exceptional and the balance sheet is a fortress. The 13-share add at $599 rounds out the position.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD">
+        <div class="thesis-header">
+          <div class="thesis-ticker">AMZN</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">Amazon Inc</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~8.7%</span>
+          <span>Core Forever Hold</span>
+        </div>
+        <div class="thesis-body">
+          Amazon is the defining compounding machine of the modern economy — AWS cloud leadership, advertising profitability acceleration, and logistics moat provide three distinct and durable earnings drivers. AWS margins are expanding while the retail segment transitions from cost center to profit contributor. At ~8.7% of portfolio, it is the largest individual stock position and a core forever hold. Concentration warrants periodic review.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD">
+        <div class="thesis-header">
+          <div class="thesis-ticker">JPM</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">JPMorgan Chase</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~7.7%</span>
+          <span>Core Forever Hold</span>
+        </div>
+        <div class="thesis-body">
+          The gold standard of U.S. banking — best-in-class management under Jamie Dimon, unrivaled scale in investment banking, consumer, and commercial banking, and a fortress balance sheet. Consistent through-cycle EPS growth and a growing dividend make this a core anchor position. At 7.7% of the portfolio, concentration is elevated but conviction is high.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD">
+        <div class="thesis-header">
+          <div class="thesis-ticker">MA</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">Mastercard Inc</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~6.5%</span>
+          <span>Core Forever Hold</span>
+        </div>
+        <div class="thesis-body">
+          Mastercard is an asset-light toll road on global commerce — it earns on every swipe without credit risk. Global payment network effects, secular shift from cash to digital, and cross-border volume recovery drive compounding double-digit EPS growth. Near-zero incremental capex makes it one of the highest-quality businesses on Earth.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="BUILD">
+        <div class="thesis-header">
+          <div class="thesis-ticker">AVUV</div>
+          <span class="badge badge-build">BUILD</span>
+          <div><div class="thesis-name">Avantis U.S. Small Cap Value ETF</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~4.0%</span>
+          <span>Layering in — target 8–10%</span>
+        </div>
+        <div class="thesis-body">
+          AVUV captures the small-cap value factor premium with disciplined profitability screening — a historically compelling risk/return profile over long horizons. Combined with VXUS, these are the portfolio's primary diversification builders away from U.S. mega-cap concentration. Actively staging into the position over time. Added 50 shares in July 2026.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="BUILD">
+        <div class="thesis-header">
+          <div class="thesis-ticker">VXUS</div>
+          <span class="badge badge-build">BUILD</span>
+          <div><div class="thesis-name">Vanguard Total Intl Stock ETF</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~2.6%</span>
+          <span>Layering in — target 6–8%</span>
+        </div>
+        <div class="thesis-body">
+          International equities are historically undervalued relative to U.S. markets, and VXUS provides broad, low-cost exposure across developed and emerging markets. Serves as a portfolio diversifier and hedge against U.S. valuation concentration. Added 100 shares in July 2026 as part of the systematic diversification build.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="WATCH">
+        <div class="thesis-header">
+          <div class="thesis-ticker">GEV</div>
+          <span class="badge badge-watch">WATCH</span>
+          <div><div class="thesis-name">GE Vernova</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium</strong></span>
+          <span>Weight: ~1.8%</span>
+          <span>Starter — 6 shares @ $1,015 (July 2026)</span>
+        </div>
+        <div class="thesis-body">
+          GE Vernova is a premier power infrastructure and grid modernization pure-play — perfectly positioned for AI data center power demand, electrification, and the U.S. grid buildout. Initiated a small 6-share position ahead of July 22 earnings to establish a beachhead. Watching earnings and guidance closely before adding meaningfully. High conviction on the theme, medium on current valuation.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="WATCH">
+        <div class="thesis-header">
+          <div class="thesis-ticker">CRM</div>
+          <span class="badge badge-watch">WATCH</span>
+          <div><div class="thesis-name">Salesforce Inc</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium</strong></span>
+          <span>Weight: ~1.1%</span>
+          <span>Reviewed: July 28, 2026</span>
+        </div>
+        <div class="thesis-body">
+          Salesforce remains the category-leading enterprise CRM platform with deep customer lock-in and significant cross-sell opportunity through Agentforce AI tooling. The transition to a more disciplined capital allocation posture (margin expansion, buybacks) is encouraging. However, growth deceleration and rich valuation relative to peers warrant a watch rating until Agentforce adoption inflects clearly in revenue.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="REVIEW">
+        <div class="thesis-header">
+          <div class="thesis-ticker">QCOM</div>
+          <span class="badge badge-review">REVIEW</span>
+          <div><div class="thesis-name">Qualcomm Inc</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium-Low</strong></span>
+          <span>Weight: ~1.5%</span>
+          <span>Under review — Snapdragon PC cycle + Apple risk</span>
+        </div>
+        <div class="thesis-body">
+          QCOM's smartphone modem dominance is under existential pressure from Apple's in-house modem development. The Snapdragon PC opportunity is real but unproven at scale. Auto and IoT diversification is early-stage. The AI PC thesis is compelling but the Apple transition risk creates a meaningful earnings cliff. Evaluating whether to exit and redeploy toward AVUV or VXUS.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="REVIEW">
+        <div class="thesis-header">
+          <div class="thesis-ticker">NFLX</div>
+          <span class="badge badge-review">REVIEW</span>
+          <div><div class="thesis-name">Netflix Inc</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium</strong></span>
+          <span>Weight: ~small</span>
+          <span>Monitoring ad-tier ramp</span>
+        </div>
+        <div class="thesis-body">
+          Netflix is the dominant global streaming platform but has become a media company with content capex intensity to match. The ad-supported tier ramp and paid password-sharing enforcement have been positive catalysts. Valuation is full at current levels. Watching for ad-tier monetization progress and whether live sports investments yield a meaningful ARPU uplift before adding.
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- REPORTS -->
+  <div id="reports" class="tab-pane">
+    <div class="section-title">Report Library — 16 Reports</div>
+    <div class="report-grid">
+      <div class="report-card">
+        <div class="date">July 31, 2026</div>
+        <div class="title">Daily Portfolio Close</div>
+        <div class="type type-daily">Daily</div>
+      </div>
+      <div class="report-card">
+        <div class="date">July 28, 2026</div>
+        <div class="title">Daily Portfolio Close</div>
+        <div class="type type-daily">Daily</div>
+      </div>
+      <div class="report-card">
+        <div class="date">July 25, 2026</div>
+        <div class="title">Weekly Portfolio Review</div>
+        <div class="type type-weekly">Weekly</div>
+      </div>
+      <div class="report-card">
+        <div class="date">July 2026</div>
+        <div class="title">Broadcom (AVGO) Deep Dive</div>
+        <div class="type type-research">Research</div>
+      </div>
+      <div class="report-card">
+        <div class="date">July 2026</div>
+        <div class="title">GEV Earnings Preview</div>
+        <div class="type type-research">Research</div>
+      </div>
+      <div class="report-card">
+        <div class="date">July 21, 2026</div>
+        <div class="title">Weekly Portfolio Review</div>
+        <div class="type type-weekly">Weekly</div>
+      </div>
+      <div class="report-card">
+        <div class="date">July 2026</div>
+        <div class="title">AVUV vs VTWO vs IJR — ETF Comparison</div>
+        <div class="type type-research">Research</div>
+      </div>
+      <div class="report-card">
+        <div class="date">July 2026</div>
+        <div class="title">Portfolio Rebalancing Analysis</div>
+        <div class="type type-weekly">Weekly</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NEWS -->
+  <div id="news" class="tab-pane">
+    <div class="section-title">Smart News — Portfolio-Ranked Intelligence</div>
+    <p style="font-size:13px;color:#888;margin-bottom:20px;">Stories ranked by your portfolio weight. Holdings-linked news first, then market, then earnings.</p>
+
+    <div class="news-item">
+      <div><span class="ticker-tag">AMZN</span><span class="headline">Amazon Q2 earnings beat: AWS revenue +28% YoY, ad revenue accelerates</span></div>
+      <div class="meta">Reuters &nbsp;•&nbsp; 2h ago</div>
+    </div>
+    <div class="news-item">
+      <div><span class="ticker-tag">JPM</span><span class="headline">JPMorgan raises full-year NII guidance on strong investment banking activity</span></div>
+      <div class="meta">Bloomberg &nbsp;•&nbsp; 3h ago</div>
+    </div>
+    <div class="news-item">
+      <div><span class="ticker-tag">GS</span><span class="headline">Goldman Sachs Q2 profit tops estimates; trading revenue surges</span></div>
+      <div class="meta">Financial Times &nbsp;•&nbsp; 4h ago</div>
+    </div>
+    <div class="news-item">
+      <div><span class="ticker-tag">META</span><span class="headline">Meta's Llama 4 outperforms rivals in independent benchmarks; ad revenue up 22%</span></div>
+      <div class="meta">TechCrunch &nbsp;•&nbsp; 5h ago</div>
+    </div>
+    <div class="news-item">
+      <div><span class="ticker-tag">AVGO</span><span class="headline">Broadcom custom AI chip orders from hyperscalers accelerate into 2027</span></div>
+      <div class="meta">Barron's &nbsp;•&nbsp; 6h ago</div>
+    </div>
+    <div class="news-item">
+      <div><span class="ticker-tag">GEV</span><span class="headline">GE Vernova wins $4B grid modernization contract; backlog reaches record high</span></div>
+      <div class="meta">WSJ &nbsp;•&nbsp; 8h ago</div>
+    </div>
+    <div class="news-item">
+      <div><span class="ticker-tag">AVUV</span><span class="headline">Small-cap value factor outperforms in July amid rate cut expectations</span></div>
+      <div class="meta">Morningstar &nbsp;•&nbsp; 1d ago</div>
+    </div>
+  </div>
+
+</div><!-- /content -->
+
+<script>
+// === PORTFOLIO DATA with live Robinhood quotes ===
+const holdings = [
+  {ticker:'AMZN', name:'Amazon Inc',              qty:521,   price:271.57, prev:235.50, cat:'U.S. individual stocks',  div:0},
+  {ticker:'JPM',  name:'JPMorgan Chase',          qty:358,   price:351.84, prev:350.85, cat:'U.S. individual stocks',  div:1.74},
+  {ticker:'GS',   name:'Goldman Sachs',           qty:105,   price:1017.98,prev:1024.86,cat:'U.S. individual stocks',  div:1.66},
+  {ticker:'AAPL', name:'Apple Inc',               qty:340,   price:309.03, prev:333.43, cat:'U.S. individual stocks',  div:0.43},
+  {ticker:'MA',   name:'Mastercard Inc',          qty:187,   price:573.38, prev:577.35, cat:'U.S. individual stocks',  div:0.37},
+  {ticker:'META', name:'Meta Platforms',          qty:175,   price:556.50, prev:539.03, cat:'U.S. individual stocks',  div:0},
+  {ticker:'AVGO', name:'Broadcom Inc',            qty:240,   price:389.27, prev:387.84, cat:'U.S. individual stocks',  div:1.25},
+  {ticker:'MSFT', name:'Microsoft Corp',          qty:155,   price:465.10, prev:451.10, cat:'U.S. individual stocks',  div:0.68},
+  {ticker:'XOM',  name:'ExxonMobil',              qty:265,   price:155.46, prev:156.97, cat:'U.S. individual stocks',  div:2.75},
+  {ticker:'V',    name:'Visa Inc',                qty:175,   price:366.16, prev:366.27, cat:'U.S. individual stocks',  div:0.68},
+  {ticker:'AXP',  name:'American Express',        qty:160,   price:336.25, prev:337.52, cat:'U.S. individual stocks',  div:0.86},
+  {ticker:'PM',   name:'Philip Morris Intl',      qty:230,   price:190.80, prev:192.00, cat:'U.S. individual stocks',  div:4.30},
+  {ticker:'AMT',  name:'American Tower',          qty:230,   price:173.41, prev:174.46, cat:'U.S. individual stocks',  div:4.15},
+  {ticker:'KO',   name:'Coca-Cola Co',            qty:280,   price:87.59,  prev:88.49,  cat:'U.S. individual stocks',  div:2.97},
+  {ticker:'PEP',  name:'PepsiCo Inc',             qty:195,   price:139.56, prev:140.20, cat:'U.S. individual stocks',  div:3.38},
+  {ticker:'UNH',  name:'UnitedHealth Group',      qty:65,    price:414.36, prev:421.47, cat:'U.S. individual stocks',  div:1.37},
+  {ticker:'SO',   name:'Southern Company',        qty:377,   price:94.59,  prev:94.34,  cat:'U.S. individual stocks',  div:3.30},
+  {ticker:'BMY',  name:'Bristol-Myers Squibb',    qty:330,   price:65.30,  prev:64.86,  cat:'U.S. individual stocks',  div:5.10},
+  {ticker:'CRM',  name:'Salesforce Inc',          qty:99,    price:184.03, prev:180.71, cat:'U.S. individual stocks',  div:0},
+  {ticker:'DIS',  name:'Walt Disney Co',          qty:180,   price:96.22,  prev:96.16,  cat:'U.S. individual stocks',  div:0},
+  {ticker:'QCOM', name:'Qualcomm Inc',            qty:215,   price:147.60, prev:151.60, cat:'U.S. individual stocks',  div:2.00},
+  {ticker:'NFLX', name:'Netflix Inc',             qty:18,    price:71.70,  prev:73.17,  cat:'U.S. individual stocks',  div:0},
+  {ticker:'GEV',  name:'GE Vernova',              qty:6,     price:990.12, prev:981.98, cat:'U.S. individual stocks',  div:0.25},
+  {ticker:'TLXIX',name:'Nuveen Lifecycle Index',  qty:4090,  price:39.32,  prev:39.32,  cat:'Target-date / mixed',     div:1.50},
+  {ticker:'AVUV', name:'Avantis U.S. Sm Cap Val', qty:1350,  price:125.26, prev:125.24, cat:'U.S. small & mid cap',    div:1.18},
+  {ticker:'FSSNX',name:'Fidelity Small Cap Index',qty:1800,  price:22.50,  prev:22.45,  cat:'U.S. small & mid cap',    div:0.80},
+  {ticker:'FSMDX',name:'Fidelity Mid Cap Index',  qty:900,   price:33.10,  prev:33.05,  cat:'U.S. small & mid cap',    div:0.85},
+  {ticker:'IJH',  name:'iShares S&P 400 Mid Cap', qty:220,   price:75.28,  prev:75.35,  cat:'U.S. small & mid cap',    div:1.20},
+  {ticker:'VTWO', name:'Vanguard Russell 2000',   qty:180,   price:117.70, prev:118.23, cat:'U.S. small & mid cap',    div:1.30},
+  {ticker:'VXUS', name:'Vanguard Total Intl',     qty:500,   price:84.59,  prev:84.77,  cat:'International equity',    div:2.00},
+  {ticker:'SCHD', name:'Schwab US Div Equity',    qty:320,   price:33.45,  prev:33.41,  cat:'U.S. diversified funds',  div:3.50},
+  {ticker:'GRID', name:'First Trust NASDAQ CEA',  qty:185,   price:179.35, prev:176.64, cat:'U.S. diversified funds',  div:1.10},
+  {ticker:'SOXQ', name:'Invesco Semicond ETF',    qty:280,   price:89.03,  prev:88.92,  cat:'U.S. diversified funds',  div:0.50},
+  {ticker:'CASH', name:'Cash & Equivalents',      qty:1,     price:43000,  prev:43000,  cat:'Cash & equivalents',      div:5.00},
+];
+
+// Compute market values
+holdings.forEach(h => {
+  h.mv = h.qty * h.price;
+  h.dayDollar = h.qty * (h.price - h.prev);
+  h.dayPct = h.prev > 0 ? ((h.price - h.prev) / h.prev) * 100 : 0;
+  h.divAnnual = h.mv * (h.div / 100);
+});
+
+const totalMV = holdings.reduce((s,h) => s + h.mv, 0);
+holdings.forEach(h => h.wt = (h.mv / totalMV) * 100);
+const totalDayChange = holdings.reduce((s,h) => s + h.dayDollar, 0);
+const advancers = holdings.filter(h => h.ticker !== 'CASH' && h.dayDollar > 0).length;
+const decliners = holdings.filter(h => h.ticker !== 'CASH' && h.dayDollar < 0).length;
+
+// Top 5 concentration
+const top5 = holdings.filter(h=>h.ticker!=='CASH').sort((a,b)=>b.mv-a.mv).slice(0,5);
+const top5pct = top5.reduce((s,h)=>s+h.wt,0);
+
+// ---- TODAY ----
+document.getElementById('total-val').textContent = '$'+fmt(totalMV,0);
+const dayEl = document.getElementById('day-change');
+dayEl.textContent = (totalDayChange>=0?'+':'')+fmtDollar(totalDayChange);
+dayEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
+document.getElementById('day-pct').textContent = (totalDayChange>=0?'+':'')+((totalDayChange/totalMV)*100).toFixed(2)+'%';
+document.getElementById('breadth').textContent = advancers+' / '+decliners;
+document.getElementById('top5-concentration').textContent = top5pct.toFixed(1)+'%';
+
+// Contributors
+const sorted = [...holdings].filter(h=>h.ticker!=='CASH').sort((a,b)=>Math.abs(b.dayDollar)-Math.abs(a.dayDollar));
+const contEl = document.getElementById('contributors-list');
+sorted.slice(0,6).forEach(h=>{
+  const up = h.dayDollar >= 0;
+  contEl.innerHTML += `<div class="trow">
+    <div class="sym">${h.ticker}</div>
+    <div class="name">${h.name}</div>
+    <div class="price">$${h.price.toFixed(2)}</div>
+    <div class="chg ${up?'up-color':'dn-color'}">${up?'+':''}${h.dayPct.toFixed(2)}%</div>
+    <div class="mv ${up?'up-color':'dn-color'}">${up?'+':''}${fmtDollar(h.dayDollar)}</div>
+  </div>`;
+});
+
+// ---- PORTFOLIO ----
+document.getElementById('port-total').textContent = '$'+fmt(totalMV,0);
+const portDay = document.getElementById('port-day');
+portDay.textContent = (totalDayChange>=0?'+':'')+fmtDollar(totalDayChange);
+portDay.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
+
+const holdList = document.getElementById('holdings-list');
+[...holdings].sort((a,b)=>b.mv-a.mv).forEach(h=>{
+  const up = h.dayPct >= 0;
+  holdList.innerHTML += `<div class="trow">
+    <div class="sym">${h.ticker}</div>
+    <div class="name">${h.name}</div>
+    <div class="price">$${h.ticker==='CASH'?'43,000':h.price.toFixed(2)}</div>
+    <div class="chg ${h.ticker==='CASH'?'':''+( up?'up-color':'dn-color')}">${h.ticker==='CASH'?'—':(up?'+':'')+h.dayPct.toFixed(2)+'%'}</div>
+    <div class="mv">$${fmt(h.mv,0)}</div>
+    <div class="wt">${h.wt.toFixed(1)}%</div>
+  </div>`;
+});
+
+// ---- TICKER BAR ----
+const tickers = [...holdings].filter(h=>h.ticker!=='CASH' && h.ticker!=='TLXIX' && h.ticker!=='FSSNX' && h.ticker!=='FSMDX').sort((a,b)=>b.mv-a.mv);
+let tickerHtml = '';
+tickers.forEach(h=>{
+  const up = h.dayPct >= 0;
+  tickerHtml += `<div class="ticker-item">
+    <span class="sym">${h.ticker}</span>
+    <span class="pr">$${h.price.toFixed(2)}</span>
+    <span class="${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(h.dayPct).toFixed(2)}%</span>
+  </div>`;
+});
+// Duplicate for infinite scroll
+const track = document.getElementById('tickerTrack');
+track.innerHTML = tickerHtml + tickerHtml;
+
+// ---- RETIREMENT ----
+function calcRetirement(){
+  const pv = totalMV;
+  const years = +document.getElementById('ret-years').value;
+  const r = +document.getElementById('ret-return').value / 100;
+  const wd = +document.getElementById('ret-withdrawal').value / 100;
+  const contrib = +document.getElementById('ret-contrib').value;
+  const pension = +document.getElementById('ret-pension').value;
+  const fv = pv * Math.pow(1+r, years) + contrib * (Math.pow(1+r,years)-1)/r;
+  const portIncome = fv * wd;
+  const combined = portIncome + pension;
+  document.getElementById('years-val').textContent = years;
+  document.getElementById('return-val').textContent = (+document.getElementById('ret-return').value).toFixed(1)+'%';
+  document.getElementById('withdrawal-val').textContent = (+document.getElementById('ret-withdrawal').value).toFixed(1)+'%';
+  document.getElementById('contrib-val').textContent = '$'+Math.round(contrib).toLocaleString();
+  document.getElementById('pension-slider-val').textContent = '$'+Math.round(pension).toLocaleString();
+  document.getElementById('proj-fv').textContent = '$'+(fv/1000000).toFixed(2)+'M';
+  document.getElementById('proj-income').textContent = '$'+(portIncome/1000).toFixed(1)+'k';
+  document.getElementById('pension-disp').textContent = '$'+(pension/1000).toFixed(1)+'k';
+  document.getElementById('combined-income').textContent = '$'+(combined/1000).toFixed(1)+'k';
+}
+calcRetirement();
+
+// ---- INCOME ----
+const baseDivIncome = 22516;
+function calcDividends(){
+  const growth = +document.getElementById('div-growth').value / 100;
+  const years = +document.getElementById('div-years').value;
+  const proj = baseDivIncome * Math.pow(1+growth, years);
+  document.getElementById('div-growth-val').textContent = (+document.getElementById('div-growth').value).toFixed(1)+'%';
+  document.getElementById('div-years-val').textContent = Math.round(years)+' years';
+  document.getElementById('proj-div').textContent = '$'+Math.round(proj).toLocaleString();
+  document.getElementById('proj-div-mo').textContent = '$'+Math.round(proj/12).toLocaleString()+'/month';
+}
+calcDividends();
+
+// ---- RESEARCH FILTER ----
+function filterThesis(status, btn){
+  document.querySelectorAll('.pill-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.thesis-card').forEach(card=>{
+    card.style.display = (status==='all' || card.dataset.status===status) ? 'block' : 'none';
+  });
+}
+
+// ---- TAB SWITCH ----
+function switchTab(id, btn){
+  document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ---- HELPERS ----
+function fmt(n, dec){ return n.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec}); }
+function fmtDollar(n){ return '$'+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0}); }
+</script>
+</body>
+</html>
