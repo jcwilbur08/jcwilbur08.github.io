@@ -1163,7 +1163,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
   <div id="news" class="tab-pane">
     <div class="section-title">Smart News — Portfolio-Ranked Intelligence</div>
     <p style="font-size:13px;color:#888;margin-bottom:12px;">Stories ranked by portfolio weight. Holdings-linked news first, then factor/market context. Each headline links to the original source.</p>
-    <div class="news-updated"><span class="dot"></span>Last refreshed Aug 1, 2026 (market close Fri, Jul 31)</div>
+    <div class="news-updated"><span class="dot"></span>Last refreshed Aug 2, 2026 (market closed for the weekend — most recent data through Fri, Jul 31 close)</div>
     <div id="news-list"></div>
   </div>
 
@@ -1887,6 +1887,13 @@ const newsItems = [
     url: 'https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm'
   },
   {
+    ticker: 'GOOG',
+    headline: "Shares jumped nearly 7% on July 31 after DeepMind unveiled next-generation Gemini Robotics 2 AI models, clawing back most of the stock's capex-driven selloff from earlier in the month as a broader mega-cap tech rally added a tailwind.",
+    source: 'TradingKey',
+    time: 'Jul 31',
+    url: 'https://www.tradingkey.com/analysis/stocks/us-stocks/262067418-stock-google-alphabet-goog-gemini-llm-price-predittion-ai-tradingkey'
+  },
+  {
     ticker: 'META',
     headline: "Q2 revenue rose 28% and topped estimates, but EPS missed on legal and severance charges. Free cash flow collapsed 91% on AI capex, and shares fell about 9% on weak Q3 guidance.",
     source: 'Benzinga',
@@ -1899,6 +1906,13 @@ const newsItems = [
     source: 'Yahoo Finance',
     time: 'Jul 30',
     url: 'https://finance.yahoo.com/markets/stocks/articles/mastercard-stock-climbs-q2-earnings-162303555.html'
+  },
+  {
+    ticker: 'XOM',
+    headline: "Q2 revenue rose 42% to $116B on strong refining and trading margins, but EPS came in just under consensus after a roughly 10% upstream production hit from Middle East supply disruptions; shares slipped modestly on the print.",
+    source: 'Investing.com',
+    time: 'Jul 31',
+    url: 'https://www.investing.com/news/transcripts/earnings-call-transcript-exxonmobil-posts-strong-q2-2026-results-as-shares-slip-93CH-4828782'
   },
   {
     ticker: 'GS',
