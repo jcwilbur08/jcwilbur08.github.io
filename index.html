@@ -92,7 +92,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .hrow:hover{background:#fafbff;}
 .hrow .caret{width:14px;flex-shrink:0;color:#bbb;font-size:10px;transition:transform .15s;}
 .hrow.expanded .caret{transform:rotate(90deg);color:#2563eb;}
-.hrow .sym{font-weight:700;min-width:56px;flex-shrink:0;display:flex;align-items:center;white-space:nowrap;}
+.hrow .sym{font-weight:700;width:100px;flex-shrink:0;display:flex;align-items:center;gap:4px;white-space:nowrap;overflow:hidden;}
 .hrow .name{color:#555;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .hrow .price{width:80px;text-align:right;font-weight:600;}
 .hrow .chg{width:72px;text-align:right;font-size:12px;font-weight:600;}
@@ -436,7 +436,7 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
       </div>
       <div class="hhead">
         <span style="width:14px;"></span>
-        <span class="hcol" style="width:56px;" onclick="setSort('ticker')">Ticker<span class="arrow">▼</span></span>
+        <span class="hcol" style="width:100px;" onclick="setSort('ticker')">Ticker<span class="arrow">▼</span></span>
         <span class="hcol" style="flex:1;" onclick="setSort('name')">Name<span class="arrow">▼</span></span>
         <span class="hcol" style="width:80px;text-align:right;justify-content:flex-end;" onclick="setSort('price')">Price<span class="arrow">▼</span></span>
         <span class="hcol" style="width:72px;text-align:right;justify-content:flex-end;" onclick="setSort('dayPct')">Day Chg<span class="arrow">▼</span></span>
