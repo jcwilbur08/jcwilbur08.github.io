@@ -103,6 +103,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .hdetail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;background:#f8f9fa;border-radius:8px;padding:12px 14px;}
 .hdetail-item .lbl{color:#888;font-size:10px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px;}
 .hdetail-item .val{color:#1a1a1a;font-weight:700;font-size:13px;}
+.hdetail-item .val.price-highlight{color:#2563eb;}
+.price-detail-item{display:none;}
 .no-results{padding:24px 0;text-align:center;color:#888;font-size:13px;}
 
 /* BADGE */
@@ -227,6 +229,15 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 .bottom-nav-btn .lbl{font-size:9.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
 .bottom-nav-btn.active{color:#2563eb;}
 
+/* COLLAPSIBLE CARDS (mobile: collapsed by default, tap to expand; desktop: always open) */
+.card-collapsible{padding:0;}
+.card-header{display:flex;align-items:center;justify-content:space-between;padding:20px;cursor:default;}
+.card-header h3{margin-bottom:0;}
+.card-header-meta{display:none;font-size:11px;color:#888;font-weight:500;margin-top:2px;}
+.chevron{display:none;width:8px;height:8px;border-right:2px solid #999;border-bottom:2px solid #999;transform:rotate(-45deg);transition:transform .2s;flex-shrink:0;margin-left:10px;}
+.card-collapsible.open .chevron{transform:rotate(45deg);}
+.card-body-inner{padding:0 20px 20px;}
+
 @media(max-width:768px){
   .tabs{display:none;}
   .bottom-nav{display:block;}
@@ -235,6 +246,13 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
   .hrow .name{display:none;}
   .blue-metrics{grid-template-columns:1fr;}
   .summary-item{padding:9px 14px;}
+  .card-collapsible .card-header{cursor:pointer;-webkit-tap-highlight-color:transparent;}
+  .card-collapsible .card-header-meta{display:block;}
+  .card-collapsible .chevron{display:block;}
+  .card-collapsible .card-body{max-height:0;overflow:hidden;transition:max-height .25s ease;}
+  .card-collapsible.open .card-body{max-height:1000px;}
+  .price-col{display:none;}
+  .price-detail-item{display:block;}
 }
 
 /* ============ DARK MODE ============ */
@@ -292,6 +310,8 @@ body[data-theme="dark"] .unit-toggle button{background:#1a1d24;color:#8b909c;}
 body[data-theme="dark"] .target-bar-wrap{background:#262a33;}
 body[data-theme="dark"] .target-marker{background:#e8e9ec;}
 body[data-theme="dark"] .target-head .sub{color:#8b909c;}
+body[data-theme="dark"] .card-header-meta{color:#8b909c;}
+body[data-theme="dark"] .chevron{border-color:#6b7280;}
 body[data-theme="dark"] .bottom-nav{background:#161920;border-top-color:#262a33;}
 body[data-theme="dark"] .bottom-nav-btn{color:#8b909c;}
 body[data-theme="dark"] .bottom-nav-btn.active{color:#5b8def;}
@@ -412,28 +432,56 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     </div>
 
     <!-- Allocation bars + donut -->
-    <div class="card">
-      <h3>Allocation by Asset Class</h3>
-      <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
-        <div style="flex:1;min-width:220px;" id="alloc-bars-list">
+    <div class="card card-collapsible" id="card-alloc">
+      <div class="card-header" onclick="toggleCollapsibleCard('card-alloc')">
+        <div>
+          <h3 style="margin-bottom:0;">Allocation by Asset Class</h3>
+          <div class="card-header-meta" id="card-alloc-meta">6 categories</div>
         </div>
-        <div style="width:180px;height:180px;flex-shrink:0;position:relative;margin:0 auto;">
-          <canvas id="allocDonut" width="180" height="180"></canvas>
+        <div class="chevron"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-body-inner" style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
+          <div style="flex:1;min-width:220px;" id="alloc-bars-list">
+          </div>
+          <div style="width:180px;height:180px;flex-shrink:0;position:relative;margin:0 auto;">
+            <canvas id="allocDonut" width="180" height="180"></canvas>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Sector / industry breakdown -->
-    <div class="card">
-      <h3>Sector / Industry Breakdown</h3>
-      <p style="font-size:11px;color:#888;margin:-8px 0 14px;">Broad multi-sector funds (index funds, target-date, factor ETFs) are grouped as "Diversified Fund" rather than force-fit into one sector.</p>
-      <div id="sector-bars-list"></div>
+    <div class="card card-collapsible" id="card-sector">
+      <div class="card-header" onclick="toggleCollapsibleCard('card-sector')">
+        <div>
+          <h3 style="margin-bottom:0;">Sector / Industry Breakdown</h3>
+          <div class="card-header-meta" id="card-sector-meta">by sector</div>
+        </div>
+        <div class="chevron"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          <p style="font-size:11px;color:#888;margin:0 0 14px;">Broad multi-sector funds (index funds, target-date, factor ETFs) are grouped as "Diversified Fund" rather than force-fit into one sector.</p>
+          <div id="sector-bars-list"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Build target progress -->
-    <div class="card">
-      <h3>Build Position Progress — vs. Target Weight</h3>
-      <div id="build-targets-list"></div>
+    <div class="card card-collapsible" id="card-build">
+      <div class="card-header" onclick="toggleCollapsibleCard('card-build')">
+        <div>
+          <h3 style="margin-bottom:0;">Build Position Progress — vs. Target Weight</h3>
+          <div class="card-header-meta">AVUV, VXUS</div>
+        </div>
+        <div class="chevron"></div>
+      </div>
+      <div class="card-body">
+        <div class="card-body-inner">
+          <div id="build-targets-list"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Holdings table -->
@@ -457,7 +505,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <span style="width:14px;"></span>
         <span class="hcol" style="width:100px;" onclick="setSort('ticker')">Ticker<span class="arrow">▼</span></span>
         <span class="hcol" style="flex:1;" onclick="setSort('name')">Name<span class="arrow">▼</span></span>
-        <span class="hcol" style="width:80px;text-align:right;justify-content:flex-end;" onclick="setSort('price')">Price<span class="arrow">▼</span></span>
+        <span class="hcol price-col" style="width:80px;text-align:right;justify-content:flex-end;" onclick="setSort('price')">Price<span class="arrow">▼</span></span>
         <span class="hcol" style="width:72px;text-align:right;justify-content:flex-end;" onclick="setSort('dayPct')">Day Chg<span class="arrow">▼</span></span>
         <span class="hcol" style="width:90px;text-align:right;justify-content:flex-end;" onclick="setSort('mv')">Mkt Value<span class="arrow">▼</span></span>
         <span class="hcol" style="width:50px;text-align:right;justify-content:flex-end;" onclick="setSort('wt')">Wt%<span class="arrow">▼</span></span>
@@ -1249,6 +1297,7 @@ function renderAllocBars(){
     const pct = (mv/totalMV*100);
     return `<div class="alloc-row"><div class="alloc-label">${cat}</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:${pct}%;background:${allocColors[cat]}"></div></div><div class="alloc-pct">${pct.toFixed(1)}%</div></div>`;
   }).join('');
+  document.getElementById('card-alloc-meta').textContent = allocCategoryOrder.length + ' categories';
 }
 renderAllocBars();
 
@@ -1269,8 +1318,14 @@ function renderSectorBars(){
     const color = sectorColors[r.sector] || '#64748b';
     return `<div class="alloc-row"><div class="alloc-label">${r.sector}</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:${pct}%;background:${color}"></div></div><div class="alloc-pct">${pct.toFixed(1)}%</div></div>`;
   }).join('');
+  document.getElementById('card-sector-meta').textContent = rows.length + ' sectors';
 }
 renderSectorBars();
+
+// ---- COLLAPSIBLE CARDS (mobile only — CSS media query makes this a no-op on desktop) ----
+function toggleCollapsibleCard(id){
+  document.getElementById(id).classList.toggle('open');
+}
 
 // ---- HOLDINGS TABLE: sortable, filterable, expandable ----
 let holdSort = {key:'mv', dir:'desc'};
@@ -1369,13 +1424,14 @@ function renderHoldings(){
         <span class="caret">▶</span>
         <div class="sym">${h.ticker}${tagHtml}</div>
         <div class="name">${h.name}</div>
-        <div class="price">$${priceDisp}</div>
+        <div class="price price-col">$${priceDisp}</div>
         <div class="chg ${chgClass}">${chgDisp}</div>
         <div class="mv">$${fmt(h.mv,0)}</div>
         <div class="wt">${h.wt.toFixed(1)}%</div>
       </div>
       <div class="hdetail ${isExpanded?'open':''}">
         <div class="hdetail-grid">
+          <div class="hdetail-item price-detail-item"><div class="lbl">Price</div><div class="val price-highlight">$${priceDisp}</div></div>
           <div class="hdetail-item"><div class="lbl">Shares</div><div class="val">${h.ticker==='CASH'?'—':h.qty.toLocaleString()}</div></div>
           <div class="hdetail-item"><div class="lbl">Category</div><div class="val">${h.cat}</div></div>
           <div class="hdetail-item"><div class="lbl">Sector</div><div class="val">${h.sector}</div></div>
