@@ -217,8 +217,18 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 .updated-item{margin-left:auto;display:flex;align-items:center;gap:6px;}
 .updated-item .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;}
 
+/* BOTTOM NAV (mobile app-style) */
+.bottom-nav{display:none;position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid #e5e5e5;padding-bottom:env(safe-area-inset-bottom);}
+.bottom-nav-inner{display:flex;}
+.bottom-nav-btn{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:7px 2px 6px;border:none;background:transparent;color:#888;cursor:pointer;}
+.bottom-nav-btn .icon{font-size:19px;line-height:1;}
+.bottom-nav-btn .lbl{font-size:9.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
+.bottom-nav-btn.active{color:#2563eb;}
+
 @media(max-width:768px){
-  .tab-btn{min-width:70px;font-size:12px;padding:12px 8px;}
+  .tabs{display:none;}
+  .bottom-nav{display:block;}
+  .content{padding-bottom:calc(64px + env(safe-area-inset-bottom));}
   .trow .name{display:none;}
   .hrow .name{display:none;}
   .blue-metrics{grid-template-columns:1fr;}
@@ -280,6 +290,9 @@ body[data-theme="dark"] .unit-toggle button{background:#1a1d24;color:#8b909c;}
 body[data-theme="dark"] .target-bar-wrap{background:#262a33;}
 body[data-theme="dark"] .target-marker{background:#e8e9ec;}
 body[data-theme="dark"] .target-head .sub{color:#8b909c;}
+body[data-theme="dark"] .bottom-nav{background:#161920;border-top-color:#262a33;}
+body[data-theme="dark"] .bottom-nav-btn{color:#8b909c;}
+body[data-theme="dark"] .bottom-nav-btn.active{color:#5b8def;}
 </style>
 </head>
 <body>
@@ -764,6 +777,19 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
   </div>
 
 </div><!-- /content -->
+
+<!-- BOTTOM NAV (mobile app-style) -->
+<div class="bottom-nav">
+  <div class="bottom-nav-inner">
+    <button class="bottom-nav-btn active" onclick="switchTab('today',this)"><span class="icon">🏠</span><span class="lbl">Today</span></button>
+    <button class="bottom-nav-btn" onclick="switchTab('portfolio',this)"><span class="icon">📋</span><span class="lbl">Portfolio</span></button>
+    <button class="bottom-nav-btn" onclick="switchTab('retirement',this)"><span class="icon">⏰</span><span class="lbl">Retire</span></button>
+    <button class="bottom-nav-btn" onclick="switchTab('income',this)"><span class="icon">💰</span><span class="lbl">Income</span></button>
+    <button class="bottom-nav-btn" onclick="switchTab('research',this)"><span class="icon">🔍</span><span class="lbl">Research</span></button>
+    <button class="bottom-nav-btn" onclick="switchTab('reports',this)"><span class="icon">📊</span><span class="lbl">Reports</span></button>
+    <button class="bottom-nav-btn" onclick="switchTab('news',this)"><span class="icon">📰</span><span class="lbl">News</span></button>
+  </div>
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
@@ -1376,9 +1402,10 @@ function toggleTheme(){
 // ---- TAB SWITCH ----
 function switchTab(id, btn){
   document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-btn, .bottom-nav-btn').forEach(b=>b.classList.remove('active'));
   document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
+  // activate this control plus its counterpart in the other nav (top tabs <-> bottom nav)
+  document.querySelectorAll(`[onclick*="switchTab('${id}'"]`).forEach(b=>b.classList.add('active'));
 }
 
 // ---- HELPERS ----
