@@ -365,31 +365,10 @@ body[data-theme="dark"] .bottom-nav-btn.active{color:#5b8def;}
 
     <div class="card">
       <h3>Dollar Drivers — Top Contributors</h3>
+      <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Contributors</div>
       <div id="contributors-list"></div>
-    </div>
-
-    <div class="card">
-      <h3>Portfolio Quality Checklist</h3>
-      <div class="quality-row">
-        <div class="item">Multi-stock concentration (AMZN, JPM, GS, AAPL, MA &gt;6%)</div>
-        <div class="status-warn">Review</div>
-      </div>
-      <div class="quality-row">
-        <div class="item">Cash reserve — <span id="cash-quality-pct">2.6%</span> vs 2–4% target</div>
-        <div class="status-ok">On Track</div>
-      </div>
-      <div class="quality-row">
-        <div class="item">AVUV + VXUS — staged build priority</div>
-        <div class="status-build">Building</div>
-      </div>
-      <div class="quality-row">
-        <div class="item">GEV satellite — starter position (30 shares)</div>
-        <div class="status-ok">On Track</div>
-      </div>
-      <div class="quality-row">
-        <div class="item">Top-5 concentration</div>
-        <div class="status-warn" id="top5-concentration">—</div>
-      </div>
+      <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 8px;">Detractors</div>
+      <div id="detractors-list"></div>
     </div>
   </div>
 
@@ -897,25 +876,25 @@ dayEl.textContent = (totalDayChange>=0?'+':'')+fmtDollar(totalDayChange);
 dayEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
 document.getElementById('day-pct').textContent = (totalDayChange>=0?'+':'')+((totalDayChange/totalMV)*100).toFixed(2)+'%';
 document.getElementById('breadth').textContent = advancers+' / '+decliners;
-document.getElementById('top5-concentration').textContent = top5pct.toFixed(1)+'%';
 document.getElementById('cash-sub').textContent = cashPct.toFixed(1)+'% — On Track (2–4%)';
-document.getElementById('cash-quality-pct').textContent = cashPct.toFixed(1)+'%';
 document.getElementById('sum-cash-pct').textContent = cashPct.toFixed(1)+'%';
 renderBuildTargets();
 
-// Contributors
-const sorted = [...holdings].filter(h=>h.ticker!=='CASH').sort((a,b)=>Math.abs(b.dayDollar)-Math.abs(a.dayDollar));
-const contEl = document.getElementById('contributors-list');
-sorted.slice(0,6).forEach(h=>{
+// Contributors & Detractors (split, ranked by $ impact)
+const gainers = holdings.filter(h=>h.ticker!=='CASH' && h.dayDollar>0).sort((a,b)=>b.dayDollar-a.dayDollar).slice(0,5);
+const losers = holdings.filter(h=>h.ticker!=='CASH' && h.dayDollar<0).sort((a,b)=>a.dayDollar-b.dayDollar).slice(0,5);
+function renderDriverRow(h){
   const up = h.dayDollar >= 0;
-  contEl.innerHTML += `<div class="trow">
+  return `<div class="trow">
     <div class="sym">${h.ticker}</div>
     <div class="name">${h.name}</div>
     <div class="price">$${h.price.toFixed(2)}</div>
     <div class="chg ${up?'up-color':'dn-color'}">${up?'+':''}${h.dayPct.toFixed(2)}%</div>
     <div class="mv ${up?'up-color':'dn-color'}">${up?'+':''}${fmtDollar(h.dayDollar)}</div>
   </div>`;
-});
+}
+document.getElementById('contributors-list').innerHTML = gainers.length ? gainers.map(renderDriverRow).join('') : '<div class="no-results">No advancers today.</div>';
+document.getElementById('detractors-list').innerHTML = losers.length ? losers.map(renderDriverRow).join('') : '<div class="no-results">No decliners today.</div>';
 
 // ---- SUMMARY BAR (sticky, shown across all tabs) ----
 document.getElementById('sum-total').textContent = '$'+fmt(totalMV,0);
