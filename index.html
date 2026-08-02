@@ -21,7 +21,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
 /* SCROLLING TICKER */
 .ticker-bar{background:#1a1a1a;color:#fff;padding:calc(8px + env(safe-area-inset-top)) 0 8px;overflow:hidden;white-space:nowrap;}
-.ticker-track{display:inline-flex;animation:scroll 40s linear infinite;}
+.ticker-track{display:inline-flex;animation:scroll 90s linear infinite;}
 .ticker-track:hover{animation-play-state:paused;}
 .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 28px;border-right:1px solid #333;}
 .ticker-item .sym{font-weight:700;font-size:13px;letter-spacing:.3px;}
@@ -1184,6 +1184,17 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
+// ---- RESTORE SAVED PREFERENCES (runs first, before any rendering, to avoid a flash
+// of the wrong theme) — dark/light mode and the $/% day-change toggle both persist
+// across visits via localStorage. ----
+(function restoreTheme(){
+  if(localStorage.getItem('pcc-theme') === 'dark'){
+    document.body.setAttribute('data-theme','dark');
+    const btn = document.getElementById('themeToggle');
+    if(btn) btn.textContent = '☀️';
+  }
+})();
+
 // === PORTFOLIO DATA — corrected from Morningstar export (retirement-portfolio-14.csv)
 // with live quotes pulled Aug 1, 2026: Robinhood for tradable equities/ETFs, Alpha Vantage
 // (GLOBAL_QUOTE) for the 4 mutual funds Robinhood doesn't carry (FSMDX, FSSNX, TLXIX, VFFSX).
@@ -1387,16 +1398,27 @@ function toggleCollapsibleCard(id){
 // ---- HOLDINGS TABLE: sortable, filterable, expandable ----
 let holdSort = {key:'mv', dir:'desc'};
 let expandedTickers = new Set();
-let unitMode = 'pct';
+let unitMode = localStorage.getItem('pcc-unit-mode') || 'pct';
 const coreForeverHolds = new Set(['AMZN','JPM','GS','AAPL','MA']);
 const buildPositions = new Set(['AVUV','VXUS']);
 
 function setUnitMode(mode, btn){
   unitMode = mode;
+  localStorage.setItem('pcc-unit-mode', mode);
   btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderHoldings();
 }
+
+// Reflect a restored $/% preference in the toggle button itself (the HTML defaults
+// to "%" active; if "$" was saved last time, swap which button shows active here).
+(function applyRestoredUnitModeUI(){
+  const toggle = document.getElementById('unitToggle');
+  if(!toggle) return;
+  const buttons = toggle.querySelectorAll('button');
+  buttons.forEach(b=>b.classList.remove('active'));
+  (unitMode === 'dollar' ? buttons[1] : buttons[0])?.classList.add('active');
+})();
 
 // Populate category dropdown, ordered to match the Allocation by Asset Class card above
 function populateCategoryFilter(){
@@ -1930,9 +1952,11 @@ function toggleTheme(){
   if(isDark){
     document.body.removeAttribute('data-theme');
     document.getElementById('themeToggle').textContent = '🌙';
+    localStorage.setItem('pcc-theme', 'light');
   } else {
     document.body.setAttribute('data-theme','dark');
     document.getElementById('themeToggle').textContent = '☀️';
+    localStorage.setItem('pcc-theme', 'dark');
   }
   if(window.allocChart) updateAllocChartColors();
 }
