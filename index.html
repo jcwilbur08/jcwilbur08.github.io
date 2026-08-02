@@ -316,7 +316,7 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
     <div class="summary-item"><span class="lbl">Value</span><span class="val" id="sum-total">—</span></div>
     <div class="summary-item"><span class="lbl">Day P/L</span><span class="val" id="sum-day">—</span></div>
     <div class="summary-item"><span class="lbl">Day %</span><span class="val" id="sum-day-pct">—</span></div>
-    <div class="summary-item"><span class="lbl">Cash</span><span class="val">2.6%</span></div>
+    <div class="summary-item"><span class="lbl">Cash</span><span class="val" id="sum-cash-pct">2.6%</span></div>
     <div class="summary-item updated-item"><span class="dot"></span><span class="lbl">Updated</span><span class="val" id="sum-updated" style="font-weight:600;font-size:12px;">—</span></div>
   </div>
 </div>
@@ -346,7 +346,7 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
       <div class="metric">
         <div class="lbl">Cash Position</div>
         <div class="val">$43,000</div>
-        <div class="sub on-track">2.5% — On Track (2–4%)</div>
+        <div class="sub on-track" id="cash-sub">2.6% — On Track (2–4%)</div>
       </div>
     </div>
 
@@ -362,7 +362,7 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
         <div class="status-warn">Review</div>
       </div>
       <div class="quality-row">
-        <div class="item">Cash reserve — 2.6% vs 2–4% target</div>
+        <div class="item">Cash reserve — <span id="cash-quality-pct">2.6%</span> vs 2–4% target</div>
         <div class="status-ok">On Track</div>
       </div>
       <div class="quality-row">
@@ -370,7 +370,7 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
         <div class="status-build">Building</div>
       </div>
       <div class="quality-row">
-        <div class="item">GEV satellite — starter position (6 shares)</div>
+        <div class="item">GEV satellite — starter position (30 shares)</div>
         <div class="status-ok">On Track</div>
       </div>
       <div class="quality-row">
@@ -391,7 +391,7 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
       </div>
       <div class="metric">
         <div class="lbl">Positions</div>
-        <div class="val">35</div>
+        <div class="val" id="port-positions">35</div>
       </div>
       <div class="metric">
         <div class="lbl">Day Change</div>
@@ -403,13 +403,7 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
     <div class="card">
       <h3>Allocation by Asset Class</h3>
       <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:center;">
-        <div style="flex:1;min-width:220px;">
-          <div class="alloc-row"><div class="alloc-label">U.S. individual stocks</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:74.3%"></div></div><div class="alloc-pct">74.3%</div></div>
-          <div class="alloc-row"><div class="alloc-label">Target-date / mixed</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:9.2%;background:#7c3aed"></div></div><div class="alloc-pct">9.2%</div></div>
-          <div class="alloc-row"><div class="alloc-label">U.S. small &amp; mid cap</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:7.8%;background:#0891b2"></div></div><div class="alloc-pct">7.8%</div></div>
-          <div class="alloc-row"><div class="alloc-label">U.S. diversified funds</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:3.9%;background:#16a34a"></div></div><div class="alloc-pct">3.9%</div></div>
-          <div class="alloc-row"><div class="alloc-label">International equity</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:2.4%;background:#d97706"></div></div><div class="alloc-pct">2.4%</div></div>
-          <div class="alloc-row"><div class="alloc-label">Cash &amp; equivalents</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:2.5%;background:#888"></div></div><div class="alloc-pct">2.5%</div></div>
+        <div style="flex:1;min-width:220px;" id="alloc-bars-list">
         </div>
         <div style="width:180px;height:180px;flex-shrink:0;position:relative;margin:0 auto;">
           <canvas id="allocDonut" width="180" height="180"></canvas>
@@ -499,8 +493,8 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
     <div class="metrics-row">
       <div class="metric">
         <div class="lbl">Current Annual Dividend</div>
-        <div class="val">$22,516</div>
-        <div class="sub">$1,876/month</div>
+        <div class="val" id="inc-annual-div">$22,516</div>
+        <div class="sub" id="inc-annual-div-mo">$1,876/month</div>
       </div>
       <div class="metric">
         <div class="lbl">Projected in 11 Years</div>
@@ -509,11 +503,11 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
       </div>
       <div class="metric">
         <div class="lbl">Portfolio Yield</div>
-        <div class="val">1.38%</div>
+        <div class="val" id="inc-yield">1.38%</div>
       </div>
       <div class="metric">
         <div class="lbl">Income Concentration</div>
-        <div class="val">43%</div>
+        <div class="val" id="inc-concentration">43%</div>
         <div class="sub">Top 5 contributors</div>
       </div>
     </div>
@@ -532,21 +526,12 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
 
     <div class="card">
       <h3>Income by Category</h3>
-      <div class="trow"><div class="sym">Stocks</div><div class="name">U.S. individual stocks</div><div class="mv">$16,124</div></div>
-      <div class="trow"><div class="sym">TLXIX</div><div class="name">Target-date / mixed</div><div class="mv">$2,412</div></div>
-      <div class="trow"><div class="sym">Sm/Mid</div><div class="name">U.S. small &amp; mid cap</div><div class="mv">$1,596</div></div>
-      <div class="trow"><div class="sym">VXUS</div><div class="name">International equity</div><div class="mv">$1,279</div></div>
-      <div class="trow"><div class="sym">Funds</div><div class="name">U.S. diversified funds</div><div class="mv">$1,105</div></div>
+      <div id="income-by-cat-list"></div>
     </div>
 
     <div class="card">
       <h3>Top Dividend Contributors</h3>
-      <div class="trow"><div class="sym">TLXIX</div><div class="name">Nuveen Lifecycle Index</div><div class="mv">$2,412</div><div class="wt">1.50%</div></div>
-      <div class="trow"><div class="sym">JPM</div><div class="name">JPMorgan Chase</div><div class="mv">$2,191</div><div class="wt">1.74%</div></div>
-      <div class="trow"><div class="sym">GS</div><div class="name">Goldman Sachs</div><div class="mv">$1,774</div><div class="wt">1.66%</div></div>
-      <div class="trow"><div class="sym">AMT</div><div class="name">American Tower</div><div class="mv">$1,657</div><div class="wt">4.15%</div></div>
-      <div class="trow"><div class="sym">XOM</div><div class="name">ExxonMobil</div><div class="mv">$1,610</div><div class="wt">2.75%</div></div>
-      <div class="trow"><div class="sym">VXUS</div><div class="name">Vanguard Intl Stock ETF</div><div class="mv">$1,279</div><div class="wt">2.00%</div></div>
+      <div id="top-div-list"></div>
     </div>
   </div>
 
@@ -582,7 +567,7 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
         </div>
         <div class="thesis-meta">
           <span>Conviction: <strong>High</strong></span>
-          <span>Weight: ~5–6%</span>
+          <span>Weight: ~2.7%</span>
           <span>Reviewed: July 2026</span>
         </div>
         <div class="thesis-body">
@@ -599,11 +584,11 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
         </div>
         <div class="thesis-meta">
           <span>Conviction: <strong>High</strong></span>
-          <span>Weight: ~3–4%</span>
-          <span>Last added: July 2026 (13 shares @ $599)</span>
+          <span>Weight: ~2.2%</span>
+          <span>Last added: July 2026</span>
         </div>
         <div class="thesis-body">
-          Meta controls the most powerful digital advertising duopoly with Facebook and Instagram, complemented by the fastest-growing platform in Reels and WhatsApp. AI investments are being monetized rapidly through ad-ranking improvements and Llama-based tooling. Reality Labs remains a long-term optionality bet. FCF generation is exceptional and the balance sheet is a fortress. The 13-share add at $599 rounds out the position.
+          Meta controls the most powerful digital advertising duopoly with Facebook and Instagram, complemented by the fastest-growing platform in Reels and WhatsApp. AI investments are being monetized rapidly through ad-ranking improvements and Llama-based tooling. Reality Labs remains a long-term optionality bet. FCF generation is exceptional and the balance sheet is a fortress.
         </div>
       </div>
 
@@ -647,7 +632,7 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
         </div>
         <div class="thesis-meta">
           <span>Conviction: <strong>High</strong></span>
-          <span>Weight: ~6.5%</span>
+          <span>Weight: ~6.1%</span>
           <span>Core Forever Hold</span>
         </div>
         <div class="thesis-body">
@@ -663,11 +648,11 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
         </div>
         <div class="thesis-meta">
           <span>Conviction: <strong>High</strong></span>
-          <span>Weight: ~1.6%</span>
+          <span>Weight: ~1.7%</span>
           <span>Layering in — target 8–10%</span>
         </div>
         <div class="thesis-body">
-          AVUV captures the small-cap value factor premium with disciplined profitability screening — a historically compelling risk/return profile over long horizons. Combined with VXUS, these are the portfolio's primary diversification builders away from U.S. mega-cap concentration. Actively staging into the position over time. Added 50 shares in July 2026.
+          AVUV captures the small-cap value factor premium with disciplined profitability screening — a historically compelling risk/return profile over long horizons. Combined with VXUS, these are the portfolio's primary diversification builders away from U.S. mega-cap concentration. Actively staging into the position over time.
         </div>
       </div>
 
@@ -683,7 +668,7 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
           <span>Layering in — target 6–8%</span>
         </div>
         <div class="thesis-body">
-          International equities are historically undervalued relative to U.S. markets, and VXUS provides broad, low-cost exposure across developed and emerging markets. Serves as a portfolio diversifier and hedge against U.S. valuation concentration. Added 100 shares in July 2026 as part of the systematic diversification build.
+          International equities are historically undervalued relative to U.S. markets, and VXUS provides broad, low-cost exposure across developed and emerging markets. Serves as a portfolio diversifier and hedge against U.S. valuation concentration.
         </div>
       </div>
 
@@ -696,10 +681,10 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
         <div class="thesis-meta">
           <span>Conviction: <strong>Medium</strong></span>
           <span>Weight: ~1.8%</span>
-          <span>Starter — 6 shares @ $1,015 (July 2026)</span>
+          <span>Starter — 30 shares (July 2026)</span>
         </div>
         <div class="thesis-body">
-          GE Vernova is a premier power infrastructure and grid modernization pure-play — perfectly positioned for AI data center power demand, electrification, and the U.S. grid buildout. Initiated a small 6-share position ahead of July 22 earnings to establish a beachhead. Watching earnings and guidance closely before adding meaningfully. High conviction on the theme, medium on current valuation.
+          GE Vernova is a premier power infrastructure and grid modernization pure-play — perfectly positioned for AI data center power demand, electrification, and the U.S. grid buildout. Initiated a small starter position ahead of July earnings to establish a beachhead. Watching earnings and guidance closely before adding meaningfully. High conviction on the theme, medium on current valuation.
         </div>
       </div>
 
@@ -727,7 +712,7 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
         </div>
         <div class="thesis-meta">
           <span>Conviction: <strong>Medium-Low</strong></span>
-          <span>Weight: ~1.5%</span>
+          <span>Weight: ~0.9%</span>
           <span>Under review — Snapdragon PC cycle + Apple risk</span>
         </div>
         <div class="thesis-body">
@@ -743,7 +728,7 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
         </div>
         <div class="thesis-meta">
           <span>Conviction: <strong>Medium</strong></span>
-          <span>Weight: ~small</span>
+          <span>Weight: ~2.2%</span>
           <span>Monitoring ad-tier ramp</span>
         </div>
         <div class="thesis-body">
@@ -782,42 +767,46 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
-// === PORTFOLIO DATA with live Robinhood quotes (pulled Aug 1, 2026) ===
+// === PORTFOLIO DATA — corrected from Morningstar export (retirement-portfolio-14.csv)
+// with live Robinhood quotes pulled Aug 1, 2026. Mutual funds not carried by Robinhood
+// (FSMDX, FSSNX, TLXIX, VFFSX) use the export's price with no live day-change. ===
 const holdings = [
-  {ticker:'AMZN', name:'Amazon Inc',              qty:521,   price:271.57, prev:235.50, cat:'U.S. individual stocks',  div:0},
-  {ticker:'JPM',  name:'JPMorgan Chase',          qty:358,   price:351.84, prev:350.85, cat:'U.S. individual stocks',  div:1.74},
-  {ticker:'GS',   name:'Goldman Sachs',           qty:105,   price:1017.98,prev:1024.86,cat:'U.S. individual stocks',  div:1.66},
-  {ticker:'AAPL', name:'Apple Inc',               qty:340,   price:309.03, prev:333.43, cat:'U.S. individual stocks',  div:0.43},
-  {ticker:'MA',   name:'Mastercard Inc',          qty:187,   price:573.38, prev:577.35, cat:'U.S. individual stocks',  div:0.37},
-  {ticker:'META', name:'Meta Platforms',          qty:175,   price:556.50, prev:539.03, cat:'U.S. individual stocks',  div:0},
-  {ticker:'AVGO', name:'Broadcom Inc',            qty:240,   price:389.27, prev:387.84, cat:'U.S. individual stocks',  div:1.25},
-  {ticker:'MSFT', name:'Microsoft Corp',          qty:155,   price:465.10, prev:451.10, cat:'U.S. individual stocks',  div:0.68},
-  {ticker:'XOM',  name:'ExxonMobil',              qty:265,   price:155.46, prev:156.97, cat:'U.S. individual stocks',  div:2.75},
-  {ticker:'V',    name:'Visa Inc',                qty:175,   price:366.16, prev:366.27, cat:'U.S. individual stocks',  div:0.68},
-  {ticker:'AXP',  name:'American Express',        qty:160,   price:336.25, prev:337.52, cat:'U.S. individual stocks',  div:0.86},
-  {ticker:'PM',   name:'Philip Morris Intl',      qty:230,   price:190.80, prev:192.00, cat:'U.S. individual stocks',  div:4.30},
-  {ticker:'AMT',  name:'American Tower',          qty:230,   price:173.41, prev:174.46, cat:'U.S. individual stocks',  div:4.15},
-  {ticker:'KO',   name:'Coca-Cola Co',            qty:280,   price:87.59,  prev:88.49,  cat:'U.S. individual stocks',  div:2.97},
-  {ticker:'PEP',  name:'PepsiCo Inc',             qty:195,   price:139.56, prev:140.20, cat:'U.S. individual stocks',  div:3.38},
-  {ticker:'UNH',  name:'UnitedHealth Group',      qty:65,    price:414.36, prev:421.47, cat:'U.S. individual stocks',  div:1.37},
-  {ticker:'SO',   name:'Southern Company',        qty:377,   price:94.59,  prev:94.34,  cat:'U.S. individual stocks',  div:3.30},
-  {ticker:'BMY',  name:'Bristol-Myers Squibb',    qty:330,   price:65.30,  prev:64.86,  cat:'U.S. individual stocks',  div:5.10},
-  {ticker:'CRM',  name:'Salesforce Inc',          qty:99,    price:184.03, prev:180.71, cat:'U.S. individual stocks',  div:0},
-  {ticker:'DIS',  name:'Walt Disney Co',          qty:180,   price:96.22,  prev:96.16,  cat:'U.S. individual stocks',  div:0},
-  {ticker:'QCOM', name:'Qualcomm Inc',            qty:215,   price:147.60, prev:151.60, cat:'U.S. individual stocks',  div:2.00},
-  {ticker:'NFLX', name:'Netflix Inc',             qty:18,    price:71.70,  prev:73.17,  cat:'U.S. individual stocks',  div:0},
-  {ticker:'GEV',  name:'GE Vernova',              qty:6,     price:990.12, prev:981.98, cat:'U.S. individual stocks',  div:0.25},
-  {ticker:'TLXIX',name:'Nuveen Lifecycle Index',  qty:4090,  price:39.32,  prev:39.32,  cat:'Target-date / mixed',     div:1.50},
-  {ticker:'AVUV', name:'Avantis U.S. Sm Cap Val', qty:223,   price:125.26, prev:125.24, cat:'U.S. small & mid cap',    div:1.18},
-  {ticker:'FSSNX',name:'Fidelity Small Cap Index',qty:1800,  price:22.50,  prev:22.45,  cat:'U.S. small & mid cap',    div:0.80},
-  {ticker:'FSMDX',name:'Fidelity Mid Cap Index',  qty:900,   price:33.10,  prev:33.05,  cat:'U.S. small & mid cap',    div:0.85},
-  {ticker:'IJH',  name:'iShares S&P 400 Mid Cap', qty:220,   price:75.28,  prev:75.35,  cat:'U.S. small & mid cap',    div:1.20},
-  {ticker:'VTWO', name:'Vanguard Russell 2000',   qty:180,   price:117.70, prev:118.23, cat:'U.S. small & mid cap',    div:1.30},
-  {ticker:'VXUS', name:'Vanguard Total Intl',     qty:500,   price:84.59,  prev:84.77,  cat:'International equity',    div:2.00},
-  {ticker:'SCHD', name:'Schwab US Div Equity',    qty:320,   price:33.45,  prev:33.41,  cat:'U.S. diversified funds',  div:3.50},
-  {ticker:'GRID', name:'First Trust NASDAQ CEA',  qty:185,   price:179.35, prev:176.64, cat:'U.S. diversified funds',  div:1.10},
-  {ticker:'SOXQ', name:'Invesco Semicond ETF',    qty:280,   price:89.03,  prev:88.92,  cat:'U.S. diversified funds',  div:0.50},
-  {ticker:'CASH', name:'Cash & Equivalents',      qty:1,     price:43000,  prev:43000,  cat:'Cash & equivalents',      div:5.00},
+  {ticker:'GOOG', name:'Alphabet Inc Class C',     qty:145,     price:356.71,  prev:333.68,  cat:'U.S. individual stocks',  div:0.24},
+  {ticker:'AMZN', name:'Amazon Inc',               qty:520,     price:271.57,  prev:235.50,  cat:'U.S. individual stocks',  div:0},
+  {ticker:'AXP',  name:'American Express',         qty:100,     price:336.25,  prev:337.52,  cat:'U.S. individual stocks',  div:0.98},
+  {ticker:'AMT',  name:'American Tower',           qty:230.217, price:173.41,  prev:174.46,  cat:'U.S. individual stocks',  div:4.20},
+  {ticker:'AAPL', name:'Apple Inc',                qty:340,     price:309.03,  prev:333.43,  cat:'U.S. individual stocks',  div:0.43},
+  {ticker:'AVUV', name:'Avantis U.S. Sm Cap Val',  qty:223,     price:125.26,  prev:125.24,  cat:'U.S. small & mid cap',    div:1.18},
+  {ticker:'BMY',  name:'Bristol-Myers Squibb',     qty:320,     price:65.30,   prev:64.86,   cat:'U.S. individual stocks',  div:5.10},
+  {ticker:'AVGO', name:'Broadcom Inc',             qty:115,     price:389.27,  prev:387.84,  cat:'U.S. individual stocks',  div:1.25},
+  {ticker:'KO',   name:'Coca-Cola Co',             qty:293.187, price:87.585,  prev:88.49,   cat:'U.S. individual stocks',  div:2.33},
+  {ticker:'XOM',  name:'ExxonMobil',               qty:376.687, price:155.46,  prev:156.97,  cat:'U.S. individual stocks',  div:2.55},
+  {ticker:'FSMDX',name:'Fidelity Mid Cap Index',   qty:678.39,  price:42.33,   prev:42.33,   cat:'U.S. small & mid cap',    div:1.30},
+  {ticker:'FSSNX',name:'Fidelity Small Cap Index', qty:810.811, price:36.73,   prev:36.73,   cat:'U.S. small & mid cap',    div:1.10},
+  {ticker:'GRID', name:'First Trust NASDAQ CEA',   qty:8,       price:179.35,  prev:176.64,  cat:'U.S. diversified funds',  div:0.70},
+  {ticker:'GEV',  name:'GE Vernova',               qty:30,      price:990.115, prev:981.98,  cat:'U.S. individual stocks',  div:0.03},
+  {ticker:'SOXQ', name:'Invesco Semicond ETF',     qty:12,      price:89.03,   prev:88.92,   cat:'U.S. diversified funds',  div:0.50},
+  {ticker:'IJH',  name:'iShares S&P 400 Mid Cap',  qty:270.076, price:75.28,   prev:75.35,   cat:'U.S. small & mid cap',    div:1.20},
+  {ticker:'JPM',  name:'JPMorgan Chase',           qty:357.851, price:351.84,  prev:350.85,  cat:'U.S. individual stocks',  div:1.74},
+  {ticker:'MA',   name:'Mastercard Inc',           qty:172.761, price:573.38,  prev:577.35,  cat:'U.S. individual stocks',  div:0.37},
+  {ticker:'META', name:'Meta Platforms',           qty:63,      price:556.50,  prev:539.03,  cat:'U.S. individual stocks',  div:0},
+  {ticker:'MSFT', name:'Microsoft Corp',           qty:100,     price:465.10,  prev:451.10,  cat:'U.S. individual stocks',  div:0.68},
+  {ticker:'NFLX', name:'Netflix Inc',              qty:500,     price:71.695,  prev:73.17,   cat:'U.S. individual stocks',  div:0},
+  {ticker:'TLXIX',name:'Nuveen Lifecycle Index',   qty:4089.97, price:39.46,   prev:39.46,   cat:'Target-date / mixed',     div:1.50},
+  {ticker:'PEP',  name:'PepsiCo Inc',              qty:155,     price:139.56,  prev:140.20,  cat:'U.S. individual stocks',  div:3.38},
+  {ticker:'PM',   name:'Philip Morris Intl',       qty:179.462, price:190.80,  prev:192.00,  cat:'U.S. individual stocks',  div:4.30},
+  {ticker:'QCOM', name:'Qualcomm Inc',             qty:104.415, price:147.60,  prev:151.60,  cat:'U.S. individual stocks',  div:2.00},
+  {ticker:'CRM',  name:'Salesforce Inc',           qty:99,      price:184.03,  prev:180.71,  cat:'U.S. individual stocks',  div:0},
+  {ticker:'SCHD', name:'Schwab US Div Equity',     qty:604,     price:33.45,   prev:33.41,   cat:'U.S. diversified funds',  div:3.50},
+  {ticker:'SO',   name:'Southern Company',         qty:377.4,   price:94.59,   prev:94.34,   cat:'U.S. individual stocks',  div:3.30},
+  {ticker:'GS',   name:'Goldman Sachs',            qty:105,     price:1017.98, prev:1024.86, cat:'U.S. individual stocks',  div:1.66},
+  {ticker:'DIS',  name:'Walt Disney Co',           qty:196.17,  price:96.22,   prev:96.16,   cat:'U.S. individual stocks',  div:0},
+  {ticker:'UNH',  name:'UnitedHealth Group',       qty:50.22,   price:414.36,  prev:421.47,  cat:'U.S. individual stocks',  div:1.37},
+  {ticker:'VFFSX',name:'Vanguard 500 Index',       qty:100,     price:366.66,  prev:366.66,  cat:'U.S. diversified funds',  div:1.30},
+  {ticker:'VTWO', name:'Vanguard Russell 2000',    qty:126,     price:117.70,  prev:118.23,  cat:'U.S. small & mid cap',    div:1.30},
+  {ticker:'VXUS', name:'Vanguard Total Intl',      qty:504,     price:84.585,  prev:84.77,   cat:'International equity',    div:2.00},
+  {ticker:'V',    name:'Visa Inc',                 qty:100,     price:366.16,  prev:366.27,  cat:'U.S. individual stocks',  div:0.68},
+  {ticker:'CASH', name:'Cash & Equivalents',       qty:1,       price:43000,   prev:43000,   cat:'Cash & equivalents',      div:5.00},
 ];
 
 // Compute market values
@@ -833,6 +822,7 @@ holdings.forEach(h => h.wt = (h.mv / totalMV) * 100);
 const totalDayChange = holdings.reduce((s,h) => s + h.dayDollar, 0);
 const advancers = holdings.filter(h => h.ticker !== 'CASH' && h.dayDollar > 0).length;
 const decliners = holdings.filter(h => h.ticker !== 'CASH' && h.dayDollar < 0).length;
+const cashPct = (holdings.find(h=>h.ticker==='CASH').mv / totalMV) * 100;
 
 // Top 5 concentration
 const top5 = holdings.filter(h=>h.ticker!=='CASH').sort((a,b)=>b.mv-a.mv).slice(0,5);
@@ -882,6 +872,9 @@ dayEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
 document.getElementById('day-pct').textContent = (totalDayChange>=0?'+':'')+((totalDayChange/totalMV)*100).toFixed(2)+'%';
 document.getElementById('breadth').textContent = advancers+' / '+decliners;
 document.getElementById('top5-concentration').textContent = top5pct.toFixed(1)+'%';
+document.getElementById('cash-sub').textContent = cashPct.toFixed(1)+'% — On Track (2–4%)';
+document.getElementById('cash-quality-pct').textContent = cashPct.toFixed(1)+'%';
+document.getElementById('sum-cash-pct').textContent = cashPct.toFixed(1)+'%';
 renderBuildTargets();
 
 // Contributors
@@ -910,9 +903,30 @@ document.getElementById('sum-updated').textContent = 'Jul 31, 4:00 PM ET';
 
 // ---- PORTFOLIO ----
 document.getElementById('port-total').textContent = '$'+fmt(totalMV,0);
+document.getElementById('port-positions').textContent = holdings.filter(h=>h.ticker!=='CASH').length;
 const portDay = document.getElementById('port-day');
 portDay.textContent = (totalDayChange>=0?'+':'')+fmtDollar(totalDayChange);
 portDay.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
+
+// ---- ALLOCATION BARS (dynamic, matches donut) ----
+const allocCategoryOrder = ['U.S. individual stocks','Target-date / mixed','U.S. small & mid cap','U.S. diversified funds','International equity','Cash & equivalents'];
+const allocColors = {
+  'U.S. individual stocks':'#2563eb',
+  'Target-date / mixed':'#7c3aed',
+  'U.S. small & mid cap':'#0891b2',
+  'U.S. diversified funds':'#16a34a',
+  'International equity':'#d97706',
+  'Cash & equivalents':'#888888'
+};
+function renderAllocBars(){
+  const el = document.getElementById('alloc-bars-list');
+  el.innerHTML = allocCategoryOrder.map(cat=>{
+    const mv = holdings.filter(h=>h.cat===cat).reduce((s,h)=>s+h.mv,0);
+    const pct = (mv/totalMV*100);
+    return `<div class="alloc-row"><div class="alloc-label">${cat}</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:${pct}%;background:${allocColors[cat]}"></div></div><div class="alloc-pct">${pct.toFixed(1)}%</div></div>`;
+  }).join('');
+}
+renderAllocBars();
 
 // ---- HOLDINGS TABLE: sortable, filterable, expandable ----
 let holdSort = {key:'mv', dir:'desc'};
@@ -1038,15 +1052,6 @@ renderHoldings();
 try {
   if (typeof Chart === 'undefined') throw new Error('Chart.js failed to load from CDN');
 
-  const allocCategoryOrder = ['U.S. individual stocks','Target-date / mixed','U.S. small & mid cap','U.S. diversified funds','International equity','Cash & equivalents'];
-  const allocColors = {
-    'U.S. individual stocks':'#2563eb',
-    'Target-date / mixed':'#7c3aed',
-    'U.S. small & mid cap':'#0891b2',
-    'U.S. diversified funds':'#16a34a',
-    'International equity':'#d97706',
-    'Cash & equivalents':'#888888'
-  };
   const allocByCategory = allocCategoryOrder.map(cat => holdings.filter(h=>h.cat===cat).reduce((s,h)=>s+h.mv,0));
 
   const centerTextPlugin = {
@@ -1108,7 +1113,8 @@ function updateAllocChartColors(){
 }
 
 // ---- TICKER BAR ----
-const tickers = [...holdings].filter(h=>h.ticker!=='CASH' && h.ticker!=='TLXIX' && h.ticker!=='FSSNX' && h.ticker!=='FSMDX').sort((a,b)=>b.mv-a.mv);
+const mutualFundTickers = ['CASH','TLXIX','FSSNX','FSMDX','VFFSX'];
+const tickers = [...holdings].filter(h=>!mutualFundTickers.includes(h.ticker)).sort((a,b)=>b.mv-a.mv);
 let tickerHtml = '';
 tickers.forEach(h=>{
   const up = h.dayPct >= 0;
@@ -1145,18 +1151,49 @@ function calcRetirement(){
 }
 calcRetirement();
 
-// ---- INCOME ----
-const baseDivIncome = 22516;
+// ---- INCOME (fully dynamic from holdings' dividend yields) ----
+const totalAnnualDiv = holdings.reduce((s,h)=>s+h.divAnnual,0);
+const portfolioYield = (totalAnnualDiv/totalMV)*100;
+
 function calcDividends(){
   const growth = +document.getElementById('div-growth').value / 100;
   const years = +document.getElementById('div-years').value;
-  const proj = baseDivIncome * Math.pow(1+growth, years);
+  const proj = totalAnnualDiv * Math.pow(1+growth, years);
   document.getElementById('div-growth-val').textContent = (+document.getElementById('div-growth').value).toFixed(1)+'%';
   document.getElementById('div-years-val').textContent = Math.round(years)+' years';
   document.getElementById('proj-div').textContent = '$'+Math.round(proj).toLocaleString();
   document.getElementById('proj-div-mo').textContent = '$'+Math.round(proj/12).toLocaleString()+'/month';
 }
+
+document.getElementById('inc-annual-div').textContent = '$'+Math.round(totalAnnualDiv).toLocaleString();
+document.getElementById('inc-annual-div-mo').textContent = '$'+Math.round(totalAnnualDiv/12).toLocaleString()+'/month';
+document.getElementById('inc-yield').textContent = portfolioYield.toFixed(2)+'%';
 calcDividends();
+
+// Income by category
+const incomeByCatOrder = ['U.S. individual stocks','Target-date / mixed','U.S. small & mid cap','International equity','U.S. diversified funds','Cash & equivalents'];
+const incomeByCatLabel = {
+  'U.S. individual stocks':'Stocks','Target-date / mixed':'TLXIX','U.S. small & mid cap':'Sm/Mid',
+  'International equity':'VXUS','U.S. diversified funds':'Funds','Cash & equivalents':'Cash'
+};
+function renderIncomeByCategory(){
+  const el = document.getElementById('income-by-cat-list');
+  const rows = incomeByCatOrder.map(cat=>({
+    cat, div: holdings.filter(h=>h.cat===cat).reduce((s,h)=>s+h.divAnnual,0)
+  })).sort((a,b)=>b.div-a.div);
+  el.innerHTML = rows.map(r=>`<div class="trow"><div class="sym">${incomeByCatLabel[r.cat]}</div><div class="name">${r.cat}</div><div class="mv">$${fmt(r.div,0)}</div></div>`).join('');
+}
+renderIncomeByCategory();
+
+// Top dividend contributors (individual holdings, ranked by annual $ dividend)
+function renderTopDivContributors(){
+  const el = document.getElementById('top-div-list');
+  const top = [...holdings].filter(h=>h.divAnnual>0).sort((a,b)=>b.divAnnual-a.divAnnual).slice(0,6);
+  el.innerHTML = top.map(h=>`<div class="trow"><div class="sym">${h.ticker}</div><div class="name">${h.name}</div><div class="mv">$${fmt(h.divAnnual,0)}</div><div class="wt">${h.div.toFixed(2)}%</div></div>`).join('');
+  const top5divSum = top.slice(0,5).reduce((s,h)=>s+h.divAnnual,0);
+  document.getElementById('inc-concentration').textContent = Math.round(top5divSum/totalAnnualDiv*100)+'%';
+}
+renderTopDivContributors();
 
 // ---- RESEARCH FILTER ----
 function filterThesis(status, btn){
