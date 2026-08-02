@@ -213,7 +213,9 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 .unit-toggle button{padding:9px 14px;border:none;background:#fafafa;font-size:13px;font-weight:700;color:#888;cursor:pointer;}
 .unit-toggle button.active{background:#2563eb;color:#fff;}
 
-/* LAST UPDATED INDICATOR */
+/* DATA FRESHNESS FOOTER (compact, bottom of Today tab) */
+.data-freshness-footer{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:10px;color:#aaa;line-height:1.5;padding:14px 4px 4px;border-top:1px solid #eee;margin-top:4px;}
+.data-freshness-footer span:not(:last-child)::after{content:'•';margin-left:14px;color:#ccc;}
 .updated-item{margin-left:auto;display:flex;align-items:center;gap:6px;}
 .updated-item .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;}
 
@@ -293,6 +295,8 @@ body[data-theme="dark"] .target-head .sub{color:#8b909c;}
 body[data-theme="dark"] .bottom-nav{background:#161920;border-top-color:#262a33;}
 body[data-theme="dark"] .bottom-nav-btn{color:#8b909c;}
 body[data-theme="dark"] .bottom-nav-btn.active{color:#5b8def;}
+body[data-theme="dark"] .data-freshness-footer{color:#6b7280;border-top-color:#262a33;}
+body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{color:#3a3f4a;}
 </style>
 </head>
 <body>
@@ -340,14 +344,6 @@ body[data-theme="dark"] .bottom-nav-btn.active{color:#5b8def;}
   <div id="today" class="tab-pane active">
     <div class="section-title">Daily Command Center</div>
 
-    <div class="card" style="padding:14px 20px;">
-      <h3 style="margin-bottom:10px;">Data Freshness</h3>
-      <div class="quality-row"><div class="item">Equity &amp; ETF quotes — Robinhood</div><div class="status-ok">Jul 31, 4:00 PM ET (last close)</div></div>
-      <div class="quality-row"><div class="item">Mutual fund quotes (FSMDX, FSSNX, TLXIX, VFFSX) — Alpha Vantage</div><div class="status-ok">Jul 31, 4:00 PM ET (last close)</div></div>
-      <div class="quality-row"><div class="item">Holdings, quantities &amp; cost basis — Morningstar export</div><div class="status-build">Aug 1, 2026</div></div>
-      <div class="quality-row"><div class="item">News &amp; headlines</div><div class="status-build">Aug 1, 2026</div></div>
-    </div>
-
     <div class="metrics-row">
       <div class="metric">
         <div class="lbl">Portfolio Value</div>
@@ -377,6 +373,13 @@ body[data-theme="dark"] .bottom-nav-btn.active{color:#5b8def;}
       <div id="contributors-list"></div>
       <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 8px;">Detractors</div>
       <div id="detractors-list"></div>
+    </div>
+
+    <div class="data-freshness-footer">
+      <span>Robinhood (equities/ETFs): Jul 31, 4:00 PM ET</span>
+      <span>Alpha Vantage (FSMDX/FSSNX/TLXIX/VFFSX): Jul 31, 4:00 PM ET</span>
+      <span>Morningstar export (holdings/cost basis): Aug 1, 2026</span>
+      <span>News: Aug 1, 2026</span>
     </div>
   </div>
 
