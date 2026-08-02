@@ -1277,7 +1277,7 @@ function renderBuildTargets(){
 // ---- TODAY ----
 document.getElementById('total-val').textContent = '$'+fmt(totalMV,0);
 const dayEl = document.getElementById('day-change');
-dayEl.textContent = (totalDayChange>=0?'+':'')+fmtDollar(totalDayChange);
+dayEl.textContent = (totalDayChange>=0?'+':'-')+fmtDollar(totalDayChange);
 dayEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
 document.getElementById('day-pct').textContent = (totalDayChange>=0?'+':'')+((totalDayChange/totalMV)*100).toFixed(2)+'%';
 document.getElementById('breadth').textContent = advancers+' / '+decliners;
@@ -1295,7 +1295,7 @@ function renderDriverRow(h){
     <div class="name">${h.name}</div>
     <div class="price">$${h.price.toFixed(2)}</div>
     <div class="chg ${up?'up-color':'dn-color'}">${up?'+':''}${h.dayPct.toFixed(2)}%</div>
-    <div class="mv ${up?'up-color':'dn-color'}">${up?'+':''}${fmtDollar(h.dayDollar)}</div>
+    <div class="mv ${up?'up-color':'dn-color'}">${up?'+':'-'}${fmtDollar(h.dayDollar)}</div>
   </div>`;
 }
 document.getElementById('contributors-list').innerHTML = gainers.length ? gainers.map(renderDriverRow).join('') : '<div class="no-results">No advancers today.</div>';
@@ -1304,7 +1304,7 @@ document.getElementById('detractors-list').innerHTML = losers.length ? losers.ma
 // ---- SUMMARY BAR (sticky, shown across all tabs) ----
 document.getElementById('sum-total').textContent = '$'+fmt(totalMV,0);
 const sumDayEl = document.getElementById('sum-day');
-sumDayEl.textContent = (totalDayChange>=0?'+':'')+fmtDollar(totalDayChange);
+sumDayEl.textContent = (totalDayChange>=0?'+':'-')+fmtDollar(totalDayChange);
 sumDayEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
 const sumDayPctEl = document.getElementById('sum-day-pct');
 sumDayPctEl.textContent = (totalDayChange>=0?'+':'')+((totalDayChange/totalMV)*100).toFixed(2)+'%';
@@ -1315,14 +1315,14 @@ document.getElementById('sum-updated').textContent = 'Jul 31, 4:00 PM ET';
 document.getElementById('port-total').textContent = '$'+fmt(totalMV,0);
 document.getElementById('port-positions').textContent = holdings.filter(h=>h.ticker!=='CASH').length;
 const portDay = document.getElementById('port-day');
-portDay.textContent = (totalDayChange>=0?'+':'')+fmtDollar(totalDayChange);
+portDay.textContent = (totalDayChange>=0?'+':'-')+fmtDollar(totalDayChange);
 portDay.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
 
 const totalCostBasis = holdings.reduce((s,h)=>s+h.cb,0);
 const totalUnrealized = holdings.reduce((s,h)=>s+h.gainLoss,0);
 document.getElementById('port-cost-basis').textContent = '$'+fmt(totalCostBasis,0);
 const portUnrealEl = document.getElementById('port-unrealized');
-portUnrealEl.textContent = (totalUnrealized>=0?'+':'')+fmtDollar(totalUnrealized);
+portUnrealEl.textContent = (totalUnrealized>=0?'+':'-')+fmtDollar(totalUnrealized);
 portUnrealEl.className = 'val '+(totalUnrealized>=0?'up-color':'dn-color');
 document.getElementById('port-unrealized-pct').textContent = (totalUnrealized>=0?'+':'')+(totalUnrealized/totalCostBasis*100).toFixed(1)+'% since cost';
 
@@ -1459,7 +1459,7 @@ function renderHoldings(){
     const priceDisp = h.ticker==='CASH' ? '43,000' : h.price.toFixed(2);
     let chgDisp;
     if(h.ticker==='CASH'){ chgDisp = '—'; }
-    else if(unitMode==='dollar'){ chgDisp = (h.dayDollar>=0?'+':'')+fmtDollar(h.dayDollar); }
+    else if(unitMode==='dollar'){ chgDisp = (h.dayDollar>=0?'+':'-')+fmtDollar(h.dayDollar); }
     else { chgDisp = (up?'+':'')+h.dayPct.toFixed(2)+'%'; }
     const chgClass = h.ticker==='CASH' ? '' : (up?'up-color':'dn-color');
     let tagHtml = '';
@@ -1482,9 +1482,9 @@ function renderHoldings(){
           <div class="hdetail-item"><div class="lbl">Category</div><div class="val">${h.cat}</div></div>
           <div class="hdetail-item"><div class="lbl">Sector</div><div class="val">${h.sector}</div></div>
           <div class="hdetail-item"><div class="lbl">Position Type</div><div class="val">${coreForeverHolds.has(h.ticker)?'Core Forever Hold':buildPositions.has(h.ticker)?'Actively Building':h.ticker==='CASH'?'Cash Reserve':'Satellite'}</div></div>
-          <div class="hdetail-item"><div class="lbl">Day $ Chg</div><div class="val ${chgClass}">${h.ticker==='CASH'?'—':(h.dayDollar>=0?'+':'')+fmtDollar(h.dayDollar)}</div></div>
+          <div class="hdetail-item"><div class="lbl">Day $ Chg</div><div class="val ${chgClass}">${h.ticker==='CASH'?'—':(h.dayDollar>=0?'+':'-')+fmtDollar(h.dayDollar)}</div></div>
           <div class="hdetail-item"><div class="lbl">Cost Basis</div><div class="val">$${fmt(h.cb,0)}</div></div>
-          <div class="hdetail-item"><div class="lbl">Unrealized G/L</div><div class="val ${h.ticker==='CASH'?'':(h.gainLoss>=0?'up-color':'dn-color')}">${h.ticker==='CASH'?'—':(h.gainLoss>=0?'+':'')+fmtDollar(h.gainLoss)}</div></div>
+          <div class="hdetail-item"><div class="lbl">Unrealized G/L</div><div class="val ${h.ticker==='CASH'?'':(h.gainLoss>=0?'up-color':'dn-color')}">${h.ticker==='CASH'?'—':(h.gainLoss>=0?'+':'-')+fmtDollar(h.gainLoss)}</div></div>
           <div class="hdetail-item"><div class="lbl">Unrealized G/L %</div><div class="val ${h.ticker==='CASH'?'':(h.gainLoss>=0?'up-color':'dn-color')}">${h.ticker==='CASH'?'—':(h.gainLossPct>=0?'+':'')+h.gainLossPct.toFixed(1)+'%'}</div></div>
           <div class="hdetail-item"><div class="lbl">Div Yield</div><div class="val">${h.div ? h.div.toFixed(2)+'%' : '—'}</div></div>
           <div class="hdetail-item"><div class="lbl">Annual Div $</div><div class="val">${h.div ? '$'+fmt(h.divAnnual,0) : '—'}</div></div>
