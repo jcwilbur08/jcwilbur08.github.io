@@ -133,6 +133,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .thesis-meta{display:flex;gap:16px;font-size:12px;color:#888;margin-bottom:10px;}
 .thesis-body{font-size:13px;color:#333;line-height:1.6;background:#f8f9fa;border-radius:8px;padding:12px;}
 .thesis-conviction{font-size:12px;color:#555;margin-top:8px;}
+.ticker-link{cursor:pointer;border-bottom:1px dotted #999;padding-bottom:1px;}
+.ticker-link:active{opacity:.6;}
+.thesis-report-link{margin-top:10px;font-size:12px;font-weight:700;color:#2563eb;cursor:pointer;display:inline-block;}
+.thesis-report-link:active{opacity:.6;}
+.report-ticker-badge{display:inline-block;background:#1a1a1a;color:#fff;font-size:10px;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:6px;cursor:pointer;}
+.report-ticker-badge:active{opacity:.7;}
 
 /* SLIDER */
 .slider-wrap{margin-bottom:18px;background:#f8f9fa;padding:14px;border-radius:8px;}
@@ -270,6 +276,11 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
   .card-collapsible.open .card-body{max-height:1000px;}
   .price-col{display:none;}
   .price-detail-item{display:block;}
+  .header{padding:14px 16px;}
+  .header h1{font-size:17px;line-height:1.2;}
+  .header p{font-size:10.5px;margin-top:3px;line-height:1.4;}
+  .avatar{width:34px;height:34px;font-size:12px;}
+  .theme-toggle{width:32px;height:32px;font-size:14px;margin-right:8px;}
 }
 
 /* ============ DARK MODE ============ */
@@ -305,6 +316,9 @@ body[data-theme="dark"] .thesis-name{color:#b7bcc7;}
 body[data-theme="dark"] .thesis-meta{color:#8b909c;}
 body[data-theme="dark"] .thesis-body{background:#20242e;color:#d1d4da;}
 body[data-theme="dark"] .thesis-conviction{color:#8b909c;}
+body[data-theme="dark"] .ticker-link{border-bottom-color:#5a5f6b;}
+body[data-theme="dark"] .thesis-report-link{color:#5b8def;}
+body[data-theme="dark"] .report-ticker-badge{background:#2a2e37;color:#e8e9ec;}
 body[data-theme="dark"] .slider-wrap{background:#20242e;}
 body[data-theme="dark"] .slider-wrap label{color:#e8e9ec;}
 body[data-theme="dark"] .blue-card{background:#111d33;border-color:#1e3a5f;}
@@ -1454,7 +1468,7 @@ function renderHoldings(){
     return `<div class="hrow-wrap">
       <div class="hrow ${isExpanded?'expanded':''}" onclick="toggleRow('${h.ticker}')">
         <span class="caret">▶</span>
-        <div class="sym">${h.ticker}${tagHtml}</div>
+        <div class="sym">${h.ticker!=='CASH' ? `<span class="ticker-link" onclick="jumpToResearch('${h.ticker}', event)">${h.ticker}</span>` : h.ticker}${tagHtml}</div>
         <div class="name">${h.name}</div>
         <div class="price price-col">$${priceDisp}</div>
         <div class="chg ${chgClass}">${chgDisp}</div>
@@ -1691,7 +1705,7 @@ const reports = [
   {date:'2026-07-22', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-22.pdf'},
   {date:'2026-07-21', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-21.pdf'},
   {date:'2026-07-20', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-20.pdf'},
-  {date:'2026-07-20', title:'PepsiCo (PEP) Fundamental Analysis', type:'research', file:'PEP_Fundamental_Analysis_2026-07-20.pdf'},
+  {date:'2026-07-20', title:'PepsiCo (PEP) Fundamental Analysis', type:'research', file:'PEP_Fundamental_Analysis_2026-07-20.pdf', ticker:'PEP'},
   {date:'2026-07-18', title:'Retirement Portfolio — Senior Analyst Review', type:'research', file:'Retirement_Portfolio_Senior_Analyst_Review_2026-07-18.pdf'},
   {date:'2026-07-17', title:'Weekly Portfolio Review', type:'weekly', file:'weekly_report_2026-07-17.pdf'},
   {date:'2026-07-17', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-17.pdf'},
@@ -1699,18 +1713,18 @@ const reports = [
   {date:'2026-07-16', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-16.pdf'},
   {date:'2026-07-16', title:'Weekly Portfolio Review', type:'weekly', file:'weekly_report_2026-07-16.pdf'},
   {date:'2026-07-16', title:'Procter & Gamble (PG) Fundamental Analysis', type:'research', file:'PG_Fundamental_Analysis_2026-07-16.pdf'},
-  {date:'2026-07-15', title:'Disney (DIS) Fundamental Analysis', type:'research', file:'DIS_Fundamental_Analysis_2026-07-15.pdf'},
-  {date:'2026-07-15', title:'GE Vernova (GEV) Fundamental Analysis', type:'research', file:'GEV_Fundamental_Analysis_2026-07-15.pdf'},
+  {date:'2026-07-15', title:'Disney (DIS) Fundamental Analysis', type:'research', file:'DIS_Fundamental_Analysis_2026-07-15.pdf', ticker:'DIS'},
+  {date:'2026-07-15', title:'GE Vernova (GEV) Fundamental Analysis', type:'research', file:'GEV_Fundamental_Analysis_2026-07-15.pdf', ticker:'GEV'},
   {date:'2026-07-13', title:'AI Chip & Hardware Sector Report', type:'research', file:'AI_Chip_Hardware_Sector_Report_2026-07-13.pdf'},
-  {date:'2026-07-12', title:'Southern Company (SO) Fundamental Analysis', type:'research', file:'SO_Fundamental_Analysis_2026-07-12.pdf'},
-  {date:'2026-07', title:'Amazon (AMZN) Fundamental Analysis', type:'research', file:'AMZN_Fundamental_Analysis_2026-07-26.pdf'},
-  {date:'2026-07', title:'Alphabet (GOOGL) Fundamental Analysis', type:'research', file:'GOOGL_Fundamental_Analysis_2026-07.pdf'},
-  {date:'2026-07', title:'Coca-Cola (KO) Fundamental Analysis', type:'research', file:'KO_Fundamental_Analysis_2026-07.pdf'},
-  {date:'2026-07', title:'Meta Platforms (META) Fundamental Analysis', type:'research', file:'META_Fundamental_Analysis_2026-07.pdf'},
-  {date:'2026-07', title:'Netflix (NFLX) Fundamental Analysis', type:'research', file:'NFLX_Fundamental_Analysis_2026-07.pdf'},
-  {date:'2026-07', title:'Qualcomm (QCOM) Fundamental Analysis', type:'research', file:'QCOM_Fundamental_Analysis_2026-07.pdf'},
+  {date:'2026-07-12', title:'Southern Company (SO) Fundamental Analysis', type:'research', file:'SO_Fundamental_Analysis_2026-07-12.pdf', ticker:'SO'},
+  {date:'2026-07', title:'Amazon (AMZN) Fundamental Analysis', type:'research', file:'AMZN_Fundamental_Analysis_2026-07-26.pdf', ticker:'AMZN'},
+  {date:'2026-07', title:'Alphabet (GOOGL) Fundamental Analysis', type:'research', file:'GOOGL_Fundamental_Analysis_2026-07.pdf', ticker:'GOOG'},
+  {date:'2026-07', title:'Coca-Cola (KO) Fundamental Analysis', type:'research', file:'KO_Fundamental_Analysis_2026-07.pdf', ticker:'KO'},
+  {date:'2026-07', title:'Meta Platforms (META) Fundamental Analysis', type:'research', file:'META_Fundamental_Analysis_2026-07.pdf', ticker:'META'},
+  {date:'2026-07', title:'Netflix (NFLX) Fundamental Analysis', type:'research', file:'NFLX_Fundamental_Analysis_2026-07.pdf', ticker:'NFLX'},
+  {date:'2026-07', title:'Qualcomm (QCOM) Fundamental Analysis', type:'research', file:'QCOM_Fundamental_Analysis_2026-07.pdf', ticker:'QCOM'},
   {date:'2026-07', title:'Ventas (VTR) Fundamental Analysis', type:'research', file:'VTR_Fundamental_Analysis_2026-07.pdf'},
-  {date:'2026-07', title:'Visa (V) Q3 FY26 Earnings Update', type:'research', file:'V_Q3_FY26_Earnings_Update.pdf'},
+  {date:'2026-07', title:'Visa (V) Q3 FY26 Earnings Update', type:'research', file:'V_Q3_FY26_Earnings_Update.pdf', ticker:'V'},
   {date:'2026-07', title:'Portfolio Review', type:'research', file:'Portfolio_Review_2026-07.pdf'},
   {date:'2026-07', title:'DVY Rotation Plan', type:'research', file:'DVY_Rotation_Plan.pdf'},
   {date:'2026-07', title:'AVUV vs VTWO vs IJR — ETF Comparison', type:'research', file:'AVUV_VTWO_IJR_ETF_Comparison.html'},
@@ -1735,7 +1749,7 @@ function renderReports(){
   const q = (document.getElementById('reports-search').value || '').trim().toLowerCase();
   const filtered = reports.filter(r =>
     (reportsTypeFilter==='all' || r.type===reportsTypeFilter) &&
-    (!q || r.title.toLowerCase().includes(q) || r.date.toLowerCase().includes(q))
+    (!q || r.title.toLowerCase().includes(q) || r.date.toLowerCase().includes(q) || (r.ticker && r.ticker.toLowerCase()===q))
   );
   grid.innerHTML = '';
   if(filtered.length === 0){
@@ -1744,9 +1758,11 @@ function renderReports(){
   }
   filtered.forEach(r=>{
     const ext = r.file.split('.').pop().toUpperCase();
+    const tickerBadge = r.ticker ? `<span class="report-ticker-badge" onclick="jumpToResearch('${r.ticker}', event)">${r.ticker} →</span>` : '';
     grid.innerHTML += `<a class="report-card" href="${r.file}" target="_blank" rel="noopener">
       <div class="fmt">${ext}</div>
       <div class="date">${fmtReportDate(r.date)}</div>
+      ${tickerBadge}
       <div class="title">${r.title}</div>
       <div class="type type-${r.type}">${typeLabel[r.type]}</div>
     </a>`;
@@ -1760,6 +1776,70 @@ function filterReports(type, btn){
   btn.classList.add('active');
   renderReports();
 }
+
+// ---- CROSS-LINKING: tapping a ticker in Holdings, Research, or Reports jumps to its
+// related view (and pre-filters it) in the other two tabs, instead of three manual searches. ----
+function resetThesisFilters(){
+  thesisStatusFilter = 'all';
+  thesisTypeFilter = 'all';
+  const statusAllBtn = [...document.querySelectorAll('.pill-btn')].find(b => (b.getAttribute('onclick')||'').includes("filterThesis('all'"));
+  if(statusAllBtn){ statusAllBtn.parentElement.querySelectorAll('.pill-btn').forEach(b=>b.classList.remove('active')); statusAllBtn.classList.add('active'); }
+  const typeAllBtn = document.querySelector('#assetTypeToggle button');
+  if(typeAllBtn){ typeAllBtn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active')); typeAllBtn.classList.add('active'); }
+}
+function resetReportsFilter(){
+  reportsTypeFilter = 'all';
+  const allBtn = [...document.querySelectorAll('.reports-toolbar .pill-btn')].find(b => (b.getAttribute('onclick')||'').includes("filterReports('all'"));
+  if(allBtn){ allBtn.parentElement.querySelectorAll('.pill-btn').forEach(b=>b.classList.remove('active')); allBtn.classList.add('active'); }
+}
+function jumpToResearch(ticker, evt){
+  if(evt){ evt.preventDefault(); evt.stopPropagation(); }
+  switchTab('research');
+  resetThesisFilters();
+  const input = document.getElementById('research-search');
+  input.value = ticker;
+  applyThesisFilter();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function jumpToReports(ticker, evt){
+  if(evt){ evt.preventDefault(); evt.stopPropagation(); }
+  switchTab('reports');
+  resetReportsFilter();
+  const input = document.getElementById('reports-search');
+  input.value = ticker;
+  renderReports();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+function jumpToHoldings(ticker, evt){
+  if(evt){ evt.preventDefault(); evt.stopPropagation(); }
+  switchTab('portfolio');
+  document.getElementById('holdings-category').value = 'all';
+  const input = document.getElementById('holdings-search');
+  input.value = ticker;
+  expandedTickers.add(ticker);
+  renderHoldings();
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+// Wire each thesis card's ticker to jump to Holdings, and append a "View report" link
+// wherever a matching report exists (checked against the Report Library's ticker tags).
+function wireResearchCrossLinks(){
+  const reportTickers = new Set(reports.filter(r=>r.ticker).map(r=>r.ticker));
+  document.querySelectorAll('.thesis-card').forEach(card=>{
+    const tickerEl = card.querySelector('.thesis-ticker');
+    if(!tickerEl) return;
+    const ticker = tickerEl.textContent.trim();
+    tickerEl.classList.add('ticker-link');
+    tickerEl.onclick = (e)=>jumpToHoldings(ticker, e);
+    if(reportTickers.has(ticker) && !card.querySelector('.thesis-report-link')){
+      const link = document.createElement('div');
+      link.className = 'thesis-report-link';
+      link.textContent = '📄 View report →';
+      link.onclick = (e)=>jumpToReports(ticker, e);
+      card.appendChild(link);
+    }
+  });
+}
+wireResearchCrossLinks();
 
 // ---- SMART NEWS (real headlines, portfolio-ranked, each linking to its original source) ----
 const newsItems = [
