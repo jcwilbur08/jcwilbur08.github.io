@@ -559,19 +559,27 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <div class="section-title">Research Center — Living Investment Record</div>
 
     <div class="metrics-row" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));">
-      <div class="metric"><div class="lbl">Active Theses</div><div class="val">22</div></div>
-      <div class="metric"><div class="lbl">Core Forever Holds</div><div class="val">8</div></div>
-      <div class="metric"><div class="lbl">Build Positions</div><div class="val">4</div></div>
-      <div class="metric"><div class="lbl">Under Review</div><div class="val">3</div></div>
+      <div class="metric"><div class="lbl">Active Theses</div><div class="val" id="research-total-count">28</div></div>
+      <div class="metric"><div class="lbl">Core Forever Holds</div><div class="val" id="research-core-count">5</div></div>
+      <div class="metric"><div class="lbl">Build Positions</div><div class="val" id="research-build-count">2</div></div>
+      <div class="metric"><div class="lbl">Under Review</div><div class="val" id="research-review-count">4</div></div>
     </div>
 
     <!-- Filter pills -->
-    <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center;">
+    <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;align-items:center;">
       <button class="pill-btn active" onclick="filterThesis('all',this)">All</button>
       <button class="pill-btn" onclick="filterThesis('HOLD',this)">Hold</button>
       <button class="pill-btn" onclick="filterThesis('BUILD',this)">Build</button>
       <button class="pill-btn" onclick="filterThesis('WATCH',this)">Watch</button>
       <button class="pill-btn" onclick="filterThesis('REVIEW',this)">Review</button>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
+      <span style="font-size:11px;color:#888;white-space:nowrap;">Asset type:</span>
+      <div class="unit-toggle" id="assetTypeToggle">
+        <button class="active" onclick="filterAssetType('all',this)">All</button>
+        <button onclick="filterAssetType('equity',this)">Equities</button>
+        <button onclick="filterAssetType('etf',this)">ETFs</button>
+      </div>
     </div>
     <div style="margin-bottom:20px;">
       <input type="text" class="search-input" id="research-search" placeholder="Search by ticker, name, or keyword…" oninput="applyThesisFilter()">
@@ -580,7 +588,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 
     <div id="thesis-list">
 
-      <div class="thesis-card" data-status="HOLD">
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">AVGO</div>
           <span class="badge badge-hold">HOLD</span>
@@ -599,7 +607,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <div class="thesis-conviction">Source: FY2025 10-K, Q2 FY2026 10-Q, Morningstar report (June 2026)</div>
       </div>
 
-      <div class="thesis-card" data-status="HOLD">
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">META</div>
           <span class="badge badge-hold">HOLD</span>
@@ -615,7 +623,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
 
-      <div class="thesis-card" data-status="HOLD">
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">AMZN</div>
           <span class="badge badge-hold">HOLD</span>
@@ -631,7 +639,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
 
-      <div class="thesis-card" data-status="HOLD">
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">JPM</div>
           <span class="badge badge-hold">HOLD</span>
@@ -647,7 +655,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
 
-      <div class="thesis-card" data-status="HOLD">
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">MA</div>
           <span class="badge badge-hold">HOLD</span>
@@ -663,7 +671,209 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
 
-      <div class="thesis-card" data-status="BUILD">
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">AAPL</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">Apple Inc</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~6.4%</span>
+          <span>Core Forever Hold</span>
+        </div>
+        <div class="thesis-body">
+          Apple remains the highest-quality consumer hardware/services franchise on the planet — a fortress balance sheet, unmatched ecosystem lock-in, and a Services segment that keeps compounding on top of the device base. Fiscal Q3 delivered record revenue ($109.4B) and record iPhone sales (+22% YoY), but shares fell ~7% on a Services miss and a soft Q4 outlook citing memory-driven supply constraints. This was also Tim Cook's last earnings call as CEO — a leadership transition worth watching closely, though the bench and culture are deep. Reduced conviction slightly on succession and supply-chain risk, but the core franchise is intact.
+        </div>
+        <div class="thesis-conviction">Source: Q3 FY2026 earnings release, company statements (July 2026)</div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">GS</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">Goldman Sachs</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~6.6%</span>
+          <span>Core Forever Hold</span>
+        </div>
+        <div class="thesis-body">
+          Goldman is the preeminent global investment bank — unmatched in M&A advisory and equity underwriting, with a trading franchise currently putting up record numbers (Q2 equities-trading revenue +72% to $7.4B, aided by fee flow from the SpaceX IPO). Capital markets activity is cyclical, so returns will ebb and flow with the deal cycle, but the franchise value and management quality under this leadership team justify a core anchor position alongside JPM.
+        </div>
+        <div class="thesis-conviction">Source: Q2 2026 earnings, CNBC (Aug 2026)</div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">GOOG</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">Alphabet Inc Class C</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~3.2%</span>
+          <span>Added 2026</span>
+        </div>
+        <div class="thesis-body">
+          Alphabet owns three distinct compounding engines — Search, YouTube, and now Google Cloud, which just posted 82% YoY growth to $24.8B and its strongest quarter yet. Revenue grew 24% to $119.8B, the 12th consecutive quarter of double-digit growth. Capex guidance was raised to ~$205B for 2026 to keep pace with AI infrastructure demand, which will pressure near-term free cash flow but is being reinvested at high returns (TPUs feeding Alphabet's own cloud stack). Waymo remains a call option not yet reflected in the stock.
+        </div>
+        <div class="thesis-conviction">Source: Q2 2026 earnings release (July 22, 2026)</div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">AXP</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">American Express</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium-High</strong></span>
+          <span>Weight: ~2.1%</span>
+        </div>
+        <div class="thesis-body">
+          Amex's closed-loop network and affluent-skewing cardholder base give it pricing power and credit quality that mass-market issuers can't match. Premium fee income and travel/dining spend continue to grow, and the balance sheet has weathered rate cycles well. Not a high-growth story at this size, but a durable, well-run compounder that fits the quality-at-a-reasonable-price mandate.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">AMT</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">American Tower</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium</strong></span>
+          <span>Weight: ~2.4%</span>
+        </div>
+        <div class="thesis-body">
+          American Tower is a toll-road REIT on wireless infrastructure — towers are irreplaceable assets with multi-decade tenant leases and built-in rent escalators. 5G densification and data growth support the long-term case, and the ~4.2% yield is a meaningful income contributor. Key risk is REIT sensitivity to interest rates and elevated leverage from the acquisition-driven growth strategy; watching debt service costs as rates stay higher for longer.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">KO</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">Coca-Cola Co</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium-High</strong></span>
+          <span>Weight: ~1.6%</span>
+        </div>
+        <div class="thesis-body">
+          Coca-Cola is the definitional global consumer staples compounder — unmatched distribution, brand pricing power, and a dividend growth streak measured in decades. Growth is low-single-digit organic plus pricing, not exciting, but it's a defensive ballast position that holds up when higher-beta names don't. Fits the "forever" bucket on quality alone, even if it's not a top-5 conviction name.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">XOM</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">ExxonMobil</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium</strong></span>
+          <span>Weight: ~3.6%</span>
+        </div>
+        <div class="thesis-body">
+          Exxon is the best-capitalized integrated energy major — disciplined capex, a strong balance sheet, and a dividend that's been raised for over 40 consecutive years. Guyana and Permian production growth support volumes independent of price. The honest risk is that earnings are ultimately a call on oil and gas prices, which this portfolio doesn't have a strong macro view on — sized as an income/diversification holding rather than a commodity bet.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">MSFT</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">Microsoft Corp</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~2.9%</span>
+        </div>
+        <div class="thesis-body">
+          Microsoft has the cleanest AI monetization story in big tech — Azure growth in the low-40s% range, Copilot attach rates climbing across the commercial installed base, and a balance sheet that can out-invest almost anyone. Combined with Office/365 stickiness and gaming, this is a high-conviction compounder that could reasonably sit alongside the named core-forever holds; kept as a high-conviction Hold rather than Core Forever pending a deliberate position-sizing decision.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">PEP</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">PepsiCo Inc</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium</strong></span>
+          <span>Weight: ~1.3%</span>
+        </div>
+        <div class="thesis-body">
+          PepsiCo's snacks-plus-beverage portfolio is diversified and cash-generative, but volume growth has been softer than peers amid value-seeking consumers and GLP-1/health-trend headwinds on salty snacks. Still a reliable dividend grower with pricing power, just less exciting than KO or PM right now. Holding for the dividend and diversification, not expecting outsized capital appreciation.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">PM</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">Philip Morris International</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~2.1%</span>
+        </div>
+        <div class="thesis-body">
+          PM's smoke-free transition (IQOS, Zyn) is the best example of a legacy staples name successfully reinventing its growth profile — smoke-free products now drive a growing share of revenue at higher margins than combustible cigarettes. Strong pricing power, a ~4.3% yield, and durable FCF generation make this a higher-conviction staples holding than PEP or KO at current sizing.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">SO</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">Southern Company</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium</strong></span>
+          <span>Weight: ~2.2%</span>
+        </div>
+        <div class="thesis-body">
+          Southern is a regulated Southeast utility benefiting from a rare tailwind: data-center and industrial load growth in its service territory is expanding the rate base faster than the typical utility. Regulated returns and a ~3.3% yield make this a low-beta ballast position — not a growth name, but a useful counterweight to the portfolio's mega-cap tech concentration.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">DIS</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">Walt Disney Co</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium-High</strong></span>
+          <span>Weight: ~1.2%</span>
+        </div>
+        <div class="thesis-body">
+          The turnaround thesis is now proving out rather than promised: streaming (DTC) turned profitable in FY2025 ($1.3B operating income) and grew further in Q1 FY26, while Parks & Experiences remains a durable, high-margin cash engine. Trading around 14x forward earnings with buybacks and a reinstated dividend, the risk/reward has improved meaningfully from the streaming-losses era. Upgraded from an implicit watch to Hold as execution has caught up with the narrative.
+        </div>
+        <div class="thesis-conviction">Source: FY2025 10-K, Q1 FY2026 earnings commentary</div>
+      </div>
+
+      <div class="thesis-card" data-status="HOLD" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">V</div>
+          <span class="badge badge-hold">HOLD</span>
+          <div><div class="thesis-name">Visa Inc</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>High</strong></span>
+          <span>Weight: ~2.2%</span>
+        </div>
+        <div class="thesis-body">
+          Visa is Mastercard's mirror-image thesis — the other half of the global card-network duopoly, asset-light, and compounding on the secular shift from cash to digital payments with near-zero credit risk. Recent revenue growth in the mid-teens and consistent buyback capacity keep this a high-conviction holding alongside MA; sized modestly smaller than MA reflecting historical entry points rather than a quality difference.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="BUILD" data-type="etf">
         <div class="thesis-header">
           <div class="thesis-ticker">AVUV</div>
           <span class="badge badge-build">BUILD</span>
@@ -679,7 +889,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
 
-      <div class="thesis-card" data-status="BUILD">
+      <div class="thesis-card" data-status="BUILD" data-type="etf">
         <div class="thesis-header">
           <div class="thesis-ticker">VXUS</div>
           <span class="badge badge-build">BUILD</span>
@@ -695,7 +905,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
 
-      <div class="thesis-card" data-status="WATCH">
+      <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">GEV</div>
           <span class="badge badge-watch">WATCH</span>
@@ -711,7 +921,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
 
-      <div class="thesis-card" data-status="WATCH">
+      <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">CRM</div>
           <span class="badge badge-watch">WATCH</span>
@@ -727,7 +937,39 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
 
-      <div class="thesis-card" data-status="REVIEW">
+      <div class="thesis-card" data-status="WATCH" data-type="etf">
+        <div class="thesis-header">
+          <div class="thesis-ticker">GRID</div>
+          <span class="badge badge-watch">WATCH</span>
+          <div><div class="thesis-name">First Trust NASDAQ Clean Edge Smart Grid ETF</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium</strong></span>
+          <span>Weight: ~0.1%</span>
+          <span>Small satellite — thematic overlap with GEV</span>
+        </div>
+        <div class="thesis-body">
+          GRID is a thematic satellite bet on grid modernization and electrification — the same theme as the GEV starter position, just diversified across a basket rather than concentrated in one operator. At a tiny 0.1% weight it's more a toe-hold than a real allocation. Watching whether to consolidate this exposure into GEV directly (higher conviction, single-name) or size GRID up as a diversified sleeve — holding both at token size isn't a deliberate decision yet.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="WATCH" data-type="etf">
+        <div class="thesis-header">
+          <div class="thesis-ticker">SOXQ</div>
+          <span class="badge badge-watch">WATCH</span>
+          <div><div class="thesis-name">Invesco PHLX Semiconductor ETF</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium</strong></span>
+          <span>Weight: ~0.1%</span>
+          <span>Small satellite — overlaps AVGO/QCOM</span>
+        </div>
+        <div class="thesis-body">
+          SOXQ gives broad semiconductor-sector exposure, but the portfolio already holds AVGO and QCOM directly, so this sleeve is largely redundant AI-infrastructure/chip beta on top of names already owned individually. At ~0.1% of the portfolio it isn't doing much either way. Candidate for consolidation — either exit and let AVGO/QCOM carry the semiconductor exposure, or size it up deliberately as a diversified hedge against single-name chip risk.
+        </div>
+      </div>
+
+      <div class="thesis-card" data-status="REVIEW" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">QCOM</div>
           <span class="badge badge-review">REVIEW</span>
@@ -743,7 +985,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
 
-      <div class="thesis-card" data-status="REVIEW">
+      <div class="thesis-card" data-status="REVIEW" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">NFLX</div>
           <span class="badge badge-review">REVIEW</span>
@@ -757,6 +999,40 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <div class="thesis-body">
           Netflix is the dominant global streaming platform but has become a media company with content capex intensity to match. The ad-supported tier ramp and paid password-sharing enforcement have been positive catalysts. Valuation is full at current levels. Watching for ad-tier monetization progress and whether live sports investments yield a meaningful ARPU uplift before adding.
         </div>
+      </div>
+
+      <div class="thesis-card" data-status="REVIEW" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">BMY</div>
+          <span class="badge badge-review">REVIEW</span>
+          <div><div class="thesis-name">Bristol-Myers Squibb</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium-Low</strong></span>
+          <span>Weight: ~1.3%</span>
+          <span>Under review — patent cliff vs. pipeline execution</span>
+        </div>
+        <div class="thesis-body">
+          BMY faces a real patent cliff on Revlimid (already eroding) and Eliquis/Opdivo (loss of exclusivity expected ~2028), which management is betting its growth portfolio (Opdivo, Camzyos) and roughly a dozen late-stage pipeline readouts through 2026–2028 can offset. The ~17x P/E already prices in skepticism, and the ~5.1% yield pays to wait, but this is a show-me story rather than a quality compounder at this point. Reviewing whether the pipeline catalysts de-risk the name or whether proceeds are better redeployed toward AVUV/VXUS.
+        </div>
+        <div class="thesis-conviction">Source: Company 2026 guidance, Q1/Q2 2026 earnings commentary</div>
+      </div>
+
+      <div class="thesis-card" data-status="REVIEW" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">UNH</div>
+          <span class="badge badge-review">REVIEW</span>
+          <div><div class="thesis-name">UnitedHealth Group</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium-Low</strong></span>
+          <span>Weight: ~1.3%</span>
+          <span>Under review — DOJ probe + Medicare Advantage reset</span>
+        </div>
+        <div class="thesis-body">
+          UNH is navigating a genuinely difficult stretch: an active DOJ criminal and civil investigation into Medicare Advantage billing practices, a deliberate multi-million-member exit from unprofitable MA/Medicaid markets driving the company's first revenue decline in a decade, and real leadership turbulence (CEO Hemsley returned in 2025 after Witty's resignation). Against that, the stock has been repriced to ~13x forward earnings with Berkshire Hathaway building a stake — a valuation that could be compelling if the integrated model survives the DOJ outcome intact, or a value trap if it doesn't. Not adding until there's more clarity on the investigation and margin trajectory.
+        </div>
+        <div class="thesis-conviction">Source: FY2025 10-K, Q1 2026 earnings release, DOJ disclosure filings</div>
       </div>
 
     </div>
@@ -1267,11 +1543,18 @@ function renderTopDivContributors(){
 }
 renderTopDivContributors();
 
-// ---- RESEARCH FILTER (status pill + text search, combined) ----
+// ---- RESEARCH FILTER (status pill + asset-type toggle + text search, all combined) ----
 let thesisStatusFilter = 'all';
+let thesisTypeFilter = 'all';
 function filterThesis(status, btn){
   thesisStatusFilter = status;
   btn.parentElement.querySelectorAll('.pill-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  applyThesisFilter();
+}
+function filterAssetType(type, btn){
+  thesisTypeFilter = type;
+  btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   applyThesisFilter();
 }
@@ -1281,15 +1564,34 @@ function applyThesisFilter(){
   let shown = 0;
   cards.forEach(card=>{
     const statusOk = thesisStatusFilter==='all' || card.dataset.status===thesisStatusFilter;
+    const typeOk = thesisTypeFilter==='all' || card.dataset.type===thesisTypeFilter;
     const text = card.textContent.toLowerCase();
     const textOk = !q || text.includes(q);
-    const visible = statusOk && textOk;
+    const visible = statusOk && typeOk && textOk;
     card.style.display = visible ? 'block' : 'none';
     if(visible) shown++;
   });
   const countEl = document.getElementById('research-count');
-  countEl.textContent = (q || thesisStatusFilter!=='all') ? `${shown} of ${cards.length} theses` : '';
+  countEl.textContent = (q || thesisStatusFilter!=='all' || thesisTypeFilter!=='all') ? `${shown} of ${cards.length} theses` : '';
 }
+
+// Compute research summary tiles from the actual cards in the DOM (never goes stale)
+function renderResearchSummary(){
+  const cards = document.querySelectorAll('.thesis-card');
+  const coreForeverTickers = new Set(['AMZN','JPM','GS','AAPL','MA']);
+  let core = 0, build = 0, review = 0;
+  cards.forEach(card=>{
+    const ticker = card.querySelector('.thesis-ticker')?.textContent.trim();
+    if(coreForeverTickers.has(ticker)) core++;
+    if(card.dataset.status==='BUILD') build++;
+    if(card.dataset.status==='REVIEW') review++;
+  });
+  document.getElementById('research-total-count').textContent = cards.length;
+  document.getElementById('research-core-count').textContent = core;
+  document.getElementById('research-build-count').textContent = build;
+  document.getElementById('research-review-count').textContent = review;
+}
+renderResearchSummary();
 
 // ---- REPORT LIBRARY (real files, linked into /reports on this repo) ----
 const reports = [
