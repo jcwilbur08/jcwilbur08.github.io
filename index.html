@@ -1241,6 +1241,34 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
   }
 })();
 
+// ---- RESTORE SAVED SLIDER ASSUMPTIONS (Retirement + Income tabs) ----
+// Sets each slider's value directly from localStorage, before any calc function first
+// runs, so the very first render already reflects what was saved last time.
+const SLIDER_IDS = ['ret-years','ret-return','ret-withdrawal','ret-contrib','ret-pension','div-growth','div-years'];
+let calendarUsesProjection = false; // flips true once the user touches the Growth/Projection sliders (or was already true last visit)
+(function restoreAssumptions(){
+  const saved = localStorage.getItem('pcc-assumptions');
+  if(!saved) return;
+  try {
+    const data = JSON.parse(saved);
+    SLIDER_IDS.forEach(id=>{
+      if(data[id] !== undefined){
+        const el = document.getElementById(id);
+        if(el) el.value = data[id];
+      }
+    });
+    if(data.calendarUsesProjection) calendarUsesProjection = true;
+  } catch(e){ /* corrupt/old data — ignore and keep defaults */ }
+})();
+function saveAssumptions(){
+  const data = {calendarUsesProjection};
+  SLIDER_IDS.forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) data[id] = el.value;
+  });
+  localStorage.setItem('pcc-assumptions', JSON.stringify(data));
+}
+
 // ---- LIVE PRICE CONFIG ----
 // Finnhub: free-tier quote API, called directly from the browser every time the page
 // opens (60 calls/min on the free tier — plenty for ~30 tickers in one go, no daily cap).
@@ -1255,7 +1283,6 @@ const mutualFundQuoteTickers = ['FSMDX','FSSNX','TLXIX','VFFSX'];
 // === PORTFOLIO DATA — Morningstar export (holdings/qty/cost-basis/sector) with the last
 // known prices baked in as both the initial paint and the fallback if a live fetch fails.
 const MONTH_ABBR = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-let calendarUsesProjection = false; // flips true once the user touches the Growth/Projection sliders
 
 const holdings = [
   {ticker:'GOOG', name:'Alphabet Inc Class C', qty:145, price:374.76, prev:356.6701, cat:'U.S. individual stocks', div:0.24, cb:9285.597, sector:'Communication Services', divMonths:[3, 6, 9, 12]},
@@ -1707,6 +1734,7 @@ function calcRetirement(){
   document.getElementById('pension-disp').textContent = '$'+(pension/1000).toFixed(1)+'k';
   document.getElementById('combined-income').textContent = '$'+(combined/1000).toFixed(1)+'k';
   renderIncomeStackAndCalendar();
+  saveAssumptions();
 }
 calcRetirement();
 
@@ -1720,6 +1748,7 @@ function calcDividends(){
   document.getElementById('proj-div').textContent = '$'+Math.round(proj).toLocaleString();
   document.getElementById('proj-div-mo').textContent = '$'+Math.round(proj/12).toLocaleString()+'/month';
   renderIncomeStackAndCalendar();
+  saveAssumptions();
 }
 
 // ---- RETIREMENT INCOME STACK + MONTHLY DIVIDEND CALENDAR ----
