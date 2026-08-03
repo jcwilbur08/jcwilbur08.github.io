@@ -667,7 +667,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 
     <div class="card">
       <h3>Retirement Income Stack</h3>
-      <p style="font-size:11px;color:#888;margin:-8px 0 14px;">Expected annual income at retirement (uses the years/return/withdrawal assumptions from the Retirement tab)</p>
+      <p style="font-size:11px;color:#888;margin:-8px 0 14px;">Expected annual income at retirement (uses the years/return/withdrawal assumptions from the Retirement tab). Dividends assume reinvestment until retirement — projected as future portfolio value × today's yield, not just today's dividend grown on its own.</p>
       <div style="font-size:22px;font-weight:700;color:#1a1a1a;margin-bottom:14px;" id="income-stack-total">$0 total</div>
       <div class="income-stack-bar" id="income-stack-bar"></div>
       <div class="income-stack-legend" id="income-stack-legend"></div>
@@ -1768,7 +1768,13 @@ function renderIncomeStackAndCalendar(){
 
   const fv = totalMV * Math.pow(1+r, years) + contrib * (Math.pow(1+r,years)-1)/r;
   const totalPortfolioIncome = fv * wd;
-  const projectedDividends = totalAnnualDiv * Math.pow(1+divGrowth, years);
+  // Reinvestment-consistent: "Portfolio Return" above is a total-return assumption, which
+  // only makes sense if dividends are being reinvested along the way — so the reinvested
+  // dividends are already baked into fv's growth via compounding share count. Projecting
+  // dividend income as fv × today's yield% (rather than growing today's dividend dollar
+  // amount by a separate growth rate) keeps this consistent instead of understating future
+  // dividends and overstating how much must come from selling principal.
+  const projectedDividends = fv * (portfolioYield / 100);
   const withdrawals = Math.max(0, totalPortfolioIncome - projectedDividends);
   const grandTotal = pension + projectedDividends + withdrawals;
 
