@@ -279,8 +279,11 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
   .header p{font-size:10.5px;margin-top:3px;line-height:1.4;}
   .avatar{width:34px;height:34px;font-size:12px;}
   .theme-toggle{width:32px;height:32px;font-size:14px;margin-right:8px;}
-  /* Holdings table: with the Name column gone, narrow the remaining columns
-     so Price can fit in the collapsed row instead of only the detail panel. */
+  /* Holdings table (mobile only): hide the Name column — desktop has room for it,
+     but on mobile it stays hidden and the remaining columns are narrowed instead
+     so Price can fit in the collapsed row. */
+  .hhead .name-col{display:none;}
+  .hrow .name{display:none;}
   .hhead{gap:4px;}
   .hrow{gap:4px;}
   .hhead .sym-col{width:52px!important;}
@@ -548,6 +551,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <div class="hhead">
         <span style="width:14px;"></span>
         <span class="hcol sym-col" style="width:100px;" onclick="setSort('ticker')">Ticker<span class="arrow">▼</span></span>
+        <span class="hcol name-col" style="flex:1;" onclick="setSort('name')">Name<span class="arrow">▼</span></span>
         <span class="hcol price-col" style="width:80px;text-align:right;justify-content:flex-end;" onclick="setSort('price')">Price<span class="arrow">▼</span></span>
         <span class="hcol chg-col" style="width:72px;text-align:right;justify-content:flex-end;" onclick="setSort('dayPct')">Day Chg<span class="arrow">▼</span></span>
         <span class="hcol mv-col" style="width:90px;text-align:right;justify-content:flex-end;" onclick="setSort('mv')">Mkt Value<span class="arrow">▼</span></span>
@@ -1499,6 +1503,7 @@ function renderHoldings(){
       <div class="hrow ${isExpanded?'expanded':''}" onclick="toggleRow('${h.ticker}')">
         <span class="caret">▶</span>
         <div class="sym">${h.ticker!=='CASH' ? `<span class="ticker-link" onclick="jumpToResearch('${h.ticker}', event)">${h.ticker}</span>` : h.ticker}</div>
+        <div class="name">${h.name}</div>
         <div class="price price-col">$${priceDisp}</div>
         <div class="chg ${chgClass}">${chgDisp}</div>
         <div class="mv">$${fmt(h.mv,0)}</div>
