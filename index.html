@@ -377,7 +377,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 <div class="header">
   <div>
     <h1>Portfolio Command Center</h1>
-    <p>James Wilbur &nbsp;•&nbsp; Private &nbsp;•&nbsp; Refreshed Aug 1, 2026, 9:49 PM ET</p>
+    <p>James Wilbur &nbsp;•&nbsp; Private &nbsp;•&nbsp; Holdings as of Aug 1, 2026 &nbsp;•&nbsp; Prices <span id="header-live-status">loading…</span></p>
   </div>
   <div style="display:flex;align-items:center;">
     <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
@@ -443,8 +443,8 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     </div>
 
     <div class="data-freshness-footer">
-      <span>Robinhood (equities/ETFs): Jul 31, 4:00 PM ET</span>
-      <span>Alpha Vantage (FSMDX/FSSNX/TLXIX/VFFSX): Jul 31, 4:00 PM ET</span>
+      <span id="freshness-live">Live quotes (Finnhub): loading…</span>
+      <span id="freshness-mf">Mutual funds (Alpha Vantage, daily): loading…</span>
       <span>Morningstar export (holdings/cost basis): Aug 1, 2026</span>
       <span>News: Aug 1, 2026</span>
     </div>
@@ -1199,11 +1199,19 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
   }
 })();
 
-// === PORTFOLIO DATA — corrected from Morningstar export (retirement-portfolio-14.csv)
-// with live quotes pulled Aug 1, 2026: Robinhood for tradable equities/ETFs, Alpha Vantage
-// (GLOBAL_QUOTE) for the 4 mutual funds Robinhood doesn't carry (FSMDX, FSSNX, TLXIX, VFFSX).
-// cb = cost basis (Morningstar export). sector = GICS-style classification; broad multi-sector
-// funds are grouped as "Diversified Fund" rather than force-fit into one sector. ===
+// ---- LIVE PRICE CONFIG ----
+// Finnhub: free-tier quote API, called directly from the browser every time the page
+// opens (60 calls/min on the free tier — plenty for ~30 tickers in one go, no daily cap).
+// Get a free key at https://finnhub.io/register and paste it below in place of the
+// placeholder. Until you do, the app just falls back to showing the last-baked-in prices.
+const FINNHUB_API_KEY = 'YOUR_FINNHUB_API_KEY_HERE';
+// Mutual funds price once per day (NAV, after market close) — there's no "live" quote to
+// fetch on open for these. A GitHub Action refreshes them once daily via Alpha Vantage and
+// commits mutual-fund-quotes.json; the page just reads that static file.
+const mutualFundQuoteTickers = ['FSMDX','FSSNX','TLXIX','VFFSX'];
+
+// === PORTFOLIO DATA — Morningstar export (holdings/qty/cost-basis/sector) with the last
+// known prices baked in as both the initial paint and the fallback if a live fetch fails.
 const holdings = [
   {ticker:'GOOG', name:'Alphabet Inc Class C',     qty:145,     price:356.71,  prev:333.68,  cat:'U.S. individual stocks',  div:0.24, cb:9285.597,    sector:'Communication Services'},
   {ticker:'AMZN', name:'Amazon Inc',               qty:520,     price:271.57,  prev:235.50,  cat:'U.S. individual stocks',  div:0,    cb:7935.2,      sector:'Consumer Discretionary'},
@@ -1243,26 +1251,37 @@ const holdings = [
   {ticker:'CASH', name:'Cash & Equivalents',       qty:1,       price:43000,   prev:43000,   cat:'Cash & equivalents',      div:5.00, cb:43000,       sector:'Cash & Equivalents'},
 ];
 
-// Compute market values
-holdings.forEach(h => {
+// ---- PER-HOLDING + AGGREGATE CALCULATIONS (re-run after every price refresh) ----
+function recomputeHoldingFields(h){
   h.mv = h.qty * h.price;
   h.dayDollar = h.qty * (h.price - h.prev);
   h.dayPct = h.prev > 0 ? ((h.price - h.prev) / h.prev) * 100 : 0;
   h.divAnnual = h.mv * (h.div / 100);
   h.gainLoss = h.mv - h.cb;
   h.gainLossPct = h.cb > 0 ? (h.gainLoss / h.cb) * 100 : 0;
-});
+}
 
-const totalMV = holdings.reduce((s,h) => s + h.mv, 0);
-holdings.forEach(h => h.wt = (h.mv / totalMV) * 100);
-const totalDayChange = holdings.reduce((s,h) => s + h.dayDollar, 0);
-const advancers = holdings.filter(h => h.ticker !== 'CASH' && h.dayDollar > 0).length;
-const decliners = holdings.filter(h => h.ticker !== 'CASH' && h.dayDollar < 0).length;
-const cashPct = (holdings.find(h=>h.ticker==='CASH').mv / totalMV) * 100;
+let totalMV, totalDayChange, advancers, decliners, cashPct, top5, top5pct,
+    totalCostBasis, totalUnrealized, totalAnnualDiv, portfolioYield, gainers, losers;
 
-// Top 5 concentration
-const top5 = holdings.filter(h=>h.ticker!=='CASH').sort((a,b)=>b.mv-a.mv).slice(0,5);
-const top5pct = top5.reduce((s,h)=>s+h.wt,0);
+function recomputeAggregates(){
+  holdings.forEach(recomputeHoldingFields);
+  totalMV = holdings.reduce((s,h) => s + h.mv, 0);
+  holdings.forEach(h => h.wt = (h.mv / totalMV) * 100);
+  totalDayChange = holdings.reduce((s,h) => s + h.dayDollar, 0);
+  advancers = holdings.filter(h => h.ticker !== 'CASH' && h.dayDollar > 0).length;
+  decliners = holdings.filter(h => h.ticker !== 'CASH' && h.dayDollar < 0).length;
+  cashPct = (holdings.find(h=>h.ticker==='CASH').mv / totalMV) * 100;
+  top5 = holdings.filter(h=>h.ticker!=='CASH').sort((a,b)=>b.mv-a.mv).slice(0,5);
+  top5pct = top5.reduce((s,h)=>s+h.wt,0);
+  totalCostBasis = holdings.reduce((s,h)=>s+h.cb,0);
+  totalUnrealized = holdings.reduce((s,h)=>s+h.gainLoss,0);
+  totalAnnualDiv = holdings.reduce((s,h)=>s+h.divAnnual,0);
+  portfolioYield = (totalAnnualDiv/totalMV)*100;
+  gainers = holdings.filter(h=>h.ticker!=='CASH' && h.dayDollar>0).sort((a,b)=>b.dayDollar-a.dayDollar).slice(0,5);
+  losers = holdings.filter(h=>h.ticker!=='CASH' && h.dayDollar<0).sort((a,b)=>a.dayDollar-b.dayDollar).slice(0,5);
+}
+recomputeAggregates();
 
 // ---- BUILD TARGET PROGRESS ----
 const buildTargets = [
@@ -1300,20 +1319,8 @@ function renderBuildTargets(){
   }).join('');
 }
 
-// ---- TODAY ----
-document.getElementById('total-val').textContent = '$'+fmt(totalMV,0);
-const dayEl = document.getElementById('day-change');
-dayEl.textContent = fmtDollar(totalDayChange);
-dayEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
-document.getElementById('day-pct').textContent = Math.abs((totalDayChange/totalMV)*100).toFixed(2)+'%';
-document.getElementById('breadth').textContent = advancers+' / '+decliners;
-document.getElementById('cash-sub').textContent = cashPct.toFixed(1)+'% — On Track (2–4%)';
-document.getElementById('sum-cash-pct').textContent = cashPct.toFixed(1)+'%';
-renderBuildTargets();
-
-// Contributors & Detractors (split, ranked by $ impact)
-const gainers = holdings.filter(h=>h.ticker!=='CASH' && h.dayDollar>0).sort((a,b)=>b.dayDollar-a.dayDollar).slice(0,5);
-const losers = holdings.filter(h=>h.ticker!=='CASH' && h.dayDollar<0).sort((a,b)=>a.dayDollar-b.dayDollar).slice(0,5);
+// ---- CORE METRICS (Today tab, Dollar Drivers, sticky Summary bar, Portfolio tab) ----
+// Wrapped in one function so it can be re-run every time live prices come back.
 function renderDriverRow(h){
   const up = h.dayDollar >= 0;
   return `<div class="trow">
@@ -1324,33 +1331,42 @@ function renderDriverRow(h){
     <div class="mv ${up?'up-color':'dn-color'}">${fmtDollar(h.dayDollar)}</div>
   </div>`;
 }
-document.getElementById('contributors-list').innerHTML = gainers.length ? gainers.map(renderDriverRow).join('') : '<div class="no-results">No advancers today.</div>';
-document.getElementById('detractors-list').innerHTML = losers.length ? losers.map(renderDriverRow).join('') : '<div class="no-results">No decliners today.</div>';
 
-// ---- SUMMARY BAR (sticky, shown across all tabs) ----
-document.getElementById('sum-total').textContent = '$'+fmt(totalMV,0);
-const sumDayEl = document.getElementById('sum-day');
-sumDayEl.textContent = fmtDollar(totalDayChange);
-sumDayEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
-const sumDayPctEl = document.getElementById('sum-day-pct');
-sumDayPctEl.textContent = Math.abs((totalDayChange/totalMV)*100).toFixed(2)+'%';
-sumDayPctEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
-document.getElementById('sum-updated').textContent = 'Jul 31, 4:00 PM ET';
+function renderCoreMetrics(){
+  document.getElementById('total-val').textContent = '$'+fmt(totalMV,0);
+  const dayEl = document.getElementById('day-change');
+  dayEl.textContent = fmtDollar(totalDayChange);
+  dayEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
+  document.getElementById('day-pct').textContent = Math.abs((totalDayChange/totalMV)*100).toFixed(2)+'%';
+  document.getElementById('breadth').textContent = advancers+' / '+decliners;
+  document.getElementById('cash-sub').textContent = cashPct.toFixed(1)+'% — On Track (2–4%)';
+  document.getElementById('sum-cash-pct').textContent = cashPct.toFixed(1)+'%';
+  renderBuildTargets();
 
-// ---- PORTFOLIO ----
-document.getElementById('port-total').textContent = '$'+fmt(totalMV,0);
-document.getElementById('port-positions').textContent = holdings.filter(h=>h.ticker!=='CASH').length;
-const portDay = document.getElementById('port-day');
-portDay.textContent = fmtDollar(totalDayChange);
-portDay.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
+  document.getElementById('contributors-list').innerHTML = gainers.length ? gainers.map(renderDriverRow).join('') : '<div class="no-results">No advancers today.</div>';
+  document.getElementById('detractors-list').innerHTML = losers.length ? losers.map(renderDriverRow).join('') : '<div class="no-results">No decliners today.</div>';
 
-const totalCostBasis = holdings.reduce((s,h)=>s+h.cb,0);
-const totalUnrealized = holdings.reduce((s,h)=>s+h.gainLoss,0);
-document.getElementById('port-cost-basis').textContent = '$'+fmt(totalCostBasis,0);
-const portUnrealEl = document.getElementById('port-unrealized');
-portUnrealEl.textContent = fmtDollar(totalUnrealized);
-portUnrealEl.className = 'val '+(totalUnrealized>=0?'up-color':'dn-color');
-document.getElementById('port-unrealized-pct').textContent = Math.abs(totalUnrealized/totalCostBasis*100).toFixed(1)+'% since cost';
+  document.getElementById('sum-total').textContent = '$'+fmt(totalMV,0);
+  const sumDayEl = document.getElementById('sum-day');
+  sumDayEl.textContent = fmtDollar(totalDayChange);
+  sumDayEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
+  const sumDayPctEl = document.getElementById('sum-day-pct');
+  sumDayPctEl.textContent = Math.abs((totalDayChange/totalMV)*100).toFixed(2)+'%';
+  sumDayPctEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
+
+  document.getElementById('port-total').textContent = '$'+fmt(totalMV,0);
+  document.getElementById('port-positions').textContent = holdings.filter(h=>h.ticker!=='CASH').length;
+  const portDay = document.getElementById('port-day');
+  portDay.textContent = fmtDollar(totalDayChange);
+  portDay.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
+
+  document.getElementById('port-cost-basis').textContent = '$'+fmt(totalCostBasis,0);
+  const portUnrealEl = document.getElementById('port-unrealized');
+  portUnrealEl.textContent = fmtDollar(totalUnrealized);
+  portUnrealEl.className = 'val '+(totalUnrealized>=0?'up-color':'dn-color');
+  document.getElementById('port-unrealized-pct').textContent = Math.abs(totalUnrealized/totalCostBasis*100).toFixed(1)+'% since cost';
+}
+renderCoreMetrics();
 
 // ---- ALLOCATION BARS (dynamic, matches donut) ----
 const allocCategoryOrder = ['U.S. individual stocks','Target-date / mixed','U.S. small & mid cap','U.S. diversified funds','International equity','Cash & equivalents'];
@@ -1424,7 +1440,8 @@ function setUnitMode(mode, btn){
   (unitMode === 'dollar' ? buttons[1] : buttons[0])?.classList.add('active');
 })();
 
-// Populate category dropdown, ordered to match the Allocation by Asset Class card above
+// Populate category dropdown (one-time only — must not run again on refresh, or it
+// would duplicate the <option> elements)
 function populateCategoryFilter(){
   const order = ['U.S. individual stocks','Target-date / mixed','U.S. small & mid cap','U.S. diversified funds','International equity','Cash & equivalents'];
   const present = order.filter(cat => holdings.some(h => h.cat === cat));
@@ -1453,7 +1470,6 @@ function toggleRow(ticker){
   else expandedTickers.add(ticker);
   renderHoldings();
 }
-
 function renderHoldings(){
   const q = (document.getElementById('holdings-search').value || '').trim().toLowerCase();
   const cat = document.getElementById('holdings-category').value;
@@ -1530,64 +1546,76 @@ function renderHoldings(){
 }
 renderHoldings();
 
-// ---- ALLOCATION DONUT CHART ----
-// Wrapped in try/catch: if the Chart.js CDN fails to load (network issue, ad-blocker,
-// corporate firewall) this must NOT take down the rest of the dashboard's script.
-try {
-  if (typeof Chart === 'undefined') throw new Error('Chart.js failed to load from CDN');
 
+// ---- ALLOCATION DONUT CHART ----
+// Wrapped so it can be called again after a live price refresh: creates the chart once,
+// then just updates its data on subsequent calls (never recreates the Chart instance).
+// Also still wrapped in try/catch: if the Chart.js CDN fails to load (network issue,
+// ad-blocker, corporate firewall) this must NOT take down the rest of the dashboard.
+function renderAllocChart(){
   const allocByCategory = allocCategoryOrder.map(cat => holdings.filter(h=>h.cat===cat).reduce((s,h)=>s+h.mv,0));
 
-  const centerTextPlugin = {
-    id: 'centerText',
-    beforeDraw(chart){
-      const {ctx, chartArea:{width, height, top, left}} = chart;
-      ctx.save();
-      const isDark = document.body.getAttribute('data-theme') === 'dark';
-      ctx.font = '700 22px -apple-system, BlinkMacSystemFont, sans-serif';
-      ctx.fillStyle = isDark ? '#e8e9ec' : '#1a1a1a';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText('100%', left+width/2, top+height/2 - 8);
-      ctx.font = '600 10px -apple-system, BlinkMacSystemFont, sans-serif';
-      ctx.fillStyle = isDark ? '#8b909c' : '#888';
-      ctx.fillText('ALLOCATED', left+width/2, top+height/2 + 12);
-      ctx.restore();
-    }
-  };
+  if(window.allocChart){
+    window.allocChart.data.datasets[0].data = allocByCategory;
+    window.allocChart.update();
+    return;
+  }
 
-  window.allocChart = new Chart(document.getElementById('allocDonut'), {
-    type: 'doughnut',
-    data: {
-      labels: allocCategoryOrder,
-      datasets: [{
-        data: allocByCategory,
-        backgroundColor: allocCategoryOrder.map(c=>allocColors[c]),
-        borderWidth: 2,
-        borderColor: '#fff'
-      }]
-    },
-    options: {
-      cutout: '72%',
-      plugins: {
-        legend: { display: false },
-        tooltip: {
-          callbacks: {
-            label: (ctx) => {
-              const pct = (ctx.parsed / totalMV * 100).toFixed(1);
-              return `${ctx.label}: ${pct}%`;
+  try {
+    if (typeof Chart === 'undefined') throw new Error('Chart.js failed to load from CDN');
+
+    const centerTextPlugin = {
+      id: 'centerText',
+      beforeDraw(chart){
+        const {ctx, chartArea:{width, height, top, left}} = chart;
+        ctx.save();
+        const isDark = document.body.getAttribute('data-theme') === 'dark';
+        ctx.font = '700 22px -apple-system, BlinkMacSystemFont, sans-serif';
+        ctx.fillStyle = isDark ? '#e8e9ec' : '#1a1a1a';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('100%', left+width/2, top+height/2 - 8);
+        ctx.font = '600 10px -apple-system, BlinkMacSystemFont, sans-serif';
+        ctx.fillStyle = isDark ? '#8b909c' : '#888';
+        ctx.fillText('ALLOCATED', left+width/2, top+height/2 + 12);
+        ctx.restore();
+      }
+    };
+
+    window.allocChart = new Chart(document.getElementById('allocDonut'), {
+      type: 'doughnut',
+      data: {
+        labels: allocCategoryOrder,
+        datasets: [{
+          data: allocByCategory,
+          backgroundColor: allocCategoryOrder.map(c=>allocColors[c]),
+          borderWidth: 2,
+          borderColor: '#fff'
+        }]
+      },
+      options: {
+        cutout: '72%',
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (ctx) => {
+                const pct = (ctx.parsed / totalMV * 100).toFixed(1);
+                return `${ctx.label}: ${pct}%`;
+              }
             }
           }
         }
-      }
-    },
-    plugins: [centerTextPlugin]
-  });
-} catch(chartErr) {
-  console.warn('Allocation donut chart unavailable:', chartErr.message);
-  const canvas = document.getElementById('allocDonut');
-  if(canvas) canvas.parentElement.style.display = 'none';
+      },
+      plugins: [centerTextPlugin]
+    });
+  } catch(chartErr) {
+    console.warn('Allocation donut chart unavailable:', chartErr.message);
+    const canvas = document.getElementById('allocDonut');
+    if(canvas) canvas.parentElement.style.display = 'none';
+  }
 }
+renderAllocChart();
 
 function updateAllocChartColors(){
   if(!window.allocChart) return;
@@ -1597,20 +1625,21 @@ function updateAllocChartColors(){
 }
 
 // ---- TICKER BAR ----
-const mutualFundTickers = ['CASH'];
-const tickers = [...holdings].filter(h=>!mutualFundTickers.includes(h.ticker)).sort((a,b)=>b.mv-a.mv);
-let tickerHtml = '';
-tickers.forEach(h=>{
-  const up = h.dayPct >= 0;
-  tickerHtml += `<div class="ticker-item">
-    <span class="sym">${h.ticker}</span>
-    <span class="pr">$${h.price.toFixed(2)}</span>
-    <span class="${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(h.dayPct).toFixed(2)}%</span>
-  </div>`;
-});
-// Duplicate for infinite scroll
-const track = document.getElementById('tickerTrack');
-track.innerHTML = tickerHtml + tickerHtml;
+function renderTickerBar(){
+  const tickers = [...holdings].filter(h=>h.ticker!=='CASH').sort((a,b)=>b.mv-a.mv);
+  let tickerHtml = '';
+  tickers.forEach(h=>{
+    const up = h.dayPct >= 0;
+    tickerHtml += `<div class="ticker-item">
+      <span class="sym">${h.ticker}</span>
+      <span class="pr">$${h.price.toFixed(2)}</span>
+      <span class="${up?'up':'dn'}">${up?'▲':'▼'} ${Math.abs(h.dayPct).toFixed(2)}%</span>
+    </div>`;
+  });
+  const track = document.getElementById('tickerTrack');
+  track.innerHTML = tickerHtml + tickerHtml;
+}
+renderTickerBar();
 
 // ---- RETIREMENT ----
 function calcRetirement(){
@@ -1636,9 +1665,6 @@ function calcRetirement(){
 calcRetirement();
 
 // ---- INCOME (fully dynamic from holdings' dividend yields) ----
-const totalAnnualDiv = holdings.reduce((s,h)=>s+h.divAnnual,0);
-const portfolioYield = (totalAnnualDiv/totalMV)*100;
-
 function calcDividends(){
   const growth = +document.getElementById('div-growth').value / 100;
   const years = +document.getElementById('div-years').value;
@@ -1649,10 +1675,13 @@ function calcDividends(){
   document.getElementById('proj-div-mo').textContent = '$'+Math.round(proj/12).toLocaleString()+'/month';
 }
 
-document.getElementById('inc-annual-div').textContent = '$'+Math.round(totalAnnualDiv).toLocaleString();
-document.getElementById('inc-annual-div-mo').textContent = '$'+Math.round(totalAnnualDiv/12).toLocaleString()+'/month';
-document.getElementById('inc-yield').textContent = portfolioYield.toFixed(2)+'%';
-calcDividends();
+function renderIncomeMetrics(){
+  document.getElementById('inc-annual-div').textContent = '$'+Math.round(totalAnnualDiv).toLocaleString();
+  document.getElementById('inc-annual-div-mo').textContent = '$'+Math.round(totalAnnualDiv/12).toLocaleString()+'/month';
+  document.getElementById('inc-yield').textContent = portfolioYield.toFixed(2)+'%';
+  calcDividends();
+}
+renderIncomeMetrics();
 
 // Income by category
 const incomeByCatOrder = ['U.S. individual stocks','Target-date / mixed','U.S. small & mid cap','International equity','U.S. diversified funds','Cash & equivalents'];
@@ -1678,7 +1707,6 @@ function renderTopDivContributors(){
   document.getElementById('inc-concentration').textContent = Math.round(top5divSum/totalAnnualDiv*100)+'%';
 }
 renderTopDivContributors();
-
 // ---- RESEARCH FILTER (status pill + asset-type toggle + text search, all combined) ----
 let thesisStatusFilter = 'all';
 let thesisTypeFilter = 'all';
@@ -1992,6 +2020,86 @@ function switchTab(id, btn){
 // ---- HELPERS ----
 function fmt(n, dec){ return n.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec}); }
 function fmtDollar(n){ return '$'+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0}); }
+
+// ---- LIVE PRICE REFRESH ("upon opening") ----
+// Runs once, right when the page loads. Fetches real-time quotes for every equity/ETF
+// directly from Finnhub (client-side — its free tier easily handles ~30 calls in one go),
+// and reads the once-daily mutual-fund-quotes.json (written by a scheduled GitHub Action
+// via Alpha Vantage) for the 4 mutual funds. If either source fails for any reason —
+// placeholder API key not yet set, network hiccup, rate limit — everything silently keeps
+// the last-known baked-in prices already in the `holdings` array above. Nothing breaks.
+async function fetchLiveQuotes(){
+  const liveTickers = holdings.filter(h => h.ticker!=='CASH' && !mutualFundQuoteTickers.includes(h.ticker));
+  let liveOk = 0;
+
+  await Promise.allSettled(liveTickers.map(h =>
+    fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(h.ticker)}&token=${FINNHUB_API_KEY}`)
+      .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP '+r.status)))
+      .then(data => {
+        if(data && typeof data.c === 'number' && data.c > 0){
+          h.price = data.c;
+          if(typeof data.pc === 'number' && data.pc > 0) h.prev = data.pc;
+          liveOk++;
+        }
+      })
+      .catch(() => { /* keep this ticker's existing fallback price — no crash, no gap */ })
+  ));
+
+  let mfOk = false;
+  try {
+    const mfRes = await fetch('./mutual-fund-quotes.json', {cache:'no-store'});
+    if(mfRes.ok){
+      const mfData = await mfRes.json();
+      holdings.forEach(h=>{
+        if(mutualFundQuoteTickers.includes(h.ticker) && mfData[h.ticker] && mfData[h.ticker].price > 0){
+          h.price = mfData[h.ticker].price;
+          if(mfData[h.ticker].prev > 0) h.prev = mfData[h.ticker].prev;
+          mfOk = true;
+        }
+      });
+    }
+  } catch(e) { /* file not present yet or fetch failed — keep fallback values */ }
+
+  // Recompute everything and repaint the whole app with whatever mix of live/fallback
+  // data we ended up with.
+  recomputeAggregates();
+  renderCoreMetrics();
+  renderAllocBars();
+  renderSectorBars();
+  renderHoldings();
+  renderAllocChart();
+  renderTickerBar();
+  calcRetirement();
+  renderIncomeMetrics();
+  renderIncomeByCategory();
+  renderTopDivContributors();
+
+  const now = new Date();
+  const timeStr = now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+  const dateStr = now.toLocaleDateString('en-US',{month:'short',day:'numeric'});
+
+  const liveStatusText = liveOk > 0
+    ? `live as of ${timeStr}`
+    : (FINNHUB_API_KEY === 'YOUR_FINNHUB_API_KEY_HERE'
+        ? 'showing last-known values (add your Finnhub key to go live)'
+        : 'showing last-known values (live fetch unavailable)');
+  const headerStatusEl = document.getElementById('header-live-status');
+  if(headerStatusEl) headerStatusEl.textContent = liveStatusText;
+
+  const sumUpdatedEl = document.getElementById('sum-updated');
+  if(sumUpdatedEl) sumUpdatedEl.textContent = liveOk > 0 ? `Live • ${timeStr}` : 'Last known';
+
+  const freshLiveEl = document.getElementById('freshness-live');
+  if(freshLiveEl) freshLiveEl.textContent = liveOk > 0
+    ? `Live quotes (Finnhub): ${dateStr}, ${timeStr}`
+    : 'Live quotes (Finnhub): unavailable — showing last-known prices';
+
+  const freshMfEl = document.getElementById('freshness-mf');
+  if(freshMfEl) freshMfEl.textContent = mfOk
+    ? `Mutual funds (Alpha Vantage, daily): ${dateStr}`
+    : 'Mutual funds (Alpha Vantage, daily): not yet refreshed — showing last-known NAV';
+}
+fetchLiveQuotes();
 </script>
 </body>
 </html>
