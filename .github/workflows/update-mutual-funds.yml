@@ -1,0 +1,67 @@
+name: Update Mutual Fund Quotes
+
+# Runs once per weekday after US market close, plus supports a manual trigger from
+# the Actions tab (useful for testing without waiting for the schedule).
+on:
+  schedule:
+    - cron: '0 21 * * 1-5'   # 21:00 UTC — approximately 4-5pm ET depending on daylight
+                              # saving time (cron runs on fixed UTC, so the ET time drifts
+                              # by an hour across DST changes; fine for a once-daily refresh)
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  update-quotes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Fetch mutual fund quotes from Alpha Vantage
+        env:
+          ALPHA_VANTAGE_KEY: ${{ secrets.ALPHA_VANTAGE_KEY }}
+        run: |
+          python3 - << 'PYEOF'
+          import json, os, time, urllib.request
+
+          tickers = ["FSMDX", "FSSNX", "TLXIX", "VFFSX"]
+          api_key = os.environ["ALPHA_VANTAGE_KEY"]
+          result = {}
+
+          for t in tickers:
+              url = (
+                  "https://www.alphavantage.co/query"
+                  f"?function=GLOBAL_QUOTE&symbol={t}&apikey={api_key}"
+              )
+              try:
+                  with urllib.request.urlopen(url, timeout=30) as resp:
+                      data = json.load(resp)
+                  quote = data.get("Global Quote", {})
+                  price = quote.get("05. price")
+                  prev = quote.get("08. previous close")
+                  if price and prev:
+                      result[t] = {"price": float(price), "prev": float(prev)}
+                      print(f"{t}: price={price} prev={prev}")
+                  else:
+                      print(f"{t}: no quote data returned — {data}")
+              except Exception as e:
+                  print(f"{t}: request failed — {e}")
+              time.sleep(15)  # stay comfortably under the free tier's 5-calls/minute cap
+
+          if result:
+              with open("mutual-fund-quotes.json", "w") as f:
+                  json.dump(result, f, indent=2)
+              print("Wrote mutual-fund-quotes.json:", result)
+          else:
+              print("No quotes fetched successfully — leaving existing file untouched.")
+          PYEOF
+
+      - name: Commit updated quotes (only if something changed)
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add mutual-fund-quotes.json
+          git diff --staged --quiet || git commit -m "Auto-update mutual fund quotes"
+          git push
