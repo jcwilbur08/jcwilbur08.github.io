@@ -142,6 +142,28 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
 /* SLIDER */
 .slider-wrap{margin-bottom:18px;background:#f8f9fa;padding:14px;border-radius:8px;}
+
+/* INCOME STACK (Pension / Dividends / Withdrawals bar + legend) */
+.income-stack-bar{display:flex;height:36px;border-radius:18px;overflow:hidden;background:#f0f0f0;}
+.income-stack-seg{height:100%;transition:width .3s;}
+.income-stack-seg.pension{background:#2563eb;}
+.income-stack-seg.dividends{background:#16a34a;}
+.income-stack-seg.withdrawals{background:#eab308;}
+.income-stack-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;}
+.income-stack-legend-item{display:flex;align-items:center;gap:7px;font-size:13px;color:#333;}
+.income-stack-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
+.income-stack-dot.pension{background:#2563eb;}
+.income-stack-dot.dividends{background:#16a34a;}
+.income-stack-dot.withdrawals{background:#eab308;}
+
+/* MONTHLY DIVIDEND CALENDAR */
+.uneven-pill{display:inline-block;background:#dbeafe;color:#1d4ed8;font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px;}
+.div-calendar{display:grid;grid-template-columns:repeat(6,1fr);gap:10px 6px;align-items:end;}
+.div-cal-col{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.div-cal-bar-wrap{height:90px;display:flex;align-items:flex-end;width:100%;justify-content:center;}
+.div-cal-bar{width:70%;background:#2563eb;border-radius:5px 5px 0 0;min-height:3px;transition:height .3s;}
+.div-cal-amt{font-size:12px;font-weight:700;color:#1a1a1a;}
+.div-cal-month{font-size:11px;color:#888;}
 .slider-wrap label{display:flex;justify-content:space-between;font-size:13px;font-weight:600;color:#1a1a1a;margin-bottom:8px;}
 input[type=range]{width:100%;height:5px;border-radius:3px;background:#ddd;outline:none;-webkit-appearance:none;appearance:none;}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#2563eb;cursor:pointer;}
@@ -335,6 +357,11 @@ body[data-theme="dark"] .ticker-link{border-bottom-color:#5a5f6b;}
 body[data-theme="dark"] .thesis-report-link{color:#5b8def;}
 body[data-theme="dark"] .report-ticker-badge{background:#2a2e37;color:#e8e9ec;}
 body[data-theme="dark"] .slider-wrap{background:#20242e;}
+body[data-theme="dark"] .income-stack-bar{background:#20242e;}
+body[data-theme="dark"] .income-stack-legend-item{color:#d1d4da;}
+body[data-theme="dark"] .uneven-pill{background:#111d33;color:#5b8def;}
+body[data-theme="dark"] .div-cal-amt{color:#e8e9ec;}
+body[data-theme="dark"] .div-cal-month{color:#8b909c;}
 body[data-theme="dark"] .slider-wrap label{color:#e8e9ec;}
 body[data-theme="dark"] .blue-card{background:#111d33;border-color:#1e3a5f;}
 body[data-theme="dark"] .blue-metric{background:#0d1830;border-color:#1e3a5f;}
@@ -636,6 +663,21 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <div class="val" id="inc-concentration">43%</div>
         <div class="sub">Top 5 contributors</div>
       </div>
+    </div>
+
+    <div class="card">
+      <h3>Retirement Income Stack</h3>
+      <p style="font-size:11px;color:#888;margin:-8px 0 14px;">Expected annual income at retirement (uses the years/return/withdrawal assumptions from the Retirement tab)</p>
+      <div style="font-size:22px;font-weight:700;color:#1a1a1a;margin-bottom:14px;" id="income-stack-total">$0 total</div>
+      <div class="income-stack-bar" id="income-stack-bar"></div>
+      <div class="income-stack-legend" id="income-stack-legend"></div>
+    </div>
+
+    <div class="card">
+      <h3>Monthly Dividend Calendar</h3>
+      <p style="font-size:11px;color:#888;margin:-8px 0 6px;">Projected retirement-year timing, based on each holding's actual quarterly payment schedule</p>
+      <div class="uneven-pill">Uneven by design</div>
+      <div class="div-calendar" id="div-calendar"></div>
     </div>
 
     <div class="card">
@@ -1212,43 +1254,45 @@ const mutualFundQuoteTickers = ['FSMDX','FSSNX','TLXIX','VFFSX'];
 
 // === PORTFOLIO DATA — Morningstar export (holdings/qty/cost-basis/sector) with the last
 // known prices baked in as both the initial paint and the fallback if a live fetch fails.
+const MONTH_ABBR = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
 const holdings = [
-  {ticker:'GOOG', name:'Alphabet Inc Class C', qty:145, price:374.76, prev:356.6701, cat:'U.S. individual stocks', div:0.24, cb:9285.597, sector:'Communication Services'},
-  {ticker:'AMZN', name:'Amazon Inc', qty:520, price:284.5, prev:271.6299, cat:'U.S. individual stocks', div:0, cb:7935.2, sector:'Consumer Discretionary'},
-  {ticker:'AXP', name:'American Express', qty:100, price:341.92, prev:336.2399, cat:'U.S. individual stocks', div:0.98, cb:7680, sector:'Financials'},
-  {ticker:'AMT', name:'American Tower', qty:230.217, price:173.49, prev:173.5001, cat:'U.S. individual stocks', div:4.2, cb:29932.8834, sector:'Real Estate'},
-  {ticker:'AAPL', name:'Apple Inc', qty:340, price:306.6, prev:308.9701, cat:'U.S. individual stocks', div:0.43, cb:7480, sector:'Information Technology'},
-  {ticker:'AVUV', name:'Avantis U.S. Sm Cap Val', qty:223, price:126.85, prev:125.255, cat:'U.S. small & mid cap', div:1.18, cb:27747.5555, sector:'Diversified Fund'},
-  {ticker:'BMY', name:'Bristol-Myers Squibb', qty:320, price:64.71, prev:65.3, cat:'U.S. individual stocks', div:5.1, cb:17974.4, sector:'Health Care'},
-  {ticker:'AVGO', name:'Broadcom Inc', qty:115, price:388.74, prev:389.3298, cat:'U.S. individual stocks', div:1.25, cb:43032.402, sector:'Information Technology'},
-  {ticker:'KO', name:'Coca-Cola Co', qty:293.187, price:86.71, prev:87.59, cat:'U.S. individual stocks', div:2.33, cb:12313.854, sector:'Consumer Staples'},
-  {ticker:'XOM', name:'ExxonMobil', qty:376.687, price:154.83, prev:155.5, cat:'U.S. individual stocks', div:2.55, cb:22876.2015, sector:'Energy'},
-  {ticker:'FSMDX', name:'Fidelity Mid Cap Index', qty:678.39, price:42.33, prev:42.45, cat:'U.S. small & mid cap', div:1.3, cb:25507.464, sector:'Diversified Fund'},
-  {ticker:'FSSNX', name:'Fidelity Small Cap Index', qty:810.811, price:36.73, prev:36.91, cat:'U.S. small & mid cap', div:1.1, cb:22889.1945, sector:'Diversified Fund'},
-  {ticker:'GRID', name:'First Trust NASDAQ CEA', qty:10, price:181.2, prev:179.385, cat:'U.S. diversified funds', div:0.7, cb:1789.14, sector:'Industrials'},
-  {ticker:'GEV', name:'GE Vernova', qty:30, price:1000.33, prev:990.0101, cat:'U.S. individual stocks', div:0.03, cb:30266.304, sector:'Industrials'},
-  {ticker:'SOXQ', name:'Invesco Semicond ETF', qty:14, price:89.35, prev:89.07, cat:'U.S. diversified funds', div:0.5, cb:1326.5994, sector:'Information Technology'},
-  {ticker:'IJH', name:'iShares S&P 400 Mid Cap', qty:270.076, price:75.885, prev:75.27, cat:'U.S. small & mid cap', div:1.2, cb:4537.2768, sector:'Diversified Fund'},
-  {ticker:'JPM', name:'JPMorgan Chase', qty:357.851, price:352.55, prev:351.7901, cat:'U.S. individual stocks', div:1.74, cb:20626.5316, sector:'Financials'},
-  {ticker:'MA', name:'Mastercard Inc', qty:172.761, price:571.445, prev:573.3198, cat:'U.S. individual stocks', div:0.37, cb:12953.6198, sector:'Financials'},
-  {ticker:'META', name:'Meta Platforms', qty:63, price:596.97, prev:556.5702, cat:'U.S. individual stocks', div:0, cb:20599.803, sector:'Communication Services'},
-  {ticker:'MSFT', name:'Microsoft Corp', qty:100, price:489.5, prev:464.6099, cat:'U.S. individual stocks', div:0.68, cb:32427.44, sector:'Information Technology'},
-  {ticker:'NFLX', name:'Netflix Inc', qty:500, price:72.81, prev:71.705, cat:'U.S. individual stocks', div:0, cb:4715, sector:'Communication Services'},
-  {ticker:'TLXIX', name:'Nuveen Lifecycle Index', qty:4089.97, price:39.46, prev:39.32, cat:'Target-date / mixed', div:1.5, cb:60695.1548, sector:'Diversified Fund'},
-  {ticker:'PEP', name:'PepsiCo Inc', qty:155, price:138.85, prev:139.59, cat:'U.S. individual stocks', div:3.38, cb:21213.3465, sector:'Consumer Staples'},
-  {ticker:'PM', name:'Philip Morris Intl', qty:179.462, price:189.46, prev:190.81, cat:'U.S. individual stocks', div:4.3, cb:14843.302, sector:'Consumer Staples'},
-  {ticker:'QCOM', name:'Qualcomm Inc', qty:104.415, price:149.07, prev:147.69, cat:'U.S. individual stocks', div:2.0, cb:5809.6506, sector:'Information Technology'},
-  {ticker:'CRM', name:'Salesforce Inc', qty:99, price:188.76, prev:184.06, cat:'U.S. individual stocks', div:0, cb:20956.32, sector:'Information Technology'},
-  {ticker:'SCHD', name:'Schwab US Div Equity', qty:610, price:33.45, prev:33.45, cat:'U.S. diversified funds', div:3.5, cb:20040.513, sector:'Diversified Fund'},
-  {ticker:'SO', name:'Southern Company', qty:377.4, price:93.93, prev:94.59, cat:'U.S. individual stocks', div:3.3, cb:3155.064, sector:'Utilities'},
-  {ticker:'GS', name:'Goldman Sachs', qty:105, price:1016.79, prev:1017.9596, cat:'U.S. individual stocks', div:1.66, cb:18483.15, sector:'Financials'},
-  {ticker:'DIS', name:'Walt Disney Co', qty:196.17, price:97.6, prev:96.2, cat:'U.S. individual stocks', div:0, cb:15770.1063, sector:'Communication Services'},
-  {ticker:'UNH', name:'UnitedHealth Group', qty:50.22, price:415.42, prev:414.3501, cat:'U.S. individual stocks', div:1.37, cb:11924.739, sector:'Health Care'},
-  {ticker:'VFFSX', name:'Vanguard 500 Index', qty:100, price:366.66, prev:364.0899, cat:'U.S. diversified funds', div:1.3, cb:5000, sector:'Diversified Fund'},
-  {ticker:'VTWO', name:'Vanguard Russell 2000', qty:126, price:119.45, prev:117.71, cat:'U.S. small & mid cap', div:1.3, cb:3528, sector:'Diversified Fund'},
-  {ticker:'VXUS', name:'Vanguard Total Intl', qty:504, price:84.81, prev:84.58, cat:'International equity', div:2.0, cb:42156.3744, sector:'International / Diversified'},
-  {ticker:'V', name:'Visa Inc', qty:100, price:364.91, prev:365.99, cat:'U.S. individual stocks', div:0.68, cb:13650, sector:'Financials'},
-  {ticker:'CASH', name:'Cash & Equivalents', qty:1, price:43000, prev:43000, cat:'Cash & equivalents', div:5.0, cb:43000, sector:'Cash & Equivalents'},
+  {ticker:'GOOG', name:'Alphabet Inc Class C', qty:145, price:374.76, prev:356.6701, cat:'U.S. individual stocks', div:0.24, cb:9285.597, sector:'Communication Services', divMonths:[3, 6, 9, 12]},
+  {ticker:'AMZN', name:'Amazon Inc', qty:520, price:284.5, prev:271.6299, cat:'U.S. individual stocks', div:0, cb:7935.2, sector:'Consumer Discretionary', divMonths:[]},
+  {ticker:'AXP', name:'American Express', qty:100, price:341.92, prev:336.2399, cat:'U.S. individual stocks', div:0.98, cb:7680, sector:'Financials', divMonths:[2, 5, 8, 11]},
+  {ticker:'AMT', name:'American Tower', qty:230.217, price:173.49, prev:173.5001, cat:'U.S. individual stocks', div:4.2, cb:29932.8834, sector:'Real Estate', divMonths:[1, 4, 7, 10]},
+  {ticker:'AAPL', name:'Apple Inc', qty:340, price:306.6, prev:308.9701, cat:'U.S. individual stocks', div:0.43, cb:7480, sector:'Information Technology', divMonths:[2, 5, 8, 11]},
+  {ticker:'AVUV', name:'Avantis U.S. Sm Cap Val', qty:223, price:126.85, prev:125.255, cat:'U.S. small & mid cap', div:1.18, cb:27747.5555, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'BMY', name:'Bristol-Myers Squibb', qty:320, price:64.71, prev:65.3, cat:'U.S. individual stocks', div:5.1, cb:17974.4, sector:'Health Care', divMonths:[2, 5, 8, 11]},
+  {ticker:'AVGO', name:'Broadcom Inc', qty:115, price:388.74, prev:389.3298, cat:'U.S. individual stocks', div:1.25, cb:43032.402, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'KO', name:'Coca-Cola Co', qty:293.187, price:86.71, prev:87.59, cat:'U.S. individual stocks', div:2.33, cb:12313.854, sector:'Consumer Staples', divMonths:[1, 4, 7, 10]},
+  {ticker:'XOM', name:'ExxonMobil', qty:376.687, price:154.83, prev:155.5, cat:'U.S. individual stocks', div:2.55, cb:22876.2015, sector:'Energy', divMonths:[3, 6, 9, 12]},
+  {ticker:'FSMDX', name:'Fidelity Mid Cap Index', qty:678.39, price:42.33, prev:42.45, cat:'U.S. small & mid cap', div:1.3, cb:25507.464, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'FSSNX', name:'Fidelity Small Cap Index', qty:810.811, price:36.73, prev:36.91, cat:'U.S. small & mid cap', div:1.1, cb:22889.1945, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'GRID', name:'First Trust NASDAQ CEA', qty:10, price:181.2, prev:179.385, cat:'U.S. diversified funds', div:0.7, cb:1789.14, sector:'Industrials', divMonths:[3, 6, 9, 12]},
+  {ticker:'GEV', name:'GE Vernova', qty:30, price:1000.33, prev:990.0101, cat:'U.S. individual stocks', div:0.03, cb:30266.304, sector:'Industrials', divMonths:[3, 6, 9, 12]},
+  {ticker:'SOXQ', name:'Invesco Semicond ETF', qty:14, price:89.35, prev:89.07, cat:'U.S. diversified funds', div:0.5, cb:1326.5994, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'IJH', name:'iShares S&P 400 Mid Cap', qty:270.076, price:75.885, prev:75.27, cat:'U.S. small & mid cap', div:1.2, cb:4537.2768, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'JPM', name:'JPMorgan Chase', qty:357.851, price:352.55, prev:351.7901, cat:'U.S. individual stocks', div:1.74, cb:20626.5316, sector:'Financials', divMonths:[1, 4, 7, 10]},
+  {ticker:'MA', name:'Mastercard Inc', qty:172.761, price:571.445, prev:573.3198, cat:'U.S. individual stocks', div:0.37, cb:12953.6198, sector:'Financials', divMonths:[2, 5, 8, 11]},
+  {ticker:'META', name:'Meta Platforms', qty:63, price:596.97, prev:556.5702, cat:'U.S. individual stocks', div:0, cb:20599.803, sector:'Communication Services', divMonths:[]},
+  {ticker:'MSFT', name:'Microsoft Corp', qty:100, price:489.5, prev:464.6099, cat:'U.S. individual stocks', div:0.68, cb:32427.44, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'NFLX', name:'Netflix Inc', qty:500, price:72.81, prev:71.705, cat:'U.S. individual stocks', div:0, cb:4715, sector:'Communication Services', divMonths:[]},
+  {ticker:'TLXIX', name:'Nuveen Lifecycle Index', qty:4089.97, price:39.46, prev:39.32, cat:'Target-date / mixed', div:1.5, cb:60695.1548, sector:'Diversified Fund', divMonths:[6, 12]},
+  {ticker:'PEP', name:'PepsiCo Inc', qty:155, price:138.85, prev:139.59, cat:'U.S. individual stocks', div:3.38, cb:21213.3465, sector:'Consumer Staples', divMonths:[3, 6, 9, 12]},
+  {ticker:'PM', name:'Philip Morris Intl', qty:179.462, price:189.46, prev:190.81, cat:'U.S. individual stocks', div:4.3, cb:14843.302, sector:'Consumer Staples', divMonths:[1, 4, 7, 10]},
+  {ticker:'QCOM', name:'Qualcomm Inc', qty:104.415, price:149.07, prev:147.69, cat:'U.S. individual stocks', div:2.0, cb:5809.6506, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'CRM', name:'Salesforce Inc', qty:99, price:188.76, prev:184.06, cat:'U.S. individual stocks', div:0, cb:20956.32, sector:'Information Technology', divMonths:[]},
+  {ticker:'SCHD', name:'Schwab US Div Equity', qty:610, price:33.45, prev:33.45, cat:'U.S. diversified funds', div:3.5, cb:20040.513, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'SO', name:'Southern Company', qty:377.4, price:93.93, prev:94.59, cat:'U.S. individual stocks', div:3.3, cb:3155.064, sector:'Utilities', divMonths:[3, 6, 9, 12]},
+  {ticker:'GS', name:'Goldman Sachs', qty:105, price:1016.79, prev:1017.9596, cat:'U.S. individual stocks', div:1.66, cb:18483.15, sector:'Financials', divMonths:[3, 6, 9, 12]},
+  {ticker:'DIS', name:'Walt Disney Co', qty:196.17, price:97.6, prev:96.2, cat:'U.S. individual stocks', div:0, cb:15770.1063, sector:'Communication Services', divMonths:[]},
+  {ticker:'UNH', name:'UnitedHealth Group', qty:50.22, price:415.42, prev:414.3501, cat:'U.S. individual stocks', div:1.37, cb:11924.739, sector:'Health Care', divMonths:[3, 6, 9, 12]},
+  {ticker:'VFFSX', name:'Vanguard 500 Index', qty:100, price:366.66, prev:364.0899, cat:'U.S. diversified funds', div:1.3, cb:5000, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'VTWO', name:'Vanguard Russell 2000', qty:126, price:119.45, prev:117.71, cat:'U.S. small & mid cap', div:1.3, cb:3528, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'VXUS', name:'Vanguard Total Intl', qty:504, price:84.81, prev:84.58, cat:'International equity', div:2.0, cb:42156.3744, sector:'International / Diversified', divMonths:[3, 6, 9, 12]},
+  {ticker:'V', name:'Visa Inc', qty:100, price:364.91, prev:365.99, cat:'U.S. individual stocks', div:0.68, cb:13650, sector:'Financials', divMonths:[3, 6, 9, 12]},
+  {ticker:'CASH', name:'Cash & Equivalents', qty:1, price:43000, prev:43000, cat:'Cash & equivalents', div:5.0, cb:43000, sector:'Cash & Equivalents', divMonths:[]},
 ];
 
 // ---- PER-HOLDING + AGGREGATE CALCULATIONS (re-run after every price refresh) ----
@@ -1661,6 +1705,7 @@ function calcRetirement(){
   document.getElementById('proj-income').textContent = '$'+(portIncome/1000).toFixed(1)+'k';
   document.getElementById('pension-disp').textContent = '$'+(pension/1000).toFixed(1)+'k';
   document.getElementById('combined-income').textContent = '$'+(combined/1000).toFixed(1)+'k';
+  renderIncomeStackAndCalendar();
 }
 calcRetirement();
 
@@ -1673,6 +1718,70 @@ function calcDividends(){
   document.getElementById('div-years-val').textContent = Math.round(years)+' years';
   document.getElementById('proj-div').textContent = '$'+Math.round(proj).toLocaleString();
   document.getElementById('proj-div-mo').textContent = '$'+Math.round(proj/12).toLocaleString()+'/month';
+  renderIncomeStackAndCalendar();
+}
+
+// ---- RETIREMENT INCOME STACK + MONTHLY DIVIDEND CALENDAR ----
+// Decomposes projected retirement income into three sources: Pension (from the
+// Retirement tab slider), Dividends (natural portfolio yield — no shares need to be
+// sold), and Planned Withdrawals (the remaining gap between the target withdrawal-rate
+// income and what dividends alone cover, i.e. principal/gains that must be sold). Both
+// this card and the monthly calendar use the SAME years-to-retirement and portfolio
+// figures as the Retirement tab, so all three stay consistent with each other.
+function renderIncomeStackAndCalendar(){
+  const years = +document.getElementById('ret-years').value;
+  const r = +document.getElementById('ret-return').value / 100;
+  const wd = +document.getElementById('ret-withdrawal').value / 100;
+  const contrib = +document.getElementById('ret-contrib').value;
+  const pension = +document.getElementById('ret-pension').value;
+  const divGrowth = +document.getElementById('div-growth').value / 100;
+
+  const fv = totalMV * Math.pow(1+r, years) + contrib * (Math.pow(1+r,years)-1)/r;
+  const totalPortfolioIncome = fv * wd;
+  const projectedDividends = totalAnnualDiv * Math.pow(1+divGrowth, years);
+  const withdrawals = Math.max(0, totalPortfolioIncome - projectedDividends);
+  const grandTotal = pension + projectedDividends + withdrawals;
+
+  document.getElementById('income-stack-total').textContent = '$'+Math.round(grandTotal).toLocaleString()+' total';
+
+  const pensionPct = grandTotal > 0 ? (pension/grandTotal*100) : 0;
+  const divPct = grandTotal > 0 ? (projectedDividends/grandTotal*100) : 0;
+  const wdPct = grandTotal > 0 ? (withdrawals/grandTotal*100) : 0;
+
+  document.getElementById('income-stack-bar').innerHTML = `
+    <div class="income-stack-seg pension" style="width:${pensionPct}%"></div>
+    <div class="income-stack-seg dividends" style="width:${divPct}%"></div>
+    <div class="income-stack-seg withdrawals" style="width:${wdPct}%"></div>
+  `;
+  document.getElementById('income-stack-legend').innerHTML = `
+    <div class="income-stack-legend-item"><span class="income-stack-dot pension"></span>Pension $${fmt(pension/1000,0)}K</div>
+    <div class="income-stack-legend-item"><span class="income-stack-dot dividends"></span>Dividends $${fmt(projectedDividends/1000,1)}K</div>
+    <div class="income-stack-legend-item"><span class="income-stack-dot withdrawals"></span>Planned withdrawals $${fmt(withdrawals/1000,1)}K</div>
+  `;
+
+  // Monthly dividend calendar: scale each holding's CURRENT dividend by the same
+  // growth factor applied above, so the calendar reflects the same at-retirement
+  // dividend total shown in the stack — just spread across its real payment months.
+  const scaleFactor = totalAnnualDiv > 0 ? (projectedDividends / totalAnnualDiv) : 0;
+  const monthTotals = new Array(13).fill(0); // index 1-12 used
+  holdings.forEach(h=>{
+    if(!h.divMonths || h.divMonths.length === 0) return;
+    const perPayment = (h.divAnnual / h.divMonths.length) * scaleFactor;
+    h.divMonths.forEach(m => { monthTotals[m] += perPayment; });
+  });
+  const maxMonth = Math.max(...monthTotals.slice(1), 1);
+  const calEl = document.getElementById('div-calendar');
+  let calHtml = '';
+  for(let m=1; m<=12; m++){
+    const amt = monthTotals[m];
+    const barPct = Math.max((amt/maxMonth)*100, amt>0 ? 4 : 0);
+    calHtml += `<div class="div-cal-col">
+      <div class="div-cal-bar-wrap"><div class="div-cal-bar" style="height:${barPct}%"></div></div>
+      <div class="div-cal-amt">$${amt>=1000 ? (amt/1000).toFixed(1)+'K' : Math.round(amt)}</div>
+      <div class="div-cal-month">${MONTH_ABBR[m]}</div>
+    </div>`;
+  }
+  calEl.innerHTML = calHtml;
 }
 
 function renderIncomeMetrics(){
