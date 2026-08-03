@@ -675,7 +675,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 
     <div class="card">
       <h3>Monthly Dividend Calendar</h3>
-      <p style="font-size:11px;color:#888;margin:-8px 0 6px;">Projected retirement-year timing, based on each holding's actual quarterly payment schedule</p>
+      <p style="font-size:11px;color:#888;margin:-8px 0 6px;" id="div-calendar-sublabel">Today's actual schedule — adjust Growth/Projection Period below to project forward</p>
       <div class="uneven-pill">Uneven by design</div>
       <div class="div-calendar" id="div-calendar"></div>
     </div>
@@ -684,11 +684,11 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <h3>Dividend Assumptions</h3>
       <div class="slider-wrap">
         <label><span>Annual Dividend Growth</span><span id="div-growth-val">9.0%</span></label>
-        <input type="range" id="div-growth" min="1" max="20" step="0.5" value="9" oninput="calcDividends()">
+        <input type="range" id="div-growth" min="1" max="20" step="0.5" value="9" oninput="calendarUsesProjection=true; calcDividends()">
       </div>
       <div class="slider-wrap">
         <label><span>Projection Period</span><span id="div-years-val">11 years</span></label>
-        <input type="range" id="div-years" min="1" max="20" value="11" oninput="calcDividends()">
+        <input type="range" id="div-years" min="1" max="20" value="11" oninput="calendarUsesProjection=true; calcDividends()">
       </div>
     </div>
 
@@ -1255,6 +1255,7 @@ const mutualFundQuoteTickers = ['FSMDX','FSSNX','TLXIX','VFFSX'];
 // === PORTFOLIO DATA — Morningstar export (holdings/qty/cost-basis/sector) with the last
 // known prices baked in as both the initial paint and the fallback if a live fetch fails.
 const MONTH_ABBR = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+let calendarUsesProjection = false; // flips true once the user touches the Growth/Projection sliders
 
 const holdings = [
   {ticker:'GOOG', name:'Alphabet Inc Class C', qty:145, price:374.76, prev:356.6701, cat:'U.S. individual stocks', div:0.24, cb:9285.597, sector:'Communication Services', divMonths:[3, 6, 9, 12]},
@@ -1759,14 +1760,28 @@ function renderIncomeStackAndCalendar(){
     <div class="income-stack-legend-item"><span class="income-stack-dot withdrawals"></span>Planned withdrawals $${fmt(withdrawals/1000,1)}K</div>
   `;
 
-  // Monthly dividend calendar: scale each holding's CURRENT dividend by the same
-  // growth factor applied above, so the calendar reflects the same at-retirement
-  // dividend total shown in the stack — just spread across its real payment months.
-  const scaleFactor = totalAnnualDiv > 0 ? (projectedDividends / totalAnnualDiv) : 0;
+  // Monthly dividend calendar: defaults to TODAY's real per-holding dividends (no
+  // growth applied) so it reflects your actual current schedule. Only once you move
+  // either "Annual Dividend Growth" or "Projection Period" below does it switch to
+  // showing the grown, projected version — using THOSE two sliders specifically
+  // (not the Retirement tab's years slider), since those are the ones sitting right
+  // here next to the chart.
+  let calSubLabel;
+  let calScaleFactor;
+  if(calendarUsesProjection){
+    const calYears = +document.getElementById('div-years').value;
+    calScaleFactor = Math.pow(1+divGrowth, calYears);
+    calSubLabel = `Projected ${calYears} year${calYears===1?'':'s'} forward at ${(divGrowth*100).toFixed(1)}% growth`;
+  } else {
+    calScaleFactor = 1;
+    calSubLabel = "Today's actual schedule — adjust Growth/Projection Period below to project forward";
+  }
+  document.getElementById('div-calendar-sublabel').textContent = calSubLabel;
+
   const monthTotals = new Array(13).fill(0); // index 1-12 used
   holdings.forEach(h=>{
     if(!h.divMonths || h.divMonths.length === 0) return;
-    const perPayment = (h.divAnnual / h.divMonths.length) * scaleFactor;
+    const perPayment = (h.divAnnual / h.divMonths.length) * calScaleFactor;
     h.divMonths.forEach(m => { monthTotals[m] += perPayment; });
   });
   const maxMonth = Math.max(...monthTotals.slice(1), 1);
