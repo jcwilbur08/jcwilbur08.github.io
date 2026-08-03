@@ -377,7 +377,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 <div class="header">
   <div>
     <h1>Portfolio Command Center</h1>
-    <p>James Wilbur &nbsp;•&nbsp; Private &nbsp;•&nbsp; Holdings as of Aug 1, 2026 &nbsp;•&nbsp; Prices <span id="header-live-status">loading…</span></p>
+    <p>James Wilbur &nbsp;•&nbsp; Private &nbsp;•&nbsp; Holdings as of Aug 3, 2026 &nbsp;•&nbsp; Prices <span id="header-live-status">loading…</span></p>
   </div>
   <div style="display:flex;align-items:center;">
     <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
@@ -445,7 +445,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <div class="data-freshness-footer">
       <span id="freshness-live">Live quotes (Finnhub): loading…</span>
       <span id="freshness-mf">Mutual funds (Alpha Vantage, daily): loading…</span>
-      <span>Morningstar export (holdings/cost basis): Aug 1, 2026</span>
+      <span>Morningstar export (holdings/cost basis): Aug 3, 2026</span>
       <span>News: Aug 1, 2026</span>
     </div>
   </div>
@@ -1204,7 +1204,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 // opens (60 calls/min on the free tier — plenty for ~30 tickers in one go, no daily cap).
 // Get a free key at https://finnhub.io/register and paste it below in place of the
 // placeholder. Until you do, the app just falls back to showing the last-baked-in prices.
-const FINNHUB_API_KEY = 'd9o9n09r01qt6o9atckgd9o9n09r01qt6o9atcl0';
+const FINNHUB_API_KEY = 'YOUR_FINNHUB_API_KEY_HERE';
 // Mutual funds price once per day (NAV, after market close) — there's no "live" quote to
 // fetch on open for these. A GitHub Action refreshes them once daily via Alpha Vantage and
 // commits mutual-fund-quotes.json; the page just reads that static file.
@@ -1213,42 +1213,42 @@ const mutualFundQuoteTickers = ['FSMDX','FSSNX','TLXIX','VFFSX'];
 // === PORTFOLIO DATA — Morningstar export (holdings/qty/cost-basis/sector) with the last
 // known prices baked in as both the initial paint and the fallback if a live fetch fails.
 const holdings = [
-  {ticker:'GOOG', name:'Alphabet Inc Class C',     qty:145,     price:356.71,  prev:333.68,  cat:'U.S. individual stocks',  div:0.24, cb:9285.597,    sector:'Communication Services'},
-  {ticker:'AMZN', name:'Amazon Inc',               qty:520,     price:271.57,  prev:235.50,  cat:'U.S. individual stocks',  div:0,    cb:7935.2,      sector:'Consumer Discretionary'},
-  {ticker:'AXP',  name:'American Express',         qty:100,     price:336.25,  prev:337.52,  cat:'U.S. individual stocks',  div:0.98, cb:7680,        sector:'Financials'},
-  {ticker:'AMT',  name:'American Tower',           qty:230.217, price:173.41,  prev:174.46,  cat:'U.S. individual stocks',  div:4.20, cb:29932.8834,  sector:'Real Estate'},
-  {ticker:'AAPL', name:'Apple Inc',                qty:340,     price:309.03,  prev:333.43,  cat:'U.S. individual stocks',  div:0.43, cb:7480,        sector:'Information Technology'},
-  {ticker:'AVUV', name:'Avantis U.S. Sm Cap Val',  qty:223,     price:125.26,  prev:125.24,  cat:'U.S. small & mid cap',    div:1.18, cb:27747.5555,  sector:'Diversified Fund'},
-  {ticker:'BMY',  name:'Bristol-Myers Squibb',     qty:320,     price:65.30,   prev:64.86,   cat:'U.S. individual stocks',  div:5.10, cb:17974.4,     sector:'Health Care'},
-  {ticker:'AVGO', name:'Broadcom Inc',             qty:115,     price:389.27,  prev:387.84,  cat:'U.S. individual stocks',  div:1.25, cb:43032.402,   sector:'Information Technology'},
-  {ticker:'KO',   name:'Coca-Cola Co',             qty:293.187, price:87.585,  prev:88.49,   cat:'U.S. individual stocks',  div:2.33, cb:12313.854,   sector:'Consumer Staples'},
-  {ticker:'XOM',  name:'ExxonMobil',               qty:376.687, price:155.46,  prev:156.97,  cat:'U.S. individual stocks',  div:2.55, cb:22876.2015,  sector:'Energy'},
-  {ticker:'FSMDX',name:'Fidelity Mid Cap Index',   qty:678.39,  price:42.33,   prev:42.45,   cat:'U.S. small & mid cap',    div:1.30, cb:25507.464,   sector:'Diversified Fund'},
-  {ticker:'FSSNX',name:'Fidelity Small Cap Index', qty:810.811, price:36.73,   prev:36.91,   cat:'U.S. small & mid cap',    div:1.10, cb:22889.1945,  sector:'Diversified Fund'},
-  {ticker:'GRID', name:'First Trust NASDAQ CEA',   qty:8,       price:179.35,  prev:176.64,  cat:'U.S. diversified funds',  div:0.70, cb:1426.42,     sector:'Industrials'},
-  {ticker:'GEV',  name:'GE Vernova',               qty:30,      price:990.115, prev:981.98,  cat:'U.S. individual stocks',  div:0.03, cb:30266.304,   sector:'Industrials'},
-  {ticker:'SOXQ', name:'Invesco Semicond ETF',     qty:12,      price:89.03,   prev:88.92,   cat:'U.S. diversified funds',  div:0.50, cb:1158.6,      sector:'Information Technology'},
-  {ticker:'IJH',  name:'iShares S&P 400 Mid Cap',  qty:270.076, price:75.28,   prev:75.35,   cat:'U.S. small & mid cap',    div:1.20, cb:4537.2768,   sector:'Diversified Fund'},
-  {ticker:'JPM',  name:'JPMorgan Chase',           qty:357.851, price:351.84,  prev:350.85,  cat:'U.S. individual stocks',  div:1.74, cb:20626.5316,  sector:'Financials'},
-  {ticker:'MA',   name:'Mastercard Inc',           qty:172.761, price:573.38,  prev:577.35,  cat:'U.S. individual stocks',  div:0.37, cb:12953.6198,  sector:'Financials'},
-  {ticker:'META', name:'Meta Platforms',           qty:63,      price:556.50,  prev:539.03,  cat:'U.S. individual stocks',  div:0,    cb:20599.803,   sector:'Communication Services'},
-  {ticker:'MSFT', name:'Microsoft Corp',           qty:100,     price:465.10,  prev:451.10,  cat:'U.S. individual stocks',  div:0.68, cb:32427.44,    sector:'Information Technology'},
-  {ticker:'NFLX', name:'Netflix Inc',              qty:500,     price:71.695,  prev:73.17,   cat:'U.S. individual stocks',  div:0,    cb:4715,        sector:'Communication Services'},
-  {ticker:'TLXIX',name:'Nuveen Lifecycle Index',   qty:4089.97, price:39.46,   prev:39.32,   cat:'Target-date / mixed',     div:1.50, cb:60695.1548,  sector:'Diversified Fund'},
-  {ticker:'PEP',  name:'PepsiCo Inc',              qty:155,     price:139.56,  prev:140.20,  cat:'U.S. individual stocks',  div:3.38, cb:21213.3465,  sector:'Consumer Staples'},
-  {ticker:'PM',   name:'Philip Morris Intl',       qty:179.462, price:190.80,  prev:192.00,  cat:'U.S. individual stocks',  div:4.30, cb:14843.302,   sector:'Consumer Staples'},
-  {ticker:'QCOM', name:'Qualcomm Inc',             qty:104.415, price:147.60,  prev:151.60,  cat:'U.S. individual stocks',  div:2.00, cb:5809.6506,   sector:'Information Technology'},
-  {ticker:'CRM',  name:'Salesforce Inc',           qty:99,      price:184.03,  prev:180.71,  cat:'U.S. individual stocks',  div:0,    cb:20956.32,    sector:'Information Technology'},
-  {ticker:'SCHD', name:'Schwab US Div Equity',     qty:604,     price:33.45,   prev:33.41,   cat:'U.S. diversified funds',  div:3.50, cb:19840.1316,  sector:'Diversified Fund'},
-  {ticker:'SO',   name:'Southern Company',         qty:377.4,   price:94.59,   prev:94.34,   cat:'U.S. individual stocks',  div:3.30, cb:3155.064,    sector:'Utilities'},
-  {ticker:'GS',   name:'Goldman Sachs',            qty:105,     price:1017.98, prev:1024.86, cat:'U.S. individual stocks',  div:1.66, cb:18483.15,    sector:'Financials'},
-  {ticker:'DIS',  name:'Walt Disney Co',           qty:196.17,  price:96.22,   prev:96.16,   cat:'U.S. individual stocks',  div:0,    cb:15770.1063,  sector:'Communication Services'},
-  {ticker:'UNH',  name:'UnitedHealth Group',       qty:50.22,   price:414.36,  prev:421.47,  cat:'U.S. individual stocks',  div:1.37, cb:11924.739,   sector:'Health Care'},
-  {ticker:'VFFSX',name:'Vanguard 500 Index',       qty:100,     price:366.66,  prev:364.09,  cat:'U.S. diversified funds',  div:1.30, cb:5000,        sector:'Diversified Fund'},
-  {ticker:'VTWO', name:'Vanguard Russell 2000',    qty:126,     price:117.70,  prev:118.23,  cat:'U.S. small & mid cap',    div:1.30, cb:3528,        sector:'Diversified Fund'},
-  {ticker:'VXUS', name:'Vanguard Total Intl',      qty:504,     price:84.585,  prev:84.77,   cat:'International equity',    div:2.00, cb:42156.3744,  sector:'International / Diversified'},
-  {ticker:'V',    name:'Visa Inc',                 qty:100,     price:366.16,  prev:366.27,  cat:'U.S. individual stocks',  div:0.68, cb:13650,       sector:'Financials'},
-  {ticker:'CASH', name:'Cash & Equivalents',       qty:1,       price:43000,   prev:43000,   cat:'Cash & equivalents',      div:5.00, cb:43000,       sector:'Cash & Equivalents'},
+  {ticker:'GOOG', name:'Alphabet Inc Class C', qty:145, price:374.76, prev:356.6701, cat:'U.S. individual stocks', div:0.24, cb:9285.597, sector:'Communication Services'},
+  {ticker:'AMZN', name:'Amazon Inc', qty:520, price:284.5, prev:271.6299, cat:'U.S. individual stocks', div:0, cb:7935.2, sector:'Consumer Discretionary'},
+  {ticker:'AXP', name:'American Express', qty:100, price:341.92, prev:336.2399, cat:'U.S. individual stocks', div:0.98, cb:7680, sector:'Financials'},
+  {ticker:'AMT', name:'American Tower', qty:230.217, price:173.49, prev:173.5001, cat:'U.S. individual stocks', div:4.2, cb:29932.8834, sector:'Real Estate'},
+  {ticker:'AAPL', name:'Apple Inc', qty:340, price:306.6, prev:308.9701, cat:'U.S. individual stocks', div:0.43, cb:7480, sector:'Information Technology'},
+  {ticker:'AVUV', name:'Avantis U.S. Sm Cap Val', qty:223, price:126.85, prev:125.255, cat:'U.S. small & mid cap', div:1.18, cb:27747.5555, sector:'Diversified Fund'},
+  {ticker:'BMY', name:'Bristol-Myers Squibb', qty:320, price:64.71, prev:65.3, cat:'U.S. individual stocks', div:5.1, cb:17974.4, sector:'Health Care'},
+  {ticker:'AVGO', name:'Broadcom Inc', qty:115, price:388.74, prev:389.3298, cat:'U.S. individual stocks', div:1.25, cb:43032.402, sector:'Information Technology'},
+  {ticker:'KO', name:'Coca-Cola Co', qty:293.187, price:86.71, prev:87.59, cat:'U.S. individual stocks', div:2.33, cb:12313.854, sector:'Consumer Staples'},
+  {ticker:'XOM', name:'ExxonMobil', qty:376.687, price:154.83, prev:155.5, cat:'U.S. individual stocks', div:2.55, cb:22876.2015, sector:'Energy'},
+  {ticker:'FSMDX', name:'Fidelity Mid Cap Index', qty:678.39, price:42.33, prev:42.45, cat:'U.S. small & mid cap', div:1.3, cb:25507.464, sector:'Diversified Fund'},
+  {ticker:'FSSNX', name:'Fidelity Small Cap Index', qty:810.811, price:36.73, prev:36.91, cat:'U.S. small & mid cap', div:1.1, cb:22889.1945, sector:'Diversified Fund'},
+  {ticker:'GRID', name:'First Trust NASDAQ CEA', qty:10, price:181.2, prev:179.385, cat:'U.S. diversified funds', div:0.7, cb:1789.14, sector:'Industrials'},
+  {ticker:'GEV', name:'GE Vernova', qty:30, price:1000.33, prev:990.0101, cat:'U.S. individual stocks', div:0.03, cb:30266.304, sector:'Industrials'},
+  {ticker:'SOXQ', name:'Invesco Semicond ETF', qty:14, price:89.35, prev:89.07, cat:'U.S. diversified funds', div:0.5, cb:1326.5994, sector:'Information Technology'},
+  {ticker:'IJH', name:'iShares S&P 400 Mid Cap', qty:270.076, price:75.885, prev:75.27, cat:'U.S. small & mid cap', div:1.2, cb:4537.2768, sector:'Diversified Fund'},
+  {ticker:'JPM', name:'JPMorgan Chase', qty:357.851, price:352.55, prev:351.7901, cat:'U.S. individual stocks', div:1.74, cb:20626.5316, sector:'Financials'},
+  {ticker:'MA', name:'Mastercard Inc', qty:172.761, price:571.445, prev:573.3198, cat:'U.S. individual stocks', div:0.37, cb:12953.6198, sector:'Financials'},
+  {ticker:'META', name:'Meta Platforms', qty:63, price:596.97, prev:556.5702, cat:'U.S. individual stocks', div:0, cb:20599.803, sector:'Communication Services'},
+  {ticker:'MSFT', name:'Microsoft Corp', qty:100, price:489.5, prev:464.6099, cat:'U.S. individual stocks', div:0.68, cb:32427.44, sector:'Information Technology'},
+  {ticker:'NFLX', name:'Netflix Inc', qty:500, price:72.81, prev:71.705, cat:'U.S. individual stocks', div:0, cb:4715, sector:'Communication Services'},
+  {ticker:'TLXIX', name:'Nuveen Lifecycle Index', qty:4089.97, price:39.46, prev:39.32, cat:'Target-date / mixed', div:1.5, cb:60695.1548, sector:'Diversified Fund'},
+  {ticker:'PEP', name:'PepsiCo Inc', qty:155, price:138.85, prev:139.59, cat:'U.S. individual stocks', div:3.38, cb:21213.3465, sector:'Consumer Staples'},
+  {ticker:'PM', name:'Philip Morris Intl', qty:179.462, price:189.46, prev:190.81, cat:'U.S. individual stocks', div:4.3, cb:14843.302, sector:'Consumer Staples'},
+  {ticker:'QCOM', name:'Qualcomm Inc', qty:104.415, price:149.07, prev:147.69, cat:'U.S. individual stocks', div:2.0, cb:5809.6506, sector:'Information Technology'},
+  {ticker:'CRM', name:'Salesforce Inc', qty:99, price:188.76, prev:184.06, cat:'U.S. individual stocks', div:0, cb:20956.32, sector:'Information Technology'},
+  {ticker:'SCHD', name:'Schwab US Div Equity', qty:610, price:33.45, prev:33.45, cat:'U.S. diversified funds', div:3.5, cb:20040.513, sector:'Diversified Fund'},
+  {ticker:'SO', name:'Southern Company', qty:377.4, price:93.93, prev:94.59, cat:'U.S. individual stocks', div:3.3, cb:3155.064, sector:'Utilities'},
+  {ticker:'GS', name:'Goldman Sachs', qty:105, price:1016.79, prev:1017.9596, cat:'U.S. individual stocks', div:1.66, cb:18483.15, sector:'Financials'},
+  {ticker:'DIS', name:'Walt Disney Co', qty:196.17, price:97.6, prev:96.2, cat:'U.S. individual stocks', div:0, cb:15770.1063, sector:'Communication Services'},
+  {ticker:'UNH', name:'UnitedHealth Group', qty:50.22, price:415.42, prev:414.3501, cat:'U.S. individual stocks', div:1.37, cb:11924.739, sector:'Health Care'},
+  {ticker:'VFFSX', name:'Vanguard 500 Index', qty:100, price:366.66, prev:364.0899, cat:'U.S. diversified funds', div:1.3, cb:5000, sector:'Diversified Fund'},
+  {ticker:'VTWO', name:'Vanguard Russell 2000', qty:126, price:119.45, prev:117.71, cat:'U.S. small & mid cap', div:1.3, cb:3528, sector:'Diversified Fund'},
+  {ticker:'VXUS', name:'Vanguard Total Intl', qty:504, price:84.81, prev:84.58, cat:'International equity', div:2.0, cb:42156.3744, sector:'International / Diversified'},
+  {ticker:'V', name:'Visa Inc', qty:100, price:364.91, prev:365.99, cat:'U.S. individual stocks', div:0.68, cb:13650, sector:'Financials'},
+  {ticker:'CASH', name:'Cash & Equivalents', qty:1, price:43000, prev:43000, cat:'Cash & equivalents', div:5.0, cb:43000, sector:'Cash & Equivalents'},
 ];
 
 // ---- PER-HOLDING + AGGREGATE CALCULATIONS (re-run after every price refresh) ----
