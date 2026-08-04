@@ -475,7 +475,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <span id="freshness-live">Live quotes (Finnhub): loading…</span>
       <span id="freshness-mf">Mutual funds (Alpha Vantage, daily): loading…</span>
       <span>Morningstar export (holdings/cost basis): Aug 3, 2026</span>
-      <span>News: Aug 1, 2026</span>
+      <span>News: Aug 3, 2026</span>
     </div>
   </div>
 
@@ -1211,7 +1211,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
   <div id="news" class="tab-pane">
     <div class="section-title">Smart News — Portfolio-Ranked Intelligence</div>
     <p style="font-size:13px;color:#888;margin-bottom:12px;">Stories ranked by portfolio weight. Holdings-linked news first, then factor/market context. Each headline links to the original source.</p>
-    <div class="news-updated"><span class="dot"></span>Last refreshed Aug 2, 2026 (market closed for the weekend — most recent data through Fri, Jul 31 close)</div>
+    <div class="news-updated"><span class="dot"></span>Last refreshed Aug 3, 2026, midday — Amazon tops $3T market cap, Microsoft posts largest single-day cap gain on record, Apple slide continues</div>
     <div id="news-list"></div>
   </div>
 
@@ -1770,12 +1770,6 @@ function renderIncomeStackAndCalendar(){
 
   const fv = totalMV * Math.pow(1+r, years) + contrib * (Math.pow(1+r,years)-1)/r;
   const totalPortfolioIncome = fv * wd;
-  // Reinvestment-consistent: "Portfolio Return" above is a total-return assumption, which
-  // only makes sense if dividends are being reinvested along the way — so the reinvested
-  // dividends are already baked into fv's growth via compounding share count. Projecting
-  // dividend income as fv × today's yield% (rather than growing today's dividend dollar
-  // amount by a separate growth rate) keeps this consistent instead of understating future
-  // dividends and overstating how much must come from selling principal.
   const projectedDividends = fv * (portfolioYield / 100);
   const withdrawals = Math.max(0, totalPortfolioIncome - projectedDividends);
   const grandTotal = pension + projectedDividends + withdrawals;
@@ -1797,12 +1791,6 @@ function renderIncomeStackAndCalendar(){
     <div class="income-stack-legend-item"><span class="income-stack-dot withdrawals"></span>Planned withdrawals $${fmt(withdrawals/1000,1)}K</div>
   `;
 
-  // Monthly dividend calendar: defaults to TODAY's real per-holding dividends (no
-  // growth applied) so it reflects your actual current schedule. Only once you move
-  // either "Annual Dividend Growth" or "Projection Period" below does it switch to
-  // showing the grown, projected version — using THOSE two sliders specifically
-  // (not the Retirement tab's years slider), since those are the ones sitting right
-  // here next to the chart.
   let calSubLabel;
   let calScaleFactor;
   if(calendarUsesProjection){
@@ -2068,45 +2056,24 @@ wireResearchCrossLinks();
 const newsItems = [
   {
     ticker: 'AMZN',
-    headline: "Q2 revenue up 20% as AWS growth accelerates to 37% — its fastest pace in 18 quarters. Shares jumped roughly 15% and 2026 capex guidance was raised to about $220B on AI-driven demand.",
-    source: 'Amazon.com 8-K / SEC filing',
-    time: 'Jul 31',
-    url: 'https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260730.htm'
+    headline: "Shares jumped as much as 5.3% to a fresh record high, pushing market cap above $3 trillion for the first time — the fifth company ever to reach that mark — as last week's blowout Q2 print (AWS accelerating to 37% growth) continues to fuel the rally. Amazon also finalized a $50B incremental investment in OpenAI.",
+    source: 'Bloomberg',
+    time: 'Aug 3',
+    url: 'https://www.bloomberg.com/news/articles/2026-08-03/amazon-joins-elite-list-of-stocks-to-top-3-trillion-in-value'
   },
   {
     ticker: 'AAPL',
-    headline: "Fiscal Q3 revenue and iPhone sales beat estimates, but shares fell roughly 7–9% after management guided Q4 revenue growth to just 9–11%, citing memory-driven supply constraints.",
-    source: 'Apple Inc. 10-Q / SEC filing',
-    time: 'Jul 31',
-    url: 'https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm'
-  },
-  {
-    ticker: 'GOOG',
-    headline: "Shares jumped nearly 7% on July 31 after DeepMind unveiled next-generation Gemini Robotics 2 AI models, clawing back most of the stock's capex-driven selloff from earlier in the month as a broader mega-cap tech rally added a tailwind.",
-    source: 'TradingKey',
-    time: 'Jul 31',
-    url: 'https://www.tradingkey.com/analysis/stocks/us-stocks/262067418-stock-google-alphabet-goog-gemini-llm-price-predittion-ai-tradingkey'
-  },
-  {
-    ticker: 'META',
-    headline: "Q2 revenue rose 28% and topped estimates, but EPS missed on legal and severance charges. Free cash flow collapsed 91% on AI capex, and shares fell about 9% on weak Q3 guidance.",
-    source: 'Benzinga',
-    time: 'Jul 30',
-    url: 'https://www.benzinga.com/markets/prediction-markets/26/07/60817468/meta-drops-9-as-free-cash-flow-collapses-91-ai-agent-pitch-falls-flat'
-  },
-  {
-    ticker: 'MA',
-    headline: "Q2 adjusted EPS of $5.04 beat the $4.77 consensus on 14% revenue growth; multiple analysts raised price targets despite a brief pre-market dip.",
+    headline: "Shares continued lower into a fourth straight session (down roughly 10% over that stretch) as the market digests last week's soft Q4 revenue guidance (9-11% growth) tied to memory-driven supply constraints — even as Fiscal Q3 itself beat on revenue and iPhone sales.",
     source: 'Yahoo Finance',
-    time: 'Jul 30',
-    url: 'https://finance.yahoo.com/markets/stocks/articles/mastercard-stock-climbs-q2-earnings-162303555.html'
+    time: 'Aug 3',
+    url: 'https://finance.yahoo.com/quote/AAPL/'
   },
   {
-    ticker: 'XOM',
-    headline: "Q2 revenue rose 42% to $116B on strong refining and trading margins, but EPS came in just under consensus after a roughly 10% upstream production hit from Middle East supply disruptions; shares slipped modestly on the print.",
-    source: 'Investing.com',
-    time: 'Jul 31',
-    url: 'https://www.investing.com/news/transcripts/earnings-call-transcript-exxonmobil-posts-strong-q2-2026-results-as-shares-slip-93CH-4828782'
+    ticker: 'MSFT',
+    headline: "Shares surged roughly 5.5%, adding an estimated $450B in market cap in a single session — the largest one-day market-cap gain by a U.S. public company on record — as investors reward accelerating Azure growth and Copilot monetization from last week's earnings.",
+    source: 'GuruFocus',
+    time: 'Aug 3',
+    url: 'https://www.gurufocus.com/news/8997685/tech-stocks-diverge-as-apple-drops-and-microsoft-soars'
   },
   {
     ticker: 'GS',
@@ -2116,11 +2083,39 @@ const newsItems = [
     url: 'https://www.cnbc.com/2026/08/01/goldman-traders-are-on-pace-for-a-record-year-a-close-up-look-at-how-theyre-doing-it.html'
   },
   {
+    ticker: 'MA',
+    headline: "Q2 adjusted EPS of $5.04 beat the $4.77 consensus on 14% revenue growth; multiple analysts raised price targets despite a brief pre-market dip.",
+    source: 'Yahoo Finance',
+    time: 'Jul 30',
+    url: 'https://finance.yahoo.com/markets/stocks/articles/mastercard-stock-climbs-q2-earnings-162303555.html'
+  },
+  {
+    ticker: 'GOOG',
+    headline: "Shares jumped nearly 7% on July 31 after DeepMind unveiled next-generation Gemini Robotics 2 AI models, clawing back most of the stock's capex-driven selloff from earlier in the month as a broader mega-cap tech rally added a tailwind.",
+    source: 'TradingKey',
+    time: 'Jul 31',
+    url: 'https://www.tradingkey.com/analysis/stocks/us-stocks/262067418-stock-google-alphabet-goog-gemini-llm-price-predittion-ai-tradingkey'
+  },
+  {
+    ticker: 'XOM',
+    headline: "Q2 revenue rose 42% to $116B on strong refining and trading margins, but EPS came in just under consensus after a roughly 10% upstream production hit from Middle East supply disruptions; shares slipped modestly on the print.",
+    source: 'Investing.com',
+    time: 'Jul 31',
+    url: 'https://www.investing.com/news/transcripts/earnings-call-transcript-exxonmobil-posts-strong-q2-2026-results-as-shares-slip-93CH-4828782'
+  },
+  {
     ticker: 'AVGO',
     headline: "Signed a five-year, $200B-plus AI chip partnership with Samsung covering next-gen memory, sub-2nm foundry capacity, and advanced packaging for Broadcom's custom accelerators.",
     source: 'CNBC',
     time: 'Jul 25',
     url: 'https://www.cnbc.com/2026/07/25/samsung-electronics-wins-200-billion-broadcom-ai-chip-partnership.html'
+  },
+  {
+    ticker: 'META',
+    headline: "Q2 revenue rose 28% and topped estimates, but EPS missed on legal and severance charges. Free cash flow collapsed 91% on AI capex, and shares fell about 9% on weak Q3 guidance.",
+    source: 'Benzinga',
+    time: 'Jul 30',
+    url: 'https://www.benzinga.com/markets/prediction-markets/26/07/60817468/meta-drops-9-as-free-cash-flow-collapses-91-ai-agent-pitch-falls-flat'
   },
   {
     ticker: 'GEV',
@@ -2138,7 +2133,7 @@ const newsItems = [
   },
   {
     ticker: 'AVUV',
-    headline: "Small-cap value is having a moment as capital rotates out of AI-exposed semis: the Russell 2000 Value ETF is up more than 22% this month alone.",
+    headline: "Small-cap value continues to work as capital rotates out of AI-exposed semis: the Russell 2000 Value complex is up more than 22% over the past month.",
     source: 'CNBC',
     time: 'Jul 29',
     url: 'https://www.cnbc.com/2026/07/29/value-stocks-get-a-moment-in-the-sun-sell-semis-buy-ketchup.html'
@@ -2183,12 +2178,6 @@ function fmt(n, dec){ return n.toLocaleString('en-US',{minimumFractionDigits:dec
 function fmtDollar(n){ return '$'+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0}); }
 
 // ---- LIVE PRICE REFRESH ("upon opening") ----
-// Runs once, right when the page loads. Fetches real-time quotes for every equity/ETF
-// directly from Finnhub (client-side — its free tier easily handles ~30 calls in one go),
-// and reads the once-daily mutual-fund-quotes.json (written by a scheduled GitHub Action
-// via Alpha Vantage) for the 4 mutual funds. If either source fails for any reason —
-// placeholder API key not yet set, network hiccup, rate limit — everything silently keeps
-// the last-known baked-in prices already in the `holdings` array above. Nothing breaks.
 async function fetchLiveQuotes(){
   const liveTickers = holdings.filter(h => h.ticker!=='CASH' && !mutualFundQuoteTickers.includes(h.ticker));
   let liveOk = 0;
@@ -2221,8 +2210,6 @@ async function fetchLiveQuotes(){
     }
   } catch(e) { /* file not present yet or fetch failed — keep fallback values */ }
 
-  // Recompute everything and repaint the whole app with whatever mix of live/fallback
-  // data we ended up with.
   recomputeAggregates();
   renderCoreMetrics();
   renderAllocBars();
