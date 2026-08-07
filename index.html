@@ -229,6 +229,31 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 /* THEME TOGGLE */
 .theme-toggle{width:38px;height:38px;border-radius:50%;border:1px solid #e5e5e5;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;margin-right:12px;transition:background .15s;}
 .theme-toggle:hover{background:#f0f4ff;}
+/* PRIVACY MODE — blur dollar figures in place, no layout/re-render needed */
+.money{transition:filter .15s ease;}
+body[data-privacy="on"] .mv,
+body[data-privacy="on"] .money,
+body[data-privacy="on"] #total-val,
+body[data-privacy="on"] #day-change,
+body[data-privacy="on"] #cash-position-val,
+body[data-privacy="on"] #sum-total,
+body[data-privacy="on"] #sum-day,
+body[data-privacy="on"] #port-total,
+body[data-privacy="on"] #port-day,
+body[data-privacy="on"] #port-cost-basis,
+body[data-privacy="on"] #port-unrealized,
+body[data-privacy="on"] #proj-fv,
+body[data-privacy="on"] #proj-income,
+body[data-privacy="on"] #pension-disp,
+body[data-privacy="on"] #combined-income,
+body[data-privacy="on"] #proj-div,
+body[data-privacy="on"] #proj-div-mo,
+body[data-privacy="on"] #inc-annual-div,
+body[data-privacy="on"] #inc-annual-div-mo,
+body[data-privacy="on"] #income-stack-total,
+body[data-privacy="on"] #contrib-val,
+body[data-privacy="on"] #pension-slider-val
+{filter:blur(7px);user-select:none;}
 
 /* CORE / BUILD BADGE TAGS (holdings table) */
 .tag{display:inline-block;font-size:9px;font-weight:700;letter-spacing:.3px;padding:2px 6px;border-radius:4px;margin-left:6px;flex-shrink:0;cursor:help;}
@@ -410,6 +435,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
   </div>
   <div style="display:flex;align-items:center;">
     <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
+    <button class="theme-toggle" id="privacyToggle" onclick="togglePrivacy()" title="Hide portfolio values">👁️</button>
     <div class="avatar">JW</div>
   </div>
 </div>
@@ -458,7 +484,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       </div>
       <div class="metric">
         <div class="lbl">Cash Position</div>
-        <div class="val">$43,000</div>
+        <div class="val" id="cash-position-val">$43,000</div>
         <div class="sub on-track" id="cash-sub">2.6% — On Track (2–4%)</div>
       </div>
     </div>
@@ -1215,11 +1241,17 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 
     <div class="reports-toolbar">
       <button class="pill-btn active" onclick="filterReports('all',this)">All</button>
-      <button class="pill-btn" onclick="filterReports('daily',this)">Daily</button>
-      <button class="pill-btn" onclick="filterReports('weekly',this)">Weekly</button>
       <button class="pill-btn" onclick="filterReports('research',this)">Research</button>
       <button class="pill-btn" onclick="filterReports('archived',this)">Archived</button>
       <input type="text" class="search-input" id="reports-search" placeholder="Search reports…" oninput="renderReports()" style="max-width:240px;margin-left:auto;">
+    </div>
+    <div id="reports-asset-toggle-wrap" style="display:none;align-items:center;gap:8px;margin-bottom:14px;">
+      <span style="font-size:11px;color:#888;white-space:nowrap;">Asset type:</span>
+      <div class="unit-toggle" id="reportsAssetToggle">
+        <button class="active" onclick="filterReportsAssetType('all',this)">All</button>
+        <button onclick="filterReportsAssetType('equity',this)">Equities</button>
+        <button onclick="filterReportsAssetType('fund',this)">ETFs/Funds</button>
+      </div>
     </div>
 
     <div class="report-grid" id="report-grid"></div>
@@ -1260,6 +1292,30 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     if(btn) btn.textContent = '☀️';
   }
 })();
+
+// ---- RESTORE SAVED PRIVACY MODE (blurs all dollar figures — for showing the app
+// to other people without revealing portfolio value) — pure CSS, applied before
+// first render so there's no flash of visible numbers. ----
+(function restorePrivacy(){
+  if(localStorage.getItem('pcc-privacy') === 'on'){
+    document.body.setAttribute('data-privacy','on');
+    const btn = document.getElementById('privacyToggle');
+    if(btn){ btn.textContent = '🙈'; btn.title = 'Show portfolio values'; }
+  }
+})();
+function togglePrivacy(){
+  const isOn = document.body.getAttribute('data-privacy') === 'on';
+  const btn = document.getElementById('privacyToggle');
+  if(isOn){
+    document.body.removeAttribute('data-privacy');
+    if(btn){ btn.textContent = '👁️'; btn.title = 'Hide portfolio values'; }
+    localStorage.setItem('pcc-privacy', 'off');
+  } else {
+    document.body.setAttribute('data-privacy','on');
+    if(btn){ btn.textContent = '🙈'; btn.title = 'Show portfolio values'; }
+    localStorage.setItem('pcc-privacy', 'on');
+  }
+}
 
 // ---- RESTORE SAVED SLIDER ASSUMPTIONS (Retirement + Income tabs) ----
 // Sets each slider's value directly from localStorage, before any calc function first
@@ -1621,16 +1677,16 @@ function renderHoldings(){
       <div class="hdetail ${isExpanded?'open':''}">
         <div class="hdetail-grid">
           <div class="hdetail-item price-detail-item"><div class="lbl">Price</div><div class="val price-highlight">$${priceDisp}</div></div>
-          <div class="hdetail-item"><div class="lbl">Shares</div><div class="val">${h.ticker==='CASH'?'—':h.qty.toLocaleString()}</div></div>
+          <div class="hdetail-item"><div class="lbl">Shares</div><div class="val money">${h.ticker==='CASH'?'—':h.qty.toLocaleString()}</div></div>
           <div class="hdetail-item"><div class="lbl">Category</div><div class="val">${h.cat}</div></div>
           <div class="hdetail-item"><div class="lbl">Sector</div><div class="val">${h.sector}</div></div>
           <div class="hdetail-item"><div class="lbl">Position Type</div><div class="val">${coreForeverHolds.has(h.ticker)?'Core Forever Hold':buildPositions.has(h.ticker)?'Actively Building':h.ticker==='CASH'?'Cash Reserve':'Satellite'}</div></div>
-          <div class="hdetail-item"><div class="lbl">Day $ Chg</div><div class="val ${chgClass}">${h.ticker==='CASH'?'—':fmtDollar(h.dayDollar)}</div></div>
-          <div class="hdetail-item"><div class="lbl">Cost Basis</div><div class="val">$${fmt(h.cb,0)}</div></div>
-          <div class="hdetail-item"><div class="lbl">Unrealized G/L</div><div class="val ${h.ticker==='CASH'?'':(h.gainLoss>=0?'up-color':'dn-color')}">${h.ticker==='CASH'?'—':fmtDollar(h.gainLoss)}</div></div>
+          <div class="hdetail-item"><div class="lbl">Day $ Chg</div><div class="val money ${chgClass}">${h.ticker==='CASH'?'—':fmtDollar(h.dayDollar)}</div></div>
+          <div class="hdetail-item"><div class="lbl">Cost Basis</div><div class="val money">$${fmt(h.cb,0)}</div></div>
+          <div class="hdetail-item"><div class="lbl">Unrealized G/L</div><div class="val money ${h.ticker==='CASH'?'':(h.gainLoss>=0?'up-color':'dn-color')}">${h.ticker==='CASH'?'—':fmtDollar(h.gainLoss)}</div></div>
           <div class="hdetail-item"><div class="lbl">Unrealized G/L %</div><div class="val ${h.ticker==='CASH'?'':(h.gainLoss>=0?'up-color':'dn-color')}">${h.ticker==='CASH'?'—':Math.abs(h.gainLossPct).toFixed(1)+'%'}</div></div>
           <div class="hdetail-item"><div class="lbl">Div Yield</div><div class="val">${h.div ? h.div.toFixed(2)+'%' : '—'}</div></div>
-          <div class="hdetail-item"><div class="lbl">Annual Div $</div><div class="val">${h.div ? '$'+fmt(h.divAnnual,0) : '—'}</div></div>
+          <div class="hdetail-item"><div class="lbl">Annual Div $</div><div class="val money">${h.div ? '$'+fmt(h.divAnnual,0) : '—'}</div></div>
           <div class="hdetail-item"><div class="lbl">Portfolio Wt</div><div class="val">${h.wt.toFixed(2)}%</div></div>
         </div>
       </div>
@@ -1805,9 +1861,9 @@ function renderIncomeStackAndCalendar(){
     <div class="income-stack-seg withdrawals" style="width:${wdPct}%"></div>
   `;
   document.getElementById('income-stack-legend').innerHTML = `
-    <div class="income-stack-legend-item"><span class="income-stack-dot pension"></span>Pension $${fmt(pension/1000,0)}K</div>
-    <div class="income-stack-legend-item"><span class="income-stack-dot dividends"></span>Dividends $${fmt(projectedDividends/1000,1)}K</div>
-    <div class="income-stack-legend-item"><span class="income-stack-dot withdrawals"></span>Planned withdrawals $${fmt(withdrawals/1000,1)}K</div>
+    <div class="income-stack-legend-item"><span class="income-stack-dot pension"></span>Pension <span class="money">$${fmt(pension/1000,0)}K</span></div>
+    <div class="income-stack-legend-item"><span class="income-stack-dot dividends"></span>Dividends <span class="money">$${fmt(projectedDividends/1000,1)}K</span></div>
+    <div class="income-stack-legend-item"><span class="income-stack-dot withdrawals"></span>Planned withdrawals <span class="money">$${fmt(withdrawals/1000,1)}K</span></div>
   `;
 
   let calSubLabel;
@@ -1836,7 +1892,7 @@ function renderIncomeStackAndCalendar(){
     const barPct = Math.max((amt/maxMonth)*100, amt>0 ? 4 : 0);
     calHtml += `<div class="div-cal-col">
       <div class="div-cal-bar-wrap"><div class="div-cal-bar" style="height:${barPct}%"></div></div>
-      <div class="div-cal-amt">$${amt>=1000 ? (amt/1000).toFixed(1)+'K' : Math.round(amt)}</div>
+      <div class="div-cal-amt money">$${amt>=1000 ? (amt/1000).toFixed(1)+'K' : Math.round(amt)}</div>
       <div class="div-cal-month">${MONTH_ABBR[m]}</div>
     </div>`;
   }
@@ -1927,38 +1983,26 @@ renderResearchSummary();
 
 // ---- REPORT LIBRARY (real files, linked into /reports on this repo) ----
 const reports = [
-  {date:'2026-08-05', title:'Atlanta Braves Holdings (BATRA) Fundamental Analysis', type:'research', file:'BATRA_Fundamental_Analysis_2026-08-05.pdf', ticker:'BATRA'},
-  {date:'2026-07-31', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-31.pdf'},
-  {date:'2026-07-30', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-30.pdf'},
-  {date:'2026-07-28', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-28.pdf', archived:true},
-  {date:'2026-07-24', title:'Weekly Portfolio Review', type:'weekly', file:'weekly_report_2026-07-24.pdf'},
-  {date:'2026-07-23', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-23.pdf', archived:true},
-  {date:'2026-07-22', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-22.pdf', archived:true},
-  {date:'2026-07-21', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-21.pdf', archived:true},
-  {date:'2026-07-20', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-20.pdf', archived:true},
-  {date:'2026-07-20', title:'PepsiCo (PEP) Fundamental Analysis', type:'research', file:'PEP_Fundamental_Analysis_2026-07-20.pdf', ticker:'PEP'},
+  {date:'2026-08-05', title:'Atlanta Braves Holdings (BATRA) Fundamental Analysis', type:'research', file:'BATRA_Fundamental_Analysis_2026-08-05.pdf', ticker:'BATRA', assetType:'equity'},
+  {date:'2026-07-20', title:'PepsiCo (PEP) Fundamental Analysis', type:'research', file:'PEP_Fundamental_Analysis_2026-07-20.pdf', ticker:'PEP', assetType:'equity'},
   {date:'2026-07-18', title:'Retirement Portfolio — Senior Analyst Review', type:'research', file:'Retirement_Portfolio_Senior_Analyst_Review_2026-07-18.pdf'},
-  {date:'2026-07-17', title:'Weekly Portfolio Review', type:'weekly', file:'weekly_report_2026-07-17.pdf', archived:true},
-  {date:'2026-07-17', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-17.pdf', archived:true},
   {date:'2026-07-17', title:'CVS Reallocation — PM Report', type:'research', file:'CVS_Reallocation_PM_Report_2026-07-17.pdf'},
-  {date:'2026-07-16', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-16.pdf', archived:true},
-  {date:'2026-07-16', title:'Weekly Portfolio Review', type:'weekly', file:'weekly_report_2026-07-16.pdf', archived:true},
-  {date:'2026-07-16', title:'Procter & Gamble (PG) Fundamental Analysis', type:'research', file:'PG_Fundamental_Analysis_2026-07-16.pdf'},
-  {date:'2026-07-15', title:'Disney (DIS) Fundamental Analysis', type:'research', file:'DIS_Fundamental_Analysis_2026-07-15.pdf', ticker:'DIS'},
-  {date:'2026-07-15', title:'GE Vernova (GEV) Fundamental Analysis', type:'research', file:'GEV_Fundamental_Analysis_2026-07-15.pdf', ticker:'GEV'},
+  {date:'2026-07-16', title:'Procter & Gamble (PG) Fundamental Analysis', type:'research', file:'PG_Fundamental_Analysis_2026-07-16.pdf', assetType:'equity'},
+  {date:'2026-07-15', title:'Disney (DIS) Fundamental Analysis', type:'research', file:'DIS_Fundamental_Analysis_2026-07-15.pdf', ticker:'DIS', assetType:'equity'},
+  {date:'2026-07-15', title:'GE Vernova (GEV) Fundamental Analysis', type:'research', file:'GEV_Fundamental_Analysis_2026-07-15.pdf', ticker:'GEV', assetType:'equity'},
   {date:'2026-07-13', title:'AI Chip & Hardware Sector Report', type:'research', file:'AI_Chip_Hardware_Sector_Report_2026-07-13.pdf'},
-  {date:'2026-07-12', title:'Southern Company (SO) Fundamental Analysis', type:'research', file:'SO_Fundamental_Analysis_2026-07-12.pdf', ticker:'SO'},
-  {date:'2026-07', title:'Amazon (AMZN) Fundamental Analysis', type:'research', file:'AMZN_Fundamental_Analysis_2026-07-26.pdf', ticker:'AMZN'},
-  {date:'2026-07', title:'Alphabet (GOOGL) Fundamental Analysis', type:'research', file:'GOOGL_Fundamental_Analysis_2026-07.pdf', ticker:'GOOG'},
-  {date:'2026-07', title:'Coca-Cola (KO) Fundamental Analysis', type:'research', file:'KO_Fundamental_Analysis_2026-07.pdf', ticker:'KO'},
-  {date:'2026-07', title:'Meta Platforms (META) Fundamental Analysis', type:'research', file:'META_Fundamental_Analysis_2026-07.pdf', ticker:'META'},
-  {date:'2026-07', title:'Netflix (NFLX) Fundamental Analysis', type:'research', file:'NFLX_Fundamental_Analysis_2026-07.pdf', ticker:'NFLX'},
-  {date:'2026-07', title:'Qualcomm (QCOM) Fundamental Analysis', type:'research', file:'QCOM_Fundamental_Analysis_2026-07.pdf', ticker:'QCOM'},
-  {date:'2026-07', title:'Ventas (VTR) Fundamental Analysis', type:'research', file:'VTR_Fundamental_Analysis_2026-07.pdf'},
-  {date:'2026-07', title:'Visa (V) Q3 FY26 Earnings Update', type:'research', file:'V_Q3_FY26_Earnings_Update.pdf', ticker:'V'},
+  {date:'2026-07-12', title:'Southern Company (SO) Fundamental Analysis', type:'research', file:'SO_Fundamental_Analysis_2026-07-12.pdf', ticker:'SO', assetType:'equity'},
+  {date:'2026-07', title:'Amazon (AMZN) Fundamental Analysis', type:'research', file:'AMZN_Fundamental_Analysis_2026-07-26.pdf', ticker:'AMZN', assetType:'equity'},
+  {date:'2026-07', title:'Alphabet (GOOGL) Fundamental Analysis', type:'research', file:'GOOGL_Fundamental_Analysis_2026-07.pdf', ticker:'GOOG', assetType:'equity'},
+  {date:'2026-07', title:'Coca-Cola (KO) Fundamental Analysis', type:'research', file:'KO_Fundamental_Analysis_2026-07.pdf', ticker:'KO', assetType:'equity'},
+  {date:'2026-07', title:'Meta Platforms (META) Fundamental Analysis', type:'research', file:'META_Fundamental_Analysis_2026-07.pdf', ticker:'META', assetType:'equity'},
+  {date:'2026-07', title:'Netflix (NFLX) Fundamental Analysis', type:'research', file:'NFLX_Fundamental_Analysis_2026-07.pdf', ticker:'NFLX', assetType:'equity'},
+  {date:'2026-07', title:'Qualcomm (QCOM) Fundamental Analysis', type:'research', file:'QCOM_Fundamental_Analysis_2026-07.pdf', ticker:'QCOM', assetType:'equity'},
+  {date:'2026-07', title:'Ventas (VTR) Fundamental Analysis', type:'research', file:'VTR_Fundamental_Analysis_2026-07.pdf', assetType:'equity'},
+  {date:'2026-07', title:'Visa (V) Q3 FY26 Earnings Update', type:'research', file:'V_Q3_FY26_Earnings_Update.pdf', ticker:'V', assetType:'equity'},
   {date:'2026-07', title:'Portfolio Review', type:'research', file:'Portfolio_Review_2026-07.pdf'},
-  {date:'2026-07', title:'DVY Rotation Plan', type:'research', file:'DVY_Rotation_Plan.pdf'},
-  {date:'2026-07', title:'AVUV vs VTWO vs IJR — ETF Comparison', type:'research', file:'AVUV_VTWO_IJR_ETF_Comparison.html'},
+  {date:'2026-07', title:'DVY Rotation Plan', type:'research', file:'DVY_Rotation_Plan.pdf', assetType:'fund'},
+  {date:'2026-07', title:'AVUV vs VTWO vs IJR — ETF Comparison', type:'research', file:'AVUV_VTWO_IJR_ETF_Comparison.html', assetType:'fund'},
   {date:'2026', title:'Healthcare Sector Investment Report', type:'research', file:'Healthcare_Sector_Investment_Report_2026.html'},
 ];
 
@@ -1981,6 +2025,7 @@ function updateReportsTitle(){
 updateReportsTitle();
 
 let reportsTypeFilter = 'all';
+let reportsAssetTypeFilter = 'all';
 
 function renderReports(){
   const q = (document.getElementById('reports-search').value || '').trim().toLowerCase();
@@ -1991,6 +2036,7 @@ function renderReports(){
     } else {
       if(isArchived) return false;
       if(reportsTypeFilter !== 'all' && r.type !== reportsTypeFilter) return false;
+      if(reportsTypeFilter === 'research' && reportsAssetTypeFilter !== 'all' && r.assetType !== reportsAssetTypeFilter) return false;
     }
     return !q || r.title.toLowerCase().includes(q) || r.date.toLowerCase().includes(q) || (r.ticker && r.ticker.toLowerCase()===q);
   });
@@ -2017,6 +2063,26 @@ function filterReports(type, btn){
   reportsTypeFilter = type;
   btn.parentElement.querySelectorAll('.pill-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
+  const wrap = document.getElementById('reports-asset-toggle-wrap');
+  if(type === 'research'){
+    wrap.style.display = 'flex';
+  } else {
+    wrap.style.display = 'none';
+    reportsAssetTypeFilter = 'all';
+    const toggle = document.getElementById('reportsAssetToggle');
+    if(toggle){
+      const buttons = toggle.querySelectorAll('button');
+      buttons.forEach(b=>b.classList.remove('active'));
+      buttons[0]?.classList.add('active');
+    }
+  }
+  renderReports();
+}
+
+function filterReportsAssetType(assetType, btn){
+  reportsAssetTypeFilter = assetType;
+  btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
   renderReports();
 }
 
@@ -2032,8 +2098,17 @@ function resetThesisFilters(){
 }
 function resetReportsFilter(){
   reportsTypeFilter = 'all';
+  reportsAssetTypeFilter = 'all';
   const allBtn = [...document.querySelectorAll('.reports-toolbar .pill-btn')].find(b => (b.getAttribute('onclick')||'').includes("filterReports('all'"));
   if(allBtn){ allBtn.parentElement.querySelectorAll('.pill-btn').forEach(b=>b.classList.remove('active')); allBtn.classList.add('active'); }
+  const wrap = document.getElementById('reports-asset-toggle-wrap');
+  if(wrap) wrap.style.display = 'none';
+  const toggle = document.getElementById('reportsAssetToggle');
+  if(toggle){
+    const buttons = toggle.querySelectorAll('button');
+    buttons.forEach(b=>b.classList.remove('active'));
+    buttons[0]?.classList.add('active');
+  }
 }
 function jumpToResearch(ticker, evt){
   if(evt){ evt.preventDefault(); evt.stopPropagation(); }
