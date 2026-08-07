@@ -1218,6 +1218,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <button class="pill-btn" onclick="filterReports('daily',this)">Daily</button>
       <button class="pill-btn" onclick="filterReports('weekly',this)">Weekly</button>
       <button class="pill-btn" onclick="filterReports('research',this)">Research</button>
+      <button class="pill-btn" onclick="filterReports('archived',this)">Archived</button>
       <input type="text" class="search-input" id="reports-search" placeholder="Search reports…" oninput="renderReports()" style="max-width:240px;margin-left:auto;">
     </div>
 
@@ -1929,19 +1930,19 @@ const reports = [
   {date:'2026-08-05', title:'Atlanta Braves Holdings (BATRA) Fundamental Analysis', type:'research', file:'BATRA_Fundamental_Analysis_2026-08-05.pdf', ticker:'BATRA'},
   {date:'2026-07-31', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-31.pdf'},
   {date:'2026-07-30', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-30.pdf'},
-  {date:'2026-07-28', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-28.pdf'},
+  {date:'2026-07-28', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-28.pdf', archived:true},
   {date:'2026-07-24', title:'Weekly Portfolio Review', type:'weekly', file:'weekly_report_2026-07-24.pdf'},
-  {date:'2026-07-23', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-23.pdf'},
-  {date:'2026-07-22', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-22.pdf'},
-  {date:'2026-07-21', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-21.pdf'},
-  {date:'2026-07-20', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-20.pdf'},
+  {date:'2026-07-23', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-23.pdf', archived:true},
+  {date:'2026-07-22', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-22.pdf', archived:true},
+  {date:'2026-07-21', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-21.pdf', archived:true},
+  {date:'2026-07-20', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-20.pdf', archived:true},
   {date:'2026-07-20', title:'PepsiCo (PEP) Fundamental Analysis', type:'research', file:'PEP_Fundamental_Analysis_2026-07-20.pdf', ticker:'PEP'},
   {date:'2026-07-18', title:'Retirement Portfolio — Senior Analyst Review', type:'research', file:'Retirement_Portfolio_Senior_Analyst_Review_2026-07-18.pdf'},
-  {date:'2026-07-17', title:'Weekly Portfolio Review', type:'weekly', file:'weekly_report_2026-07-17.pdf'},
-  {date:'2026-07-17', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-17.pdf'},
+  {date:'2026-07-17', title:'Weekly Portfolio Review', type:'weekly', file:'weekly_report_2026-07-17.pdf', archived:true},
+  {date:'2026-07-17', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-17.pdf', archived:true},
   {date:'2026-07-17', title:'CVS Reallocation — PM Report', type:'research', file:'CVS_Reallocation_PM_Report_2026-07-17.pdf'},
-  {date:'2026-07-16', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-16.pdf'},
-  {date:'2026-07-16', title:'Weekly Portfolio Review', type:'weekly', file:'weekly_report_2026-07-16.pdf'},
+  {date:'2026-07-16', title:'Daily Portfolio Close', type:'daily', file:'daily_report_2026-07-16.pdf', archived:true},
+  {date:'2026-07-16', title:'Weekly Portfolio Review', type:'weekly', file:'weekly_report_2026-07-16.pdf', archived:true},
   {date:'2026-07-16', title:'Procter & Gamble (PG) Fundamental Analysis', type:'research', file:'PG_Fundamental_Analysis_2026-07-16.pdf'},
   {date:'2026-07-15', title:'Disney (DIS) Fundamental Analysis', type:'research', file:'DIS_Fundamental_Analysis_2026-07-15.pdf', ticker:'DIS'},
   {date:'2026-07-15', title:'GE Vernova (GEV) Fundamental Analysis', type:'research', file:'GEV_Fundamental_Analysis_2026-07-15.pdf', ticker:'GEV'},
@@ -1971,16 +1972,28 @@ function fmtReportDate(d){
 
 const typeLabel = {daily:'Daily', weekly:'Weekly', research:'Research'};
 const grid = document.getElementById('report-grid');
-document.getElementById('reports-title').textContent = 'Report Library — '+reports.length+' Reports';
+function updateReportsTitle(){
+  const activeCount = reports.filter(r=>!r.archived).length;
+  const archivedCount = reports.length - activeCount;
+  document.getElementById('reports-title').textContent = 'Report Library — '+activeCount+' Reports'
+    + (archivedCount ? ` · ${archivedCount} archived` : '');
+}
+updateReportsTitle();
 
 let reportsTypeFilter = 'all';
 
 function renderReports(){
   const q = (document.getElementById('reports-search').value || '').trim().toLowerCase();
-  const filtered = reports.filter(r =>
-    (reportsTypeFilter==='all' || r.type===reportsTypeFilter) &&
-    (!q || r.title.toLowerCase().includes(q) || r.date.toLowerCase().includes(q) || (r.ticker && r.ticker.toLowerCase()===q))
-  );
+  const filtered = reports.filter(r=>{
+    const isArchived = !!r.archived;
+    if(reportsTypeFilter === 'archived'){
+      if(!isArchived) return false;
+    } else {
+      if(isArchived) return false;
+      if(reportsTypeFilter !== 'all' && r.type !== reportsTypeFilter) return false;
+    }
+    return !q || r.title.toLowerCase().includes(q) || r.date.toLowerCase().includes(q) || (r.ticker && r.ticker.toLowerCase()===q);
+  });
   grid.innerHTML = '';
   if(filtered.length === 0){
     grid.innerHTML = '<div class="no-results">No reports match your search.</div>';
