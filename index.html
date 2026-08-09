@@ -736,7 +736,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <div class="section-title">Research Center — Living Investment Record</div>
 
     <div class="metrics-row">
-      <div class="metric"><div class="lbl">Active Theses</div><div class="val" id="research-total-count">29</div></div>
+      <div class="metric"><div class="lbl">Active Theses</div><div class="val" id="research-total-count">30</div></div>
       <div class="metric"><div class="lbl">Core Forever Holds</div><div class="val" id="research-core-count">5</div></div>
       <div class="metric"><div class="lbl">Build Positions</div><div class="val" id="research-build-count">2</div></div>
       <div class="metric"><div class="lbl">Under Review</div><div class="val" id="research-review-count">4</div></div>
@@ -1125,10 +1125,10 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <div class="thesis-meta">
           <span>Conviction: <strong>Medium</strong></span>
           <span>Weight: ~0.5%</span>
-          <span>45 shares — more than doubled Aug 2026</span>
+          <span>Reviewed: Aug 7, 2026</span>
         </div>
         <div class="thesis-body">
-          GRID is a thematic satellite bet on grid modernization and electrification — the same theme as the GEV starter position, just diversified across a basket rather than concentrated in one operator. The position more than doubled in the latest update (21 → 45 shares), a bigger step-up than the earlier incremental adds and worth naming as a real decision rather than another small top-up — weight is now ~0.5% of the portfolio, up from ~0.2%. Worth confirming this was a deliberate move to build GRID out as the diversified sleeve (vs. GEV's concentrated single-name bet), since the two theses were previously framed as alternatives to choose between, not both to build simultaneously.
+          Full capex/holdings review confirms the theme is real: US utility capex is tracking to $227.8B in 2026 and a record ~$1.3T through 2030, and GRID's top five (Eaton, Schneider, JCI, Quanta, ABB) are all posting record backlogs on data-center-driven demand. The report's call: <strong>hold the 45-share starter, don't chase a large add here.</strong> The fund has already re-rated hard (+32.5% trailing year, beta 1.27), top-10 concentration (59.7%) makes the "129 holdings" diversification claim partly cosmetic, and roughly a third of assets carry foreign-currency exposure that isn't the same risk VXUS is meant to provide. More importantly for sizing: GRID doesn't diversify away from the AI-power theme already carried through GEV, AVGO, and SOXQ — it deepens it. VXUS/AVUV remain the standing redeployment priority ahead of any expansion here, not a diversion from that sequence.
         </div>
       </div>
 
@@ -1163,6 +1163,23 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
           Initiated a small toe-hold the day after Q2 2026 earnings, then added 5 more shares (now 25) two days later — worth stating plainly: the full fundamental analysis concluded WATCH, not BUY, at the original entry price, and this is now an active add on top of that. The bull case is real — BATRA owns one of only 30 MLB franchises plus a genuinely compounding real estate business (The Battery Atlanta), and the Padres' MLB-record $3.9B sale (approved by owners the day before this position was opened) underscores real scarcity value the public multiple may not fully capture. But the Q2 print showed Baseball-segment Adjusted OIBDA turn negative for the first time on record as BravesVision (the team's new in-house broadcast platform) added real, ongoing costs before proving it can replace the revenue of the RSN deal it exited — management confirmed on the earnings call that the added cost is not transitory. Layered on top: the MLB CBA expires December 1, 2026, and a lockout is widely expected. Still sized like GEV, GRID and SOXQ — small enough to track the name through both catalysts without it mattering much either way — but worth noting the position is growing faster than the thesis has changed. Fan interest and conviction aren't the same thing; keep them separate when sizing further adds.
         </div>
         <div class="thesis-conviction">Source: BATRA_Fundamental_Analysis_2026-08-05.pdf (full report, this firm); ABH Q2 2026 earnings release and call transcript (8/5/26)</div>
+      </div>
+
+      <div class="thesis-card" data-status="WATCH" data-type="etf">
+        <div class="thesis-header">
+          <div class="thesis-ticker">VIS</div>
+          <span class="badge badge-watch">WATCH</span>
+          <div><div class="thesis-name">Vanguard Industrials ETF</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium</strong></span>
+          <span>Not currently held</span>
+          <span>New idea — full comparison 8/9/26</span>
+        </div>
+        <div class="thesis-body">
+          Comparative research (VIS vs. XLI) concludes VIS is the stronger long-term industrials vehicle: 396 holdings vs. XLI's 81, top-10 concentration of 31.1% vs. 41.2%, and performance that has modestly outpaced XLI across the 1/3/5-year trailing periods on a near-identical expense ratio (0.09% vs. 0.08%). XLI remains the better tactical/liquidity vehicle (~$34.5B AUM vs. VIS's ~$8.48B) if precise, heavily-traded S&P 500 industrial exposure is ever needed. The report's call: <strong>VIS – ADD</strong> as the strategic vehicle. Worth flagging before acting on that: VIS's own top holdings include GE Vernova (4.2%) and Eaton (2.2%) — the same grid-capex/electrification names already driving the GEV and GRID theses. Adding VIS wouldn't diversify away from the AI-power-buildout concentration already carried through GEV, GRID, AVGO, and SOXQ; it would deepen it through a broader industrials wrapper. Worth deciding whether this is meant as a genuine diversifier (the overlap argues against it) or a deliberate, lower-single-name-risk way to size up the existing grid-capex theme (in which case it's a reasonable vehicle for that).
+        </div>
+        <div class="thesis-conviction">Source: VIS_vs_XLI_Industrial_ETF_Analysis_2026-08-09.pdf (full report, this firm); Vanguard/State Street fund fact sheets (6/30/26–8/6/26)</div>
       </div>
 
       <div class="thesis-card" data-status="REVIEW" data-type="equity">
@@ -1983,6 +2000,8 @@ renderResearchSummary();
 
 // ---- REPORT LIBRARY (real files, linked into /reports on this repo) ----
 const reports = [
+  {date:'2026-08-09', title:'VIS vs. XLI — Industrial Sector ETF Comparison', type:'research', file:'VIS_vs_XLI_Industrial_ETF_Analysis_2026-08-09.pdf', ticker:'VIS', assetType:'fund'},
+  {date:'2026-08-07', title:'GRID ETF — Grid Capex & AI Buildout Analysis', type:'research', file:'GRID_ETF_Grid_Capex_Report_Aug2026.html', ticker:'GRID', assetType:'fund'},
   {date:'2026-08-05', title:'Atlanta Braves Holdings (BATRA) Fundamental Analysis', type:'research', file:'BATRA_Fundamental_Analysis_2026-08-05.pdf', ticker:'BATRA', assetType:'equity'},
   {date:'2026-07-20', title:'PepsiCo (PEP) Fundamental Analysis', type:'research', file:'PEP_Fundamental_Analysis_2026-07-20.pdf', ticker:'PEP', assetType:'equity'},
   {date:'2026-07-18', title:'Retirement Portfolio — Senior Analyst Review', type:'research', file:'Retirement_Portfolio_Senior_Analyst_Review_2026-07-18.pdf'},
