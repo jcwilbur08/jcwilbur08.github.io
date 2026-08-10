@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>PLTR Research & Thesis Pro - 2026-08-03</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --ink:#172235; --muted:#5c6b7a; --navy:#0b1f3a; --blue:#1f5a94;
+    --teal:#167c80; --green:#26734d; --red:#a63d40; --amber:#a66a16;
+    --paper:#ffffff; --soft:#f3f6f9; --line:#d8e0e8; --dark:#091426;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; padding:0; background:#eef2f6; color:var(--ink); font-family:Arial, Helvetica, sans-serif; }
+  body { font-size:10.5pt; line-height:1.42; }
+  .page { width:8.5in; min-height:11in; margin:0 auto 18px; background:var(--paper); padding:0.52in 0.58in 0.58in; position:relative; }
+  .cover { background:linear-gradient(145deg,#07162c 0%,#10375b 58%,#187678 100%); color:white; padding:0.65in; }
+  .kicker { text-transform:uppercase; letter-spacing:1.6px; font-size:9pt; font-weight:700; opacity:.86; }
+  h1 { font-size:30pt; line-height:1.05; margin:22px 0 12px; }
+  h2 { font-size:17pt; color:var(--navy); margin:0 0 12px; border-bottom:2px solid var(--blue); padding-bottom:6px; }
+  h3 { font-size:12.5pt; color:var(--navy); margin:16px 0 7px; }
+  p { margin:7px 0; }
+  .subtitle { font-size:15pt; opacity:.92; max-width:6.7in; }
+  .cover-grid { display:grid; grid-template-columns:1.2fr .8fr; gap:18px; margin-top:34px; }
+  .cover-card { border:1px solid rgba(255,255,255,.24); background:rgba(255,255,255,.08); padding:15px; border-radius:8px; }
+  .cover-card .label { font-size:8pt; text-transform:uppercase; letter-spacing:1px; opacity:.75; }
+  .cover-card .value { font-size:18pt; font-weight:700; margin-top:4px; }
+  .cover-footer { position:absolute; left:.65in; right:.65in; bottom:.55in; border-top:1px solid rgba(255,255,255,.3); padding-top:10px; font-size:8.5pt; opacity:.84; }
+  .header { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:15px; }
+  .header .title { font-weight:700; color:var(--navy); }
+  .header .meta { color:var(--muted); font-size:8.5pt; text-align:right; }
+  .footer { position:absolute; left:.58in; right:.58in; bottom:.26in; display:flex; justify-content:space-between; color:#7c8997; font-size:7.5pt; border-top:1px solid #e4e9ee; padding-top:5px; }
+  .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; }
+  .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:8px; }
+  .card { border:1px solid var(--line); border-radius:7px; padding:11px; background:#fff; break-inside:avoid; }
+  .card.soft { background:var(--soft); }
+  .metric { border-top:4px solid var(--blue); }
+  .metric.green { border-top-color:var(--green); }
+  .metric.amber { border-top-color:var(--amber); }
+  .metric.red { border-top-color:var(--red); }
+  .metric .label { color:var(--muted); font-size:8pt; text-transform:uppercase; letter-spacing:.5px; }
+  .metric .value { font-size:17pt; font-weight:700; color:var(--navy); margin-top:3px; }
+  .metric .note { font-size:8pt; color:var(--muted); margin-top:3px; }
+  .stance { display:flex; align-items:center; gap:12px; padding:14px; background:#f8f1e6; border-left:5px solid var(--amber); border-radius:5px; }
+  .badge { display:inline-block; padding:4px 9px; border-radius:12px; font-weight:700; font-size:8pt; text-transform:uppercase; letter-spacing:.6px; }
+  .badge.watch { color:#6f4300; background:#ffe8bd; }
+  .badge.high { color:#115a38; background:#d9f3e4; }
+  .badge.med { color:#6f4300; background:#ffe8bd; }
+  .badge.fact { color:#124f75; background:#dcecf8; }
+  .badge.model { color:#5d357a; background:#eee1f7; }
+  .badge.claim { color:#6e5a10; background:#f6edc8; }
+  table { width:100%; border-collapse:collapse; margin:8px 0 12px; font-size:8.7pt; }
+  th { background:var(--navy); color:white; text-align:left; padding:7px 6px; font-size:8pt; }
+  td { border-bottom:1px solid var(--line); padding:6px; vertical-align:top; }
+  tr:nth-child(even) td { background:#fafbfd; }
+  .tight td { padding:5px; }
+  .small { font-size:8.3pt; color:var(--muted); }
+  .callout { border-left:4px solid var(--teal); background:#edf7f7; padding:10px 12px; margin:10px 0; }
+  .warning { border-left-color:var(--red); background:#faeeee; }
+  .amber { border-left-color:var(--amber); background:#fbf4e9; }
+  .pos { color:var(--green); font-weight:700; }
+  .neg { color:var(--red); font-weight:700; }
+  .bar { height:8px; background:#e5ebf1; border-radius:5px; overflow:hidden; width:100%; min-width:80px; }
+  .bar span { display:block; height:100%; background:linear-gradient(90deg,var(--blue),var(--teal)); }
+  ul { margin:6px 0 8px 18px; padding:0; }
+  li { margin:4px 0; }
+  .score-row { display:grid; grid-template-columns:1.25fr 2.3fr 44px; gap:8px; align-items:center; margin:7px 0; }
+  .score-row .track { height:9px; background:#e6ebf0; border-radius:6px; overflow:hidden; }
+  .score-row .fill { height:100%; background:linear-gradient(90deg,#2f699e,#1b8581); }
+  .score-row .num { font-weight:700; text-align:right; }
+  .timeline { border-left:2px solid #bfd1df; margin-left:8px; padding-left:16px; }
+  .event { position:relative; margin:0 0 12px; }
+  .event:before { content:""; position:absolute; width:9px; height:9px; background:var(--blue); border-radius:50%; left:-21px; top:5px; }
+  .event .date { font-size:8pt; color:var(--muted); text-transform:uppercase; font-weight:700; }
+  .event .name { font-weight:700; color:var(--navy); }
+  .source-list li { margin-bottom:6px; word-break:break-word; }
+  a { color:#1e5c8b; text-decoration:none; }
+  .label-row { display:flex; flex-wrap:wrap; gap:5px; margin:6px 0; }
+  .pagebreak { break-before:page; }
+  .avoid { break-inside:avoid; }
+  @media print {
+    html,body { background:white; font-size:9.4pt; line-height:1.34; }
+    .page { width:auto; min-height:auto; margin:0; padding:0; box-shadow:none; break-after:page; position:static; }
+    .page:last-child { break-after:auto; }
+    .cover { page:cover; width:8.5in; min-height:11in; padding:.65in; position:relative; }
+    .footer { display:none; }
+    p { margin:5px 0; }
+    h2 { font-size:16pt; margin-bottom:9px; }
+    h3 { font-size:11.5pt; margin:12px 0 5px; }
+    table { font-size:8.1pt; margin:6px 0 9px; }
+    th { padding:5px; font-size:7.6pt; }
+    td { padding:4.5px 5px; }
+    .card { padding:8px; }
+    .grid2,.grid3,.grid4 { gap:8px; }
+    .metric .value { font-size:15pt; }
+    .callout { padding:8px 10px; margin:7px 0; }
+    li { margin:2.5px 0; }
+    .portfolio-page { font-size:8.7pt; line-height:1.25; }
+    .portfolio-page h3 { margin:8px 0 4px; }
+    .portfolio-page table { font-size:7.4pt; margin:4px 0 6px; }
+    .portfolio-page th { padding:4px; }
+    .portfolio-page td { padding:3.5px 4px; }
+    .portfolio-page .card { padding:6px; }
+  }
+  @page {
+    size: Letter;
+    margin:.45in .55in .50in;
+    @top-left { content:"PLTR - Research & Thesis Pro"; color:#5c6b7a; font-family:Arial,sans-serif; font-size:7.5pt; }
+    @top-right { content:"August 3, 2026"; color:#5c6b7a; font-family:Arial,sans-serif; font-size:7.5pt; }
+    @bottom-left { content:"Approved for publication"; color:#7c8997; font-family:Arial,sans-serif; font-size:7pt; }
+    @bottom-right { content:"Page " counter(page) " of " counter(pages); color:#7c8997; font-family:Arial,sans-serif; font-size:7pt; }
+  }
+  @page cover {
+    size: Letter;
+    margin:0;
+    @top-left { content:none; }
+    @top-right { content:none; }
+    @bottom-left { content:none; }
+    @bottom-right { content:none; }
+  }
+</style>
+</head>
+<body>
+
+<section class="page cover">
+  <div class="kicker">Research & Thesis Pro</div>
+  <h1>Palantir Technologies Inc.</h1>
+  <div class="subtitle">NASDAQ: PLTR | AI operating systems for government and enterprise</div>
+  <div class="cover-grid">
+    <div class="cover-card">
+      <div class="label">Research stance</div>
+      <div class="value">WATCH</div>
+      <p>Exceptional operating quality is offset by a post-earnings valuation that already discounts several years of extraordinary execution.</p>
+    </div>
+    <div class="cover-card">
+      <div class="label">Conviction</div>
+      <div class="value">MEDIUM</div>
+      <p>High confidence in current results; medium confidence in long-duration valuation.</p>
+    </div>
+    <div class="cover-card">
+      <div class="label">Reference prices</div>
+      <div class="value">$125.65 / $144.42</div>
+      <p>Regular close / late after-hours indication on August 3, 2026.</p>
+    </div>
+    <div class="cover-card">
+      <div class="label">Portfolio status</div>
+      <div class="value">0.0%</div>
+      <p>Not held in retirement-portfolio-13.xlsx; research-only initiation.</p>
+    </div>
+  </div>
+  <div class="cover-footer">
+    Prepared August 3, 2026 | Data cutoff: 8:00 p.m. ET | Underwriting status: Final, approved for publication<br>
+    Portfolio source of truth: retirement-portfolio-13.xlsx | Research use only; not individualized investment advice.
+  </div>
+</section>
+
+<section class="page">
+  <div class="header"><div class="title">PLTR - Decision Snapshot</div><div class="meta">Research & Thesis Pro<br>August 3, 2026</div></div>
+  <h2>Executive Summary</h2>
+  <div class="stance">
+    <span class="badge watch">Watch</span>
+    <div><strong>Decision hinge:</strong> Can Palantir sustain 50%+ growth and elite margins long enough to justify a valuation that is already about 44x guided FY2026 sales at the late after-hours price?</div>
+  </div>
+  <div class="grid4" style="margin-top:12px">
+    <div class="card metric green"><div class="label">Q2 revenue</div><div class="value">$1.935B</div><div class="note">+93% year over year</div></div>
+    <div class="card metric green"><div class="label">GAAP op. margin</div><div class="value">47%</div><div class="note">$912M operating income</div></div>
+    <div class="card metric green"><div class="label">Free cash flow</div><div class="value">$1.20B</div><div class="note">62% reported FCF margin</div></div>
+    <div class="card metric red"><div class="label">EV / FY26 sales</div><div class="value">44.4x</div><div class="note">Using late after-hours price and diluted shares</div></div>
+  </div>
+
+  <h3>Bottom line</h3>
+  <p><strong>Palantir is operating like a category-defining AI platform.</strong> Q2 2026 revenue grew 93%, U.S. commercial revenue grew 149%, U.S. government revenue grew 90%, net dollar retention reached 157%, and total remaining deal value rose 83% to $13.1 billion. The company also produced a 47% GAAP operating margin and more than $1.2 billion of free cash flow in a single quarter.</p>
+  <p><strong>The issue is not the business; it is the price.</strong> At $144.42, fully diluted equity value is approximately $371 billion and enterprise value approximately $362 billion. That implies 44.4x management's FY2026 revenue guidance and 108x trailing free cash flow. Even a base case requiring 55% growth in 2027, 40% growth in 2028, and a 24x 2028 sales multiple produces a present value near $128 per share.</p>
+  <div class="callout amber"><strong>Research posture:</strong> Maintain on the watchlist. A more attractive initial research entry zone is <strong>$105-$120</strong>, with a staged framework rather than a full position. The business can outperform this model; the stock needs that outperformance merely to earn a normal premium return.</div>
+
+  <h3>What is working</h3>
+  <div class="grid2">
+    <div class="card">
+      <ul>
+        <li>U.S. commercial adoption is accelerating, not decelerating.</li>
+        <li>Government growth is broad-based across defense and civil programs.</li>
+        <li>AIP, Ontology, and forward-deployed engineering create a deployment moat.</li>
+        <li>Revenue growth and margins are improving simultaneously.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <ul>
+        <li>$9.2B net-cash-like liquidity supports resilience and optionality.</li>
+        <li>RPO, remaining deal value, bookings, and NDR support forward visibility.</li>
+        <li>Commercial revenue is becoming a larger and faster-growing engine.</li>
+        <li>GAAP profitability reduces reliance on adjusted metrics.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>What is weakening or unresolved</h3>
+  <div class="grid2">
+    <div class="card">
+      <ul>
+        <li>International commercial revenue grew only 26% and 2% sequentially.</li>
+        <li>Stock-based compensation remains meaningful at about 14% of TTM revenue.</li>
+        <li>Founder voting control materially limits outside shareholder influence.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <ul>
+        <li>Valuation leaves little room for growth normalization or multiple compression.</li>
+        <li>U.S. concentration is increasing: 81%+ of Q2 revenue came from the U.S.</li>
+        <li>Q2 EPS included a $0.03 GAAP benefit from unrealized SpaceX gains.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>Source classifications: facts, company claims, model-derived estimates</span><span>Page 2</span></div>
+</section>
+
+<section class="page">
+  <div class="header"><div class="title">PLTR - Thesis Architecture</div><div class="meta">Portfolio source: retirement-portfolio-13.xlsx</div></div>
+  <h2>Investment Thesis and Variant View</h2>
+  <table>
+    <thead><tr><th style="width:19%">Claim</th><th style="width:25%">Evidence</th><th style="width:18%">Classification</th><th style="width:23%">What must remain true</th><th style="width:15%">Status</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Palantir is becoming the operating layer for sovereign enterprise AI.</strong></td><td>U.S. commercial revenue +149%; $2.132B U.S. commercial TCV bookings; 157% NDR.</td><td><span class="badge fact">Reported fact</span><br><span class="badge claim">Company framing</span></td><td>AIP deployments must expand from pilots to multi-year production workflows.</td><td class="pos">Strengthening</td></tr>
+      <tr><td><strong>The moat is implementation, Ontology, security, and FDE tradecraft - not the underlying model.</strong></td><td>Rapid deployments, customer-specific workflows, mixed-model support, and high-stakes government use.</td><td><span class="badge claim">Company claim</span><br>Analyst inference</td><td>Customers must continue to choose Palantir over hyperscaler, lab, integrator, and in-house alternatives.</td><td class="pos">Supported</td></tr>
+      <tr><td><strong>Operating leverage can coexist with hypergrowth.</strong></td><td>93% revenue growth, 47% GAAP operating margin, 62% adjusted operating margin.</td><td><span class="badge fact">Reported fact</span></td><td>Gross margin remains above 80%; sales efficiency and deployment economics do not deteriorate.</td><td class="pos">Strong</td></tr>
+      <tr><td><strong>Government is a durable growth engine rather than a low-growth anchor.</strong></td><td>U.S. government revenue +90% to $809M; Maven expansion and new programs of record.</td><td><span class="badge fact">Reported fact</span><br><span class="badge claim">Company claim</span></td><td>Awards convert to revenue despite procurement timing, budget, and termination-for-convenience risk.</td><td class="pos">Strengthening</td></tr>
+      <tr><td><strong>Current valuation requires an unusually long runway.</strong></td><td>Late after-hours EV/FY26 sales about 44.4x; weighted scenario value about $132.</td><td><span class="badge model">Model-derived</span></td><td>Revenue remains above 40%-50% growth for several years and exit multiples remain exceptional.</td><td class="neg">Primary risk</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid3">
+    <div class="card">
+      <h3 style="margin-top:0">Bull view</h3>
+      <p>Palantir becomes the standard control plane for enterprise and government AI. AIP accelerates deployments, Ontology embeds workflows, and customers scale contracts rapidly. Growth remains above 50% through 2028 with 50%+ FCF margins.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Base view</h3>
+      <p>U.S. strength persists but growth moderates from exceptional levels. International adoption improves gradually. Margins remain elite, yet valuation compresses as the company matures. Business wins; stock returns are more modest.</p>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Bear view</h3>
+      <p>Growth normalizes faster, competition increases, government timing creates volatility, and international commercial remains slow. Even strong fundamentals cannot offset severe multiple compression from an extreme starting valuation.</p>
+    </div>
+  </div>
+
+  <h3>Variant perception</h3>
+  <div class="callout">
+    <strong>Consensus increasingly accepts Palantir's AI leadership.</strong> The differentiated view is therefore no longer "Palantir can grow." The real variant must be that Palantir can sustain both <em>hypergrowth and extraordinary margins for longer than the market's already aggressive expectations</em>. Without that duration, valuation becomes the downside mechanism.
+  </div>
+
+  <h3>What appears priced in</h3>
+  <ul>
+    <li>FY2026 revenue near the raised $8.15B-$8.158B range and continued quarterly beats.</li>
+    <li>U.S. commercial growth that remains well above normal enterprise software levels.</li>
+    <li>Durable 40%+ GAAP operating margins and 50%+ adjusted free cash flow margins.</li>
+    <li>A persistent premium to all large-cap software and defense technology peers.</li>
+    <li>Limited dilution and no major policy, procurement, privacy, or competitive disruption.</li>
+  </ul>
+
+  <div class="footer"><span>Final underwriting - research only</span><span>Page 3</span></div>
+</section>
+
+<section class="page">
+  <div class="header"><div class="title">PLTR - Business and Moat</div><div class="meta">Facts through Q2 2026</div></div>
+  <h2>Business, Industry and Competitive Position</h2>
+  <div class="grid2">
+    <div>
+      <h3>Platform stack</h3>
+      <table class="tight">
+        <tr><th>Platform</th><th>Role</th></tr>
+        <tr><td><strong>Gotham</strong></td><td>Government and defense intelligence, operations, targeting, mission planning, and decision support.</td></tr>
+        <tr><td><strong>Foundry</strong></td><td>Commercial data integration and operational workflows across complex enterprises.</td></tr>
+        <tr><td><strong>Apollo</strong></td><td>Continuous delivery and software deployment across cloud, on-premises, edge, and classified environments.</td></tr>
+        <tr><td><strong>AIP</strong></td><td>Model-agnostic enterprise AI layer connecting LLMs to governed data, Ontology, actions, agents, and security.</td></tr>
+      </table>
+    </div>
+    <div>
+      <h3>Moat assessment</h3>
+      <div class="score-row"><span>Data / workflow embeddedness</span><div class="track"><div class="fill" style="width:94%"></div></div><span class="num">94</span></div>
+      <div class="score-row"><span>Deployment capability</span><div class="track"><div class="fill" style="width:96%"></div></div><span class="num">96</span></div>
+      <div class="score-row"><span>Security / government credibility</span><div class="track"><div class="fill" style="width:95%"></div></div><span class="num">95</span></div>
+      <div class="score-row"><span>Switching costs</span><div class="track"><div class="fill" style="width:88%"></div></div><span class="num">88</span></div>
+      <div class="score-row"><span>Distribution scalability</span><div class="track"><div class="fill" style="width:74%"></div></div><span class="num">74</span></div>
+      <div class="score-row"><span>Governance alignment</span><div class="track"><div class="fill" style="width:45%"></div></div><span class="num">45</span></div>
+    </div>
+  </div>
+
+  <h3>Why customers choose Palantir</h3>
+  <div class="grid3">
+    <div class="card soft"><strong>Operational, not experimental</strong><p class="small">AIP connects models to actions and live workflows rather than stopping at copilots or demos.</p></div>
+    <div class="card soft"><strong>Ontology</strong><p class="small">A governed representation of enterprise objects, relationships, permissions, logic, and actions creates durable workflow embeddedness.</p></div>
+    <div class="card soft"><strong>Forward deployment</strong><p class="small">FDE teams help build and deploy use cases quickly inside complex organizations, reducing implementation failure.</p></div>
+    <div class="card soft"><strong>Security architecture</strong><p class="small">Classified, regulated, sovereign, edge, and disconnected deployment capabilities are difficult to replicate.</p></div>
+    <div class="card soft"><strong>Model agnosticism</strong><p class="small">Customers can use open, self-hosted, or commercial models and optimize for cost, latency, security, and performance.</p></div>
+    <div class="card soft"><strong>Mission credibility</strong><p class="small">Long operating history in defense and intelligence provides references, clearances, and trust in high-stakes settings.</p></div>
+  </div>
+
+  <h3>Competitive set</h3>
+  <table>
+    <thead><tr><th>Competitor type</th><th>Examples</th><th>PLTR advantage</th><th>PLTR vulnerability</th></tr></thead>
+    <tbody>
+      <tr><td>Hyperscalers / data platforms</td><td>Microsoft, AWS, Google Cloud, Databricks, Snowflake</td><td>Cross-environment deployment, Ontology, mission workflows, FDE execution.</td><td>Competitors bundle products, control infrastructure, and have broader distribution.</td></tr>
+      <tr><td>Frontier AI labs</td><td>OpenAI, Anthropic, Google DeepMind</td><td>Model-neutral operational layer and customer-controlled data/action architecture.</td><td>Labs can move up-stack and build enterprise/government deployment capabilities.</td></tr>
+      <tr><td>Government integrators</td><td>Leidos, Booz Allen, SAIC, Accenture Federal</td><td>Productized software and modern AI platform.</td><td>Integrators have entrenched relationships, labor scale, and contract vehicles.</td></tr>
+      <tr><td>Enterprise software / in-house</td><td>Salesforce, SAP, ServiceNow, custom engineering</td><td>Complex data fusion and rapid cross-functional deployment.</td><td>Customers may favor incumbent suites or internal control at lower apparent cost.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warning"><strong>Moat caveat:</strong> A deployment-heavy model is a strength when Palantir's FDE talent creates high-value workflows, but it can become a scaling constraint if technical hiring, customer-specific work, or cloud costs rise faster than revenue.</div>
+  <div class="footer"><span>Business quality score: 93 / 100</span><span>Page 4</span></div>
+</section>
+
+<section class="page">
+  <div class="header"><div class="title">PLTR - Financial Underwriting</div><div class="meta">USD billions except per-share data</div></div>
+  <h2>Financial Trajectory and Earnings Quality</h2>
+  <table>
+    <thead><tr><th>Quarter</th><th>Revenue</th><th>GAAP op. margin</th><th>Free cash flow</th><th>SBC / revenue</th><th>Revenue scale</th></tr></thead>
+    <tbody>
+    <tr>
+      <td>Q2 2025</td>
+      <td>$1.004B</td>
+      <td>26.8%</td>
+      <td>$0.532B</td>
+      <td>15.9%</td>
+      <td><div class="bar"><span style="width:51.9%"></span></div></td>
+    </tr>
+    <tr>
+      <td>Q3 2025</td>
+      <td>$1.181B</td>
+      <td>33.3%</td>
+      <td>$0.502B</td>
+      <td>14.6%</td>
+      <td><div class="bar"><span style="width:61.0%"></span></div></td>
+    </tr>
+    <tr>
+      <td>Q4 2025</td>
+      <td>$1.407B</td>
+      <td>40.9%</td>
+      <td>$0.764B</td>
+      <td>14.0%</td>
+      <td><div class="bar"><span style="width:72.7%"></span></div></td>
+    </tr>
+    <tr>
+      <td>Q1 2026</td>
+      <td>$1.633B</td>
+      <td>46.2%</td>
+      <td>$0.892B</td>
+      <td>12.3%</td>
+      <td><div class="bar"><span style="width:84.4%"></span></div></td>
+    </tr>
+    <tr>
+      <td>Q2 2026</td>
+      <td>$1.935B</td>
+      <td>47.1%</td>
+      <td>$1.202B</td>
+      <td>13.7%</td>
+      <td><div class="bar"><span style="width:100.0%"></span></div></td>
+    </tr></tbody>
+  </table>
+
+  <div class="grid4">
+    <div class="card metric green"><div class="label">TTM revenue</div><div class="value">$6.16B</div><div class="note">Q3'25 through Q2'26</div></div>
+    <div class="card metric green"><div class="label">TTM operating margin</div><div class="value">42.8%</div><div class="note">GAAP operating income</div></div>
+    <div class="card metric green"><div class="label">TTM free cash flow</div><div class="value">$3.36B</div><div class="note">54.6% of revenue</div></div>
+    <div class="card metric amber"><div class="label">TTM SBC</div><div class="value">$0.84B</div><div class="note">13.6% of revenue</div></div>
+  </div>
+
+  <h3>Q2 2026 operating dashboard</h3>
+  <table class="tight">
+    <thead><tr><th>Metric</th><th>Q2 2026</th><th>Growth / context</th><th>Underwriting interpretation</th></tr></thead>
+    <tbody>
+      <tr><td>Total revenue</td><td>$1.935B</td><td>+93% YoY; +19% QoQ</td><td>Material acceleration and broad beat.</td></tr>
+      <tr><td>U.S. revenue</td><td>$1.573B</td><td>+115% YoY; +23% QoQ</td><td>Core engine; creates geographic concentration.</td></tr>
+      <tr><td>U.S. commercial</td><td>$764M</td><td>+149% YoY; +28% QoQ</td><td>Best evidence that AIP is scaling beyond government.</td></tr>
+      <tr><td>U.S. government</td><td>$809M</td><td>+90% YoY; +18% QoQ</td><td>Defense/civil demand remains unusually strong.</td></tr>
+      <tr><td>International commercial</td><td>$182M</td><td>+26% YoY; +2% QoQ</td><td>Weakest relative growth vector; important diversification gap.</td></tr>
+      <tr><td>Net dollar retention</td><td>157%</td><td>+700 bps QoQ</td><td>Strong expansion within existing customers.</td></tr>
+      <tr><td>Total remaining deal value</td><td>$13.1B</td><td>+83% YoY; +11% QoQ</td><td>Supports forward visibility, but not all contract value is guaranteed revenue.</td></tr>
+      <tr><td>RPO</td><td>$4.9B</td><td>+103% YoY; +10% QoQ</td><td>Commercial-weighted contracted backlog expanding rapidly.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Balance sheet and capital allocation</h3>
+  <div class="grid2">
+    <div class="card">
+      <p><strong>Liquidity:</strong> $9.409B of cash and short-term investments versus $0.211B of debt.</p>
+      <p><strong>Net cash:</strong> approximately $9.20B.</p>
+      <p><strong>Capital intensity:</strong> Q2 capex was only $14.6M, demonstrating an asset-light model.</p>
+      <p><strong>Dividend:</strong> none; capital return is not part of the thesis.</p>
+    </div>
+    <div class="card">
+      <p><strong>GAAP quality:</strong> Q2 GAAP operating income was $912M and GAAP net income $1.062B.</p>
+      <p><strong>Non-operating item:</strong> unrealized SpaceX gains contributed $0.03 to GAAP EPS.</p>
+      <p><strong>SBC:</strong> $265M in Q2; economically real despite being noncash.</p>
+      <p><strong>Dilution:</strong> diluted shares were 2.570B versus basic weighted average shares of 2.397B.</p>
+    </div>
+  </div>
+
+  <div class="callout"><strong>Quality conclusion:</strong> The operating model has crossed from "promising software company" to "elite cash-generating platform." The principal quality discount is no longer profitability; it is governance, dilution, customer/geographic concentration, and the sustainability of extraordinary growth.</div>
+  <div class="footer"><span>Financial health score: 92 / 100</span><span>Page 5</span></div>
+</section>
+
+<section class="page">
+  <div class="header"><div class="title">PLTR - Valuation Discipline</div><div class="meta">Model-derived estimates; not company guidance</div></div>
+  <h2>Valuation and Expected Return Framework</h2>
+  <div class="grid4">
+    <div class="card metric amber"><div class="label">Regular close</div><div class="value">$125.65</div><div class="note">Aug. 3, 2026</div></div>
+    <div class="card metric red"><div class="label">Late after-hours</div><div class="value">$144.42</div><div class="note">High post-report volatility</div></div>
+    <div class="card metric red"><div class="label">EV / FY26 sales</div><div class="value">44.4x</div><div class="note">Late AH, diluted basis</div></div>
+    <div class="card metric red"><div class="label">EV / TTM FCF</div><div class="value">108x</div><div class="note">Based on reported quarterly FCF</div></div>
+  </div>
+
+  <h3>Scenario valuation</h3>
+  <p class="small">Method: project FY2028 revenue from the FY2026 guide, apply an exit EV/sales multiple, add estimated net cash, divide by future diluted shares, then discount to August 2026. Exit EV/FCF is a cross-check. All assumptions are analyst-derived.</p>
+  <table>
+    <thead><tr><th>Case</th><th>FY27 / FY28 growth</th><th>FY28 revenue</th><th>Exit EV/sales</th><th>FY28 FCF margin</th><th>Exit EV/FCF</th><th>Present value</th><th>Upside vs AH</th></tr></thead>
+    <tbody>
+    <tr>
+      <td><strong>Bear</strong></td>
+      <td>40% / 25%</td>
+      <td>$14.3B</td>
+      <td>15x</td>
+      <td>38%</td>
+      <td>39x</td>
+      <td>$62</td>
+      <td class="neg">-57%</td>
+    </tr>
+    <tr>
+      <td><strong>Base</strong></td>
+      <td>55% / 40%</td>
+      <td>$17.7B</td>
+      <td>24x</td>
+      <td>47%</td>
+      <td>51x</td>
+      <td>$128</td>
+      <td class="neg">-12%</td>
+    </tr>
+    <tr>
+      <td><strong>Bull</strong></td>
+      <td>70% / 55%</td>
+      <td>$21.5B</td>
+      <td>32x</td>
+      <td>52%</td>
+      <td>62x</td>
+      <td>$212</td>
+      <td class="pos">+47%</td>
+    </tr></tbody>
+  </table>
+  <div class="grid3">
+    <div class="card"><div class="small">Probability-weighted value</div><div style="font-size:22pt;font-weight:700;color:var(--navy)">$132</div><p class="small">25% bear / 50% base / 25% bull.</p></div>
+    <div class="card"><div class="small">Preferred entry zone</div><div style="font-size:22pt;font-weight:700;color:var(--navy)">$105-$120</div><p class="small">Improves asymmetry while retaining premium valuation.</p></div>
+    <div class="card"><div class="small">Valuation score</div><div style="font-size:22pt;font-weight:700;color:var(--red)">15 / 100</div><p class="small">Outstanding company, very demanding price.</p></div>
+  </div>
+
+  <h3>Why a DCF is unusually fragile here</h3>
+  <ul>
+    <li>Small changes in 2027-2030 growth rates produce large valuation swings.</li>
+    <li>Terminal multiples remain a dominant driver because current margins and growth are far above steady-state software norms.</li>
+    <li>Dilution, tax normalization, and SBC economics matter even when headline free cash flow is high.</li>
+    <li>The current price effectively capitalizes future success years before it is earned.</li>
+  </ul>
+
+  <h3>Valuation interpretation</h3>
+  <div class="callout warning">
+    At the late after-hours price, the market is paying a higher multiple on FY2026 revenue than this model's <strong>base-case 2028 exit multiple</strong>. That does not make the stock uninvestable, but it means the return thesis depends on sustained upside revisions rather than simple execution against current guidance.
+  </div>
+  <p><strong>Valuation discipline:</strong> Avoid chasing the post-earnings gap. A starter position is justified only as a deliberately small option on long-run category dominance, not because the current price offers an obvious margin of safety.</p>
+  <div class="footer"><span>Reference price conflict: regular close vs multiple after-hours feeds</span><span>Page 6</span></div>
+</section>
+
+<section class="page">
+  <div class="header"><div class="title">PLTR - Catalysts and Checkpoints</div><div class="meta">Dates are confirmed where available</div></div>
+  <h2>Catalyst Timeline and Thesis Checkpoints</h2>
+  <div class="timeline">
+    <div class="event"><div class="date">August 4-14, 2026</div><div class="name">Q2 filing and earnings materials digestion</div><p>Confirm segment details, contract metrics, share dilution, SpaceX gain treatment, updated cash-flow guidance, and any risk-factor changes in the 10-Q/8-K.</p></div>
+    <div class="event"><div class="date">September 30, 2026</div><div class="name">U.S. federal fiscal year-end</div><p>Procurement and award activity can accelerate, but contract timing and continuing-resolution risk can create volatility.</p></div>
+    <div class="event"><div class="date">November 2, 2026 (currently scheduled)</div><div class="name">Q3 2026 earnings</div><p>Management guided to $2.160B-$2.164B revenue. Key test: whether U.S. commercial growth remains above 100% and Q3 expenses ramp without margin deterioration.</p></div>
+    <div class="event"><div class="date">February 2027</div><div class="name">FY2026 results and initial FY2027 outlook</div><p>The most important valuation checkpoint. The market will need evidence that growth remains extraordinary after an 82% guided FY2026 increase.</p></div>
+    <div class="event"><div class="date">2027 program milestones</div><div class="name">Maven, government programs of record, and AIP commercial conversions</div><p>Watch conversion of bookings and remaining deal value into recognized revenue, customer expansion, and new production deployments.</p></div>
+  </div>
+
+  <h3>Quarterly scorecard to monitor</h3>
+  <table>
+    <thead><tr><th>Metric</th><th>Green</th><th>Yellow</th><th>Red / thesis damage</th></tr></thead>
+    <tbody>
+      <tr><td>Total revenue growth</td><td>&gt;60%</td><td>40%-60%</td><td>&lt;40% without deliberate conservatism or comps</td></tr>
+      <tr><td>U.S. commercial growth</td><td>&gt;100%</td><td>65%-100%</td><td>&lt;65% for two quarters</td></tr>
+      <tr><td>Net dollar retention</td><td>&gt;145%</td><td>125%-145%</td><td>&lt;125%</td></tr>
+      <tr><td>GAAP operating margin</td><td>&gt;40%</td><td>30%-40%</td><td>&lt;30% with slowing growth</td></tr>
+      <tr><td>SBC / revenue</td><td>&lt;12%</td><td>12%-16%</td><td>&gt;16% or renewed dilution acceleration</td></tr>
+      <tr><td>International commercial</td><td>&gt;30% growth</td><td>15%-30%</td><td>&lt;15% or sequential contraction</td></tr>
+      <tr><td>RPO / remaining deal value</td><td>&gt;50% growth</td><td>25%-50%</td><td>&lt;25% with bookings weakness</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Explicit thesis-break conditions</h3>
+  <div class="grid2">
+    <div class="card">
+      <ul>
+        <li>Two consecutive quarters of U.S. commercial growth below 65%.</li>
+        <li>Evidence that AIP pilots are not converting into production contracts.</li>
+        <li>NDR below 125% or material customer contraction.</li>
+        <li>GAAP operating margin below 30% while revenue growth slows.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <ul>
+        <li>Major loss, cancellation, or non-renewal in a flagship government program.</li>
+        <li>Security, privacy, or compliance incident that undermines sovereign-AI credibility.</li>
+        <li>Share-count growth or SBC reaccelerates materially above revenue growth.</li>
+        <li>Competitors demonstrate equal deployment outcomes at structurally lower cost.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer"><span>Next confirmed major checkpoint: Q3 2026 earnings</span><span>Page 7</span></div>
+</section>
+
+<section class="page">
+  <div class="header"><div class="title">PLTR - Risk Dashboard</div><div class="meta">Severity reflects price and business exposure</div></div>
+  <h2>Risks, Disconfirmers and Governance</h2>
+  <table>
+    <thead><tr><th>Risk</th><th>Probability</th><th>Impact</th><th>Leading indicators</th><th>Mitigant</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Valuation compression</strong></td><td>High</td><td>Very high</td><td>Growth deceleration, rising rates, software multiple contraction.</td><td>Exceptional growth, margins, cash and category leadership.</td></tr>
+      <tr><td><strong>AI / platform competition</strong></td><td>Medium</td><td>High</td><td>Hyperscaler/lab wins, bundling, declining NDR, weaker bookings.</td><td>Ontology, FDE tradecraft, security, government credibility.</td></tr>
+      <tr><td><strong>Government procurement / policy</strong></td><td>Medium</td><td>High</td><td>Budget delays, continuing resolutions, contract protests, program changes.</td><td>Mission relevance, diversified civil/defense programs, allied demand.</td></tr>
+      <tr><td><strong>Geographic concentration</strong></td><td>Medium</td><td>Medium</td><td>International commercial stagnation; U.S. share of revenue rises further.</td><td>U.S. market is currently the strongest and most profitable.</td></tr>
+      <tr><td><strong>Governance / founder control</strong></td><td>High</td><td>Medium</td><td>Related-party actions, compensation, capital allocation, strategic choices.</td><td>Strong operating execution and founder mission alignment to date.</td></tr>
+      <tr><td><strong>SBC and dilution</strong></td><td>Medium</td><td>Medium-high</td><td>SBC/revenue, diluted share count, new awards, insider selling.</td><td>SBC intensity has declined from earlier years; cash generation is strong.</td></tr>
+      <tr><td><strong>Security / privacy / ethics</strong></td><td>Low-medium</td><td>Very high</td><td>Breaches, misuse allegations, regulatory investigations, customer restrictions.</td><td>Security architecture and long regulated-market history.</td></tr>
+      <tr><td><strong>Customer concentration / lumpy deals</strong></td><td>Medium</td><td>Medium</td><td>Top-20 expansion slows, deal duration changes, bookings fail to convert.</td><td>653 U.S. commercial customers and broader AIP adoption.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Governance assessment</h3>
+  <div class="callout amber">
+    Palantir's Class F and multi-class structure gives founders effective control over major stockholder matters for the foreseeable future. This can protect long-term strategy, but outside investors have limited ability to influence board composition, compensation, mergers, or other major actions. The governance discount should not disappear simply because operating results are strong.
+  </div>
+
+  <h3>Accounting and earnings-quality cautions</h3>
+  <ul>
+    <li>Adjusted metrics exclude stock-based compensation and related payroll taxes; the cost is noncash but economically dilutive.</li>
+    <li>Q2 GAAP EPS benefited from unrealized investment gains, so operating income and cash flow are better core measures.</li>
+    <li>Government deal value can include options and contracts with termination-for-convenience clauses; total contract value is not identical to guaranteed revenue.</li>
+    <li>Low tax rates may normalize as tax benefits and stock-compensation effects evolve.</li>
+  </ul>
+
+  <h3>Composite scorecard</h3>
+  <div class="score-row"><span>Growth and demand</span><div class="track"><div class="fill" style="width:98%"></div></div><span class="num">98</span></div>
+  <div class="score-row"><span>Business quality / moat</span><div class="track"><div class="fill" style="width:93%"></div></div><span class="num">93</span></div>
+  <div class="score-row"><span>Balance sheet / cash generation</span><div class="track"><div class="fill" style="width:96%"></div></div><span class="num">96</span></div>
+  <div class="score-row"><span>Earnings quality</span><div class="track"><div class="fill" style="width:80%"></div></div><span class="num">80</span></div>
+  <div class="score-row"><span>Governance</span><div class="track"><div class="fill" style="width:45%"></div></div><span class="num">45</span></div>
+  <div class="score-row"><span>Valuation</span><div class="track"><div class="fill" style="width:15%"></div></div><span class="num">15</span></div>
+  <div class="score-row"><span>Portfolio fit</span><div class="track"><div class="fill" style="width:48%"></div></div><span class="num">48</span></div>
+  <div class="callout"><strong>Weighted composite: 69 / 100.</strong> The score is held back almost entirely by valuation, governance, and portfolio overlap rather than operating performance.</div>
+  <div class="footer"><span>Risk posture: high-duration equity with asymmetric multiple risk</span><span>Page 8</span></div>
+</section>
+
+<section class="page portfolio-page">
+  <div class="header"><div class="title">PLTR - Portfolio Fit</div><div class="meta">Exact workbook values as supplied</div></div>
+  <h2>Portfolio Role, Concentration and Sizing Framework</h2>
+  <div class="grid4">
+    <div class="card metric"><div class="label">Portfolio value</div><div class="value">$1.6M</div><div class="note">Workbook market values</div></div>
+    <div class="card metric"><div class="label">Active single-stock sleeve</div><div class="value">$1.2M</div><div class="note">73.8% of portfolio</div></div>
+    <div class="card metric amber"><div class="label">Tech / digital exposure</div><div class="value">30.3%</div><div class="note">Selected direct holdings</div></div>
+    <div class="card metric amber"><div class="label">AI-linked cohort</div><div class="value">28.1%</div><div class="note">Selected direct holdings</div></div>
+  </div>
+
+  <h3>Current portfolio context</h3>
+  <table>
+    <thead><tr><th>Ticker</th><th>Holding</th><th>Market value</th><th>Allocation</th></tr></thead>
+    <tbody><tr><td>TLXIX</td><td>Nuveen Lifecycle Index 2045 Fund R6 Class</td><td>$160,818</td><td>9.87%</td></tr><tr><td>AMZN</td><td>Amazon.com Inc</td><td>$141,248</td><td>8.67%</td></tr><tr><td>JPM</td><td>JPMorgan Chase & Co</td><td>$125,888</td><td>7.73%</td></tr><tr><td>GS</td><td>The Goldman Sachs Group Inc</td><td>$106,886</td><td>6.56%</td></tr><tr><td>AAPL</td><td>Apple Inc</td><td>$105,050</td><td>6.45%</td></tr><tr><td>MA</td><td>Mastercard Inc Class A</td><td>$99,047</td><td>6.08%</td></tr><tr><td>XOM</td><td>ExxonMobil Holdings Corp</td><td>$58,575</td><td>3.60%</td></tr><tr><td>GOOG</td><td>Alphabet Inc Class C</td><td>$51,717</td><td>3.17%</td></tr><tr><td>MSFT</td><td>Microsoft Corp</td><td>$46,461</td><td>2.85%</td></tr><tr><td>AVGO</td><td>Broadcom Inc</td><td>$44,773</td><td>2.75%</td></tr></tbody>
+  </table>
+  <p class="small">PLTR does not appear in the workbook. Therefore no quantity, market value, allocation, or cost basis is attributed to it.</p>
+
+  <h3>Role if eventually added</h3>
+  <div class="grid2">
+    <div class="card">
+      <strong>Potential portfolio benefit</strong>
+      <ul>
+        <li>Pure-play operational AI and defense/government software exposure.</li>
+        <li>Higher structural growth than most current holdings.</li>
+        <li>Distinctive sovereign-AI and mission-system exposure not fully replicated by mega-cap platforms.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <strong>Portfolio cost</strong>
+      <ul>
+        <li>Adds to an already large technology and AI-linked allocation.</li>
+        <li>No dividend contribution to the retirement income stream.</li>
+        <li>High valuation increases sequence-of-returns and drawdown risk.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Illustrative staged sizing framework</h3>
+  <table>
+    <thead><tr><th>Stage</th><th>% of active sleeve</th><th>Approx. dollars</th><th>Condition</th></tr></thead>
+    <tbody>
+      <tr><td>Research starter</td><td>0.5%</td><td>$6,010</td><td>Price enters $105-$120 zone without thesis deterioration.</td></tr>
+      <tr><td>Confirmed starter</td><td>1.0%</td><td>$12,019</td><td>Q3/FY2026 execution confirms NDR, growth and margin durability.</td></tr>
+      <tr><td>Maximum initial framework</td><td>1.5%</td><td>$18,029</td><td>Only after valuation improves and at least two checkpoints support the thesis.</td></tr>
+    </tbody>
+  </table>
+  <div class="callout amber"><strong>Retirement-plan fit:</strong> PLTR should be treated as a satellite growth asset, not an income-replacement holding or core retirement anchor. Its lack of dividend, high beta, and premium valuation require strict sizing even with a ten-year horizon and relatively high risk tolerance.</div>
+
+  <h3>Expected return drivers by horizon</h3>
+  <table>
+    <thead><tr><th>Horizon</th><th>Primary drivers</th><th>Most likely risk</th></tr></thead>
+    <tbody>
+      <tr><td>1 year</td><td>Quarterly beats, FY2027 guide, government awards, AI sentiment.</td><td>Multiple compression despite good results.</td></tr>
+      <tr><td>3 years</td><td>AIP production adoption, commercial scale, sustained margins, international improvement.</td><td>Growth normalizes faster than valuation.</td></tr>
+      <tr><td>5 years</td><td>Category leadership, platform standardization, government programs of record.</td><td>Competition or platform commoditization.</td></tr>
+      <tr><td>10 years</td><td>Whether Palantir becomes a durable operating system for AI-enabled institutions.</td><td>Technological displacement, governance, or overpayment at entry.</td></tr>
+    </tbody>
+  </table>
+  <div class="footer"><span>Illustrative sizing, not individualized advice</span><span>Page 9</span></div>
+</section>
+
+<section class="page">
+  <div class="header"><div class="title">PLTR - Final Recommendation</div><div class="meta">Approved for publication</div></div>
+  <h2>Recommendation and Action Framework</h2>
+  <div class="stance">
+    <span class="badge watch">Watch</span>
+    <div><strong>Conviction: Medium.</strong> Palantir is one of the strongest fundamental growth stories in public software, but the late after-hours valuation offers inadequate base-case asymmetry for a new position.</div>
+  </div>
+
+  <h3>Recommendation rationale</h3>
+  <ol>
+    <li><strong>Fundamentals merit attention.</strong> The combination of 93% growth, 47% GAAP operating margin, 62% adjusted operating margin, and 157% NDR is extraordinary.</li>
+    <li><strong>The thesis is increasingly validated.</strong> Commercial AI deployments and government mission programs are scaling together, reducing the old concern that Palantir was only a niche contractor.</li>
+    <li><strong>Valuation is the gating factor.</strong> A fully diluted post-earnings EV around $362B demands sustained hypergrowth and premium terminal multiples.</li>
+    <li><strong>Portfolio overlap matters.</strong> The existing portfolio already has roughly 30.3% selected tech/digital exposure and 28.1% AI-linked exposure.</li>
+    <li><strong>Best implementation is staged.</strong> Research starter only at a better price, then add upon operating confirmation rather than chasing a single earnings gap.</li>
+  </ol>
+
+  <div class="grid3">
+    <div class="card">
+      <h3 style="margin-top:0">Upgrade to Add</h3>
+      <ul>
+        <li>Price below $120 with thesis intact.</li>
+        <li>Q3 revenue exceeds guide and U.S. commercial remains above 100% growth.</li>
+        <li>FY2027 guide supports 50%+ growth.</li>
+        <li>SBC/revenue trends toward 12% or below.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Remain Watch</h3>
+      <ul>
+        <li>Price remains above $130-$140.</li>
+        <li>Execution is excellent but already reflected in estimates.</li>
+        <li>International commercial growth remains modest.</li>
+        <li>Scenario-weighted return remains near or below hurdle rate.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Avoid / downgrade</h3>
+      <ul>
+        <li>U.S. commercial growth drops below 65% for two quarters.</li>
+        <li>NDR falls below 125%.</li>
+        <li>Material government program loss or security incident.</li>
+        <li>Share dilution or SBC reaccelerates.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Confidence assessment</h3>
+  <table class="tight">
+    <tr><th>Area</th><th>Confidence</th><th>Reason</th></tr>
+    <tr><td>Reported Q2 results</td><td>High</td><td>Cross-checked across earnings transcript, financial data provider and major financial press.</td></tr>
+    <tr><td>Business quality</td><td>High</td><td>Growth, margins, contract metrics and balance sheet strongly support the conclusion.</td></tr>
+    <tr><td>Competitive durability</td><td>Medium-high</td><td>Strong evidence, but AI platform competition is evolving rapidly.</td></tr>
+    <tr><td>Long-term valuation</td><td>Medium-low</td><td>Highly sensitive to growth duration, terminal multiples, dilution and rates.</td></tr>
+    <tr><td>Portfolio fit</td><td>High</td><td>Exact workbook composition confirms no PLTR position and significant existing AI/tech exposure.</td></tr>
+  </table>
+
+  <div class="callout"><strong>Final view:</strong> PLTR belongs on the research watchlist as a potential satellite holding. The company has earned a premium valuation; the current price asks investors to prepay too much of that premium. Discipline should focus on entry price, size, and explicit checkpoints rather than debating whether the quarter was strong - it was exceptional.</div>
+  <div class="footer"><span>Recommendation: WATCH | Conviction: MEDIUM</span><span>Page 10</span></div>
+</section>
+
+<section class="page">
+  <div class="header"><div class="title">PLTR - Sources and Methodology</div><div class="meta">Data cutoff: August 3, 2026, 8:00 p.m. ET</div></div>
+  <h2>Source Register, Definitions and Limitations</h2>
+  <h3>Primary company and regulatory sources</h3>
+  <ul class="source-list">
+    <li><strong>Palantir FY2025 Form 10-K:</strong> <a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000011/pltr-20251231.htm">SEC filing</a> - business model, risks, segment mix, stock compensation, governance and financial history.</li>
+    <li><strong>Palantir Q1 2026 Form 10-Q:</strong> <a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000028/pltr-20260331.htm">SEC filing</a> - preceding-quarter financials and disclosures.</li>
+    <li><strong>Palantir investor relations:</strong> <a href="https://investors.palantir.com/events.html">Events and earnings materials</a>.</li>
+    <li><strong>Q2 2026 earnings call transcript:</strong> Bigdata.com / Quartr transcript dated August 3, 2026.</li>
+  </ul>
+
+  <h3>Market and financial data</h3>
+  <ul class="source-list">
+    <li><strong>Bigdata.com company tearsheet (FMP fundamentals):</strong> Q2 2026 income statement, balance sheet, cash flow, market data, analyst targets and institutional ownership; retrieved August 3, 2026.</li>
+    <li><strong>Alpaca IEX snapshot:</strong> regular and initial after-hours trade/quote context; retrieved August 3, 2026.</li>
+    <li><strong>Major financial press:</strong> MarketWatch, Wall Street Journal, Barron's, Investors Business Daily and The Guardian for same-day earnings cross-checks.</li>
+    <li><strong>Portfolio source:</strong> retirement-portfolio-13.xlsx, used exclusively for quantities, cost basis, holdings, market values, cash and allocation context.</li>
+  </ul>
+
+  <h3>Data-quality notes</h3>
+  <div class="callout amber">
+    The official Q2 2026 10-Q/8-K was not yet visible in the public SEC/IR web index at the report cutoff. Q2 actuals were obtained from the earnings call transcript and Bigdata/FMP records and cross-checked against multiple same-day financial-news reports. The report should be refreshed when the filed Q2 documents are fully indexed.
+  </div>
+  <ul>
+    <li>Regular-close prices differed slightly by feed ($125.65 FMP versus $125.89 IEX bar), reflecting venue and feed methodology.</li>
+    <li>After-hours prices were volatile: an Alpaca IEX trade showed $140.96 around 4:59 p.m. ET, while Bigdata/FMP showed $144.42 at 7:59 p.m. ET. The valuation section uses $144.42 and discloses the sensitivity.</li>
+    <li>Market-cap providers often use basic shares; this report uses the Q2 diluted weighted-average share count for a conservative fully diluted valuation.</li>
+    <li>Free cash flow in trend tables uses operating cash flow less capex from provider financial statements; the company reports a closely related adjusted FCF measure.</li>
+  </ul>
+
+  <h3>Classification framework</h3>
+  <div class="label-row"><span class="badge fact">Reported fact</span><span class="badge claim">Company claim</span><span class="badge model">Model-derived</span></div>
+  <p><strong>Reported fact</strong> means a metric disclosed in filings, earnings materials, transcript, workbook, or market-data feed. <strong>Company claim</strong> means management's qualitative interpretation or customer anecdote. <strong>Model-derived</strong> means an analyst assumption, calculation, score, scenario, target, or sizing framework.</p>
+
+  <h3>Important limitation</h3>
+  <p>This document is research and scenario analysis, not individualized investment, tax, legal, or retirement advice. Price targets are not forecasts; they are outputs from explicit assumptions that can be wrong. This report has been approved for publication to Portfolio Command Center.</p>
+  <div class="footer"><span>End of report</span><span>Page 11</span></div>
+</section>
+
+</body>
+</html>
