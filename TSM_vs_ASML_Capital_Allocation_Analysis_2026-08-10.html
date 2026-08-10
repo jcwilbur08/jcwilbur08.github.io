@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TSMC vs ASML - Incremental Capital Allocation Analysis - August 10, 2026</title>
+<style>
+@page { size: Letter; margin: 0.48in 0.52in 0.55in; }
+* { box-sizing: border-box; }
+:root{
+  --navy:#0b2136; --navy2:#123d5a; --blue:#1f6b91; --teal:#147d78;
+  --green:#16794a; --greenbg:#edf8f1; --amber:#9a6700; --amberbg:#fff7e3;
+  --red:#b42318; --redbg:#fff0ee; --ink:#182230; --muted:#667788;
+  --line:#d9e2e9; --soft:#f5f8fa; --soft2:#eef3f6; --white:#fff;
+}
+html,body{margin:0;padding:0;background:#edf1f4;color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:12.5px;line-height:1.46}
+.report{max-width:1050px;margin:0 auto;background:#fff}
+.cover{padding:34px 40px 28px;background:linear-gradient(135deg,#091d31 0%,#123d5a 60%,#176d7c 100%);color:#fff}
+.eyebrow{text-transform:uppercase;letter-spacing:1.5px;font-size:10px;font-weight:700;opacity:.82}
+h1{font-size:29px;line-height:1.08;margin:8px 0 8px}
+.subtitle{font-size:15px;opacity:.92;max-width:850px}
+.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:20px}
+.meta .box{padding:11px 12px;background:rgba(255,255,255,.11);border:1px solid rgba(255,255,255,.18);border-radius:8px}
+.meta .label{font-size:8.7px;text-transform:uppercase;letter-spacing:.8px;opacity:.72}
+.meta .value{font-size:15px;font-weight:700;margin-top:3px}
+.content{padding:24px 40px 36px}
+h2{font-size:19px;color:#0c304c;border-bottom:2px solid var(--line);padding-bottom:5px;margin:25px 0 10px;break-after:avoid}
+h3{font-size:14.5px;color:#174b68;margin:17px 0 7px;break-after:avoid}
+p{margin:6px 0 10px}
+ul{margin:6px 0 11px 18px;padding:0} li{margin:3px 0}
+.small{font-size:10px;color:var(--muted)}
+.lede{font-size:13.2px;line-height:1.55}
+.callout{padding:13px 15px;border-radius:6px;border-left:5px solid var(--blue);background:#f1f7fb;margin:11px 0;break-inside:avoid}
+.callout.positive{border-left-color:var(--green);background:var(--greenbg)}
+.callout.warning{border-left-color:var(--amber);background:var(--amberbg)}
+.callout.risk{border-left-color:var(--red);background:var(--redbg)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+.kpi{border:1px solid var(--line);border-radius:8px;padding:11px 12px;background:#fbfcfd;break-inside:avoid}
+.kpi .k{text-transform:uppercase;letter-spacing:.7px;font-size:9px;color:var(--muted)}
+.kpi .v{font-size:19px;font-weight:700;color:#103b57;margin:2px 0}
+.kpi .n{font-size:9.8px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:9px 0 14px;font-size:10.6px;break-inside:auto}
+th{background:var(--navy2);color:#fff;text-align:left;padding:7px 7px;vertical-align:bottom}
+td{border-bottom:1px solid #e0e6eb;padding:6.5px 7px;vertical-align:top}
+tr:nth-child(even) td{background:#f8fafb}
+.tag{display:inline-block;padding:3px 7px;border-radius:11px;font-size:9px;font-weight:700;white-space:nowrap}
+.tag.win{background:#dff3e7;color:#126337}.tag.watch{background:#fff0c7;color:#735900}.tag.risk{background:#fde3df;color:#98251b}.tag.neutral{background:#e8eef3;color:#415668}
+.score{font-weight:700;font-size:12px}.winner{color:#146b43}.loser{color:#8b5a00}
+.barwrap{display:grid;grid-template-columns:150px 1fr 55px;align-items:center;gap:8px;margin:6px 0}
+.bar{height:12px;background:#e8edf1;border-radius:8px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#1d6e93,#16917f);border-radius:8px}.fill.amber{background:linear-gradient(90deg,#b67800,#d49a1f)}
+.decision{display:grid;grid-template-columns:1.15fr .85fr;gap:14px;margin:12px 0}
+.decision .panel{border:1px solid var(--line);border-radius:9px;padding:14px;background:#fff}
+.decision .primary{background:linear-gradient(180deg,#edf8f1,#ffffff);border:2px solid #a8d9bd}
+.big{font-size:22px;font-weight:800;color:#0c5132}
+.rule{height:1px;background:var(--line);margin:12px 0}
+.pagebreak{break-before:page;page-break-before:always}
+.no-break{break-inside:avoid;page-break-inside:avoid}
+.sources li{margin-bottom:5px}.sources a{color:#175f87;text-decoration:none;word-break:break-all}
+.footer-note{border-top:1px solid var(--line);margin-top:26px;padding-top:10px;font-size:9.4px;color:#697785}
+.rank{font-size:23px;font-weight:800;color:#0a5160}.muted{color:var(--muted)}
+@media print{
+ body{background:#fff}.report{max-width:none}.cover{padding:27px 28px 22px}.content{padding:18px 28px 28px}
+ h1{font-size:26px} h2{font-size:17.5px} table{font-size:9.8px} .meta{gap:7px}.meta .value{font-size:13.5px}
+ .grid2,.grid3,.decision{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="report">
+<section class="cover">
+  <div class="eyebrow">Capital Allocation Research | Semiconductor Infrastructure</div>
+  <h1>TSMC vs ASML: Which Stock Deserves the Next Dollar?</h1>
+  <div class="subtitle">A professional comparative investment report focused on limited-capital deployment, valuation discipline, risk-adjusted return, and fit with the current retirement portfolio.</div>
+  <div class="meta">
+    <div class="box"><div class="label">New-Money Priority</div><div class="value">TSM FIRST</div></div>
+    <div class="box"><div class="label">TSM Reference Price</div><div class="value">$421.10</div></div>
+    <div class="box"><div class="label">ASML Reference Price</div><div class="value">$1,759.98</div></div>
+    <div class="box"><div class="label">Report Date</div><div class="value">Aug. 10, 2026</div></div>
+  </div>
+  <div class="small" style="color:#dbe8ef;margin-top:12px">Market prices: delayed SIP snapshots around 10:25 a.m. ET. Company fundamentals through Q2 2026; TSMC also incorporates July 2026 monthly-sales data. Portfolio source: retirement-portfolio-18.xlsx.</div>
+</section>
+<div class="content">
+
+<h2>1. Executive Investment Decision</h2>
+<div class="callout positive lede"><b>Bottom line:</b> If capital is genuinely limited and only one security can be prioritized today, <b>TSMC (TSM) is the better new-money investment at current prices.</b> ASML is arguably the superior moat, but TSM currently offers a materially better combination of earnings momentum, forward valuation, and 12-18 month expected return. The trade-off is that TSM carries a far more severe geopolitical tail risk because the core manufacturing base remains concentrated in Taiwan.</div>
+
+<div class="decision">
+  <div class="panel primary">
+    <div class="small">FIRST PRIORITY</div>
+    <div class="big">TSM - ADD / BUILD GRADUALLY</div>
+    <p><b>Why:</b> Q2 operating momentum is exceptional, 2026 U.S.-dollar revenue growth is now expected slightly above 40%, 2nm has begun its ramp, HPC is 66% of revenue, and current valuation is roughly 21x the report's base 2027 ADR EPS framework.</p>
+    <p><b>Base fair value:</b> $505 | <b>Base upside:</b> ~20% | <b>Probability-weighted value:</b> ~$496.</p>
+  </div>
+  <div class="panel">
+    <div class="small">SECOND PRIORITY</div>
+    <div style="font-size:20px;font-weight:800;color:#745800">ASML - WATCH / VALUATION-GATED</div>
+    <p><b>Why not first:</b> The EUV moat is extraordinary, but the shares have rerated sharply. At ~$1,760, the prior $1,825 base fair-value midpoint offers only ~4% price upside before dividends.</p>
+    <p><b>Preferred setup:</b> Lower entry price or a further upward reset in 2027-30 earnings power.</p>
+  </div>
+</div>
+
+<div class="grid3">
+  <div class="kpi"><div class="k">TSM Base Upside</div><div class="v">+19.9%</div><div class="n">$505 vs $421.10</div></div>
+  <div class="kpi"><div class="k">ASML Base Upside</div><div class="v">+3.7%</div><div class="n">$1,825 vs $1,759.98</div></div>
+  <div class="kpi"><div class="k">Portfolio Cash</div><div class="v">$43.0K</div><div class="n">2.57% of designated baseline</div></div>
+</div>
+
+<h2>2. Side-by-Side Investment Scorecard</h2>
+<table>
+<tr><th>Dimension</th><th>TSMC (TSM)</th><th>ASML</th><th>Edge</th></tr>
+<tr><td><b>Business moat</b></td><td>Leading-edge foundry scale, yield learning, design ecosystem, advanced packaging, customer neutrality.</td><td>Commercial EUV monopoly plus ZEISS optics, mechatronics, software, service ecosystem and decades of process integration.</td><td><span class="tag win">ASML</span></td></tr>
+<tr><td><b>2026 growth</b></td><td>Management expects U.S.-dollar revenue growth slightly above 40%.</td><td>€43-45B guidance implies roughly 32-38% growth vs. 2025.</td><td><span class="tag win">TSM</span></td></tr>
+<tr><td><b>Current operating momentum</b></td><td>Q2 revenue $40.2B; gross margin 67.7%; HPC 66%; July sales +45% YoY.</td><td>Q2 revenue €9.33B; gross margin 54%; FY guidance sharply raised.</td><td><span class="tag win">TSM</span></td></tr>
+<tr><td><b>Capital efficiency</b></td><td>Extremely capital intensive; 2026 capex $60-64B.</td><td>R&D intensive but materially less asset-heavy; strong installed-base cash economics.</td><td><span class="tag win">ASML</span></td></tr>
+<tr><td><b>AI exposure</b></td><td>Direct manufacturing/packaging exposure to accelerators, CPUs, ASICs, networking and advanced nodes.</td><td>Upstream exposure to leading-edge logic and HBM/DRAM capex through lithography intensity.</td><td><span class="tag win">TSM</span></td></tr>
+<tr><td><b>Valuation today</b></td><td>~21x base 2027 ADR EPS framework.</td><td>~33.5x midpoint of base forward earnings-power range.</td><td><span class="tag win">TSM</span></td></tr>
+<tr><td><b>Geopolitical resilience</b></td><td>Taiwan concentration creates a unique, low-probability/high-severity physical tail risk.</td><td>Export controls and China substitution matter, but core operations are in Europe.</td><td><span class="tag win">ASML</span></td></tr>
+<tr><td><b>12-18 month risk/reward</b></td><td>Base +20%; weighted +18%; bear about -25%.</td><td>Base +4%; weighted +3%; bear about -29%.</td><td><span class="tag win">TSM</span></td></tr>
+<tr><td><b>10-year strategic quality</b></td><td>Exceptional; the manufacturing backbone of advanced semiconductors.</td><td>Exceptional; arguably the narrowest technological bottleneck in the semiconductor stack.</td><td><span class="tag neutral">Tie / ASML moat</span></td></tr>
+</table>
+
+<h2>3. Where Each Company Sits in the AI Value Chain</h2>
+<div class="grid2">
+<div class="callout positive"><b>TSMC monetizes chip complexity at the manufacturing layer.</b> Fabless designers and hyperscalers can change winners and architectures, but the most advanced designs still require leading-edge manufacturing, yield learning, and advanced packaging. This lets TSMC benefit from competition among NVIDIA, AMD, Apple, Broadcom/custom ASIC programs and other designers.</div>
+<div class="callout"><b>ASML monetizes complexity one layer further upstream.</b> Every leading foundry needs lithography. As node geometries shrink and patterning becomes more complex, ASML captures value through EUV, immersion DUV, software, metrology and recurring service. It is the purer technological bottleneck.</div>
+</div>
+<p><b>Investment implication:</b> ASML's moat is wider, but TSM's earnings are closer to the current AI demand pulse. With limited capital, that difference matters because valuation is also more favorable at TSM.</p>
+
+<h2>4. Fundamental & Earnings Momentum</h2>
+<table>
+<tr><th>Metric</th><th>TSM</th><th>ASML</th><th>Interpretation</th></tr>
+<tr><td>Latest quarter revenue</td><td>$40.2B, +33.7% YoY</td><td>€9.33B</td><td>Both accelerating; TSM has the stronger near-term revenue cadence.</td></tr>
+<tr><td>Gross margin</td><td>67.7%</td><td>54.0%</td><td>Not directly comparable, but both show exceptional economics.</td></tr>
+<tr><td>2026 revenue outlook</td><td>Slightly above +40% USD</td><td>€43-45B, ~+32-38%</td><td>Both revised upward; TSM remains ahead.</td></tr>
+<tr><td>Capacity investment</td><td>$60-64B 2026 capex</td><td>Expanding low-NA EUV and DUV capacity ~30% for 2027</td><td>TSM must earn adequate returns on a vastly larger capital base.</td></tr>
+<tr><td>Recurring economics</td><td>Wafer demand + packaging + long customer relationships</td><td>Installed-base service, upgrades and field options</td><td>ASML has a more explicit recurring service layer.</td></tr>
+<tr><td>Balance sheet</td><td>~NT$3.52T cash & marketable securities in Q2</td><td>Limited financial leverage; strong cash generation</td><td>Both financially strong; neither thesis depends on leverage.</td></tr>
+</table>
+
+<h3>TSM: what must keep working</h3>
+<ul>
+<li>AI/HPC demand must remain durable enough to absorb 2nm, 3nm, advanced packaging and overseas capacity.</li>
+<li>2nm yield and pricing must offset the expected 3-4 percentage-point H2 gross-margin dilution from ramp costs.</li>
+<li>Arizona and other overseas fabs must approach acceptable economics without permanently eroding consolidated margins.</li>
+<li>Customer concentration must remain an advantage through scale, not become a bargaining-power problem.</li>
+</ul>
+
+<h3>ASML: what must keep working</h3>
+<ul>
+<li>Leading-edge logic and HBM/DRAM investment must sustain EUV and immersion-DUV demand into 2027-30.</li>
+<li>High-NA must deliver credible production economics, even if adoption is more gradual than early enthusiasm implied.</li>
+<li>China restrictions and domestic DUV substitution must not erode more of the addressable market than demand relocation can replace.</li>
+<li>Installed-base revenue and pricing must support mid/high-50% long-run gross-margin economics.</li>
+</ul>
+
+<h2 class="pagebreak">5. Moat: ASML Wins - But Moat Is Not the Same as Stock Return</h2>
+<table>
+<tr><th>Moat Element</th><th>TSM</th><th>ASML</th></tr>
+<tr><td>Technology barrier</td><td>Extremely high: leading-edge process integration, yields, scale, design enablement, packaging.</td><td>Extraordinary: EUV is a multi-decade systems-engineering achievement with no commercial peer.</td></tr>
+<tr><td>Switching costs</td><td>High at advanced nodes; redesign/qualification and yield learning are costly.</td><td>Very high; customer process roadmaps and fabs are built around qualified lithography platforms.</td></tr>
+<tr><td>Customer neutrality</td><td>Core strength of pure-play foundry model.</td><td>Supplier to essentially all leading fabs; benefits from competition among them.</td></tr>
+<tr><td>Scale advantage</td><td>Massive manufacturing scale and learning curves.</td><td>R&D/supplier ecosystem scale is nearly impossible to reproduce commercially.</td></tr>
+<tr><td>Competitive threat</td><td>Samsung and Intel Foundry remain strategic competitors; customer insourcing is limited by economics.</td><td>No credible commercial EUV competitor; long-run Chinese DUV progress is a real but different threat.</td></tr>
+</table>
+<div class="callout warning"><b>Key distinction:</b> ASML is the better business moat on a pure structural basis. Yet at today's stock prices, investors are paying much more for that certainty. Limited capital should be allocated based on <i>expected return from the current price</i>, not business quality in isolation.</div>
+
+<h2>6. Valuation: The Deciding Factor Today</h2>
+<div class="barwrap"><div><b>TSM base upside</b></div><div class="bar"><div class="fill" style="width:80%"></div></div><div class="score">+19.9%</div></div>
+<div class="barwrap"><div><b>ASML base upside</b></div><div class="bar"><div class="fill amber" style="width:15%"></div></div><div class="score">+3.7%</div></div>
+<p class="small">Visual scale is comparative, not a forecast probability.</p>
+
+<table>
+<tr><th>Valuation Item</th><th>TSM</th><th>ASML</th></tr>
+<tr><td>Reference price</td><td>$421.10</td><td>$1,759.98</td></tr>
+<tr><td>Base fair value</td><td>$505</td><td>$1,825</td></tr>
+<tr><td>Base upside</td><td><b>+19.9%</b></td><td><b>+3.7%</b></td></tr>
+<tr><td>Probability-weighted value</td><td>~$496</td><td>~$1,815</td></tr>
+<tr><td>Weighted upside</td><td>~+17.8%</td><td>~+3.1%</td></tr>
+<tr><td>Bear value</td><td>$315 (-25.2%)</td><td>~$1,250 (-29.0%)</td></tr>
+<tr><td>Bull value</td><td>$620 (+47.2%)</td><td>~$2,300 (+30.7%)</td></tr>
+<tr><td>Forward valuation framework</td><td>~21x base 2027 ADR EPS of ~$20</td><td>~33.5x midpoint of $50-55 forward earnings-power range</td></tr>
+</table>
+<p><b>Why the gap matters:</b> ASML has appreciated roughly 11% from the $1,582.95 reference used in the August 8 initiation report without a corresponding two-day fundamental reset. That has compressed the margin of safety substantially. TSM's valuation is also elevated versus history, but earnings revisions and the 2nm/HPC ramp provide more support for the current price.</p>
+
+<h3>What is priced in?</h3>
+<div class="grid2">
+<div class="callout"><b>TSM:</b> The market already knows AI is strong. The stock needs the AI/HPC cycle to remain durable into 2027-29, 2nm to scale well, and overseas-fab dilution to remain manageable. The upside no longer comes from discovering the AI thesis; it comes from earnings duration.</div>
+<div class="callout"><b>ASML:</b> The market is already paying for a sustained EUV monopoly, strong AI capex, rising lithography intensity and successful capacity expansion. More of the expected return now depends on estimates continuing to rise rather than the multiple expanding further.</div>
+</div>
+
+<h2>7. Risk Architecture: TSM Has the Better Return Setup, ASML Has the Cleaner Tail-Risk Profile</h2>
+<table>
+<tr><th>Risk</th><th>TSM</th><th>ASML</th><th>Relative Concern</th></tr>
+<tr><td>Taiwan / physical geopolitical risk</td><td><span class="tag risk">Very High Tail Severity</span></td><td>Low direct exposure</td><td>Major ASML advantage</td></tr>
+<tr><td>China / export-control risk</td><td>Customer/end-market restrictions can affect demand mix.</td><td>Direct restrictions can reduce DUV sales/service and accelerate substitution.</td><td>ASML more policy-sensitive</td></tr>
+<tr><td>AI capex slowdown</td><td>Directly hits utilization, advanced-node demand, packaging and estimates.</td><td>Hits bookings and future system demand, often with a lag.</td><td>Both exposed</td></tr>
+<tr><td>Capital intensity</td><td>Very high; return on $60B+ annual capex is critical.</td><td>Lower asset intensity, though R&D and supplier capacity are substantial.</td><td>ASML advantage</td></tr>
+<tr><td>Valuation compression</td><td>Meaningful, but starting multiple is lower.</td><td>Major risk because premium multiple embeds long-duration excellence.</td><td>TSM advantage</td></tr>
+<tr><td>Technology displacement</td><td>Advanced-node leadership can narrow if Samsung/Intel close yield gaps.</td><td>Commercial EUV displacement is much less plausible in the medium term.</td><td>ASML advantage</td></tr>
+</table>
+<div class="callout risk"><b>TSM's tail risk cannot be diversified away through valuation math.</b> A severe Taiwan Strait disruption would create a discontinuous outcome not captured by a normal bear-case P/E framework. That is the strongest argument for choosing ASML despite its lower expected return today.</div>
+
+<h2>8. Portfolio Fit & Limited-Capital Deployment</h2>
+<p>The designated portfolio baseline is approximately <b>$1.671 million</b> with <b>$43,000 of cash</b>. Direct semiconductor exposure identifiable from the workbook is about <b>4.12%</b>: AVGO 2.94%, QCOM 1.05%, and SOXQ 0.13%. Neither TSM nor ASML is currently held directly.</p>
+<table>
+<tr><th>Portfolio Question</th><th>TSM</th><th>ASML</th></tr>
+<tr><td>What it adds</td><td>Foundry and advanced-packaging bottleneck; direct non-U.S. semiconductor manufacturing exposure.</td><td>Lithography monopoly and equipment/service exposure; less overlap with fabless chip-design economics.</td></tr>
+<tr><td>What it duplicates</td><td>Raises AI/semiconductor sensitivity already present through AVGO, QCOM and mega-cap tech.</td><td>Raises semiconductor-capex sensitivity, but at a different layer of the value chain.</td></tr>
+<tr><td>Best portfolio role</td><td>Core semiconductor infrastructure compounder, sized for geopolitical asymmetry.</td><td>High-quality long-duration equipment compounder, added when valuation is more favorable.</td></tr>
+<tr><td>Income contribution</td><td>Low</td><td>Low</td></tr>
+<tr><td>Primary sizing constraint</td><td>Taiwan tail risk</td><td>Valuation / expected return</td></tr>
+</table>
+
+<h3>Recommended research allocation when capital is limited</h3>
+<table>
+<tr><th>Situation</th><th>Research Allocation</th><th>Rationale</th></tr>
+<tr><td><b>Can buy only one today</b></td><td><b>100% TSM of the intended semiconductor sleeve</b></td><td>Best current combination of growth, valuation and scenario-weighted return.</td></tr>
+<tr><td><b>Want both despite limited capital</b></td><td><b>~75% TSM / ~25% ASML</b></td><td>TSM receives the larger weight for current risk/reward; ASML preserves exposure to the superior equipment moat.</td></tr>
+<tr><td><b>Portfolio-based starter</b></td><td>TSM 0.75-1.0% of portfolio (~$12.5K-$16.7K)</td><td>Meaningful enough to matter while respecting geopolitical asymmetry.</td></tr>
+<tr><td><b>ASML at current price</b></td><td>0-0.5% starter only if strategic ownership is important</td><td>Valuation provides limited current margin of safety; stronger purchases should wait for a better setup.</td></tr>
+</table>
+<div class="callout positive"><b>Most efficient use of limited capital:</b> establish TSM first and keep ASML on the watchlist. There is no analytical reason to force equal ownership simply because both are exceptional businesses.</div>
+
+<h2>9. Entry Discipline & What Would Change the Ranking</h2>
+<table>
+<tr><th>Security</th><th>Current Posture</th><th>More Attractive If...</th><th>What Would Make Me Less Positive</th></tr>
+<tr><td><b>TSM</b></td><td><span class="tag win">ADD / BUILD</span></td><td>Price falls toward ~$400 or below while 2nm/AI estimates remain intact; or earnings estimates rise enough to maintain ~20% upside.</td><td>AI/HPC demand decelerates sharply, 2nm economics disappoint, overseas margins deteriorate more than expected, or Taiwan risk materially escalates.</td></tr>
+<tr><td><b>ASML</b></td><td><span class="tag watch">WATCH</span></td><td>Shares retreat toward roughly $1,550-$1,650 with fundamentals intact, or 2027-30 earnings power is revised materially higher.</td><td>China restrictions expand, High-NA economics weaken, bookings roll over, or customers structurally reduce lithography intensity.</td></tr>
+</table>
+<p class="small">Entry ranges are valuation guardrails based on the current earnings frameworks, not short-term trading calls or guaranteed support levels.</p>
+
+<h2>10. Horizon-Based Comparison</h2>
+<table>
+<tr><th>Horizon</th><th>TSM</th><th>ASML</th><th>Preferred</th></tr>
+<tr><td>1 year</td><td>Better current setup: estimate revisions, 2nm ramp, packaging scarcity and still-reasonable forward multiple.</td><td>Excellent fundamentals, but much of the near-term upside has been capitalized after the rerating.</td><td><span class="tag win">TSM</span></td></tr>
+<tr><td>3 years</td><td>AI/HPC duration, N2/N2P/A16, advanced packaging and global capacity economics.</td><td>EUV capacity growth, installed-base expansion, High-NA adoption and 2027 long-term framework.</td><td><span class="tag win">TSM slight</span></td></tr>
+<tr><td>5 years</td><td>Potential high-teens earnings periods, moderated by capex and overseas dilution.</td><td>Potential durable double-digit EPS/FCF compounding with lower capital intensity.</td><td><span class="tag neutral">Close</span></td></tr>
+<tr><td>10 years</td><td>Core infrastructure franchise, but geopolitical geography remains a permanent discount factor.</td><td>Perhaps the strongest technology bottleneck in public markets; long-duration moat is exceptional.</td><td><span class="tag win">ASML quality</span></td></tr>
+</table>
+
+<h2>11. Final Recommendation</h2>
+<div class="callout positive lede"><b>TSM is the better stock to deploy limited new capital into today.</b> ASML is the better pure moat, but its current valuation offers too little incremental return relative to the execution already priced into the shares. At approximately $421, TSM's base-case value of $505 and probability-weighted value near $496 create a materially better expected-return cushion. The ranking is <b>TSM first, ASML second</b>.</div>
+
+<div class="grid2 no-break">
+<div class="kpi"><div class="k">TSM Investment Stance</div><div class="v">ADD</div><div class="n">Build gradually; stronger on valuation-driven weakness if thesis intact.</div></div>
+<div class="kpi"><div class="k">ASML Investment Stance</div><div class="v">WATCH</div><div class="n">Elite company; wait for valuation compression or higher earnings power.</div></div>
+</div>
+
+<p><b>Capital-allocation conclusion:</b> For an investor with constrained incremental capital, the mistake would be to split money evenly merely for diversification. The more disciplined approach is to put the first dollars into the security with the superior current risk/reward - TSM - while retaining ASML as a high-priority watchlist name. If the Taiwan geopolitical tail risk is personally unacceptable, then ASML becomes the preferred security despite its lower modeled return, because position quality is irrelevant if the investor cannot tolerate the principal risk.</p>
+
+<h2>12. Sources, Evidence & Methodology</h2>
+<ul class="sources">
+<li><b>TSMC Q2 2026 Quarterly Results:</b> <a href="https://investor.tsmc.com/english/quarterly-results/2026/q2">https://investor.tsmc.com/english/quarterly-results/2026/q2</a></li>
+<li><b>TSMC 2025 Annual Report:</b> <a href="https://investor.tsmc.com/static/annualReports/2025/english/index.html">https://investor.tsmc.com/static/annualReports/2025/english/index.html</a></li>
+<li><b>TSMC SEC filing / 2025 Form 20-F:</b> <a href="https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm">https://www.sec.gov/Archives/edgar/data/1046179/000162828026025362/tsm-20251231.htm</a></li>
+<li><b>ASML 2025 Annual Report:</b> <a href="https://www.asml.com/en/investors/annual-report/2025">https://www.asml.com/en/investors/annual-report/2025</a></li>
+<li><b>ASML July 15, 2026 Form 6-K / Q2 exhibits:</b> <a href="https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm">https://www.sec.gov/Archives/edgar/data/937966/000162828026048235/form6-kquarterlyfilings.htm</a></li>
+<li><b>ASML financial strategy:</b> <a href="https://www.asml.com/investors/why-invest-in-asml/financial-strategy">https://www.asml.com/investors/why-invest-in-asml/financial-strategy</a></li>
+<li><b>Current market prices:</b> Alpaca delayed SIP snapshots, Aug. 10, 2026, approximately 10:25 a.m. ET.</li>
+<li><b>Portfolio source:</b> retirement-portfolio-18.xlsx, designated portfolio baseline. Portfolio value ~$1.671M; cash $43K; direct AVGO/QCOM/SOXQ exposure ~4.12%.</li>
+<li><b>Valuation methodology:</b> TSM scenarios and 2027 EPS framework carried forward from the Aug. 10, 2026 comprehensive TSM initiation; ASML scenarios carried forward from the Aug. 8, 2026 ASML Research & Thesis Pro report, with market price refreshed to Aug. 10.</li>
+</ul>
+
+<div class="footer-note"><b>Research notice.</b> This report is investment research for informational purposes and reflects an analytical opinion, not individualized tax, legal, fiduciary or investment advice. Fair-value and scenario ranges are estimates, not guarantees. Extreme geopolitical events - particularly a Taiwan Strait disruption - are not adequately represented by conventional P/E scenario analysis. Evidence confidence is high for reported company financials and current price snapshots; forward valuation remains assumption-sensitive.</div>
+
+</div></div>
+</body>
+</html>
