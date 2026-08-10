@@ -736,7 +736,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <div class="section-title">Research Center — Living Investment Record</div>
 
     <div class="metrics-row">
-      <div class="metric"><div class="lbl">Active Theses</div><div class="val" id="research-total-count">40</div></div>
+      <div class="metric"><div class="lbl">Active Theses</div><div class="val" id="research-total-count">41</div></div>
       <div class="metric"><div class="lbl">Core Forever Holds</div><div class="val" id="research-core-count">5</div></div>
       <div class="metric"><div class="lbl">Build Positions</div><div class="val" id="research-build-count">2</div></div>
       <div class="metric"><div class="lbl">Under Review</div><div class="val" id="research-review-count">4</div></div>
@@ -1242,14 +1242,31 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
           <div><div class="thesis-name">ASML Holding N.V.</div></div>
         </div>
         <div class="thesis-meta">
-          <span>Conviction: <strong>Medium-High</strong></span>
+          <span>Conviction: <strong>Medium</strong></span>
           <span>Not currently held</span>
-          <span>Monopoly in EUV lithography</span>
+          <span>Up 11% since 8/8 initiation — thinner margin of safety</span>
         </div>
         <div class="thesis-body">
-          ASML is about as close to a monopoly as public equities get — sole commercial supplier of EUV lithography and a direct beneficiary of AI-driven leading-edge chip capacity (2026 revenue guidance raised to €43–45B). The report is explicit that business quality (8/10) and stock attractiveness (6/10) are two different questions: at the July 28 reference price of $1,582.95, shares already trade toward the low end of the report's own 12–18 month fair-value framework ($1,700–1,900), leaving less room for disappointment. Would add semiconductor-<em>equipment</em> exposure genuinely different from AVGO/QCOM (chip designers, not equipment monopolists) — but still adds to the portfolio's overall AI-capex concentration alongside AVGO, QCOM, SOXQ, GEV, GRID, and now CAT/VIS. Report suggests a 0.5–1.0% starter would be more defensible than a full-size add at current levels.
+          ASML is about as close to a monopoly as public equities get — sole commercial supplier of EUV lithography and a direct beneficiary of AI-driven leading-edge chip capacity (2026 revenue guidance raised to €43–45B). The report is explicit that business quality (8/10) and stock attractiveness (6/10) are two different questions, and that gap has only widened: shares have run ~11% in the two days since the original $1,582.95 reference price with no corresponding fundamental reset, and a same-day TSM comparison report now shows ASML's base-case upside compressed to roughly <strong>+4%</strong> (base FV $1,825 vs. a $1,759.98 reference), versus TSM's +20%. That same comparison explicitly ranks TSM ahead of ASML for new capital right now — ASML remains the better pure moat, but too much of the near-term return is already priced in. Would add semiconductor-<em>equipment</em> exposure genuinely different from AVGO/QCOM (chip designers, not equipment monopolists) — but still adds to the portfolio's overall AI-capex concentration alongside AVGO, QCOM, SOXQ, GEV, GRID, CAT, NVDA, VIS, and now TSM. Better setup would be a retreat toward $1,550–1,650 with fundamentals intact.
         </div>
-        <div class="thesis-conviction">Source: ASML_Research_and_Thesis_Pro_2026-08-08.html (full report, this firm); ASML Q2 2026 Form 6-K (7/15/26)</div>
+        <div class="thesis-conviction">Source: ASML_Research_and_Thesis_Pro_2026-08-08.html; TSM_vs_ASML_Capital_Allocation_Analysis_2026-08-10.html (full reports, this firm); ASML Q2 2026 Form 6-K (7/15/26)</div>
+      </div>
+
+      <div class="thesis-card" data-status="WATCH" data-type="equity">
+        <div class="thesis-header">
+          <div class="thesis-ticker">TSM</div>
+          <span class="badge badge-watch">WATCH</span>
+          <div><div class="thesis-name">Taiwan Semiconductor Manufacturing Co.</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium-High</strong></span>
+          <span>Not currently held</span>
+          <span>ADD-rated — preferred over ASML for new capital</span>
+        </div>
+        <div class="thesis-body">
+          ADD, conviction 8/10 — the highest-quality single name in the AI-infrastructure research batch so far, and arguably the most important one to think through carefully rather than add reflexively. Q2 2026: revenue $40.2B (+33.7% YoY), gross margin 67.7%, HPC now 66% of revenue and still accelerating (+20% QoQ), and 2nm just entered production with a steep H2 ramp ahead. Management raised full-year USD revenue growth guidance to "slightly above 40%" and lifted 2026 capex to $60–64B. At ~$421, that's roughly 21x the report's 2027 EPS framework — full, not cheap — with a base fair value of $505 (+20%) and a probability-weighted value near $496. A same-day companion report explicitly ranks TSM ahead of ASML for new capital right now, since ASML's margin of safety has compressed to just ~4% upside after an 11% run in two days (see the ASML card above). <strong>The one thing that separates TSM from every other name on this watchlist:</strong> Taiwan geopolitical tail risk is rated "Very High" severity in the report and explicitly cannot be captured by normal bear-case P/E math — a different category of risk than "AI capex slows down," and one that doesn't diversify the way the rest of the AI-infrastructure concentration does. AVGO, QCOM, SOXQ, GEV, GRID, CAT, NVDA, ASML, and VIS all sit in roughly the same basket; TSM adds a geography-specific tail risk on top of that basket rather than alongside it. If this gets sized, the position should reflect that specific risk, not just the usual "another AI name" math.
+        </div>
+        <div class="thesis-conviction">Source: TSM_Comprehensive_Investment_Analysis_2026-08-10.html; TSM_vs_ASML_Capital_Allocation_Analysis_2026-08-10.html (full reports, this firm); TSMC Q2 2026 earnings release (7/16/26)</div>
       </div>
 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
@@ -2172,6 +2189,8 @@ renderResearchSummary();
 
 // ---- REPORT LIBRARY (real files, linked into /reports on this repo) ----
 const reports = [
+  {date:'2026-08-10', title:'TSM vs. ASML — Capital Allocation Analysis', type:'research', file:'TSM_vs_ASML_Capital_Allocation_Analysis_2026-08-10.html', assetType:'equity'},
+  {date:'2026-08-10', title:'Taiwan Semiconductor (TSM) Comprehensive Investment Analysis', type:'research', file:'TSM_Comprehensive_Investment_Analysis_2026-08-10.html', ticker:'TSM', assetType:'equity'},
   {date:'2026-08-03', title:'Palantir (PLTR) Research & Thesis Pro', type:'research', file:'PLTR_Research_Thesis_Pro_2026-08-03.html', ticker:'PLTR', assetType:'equity'},
   {date:'2026-08-09', title:'NVIDIA (NVDA) Research & Thesis Pro', type:'research', file:'NVDA_Research_and_Thesis_Pro_2026-08-09.html', ticker:'NVDA', assetType:'equity'},
   {date:'2026-08-09', title:'Costco (COST) Research & Thesis Pro', type:'research', file:'COST_Research_and_Thesis_Pro_2026-08-09.html', ticker:'COST', assetType:'equity'},
