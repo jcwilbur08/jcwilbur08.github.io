@@ -1288,6 +1288,23 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
+          <div class="thesis-ticker">GEHC</div>
+          <span class="badge badge-watch">WATCH</span>
+          <div><div class="thesis-name">GE HealthCare Technologies Inc.</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium-High (7/10)</strong></span>
+          <span>Not currently held</span>
+          <span>ADD-rated — base value $92, ~25% upside</span>
+        </div>
+        <div class="thesis-body">
+          ADD, conviction 7/10, at $73.77 (Aug 13 close) versus a $92 base value. The bull case rests on demand signals that are running ahead of the reported numbers: Q2 organic orders grew 11.1%, book-to-bill hit 1.15x, and backlog reached a record $23.9B, while Pharmaceutical Diagnostics posted 14.6% organic growth at a 29.6% segment margin — genuinely high-quality growth. The catch, and the reason this isn't a Strong Add, is that the 2024 Investor Day target of high-teens-to-20%+ adjusted EBIT margin sits well above the 15.4–15.7% 2026 guide, and Patient Care Solutions is actively working against that: -13.5% organic revenue and a -3.8% segment margin in Q2, with strategic options "under review" but no resolution yet. Debt is $10.1B against $2.1B cash after the $2.3B Intelerad acquisition (adds ~90% recurring revenue and 30%+ target EBITDA margin, unproven at scale), and the CFO is transitioning out August 14 with an interim in place. Report's own scenario spread: bear $63 (PCS losses persist), base $92 (organic growth toward 4–5%, PCS improves), bull $112 (backlog converts strongly, PCS resolved) — probability-weighted value ~$89, about 21% above the reference price. On portfolio fit: the report explicitly checks this against existing healthcare exposure — BMY (1.24%) and UNH (1.20%), both already under their own thesis reviews in this book — and argues GEHC is a genuinely different economic engine (medtech installed-base/imaging/diagnostics vs. BMY's pharma pipeline risk and UNH's managed-care/reimbursement exposure), not a third helping of the same risk. It isn't an income name (yield ~0.19%); this would be a total-return, execution-dependent healthcare position, sized small (report suggests 0.5–1.0% as a starting research weight) while PCS and the CFO transition stay unresolved.
+        </div>
+        <div class="thesis-conviction">Source: GEHC_Comprehensive_Investment_Analysis_2026-08-13.html (full report, this firm); GE HealthCare Q2 2026 results (7/29/26)</div>
+      </div>
+
+      <div class="thesis-card" data-status="WATCH" data-type="equity">
+        <div class="thesis-header">
           <div class="thesis-ticker">NVDA</div>
           <span class="badge badge-watch">WATCH</span>
           <div><div class="thesis-name">NVIDIA Corporation</div></div>
@@ -2190,6 +2207,7 @@ renderResearchSummary();
 
 // ---- REPORT LIBRARY (real files, linked into /reports on this repo) ----
 const reports = [
+  {date:'2026-08-13', title:'GE HealthCare (GEHC) Comprehensive Investment Analysis', type:'research', file:'GEHC_Comprehensive_Investment_Analysis_2026-08-13.html', ticker:'GEHC', assetType:'equity'},
   {date:'2026-08-10', title:'TSM — Customer Economics & Revenue Concentration', type:'research', file:'TSM_Customer_Economics_Equity_Research_2026-08-10.pdf', ticker:'TSM', assetType:'equity'},
   {date:'2026-08-10', title:'TSM vs. ASML — Capital Allocation Analysis', type:'research', file:'TSM_vs_ASML_Capital_Allocation_Analysis_2026-08-10.html', assetType:'equity'},
   {date:'2026-08-10', title:'Taiwan Semiconductor (TSM) Comprehensive Investment Analysis', type:'research', file:'TSM_Comprehensive_Investment_Analysis_2026-08-10.html', ticker:'TSM', assetType:'equity'},
