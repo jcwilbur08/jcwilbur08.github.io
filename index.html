@@ -490,8 +490,15 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     </div>
 
     <div class="card">
+      <h3>Dollar Drivers — Top Contributors</h3>
+      <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Contributors</div>
+      <div id="contributors-list"></div>
+      <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 8px;">Detractors</div>
+      <div id="detractors-list"></div>
+    </div>
+
+    <div class="card">
       <h3>YTD Performance vs. S&P 500</h3>
-      <p style="font-size:11px;color:#888;margin:-10px 0 14px;">Constant-current-holdings estimate — today's share counts assumed held since the first 2026 trading day. Not the investor's actual transaction-adjusted return. <span id="ytd-excluded-note"></span></p>
       <div class="metrics-row" style="margin-bottom:16px;">
         <div class="metric">
           <div class="lbl">Portfolio Estimate</div>
@@ -512,18 +519,11 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <div style="height:220px;position:relative;">
         <canvas id="ytdChartCanvas"></canvas>
       </div>
+      <p style="font-size:11px;color:#888;margin:14px 0 0;">Constant-current-holdings estimate — today's share counts assumed held since the first 2026 trading day. Not the investor's actual transaction-adjusted return. <span id="ytd-excluded-note"></span></p>
       <div style="display:flex;gap:16px;margin-top:12px;font-size:11px;color:#555;">
         <span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#16a34a;margin-right:5px;"></span>Portfolio</span>
         <span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#2563eb;margin-right:5px;"></span>SPY total-return proxy</span>
       </div>
-    </div>
-
-    <div class="card">
-      <h3>Dollar Drivers — Top Contributors</h3>
-      <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Contributors</div>
-      <div id="contributors-list"></div>
-      <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 8px;">Detractors</div>
-      <div id="detractors-list"></div>
     </div>
 
     <div class="data-freshness-footer">
