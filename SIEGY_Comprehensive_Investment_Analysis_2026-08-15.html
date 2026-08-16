@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Siemens AG (SIEGY) - Comprehensive Investment Analysis & Thesis</title>
+<style>
+  :root {
+    --navy:#10243e; --navy2:#173a61; --teal:#0f766e; --gold:#b9892e;
+    --ink:#172033; --muted:#5e6b7e; --line:#d9e0e8; --soft:#f4f7fa;
+    --good:#1f7a4d; --warn:#a8670b; --bad:#a33d3d; --white:#fff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#edf1f5;color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.52;font-size:14.2px}
+  .report{max-width:1020px;margin:28px auto;background:#fff;box-shadow:0 14px 48px rgba(16,36,62,.12)}
+  .cover{padding:58px 64px 44px;background:linear-gradient(135deg,var(--navy),#214f75);color:white;position:relative;overflow:hidden}
+  .cover:after{content:"";position:absolute;right:-80px;top:-80px;width:300px;height:300px;border:55px solid rgba(255,255,255,.06);border-radius:50%}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;opacity:.82}
+  h1{font-size:36px;line-height:1.08;margin:14px 0 8px;letter-spacing:-.03em}
+  .subtitle{font-size:18px;opacity:.94;margin-bottom:28px}
+  .cover-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+  .cover-card{border:1px solid rgba(255,255,255,.24);background:rgba(255,255,255,.08);padding:14px 15px;border-radius:10px;min-height:88px}
+  .cover-card .k{font-size:10px;text-transform:uppercase;letter-spacing:.08em;opacity:.75}.cover-card .v{font-size:20px;font-weight:750;margin-top:4px}.cover-card .s{font-size:11px;opacity:.82;margin-top:2px}
+  .cover-note{margin-top:27px;font-size:11.5px;opacity:.8;max-width:760px}
+  main{padding:42px 58px 56px}
+  h2{font-size:24px;color:var(--navy);letter-spacing:-.02em;margin:36px 0 14px;padding-bottom:8px;border-bottom:2px solid var(--line)}
+  h3{font-size:17px;color:var(--navy2);margin:25px 0 8px}
+  h4{font-size:14px;color:var(--navy);margin:18px 0 6px}
+  p{margin:8px 0 12px}
+  .lead{font-size:16px;line-height:1.58;color:#26344b}
+  .snapshot{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin:6px 0 24px}
+  .box{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff}
+  .box.shaded{background:var(--soft)}
+  .box.thesis{border-left:5px solid var(--teal);background:#f3faf8}
+  .box.caution{border-left:5px solid var(--gold);background:#fffaf1}
+  .box.risk{border-left:5px solid var(--bad);background:#fff6f6}
+  .box h3{margin-top:0}
+  .metric-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:12px 0}
+  .metric{border:1px solid var(--line);border-radius:9px;padding:12px;background:#fff}
+  .metric .label{font-size:10px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted)}
+  .metric .value{font-weight:750;font-size:19px;color:var(--navy);margin-top:2px}
+  .metric .detail{font-size:11px;color:var(--muted);margin-top:2px}
+  table{border-collapse:collapse;width:100%;margin:12px 0 18px;font-size:12.3px}
+  th{background:var(--navy);color:white;text-align:left;padding:9px 10px;font-size:10.5px;letter-spacing:.035em;text-transform:uppercase}
+  td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:nth-child(even) td{background:#fafbfd}
+  .num{text-align:right;white-space:nowrap}
+  .tag{display:inline-block;padding:3px 7px;border-radius:999px;font-size:10px;font-weight:700;letter-spacing:.03em;text-transform:uppercase}
+  .tag.good{background:#e9f6ef;color:var(--good)}.tag.warn{background:#fff0d6;color:var(--warn)}.tag.bad{background:#fde9e9;color:var(--bad)}.tag.neutral{background:#edf2f8;color:#476078}
+  ul{padding-left:19px;margin:8px 0 14px}li{margin:5px 0}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .callout{padding:14px 16px;border-radius:9px;background:#eff5fb;border:1px solid #d7e4f1;margin:14px 0}
+  .callout strong{color:var(--navy)}
+  .chart{border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:14px 0 20px;background:#fff}
+  .chart-title{font-weight:700;color:var(--navy);font-size:13px;margin-bottom:12px}
+  .bar-row{display:grid;grid-template-columns:78px 1fr 56px;align-items:center;gap:10px;margin:10px 0;font-size:11.5px}
+  .bar-track{height:12px;background:#e9eef4;border-radius:8px;overflow:hidden}.bar{height:100%;background:linear-gradient(90deg,var(--teal),#3a9c92);border-radius:8px}
+  .bar.alt{background:linear-gradient(90deg,var(--navy2),#4b79a0)}
+  .bar.gold{background:linear-gradient(90deg,var(--gold),#d2aa57)}
+  .small{font-size:11px;color:var(--muted)}
+  .footnote{font-size:10.3px;color:var(--muted);line-height:1.45}
+  a{color:#155b95;text-decoration:none} a:hover{text-decoration:underline}
+  .score{display:grid;grid-template-columns:160px 1fr 55px;gap:10px;align-items:center;margin:7px 0}.score .track{height:8px;background:#e8edf3;border-radius:8px}.score .fill{height:100%;border-radius:8px;background:var(--teal)}
+  .recommend{display:flex;justify-content:space-between;gap:22px;align-items:center;padding:20px;border-radius:12px;background:linear-gradient(110deg,#f1f7f5,#f7f9fb);border:1px solid #cbded8;margin:17px 0}
+  .recommend .big{font-size:27px;font-weight:800;color:var(--teal);letter-spacing:-.02em}
+  .recommend .right{text-align:right}
+  .toc{columns:2;column-gap:36px;margin-top:10px}.toc a{display:block;padding:4px 0;color:var(--navy2)}
+  .section-break{margin-top:44px}
+  .scenario-bear{border-left:4px solid var(--bad)}.scenario-base{border-left:4px solid var(--navy2)}.scenario-bull{border-left:4px solid var(--good)}
+  .source-list li{margin:8px 0;word-break:break-word}
+  .footerline{margin-top:38px;border-top:1px solid var(--line);padding-top:14px;font-size:10.5px;color:var(--muted)}
+  @media(max-width:760px){.report{margin:0;box-shadow:none}.cover{padding:36px 24px}.cover-grid,.metric-grid,.two-col,.three-col,.snapshot{grid-template-columns:1fr 1fr}main{padding:28px 22px}.toc{columns:1}h1{font-size:30px}.recommend{display:block}.recommend .right{text-align:left;margin-top:12px}}
+  @media(max-width:520px){.cover-grid,.metric-grid,.two-col,.three-col,.snapshot{grid-template-columns:1fr}}
+  @media print{
+    @page{size:Letter;margin:.55in .5in .58in}
+    body{background:white;font-size:10.2pt;line-height:1.42}
+    .report{max-width:none;margin:0;box-shadow:none}
+    .cover{min-height:9.85in;padding:.65in .58in .45in;break-after:page}
+    .cover-card{min-height:78px}
+    main{padding:0}
+    h2{font-size:18pt;margin-top:24px;break-after:avoid}
+    h3{font-size:13pt;break-after:avoid}
+    table,.box,.chart,.recommend{break-inside:avoid}
+    .page-break{break-before:page}
+    .section-break{margin-top:28px}
+    a{color:inherit;text-decoration:none}
+    .toc{columns:2}
+  }
+</style>
+</head>
+<body>
+<div class="report">
+<section class="cover">
+  <div class="eyebrow">Equity Research | Comprehensive Investment Analysis</div>
+  <h1>Siemens AG</h1>
+  <div class="subtitle">SIEGY (U.S. ADR) | SIE (Xetra) - Industrial AI, electrification, automation and mobility</div>
+  <div class="cover-grid">
+    <div class="cover-card"><div class="k">Recommendation</div><div class="v">WATCH</div><div class="s">Accumulate on pullbacks</div></div>
+    <div class="cover-card"><div class="k">Conviction</div><div class="v">7 / 10</div><div class="s">High business quality; fair valuation</div></div>
+    <div class="cover-card"><div class="k">12-18M Fair Value</div><div class="v">~$177</div><div class="s">SIEGY equivalent; ~EUR 307 ordinary</div></div>
+    <div class="cover-card"><div class="k">Preferred Entry</div><div class="v">$150-$156</div><div class="s">~EUR 260-EUR 270 ordinary</div></div>
+  </div>
+  <div class="cover-note">Report date: August 15, 2026. SIEGY is a Level I OTC ADR; two ADRs represent one Siemens ordinary share. ADR-equivalent values in this report use EUR/USD 1.1564 (Reuters, Aug. 14, 2026) and are analytical approximations, not live OTC quotes. This research is for informational purposes and is not individualized tax or investment advice.</div>
+</section>
+<main>
+
+<section id="executive">
+<h2>1. Executive Summary</h2>
+<div class="snapshot">
+  <div class="box thesis">
+    <h3>Investment thesis</h3>
+    <p class="lead"><strong>Siemens is evolving from a diversified European industrial conglomerate into a more focused, higher-quality industrial technology platform positioned at the intersection of electrification, industrial automation, engineering software and physical AI.</strong> The operating setup is the strongest it has been in years: Smart Infrastructure is capturing exceptional data-center and grid demand, Digital Industries is recovering while software expands the recurring digital mix, and the planned Siemens Healthineers separation should simplify the valuation framework.</p>
+    <p>The issue is price. At roughly EUR 284 per ordinary share, Siemens trades at about <strong>25.0x the midpoint of raised FY2026 EPS pre-PPA guidance</strong>. That is a premium multiple for a business still exposed to industrial cycles, China, FX and capital spending. We see a reasonable 12-18 month fair value near EUR 307, or approximately $177 per SIEGY ADR at the report FX assumption. The resulting expected return is positive but not compelling enough for an outright Add rating today.</p>
+  </div>
+  <div class="box shaded">
+    <h3>Research snapshot</h3>
+    <div class="metric-grid" style="grid-template-columns:1fr 1fr">
+      <div class="metric"><div class="label">Reference value</div><div class="value">~$164</div><div class="detail">Derived SIEGY equivalent</div></div>
+      <div class="metric"><div class="label">FY26 EPS guide</div><div class="value">EUR 11.20-11.50</div><div class="detail">Raised after Q3</div></div>
+      <div class="metric"><div class="label">Q3 industrial profit</div><div class="value">EUR 3.52bn</div><div class="detail">+25% YoY; record quarter</div></div>
+      <div class="metric"><div class="label">Q3 orders</div><div class="value">EUR 27.9bn</div><div class="detail">Record; +13% reported</div></div>
+      <div class="metric"><div class="label">FY25 FCF</div><div class="value">EUR 10.8bn</div><div class="detail">Record</div></div>
+      <div class="metric"><div class="label">Gross dividend</div><div class="value">~1.9%</div><div class="detail">EUR 5.35 ordinary FY25</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="recommend">
+  <div><div class="small">RECOMMENDATION</div><div class="big">WATCH - ACCUMULATE ON PULLBACKS</div><div>Preferred entry: approximately EUR 260-EUR 270 ordinary / $150-$156 SIEGY equivalent.</div></div>
+  <div class="right"><strong>Conviction: 7/10</strong><br><span class="small">Quality: High | Valuation: Full | Risk: Medium</span></div>
+</div>
+
+<div class="two-col">
+  <div class="box">
+    <h3>Why the thesis works</h3>
+    <ul>
+      <li><strong>Physical AI and data-center infrastructure:</strong> Siemens participates in both the computing-enabler layer (electrification, grid and building systems) and the industrial productivity layer (automation, simulation, digital twins and engineering software).</li>
+      <li><strong>Mix shift to digital:</strong> software, recurring revenue and higher-value automation should structurally lift growth quality and margins.</li>
+      <li><strong>Exceptional backlog and order momentum:</strong> Q2 backlog reached EUR 124 billion and Q3 orders set another record.</li>
+      <li><strong>Portfolio simplification:</strong> the planned Healthineers deconsolidation should make core Siemens easier to value and may reduce the conglomerate discount.</li>
+      <li><strong>Cash generation:</strong> FY2025 free cash flow of EUR 10.8 billion broadly matched reported net income, supporting capital return and reinvestment.</li>
+    </ul>
+  </div>
+  <div class="box caution">
+    <h3>Why not rate it Add today?</h3>
+    <ul>
+      <li><strong>Valuation:</strong> about 25x FY2026 EPS guidance is no longer a cyclical-industrial multiple.</li>
+      <li><strong>Expectations are elevated:</strong> record orders and AI/data-center strength are now well recognized by the market.</li>
+      <li><strong>Digital Industries is not fully de-risked:</strong> Q3 order growth missed expectations even as revenue improved.</li>
+      <li><strong>China and capex sensitivity remain:</strong> automation recovery can be delayed by customer inventory, weak China and cautious industrial investment.</li>
+      <li><strong>Healthineers is an unlock, not free value:</strong> distributed shares will leave Siemens' market value on the ex-date; the benefit is improved focus and potentially better valuation transparency.</li>
+    </ul>
+  </div>
+</div>
+
+<h3>What would change the rating?</h3>
+<table>
+  <thead><tr><th>Trigger</th><th>Rating implication</th><th>Why it matters</th></tr></thead>
+  <tbody>
+    <tr><td>Price falls toward EUR 260-EUR 270 with thesis intact</td><td><span class="tag good">Upgrade to Add</span></td><td>Brings the valuation closer to ~21-22x prospective FY2027 EPS and improves downside protection.</td></tr>
+    <tr><td>FY2027 EPS power moves materially above EUR 13 without multiple expansion</td><td><span class="tag good">Upgrade to Add</span></td><td>Would indicate AI/software monetization is outrunning currently embedded expectations.</td></tr>
+    <tr><td>Digital Industries order recovery stalls for multiple quarters</td><td><span class="tag warn">Lower fair value</span></td><td>Would weaken the higher-quality growth and software mix thesis.</td></tr>
+    <tr><td>Smart Infrastructure data-center orders normalize sharply or margins retreat</td><td><span class="tag bad">Thesis weakening</span></td><td>SI is currently the strongest incremental earnings driver.</td></tr>
+    <tr><td>Healthineers transaction is materially delayed or value-destructive</td><td><span class="tag warn">Multiple risk</span></td><td>Would postpone portfolio simplification and prolong conglomerate complexity.</td></tr>
+  </tbody>
+</table>
+</section>
+
+<section id="toc" class="page-break">
+<h2>2. Report Roadmap</h2>
+<div class="toc">
+<a href="#company">3. Company overview and business model</a>
+<a href="#results">4. Latest financial performance</a>
+<a href="#segments">5. Segment analysis</a>
+<a href="#strategy">6. Strategy: ONE Tech, AI and software</a>
+<a href="#moat">7. Competitive position and moat</a>
+<a href="#quality">8. Earnings quality and capital allocation</a>
+<a href="#healthineers">9. Healthineers separation</a>
+<a href="#industry">10. Industry and macro exposures</a>
+<a href="#valuation">11. Valuation</a>
+<a href="#scenarios">12. Bull, base and bear scenarios</a>
+<a href="#catalysts">13. Catalysts</a>
+<a href="#risks">14. Risks and thesis breakers</a>
+<a href="#portfolio">15. Portfolio fit and implementation</a>
+<a href="#conclusion">16. Final investment view</a>
+<a href="#sources">17. Sources and methodology</a>
+</div>
+<div class="callout"><strong>Source hierarchy:</strong> Siemens filings/press releases and investor-relations materials are treated as primary sources. Reuters is used for Q3 2026 reporting, market reaction and currency. Third-party market-price sources are used only for a recent reference price, not for fundamental conclusions.</div>
+</section>
+
+<section id="company">
+<h2>3. Company Overview and Business Model</h2>
+<p>Siemens AG is a global industrial technology company whose core industrial businesses are Digital Industries, Smart Infrastructure and Mobility. Siemens Healthineers remains a separately listed subsidiary in which Siemens owns roughly 67%, but management has initiated a process to deconsolidate the stake. Siemens Financial Services supports customer financing and selected investment activity.</p>
+
+<table>
+<thead><tr><th>Business</th><th>What it sells</th><th>Economic driver</th><th>Investment character</th></tr></thead>
+<tbody>
+<tr><td><strong>Digital Industries (DI)</strong></td><td>Factory automation, drives, industrial controls, PLM, EDA, simulation, digital twins, industrial software and Xcelerator offerings.</td><td>Manufacturing capex, automation intensity, semiconductor/electronics design, software adoption.</td><td>Highest strategic optionality; more cyclical hardware but growing software/recurring mix.</td></tr>
+<tr><td><strong>Smart Infrastructure (SI)</strong></td><td>Electrification, low- and medium-voltage equipment, grid solutions, building controls, energy-management software.</td><td>Data centers, grid modernization, electrification, energy efficiency, building automation.</td><td>Current growth engine; strong structural tailwinds and execution.</td></tr>
+<tr><td><strong>Mobility</strong></td><td>Rail vehicles, signaling, electrification, maintenance, digital services and rail software.</td><td>Public infrastructure budgets, transit investment, rail modernization, backlog conversion.</td><td>Long-cycle, lower-margin, backlog-supported earnings with project execution risk.</td></tr>
+<tr><td><strong>Siemens Healthineers</strong></td><td>Medical imaging, diagnostics, advanced therapies and Varian oncology.</td><td>Healthcare capex, procedure volumes, diagnostics, oncology investment.</td><td>Valuable but increasingly non-core financial asset; planned deconsolidation.</td></tr>
+</tbody>
+</table>
+
+<div class="two-col">
+  <div class="box">
+    <h3>Business model strengths</h3>
+    <ul>
+      <li>Installed base creates replacement, service and software opportunities.</li>
+      <li>Engineering workflows have high switching costs because Siemens tools are embedded in design and production processes.</li>
+      <li>Cross-selling connects software, automation, electrification and service.</li>
+      <li>Long-cycle infrastructure and rail backlogs provide earnings visibility that offsets shorter-cycle factory automation.</li>
+      <li>Global manufacturing footprint and large U.S. presence improve proximity to customer investment cycles.</li>
+    </ul>
+  </div>
+  <div class="box">
+    <h3>Business model weaknesses</h3>
+    <ul>
+      <li>Industrial demand remains cyclical and inventory corrections can be abrupt.</li>
+      <li>Large project businesses create execution and timing risk.</li>
+      <li>Conglomerate accounting and Healthineers consolidation complicate comparability.</li>
+      <li>Acquisitions increase integration and purchase-price-accounting complexity.</li>
+      <li>Currency translation can materially affect reported revenue and orders.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="callout"><strong>Analytical takeaway:</strong> Siemens should increasingly be valued as a hybrid industrial-technology company rather than a conventional machinery conglomerate. That supports a premium multiple, but the premium is only durable if software growth, Smart Infrastructure margins and free-cash-flow conversion remain strong through a full cycle.</div>
+</section>
+
+<section id="results" class="page-break">
+<h2>4. Latest Financial Performance - Q3 FY2026</h2>
+<p>Siemens' June-quarter results were operationally strong enough to set company records. Reuters reported Q3 industrial profit of EUR 3.52 billion, up 25% year over year and above consensus, revenue of EUR 20.79 billion, and orders of EUR 27.90 billion. Management raised FY2026 EPS pre-PPA guidance to EUR 11.20-EUR 11.50. The market reaction was negative because expectations had already risen and Digital Industries order growth came in below the company's compiled consensus.</p>
+
+<div class="metric-grid">
+  <div class="metric"><div class="label">Q3 Revenue</div><div class="value">EUR 20.79bn</div><div class="detail">+7% reported</div></div>
+  <div class="metric"><div class="label">Q3 Orders</div><div class="value">EUR 27.90bn</div><div class="detail">+13% reported; record</div></div>
+  <div class="metric"><div class="label">Industrial Profit</div><div class="value">EUR 3.52bn</div><div class="detail">+25% YoY; record</div></div>
+  <div class="metric"><div class="label">Q3 Net Profit</div><div class="value">EUR 2.27bn</div><div class="detail">Above consensus</div></div>
+  <div class="metric"><div class="label">FY26 EPS Guide</div><div class="value">EUR 11.20-11.50</div><div class="detail">Raised from EUR 10.70-11.10</div></div>
+  <div class="metric"><div class="label">SI FY26 Growth Guide</div><div class="value">10%-11%</div><div class="detail">Margin 18.5%-19.5%</div></div>
+</div>
+
+<div class="chart">
+<div class="chart-title">FY2026 quarterly order and revenue progression (EUR bn, nominal)</div>
+<div class="bar-row"><span>Q1 Orders</span><div class="bar-track"><div class="bar" style="width:76.7%"></div></div><b>21.4</b></div>
+<div class="bar-row"><span>Q1 Revenue</span><div class="bar-track"><div class="bar alt" style="width:68.5%"></div></div><b>19.1</b></div>
+<div class="bar-row"><span>Q2 Orders</span><div class="bar-track"><div class="bar" style="width:86.4%"></div></div><b>24.1</b></div>
+<div class="bar-row"><span>Q2 Revenue</span><div class="bar-track"><div class="bar alt" style="width:71.0%"></div></div><b>19.8</b></div>
+<div class="bar-row"><span>Q3 Orders</span><div class="bar-track"><div class="bar" style="width:100%"></div></div><b>27.9</b></div>
+<div class="bar-row"><span>Q3 Revenue</span><div class="bar-track"><div class="bar alt" style="width:74.5%"></div></div><b>20.8</b></div>
+<div class="small">Orders have accelerated faster than revenue, supporting continued backlog visibility. Q2 backlog was a record EUR 124 billion.</div>
+</div>
+
+<h3>What Q3 tells us</h3>
+<div class="three-col">
+<div class="box"><h4>Positive</h4><p>Industrial profit reached a record; the combination of SI volume, price/mix and improved industrial demand is generating meaningful operating leverage.</p></div>
+<div class="box"><h4>Mixed</h4><p>DI revenue grew strongly, but orders were less impressive relative to high expectations. The cyclical recovery is improving, not complete.</p></div>
+<div class="box"><h4>Important</h4><p>Management raised earnings guidance even after prior increases, signaling higher confidence in second-half execution and the structural demand backdrop.</p></div>
+</div>
+
+<h3>FY2026 first nine months - directional read</h3>
+<p>Summing reported Q1-Q3 figures gives roughly EUR 59.7 billion of revenue, EUR 73.4 billion of orders and EUR 9.4 billion of Industrial Business profit. The order-to-revenue spread is unusually strong. While quarterly project timing prevents simple annualization, it reinforces the view that Siemens enters FY2027 with better-than-normal demand visibility.</p>
+</section>
+
+<section id="segments">
+<h2>5. Segment Analysis</h2>
+<h3>Digital Industries - recovery plus software optionality</h3>
+<p>Digital Industries is strategically the most important segment for the long-term re-rating case. It combines shorter-cycle automation hardware with software that can generate higher margins, recurring revenue and customer lock-in. In Q2 FY2026, DI generated EUR 4.6 billion of revenue, with software revenue of roughly EUR 1.6 billion, organic ARR growth of 11% to EUR 5.5 billion, profit of EUR 857 million and an 18.5% margin. In Q3, comparable revenue rose 10% to EUR 4.93 billion while orders rose 9% to EUR 4.85 billion; order growth was below the company's compiled market expectation.</p>
+<div class="box caution"><strong>Investment interpretation:</strong> DI is no longer a pure cyclical automation story. The mix shift toward PLM, EDA, simulation, digital twins, industrial copilots and life-sciences software can support a structurally higher earnings multiple. However, hardware demand in China and global factory capex still has enough weight to create quarterly volatility.</div>
+
+<h3>Smart Infrastructure - the current earnings engine</h3>
+<p>Smart Infrastructure is benefiting from simultaneous secular investment waves: data-center electrification, grid modernization, energy efficiency, semiconductor expansion and building automation. Q2 orders reached a record EUR 7.5 billion, up 35% on a comparable basis, while revenue grew 10% to EUR 5.9 billion and profit reached roughly EUR 1.1 billion at an 18.6% margin. After Q3, Siemens raised SI's FY2026 comparable revenue-growth outlook to 10%-11% and its margin range to 18.5%-19.5%.</p>
+<p>Reuters reported that Siemens works with nine of the ten largest data-center providers and that data-center orders increased at a triple-digit rate during the first nine months of FY2026. This is a critical point: Siemens is not simply selling "AI software" into a crowded narrative; it is supplying the physical electrical and control infrastructure required to build the AI capacity itself.</p>
+
+<h3>Mobility - backlog and infrastructure exposure, but lower margins</h3>
+<p>Mobility offers long-duration visibility but remains less profitable than DI and SI. Q2 orders were EUR 5.3 billion, up 41%, while revenue was about EUR 3.0 billion and profit EUR 208 million for a 6.9% margin. U.S. tariffs and project call-off delays pressured profitability. The segment's rail vehicles, signaling, electrification and services provide valuable diversification, but sustained margin improvement is needed before it deserves the same quality multiple as Siemens' software and electrification assets.</p>
+
+<table>
+<thead><tr><th>Segment</th><th>Current direction</th><th>Key KPI to watch</th><th>Thesis role</th></tr></thead>
+<tbody>
+<tr><td>Digital Industries</td><td><span class="tag good">Improving</span></td><td>Orders, automation volume, software ARR, margin</td><td>Long-term multiple expansion and digital mix</td></tr>
+<tr><td>Smart Infrastructure</td><td><span class="tag good">Strong</span></td><td>Data-center orders, backlog conversion, 18.5%-19.5% margin</td><td>Near-term growth and earnings engine</td></tr>
+<tr><td>Mobility</td><td><span class="tag neutral">Stable / mixed</span></td><td>Project execution, margin, tariff effects</td><td>Backlog durability and diversification</td></tr>
+<tr><td>Healthineers stake</td><td><span class="tag warn">Strategic exit path</span></td><td>Spin-off approvals, retained stake, tax treatment</td><td>Valuation transparency and portfolio simplification</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="strategy" class="page-break">
+<h2>6. Strategy - ONE Tech Company, Industrial AI and Software</h2>
+<p>Siemens' ONE Tech Company program is designed to make the group more focused and scalable. Management raised its mid-term comparable revenue-growth ambition to 6%-9% excluding Healthineers, targets high-single-digit EPS pre-PPA growth and aims to double digital-business revenue by 2030. Siemens also committed more than EUR 1 billion to scale AI over three years.</p>
+
+<div class="two-col">
+<div class="box thesis">
+<h3>Industrial AI - why Siemens has a credible right to win</h3>
+<ul>
+<li>Industrial AI requires domain-specific data, physics models, automation controls and safety/reliability - not just general-purpose models.</li>
+<li>Siemens already sits inside the design, engineering and operating workflows of industrial customers.</li>
+<li>Its digital twins connect engineering intent to real-world production and infrastructure data.</li>
+<li>The partnership with NVIDIA combines Siemens' software/domain stack with accelerated computing, Omniverse, AI libraries and infrastructure.</li>
+<li>AI can increase the value of existing Siemens software while also stimulating demand for the electrical infrastructure that powers AI factories and data centers.</li>
+</ul>
+</div>
+<div class="box">
+<h3>Software expansion via M&A</h3>
+<p><strong>Altair:</strong> acquired in March 2025 for EUR 9.5 billion, adding simulation and analysis software that broadens Siemens' engineering stack.</p>
+<p><strong>Dotmatics:</strong> acquired in July 2025 for $5.1 billion, extending the digital thread into life-sciences R&D. Siemens said Dotmatics was expected to generate more than $300 million of 2025 revenue at an adjusted EBITDA margin above 40% and identified meaningful revenue-synergy potential.</p>
+<p>The strategic rationale is strong, but investors should demand evidence that organic growth and cross-selling justify the acquisition prices.</p>
+</div>
+</div>
+
+<h3>NVIDIA partnership - strategic signal, not yet a valuation substitute</h3>
+<p>In January 2026 Siemens and NVIDIA expanded their partnership to build what they call an "Industrial AI Operating System," covering design, engineering, manufacturing, operations and supply chains. The companies are targeting AI-native electronic design, simulation, adaptive manufacturing and next-generation AI factories. Siemens' Erlangen electronics factory is intended to serve as an initial fully AI-driven adaptive-manufacturing blueprint.</p>
+<p>The opportunity is material because Siemens can monetize AI in multiple layers: software subscriptions, simulation/EDA workloads, automation hardware, edge computing, electrification and data-center infrastructure. The risk is that investors capitalize the narrative before the revenue base is large enough to offset cyclical weakness elsewhere. We therefore do not assign a separate speculative "AI premium" in our base valuation; the premium must show up through EPS growth and sustained margins.</p>
+
+<div class="callout"><strong>Variant perception:</strong> We think the market correctly recognizes Siemens as an AI/data-center beneficiary, but may still underestimate how the software, automation and electrification pieces reinforce one another. Our offsetting variant is valuation: the strategic quality deserves a premium, yet the current ~25x FY2026 EPS multiple already prices in a meaningful portion of that improvement.</div>
+</section>
+
+<section id="moat">
+<h2>7. Competitive Position and Economic Moat</h2>
+<p>Siemens competes across several categories rather than against one direct peer. Schneider Electric is a formidable competitor in electrification and data-center infrastructure; ABB competes in automation and electrification; Rockwell Automation is strong in U.S. factory automation; Mitsubishi Electric and other Asian vendors are important in controls and automation; Dassault Systemes, PTC, Autodesk and specialist engineering-software vendors compete for digital design workflows.</p>
+
+<table>
+<thead><tr><th>Moat source</th><th>Strength</th><th>Evidence / rationale</th><th>Risk to moat</th></tr></thead>
+<tbody>
+<tr><td>Installed base and switching costs</td><td><span class="tag good">High</span></td><td>Automation, PLM, EDA, rail and building systems become embedded in customer workflows and assets.</td><td>Open architectures and software abstraction can reduce hardware lock-in.</td></tr>
+<tr><td>Domain expertise and data</td><td><span class="tag good">High</span></td><td>Industrial AI needs engineering context, physics, controls and operational data.</td><td>Hyperscalers and software peers may close domain gaps through partnerships or M&A.</td></tr>
+<tr><td>Product breadth</td><td><span class="tag good">High</span></td><td>Ability to connect design, automation, electrification, buildings and services.</td><td>Complex portfolios can slow decision-making and integration.</td></tr>
+<tr><td>Scale and channel</td><td><span class="tag good">High</span></td><td>Global engineering, manufacturing, service footprint and customer access.</td><td>Local competitors may win on price, especially in China.</td></tr>
+<tr><td>Backlog / long-cycle contracts</td><td><span class="tag neutral">Medium-high</span></td><td>Large SI and Mobility backlogs support visibility.</td><td>Cost inflation, tariffs and execution can erode contract economics.</td></tr>
+</tbody>
+</table>
+
+<div class="score"><span>Competitive moat</span><div class="track"><div class="fill" style="width:86%"></div></div><strong>8.6/10</strong></div>
+<div class="score"><span>Recurring / sticky revenue</span><div class="track"><div class="fill" style="width:72%"></div></div><strong>7.2/10</strong></div>
+<div class="score"><span>Cyclicality resilience</span><div class="track"><div class="fill" style="width:66%"></div></div><strong>6.6/10</strong></div>
+<div class="score"><span>Capital allocation</span><div class="track"><div class="fill" style="width:74%"></div></div><strong>7.4/10</strong></div>
+<div class="score"><span>Valuation support</span><div class="track"><div class="fill" style="width:52%"></div></div><strong>5.2/10</strong></div>
+</section>
+
+<section id="quality" class="page-break">
+<h2>8. Earnings Quality, Cash Flow and Capital Allocation</h2>
+<h3>Earnings quality</h3>
+<p>FY2025 was a record year: orders rose to EUR 88.4 billion, revenue to EUR 78.9 billion, Industrial Business profit to EUR 11.8 billion and free cash flow to EUR 10.8 billion. Reported net income was EUR 10.4 billion, implying an all-in FCF-to-net-income ratio of roughly 1.04x. That is a favorable cash-conversion signal.</p>
+<p>However, investors should not treat reported EPS as perfectly clean. FY2025 net income benefited from the Innomotics divestiture, while Altair and Dotmatics created acquisition and purchase-price-accounting effects. Siemens therefore emphasizes EPS pre-PPA, and our valuation uses the company's pre-PPA guidance rather than reported FY2025 EPS.</p>
+
+<div class="chart">
+<div class="chart-title">FY2024 to FY2025 operating progression</div>
+<div class="bar-row"><span>Revenue 2024</span><div class="bar-track"><div class="bar alt" style="width:96.2%"></div></div><b>75.9</b></div>
+<div class="bar-row"><span>Revenue 2025</span><div class="bar-track"><div class="bar" style="width:100%"></div></div><b>78.9</b></div>
+<div class="bar-row"><span>Ind. profit '24</span><div class="bar-track"><div class="bar alt" style="width:96.6%"></div></div><b>11.4</b></div>
+<div class="bar-row"><span>Ind. profit '25</span><div class="bar-track"><div class="bar" style="width:100%"></div></div><b>11.8</b></div>
+<div class="bar-row"><span>FCF 2024</span><div class="bar-track"><div class="bar alt" style="width:88.0%"></div></div><b>9.5</b></div>
+<div class="bar-row"><span>FCF 2025</span><div class="bar-track"><div class="bar gold" style="width:100%"></div></div><b>10.8</b></div>
+<div class="small">EUR bn. Bars are scaled within each paired metric, not across metrics.</div>
+</div>
+
+<h3>Capital allocation framework</h3>
+<table>
+<thead><tr><th>Action</th><th>Assessment</th><th>Investor implication</th></tr></thead>
+<tbody>
+<tr><td>EUR 6bn share repurchase authorization, up to five years</td><td><span class="tag good">Supportive</span></td><td>Provides an ongoing capital-return lever, though value creation depends on repurchase price.</td></tr>
+<tr><td>Progressive dividend; FY25 EUR 5.35/share</td><td><span class="tag good">Supportive</span></td><td>Adds modest income and signals confidence in cash generation.</td></tr>
+<tr><td>Altair + Dotmatics acquisitions</td><td><span class="tag warn">Strategic / execution risk</span></td><td>Strengthen software and AI, but increase integration burden and require synergy realization.</td></tr>
+<tr><td>Healthineers deconsolidation</td><td><span class="tag good">Potential unlock</span></td><td>Improves strategic focus and valuation transparency; execution timing is still a catalyst/risk.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="healthineers">
+<h2>9. Siemens Healthineers Separation - What It Means for SIEGY</h2>
+<p>Siemens announced in November 2025 that it intends to deconsolidate its roughly 67% stake in Siemens Healthineers, with a preferred structure that transfers 30% of Healthineers shares directly to Siemens AG shareholders. In April 2026 Siemens said it plans to put the direct spin-off to a shareholder vote at the February 2027 AGM. Reuters reported after Q3 that German tax authorities had agreed tax treatment intended to make the planned distribution tax-free to Siemens shareholders under the transaction structure.</p>
+
+<div class="two-col">
+<div class="box">
+<h3>Illustrative value bridge</h3>
+<p>Using a recent Healthineers market capitalization of roughly EUR 43.7 billion:</p>
+<ul>
+<li>67% Siemens stake: approximately <strong>EUR 29.3 billion</strong>.</li>
+<li>30% of Healthineers distributed: approximately <strong>EUR 13.1 billion</strong> at the same market value.</li>
+<li>Illustrative value per Siemens ordinary share distributed: approximately <strong>EUR 16.8</strong>, before transaction terms and market moves.</li>
+<li>Remaining 37% stake at the same value: approximately <strong>EUR 16.2 billion</strong>.</li>
+</ul>
+</div>
+<div class="box caution">
+<h3>Critical interpretation</h3>
+<p><strong>The spin is not an incremental EUR 16.8 of free value.</strong> When the distributed Healthineers shares detach, the value of Siemens AG should adjust lower by the value transferred. The potential creation of value comes from better strategic focus, simplified financial reporting, a reduced conglomerate discount, and the possibility that each asset receives a more appropriate standalone valuation.</p>
+<p>For U.S. ADR holders, broker handling, fractional shares, ADR mechanics, tax treatment and fees may differ from the ordinary-share process. Investors should confirm the final ADR treatment when transaction documents are published.</p>
+</div>
+</div>
+
+<p>The transaction is strategically sensible. Core Siemens' industrial businesses are increasingly coherent around automation, electrification, industrial software and mobility. Healthineers is a high-quality asset, but its healthcare economics are different and its separate listing already provides a transparent market value. Deconsolidation should make Siemens easier to analyze and compare with Schneider Electric, ABB and industrial technology peers.</p>
+</section>
+
+<section id="industry" class="page-break">
+<h2>10. Industry and Macro Exposures</h2>
+<table>
+<thead><tr><th>Theme</th><th>Exposure</th><th>Direction</th><th>Investment interpretation</th></tr></thead>
+<tbody>
+<tr><td>AI data-center buildout</td><td>SI electrification, grid, buildings; DI software/EDA</td><td><span class="tag good">Strong tailwind</span></td><td>Near-term order driver plus multi-year capacity investment opportunity.</td></tr>
+<tr><td>Grid modernization / electrification</td><td>SI</td><td><span class="tag good">Structural</span></td><td>Power demand, renewables integration and resilience require sustained investment.</td></tr>
+<tr><td>Factory automation cycle</td><td>DI</td><td><span class="tag neutral">Recovering</span></td><td>Upside if inventories normalize and industrial capex broadens; downside if China remains weak.</td></tr>
+<tr><td>Industrial software / digital twin</td><td>DI</td><td><span class="tag good">Structural</span></td><td>Raises recurring mix, embeds workflows and creates AI monetization paths.</td></tr>
+<tr><td>Rail infrastructure</td><td>Mobility</td><td><span class="tag good">Long-cycle</span></td><td>Public investment and decarbonization support backlog, though margins are project-sensitive.</td></tr>
+<tr><td>Trade / tariffs</td><td>Mobility, industrial supply chain</td><td><span class="tag warn">Risk</span></td><td>Can affect project costs, localization decisions and margins.</td></tr>
+<tr><td>EUR/USD</td><td>U.S. revenue and SIEGY translation</td><td><span class="tag neutral">Two-sided</span></td><td>FX affects reported financials and ADR price translation; U.S. operations provide natural business exposure.</td></tr>
+</tbody>
+</table>
+
+<h3>U.S. positioning</h3>
+<p>Siemens has identified the U.S. as its largest market and in 2025 announced more than $10 billion of recent/planned U.S. investment, including new and expanded factories in Texas and California and a more-than-doubling of electrical-equipment production capacity serving critical infrastructure such as AI data centers. This local capacity is strategically important because it can improve responsiveness, help meet domestic-content requirements and mitigate some trade friction.</p>
+
+<h3>China remains the most important cyclical question</h3>
+<p>Weak Chinese industrial demand and customer inventory normalization have weighed on Digital Industries over the prior two years. The recovery now appears to be broadening, but investors should resist extrapolating SI's data-center strength into all of Siemens. A durable re-acceleration in DI orders - particularly outside one-time software or large project effects - is the most important confirmation signal for a stronger earnings-growth regime.</p>
+</section>
+
+<section id="valuation">
+<h2>11. Valuation</h2>
+<h3>Reference price and ADR mechanics</h3>
+<p>Siemens' ordinary share recently traded near EUR 284 and its 52-week high was EUR 291.50. Siemens' official ADR information states that <strong>two SIEGY ADRs represent one Siemens ordinary share</strong>. Using EUR/USD 1.1564 from Aug. 14, 2026, an EUR 283.95 ordinary share is economically equivalent to approximately <strong>$164.18 per SIEGY ADR</strong> before timing, OTC spread and ADR-specific effects.</p>
+
+<div class="metric-grid">
+<div class="metric"><div class="label">Ordinary reference</div><div class="value">EUR 283.95</div><div class="detail">Recent delayed quote</div></div>
+<div class="metric"><div class="label">SIEGY equivalent</div><div class="value">~$164.18</div><div class="detail">EUR/USD 1.1564; 2:1 ADR ratio</div></div>
+<div class="metric"><div class="label">FY26 P/E</div><div class="value">~25.0x</div><div class="detail">Using EUR 11.35 guide midpoint</div></div>
+<div class="metric"><div class="label">Gross dividend yield</div><div class="value">~1.88%</div><div class="detail">EUR 5.35 / EUR 283.95</div></div>
+<div class="metric"><div class="label">52-week high</div><div class="value">EUR 291.50</div><div class="detail">Only ~2.7% above reference</div></div>
+<div class="metric"><div class="label">Entry valuation</div><div class="value">EUR 260-270</div><div class="detail">Preferred risk/reward zone</div></div>
+</div>
+
+<h3>Primary method: forward earnings multiple</h3>
+<p>A sum-of-the-parts approach is conceptually appropriate for Siemens, but the planned Healthineers deconsolidation and acquisition accounting make a highly precise SOTP easy to overfit. We therefore use a transparent forward EPS multiple as the primary method and an asset/value bridge as a secondary check.</p>
+<p>At the current reference price, the stock trades around 25.0x the midpoint of FY2026 EPS pre-PPA guidance. For a company targeting 6%-9% mid-term revenue growth excluding Healthineers and high-single-digit EPS growth, a mid-20s multiple is reasonable only if the business mix continues to improve. It offers limited protection if growth merely returns to historical industrial-cycle norms.</p>
+
+<table>
+<thead><tr><th>Valuation lens</th><th>Observation</th><th>Conclusion</th></tr></thead>
+<tbody>
+<tr><td>FY2026 P/E</td><td>~25.0x at EUR 283.95 vs EUR 11.35 EPS guide midpoint</td><td><span class="tag warn">Full</span> - premium reflects AI/SI strength and higher-quality mix.</td></tr>
+<tr><td>Prospective FY2027 P/E</td><td>~23.1x on our EUR 12.3 base EPS</td><td><span class="tag neutral">Reasonable premium</span> if earnings growth delivers.</td></tr>
+<tr><td>Dividend</td><td>~1.9% gross based on FY25 EUR 5.35</td><td>Helpful, but total-return thesis depends primarily on earnings and multiple.</td></tr>
+<tr><td>Healthineers stake</td><td>Illustrative current stake value ~EUR 29bn</td><td>Provides tangible asset value but is already reflected in Siemens' equity value.</td></tr>
+<tr><td>Core re-rating</td><td>Potential after deconsolidation</td><td>Real but difficult to pre-capitalize; treat as optionality rather than guaranteed upside.</td></tr>
+</tbody>
+</table>
+
+<h3>Secondary check: market-implied core value</h3>
+<p>Using approximately 782 million Siemens shares and an EUR 283.95 reference price implies equity value around EUR 222 billion. Subtracting the illustrative market value of Siemens' 67% Healthineers stake (~EUR 29 billion) leaves roughly EUR 193 billion of equity value attributed to core Siemens before considering the detailed balance-sheet and financing-company bridge. This is not a formal enterprise-value SOTP, but it shows why the core businesses must continue delivering strong margins and cash flow to justify the present group valuation.</p>
+
+<div class="box thesis">
+<h3>Fair-value conclusion</h3>
+<p>Our probability-weighted scenario value is approximately <strong>EUR 307 per ordinary share</strong>, equivalent to about <strong>$177 per SIEGY ADR</strong> at the report FX assumption. That represents mid-single-digit price upside from the ordinary reference price plus a gross dividend yield near 1.9%. The expected return is acceptable for an existing holder, but below the threshold we would normally require to initiate an aggressive new position in a cyclical industrial technology stock.</p>
+</div>
+</section>
+
+<section id="scenarios" class="page-break">
+<h2>12. Bull, Base and Bear Scenarios</h2>
+<table>
+<thead><tr><th>Scenario</th><th>Probability</th><th>FY27 EPS assumption</th><th>Target multiple</th><th>Ordinary value</th><th>SIEGY equivalent*</th></tr></thead>
+<tbody>
+<tr><td><strong>Bear</strong></td><td>20%</td><td>EUR 11.60</td><td>20.0x</td><td>EUR 232</td><td>$134</td></tr>
+<tr><td><strong>Base</strong></td><td>55%</td><td>EUR 12.30</td><td>25.0x</td><td>EUR 308</td><td>$178</td></tr>
+<tr><td><strong>Bull</strong></td><td>25%</td><td>EUR 13.00</td><td>28.0x</td><td>EUR 364</td><td>$210</td></tr>
+<tr><td><strong>Probability-weighted</strong></td><td>100%</td><td>-</td><td>-</td><td><strong>EUR 307</strong></td><td><strong>$177</strong></td></tr>
+</tbody>
+</table>
+<p class="footnote">*ADR equivalents use 1 EUR = $1.1564 and 2 SIEGY ADRs = 1 Siemens ordinary share. FX changes will alter U.S.-dollar values.</p>
+
+<div class="three-col">
+<div class="box scenario-bear"><h3>Bear case - EUR 232 / $134</h3><ul><li>DI automation recovery stalls; China remains weak.</li><li>Data-center order growth normalizes rapidly and SI margins retreat.</li><li>Tariffs / project execution keep Mobility margins depressed.</li><li>Altair/Dotmatics integration produces less cross-selling than expected.</li><li>Healthineers separation is delayed or fails to reduce the conglomerate discount.</li></ul></div>
+<div class="box scenario-base"><h3>Base case - EUR 308 / $178</h3><ul><li>Group revenue grows around the mid-to-high single digits.</li><li>SI remains above group growth with high-teens margins.</li><li>DI hardware recovers gradually while software ARR compounds.</li><li>FY27 EPS pre-PPA reaches approximately EUR 12.3.</li><li>Healthineers separation proceeds without major value leakage.</li></ul></div>
+<div class="box scenario-bull"><h3>Bull case - EUR 364 / $210</h3><ul><li>AI/data-center investment remains exceptionally strong through FY27.</li><li>DI order recovery becomes broad-based and China stabilizes.</li><li>Industrial AI/software produces faster-than-expected organic growth and margin leverage.</li><li>Healthineers deconsolidation produces a meaningful core re-rating.</li><li>FY27 EPS approaches EUR 13 with a sustained premium multiple.</li></ul></div>
+</div>
+
+<div class="callout"><strong>Skew:</strong> The upside case is attractive, but the current price already discounts a substantial portion of the base-case improvement. The preferred entry range moves expected base-case price appreciation into the mid-teens before dividend and creates materially better protection against the bear case.</div>
+</section>
+
+<section id="catalysts">
+<h2>13. Catalysts - What Can Move the Stock</h2>
+<table>
+<thead><tr><th>Timing</th><th>Catalyst</th><th>What to watch</th><th>Potential impact</th></tr></thead>
+<tbody>
+<tr><td>Next earnings / FY26 close</td><td>Full-year results and FY27 outlook</td><td>EPS, DI orders, SI data-center pipeline, backlog, FCF</td><td>High - will reset the earnings base and forward multiple.</td></tr>
+<tr><td>FY27</td><td>Healthineers separation documentation</td><td>Distribution ratio, ADR treatment, retained stake, approvals</td><td>High - clarifies the value bridge and post-spin structure.</td></tr>
+<tr><td>February 2027</td><td>Siemens AGM vote on Healthineers spin-off</td><td>Shareholder approval and timetable</td><td>High - key portfolio-simplification milestone.</td></tr>
+<tr><td>Ongoing</td><td>NVIDIA/industrial AI product commercialization</td><td>Customer wins, recurring revenue, Digital Twin Composer adoption, EDA/simulation traction</td><td>Medium-high - validates the strategic premium.</td></tr>
+<tr><td>Ongoing</td><td>Data-center / U.S. electrification awards</td><td>Order growth, capacity utilization, SI margin</td><td>High near term - primary incremental growth driver.</td></tr>
+<tr><td>Ongoing</td><td>DI automation cycle</td><td>China orders, machine-builder demand, inventory normalization</td><td>High - broadens growth beyond SI.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="risks" class="page-break">
+<h2>14. Risks and Thesis Breakers</h2>
+<h3>Principal risks</h3>
+<table>
+<thead><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>Monitoring signal</th></tr></thead>
+<tbody>
+<tr><td>Valuation compression</td><td>Medium-high</td><td>High</td><td>P/E falls toward low-20s without EPS offset; rising rates or industrial risk-off.</td></tr>
+<tr><td>Data-center capex normalization</td><td>Medium</td><td>High</td><td>SI orders decelerate sharply; hyperscaler infrastructure budgets flatten.</td></tr>
+<tr><td>Factory automation / China weakness</td><td>Medium</td><td>High</td><td>DI orders remain below revenue for several quarters; pricing weakens.</td></tr>
+<tr><td>Software/M&A integration</td><td>Medium</td><td>Medium-high</td><td>ARR growth slows, margins dilute, synergy targets slip.</td></tr>
+<tr><td>Tariffs / trade fragmentation</td><td>Medium</td><td>Medium</td><td>Mobility and industrial project margins deteriorate; capex relocation slows demand.</td></tr>
+<tr><td>Healthineers transaction execution</td><td>Low-medium</td><td>Medium</td><td>Approval delays, unfavorable ADR mechanics, prolonged deconsolidation.</td></tr>
+<tr><td>FX</td><td>High</td><td>Medium</td><td>EUR translation reduces reported growth; SIEGY dollar value moves independently of local-share performance.</td></tr>
+</tbody>
+</table>
+
+<div class="box risk">
+<h3>Thesis-break conditions</h3>
+<p>We would consider the investment thesis materially impaired if <strong>two or more</strong> of the following occurred without a credible temporary explanation:</p>
+<ul>
+<li>Smart Infrastructure organic growth falls to low single digits while margin drops below the mid-to-high teens.</li>
+<li>Digital Industries orders fail to establish sustained growth despite easier comparisons and inventory normalization.</li>
+<li>Software ARR growth falls below high single digits and acquisition-related margin dilution persists.</li>
+<li>Group free-cash-flow conversion falls materially below earnings for a sustained period.</li>
+<li>Management pursues another large acquisition before demonstrating sufficient returns from Altair and Dotmatics.</li>
+<li>Healthineers deconsolidation is abandoned and the strategic rationale for retaining control becomes unclear.</li>
+</ul>
+</div>
+</section>
+
+<section id="portfolio">
+<h2>15. Portfolio Fit and Implementation</h2>
+<p>Siemens is attractive as a long-duration industrial-technology diversifier for investors whose equity exposure is already concentrated in U.S. technology and consumer franchises. It adds direct exposure to European industrial technology, global electrification, factory automation, rail infrastructure, industrial software and physical AI. It also has substantial U.S. operating exposure, so it is not simply a bet on European domestic growth.</p>
+
+<div class="two-col">
+<div class="box thesis">
+<h3>Why it can fit well</h3>
+<ul>
+<li>Diversifies AI exposure away from semiconductors and hyperscalers toward power, automation and industrial productivity.</li>
+<li>Combines cyclical upside with long-cycle backlog and infrastructure demand.</li>
+<li>Offers a modest dividend and active buyback program.</li>
+<li>Potential Healthineers separation can create two independently valued securities.</li>
+<li>Business quality and installed-base economics support long holding periods.</li>
+</ul>
+</div>
+<div class="box caution">
+<h3>Implementation cautions for SIEGY</h3>
+<ul>
+<li>SIEGY is OTC and less liquid than the primary Xetra listing.</li>
+<li>Two ADRs represent one ordinary share; dollar returns include EUR/USD translation.</li>
+<li>Foreign dividend withholding and ADR fees can reduce net income received.</li>
+<li>Final Healthineers distribution mechanics for ADR holders should be verified when transaction documents are available.</li>
+<li>Because valuation is full, staged purchases are preferable to an immediate full-size position.</li>
+</ul>
+</div>
+</div>
+
+<h3>Position-building framework</h3>
+<table>
+<thead><tr><th>SIEGY equivalent</th><th>Ordinary equivalent</th><th>Action</th><th>Rationale</th></tr></thead>
+<tbody>
+<tr><td>Above ~$175</td><td>Above ~EUR 303</td><td><span class="tag warn">Hold / do not chase</span></td><td>Approaches base fair value unless estimates rise materially.</td></tr>
+<tr><td>~$160-$175</td><td>~EUR 277-EUR 303</td><td><span class="tag neutral">Watch / small starter only</span></td><td>Quality supports holding, but margin of safety remains modest.</td></tr>
+<tr><td>~$150-$156</td><td>~EUR 260-EUR 270</td><td><span class="tag good">Add zone</span></td><td>Improves prospective return and lowers multiple risk.</td></tr>
+<tr><td>Below ~$145 with thesis intact</td><td>Below ~EUR 251</td><td><span class="tag good">Stronger Add consideration</span></td><td>Would offer a materially better risk/reward unless driven by thesis deterioration.</td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="conclusion" class="page-break">
+<h2>16. Final Investment View</h2>
+<div class="box thesis">
+<h3>Recommendation: WATCH | Conviction: 7/10</h3>
+<p class="lead">Siemens is one of the better positioned global industrial technology companies for the next decade. It has genuine exposure to the physical side of AI, not merely a marketing overlay: electrification and power distribution for data centers, automation and controls for factories, EDA and simulation for advanced engineering, and digital twins that connect software with physical operations. Smart Infrastructure is producing exceptional growth, Digital Industries is improving, and the group has a credible path to a cleaner corporate structure through the Healthineers deconsolidation.</p>
+<p class="lead">The stock, however, is no longer priced like a misunderstood cyclical. Around 25x FY2026 EPS guidance and close to its recent high, Siemens requires continued execution to deliver attractive returns. Our 12-18 month fair value of approximately EUR 307 / $177 SIEGY implies positive but only moderate upside from the current reference value. For an existing holder, the thesis supports <strong>holding</strong>. For new capital, we prefer to <strong>wait for a pullback toward roughly $150-$156</strong> or for earnings estimates to rise enough that today's price represents a lower forward multiple.</p>
+</div>
+
+<h3>The 5 checkpoints that matter most</h3>
+<ol>
+<li><strong>Smart Infrastructure:</strong> can data-center and electrification demand stay strong without sacrificing margins?</li>
+<li><strong>Digital Industries:</strong> do orders catch up with revenue and confirm a durable automation recovery?</li>
+<li><strong>Software:</strong> does ARR and organic growth prove the Altair/Dotmatics strategy is creating value?</li>
+<li><strong>Healthineers:</strong> does the 2027 separation simplify Siemens and improve valuation transparency without leakage?</li>
+<li><strong>Cash flow:</strong> does free cash flow continue to track earnings closely enough to fund dividends, buybacks and investment?</li>
+</ol>
+
+<div class="recommend">
+<div><div class="small">BOTTOM LINE</div><div class="big">EXCELLENT COMPANY, FAIRLY FULL PRICE</div><div>Business quality supports a long-term watchlist position; entry discipline is the main source of edge.</div></div>
+<div class="right"><strong>Base fair value: ~$177 SIEGY</strong><br><span class="small">Preferred entry: $150-$156</span></div>
+</div>
+</section>
+
+<section id="sources">
+<h2>17. Sources and Methodology</h2>
+<p>This report uses publicly available information through August 15, 2026. Q3 FY2026 results were cross-checked against Reuters because Siemens' indexed financial-results page had not yet fully populated all downloadable Q3 documents at the time of research. Facts are separated from analyst interpretation wherever practical.</p>
+<ol class="source-list">
+<li><strong>Siemens Q1 FY2026 earnings release</strong> - orders, revenue, industrial profit, backlog, EPS and guidance.<br><a href="https://press.siemens.com/global/en/pressrelease/earnings-release-and-financial-results-q1-fy-2026">https://press.siemens.com/global/en/pressrelease/earnings-release-and-financial-results-q1-fy-2026</a></li>
+<li><strong>Siemens Q2 FY2026 earnings release / press release</strong> - Q2 financials, segment performance, backlog, updated segment guidance and EUR 6bn buyback.<br><a href="https://press.siemens.com/global/en/pressrelease/earnings-release-and-financial-results-q2-fy-2026">https://press.siemens.com/global/en/pressrelease/earnings-release-and-financial-results-q2-fy-2026</a><br><a href="https://press.siemens.com/global/en/pressrelease/siemens-continues-path-profitable-growth">https://press.siemens.com/global/en/pressrelease/siemens-continues-path-profitable-growth</a></li>
+<li><strong>Reuters, Aug. 6, 2026</strong> - Q3 record industrial profit, revenue, orders, raised EPS guidance, AI/data-center demand and Healthineers tax treatment.<br><a href="https://www.reuters.com/business/siemens-raises-guidance-after-posting-highest-ever-industrial-profit-2026-08-06/">https://www.reuters.com/business/siemens-raises-guidance-after-posting-highest-ever-industrial-profit-2026-08-06/</a></li>
+<li><strong>Siemens FY2025 / ONE Tech Company</strong> - FY25 revenue, orders, profit, FCF, mid-term 6%-9% growth ambition, digital revenue target, AI investment and dividend policy.<br><a href="https://press.siemens.com/global/en/pressrelease/siemens-enters-next-stage-growth-its-one-tech-company-program">https://press.siemens.com/global/en/pressrelease/siemens-enters-next-stage-growth-its-one-tech-company-program</a></li>
+<li><strong>Siemens FY2025 Q4 release</strong> - record FCF and EUR 5.35 dividend proposal.<br><a href="https://press.siemens.com/global/en/pressrelease/earnings-release-and-financial-results-q4-fy-2025">https://press.siemens.com/global/en/pressrelease/earnings-release-and-financial-results-q4-fy-2025</a></li>
+<li><strong>Siemens / NVIDIA partnership, Jan. 6, 2026</strong> - Industrial AI Operating System, AI-native design/simulation and adaptive manufacturing.<br><a href="https://press.siemens.com/global/en/pressrelease/siemens-and-nvidia-expand-partnership-build-industrial-ai-operating-system">https://press.siemens.com/global/en/pressrelease/siemens-and-nvidia-expand-partnership-build-industrial-ai-operating-system</a></li>
+<li><strong>Siemens Healthineers deconsolidation plan, Nov. 12, 2025</strong> - approximately 67% ownership and plan to transfer 30% of Healthineers shares to Siemens shareholders.<br><a href="https://press.siemens.com/global/en/pressrelease/siemens-plans-deconsolidate-siemens-healthineers">https://press.siemens.com/global/en/pressrelease/siemens-plans-deconsolidate-siemens-healthineers</a></li>
+<li><strong>Siemens Healthineers spin timeline, Apr. 17, 2026</strong> - planned February 2027 AGM vote and direct shareholder receipt.<br><a href="https://press.siemens.com/global/en/pressrelease/siemens-clarifies-timeline-spin-siemens-healthineers-shares">https://press.siemens.com/global/en/pressrelease/siemens-clarifies-timeline-spin-siemens-healthineers-shares</a></li>
+<li><strong>Siemens completes Dotmatics acquisition, July 1, 2025</strong> - $5.1bn EV, life-sciences software strategy, revenue/margin expectations and synergies.<br><a href="https://press.siemens.com/global/en/pressrelease/siemens-completes-acquisition-dotmatics">https://press.siemens.com/global/en/pressrelease/siemens-completes-acquisition-dotmatics</a></li>
+<li><strong>Siemens U.S. investment announcement, Mar. 6, 2025</strong> - manufacturing expansion and electrical-equipment capacity for AI data centers.<br><a href="https://press.siemens.com/global/en/pressrelease/siemens-boosting-us-investments-more-10-billion-american-manufacturing-jobs-software">https://press.siemens.com/global/en/pressrelease/siemens-boosting-us-investments-more-10-billion-american-manufacturing-jobs-software</a></li>
+<li><strong>Siemens Investor Relations FAQ / business descriptions</strong> - core industrial business definitions and Healthineers ownership context.<br><a href="https://www.siemens.com/en-us/company/investor-relations/faq/">https://www.siemens.com/en-us/company/investor-relations/faq/</a></li>
+<li><strong>Reuters FX, Aug. 14, 2026</strong> - EUR/USD approximately 1.1564 at the cited point in the trading day.<br><a href="https://www.reuters.com/world/asia-pacific/yens-slide-weekly-loss-prompts-bets-another-intervention-2026-08-14/">https://www.reuters.com/world/asia-pacific/yens-slide-weekly-loss-prompts-bets-another-intervention-2026-08-14/</a></li>
+<li><strong>Siemens ADR / share information</strong> - Level I ADR and 2 ADRs = 1 ordinary share. Siemens IR basic share data also reports approximately 782 million shares as of March 2026.<br><a href="https://www.siemens.com/en-us/company/investor-relations/share-bonds-rating/american-depository-receipt/">https://www.siemens.com/en-us/company/investor-relations/share-bonds-rating/american-depository-receipt/</a></li>
+<li><strong>Recent ordinary-share reference</strong> - Siemens ordinary shares traded around EUR 283.95 in mid-August 2026, close to the EUR 291.50 52-week high. Used solely as a delayed valuation reference rather than a live quote.<br><a href="https://www.welt.de/article6a7d95fe0773f8de246727e3">https://www.welt.de/article6a7d95fe0773f8de246727e3</a></li>
+</ol>
+
+<h3>Methodology notes</h3>
+<ul>
+<li>Fair value is based primarily on forward EPS and a justified earnings multiple, with a qualitative SOTP / Healthineers asset-value cross-check.</li>
+<li>Scenario targets are analyst estimates, not management guidance.</li>
+<li>ADR-equivalent values are converted mechanically at EUR/USD 1.1564 and the official 2:1 ADR ratio. Actual OTC prices can deviate modestly because of timing, spreads and FX.</li>
+<li>Dividend yield is gross and does not incorporate foreign withholding, ADR fees or investor-specific tax treatment.</li>
+<li>Healthineers values are illustrative and based on a recent market capitalization; market prices and final transaction terms will change realized values.</li>
+</ul>
+
+<div class="footerline"><strong>Disclaimer:</strong> This document is investment research for informational and educational purposes only. It is not a recommendation tailored to any individual's objectives, tax status, liquidity needs or risk tolerance, and it is not an offer to buy or sell securities. Estimates, fair values and scenarios are inherently uncertain and may change without notice. Investors should verify current prices, filings, tax consequences and ADR mechanics before acting.</div>
+</section>
+
+</main>
+</div>
+</body>
+</html>

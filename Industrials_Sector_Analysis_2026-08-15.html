@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Industrials Sector Analysis - August 15, 2026</title>
+<style>
+  :root { --ink:#182230; --muted:#5b6675; --line:#d8dee7; --soft:#f3f6f9; --panel:#eef3f7; --accent:#183b56; --good:#256b49; --warn:#8a5b12; --bad:#8f3a3a; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { margin:0; font-family: Arial, Helvetica, sans-serif; color:var(--ink); background:white; font-size:13.1px; line-height:1.48; }
+  .report { max-width:1050px; margin:0 auto; padding:34px 44px 70px; }
+  .cover { padding:38px 42px 32px; border:1px solid var(--line); border-top:8px solid var(--accent); margin-bottom:28px; background:linear-gradient(135deg,#fff 0%,#f4f7fa 100%); }
+  .eyebrow { font-size:11px; letter-spacing:1.6px; text-transform:uppercase; font-weight:bold; color:var(--muted); }
+  h1 { font-size:34px; line-height:1.08; margin:10px 0 10px; color:#102b3c; }
+  .subtitle { font-size:18px; color:var(--muted); margin-bottom:24px; }
+  .meta-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:24px; }
+  .meta { border-left:3px solid var(--accent); background:white; padding:10px 12px; }
+  .meta b { display:block; font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
+  .meta span { font-size:16px; font-weight:bold; }
+  h2 { font-size:23px; margin:34px 0 13px; padding-bottom:7px; border-bottom:2px solid #b8c4d0; color:#102b3c; break-after:avoid; }
+  h3 { font-size:16px; margin:22px 0 9px; color:#23465c; break-after:avoid; }
+  h4 { font-size:13.5px; margin:15px 0 6px; color:#2d4659; }
+  p { margin:7px 0 11px; }
+  ul,ol { margin:8px 0 13px 22px; padding:0; }
+  li { margin:5px 0; }
+  table { width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:11.8px; break-inside:avoid; }
+  th { background:#e7edf3; color:#183b56; text-align:left; padding:7px 7px; border:1px solid #cfd8e2; font-weight:700; }
+  td { padding:7px 7px; border:1px solid #dbe2ea; vertical-align:top; }
+  tr:nth-child(even) td { background:#fafbfd; }
+  .small { font-size:10.7px; color:var(--muted); }
+  .cite { color:#375c78; text-decoration:none; font-size:10.5px; white-space:nowrap; }
+  .callout { border-left:5px solid var(--accent); background:var(--soft); padding:14px 16px; margin:14px 0 18px; break-inside:avoid; }
+  .callout.good { border-color:var(--good); }
+  .callout.warn { border-color:var(--warn); }
+  .score-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:13px 0 18px; }
+  .score { border:1px solid var(--line); padding:12px; background:white; break-inside:avoid; }
+  .score .label { font-size:10.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.5px; }
+  .score .value { font-size:22px; font-weight:700; color:#173d56; margin:3px 0; }
+  .tag { display:inline-block; padding:3px 7px; border-radius:4px; font-weight:bold; font-size:10.5px; background:#e8eef3; color:#23465c; }
+  .tag.good { background:#e6f1eb; color:var(--good); }
+  .tag.warn { background:#f7eddc; color:var(--warn); }
+  .tag.bad { background:#f6e8e8; color:var(--bad); }
+  .barrow { display:grid; grid-template-columns:92px 1fr 50px; align-items:center; gap:8px; margin:7px 0; font-size:11px; }
+  .bar { height:12px; background:#e7edf2; position:relative; }
+  .bar span { display:block; height:100%; background:#66829a; }
+  .two-col { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  .panel { border:1px solid var(--line); padding:13px 15px; background:#fbfcfd; break-inside:avoid; }
+  .verdict { font-size:14px; font-weight:bold; color:#113a53; }
+  .rank { font-size:19px; font-weight:bold; color:#113a53; }
+  .toc { columns:2; column-gap:40px; padding:8px 0 0; }
+  .toc a { display:block; color:#244f6a; text-decoration:none; padding:4px 0; }
+  .page-break { break-before:page; }
+  .sources td:last-child { font-size:9.2px; overflow-wrap:anywhere; }
+  .footer-note { border-top:1px solid var(--line); margin-top:26px; padding-top:15px; font-size:10.5px; color:var(--muted); }
+  .powered { margin-top:16px; font-weight:bold; }
+  @media print {
+    @page { size:Letter; margin:0.5in 0.52in 0.58in; }
+    body { font-size:10.7px; line-height:1.38; }
+    .report { max-width:none; padding:0; }
+    .cover { margin-top:0; }
+    h1 { font-size:28px; } h2 { font-size:19px; margin-top:24px; } h3 { font-size:14px; margin-top:17px; }
+    table { font-size:9.3px; } th,td { padding:5px; }
+    .score .value { font-size:18px; }
+    a { color:inherit; }
+    .no-break { break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<main class="report">
+<section class="cover">
+  <div class="eyebrow">Sector Research | U.S. Equities</div>
+  <h1>Sector Analysis: Industrials</h1>
+  <div class="subtitle">Cycle positioning, operating KPIs, sub-industry outlook, and industrial ETF implementation</div>
+  <div class="callout good"><b>Investment conclusion:</b> <span class="verdict">OVERWEIGHT - SELECTIVE</span>. Industrial fundamentals remain unusually strong in aerospace/defense, electrical equipment, grid/power and selected machinery, but the sector is no longer inexpensive. Favor earnings-backed backlog conversion over indiscriminate beta.</div>
+  <div class="meta-grid">
+    <div class="meta"><b>Report date</b><span>Aug. 15, 2026</span></div>
+    <div class="meta"><b>Cycle read</b><span>Mid-cycle / reaccelerating</span></div>
+    <div class="meta"><b>ETF preference</b><span>VIS</span></div>
+    <div class="meta"><b>Conviction</b><span>8 / 10</span></div>
+  </div>
+</section>
+
+<section>
+<h3>Research Methodology and Data Note</h3>
+<p>This report follows the Bigdata.com Sector Analysis skill framework: sector context, Industrials-specific KPIs (backlog, book-to-bill, margin mix and OEM/capex cycle), cycle/profitability positioning, sub-industry analysis, catalysts, and implementation. The live Bigdata.com data connector returned a credits-exhausted response during this run; rather than use stale figures, the report refreshes all factual data from cited primary sources including the Federal Reserve, ETF sponsors, company investor-relations releases, CBO and DoD materials. Where the skill calls for an aggregate dataset that was not available from primary-source fallback, the field is explicitly marked "Not available."</p>
+<h3>Contents</h3>
+<div class="toc">
+<a href="#summary">1. Executive Summary</a>
+<a href="#performance">2. Sector Performance Overview</a>
+<a href="#themes">3. Key Themes & Drivers</a>
+<a href="#subindustries">4. Sub-Industry Breakdown</a>
+<a href="#catalysts">5. Upcoming Catalysts</a>
+<a href="#implications">6. Investment Implications & ETFs</a>
+<a href="#sources">7. Sources</a>
+</div>
+</section>
+
+<section id="summary">
+<h2>Executive Summary</h2>
+<p>U.S. Industrials are in a <b>mid-cycle expansion with reacceleration characteristics</b>. Federal Reserve data show manufacturing output rose at a 4.7% annualized rate in the second quarter, while total industrial production increased at a 4.0% annualized pace. Capacity utilization of 76.1% remains 3.3 percentage points below its long-run average, suggesting the upturn is not yet constrained by broad capacity saturation. <a class="cite" href="https://www.federalreserve.gov/Releases/G17/Current/table0.htm">[1]</a></p>
+<p>The strongest fundamental evidence is concentrated in <b>aerospace/defense and power/electrical infrastructure</b>. GE Aerospace reported Q2 orders up 17% and revenue up 21%; RTX reported a $289 billion backlog, up 22% year over year; GE Vernova reported orders up 88% organically and a $176 billion backlog; and Eaton's Q1 electrical book-to-bill increased to 1.2 with strong backlog growth. <a class="cite" href="https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-second-quarter-2026-results">[8]</a> <a class="cite" href="https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results">[9]</a> <a class="cite" href="https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial">[10]</a> <a class="cite" href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html">[11]</a></p>
+<p>Valuation is the counterweight. XLI, the large-cap S&P 500 Industrials proxy, traded at 26.86x forward earnings and 31.17x trailing earnings in late July versus 21.61x and 25.92x for the S&P 500 - premiums of roughly 24% and 20%, respectively. XLI's estimated 3-5 year EPS growth of 16.4% was also slightly below the S&P 500 proxy's 17.76%, so investors are paying a premium for backlog visibility and thematic exposure rather than superior consensus growth. <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a> <a class="cite" href="https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy">[3]</a></p>
+<p><b>Positioning:</b> remain Overweight, but emphasize businesses where backlog growth, pricing, margin conversion and capacity expansion can support earnings. For ETF implementation, <b>VIS is the preferred strategic core</b> because it provides broad all-cap Industrials exposure at a 0.09% expense ratio with 397 stocks; <b>XLI is preferred for tactical exposure</b> because it is concentrated in large-cap leaders and offers deep sector-specific liquidity; <b>FIDU is an excellent low-cost broad alternative</b>; and <b>IYJ is least preferred</b> because its current index exposure includes nearly 20% Financial Services and costs 0.38%. <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a> <a class="cite" href="https://investor.vanguard.com/investment-products/etfs/profile/vis">[4]</a> <a class="cite" href="https://institutional.fidelity.com/advisors/investment-solutions/performance/fidelity-etfs?tab=performance">[5]</a> <a class="cite" href="https://research2.fidelity.com/fidelity/screeners/etf/etfholdings.asp?sortBy=Weighting&sortDir=asc&symbol=FIDU&view=Holdings">[6]</a> <a class="cite" href="https://www.ishares.com/us/products/239514/ishares-us-industrials-etf">[7]</a></p>
+</section>
+
+<section id="performance">
+<h2>Sector Performance Overview</h2>
+<div class="score-grid">
+  <div class="score"><div class="label">XLI YTD return</div><div class="value">20.12%</div><div class="small">through Jun. 30, 2026 <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></div></div>
+  <div class="score"><div class="label">S&P 500 YTD</div><div class="value">10.21%</div><div class="small">through Jun. 30, 2026 <a class="cite" href="https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy">[3]</a></div></div>
+  <div class="score"><div class="label">XLI forward P/E</div><div class="value">26.86x</div><div class="small">Jul. 27, 2026 <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></div></div>
+  <div class="score"><div class="label">Manufacturing Q2 output</div><div class="value">+4.7%</div><div class="small">annualized <a class="cite" href="https://www.federalreserve.gov/Releases/G17/Current/table0.htm">[1]</a></div></div>
+</div>
+
+<h3>Key Metrics</h3>
+<table>
+<tr><th>Metric</th><th>Current</th><th>YoY Change</th><th>vs. S&P 500</th></tr>
+<tr><td>Sector proxy P/E - trailing (XLI)</td><td>31.17x</td><td>Not available</td><td>~20% premium vs. 25.92x <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a> <a class="cite" href="https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy">[3]</a></td></tr>
+<tr><td>Sector proxy P/E - FY1 (XLI)</td><td>26.86x</td><td>Not available</td><td>~24% premium vs. 21.61x <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a> <a class="cite" href="https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy">[3]</a></td></tr>
+<tr><td>Est. 3-5 year EPS growth</td><td>16.40%</td><td>Not available</td><td>Below S&P proxy 17.76% <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a> <a class="cite" href="https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy">[3]</a></td></tr>
+<tr><td>Revenue Growth (TTM), sector aggregate</td><td>Not available</td><td>Not available</td><td>Bigdata aggregate unavailable; representative bellwethers shown below</td></tr>
+<tr><td>YTD total return (XLI)</td><td>20.12%</td><td>n/a</td><td>+9.91 percentage points vs. S&P 500 through Jun. 30 <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a> <a class="cite" href="https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy">[3]</a></td></tr>
+</table>
+
+<h3>Relative Performance - Broad Industrial ETFs</h3>
+<table>
+<tr><th>Fund / Index</th><th>YTD</th><th>1 Year</th><th>3 Year ann.</th><th>5 Year ann.</th><th>10 Year ann.</th></tr>
+<tr><td><b>VIS</b></td><td><b>21.34%</b></td><td>29.96%</td><td>22.05%</td><td>14.37%</td><td>14.68% <a class="cite" href="https://investor.vanguard.com/investment-products/etfs/profile/vis">[4]</a></td></tr>
+<tr><td><b>FIDU</b></td><td><b>21.42%</b></td><td>29.67%</td><td>22.14%</td><td>14.47%</td><td>14.86% <a class="cite" href="https://institutional.fidelity.com/advisors/investment-solutions/performance/fidelity-etfs?tab=performance">[5]</a></td></tr>
+<tr><td><b>XLI</b></td><td>20.12%</td><td>27.20%</td><td>21.71%</td><td>14.29%</td><td>14.65% <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></td></tr>
+<tr><td>IYJ</td><td>12.84%</td><td>17.97%</td><td>17.31%</td><td>9.48%</td><td>12.99% <a class="cite" href="https://www.ishares.com/us/products/239514/ishares-us-industrials-etf">[7]</a></td></tr>
+<tr><td>S&P 500 Index</td><td>10.21%</td><td>22.32%</td><td>20.61%</td><td>13.41%</td><td>15.51% <a class="cite" href="https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy">[3]</a></td></tr>
+</table>
+<p class="small">Performance through June 30, 2026. Returns beyond one year are annualized. Past performance is not indicative of future results.</p>
+
+<h3>Sector-specific KPIs</h3>
+<table>
+<tr><th>KPI</th><th>Sector read</th><th>Comment</th></tr>
+<tr><td>Manufacturing output / utilization</td><td><span class="tag good">Constructive</span></td><td>Manufacturing output +4.7% annualized in Q2; capacity utilization 76.1%, 3.3 pts below long-run average. Growth is improving without broad capacity exhaustion. <a class="cite" href="https://www.federalreserve.gov/Releases/G17/Current/table0.htm">[1]</a></td></tr>
+<tr><td>GE Aerospace orders / book-to-bill</td><td><span class="tag good">Strong</span></td><td>Orders $16.5B (+17%) vs. GAAP revenue $13.3B (+21%), implying ~1.24x order/revenue ratio; adjusted operating margin 21.7%, down 130 bps as equipment mix and investment weighed on margin. <a class="cite" href="https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-second-quarter-2026-results">[8]</a></td></tr>
+<tr><td>RTX backlog</td><td><span class="tag good">Strong</span></td><td>$289B backlog ($170B commercial, $119B defense), up 22% YoY; Q2 sales +14%, organic +16%; 2026 outlook raised. <a class="cite" href="https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results">[9]</a></td></tr>
+<tr><td>GE Vernova backlog / orders</td><td><span class="tag good">Very strong</span></td><td>Orders $24.2B (+88% organic), backlog $176B and +$13B sequentially; data-center orders exceeded $5B YTD; adjusted EBITDA margin 11.3%, +340 bps organic. <a class="cite" href="https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial">[10]</a></td></tr>
+<tr><td>Eaton book-to-bill</td><td><span class="tag good">Very strong</span></td><td>Q1 rolling electrical book-to-bill 1.2; Electrical Americas backlog +44% YoY and Electrical Global +73%; Aerospace book-to-bill 1.1. <a class="cite" href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html">[11]</a></td></tr>
+<tr><td>Rail operating efficiency</td><td><span class="tag good">Healthy</span></td><td>Union Pacific Q2 adjusted operating ratio 59.2%; freight revenue excluding fuel +4%; adjusted EPS +13%. <a class="cite" href="https://www.up.com/press-releases/financial/2q26-earnings-results-260723">[13]</a></td></tr>
+</table>
+
+<h3>Cycle / profitability positioning</h3>
+<div class="callout"><b>Cycle verdict: MID-CYCLE / REACCELERATING, with valuation characteristics closer to late-cycle.</b><br>
+Fundamental activity is improving: Q2 manufacturing production accelerated and bellwether order/backlog data remain strong. Yet aggregate capacity utilization is still below normal, arguing against a broad peak-cycle capacity constraint. The tension is valuation: sector multiples already embed meaningful confidence in long-duration backlog conversion. <a class="cite" href="https://www.federalreserve.gov/Releases/G17/Current/table0.htm">[1]</a> <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a> <a class="cite" href="https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy">[3]</a></div>
+<p>That combination favors <b>quality and backlog conversion</b> over low-quality cyclicals. If order growth remains above revenue growth while margins stabilize or expand, the premium can persist. If backlog growth slows before margin conversion arrives, multiple compression becomes the key sector risk.</p>
+
+<h3>Analyst Sentiment</h3>
+<table>
+<tr><th>Rating</th><th>% of Coverage</th></tr>
+<tr><td>Strong Buy / Buy</td><td>Not available</td></tr>
+<tr><td>Hold</td><td>Not available</td></tr>
+<tr><td>Sell</td><td>Not available</td></tr>
+</table>
+<p class="small">The Bigdata aggregate analyst-rating dataset was unavailable because the live connector returned credits exhausted. This report does not substitute a lower-quality third-party consensus dataset.</p>
+</section>
+
+<section id="themes" class="page-break">
+<h2>Key Themes & Drivers</h2>
+<h3>Tailwinds</h3>
+<ol>
+<li><b>Commercial aerospace production and aftermarket normalization.</b> GE Aerospace's Q2 adjusted revenue rose 24%, with commercial services growth and first-half engine deliveries up 31%. Boeing delivered 171 commercial aircraft in Q2 and 314 in the first half. Beneficiaries include GE, RTX, BA, HWM, TDG and suppliers. Timeline: multi-year. <a class="cite" href="https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-second-quarter-2026-results">[8]</a> <a class="cite" href="https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-Announces-Second-Quarter-Deliveries/default.aspx">[14]</a></li>
+<li><b>Defense replenishment and industrial-base spending.</b> CBO says the FY2026 DoD request totaled $961B including $113B of reconciliation funding; DoD has emphasized acquisition, munitions, missile defense, shipbuilding and industrial-base capacity. Beneficiaries include RTX, LMT, GD, NOC, HII and defense suppliers. <a class="cite" href="https://www.cbo.gov/publication/62301">[12]</a></li>
+<li><b>Grid, power generation and data-center infrastructure.</b> GE Vernova's Q2 orders increased 88% organically, backlog reached $176B, and data-center orders exceeded $5B YTD. Eaton reported electrical book-to-bill of 1.2 and substantial backlog growth. Beneficiaries include GEV, ETN, VRT, PWR, TT and electrical-equipment suppliers. <a class="cite" href="https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial">[10]</a> <a class="cite" href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html">[11]</a></li>
+<li><b>U.S. manufacturing reacceleration.</b> Federal Reserve data show Q2 manufacturing output grew 4.7% annualized while utilization remained below long-run norms. This supports machinery, automation, industrial distribution and transport volume without yet signaling broad capacity overheating. <a class="cite" href="https://www.federalreserve.gov/Releases/G17/Current/table0.htm">[1]</a></li>
+</ol>
+
+<h3>Headwinds</h3>
+<ol>
+<li><b>Valuation compression risk - High severity.</b> XLI's forward P/E was ~24% above the S&P 500 proxy while estimated 3-5 year EPS growth was slightly lower. Exposed: the entire large-cap sector, especially long-duration thematic winners where expectations are already elevated. <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a> <a class="cite" href="https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy">[3]</a></li>
+<li><b>Margin mix and capacity-investment burden - Medium severity.</b> GE Aerospace's adjusted operating margin declined 130 bps despite strong revenue as install-engine mix, investment and inflation weighed on margins. Eaton's Q1 segment margin was also down 120 bps YoY while it invested to expand capacity. <a class="cite" href="https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-second-quarter-2026-results">[8]</a> <a class="cite" href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html">[11]</a></li>
+<li><b>Execution risk in backlog conversion - Medium/High severity.</b> Huge backlogs are valuable only if labor, supplier availability, quality and capacity allow timely delivery. This is most important in aerospace/defense, electrical equipment and grid hardware. <a class="cite" href="https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-second-quarter-2026-results">[8]</a> <a class="cite" href="https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results">[9]</a> <a class="cite" href="https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial">[10]</a> <a class="cite" href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html">[11]</a></li>
+<li><b>Policy/funding normalization - Medium severity.</b> CBO notes 2026 defense funding includes a significant one-year reconciliation component and creates uncertainty around the enduring funding base after 2026. <a class="cite" href="https://www.cbo.gov/publication/62301">[12]</a></li>
+</ol>
+</section>
+
+<section id="subindustries">
+<h2>Sub-Industry Breakdown</h2>
+<table>
+<tr><th>Sub-Industry</th><th>Performance / KPI read</th><th>Valuation</th><th>Outlook</th></tr>
+<tr><td><b>Electrical Equipment / Grid / Power</b></td><td>GEV orders +88% organic; Eaton electrical B/B 1.2 with sharply higher backlog. <a class="cite" href="https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial">[10]</a> <a class="cite" href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html">[11]</a></td><td>Premium valuations justified only by sustained backlog conversion</td><td><span class="tag good">OVERWEIGHT</span> Strongest structural growth pocket: power demand, data centers, grid upgrades, electrification.</td></tr>
+<tr><td><b>Aerospace & Defense</b></td><td>GE orders +17%; RTX backlog +22%; Boeing deliveries 171 in Q2. <a class="cite" href="https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-second-quarter-2026-results">[8]</a> <a class="cite" href="https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results">[9]</a> <a class="cite" href="https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-Announces-Second-Quarter-Deliveries/default.aspx">[14]</a></td><td>Elevated but supported by long-duration backlog</td><td><span class="tag good">OVERWEIGHT</span> Commercial aftermarket + defense demand create unusually strong visibility.</td></tr>
+<tr><td><b>Machinery / Heavy Equipment</b></td><td>Sector macro improving; XLI machinery is ~20.8% of fund. <a class="cite" href="https://www.federalreserve.gov/Releases/G17/Current/table0.htm">[1]</a> <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></td><td>High after strong sector rerating</td><td><span class="tag warn">NEUTRAL+</span> Favor power-generation, infrastructure and high-service-content machinery over pure commodity cyclicals.</td></tr>
+<tr><td><b>Rail / Ground Transportation</b></td><td>UNP adjusted OR 59.2%, freight revenue ex-fuel +4%. <a class="cite" href="https://www.up.com/press-releases/financial/2q26-earnings-results-260723">[13]</a></td><td>Quality premium appropriate, but volume sensitivity remains</td><td><span class="tag good">OVERWEIGHT / QUALITY</span> Pricing, network productivity and economic leverage are attractive.</td></tr>
+<tr><td><b>Construction & Engineering / Building Products</b></td><td>Supported by grid/data-center/manufacturing capex themes; XLI weight ~8.7% combined. <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a> <a class="cite" href="https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial">[10]</a> <a class="cite" href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html">[11]</a></td><td>Mixed</td><td><span class="tag good">SELECTIVE OVERWEIGHT</span> Prefer mission-critical electrical/mechanical infrastructure and engineering firms.</td></tr>
+<tr><td><b>Air Freight / Logistics</b></td><td>Economic sensitivity remains high; smaller sector weight</td><td>Not available</td><td><span class="tag warn">NEUTRAL</span> Operational self-help can offset volume risk, but this is not the cleanest way to express the industrial upcycle.</td></tr>
+<tr><td><b>Passenger Airlines</b></td><td>Only ~2% of XLI; exposed to fuel, labor and consumer/travel cyclicality. <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></td><td>Not available</td><td><span class="tag bad">UNDERWEIGHT</span> Less attractive risk/reward than capital-goods beneficiaries.</td></tr>
+<tr><td><b>Agricultural Machinery</b></td><td>Near-term demand is more mixed; Deere's Q3 print is the next major read. <a class="cite" href="https://investor.deere.com/events/event-details/2026/John-Deere---3Q-Earnings-Call/default.aspx">[15]</a></td><td>Not available</td><td><span class="tag warn">NEUTRAL / WATCH</span> Wait for evidence of a clearer order-bottom and inventory normalization.</td></tr>
+</table>
+</section>
+
+<section id="catalysts">
+<h2>Upcoming Catalysts</h2>
+<h3>Earnings Calendar (Next 30 Days)</h3>
+<table>
+<tr><th>Company</th><th>Date</th><th>Consensus EPS</th><th>Key Metrics / Questions</th></tr>
+<tr><td>Deere & Co. (DE)</td><td>Aug. 20, 2026</td><td>Not available from primary-source fallback</td><td>Agriculture order trends, dealer inventories, pricing, margins, construction/forestry demand. <a class="cite" href="https://investor.deere.com/events/event-details/2026/John-Deere---3Q-Earnings-Call/default.aspx">[15]</a></td></tr>
+<tr><td>Other major XLI bellwethers</td><td>Most reported in July</td><td>-</td><td>GE, RTX and GEV have already reported Q2; the next 30 days are more macro/capex-sensitive than earnings-heavy.</td></tr>
+</table>
+<h3>Macro / Policy Catalysts</h3>
+<table>
+<tr><th>Date / Window</th><th>Catalyst</th><th>Why it matters</th></tr>
+<tr><td>Aug. 18, 2026</td><td>Federal Reserve G.17 Industrial Production & Capacity Utilization</td><td>Confirms whether Q2 manufacturing reacceleration is persisting into Q3; key read for machinery, rail and broad capital goods. <a class="cite" href="https://www.federalreserve.gov/newsevents/2026-august.htm">[16]</a></td></tr>
+<tr><td>Ongoing</td><td>Defense appropriations / acquisition execution</td><td>Determines how much of the unusually large FY2026 defense funding translates into orders, capacity expansion and supplier cash flow. <a class="cite" href="https://www.cbo.gov/publication/62301">[12]</a></td></tr>
+<tr><td>Q3-Q4 2026</td><td>Grid/data-center order conversion</td><td>Watch whether GEV/ETN order growth converts to revenue while margins improve rather than being offset by capacity costs. <a class="cite" href="https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial">[10]</a> <a class="cite" href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html">[11]</a></td></tr>
+</table>
+</section>
+
+<section id="implications" class="page-break">
+<h2>Investment Implications</h2>
+<div class="callout good"><b>Positioning: OVERWEIGHT - SELECTIVE.</b> The sector has enough order/backlog evidence to justify an above-market allocation, but valuation argues for disciplined implementation. The highest-conviction exposures are electrical/grid/power and aerospace/defense; rail is a quality cyclical. Avoid paying sector-level premiums for businesses without backlog visibility or margin conversion.</div>
+
+<h3>Preferred company exposures</h3>
+<table>
+<tr><th>Tier</th><th>Names</th><th>Why they screen well in this sector framework</th></tr>
+<tr><td><b>Tier 1 - Structural leaders</b></td><td>GEV, ETN, GE, RTX</td><td>Exceptional order/backlog visibility, exposure to power/data centers/aerospace/defense, and evidence of raised guidance or improving margins. <a class="cite" href="https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-second-quarter-2026-results">[8]</a> <a class="cite" href="https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results">[9]</a> <a class="cite" href="https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial">[10]</a> <a class="cite" href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html">[11]</a></td></tr>
+<tr><td><b>Tier 2 - Quality cyclicals</b></td><td>UNP, CAT, PH, PWR, TT, HWM</td><td>High-quality franchise exposure to rail, machinery, fluid motion, electrical infrastructure, HVAC and aerospace supply chains. Use valuation discipline because sector multiples are elevated. <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a> <a class="cite" href="https://www.up.com/press-releases/financial/2q26-earnings-results-260723">[13]</a></td></tr>
+<tr><td><b>Watch / selective</b></td><td>DE, logistics, airlines</td><td>Demand is more cycle-sensitive or less directly tied to the strongest backlog themes; Deere's Aug. 20 print is a key checkpoint. <a class="cite" href="https://investor.deere.com/events/event-details/2026/John-Deere---3Q-Earnings-Call/default.aspx">[15]</a></td></tr>
+</table>
+
+<h3>Industrial ETF Implementation Analysis</h3>
+<table>
+<tr><th>ETF</th><th>Index / Scope</th><th>Expense</th><th>Holdings</th><th>Top-10 wt.</th><th>YTD 6/30</th><th>Analyst view</th></tr>
+<tr><td><b>VIS</b></td><td>MSCI U.S. Investable Market Industrials 25/50; large/mid/small cap</td><td>0.09%</td><td>397</td><td>~30.1%</td><td>21.34%</td><td><b>#1 Strategic core.</b> Broad, low-cost, less concentrated than XLI; strong exposure to A&D, machinery, electrical equipment and engineering. <a class="cite" href="https://investor.vanguard.com/investment-products/etfs/profile/vis">[4]</a></td></tr>
+<tr><td><b>FIDU</b></td><td>MSCI USA IMI Industrials 25/50; broad all-cap</td><td>0.084%</td><td>364</td><td>~31.9%</td><td>21.42%</td><td><b>#2 Strategic alternative.</b> Slightly cheaper than VIS and similarly broad; strong option when Fidelity is preferred. <a class="cite" href="https://institutional.fidelity.com/advisors/investment-solutions/performance/fidelity-etfs?tab=performance">[5]</a> <a class="cite" href="https://research2.fidelity.com/fidelity/screeners/etf/etfholdings.asp?sortBy=Weighting&sortDir=asc&symbol=FIDU&view=Holdings">[6]</a></td></tr>
+<tr><td><b>XLI</b></td><td>S&P 500 Industrials; large-cap only</td><td>0.08%</td><td>81</td><td>~39.7%</td><td>20.12%</td><td><b>#1 Tactical vehicle.</b> Most concentrated in sector leaders and highly efficient for targeted large-cap beta; less diversified than VIS/FIDU. <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></td></tr>
+<tr><td><b>IYJ</b></td><td>Russell 1000 Industrials capped index</td><td>0.38%</td><td>211</td><td>Not calculated</td><td>12.84%</td><td><b>Least preferred.</b> About 19.9% Financial Services exposure and top holdings include Visa/Mastercard; higher fee makes it a less pure Industrials implementation. <a class="cite" href="https://www.ishares.com/us/products/239514/ishares-us-industrials-etf">[7]</a></td></tr>
+</table>
+
+<div class="two-col">
+<div class="panel">
+<h3 style="margin-top:0">Why VIS is the preferred core</h3>
+<ul>
+<li><b>Broader opportunity set:</b> 397 stocks vs. 81 for XLI, adding mid/small-cap industrial compounders. <a class="cite" href="https://investor.vanguard.com/investment-products/etfs/profile/vis">[4]</a> <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></li>
+<li><b>Lower concentration:</b> top 10 are about 30% vs. roughly 40% for XLI based on the cited holdings snapshots.</li>
+<li><b>Balanced industry mix:</b> A&D 23.5%, construction machinery/heavy transport 9.1%, electrical components/equipment 9.0%, industrial machinery 8.4%, and construction & engineering 5.5%. <a class="cite" href="https://investor.vanguard.com/investment-products/etfs/profile/vis">[4]</a></li>
+<li><b>Competitive cost:</b> 0.09%, only 1 bp above XLI and 0.6 bp above FIDU. <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a> <a class="cite" href="https://investor.vanguard.com/investment-products/etfs/profile/vis">[4]</a> <a class="cite" href="https://institutional.fidelity.com/advisors/investment-solutions/performance/fidelity-etfs?tab=performance">[5]</a></li>
+</ul>
+</div>
+<div class="panel">
+<h3 style="margin-top:0">When XLI is better</h3>
+<ul>
+<li><b>Precise large-cap sector beta:</b> direct S&P 500 Industrials exposure. <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></li>
+<li><b>More thematic concentration:</b> A&D 26.5%, machinery 20.8%, electrical equipment 13.4%. <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></li>
+<li><b>Top positions dominate:</b> CAT, GE, RTX and GEV together represented about 23.6% of the late-July fund snapshot, creating stronger upside/downside sensitivity to the leaders. <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></li>
+<li><b>Tactical use:</b> ideal when the objective is to add/remove Industrials beta quickly rather than hold the broadest set of companies.</li>
+</ul>
+</div>
+</div>
+
+<h3>ETF exposure comparison - key industry differences</h3>
+<table>
+<tr><th>Exposure</th><th>VIS</th><th>XLI</th><th>Implication</th></tr>
+<tr><td>Aerospace & Defense</td><td>23.5%</td><td>26.5%</td><td>XLI has more direct sensitivity to the aerospace/defense thesis. <a class="cite" href="https://investor.vanguard.com/investment-products/etfs/profile/vis">[4]</a> <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></td></tr>
+<tr><td>Machinery / heavy equipment</td><td>Construction Machinery 9.1% + Industrial Machinery 8.4%</td><td>Machinery 20.8%</td><td>XLI is somewhat more concentrated in machinery; VIS spreads exposure across more sub-industries. <a class="cite" href="https://investor.vanguard.com/investment-products/etfs/profile/vis">[4]</a> <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></td></tr>
+<tr><td>Electrical</td><td>Electrical Components 9.0% + Heavy Electrical 4.9%</td><td>Electrical Equipment 13.4%</td><td>Both provide substantial grid/data-center exposure. <a class="cite" href="https://investor.vanguard.com/investment-products/etfs/profile/vis">[4]</a> <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></td></tr>
+<tr><td>Rails / ground transport</td><td>Rail 4.4% + cargo/passenger ground transport</td><td>Ground Transportation 10.0%</td><td>XLI has a larger consolidated transport sleeve. <a class="cite" href="https://investor.vanguard.com/investment-products/etfs/profile/vis">[4]</a> <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></td></tr>
+</table>
+
+<h3>Decision framework</h3>
+<table>
+<tr><th>Objective</th><th>Preferred ETF</th><th>Rationale</th></tr>
+<tr><td>Long-term strategic Industrials allocation</td><td><b>VIS</b></td><td>Best combination of breadth, low cost and representative all-cap sector exposure.</td></tr>
+<tr><td>Lowest-cost broad all-cap alternative</td><td><b>FIDU</b></td><td>0.084% expense ratio, 364 holdings, excellent recent relative performance. <a class="cite" href="https://institutional.fidelity.com/advisors/investment-solutions/performance/fidelity-etfs?tab=performance">[5]</a> <a class="cite" href="https://research2.fidelity.com/fidelity/screeners/etf/etfholdings.asp?sortBy=Weighting&sortDir=asc&symbol=FIDU&view=Holdings">[6]</a></td></tr>
+<tr><td>Large-cap tactical overweight</td><td><b>XLI</b></td><td>Concentrated S&P 500 sector beta with greater weight in current leaders. <a class="cite" href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">[2]</a></td></tr>
+<tr><td>Pure Industrials exposure</td><td><b>Avoid IYJ as first choice</b></td><td>Current exposure includes ~19.9% Financial Services and a 0.38% fee. <a class="cite" href="https://www.ishares.com/us/products/239514/ishares-us-industrials-etf">[7]</a></td></tr>
+</table>
+
+<h3>What would change the Overweight view?</h3>
+<ul>
+<li><b>Downgrade to Neutral:</b> two consecutive quarters of broad order growth below revenue growth, a clear decline in backlog across aerospace/electrical leaders, or manufacturing output rolling back into contraction while valuations remain at a >20% forward premium to the market.</li>
+<li><b>Downgrade to Underweight:</b> backlog cancellations plus margin compression, a sustained manufacturing recession, or sector forward valuations staying elevated while consensus earnings growth falls materially below the S&P 500.</li>
+<li><b>Upgrade conviction:</b> capacity investment begins producing margin expansion, manufacturing utilization rises without inflationary stress, and high backlog converts to cash while forward valuation premium narrows.</li>
+</ul>
+</section>
+
+<section id="sources" class="page-break">
+<h2>Sources</h2>
+<table class="sources">
+<tr><th>#</th><th>Source</th><th>Date</th><th>URL</th></tr>
+<tr><td>1</td><td>Federal Reserve - Industrial Production and Capacity Utilization (June 2026)</td><td>July 17, 2026</td><td><a href="https://www.federalreserve.gov/Releases/G17/Current/table0.htm">https://www.federalreserve.gov/Releases/G17/Current/table0.htm</a></td></tr><tr><td>2</td><td>State Street - Industrial Select Sector SPDR ETF (XLI)</td><td>July 27-28, 2026 data</td><td><a href="https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli">https://www.ssga.com/us/en/intermediary/etfs/state-street-industrial-select-sector-spdr-etf-xli</a></td></tr><tr><td>3</td><td>State Street - SPDR S&P 500 ETF Trust (SPY)</td><td>July 27-28, 2026 data</td><td><a href="https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy">https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-500-etf-trust-spy</a></td></tr><tr><td>4</td><td>Vanguard - Vanguard Industrials ETF (VIS)</td><td>May 31-June 30, 2026 data</td><td><a href="https://investor.vanguard.com/investment-products/etfs/profile/vis">https://investor.vanguard.com/investment-products/etfs/profile/vis</a></td></tr><tr><td>5</td><td>Fidelity - ETF performance table (FIDU)</td><td>June 30, 2026 performance</td><td><a href="https://institutional.fidelity.com/advisors/investment-solutions/performance/fidelity-etfs?tab=performance">https://institutional.fidelity.com/advisors/investment-solutions/performance/fidelity-etfs?tab=performance</a></td></tr><tr><td>6</td><td>Fidelity - FIDU portfolio holdings</td><td>June 30, 2026</td><td><a href="https://research2.fidelity.com/fidelity/screeners/etf/etfholdings.asp?sortBy=Weighting&sortDir=asc&symbol=FIDU&view=Holdings">https://research2.fidelity.com/fidelity/screeners/etf/etfholdings.asp?sortBy=Weighting&sortDir=asc&symbol=FIDU&view=Holdings</a></td></tr><tr><td>7</td><td>iShares - iShares U.S. Industrials ETF (IYJ)</td><td>June 30-July 29, 2026 data</td><td><a href="https://www.ishares.com/us/products/239514/ishares-us-industrials-etf">https://www.ishares.com/us/products/239514/ishares-us-industrials-etf</a></td></tr><tr><td>8</td><td>GE Aerospace - Second Quarter 2026 Results</td><td>July 16, 2026</td><td><a href="https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-second-quarter-2026-results">https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-second-quarter-2026-results</a></td></tr><tr><td>9</td><td>RTX - Second Quarter 2026 Results</td><td>July 23, 2026</td><td><a href="https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results">https://www.rtx.com/news/news-center/2026/07/23/rtx-reports-q2-2026-results</a></td></tr><tr><td>10</td><td>GE Vernova - Second Quarter 2026 Results</td><td>July 22, 2026</td><td><a href="https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial">https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial</a></td></tr><tr><td>11</td><td>Eaton - First Quarter 2026 Results</td><td>May 5, 2026</td><td><a href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html">https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html</a></td></tr><tr><td>12</td><td>Congressional Budget Office - DoD 2026 Budget Request</td><td>April 30, 2026</td><td><a href="https://www.cbo.gov/publication/62301">https://www.cbo.gov/publication/62301</a></td></tr><tr><td>13</td><td>Union Pacific - Second Quarter 2026 Results</td><td>July 23, 2026</td><td><a href="https://www.up.com/press-releases/financial/2q26-earnings-results-260723">https://www.up.com/press-releases/financial/2q26-earnings-results-260723</a></td></tr><tr><td>14</td><td>Boeing - Second Quarter 2026 Deliveries</td><td>July 14, 2026</td><td><a href="https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-Announces-Second-Quarter-Deliveries/default.aspx">https://investors.boeing.com/investors/news/press-release-details/2026/Boeing-Announces-Second-Quarter-Deliveries/default.aspx</a></td></tr><tr><td>15</td><td>John Deere - 3Q Earnings Call Calendar</td><td>August 20, 2026</td><td><a href="https://investor.deere.com/events/event-details/2026/John-Deere---3Q-Earnings-Call/default.aspx">https://investor.deere.com/events/event-details/2026/John-Deere---3Q-Earnings-Call/default.aspx</a></td></tr><tr><td>16</td><td>Federal Reserve - August 2026 Calendar (G.17 release)</td><td>August 2026</td><td><a href="https://www.federalreserve.gov/newsevents/2026-august.htm">https://www.federalreserve.gov/newsevents/2026-august.htm</a></td></tr>
+</table>
+<div class="footer-note">
+<p><b>Data convention:</b> ETF returns are aligned to June 30, 2026 where available for like-for-like comparison. Holdings/valuation snapshots use the most recent primary-source dates cited in each row. Company metrics refer to the latest primary-source quarter captured for that company in this report; Eaton data are Q1 2026 and are labeled accordingly.</p>
+<p class="powered"><b>Powered by Bigdata.com</b> - https://bigdata.com</p>
+<h3>Disclaimer</h3>
+<p>This output is for informational and research-assistance purposes only. It does <b>not</b> constitute investment, legal, tax, accounting, or other professional advice, and it is <b>not</b> a recommendation to buy, sell, or hold any security or instrument or to pursue any strategy. Information may be incomplete, estimated, delayed, or inaccurate. Past performance does not guarantee future results. Verify material facts independently and consult qualified advisors before making decisions.</p>
+</div>
+</section>
+</main>
+</body>
+</html>
