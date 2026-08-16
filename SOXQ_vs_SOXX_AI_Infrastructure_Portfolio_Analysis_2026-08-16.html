@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SOXQ vs SOXX and AI Infrastructure ETF Portfolio Analysis - August 16, 2026</title>
+<style>
+  @page { size: Letter; margin: 0.48in 0.52in 0.55in; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#eef2f6; color:#172033; font-family: Arial, Helvetica, sans-serif; line-height:1.45; font-size:13px; }
+  .report { width:100%; max-width:980px; margin:0 auto; background:#fff; }
+  .cover { min-height:9.35in; padding:0.68in 0.65in 0.55in; position:relative; background:linear-gradient(135deg,#0b1734 0%,#112956 65%,#173f70 100%); color:white; page-break-after:always; }
+  .eyebrow { font-size:11px; font-weight:700; letter-spacing:1.7px; text-transform:uppercase; color:#9bc4ff; }
+  h1 { font-size:34px; line-height:1.08; margin:18px 0 16px; letter-spacing:-0.6px; }
+  .subtitle { font-size:17px; line-height:1.42; max-width:760px; color:#e2eaf7; }
+  .cover-grid { display:grid; grid-template-columns:1.1fr 0.9fr; gap:18px; margin-top:34px; }
+  .cover-card { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.16); border-radius:12px; padding:16px 18px; }
+  .cover-card .label { color:#a9c7ef; text-transform:uppercase; letter-spacing:1px; font-size:10px; font-weight:700; }
+  .cover-card .big { font-size:23px; font-weight:700; margin-top:4px; }
+  .cover-card .small { font-size:12px; color:#dce7f7; margin-top:5px; }
+  .cover-footer { position:absolute; left:0.65in; right:0.65in; bottom:0.5in; border-top:1px solid rgba(255,255,255,.22); padding-top:12px; display:flex; justify-content:space-between; font-size:11px; color:#c7d6ea; }
+  .section { padding:0.34in 0.48in 0.22in; }
+  .pagebreak { page-break-before: always; }
+  h2 { color:#102c56; font-size:22px; margin:0 0 12px; padding-bottom:7px; border-bottom:2px solid #d8e2ef; letter-spacing:-0.2px; }
+  h3 { color:#173f70; font-size:16px; margin:18px 0 8px; }
+  h4 { color:#243b5b; font-size:13px; margin:14px 0 5px; text-transform:uppercase; letter-spacing:.4px; }
+  p { margin:7px 0 10px; }
+  .lead { font-size:14.5px; color:#29384f; }
+  .callout { border-left:5px solid #1f70c1; background:#edf5ff; padding:12px 14px; border-radius:6px; margin:13px 0; }
+  .callout strong { color:#0b4f91; }
+  .warning { border-left-color:#cf7b00; background:#fff5e6; }
+  .warning strong { color:#9a5800; }
+  .green { border-left-color:#2c8b61; background:#edf9f4; }
+  .green strong { color:#176843; }
+  .kpis { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:12px 0 18px; }
+  .kpi { border:1px solid #dbe4ef; border-radius:9px; padding:11px; background:#fbfcfe; }
+  .kpi .v { font-size:21px; font-weight:700; color:#123b6b; }
+  .kpi .l { font-size:10px; line-height:1.3; color:#6b7788; text-transform:uppercase; letter-spacing:.65px; margin-top:3px; }
+  .rank { display:inline-block; min-width:30px; background:#123b6b; color:white; font-weight:700; padding:3px 8px; border-radius:10px; text-align:center; }
+  .rating-add { color:#176843; font-weight:700; }
+  .rating-hold { color:#9a5800; font-weight:700; }
+  .rating-watch { color:#6b4aa4; font-weight:700; }
+  table { width:100%; border-collapse:collapse; margin:9px 0 16px; font-size:11.2px; page-break-inside:auto; }
+  tr { page-break-inside:avoid; page-break-after:auto; }
+  th { background:#173f70; color:white; text-align:left; padding:7px 7px; font-size:10.4px; text-transform:uppercase; letter-spacing:.3px; vertical-align:bottom; }
+  td { padding:7px 7px; border-bottom:1px solid #dde5ef; vertical-align:top; }
+  tbody tr:nth-child(even) { background:#f7f9fc; }
+  .tight td { padding-top:5px; padding-bottom:5px; }
+  .small { font-size:10.5px; color:#667387; }
+  .mini { font-size:9.5px; color:#778397; }
+  .score { font-weight:700; color:#123b6b; }
+  .stack { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:12px 0 18px; }
+  .stack-card { border:1px solid #dbe4ef; border-radius:9px; padding:12px; background:#fff; }
+  .stack-card h4 { margin:0 0 6px; font-size:12px; color:#123b6b; }
+  .stack-card .names { font-weight:700; color:#26364c; }
+  .stack-card .desc { color:#647186; font-size:10.8px; margin-top:4px; }
+  .bars { margin:8px 0 16px; }
+  .barrow { display:grid; grid-template-columns:185px 1fr 62px; gap:9px; align-items:center; margin:8px 0; }
+  .barlabel { font-size:11px; color:#34445c; }
+  .track { height:13px; background:#e7edf5; border-radius:8px; overflow:hidden; }
+  .fill { height:100%; background:linear-gradient(90deg,#1e5f9e,#4f92d6); }
+  .barval { font-size:11px; font-weight:700; text-align:right; color:#173f70; }
+  ul { margin:6px 0 11px 18px; padding:0; }
+  li { margin:4px 0; }
+  .decision { border:1px solid #b9d2ec; border-radius:10px; overflow:hidden; margin:14px 0 18px; }
+  .decision .head { background:#123b6b; color:white; padding:10px 13px; font-weight:700; font-size:14px; }
+  .decision .body { padding:13px 15px; background:#f8fbff; }
+  .action-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:12px 0; }
+  .action { border:1px solid #d9e2ed; border-radius:8px; padding:10px; }
+  .action .ticker { font-size:17px; font-weight:700; color:#123b6b; }
+  .action .role { font-size:10px; text-transform:uppercase; letter-spacing:.5px; color:#718096; }
+  .action .target { font-size:12px; font-weight:700; margin-top:6px; }
+  .action .note { font-size:10.5px; color:#5e6b7c; margin-top:4px; }
+  .source-list { font-size:10.3px; }
+  .source-list li { margin:6px 0; }
+  a { color:#0d5ca6; text-decoration:none; }
+  .footnote { color:#69778b; font-size:9.5px; }
+  .disclaimer { font-size:9.4px; color:#6f7a89; border-top:1px solid #dbe3ed; margin-top:18px; padding-top:10px; }
+  .conf { display:inline-block; padding:2px 7px; border-radius:12px; background:#e8f1fb; color:#153f70; font-weight:700; font-size:10px; }
+  .nowrap { white-space:nowrap; }
+  .pill { display:inline-block; padding:2px 7px; border-radius:11px; background:#edf3fa; color:#365779; font-size:9.7px; font-weight:700; margin-right:3px; }
+  @media print {
+    body { background:#fff; }
+    .report { max-width:none; }
+    a { color:#0b4f91; }
+  }
+</style>
+</head>
+<body>
+<div class="report">
+
+<section class="cover">
+  <div class="eyebrow">Senior Equity Research / Portfolio Strategy</div>
+  <h1>SOXQ vs. SOXX and the AI Infrastructure Stack</h1>
+  <div class="subtitle">A portfolio-aware comparison of semiconductor and AI-stack ETFs, direct equities, and the current AI infrastructure investment cycle.</div>
+
+  <div class="cover-grid">
+    <div class="cover-card">
+      <div class="label">Senior Analyst Recommendation</div>
+      <div class="big">ADD - Semiconductor Infrastructure</div>
+      <div class="small">Prefer SOXQ as the core ETF. Add selective direct exposure to NVDA and the semiconductor-equipment bottleneck. Do not add a second overlapping semiconductor ETF simply for diversification.</div>
+    </div>
+    <div class="cover-card">
+      <div class="label">Conviction</div>
+      <div class="big">8.5 / 10</div>
+      <div class="small">The spending cycle remains fundamentally strong, but 2026 performance has increased valuation and entry-point risk. Implement in stages.</div>
+    </div>
+    <div class="cover-card">
+      <div class="label">Preferred Core ETF</div>
+      <div class="big">SOXQ</div>
+      <div class="small">Best combination of cost, broad semiconductor-chain exposure, and fit with the existing portfolio.</div>
+    </div>
+    <div class="cover-card">
+      <div class="label">Portfolio Lens</div>
+      <div class="big">Fill the bottleneck gap</div>
+      <div class="small">The portfolio already owns hyperscalers and AVGO. Incremental capital should focus on accelerators, foundry, lithography, and equipment rather than another broad AI wrapper.</div>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <span>Research date: August 16, 2026</span>
+    <span>Market / fund data through August 14, 2026 where available</span>
+  </div>
+</section>
+
+<section class="section">
+<h2>Executive Summary</h2>
+<p class="lead"><strong>Recommendation:</strong> maintain an overweight bias to AI infrastructure, but express the next increment of exposure through the semiconductor production chain rather than through another broad technology or AI thematic ETF. For this portfolio, <strong>SOXQ is the preferred core semiconductor ETF</strong>; SOXX is a high-quality substitute with superior institutional liquidity but a higher fee, while SMH and SMHX add more concentration in names the portfolio already owns or can own directly.</p>
+
+<div class="decision">
+  <div class="head">Portfolio Manager Decision</div>
+  <div class="body">
+    <strong>1. Raise SOXQ from roughly 0.13% to 1.25%-1.50% of portfolio value.</strong> SOXQ is inexpensive at 0.19%, tracks 30 large U.S.-listed semiconductor securities, and currently provides meaningful exposure to NVDA, AVGO, MU, AMAT, KLAC, ASML, AMD, TSM and LRCX.<br><br>
+    <strong>2. Initiate a modest direct NVDA position of approximately 0.50%-0.75%.</strong> Broad funds already create some indirect exposure, but there is no direct NVDA holding in the accessible portfolio export. NVIDIA remains the highest-quality pure expression of accelerator compute and AI networking, with Data Center revenue up 92% year over year in fiscal Q1 2027.<br><br>
+    <strong>3. Add a 0.35%-0.50% semiconductor-equipment position, preferably ASML.</strong> The portfolio has substantial demand-side exposure through AMZN, MSFT, GOOG and META, but little direct exposure to the lithography/equipment bottleneck. ASML's commentary that chip demand is outpacing supply and customers are accelerating capacity plans is precisely the missing layer.<br><br>
+    <strong>4. Hold AVGO at its existing ~2.67% portfolio weight; do not add aggressively.</strong> The position is already large enough to capture custom accelerator and networking upside. Broadcom's AI semiconductor revenue grew 143% year over year in fiscal Q2 and management guided to more than 200% growth in fiscal Q3, but the portfolio does not need additional concentration in the same factor.<br><br>
+    <strong>5. Do not own SOXQ and SOXX together.</strong> Their economic exposure is highly overlapping. Select one. The small fee advantage and better fit make SOXQ the preferred long-term holding; choose SOXX instead only if trading liquidity, options depth, or institutional execution is a priority.
+  </div>
+</div>
+
+<div class="kpis">
+  <div class="kpi"><div class="v">$1.684M*</div><div class="l">Accessible portfolio market value</div></div>
+  <div class="kpi"><div class="v">4.22%</div><div class="l">Direct semiconductor securities / ETF sleeve</div></div>
+  <div class="kpi"><div class="v">16.24%</div><div class="l">AMZN + GOOG + MSFT + META</div></div>
+  <div class="kpi"><div class="v">4.71%</div><div class="l">GEV + GRID + SO AI-adjacent power/grid sleeve</div></div>
+</div>
+<p class="footnote">* Portfolio baseline used for calculations: <strong>retirement-portfolio-23.xlsx</strong>, the newest export accessible in this execution context. Project history indicates retirement-portfolio-24.xlsx was subsequently uploaded, but that file is not currently accessible here. Recommendations should be refreshed against 24 if its holdings materially differ.</p>
+
+<div class="callout green"><strong>Bottom line:</strong> the portfolio already owns the customers buying AI infrastructure and already owns one of the strongest custom-silicon/networking beneficiaries (AVGO). The marginal dollar should move one layer deeper into the physical semiconductor supply chain - compute, foundry and equipment - while avoiding duplicate ETF exposure.</div>
+</section>
+
+<section class="section pagebreak">
+<h2>1. The Current AI Infrastructure Investment Cycle</h2>
+<p>The fundamental signal remains strong: the largest cloud and AI platforms are still increasing infrastructure commitments, semiconductor suppliers continue to report unusually high growth, and leading-edge capacity remains constrained. The cycle is no longer just a narrative about generative AI adoption; it is now visible in capex, accelerator shipments, networking demand, foundry utilization, memory, and equipment orders.</p>
+
+<div class="stack">
+  <div class="stack-card"><h4>Compute & Accelerators</h4><div class="names">NVDA, AMD, AVGO</div><div class="desc">GPUs, custom accelerators and high-speed networking capture the first-order compute buildout.</div></div>
+  <div class="stack-card"><h4>Foundry & Manufacturing</h4><div class="names">TSM, INTC</div><div class="desc">Advanced-node capacity converts accelerator designs into physical chips. TSM remains the critical independent foundry.</div></div>
+  <div class="stack-card"><h4>Lithography & Equipment</h4><div class="names">ASML, AMAT, LRCX, KLAC</div><div class="desc">Tools required to add leading-edge logic, memory and advanced-packaging capacity.</div></div>
+  <div class="stack-card"><h4>Memory & Interconnect</h4><div class="names">MU, SK Hynix, MRVL</div><div class="desc">HBM, storage, optical and data-center connectivity become more important as inference scales.</div></div>
+  <div class="stack-card"><h4>Hyperscaler Demand</h4><div class="names">MSFT, AMZN, GOOG, META</div><div class="desc">These companies finance the buildout and determine the pace of accelerator and data-center deployment.</div></div>
+  <div class="stack-card"><h4>Power, Cooling & Grid</h4><div class="names">GEV, VRT, ETN, utilities</div><div class="desc">Power availability, cooling and grid interconnection increasingly constrain deployment timelines.</div></div>
+</div>
+
+<h3>Evidence that the cycle remains intact</h3>
+<table>
+<thead><tr><th>Signal</th><th>Latest evidence</th><th>Investment read-through</th></tr></thead>
+<tbody>
+<tr><td><strong>Microsoft capex</strong></td><td>FY26 Q3 capital expenditures were $31.9B; Microsoft expects more than $40B in FY26 Q4 and roughly $190B for calendar 2026. Management said it expects to remain capacity constrained through 2026.</td><td>Demand remains ahead of available compute capacity. This supports GPUs/CPUs, networking, foundry and equipment.</td></tr>
+<tr><td><strong>Amazon infrastructure</strong></td><td>Q1 2026 AWS sales grew 28% to $37.6B. Trailing-12-month property and equipment purchases increased by $59.3B, primarily reflecting AI investment. Amazon's custom-chip business exceeded a $20B annual revenue run rate.</td><td>The cycle is broadening beyond merchant GPUs to custom silicon, creating winners in foundry, networking and packaging as well as accelerator design.</td></tr>
+<tr><td><strong>NVIDIA demand</strong></td><td>Fiscal Q1 2027 revenue reached $81.6B (+85% Y/Y) and Data Center revenue $75.2B (+92%). Data Center networking revenue rose 199% Y/Y. Q2 revenue guidance was $91B +/-2%.</td><td>Accelerator and networking demand remains exceptional; NVDA is still the clearest first-order beneficiary.</td></tr>
+<tr><td><strong>Broadcom custom AI</strong></td><td>Fiscal Q2 AI semiconductor revenue was $10.8B (+143% Y/Y). Broadcom expects Q3 AI semiconductor revenue of $16B, more than +200% Y/Y.</td><td>Custom accelerators and AI networking are becoming a second major compute architecture alongside NVIDIA GPUs.</td></tr>
+<tr><td><strong>TSMC foundry</strong></td><td>Q2 2026 revenue was $40.2B; Q3 guidance is $44.6B-$45.8B with a 65%-67% gross-margin range.</td><td>Advanced-node economics remain exceptionally strong, consistent with tight leading-edge supply and strong AI mix.</td></tr>
+<tr><td><strong>ASML capacity</strong></td><td>ASML raised 2026 sales expectations to EUR36B-EUR40B and said AI infrastructure investment is solidifying semiconductor growth, chip demand is outpacing supply, and customers are accelerating capacity plans.</td><td>Equipment is a differentiated way to own the multi-year capacity response rather than only the current accelerator winners.</td></tr>
+</tbody>
+</table>
+
+<div class="callout warning"><strong>Cycle risk is now valuation and sequencing, not lack of demand.</strong> Semiconductor equities have already had an extraordinary 2026 run; SOXX reported an 83% YTD NAV return through August 13. That increases the probability of sharp rotations even if the capex thesis remains intact. New exposure should therefore be staged rather than chased after momentum spikes.</div>
+</section>
+
+<section class="section pagebreak">
+<h2>2. Current Portfolio Positioning</h2>
+<p>The accessible retirement-portfolio-23.xlsx export shows a portfolio that already has substantial AI demand-side exposure. The largest direct AI-related positions are not semiconductor ETFs; they are the hyperscalers and application/platform companies that are funding and monetizing AI infrastructure.</p>
+
+<div class="bars">
+  <div class="barrow"><div class="barlabel">Mega-cap tech / platforms incl. AAPL</div><div class="track"><div class="fill" style="width:89.7%"></div></div><div class="barval">22.42%</div></div>
+  <div class="barrow"><div class="barlabel">Hyperscalers: AMZN, GOOG, MSFT, META</div><div class="track"><div class="fill" style="width:65.0%"></div></div><div class="barval">16.24%</div></div>
+  <div class="barrow"><div class="barlabel">AI-adjacent power/grid: GEV, GRID, SO</div><div class="track"><div class="fill" style="width:18.9%"></div></div><div class="barval">4.71%</div></div>
+  <div class="barrow"><div class="barlabel">Direct semiconductor securities / ETF</div><div class="track"><div class="fill" style="width:16.9%"></div></div><div class="barval">4.22%</div></div>
+</div>
+<p class="mini">Exposure buckets overlap conceptually and should not be added together. The direct-semiconductor sleeve is measured by security-level allocation to AVGO, TSM, QCOM and SOXQ and does not perform look-through to broad index funds.</p>
+
+<h3>Key existing holdings relevant to the AI stack</h3>
+<table class="tight">
+<thead><tr><th>Ticker</th><th>Portfolio weight</th><th>Market value</th><th>AI-stack role</th><th>Portfolio implication</th></tr></thead>
+<tbody>
+<tr><td><strong>AMZN</strong></td><td>8.13%</td><td>$136.8K</td><td>Hyperscaler; AWS; Trainium / Graviton custom silicon</td><td>Already a major demand-side AI position. Avoid broad AI ETFs that simply add more AMZN exposure.</td></tr>
+<tr><td><strong>AAPL</strong></td><td>6.18%</td><td>$104.0K</td><td>Device ecosystem / edge AI</td><td>Large technology exposure, but not a direct data-center infrastructure position.</td></tr>
+<tr><td><strong>GOOG</strong></td><td>2.95%</td><td>$49.7K</td><td>Hyperscaler; TPU custom silicon</td><td>Provides in-house AI accelerator and cloud exposure.</td></tr>
+<tr><td><strong>MSFT</strong></td><td>2.94%</td><td>$49.6K</td><td>Azure; largest AI infrastructure capex program</td><td>Already captures demand growth and monetization.</td></tr>
+<tr><td><strong>AVGO</strong></td><td>2.67%</td><td>$44.9K</td><td>Custom AI accelerators + networking</td><td>Excellent exposure; position is already appropriately meaningful.</td></tr>
+<tr><td><strong>META</strong></td><td>2.21%</td><td>$37.3K</td><td>Large AI capex buyer / model platform</td><td>Another large demand-side exposure.</td></tr>
+<tr><td><strong>GEV</strong></td><td>2.01%</td><td>$33.8K</td><td>Grid / generation / electrification</td><td>Provides second-order AI power exposure.</td></tr>
+<tr><td><strong>QCOM</strong></td><td>1.02%</td><td>$17.2K</td><td>Edge compute / connectivity</td><td>Semiconductor exposure, but less directly tied to hyperscale accelerator spend than NVDA/AVGO/TSM.</td></tr>
+<tr><td><strong>GRID</strong></td><td>0.59%</td><td>$10.0K</td><td>Grid infrastructure ETF</td><td>Additional AI power bottleneck exposure.</td></tr>
+<tr><td><strong>TSM</strong></td><td>0.41%</td><td>$6.8K</td><td>Leading-edge foundry</td><td>Strategically valuable but geopolitically concentrated; current position is small.</td></tr>
+<tr><td><strong>SOXQ</strong></td><td>0.13%</td><td>$2.1K</td><td>Diversified semiconductor ETF</td><td>Too small to materially change portfolio behavior. Best candidate for scaling.</td></tr>
+</tbody>
+</table>
+
+<div class="callout"><strong>Portfolio gap:</strong> there is no material direct position in NVDA, ASML, AMAT, LRCX or KLAC in the accessible export. Broad-market funds provide some indirect exposure, but the portfolio's dedicated AI sleeve is skewed toward the companies <em>buying</em> compute and toward AVGO, not toward the manufacturing tools needed to create new capacity.</div>
+</section>
+
+<section class="section pagebreak">
+<h2>3. ETF Comparison - SOXQ, SOXX and the AI/Chip Alternatives</h2>
+<table>
+<thead><tr><th>ETF</th><th>Structure / role</th><th>Fee</th><th>Holdings / concentration</th><th>Best use</th><th>Portfolio fit</th></tr></thead>
+<tbody>
+<tr><td><strong>SOXQ</strong><br><span class="rating-add">ADD</span></td><td>PHLX Semiconductor Sector Index; 30 large U.S.-listed semiconductor securities; quarterly rebalance.</td><td><strong>0.19%</strong></td><td>Recent top weights included NVDA ~12.9%, AVGO ~9.4%, MU ~8.3%, then AMAT/KLAC/ASML/AMD/TSM/LRCX/MRVL. Top 10 ~62%.</td><td>Low-cost core semiconductor beta with meaningful exposure across design, foundry and equipment.</td><td><span class="score">#1 - 8.8/10</span><br>Best complement to current portfolio.</td></tr>
+<tr><td><strong>SOXX</strong><br><span class="rating-hold">HOLD / SUBSTITUTE</span></td><td>NYSE Semiconductor Index; 30 holdings; very large and liquid.</td><td><strong>0.33%</strong></td><td>Top holdings include NVDA, AMD, AVGO, MU, INTC, AMAT, KLAC, TSM, TXN and ADI; largest weights around the high-single digits.</td><td>Institutional trading, options, tight spreads and diversified semiconductor exposure.</td><td><span class="score">#2 - 8.3/10</span><br>Excellent fund, but no reason to own alongside SOXQ.</td></tr>
+<tr><td><strong>SMH</strong><br><span class="rating-watch">WATCH</span></td><td>MarketVector U.S. Listed Semiconductor 25 Index; concentrated in industry leaders.</td><td><strong>0.35%</strong></td><td>26 holdings. Late-June weights: NVDA ~18.5%, TSM ~9.1%, AVGO ~5.7%, plus MU/AMD/INTC/AMAT/LRCX/ASML/KLAC.</td><td>Maximum participation in dominant AI semiconductor leaders.</td><td><span class="score">#3 - 7.6/10</span><br>Strong product, but too concentrated in names already owned / targeted.</td></tr>
+<tr><td><strong>XSD</strong><br><span class="rating-hold">HOLD / SATELLITE</span></td><td>S&P Semiconductor Select Industry Index; broad, near-equal-weight approach.</td><td><strong>0.35%</strong></td><td>48 holdings; top positions only ~2.6%-3.1% each in late July.</td><td>Breadth, smaller-company participation and reduced mega-cap concentration.</td><td><span class="score">#4 - 7.2/10</span><br>Good diversifier, but weaker pure AI-leader capture.</td></tr>
+<tr><td><strong>SMHX</strong><br><span class="rating-watch">WATCH</span></td><td>Fabless semiconductor designers; excludes manufacturing/equipment bottlenecks.</td><td><strong>0.35%</strong></td><td>23 holdings; NVDA ~19%, AVGO ~14.6% in late June, then AMD/MRVL/ALAB/ARM/QCOM.</td><td>High-conviction exposure to chip design/IP without capital-intensive fabs.</td><td><span class="score">#5 - 6.7/10</span><br>Poor fit for this portfolio because AVGO is already large and the missing exposure is manufacturing/equipment.</td></tr>
+<tr><td><strong>BAI</strong><br><span class="rating-watch">WATCH</span></td><td>Actively managed full AI tech stack: infrastructure, intelligence, apps/services.</td><td><strong>0.55% net</strong><br>0.65% gross</td><td>48 holdings as of Aug. 13; ~88.8% information technology; global exposure including Taiwan and Korea.</td><td>One-ticket active AI allocation when the investor lacks existing technology exposure.</td><td><span class="score">#6 - 6.3/10</span><br>Interesting fund, but duplicative versus current AMZN/MSFT/GOOG/META/AVGO exposure.</td></tr>
+<tr><td><strong>AIQ</strong><br><span class="rating-watch">WATCH</span></td><td>Broad global AI & big data thematic ETF; software + cloud + hardware.</td><td><strong>0.68%</strong></td><td>Top holdings Aug. 14 included PLTR, MSFT, ORCL, SpaceX private exposure, NFLX, AMZN, GOOGL, NVDA, TSLA and Samsung.</td><td>Broad AI theme across software, platforms and hardware.</td><td><span class="score">#7 - 5.8/10</span><br>Too broad and fee-heavy relative to the portfolio's specific gap.</td></tr>
+</tbody>
+</table>
+
+<h3>Why SOXQ wins for this portfolio</h3>
+<ul>
+<li><strong>Lowest fee among the principal diversified semiconductor choices.</strong> At 0.19%, SOXQ costs materially less than SOXX, SMH, XSD and the broad AI thematic products.</li>
+<li><strong>Balanced AI hardware exposure.</strong> It owns NVDA and AVGO, but also gives meaningful weight to MU, AMAT, KLAC, ASML, TSM and LRCX - precisely the manufacturing and equipment layer missing from the current portfolio.</li>
+<li><strong>Less concentration than SMH / SMHX.</strong> The portfolio already has a 2.67% AVGO position. Adding a fund with 15%-20% NVDA and another large AVGO allocation raises single-factor risk faster than necessary.</li>
+<li><strong>More targeted than AIQ / BAI.</strong> The portfolio already has 16.24% in AMZN, GOOG, MSFT and META. Paying a higher thematic fee to rebuy those companies is inefficient.</li>
+<li><strong>Liquidity is sufficient for a long-horizon retirement portfolio.</strong> SOXX's superior scale and options market matter for institutions and tactical traders, but the current portfolio does not require SOXX's roughly $43.5B asset base or ~10M-share 30-day average volume.</li>
+</ul>
+
+<h3>SOXQ vs. SOXX - the direct choice</h3>
+<table class="tight">
+<thead><tr><th>Decision factor</th><th>SOXQ</th><th>SOXX</th><th>Winner</th></tr></thead>
+<tbody>
+<tr><td>Expense ratio</td><td>0.19%</td><td>0.33%</td><td><strong>SOXQ</strong></td></tr>
+<tr><td>Holdings breadth</td><td>~30-32 securities</td><td>30 securities</td><td>Comparable</td></tr>
+<tr><td>AI leader exposure</td><td>Higher NVDA/AVGO concentration in recent holdings</td><td>More evenly spread among top positions</td><td>Depends on risk preference</td></tr>
+<tr><td>Equipment exposure</td><td>Strong AMAT/KLAC/ASML/LRCX representation</td><td>Strong equipment representation</td><td>Comparable</td></tr>
+<tr><td>Liquidity / options</td><td>Good for normal portfolio implementation</td><td>Exceptional institutional liquidity</td><td><strong>SOXX</strong></td></tr>
+<tr><td>Fit with this portfolio</td><td>Low-cost way to broaden beyond AVGO/TSM/QCOM</td><td>Same economic job at higher carrying cost</td><td><strong>SOXQ</strong></td></tr>
+</tbody>
+</table>
+<div class="callout green"><strong>Recommendation:</strong> retain and scale SOXQ. Do not add SOXX unless the intention is to replace SOXQ. Owning both creates the appearance of diversification without materially changing the semiconductor factor exposure.</div>
+</section>
+
+<section class="section pagebreak">
+<h2>4. Individual Equity Opportunities Across the AI Stack</h2>
+<p>ETFs reduce company-specific risk, but the portfolio can improve its exposure map by selectively owning the strongest bottlenecks directly. The objective is not to own every AI winner; it is to combine a diversified semiconductor core with a few high-conviction companies whose economics are not already represented at scale.</p>
+
+<table>
+<thead><tr><th>Company</th><th>AI-stack role</th><th>Current evidence</th><th>Portfolio stance</th><th>Conviction</th></tr></thead>
+<tbody>
+<tr><td><strong>NVDA</strong></td><td>Accelerator compute + networking + systems/software ecosystem</td><td>Fiscal Q1 2027 Data Center revenue $75.2B, +92% Y/Y; networking +199%; Q2 revenue guide $91B +/-2%.</td><td><span class="rating-add">ADD</span><br>Initiate 0.50%-0.75% direct. Use SOXQ for additional diversified NVDA exposure.</td><td><span class="conf">9/10</span></td></tr>
+<tr><td><strong>AVGO</strong></td><td>Custom AI accelerators + Ethernet/networking + infrastructure software</td><td>Q2 AI semiconductor revenue $10.8B, +143% Y/Y; Q3 AI semiconductor guide $16B, >200% Y/Y.</td><td><span class="rating-hold">HOLD / FULL POSITION</span><br>Existing 2.67% weight is already substantial. Do not chase.</td><td><span class="conf">9/10</span></td></tr>
+<tr><td><strong>TSM</strong></td><td>Leading-edge foundry / advanced packaging bottleneck</td><td>Q2 revenue $40.2B; Q3 guidance $44.6B-$45.8B; Q2 gross margin 67.7%.</td><td><span class="rating-add">ADD SELECTIVELY</span><br>Keep direct weight roughly 0.40%-0.75%. Geopolitical risk caps position size.</td><td><span class="conf">8.5/10</span></td></tr>
+<tr><td><strong>ASML</strong></td><td>EUV / High-NA lithography monopoly-like bottleneck</td><td>Management says chip demand is outpacing supply and customers are accelerating capacity expansion; 2026 sales guide EUR36B-EUR40B.</td><td><span class="rating-add">ADD</span><br>Preferred new equipment position, 0.35%-0.50% initial target.</td><td><span class="conf">8.5/10</span></td></tr>
+<tr><td><strong>AMAT</strong></td><td>Broad wafer-fab equipment + advanced packaging</td><td>Benefits from logic, DRAM and packaging intensity as capacity expands.</td><td><span class="rating-watch">WATCH / ALTERNATIVE</span><br>Use instead of ASML if a broader, U.S.-listed equipment exposure is preferred.</td><td><span class="conf">7.5/10</span></td></tr>
+<tr><td><strong>LRCX / KLAC</strong></td><td>Etch/deposition and process control</td><td>Structural content growth as process complexity and leading-edge layers rise.</td><td><span class="rating-watch">WATCH</span><br>Excellent businesses, but SOXQ already provides meaningful exposure.</td><td><span class="conf">7.5/10</span></td></tr>
+<tr><td><strong>MU</strong></td><td>HBM / DRAM memory</td><td>AI servers increase high-bandwidth-memory content dramatically, but memory remains cyclical.</td><td><span class="rating-watch">WATCH</span><br>High-beta satellite only; ETF exposure may be preferable after the 2026 run.</td><td><span class="conf">7/10</span></td></tr>
+<tr><td><strong>AMD</strong></td><td>GPU alternative + EPYC CPU + accelerator ecosystem</td><td>Q1 Data Center revenue $5.8B, +57% Y/Y, driven by EPYC and Instinct MI350 demand.</td><td><span class="rating-watch">WATCH / SMALL ADD</span><br>Second-source compute optionality, but execution gap versus NVDA remains meaningful.</td><td><span class="conf">7/10</span></td></tr>
+<tr><td><strong>VRT / ANET</strong></td><td>Cooling/power and high-speed data-center networking</td><td>Second-order infrastructure beneficiaries as rack density and cluster scale rise.</td><td><span class="rating-watch">WATCH</span><br>Not a priority now because the portfolio already owns GEV, GRID and SO and can get networking through AVGO/NVDA.</td><td><span class="conf">7/10</span></td></tr>
+</tbody>
+</table>
+
+<h3>Preferred direct-equity hierarchy</h3>
+<p><span class="pill">1. NVDA</span> <span class="pill">2. ASML</span> <span class="pill">3. TSM</span> <span class="pill">4. AVGO - hold, no add</span> <span class="pill">5. AMAT / LRCX / KLAC</span> <span class="pill">6. MU / AMD satellites</span></p>
+<p>The hierarchy is portfolio-specific. In a new portfolio, AVGO might rank near the top for incremental capital; here it already has a 2.67% weight, so the next dollar is better spent diversifying the source of AI-infrastructure earnings.</p>
+</section>
+
+<section class="section pagebreak">
+<h2>5. Recommended Portfolio Implementation</h2>
+<p>The accessible portfolio has approximately $43,000 of cash (2.55%), which makes it possible to establish a more complete semiconductor sleeve without immediately funding the move through sales. Because retirement-portfolio-24.xlsx is not accessible in this run, these dollar figures should be treated as sizing guidance tied to the 23 baseline rather than final trade tickets.</p>
+
+<div class="action-grid">
+  <div class="action"><div class="ticker">SOXQ</div><div class="role">Core semiconductor ETF</div><div class="target">Target: 1.25%-1.50%</div><div class="note">Current ~0.13%. Incremental capital roughly $18.9K-$23.1K on the accessible portfolio value.</div></div>
+  <div class="action"><div class="ticker">NVDA</div><div class="role">Direct compute leader</div><div class="target">Target: 0.50%-0.75%</div><div class="note">Approx. $8.4K-$12.6K initial direct position. Broad funds create additional indirect exposure.</div></div>
+  <div class="action"><div class="ticker">ASML</div><div class="role">Equipment bottleneck</div><div class="target">Target: 0.35%-0.50%</div><div class="note">Approx. $5.9K-$8.4K. AMAT is the preferred substitute if ASML-specific export/geopolitical risk is undesirable.</div></div>
+</div>
+
+<table class="tight">
+<thead><tr><th>Holding</th><th>Current accessible weight</th><th>Recommended strategic range</th><th>Action</th></tr></thead>
+<tbody>
+<tr><td>SOXQ</td><td>0.13%</td><td>1.25%-1.50%</td><td class="rating-add">ADD in stages</td></tr>
+<tr><td>NVDA</td><td>No direct holding</td><td>0.50%-0.75%</td><td class="rating-add">INITIATE</td></tr>
+<tr><td>ASML</td><td>No direct holding</td><td>0.35%-0.50%</td><td class="rating-add">INITIATE</td></tr>
+<tr><td>AVGO</td><td>2.67%</td><td>2.25%-3.00%</td><td class="rating-hold">HOLD</td></tr>
+<tr><td>TSM</td><td>0.41%</td><td>0.40%-0.75%</td><td class="rating-hold">HOLD / modest add only</td></tr>
+<tr><td>QCOM</td><td>1.02%</td><td>0.75%-1.25%</td><td class="rating-hold">HOLD</td></tr>
+<tr><td>SOXX / SMH / SMHX</td><td>0%</td><td>0%</td><td class="rating-watch">DO NOT ADD alongside SOXQ</td></tr>
+<tr><td>AIQ / BAI</td><td>0%</td><td>0%</td><td class="rating-watch">NO NEED - broad AI exposure already substantial</td></tr>
+</tbody>
+</table>
+
+<div class="callout"><strong>Capital required:</strong> the low end of the proposed SOXQ + NVDA + ASML targets requires roughly <strong>$33K</strong> of incremental capital; the high end requires roughly <strong>$44K</strong>, based on the accessible $1.684M portfolio value. That is approximately equal to the 2.55% cash balance, but the recommendation is to stage entry rather than deploy the entire cash position at once.</div>
+
+<h3>Implementation discipline</h3>
+<ul>
+<li><strong>Stage entries across catalysts and volatility.</strong> The AI spending thesis is strong, but semiconductor beta is high and recent gains are extreme. Avoid turning a long-duration thesis into a poor short-term entry.</li>
+<li><strong>Use ETF exposure for the cyclicals, direct exposure for the bottlenecks.</strong> Let SOXQ own MU, MRVL, LRCX, KLAC and other cyclical names; reserve direct positions for NVDA and ASML, where the competitive advantage is strongest.</li>
+<li><strong>Do not let AVGO + NVDA become an uncontrolled single-theme concentration.</strong> AVGO is already 2.67%; a 0.50%-0.75% NVDA direct position plus SOXQ is enough to materially increase accelerator exposure.</li>
+<li><strong>Cap TSM direct exposure because geopolitical risk is non-diversifiable.</strong> TSM is a superior company, but its strategic location risk is not captured by ordinary valuation metrics.</li>
+<li><strong>Retain power/grid diversification.</strong> GEV, GRID and SO provide a second-order AI-infrastructure angle that can work even as semiconductor leadership rotates.</li>
+</ul>
+</section>
+
+<section class="section pagebreak">
+<h2>6. Bull, Base and Bear Framework</h2>
+<table>
+<thead><tr><th>Scenario</th><th>What happens</th><th>Likely winners</th><th>Portfolio action</th></tr></thead>
+<tbody>
+<tr><td><strong>Bull - AI capacity shortage persists</strong></td><td>Hyperscaler capex remains elevated, inference demand broadens, custom silicon expands alongside merchant GPUs, and advanced-node / HBM / equipment supply stays tight.</td><td>NVDA, AVGO, TSM, ASML, AMAT/LRCX/KLAC, MU. SOXQ performs strongly.</td><td>Allow SOXQ and direct positions to grow toward upper target bands; do not chase above risk limits.</td></tr>
+<tr><td><strong>Base - spend remains high but normalizes</strong></td><td>Capex remains structurally high, but growth rates decelerate. Market leadership rotates between GPUs, custom accelerators, memory and equipment.</td><td>Diversified semiconductor ETF structure becomes more valuable than concentrated leader funds.</td><td>SOXQ core + limited NVDA/ASML direct exposure is optimal. Rebalance rather than add multiple ETFs.</td></tr>
+<tr><td><strong>Bear - ROI scrutiny / macro or geopolitical shock</strong></td><td>Hyperscalers pause projects, AI monetization lags depreciation, export controls tighten, Taiwan risk rises, or memory / equipment orders roll over.</td><td>Cash, diversified non-tech holdings; within semis, quality balance sheets and lower valuation may hold up better but sector beta remains high.</td><td>Stop adding, cut satellite positions first, retain only strategic core if long-term thesis remains intact.</td></tr>
+</tbody>
+</table>
+
+<h3>Primary risks</h3>
+<ul>
+<li><strong>Capital-intensity / ROI risk:</strong> the market may demand proof that AI revenue can earn adequate returns on the enormous capex base.</li>
+<li><strong>Valuation compression:</strong> strong fundamentals do not prevent large drawdowns when expectations are extreme.</li>
+<li><strong>Export controls:</strong> restrictions can affect NVIDIA's China opportunity and equipment sales by ASML and U.S. tool vendors.</li>
+<li><strong>Taiwan concentration:</strong> advanced foundry production remains strategically concentrated, creating a tail risk to TSM and the entire semiconductor ecosystem.</li>
+<li><strong>Technology substitution:</strong> custom accelerators from hyperscalers and Broadcom partners can take share from merchant GPUs even if total AI compute demand continues to rise.</li>
+<li><strong>Memory / equipment cyclicality:</strong> HBM strength can coexist with oversupply elsewhere; fab equipment spending is historically volatile.</li>
+<li><strong>Portfolio factor concentration:</strong> the portfolio already has more than 22% in mega-cap technology/platform holdings before look-through to funds. AI exposure should be added with discipline.</li>
+</ul>
+
+<h3>Thesis-break conditions</h3>
+<div class="callout warning"><strong>Reassess the overweight if two or more occur:</strong> (1) major hyperscalers guide to a sustained sequential capex decline unrelated to project timing; (2) NVIDIA Data Center growth stalls while inventory/channel metrics weaken; (3) TSM advanced-node utilization or gross margin deteriorates sharply; (4) ASML / major equipment vendors report broad order cancellations rather than timing shifts; (5) AI revenue growth fails to offset depreciation and power costs across hyperscalers; or (6) geopolitical/export-control risk materially impairs access to Taiwan or China markets.</div>
+</section>
+
+<section class="section pagebreak">
+<h2>7. Monitoring Checkpoints</h2>
+<table class="tight">
+<thead><tr><th>Checkpoint</th><th>What to watch</th><th>Why it matters</th></tr></thead>
+<tbody>
+<tr><td>NVIDIA next earnings</td><td>Blackwell/Rubin demand, networking growth, gross margin, China assumptions, supply constraints</td><td>Most direct read on accelerator demand and sector expectations.</td></tr>
+<tr><td>Broadcom next earnings</td><td>Progress toward $16B Q3 AI semiconductor revenue; new custom accelerator customers</td><td>Confirms whether custom silicon is broadening the compute market rather than simply redistributing share.</td></tr>
+<tr><td>TSMC monthly revenue + Q3 results</td><td>Advanced-node mix, AI/HPC growth, gross margin, CoWoS / advanced packaging capacity</td><td>High-frequency read on semiconductor demand across multiple customers.</td></tr>
+<tr><td>ASML / AMAT / LRCX / KLAC orders</td><td>Bookings, backlog, leading-edge logic, DRAM and packaging intensity</td><td>Tests whether capacity expansion is becoming a multi-year equipment cycle.</td></tr>
+<tr><td>MSFT / AMZN / META / GOOG capex</td><td>Absolute capex, capacity constraints, depreciation, AI revenue monetization</td><td>Demand-side funding source for the entire semiconductor stack.</td></tr>
+<tr><td>Power / data-center buildout</td><td>Interconnection delays, power purchase agreements, cooling density</td><td>Physical constraints can delay chip deployments even when demand is strong.</td></tr>
+</tbody>
+</table>
+
+<h2 style="margin-top:24px">Senior Analyst Conclusion</h2>
+<p class="lead"><strong>The investment cycle is real, powerful and still expanding, but this portfolio should not respond by simply buying more "AI."</strong> It already owns the hyperscalers, already owns AVGO at a meaningful weight, and already has a power/grid sleeve. The missing economic exposure is the semiconductor capacity chain that converts AI demand into physical compute.</p>
+<p><strong>SOXQ is the preferred ETF because it solves that problem efficiently.</strong> It provides broad access to NVDA, AVGO, MU, AMAT, KLAC, ASML, AMD, TSM and LRCX at a 0.19% expense ratio. SOXX is equally credible as a product, and arguably superior for tactical/institutional execution, but its role is duplicative and its fee is higher. SMH and SMHX are excellent vehicles for investors who specifically want concentrated leader exposure, but they are less appropriate here because AVGO is already large and the portfolio's main gap is equipment/manufacturing rather than fabless design.</p>
+<p><strong>Recommended action:</strong> increase SOXQ to 1.25%-1.50%, establish NVDA at 0.50%-0.75%, initiate ASML at 0.35%-0.50%, maintain AVGO at its current weight, keep TSM below roughly 0.75% direct because of geopolitical risk, and avoid opening overlapping positions in SOXX, SMH, SMHX, AIQ or BAI unless one is explicitly replacing SOXQ or serving a different mandate.</p>
+<div class="callout green"><strong>Formal portfolio recommendation: ADD semiconductor infrastructure - Conviction 8.5/10.</strong> Prefer diversified core exposure plus selective bottleneck equities. Maintain discipline on position size and entry point after an exceptional 2026 sector rally.</div>
+</section>
+
+<section class="section pagebreak">
+<h2>Sources</h2>
+<ol class="source-list">
+<li><strong>Portfolio baseline:</strong> retirement-portfolio-23.xlsx, Export sheet, accessible in the current project execution context. Project history indicates a later retirement-portfolio-24.xlsx upload, which is not accessible to this run.</li>
+<li><a href="https://www.invesco.com/us/en/financial-products/etfs/invesco-phlx-semiconductor-etf.html">Invesco - PHLX Semiconductor ETF (SOXQ)</a> - index objective, 30-largest U.S.-listed semiconductor methodology and rebalance schedule.</li>
+<li><a href="https://www.schwab.wallst.com/Prospect/Research/etfs/portfolio.asp?symbol=soxq">Charles Schwab / Wall Street on Demand - SOXQ portfolio</a> - recent holdings, concentration and expense ratio.</li>
+<li><a href="https://www.ishares.com/us/products/239705/ishares-semiconductor-etf">iShares - Semiconductor ETF (SOXX)</a> - expense ratio, assets, liquidity, holdings count, valuation/risk characteristics and YTD performance.</li>
+<li><a href="https://www.vaneck.com/us/en/investments/semiconductor-etf-smh/">VanEck - Semiconductor ETF (SMH)</a> - fund structure, expense ratio and holdings.</li>
+<li><a href="https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-semiconductor-etf-xsd">State Street - SPDR S&P Semiconductor ETF (XSD)</a> - holdings, fee and index structure.</li>
+<li><a href="https://www.vaneck.com/us/en/investments/fabless-semiconductor-etf-smhx/">VanEck - Fabless Semiconductor ETF (SMHX)</a> - fabless mandate, holdings and fee.</li>
+<li><a href="https://www.ishares.com/us/products/339081/ishares-a-i-innovation-and-tech-active-etf">iShares - A.I. Innovation and Tech Active ETF (BAI)</a> - AI-stack mandate, fee, asset base, sector/geography exposures.</li>
+<li><a href="https://www.globalxetfs.com/funds/aiq">Global X - Artificial Intelligence & Technology ETF (AIQ)</a> - broad AI mandate, fee, holdings and sector exposure.</li>
+<li><a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx">NVIDIA - Fiscal Q1 2027 results, May 20, 2026</a>.</li>
+<li><a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-second-quarter-fiscal-year-2026-financial">Broadcom - Fiscal Q2 2026 results, June 3, 2026</a>.</li>
+<li><a href="https://investor.tsmc.com/english/quarterly-results/2026/q2">TSMC - Q2 2026 quarterly results</a>.</li>
+<li><a href="https://www.asml.com/en/news/press-releases/2026/q1-2026-financial-results">ASML - Q1 2026 financial results, April 15, 2026</a>.</li>
+<li><a href="https://www.microsoft.com/en-us/investor/events/fy-2026/earnings-fy-2026-q3">Microsoft - FY26 Q3 earnings call, April 29, 2026</a>.</li>
+<li><a href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-First-Quarter-Results/">Amazon - Q1 2026 results, April 29, 2026</a>.</li>
+<li><a href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-First-Quarter-2026-Results/default.aspx">Meta - Q1 2026 results</a> and <a href="https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Announces-New-Strategic-Venture-with-BlackRock-to-Develop-Data-Center-in-El-Paso/default.aspx">July 28, 2026 El Paso data-center venture</a>.</li>
+<li><a href="https://ir.amd.com/financial-information/sec-filings/content/0000002488-26-000076/amd-20260328.htm">AMD - Q1 2026 Form 10-Q</a>.</li>
+</ol>
+
+<div class="disclaimer"><strong>Research disclaimer:</strong> This report is an analytical portfolio-management document prepared from the cited public information and the accessible portfolio export. It is not individualized tax, legal or fiduciary advice and does not guarantee future results. ETF holdings and weights change over time. Market data cited from fund sponsors is stated as of the dates shown by those sponsors. The allocation recommendations are strategic ranges, not market orders, and should be reconciled to the newest portfolio export before execution.</div>
+</section>
+
+</div>
+</body>
+</html>
