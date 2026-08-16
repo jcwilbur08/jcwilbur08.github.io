@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VIS vs GRID - Industrial Cycle & Portfolio Allocation Analysis</title>
+<style>
+:root{--navy:#0b1f33;--blue:#174f7a;--teal:#0f766e;--green:#11734b;--amber:#a16207;--red:#a32727;--ink:#173047;--muted:#627383;--line:#d9e2e9;--wash:#f4f7f9;--light:#eef4f8;--gold:#b98731}
+*{box-sizing:border-box} html,body{margin:0;padding:0;background:#eaf0f4;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.45}
+.report{max-width:1040px;margin:28px auto;background:#fff;box-shadow:0 12px 45px #10243b18}
+.cover{min-height:720px;padding:62px 68px 48px;background:linear-gradient(135deg,#071a2d,#103653 62%,#174f7a);color:white;position:relative}
+.eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#9ec5df;font-weight:700}.cover h1{font:600 43px/1.08 Georgia,serif;margin:14px 0 12px}.subtitle{max-width:820px;font-size:17px;color:#dce9f2}.verdict{margin-top:34px;border-left:5px solid #48b59c;background:#ffffff12;padding:16px 18px;font-size:21px;font-weight:700}.meta{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:34px}.metric{background:#ffffff10;border:1px solid #ffffff26;padding:14px;border-radius:8px}.metric .k{font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:#b7d1e3}.metric .v{font-size:22px;font-weight:800;margin:4px 0}.metric .s{font-size:10.5px;color:#d2e1eb}.cover-note{position:absolute;left:68px;right:68px;bottom:42px;font-size:10.5px;color:#b9cedc;border-top:1px solid #ffffff27;padding-top:12px}
+section{padding:32px 56px;border-bottom:1px solid var(--line)}.section-kicker{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--teal);font-weight:800;margin-bottom:5px}h2{font:600 27px/1.15 Georgia,serif;color:var(--navy);margin:0 0 14px}h3{font-size:14px;color:var(--navy);margin:19px 0 7px}.lead{font-size:16px;line-height:1.55;color:#243e55}.callout{border-left:4px solid var(--blue);background:#eef5fa;padding:14px 16px;margin:14px 0}.callout.good{border-color:var(--green);background:#edf8f3}.callout.warn{border-color:var(--amber);background:#fff7e8}.callout.red{border-color:var(--red);background:#fff0f0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{border:1px solid var(--line);border-radius:8px;padding:15px;background:#fff}.card h3{margin-top:0}.tag{display:inline-block;border-radius:999px;padding:3px 8px;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}.tag.good{background:#dff3e8;color:#0d6c46}.tag.warn{background:#fff0cd;color:#8a5b00}.tag.blue{background:#e4eef8;color:#1e537e}.tag.red{background:#f9dfdc;color:#8f2b24}
+table{width:100%;border-collapse:collapse;font-size:11.2px;margin:10px 0 15px}th{background:#edf2f6;color:#536779;text-align:left;font-size:9.5px;text-transform:uppercase;letter-spacing:.04em}th,td{padding:8px 9px;border-bottom:1px solid #e1e8ee;vertical-align:top}td.num,th.num{text-align:right}.strong{font-weight:800;color:var(--navy)}.small{font-size:10.5px;color:var(--muted)}.note{font-size:10px;color:var(--muted)}
+.bar{display:grid;grid-template-columns:165px 1fr 52px;gap:9px;align-items:center;margin:7px 0;font-size:11px}.track{height:10px;background:#e8eef2;border-radius:99px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#174f7a,#2d7aa7)}.fill.teal{background:linear-gradient(90deg,#0f766e,#36a38f)}.fill.gold{background:linear-gradient(90deg,#8a672f,#c69b4a)}
+.action{display:grid;grid-template-columns:95px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid #e6edf2}.action .step{font-weight:800;color:var(--teal);font-size:11px;text-transform:uppercase}.source-list{padding-left:20px;font-size:10.5px;color:#40576a}.source-list li{margin:7px 0}.source-list a{color:var(--blue);word-break:break-all}.disclaimer{font-size:9.5px;color:#6c7d8b;background:#f6f8fa;padding:14px;border-radius:6px}.page-break{break-before:page}.nowrap{white-space:nowrap}footer{padding:20px 56px 28px;background:var(--navy);color:#cbd7df;font-size:10px}
+@media(max-width:760px){.report{margin:0}.cover{padding:38px 24px;min-height:auto}.cover h1{font-size:34px}.meta,.grid2,.grid3{grid-template-columns:1fr}.cover-note{position:static;margin-top:35px}.cover{padding-bottom:30px}section{padding:26px 22px}.bar{grid-template-columns:115px 1fr 48px}.table-wrap{overflow:auto}}
+@media print{body{background:white}.report{margin:0;max-width:none;box-shadow:none}.cover{min-height:9.4in}.cover,section{break-inside:auto}.card,.callout,table,.action{break-inside:avoid}section{padding:24px 38px}.cover{padding:48px 50px}.cover-note{left:50px;right:50px}.page-break{break-before:page}a{color:inherit;text-decoration:none}@page{size:Letter;margin:.45in .52in .5in}}
+</style>
+</head>
+<body><article class="report">
+<header class="cover">
+<div class="eyebrow">Senior Analyst | Portfolio Allocation & Sector Strategy</div>
+<h1>VIS vs. GRID<br>Industrial Cycle & Portfolio Implementation</h1>
+<div class="subtitle">A decision-grade comparison of broad U.S. Industrials exposure versus the global smart-grid/electrification theme, with direct-equity alternatives and portfolio-specific implementation.</div>
+<div class="verdict">RECOMMENDATION: BUILD THE CORE WITH VIS; RETAIN GRID AS A SATELLITE; HOLD GEV; KEEP CAT / ETN / PWR ON A VALUATION-DISCIPLINED ADD LIST.</div>
+<div class="meta">
+  <div class="metric"><div class="k">Sector stance</div><div class="v">OVERWEIGHT</div><div class="s">Selective, capex-led industrial cycle</div></div>
+  <div class="metric"><div class="k">Preferred ETF</div><div class="v">VIS</div><div class="s">Strategic industrial core</div></div>
+  <div class="metric"><div class="k">Thematic role</div><div class="v">GRID</div><div class="s">0.5%-0.75% satellite</div></div>
+  <div class="metric"><div class="k">Conviction</div><div class="v">8 / 10</div><div class="s">Cycle strong; valuation is the constraint</div></div>
+</div>
+<div class="cover-note">Prepared August 16, 2026 | Market and fund data through August 14, 2026 where available | Portfolio baseline: retirement-portfolio-23.xlsx, the latest portfolio export accessible to this report-generation workspace. A later referenced retirement-portfolio-24.xlsx was not available to the runtime; if it changed holdings, weights should be refreshed before implementation.</div>
+</header>
+
+<section>
+<div class="section-kicker">01 | Executive call</div><h2>The right portfolio expression is broader than the hottest theme.</h2>
+<p class="lead"><strong>Industrials remain one of the more attractive multi-year areas of the U.S. equity market, but the investable opportunity is being driven by a concentrated set of capital-spending engines:</strong> electric power generation and transmission, data-center power and cooling, aerospace production and aftermarket services, infrastructure modernization, reshoring, and selected heavy equipment. This is not yet a synchronized old-style manufacturing boom. That distinction matters for ETF selection.</p>
+<div class="callout good"><strong>Senior analyst recommendation.</strong> Establish <strong>VIS at a 2.0%-2.5% strategic portfolio weight</strong> over multiple tranches, with a 2.25% base target (~$37,900 on the current portfolio value). Maintain <strong>GRID near its existing ~0.59%</strong> as the higher-beta electrification satellite, and keep <strong>GEV around 2%</strong> rather than adding aggressively after its major rerating. This would lift intentional dedicated industrial / grid exposure from roughly <strong>2.60%</strong> today to about <strong>4.6%-5.1%</strong> before any new direct-stock purchase.</div>
+<p>The reason is portfolio-specific. The account already owns the AI capital spenders and beneficiaries - Amazon, Microsoft, Alphabet, Meta, Broadcom and TSM - alongside GEV and GRID. Increasing GRID materially would diversify sector labels while <em>increasing the same underlying AI/electrification factor</em>. VIS adds aerospace, machinery, rail, construction, transportation and industrial services, making it the better diversifier.</p>
+<table><tr><th>Decision</th><th>Analyst view</th><th>Portfolio role</th></tr>
+<tr><td class="strong">VIS</td><td><span class="tag good">ADD / BUILD</span></td><td>Primary industrial-sector allocation; target 2.0%-2.5%.</td></tr>
+<tr><td class="strong">GRID</td><td><span class="tag blue">HOLD</span></td><td>Electrification/grid satellite; current ~0.59% is appropriate. Do not make it the core.</td></tr>
+<tr><td class="strong">GEV</td><td><span class="tag blue">HOLD / PAUSE ADDS</span></td><td>Best direct power-generation/electrification holding already at ~2.01%.</td></tr>
+<tr><td class="strong">CAT</td><td><span class="tag warn">WATCH / ADD ON PULLBACK</span></td><td>Attractive machinery + data-center power leverage, but a large post-earnings rerating argues for patience.</td></tr>
+<tr><td class="strong">ETN / PWR</td><td><span class="tag warn">WATCH</span></td><td>Excellent structural exposure; much of it is already captured by GRID, where ETN and PWR are major weights.</td></tr>
+</table>
+</section>
+
+<section>
+<div class="section-kicker">02 | Cycle diagnosis</div><h2>A capex-led industrial expansion, not a blanket cyclical boom.</h2>
+<p>The Federal Reserve's latest industrial data show real improvement but also slack: industrial production grew at a 4.0% annual rate in 2Q26 and manufacturing output grew at a 4.7% annual rate, while June manufacturing utilization was only 75.7%, 2.5 percentage points below its long-run average. Business-equipment production was 5.4% above a year earlier. The implication is constructive but selective: investment spending is improving faster than economy-wide capacity tightness.</p>
+<div class="grid3">
+<div class="card"><h3>Power / Grid</h3><p><strong>Strongest structural leg.</strong> Utility load growth, data-center interconnections, aging grid infrastructure, new generation capacity and resilience spending create a long-duration backlog cycle.</p></div>
+<div class="card"><h3>Aerospace</h3><p><strong>High visibility.</strong> Large engine and defense backlogs plus recurring aftermarket revenue provide a different earnings engine than AI power infrastructure.</p></div>
+<div class="card"><h3>Machinery / Construction</h3><p><strong>Positive but more cyclical.</strong> Non-residential construction, energy, mining and data-center power help; recession and dealer inventory remain the principal swing factors.</p></div>
+</div>
+<h3>Evidence from the operating companies</h3>
+<table><tr><th>Company</th><th>Current evidence</th><th>Read-through</th></tr>
+<tr><td class="strong">GE Vernova</td><td>2Q orders $24.2B, +88% organically; backlog $176B; revenue +22%; data-center orders >$5B YTD; 2026 revenue and FCF guidance raised.</td><td>Power generation and electrification remain in a genuine multi-year capacity cycle.</td></tr>
+<tr><td class="strong">Caterpillar</td><td>2Q revenue $20.54B, +24%; backlog $72.1B; construction and power demand strengthened; full-year sales-growth outlook raised.</td><td>The industrial cycle is broadening into heavy equipment and distributed / backup power.</td></tr>
+<tr><td class="strong">Eaton</td><td>2Q sales +21%; Electrical backlog +43% y/y; orders remained strong; 2026 organic-growth guidance raised.</td><td>Electrical distribution, power management and data centers remain among the highest-quality structural exposures.</td></tr>
+<tr><td class="strong">Quanta Services</td><td>2Q revenue $9.56B, +41%; backlog $53.4B; 2026 expectations raised across major metrics.</td><td>Transmission, grid interconnection and mission-critical infrastructure spending are translating into revenue.</td></tr>
+<tr><td class="strong">GE Aerospace</td><td>2Q adjusted revenue +24%; orders +17%; FCF +43%; backlog >$210B; guidance raised.</td><td>Aerospace provides a powerful non-grid industrial cycle with recurring services economics.</td></tr>
+</table>
+</section>
+
+<section class="page-break">
+<div class="section-kicker">03 | ETF comparison</div><h2>VIS is the industrial core; GRID is the electrification accelerator.</h2>
+<table><tr><th>Factor</th><th>VIS</th><th>GRID</th><th>PM interpretation</th></tr>
+<tr><td class="strong">Mandate</td><td>MSCI U.S. Investable Market Industrials 25/50; large/mid/small U.S. industrials</td><td>Nasdaq Clean Edge Smart Grid Infrastructure Index; global grid/electric infrastructure</td><td>VIS is sector beta. GRID is a theme.</td></tr>
+<tr><td class="strong">Expense ratio</td><td>0.09%</td><td>0.56%</td><td>VIS is far more efficient for a permanent allocation.</td></tr>
+<tr><td class="strong">Holdings</td><td>397 (May 31)</td><td>119 (Aug. 14)</td><td>VIS is materially broader.</td></tr>
+<tr><td class="strong">Top-10 concentration</td><td>~30%</td><td>59.7%</td><td>GRID carries materially more company-specific and theme risk.</td></tr>
+<tr><td class="strong">Geography</td><td>U.S.</td><td>Global</td><td>GRID adds FX and non-U.S. policy/market risk, but also geographic diversification.</td></tr>
+<tr><td class="strong">3-year volatility</td><td>Lower broad-sector profile</td><td>20.87% stdev; beta 1.21 vs MSCI World Industrials</td><td>GRID should be sized as a satellite.</td></tr>
+<tr><td class="strong">2026 YTD at 6/30</td><td>21.34%</td><td>25.42% NAV</td><td>GRID led through midyear, but with a higher-risk structure. Performance is not the primary selection criterion.</td></tr>
+<tr><td class="strong">Best use</td><td><span class="tag good">CORE</span></td><td><span class="tag blue">SATELLITE</span></td><td>Own both only if their portfolio jobs are explicitly different.</td></tr>
+</table>
+<h3>What you actually own through each fund</h3>
+<div class="grid2">
+<div class="card"><h3>VIS - broad industrial leadership</h3>
+<div class="bar"><span>CAT</span><div class="track"><div class="fill" style="width:96%"></div></div><b>5.78%</b></div>
+<div class="bar"><span>GE Aerospace</span><div class="track"><div class="fill" style="width:80%"></div></div><b>4.80%</b></div>
+<div class="bar"><span>GE Vernova</span><div class="track"><div class="fill" style="width:62%"></div></div><b>3.70%</b></div>
+<div class="bar"><span>RTX</span><div class="track"><div class="fill" style="width:57%"></div></div><b>3.43%</b></div>
+<div class="bar"><span>Boeing</span><div class="track"><div class="fill" style="width:41%"></div></div><b>2.45%</b></div>
+<div class="bar"><span>Eaton</span><div class="track"><div class="fill" style="width:37%"></div></div><b>2.20%</b></div>
+<p class="small">Also meaningful exposure to rail, industrial machinery, engineering, building products and transportation.</p></div>
+<div class="card"><h3>GRID - concentrated electrification chain</h3>
+<div class="bar"><span>Eaton</span><div class="track"><div class="fill teal" style="width:92%"></div></div><b>9.22%</b></div>
+<div class="bar"><span>Schneider</span><div class="track"><div class="fill teal" style="width:92%"></div></div><b>9.21%</b></div>
+<div class="bar"><span>Johnson Controls</span><div class="track"><div class="fill teal" style="width:86%"></div></div><b>8.58%</b></div>
+<div class="bar"><span>Quanta</span><div class="track"><div class="fill teal" style="width:79%"></div></div><b>7.88%</b></div>
+<div class="bar"><span>ABB</span><div class="track"><div class="fill teal" style="width:78%"></div></div><b>7.78%</b></div>
+<p class="small">Sector mix includes electrical components (33.5%), diversified industrials, engineering, controls, utilities, semiconductors and software. It is not a pure GICS Industrials fund.</p></div>
+</div>
+<div class="callout"><strong>Key distinction:</strong> GRID is a better instrument if the thesis is specifically “electric load growth + grid capex + data-center power.” VIS is better if the thesis is “U.S. industrial capex and earnings breadth over a full cycle.” For this portfolio, the second objective is the missing exposure.</div>
+</section>
+
+<section>
+<div class="section-kicker">04 | Portfolio fit</div><h2>Your existing holdings make VIS more valuable than another large grid bet.</h2>
+<p>The latest accessible portfolio totals roughly $1.68 million. GEV is already ~2.01% and GRID ~0.59%, so the explicit dedicated industrial/grid sleeve is ~2.60%. The true all-in industrial exposure is higher because VFFSX, TLXIX, IJH, FSMDX, FSSNX and other diversified funds contain industrial stocks; this report therefore treats 2.60% as the <em>intentional dedicated sleeve</em>, not total sector look-through.</p>
+<div class="grid2">
+<div class="card"><h3>Current dedicated sleeve</h3>
+<div class="bar"><span>GEV</span><div class="track"><div class="fill teal" style="width:80%"></div></div><b>2.01%</b></div>
+<div class="bar"><span>GRID</span><div class="track"><div class="fill teal" style="width:24%"></div></div><b>0.59%</b></div>
+<div class="bar"><span>VIS</span><div class="track"><div class="fill teal" style="width:0%"></div></div><b>0.00%</b></div>
+<p class="small">Dedicated total: ~2.60%.</p></div>
+<div class="card"><h3>Recommended base sleeve</h3>
+<div class="bar"><span>GEV</span><div class="track"><div class="fill gold" style="width:80%"></div></div><b>2.00%</b></div>
+<div class="bar"><span>VIS</span><div class="track"><div class="fill gold" style="width:90%"></div></div><b>2.25%</b></div>
+<div class="bar"><span>GRID</span><div class="track"><div class="fill gold" style="width:24%"></div></div><b>0.60%</b></div>
+<p class="small">Dedicated total: ~4.85%; CAT remains optional rather than required.</p></div>
+</div>
+<h3>The hidden factor overlap</h3>
+<p>The portfolio has substantial exposure to the companies funding the AI/data-center buildout: AMZN (~8.13%), MSFT (~2.94%), GOOG (~2.95%), META (~2.21%), AVGO (~2.67%) and TSM (~0.4%), plus GEV and GRID on the supplier side. That creates an economic factor that crosses traditional sectors. A large increase in GRID would therefore amplify the same capex cycle that already supports a significant portion of portfolio earnings expectations.</p>
+<div class="callout warn"><strong>Funding discipline matters.</strong> Direct financial holdings (JPM, GS, MA, V and AXP) are approximately 24.3% of the portfolio, while cash is about $43,000 / 2.55%. Preserving a 2% cash floor leaves only about $9,300 of readily deployable cash. Build VIS primarily with new contributions and/or tax-aware concentration trims rather than taking cash materially below the reserve floor.</div>
+<h3>VIS overlap is manageable</h3>
+<p>At a 2.25% VIS weight, its current holdings would add only about 0.13% portfolio exposure to CAT, 0.11% to GE Aerospace, 0.08% to GEV, 0.08% to RTX and 0.05% to ETN. That is diversified exposure, not a meaningful duplication problem. In contrast, expanding GRID concentrates more of the sleeve into ETN, Schneider, JCI, PWR and ABB.</p>
+</section>
+
+<section class="page-break">
+<div class="section-kicker">05 | Direct-equity opportunity set</div><h2>Use direct stocks only where the portfolio wants more idiosyncratic alpha.</h2>
+<table><tr><th>Security</th><th>Cycle exposure</th><th>Quality / visibility</th><th>Valuation risk</th><th>Portfolio action</th></tr>
+<tr><td class="strong">GEV</td><td>Gas turbines, electrification, grid software/equipment, wind</td><td>Very high; $176B backlog and rapid order growth</td><td><span class="tag red">High</span></td><td><strong>HOLD.</strong> Existing ~2% is enough. Re-add only after a material valuation reset or another earnings step-up.</td></tr>
+<tr><td class="strong">CAT</td><td>Construction, mining, energy, generators / data-center power</td><td>High, but more cyclically sensitive than GEV/ETN</td><td><span class="tag red">High</span></td><td><strong>WATCH / ADD ON PULLBACK.</strong> Prefer 0.5%-0.75% only after a 10%-15% correction or a fresh estimate reset that restores upside.</td></tr>
+<tr><td class="strong">ETN</td><td>Power distribution, electrical equipment, data centers, aerospace</td><td>Very high; strong orders/backlog</td><td><span class="tag red">High</span></td><td><strong>WATCH.</strong> Excellent direct stock, but GRID already owns it at 9.2% and VIS at ~2.2%.</td></tr>
+<tr><td class="strong">PWR</td><td>Transmission, interconnection, utility/load-center construction</td><td>High; record backlog and revenue</td><td><span class="tag red">High</span></td><td><strong>WATCH / own via GRID.</strong> Direct position only if seeking concentrated grid-construction alpha.</td></tr>
+<tr><td class="strong">GE</td><td>Commercial aerospace, defense, high-margin aftermarket</td><td>Exceptional backlog and recurring services</td><td><span class="tag red">High</span></td><td><strong>WATCH.</strong> Recent internal research placed fair value only modestly above market; wait for margin of safety.</td></tr>
+<tr><td class="strong">RTX</td><td>Aerospace/defense, engines, systems, missiles</td><td>High and diversified</td><td><span class="tag warn">Moderate-high</span></td><td><strong>OWN THROUGH VIS</strong> unless a company-specific dislocation creates an entry.</td></tr>
+<tr><td class="strong">DE</td><td>Agricultural and construction machinery</td><td>High franchise quality, weaker near-cycle visibility</td><td><span class="tag warn">Moderate</span></td><td><strong>WAIT FOR PROOF.</strong> Ag equipment remains less aligned with the strongest current capex channels.</td></tr>
+</table>
+<div class="callout"><strong>If only one new position is allowed:</strong> choose VIS, not CAT, ETN or PWR. The portfolio already has a concentrated single-name power winner in GEV. The marginal dollar should broaden the industrial earnings engine, not further narrow it.</div>
+</section>
+
+<section>
+<div class="section-kicker">06 | Scenarios & risk budget</div><h2>VIS wins the base case; GRID wins the upside case and loses more in a theme reset.</h2>
+<table><tr><th>Scenario</th><th>Probability</th><th>Industrial setup</th><th>Expected relative winner</th><th>Portfolio response</th></tr>
+<tr><td class="strong">Base - capex cycle broadens</td><td>55%</td><td>Grid/data-center demand remains strong; aerospace backlog converts; manufacturing improves unevenly.</td><td><strong>VIS</strong> on diversification + participation</td><td>Build VIS to 2.0%-2.5%; hold GRID/GEV.</td></tr>
+<tr><td class="strong">Bull - power scarcity persists</td><td>25%</td><td>Hyperscaler capex, turbine demand, transmission and electrical backlogs stay exceptionally strong into 2028+.</td><td><strong>GRID / GEV</strong></td><td>Let winners compound; cap combined thematic concentration rather than chase.</td></tr>
+<tr><td class="strong">Bear - capex pause / recession</td><td>20%</td><td>Project delays, lower AI spend growth, weaker construction/mining, multiple compression.</td><td><strong>VIS</strong> should be relatively more resilient; both decline</td><td>Use staged entries; keep cash reserve; re-underwrite GEV/GRID before adding.</td></tr>
+</table>
+<h3>Binding constraint: valuation, not thesis quality</h3>
+<p>GRID's July 31 portfolio P/E was 29.5x, and many leading direct beneficiaries have already had major 2026 reratings. VIS also trades at a premium valuation by historical sector standards. The cycle can remain fundamentally strong while returns disappoint if multiples compress faster than earnings rise. This argues for <strong>tranching rather than waiting for a perfect macro signal or buying a full target immediately.</strong></p>
+<div class="callout red"><strong>Thesis-break conditions.</strong> Downgrade the industrial overweight if (1) GEV/ETN/PWR backlogs stop growing and cancellations rise, (2) hyperscaler capex guidance rolls over for multiple quarters, (3) business-equipment production and order data turn down together, (4) aerospace orders/services growth decelerate materially without valuation relief, or (5) industrial earnings revisions fall while sector multiples remain elevated.</div>
+</section>
+
+<section>
+<div class="section-kicker">07 | Implementation roadmap</div><h2>Build breadth first, keep thematic optionality, and preserve dry powder.</h2>
+<div class="action"><div class="step">Now</div><div><strong>Initiate / begin building VIS toward 1.0%.</strong> Use new contributions, modest excess cash above a 2% floor, and/or tax-aware trims from concentrated financial holdings. Do not fund the entire position from cash.</div></div>
+<div class="action"><div class="step">2nd tranche</div><div><strong>Add 0.5%-0.75% VIS on either a 5%-8% sector pullback or continued earnings/backlog confirmation.</strong> The goal is to average into a structurally favorable but expensive sector.</div></div>
+<div class="action"><div class="step">3rd tranche</div><div><strong>Reach 2.0%-2.5% VIS over 6-12 months.</strong> Stop at the low end if GEV/GRID appreciate enough to lift the combined dedicated sleeve above ~5% without new capital.</div></div>
+<div class="action"><div class="step">GRID</div><div><strong>Maintain 0.5%-0.75%.</strong> Allow it to remain a high-conviction satellite; avoid taking it above ~1% unless GEV is reduced or the portfolio deliberately chooses a larger AI-power factor bet.</div></div>
+<div class="action"><div class="step">GEV</div><div><strong>Hold around 1.75%-2.25%.</strong> No forced trim at ~2%; no aggressive add after the rerating. Revisit if fundamentals materially exceed the current growth path or valuation resets.</div></div>
+<div class="action"><div class="step">CAT</div><div><strong>Keep on the active buy list, not the immediate ticket.</strong> A 0.5%-0.75% direct position becomes attractive on a 10%-15% pullback with intact backlog / power demand, or after enough estimate revisions to restore a clear margin of safety.</div></div>
+<h3>Target architecture</h3>
+<table><tr><th>Exposure</th><th class="num">Current</th><th class="num">Base target</th><th>Role</th></tr>
+<tr><td class="strong">GEV</td><td class="num">2.01%</td><td class="num">~2.00%</td><td>Direct structural winner</td></tr>
+<tr><td class="strong">GRID</td><td class="num">0.59%</td><td class="num">0.50%-0.75%</td><td>Thematic satellite</td></tr>
+<tr><td class="strong">VIS</td><td class="num">0.00%</td><td class="num">2.00%-2.50%</td><td>Industrial core</td></tr>
+<tr><td class="strong">CAT</td><td class="num">0.00%</td><td class="num">0%-0.75% optional</td><td>Valuation-dependent alpha sleeve</td></tr>
+<tr><td class="strong">Dedicated total</td><td class="num">~2.60%</td><td class="num">~4.5%-5.3%</td><td>Before broad-fund look-through</td></tr>
+</table>
+</section>
+
+<section>
+<div class="section-kicker">08 | Monitoring dashboard</div><h2>What would make us add, pause, or reduce?</h2>
+<table><tr><th>Signal</th><th>Constructive threshold</th><th>Warning threshold</th><th>Action</th></tr>
+<tr><td class="strong">GEV orders / backlog</td><td>Power + Electrification growth remains well above revenue</td><td>Broad cancellations or weak bookings</td><td>Add on valuation reset / re-underwrite if weakening</td></tr>
+<tr><td class="strong">ETN electrical orders</td><td>Double-digit growth and book-to-bill >1</td><td>Order growth falls below sales for multiple quarters</td><td>Supports or challenges GRID thesis</td></tr>
+<tr><td class="strong">PWR backlog / RPO</td><td>New records with cash conversion</td><td>Project deferrals rise</td><td>Gauge grid construction cycle</td></tr>
+<tr><td class="strong">CAT Power & Energy / Construction</td><td>Backlog and price/volume remain positive</td><td>Dealer inventories rise, orders weaken</td><td>Direct CAT entry only with intact thesis</td></tr>
+<tr><td class="strong">Aerospace</td><td>GE/RTX orders, deliveries and services remain strong</td><td>Airline / defense demand or supply recovery stalls</td><td>Supports VIS diversification case</td></tr>
+<tr><td class="strong">Macro</td><td>Business equipment / durable orders remain positive</td><td>Two-quarter deterioration in equipment output + orders</td><td>Slow VIS build; do not average down mechanically</td></tr>
+<tr><td class="strong">AI capex</td><td>AMZN/MSFT/META/GOOG capex plans remain durable</td><td>Multi-quarter capex growth reset</td><td>Reduce GRID/GEV enthusiasm before broad VIS</td></tr>
+</table>
+</section>
+
+<section class="page-break">
+<div class="section-kicker">09 | Bottom-line judgment</div><h2>Overweight industrials, but diversify the engine of return.</h2>
+<p class="lead"><strong>VIS is the superior next dollar for this portfolio.</strong> It captures the same structural cycle that supports GEV and GRID while broadening the return drivers into aerospace, machinery, transportation, engineering and industrial services. GRID remains an attractive specialist instrument, but its 0.56% expense ratio, ~60% top-10 concentration, higher volatility and direct dependence on electrification/data-center spending make it a poor substitute for a core industrial allocation.</p>
+<p>The recommended architecture is therefore <strong>VIS 2.0%-2.5% + GEV ~2.0% + GRID 0.5%-0.75%</strong>, with CAT reserved for a valuation-driven direct-stock opportunity. That produces a deliberate industrial sleeve large enough to matter while respecting the portfolio's existing AI-capex factor exposure and its still-high financial-sector concentration.</p>
+<div class="callout good"><strong>Final rating:</strong> <span class="tag good">OVERWEIGHT INDUSTRIALS</span> &nbsp; <strong>Implementation:</strong> ADD VIS / HOLD GRID / HOLD GEV / WATCH CAT-ETN-PWR. &nbsp; <strong>Conviction:</strong> 8/10. &nbsp; <strong>Primary risk:</strong> valuation compression before the backlog-to-earnings cycle fully monetizes.</div>
+<h3>Sources & freshness</h3>
+<ol class="source-list">
+<li><a href="https://www.federalreserve.gov/Releases/G17/Current/default.htm"><strong>Federal Reserve G.17</strong></a> - Industrial Production and Capacity Utilization, July 17, 2026.</li>
+<li><a href="https://investor.vanguard.com/investment-products/etfs/profile/vis"><strong>Vanguard VIS profile</strong></a> - mandate, holdings, characteristics and performance.</li>
+<li><a href="https://www.ftportfolios.com/retail/etf/etfsummary.aspx?ticker=grid"><strong>First Trust GRID profile</strong></a> - holdings/sector data through Aug. 14; risk and performance through July 31, 2026.</li>
+<li><a href="https://www.gevernova.com/news/press-releases/ge-vernova-reports-second-quarter-2026-financial-results-raises-2026-financial"><strong>GE Vernova 2Q26 results</strong></a> - July 22, 2026.</li>
+<li><a href="https://www.reuters.com/business/caterpillar-second-quarter-profit-jumps-strong-power-construction-equipment-2026-08-04/"><strong>Caterpillar 2Q26 / Reuters</strong></a> - August 4, 2026.</li>
+<li><a href="https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-first-quarter-2026-results.html"><strong>Eaton investor materials</strong></a> - 2026 order/backlog context; Q2 cross-checked to July 31 reported results.</li>
+<li><a href="https://www.prnewswire.com/news-releases/quanta-services-reports-second-quarter-2026-results-302838646.html"><strong>Quanta Services 2Q26 results</strong></a> - July 30, 2026.</li>
+<li><a href="https://www.geaerospace.com/news/press-releases/ge-aerospace-announces-second-quarter-2026-results"><strong>GE Aerospace 2Q26 results</strong></a> - July 16, 2026.</li>
+<li><strong>Portfolio source:</strong> retirement-portfolio-23.xlsx, uploaded August 14, 2026; no missing transactions inferred.</li>
+</ol>
+<div class="disclaimer"><strong>Important:</strong> This report is analytical research for portfolio-management discussion, not individualized legal, tax or fiduciary advice. Target weights are portfolio-construction ranges, not trade instructions. Actual implementation should consider account location, tax lots, transaction costs, current prices and any changes contained in a newer portfolio export. Fund holdings and weights change over time; Vanguard's displayed VIS portfolio composition is less current than First Trust's August 14 GRID data and is identified accordingly.</div>
+</section>
+<footer>VIS vs GRID | Industrial Cycle & Portfolio Implementation | Senior Analyst Report | August 16, 2026</footer>
+</article></body></html>
