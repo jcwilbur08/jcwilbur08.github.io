@@ -617,7 +617,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     </div>
 
     <!-- Holdings table -->
-    <div class="card">
+    <div class="card" id="holdings-table-card">
       <h3>All Holdings</h3>
       <div class="holdings-toolbar">
         <input type="text" class="search-input" id="holdings-search" placeholder="Filter by ticker or name…" oninput="renderHoldings()">
@@ -633,6 +633,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
           </div>
         </div>
       </div>
+      <div id="active-filters" style="display:none;gap:8px;flex-wrap:wrap;margin-bottom:12px;align-items:center;"></div>
       <div class="hhead">
         <span style="width:14px;"></span>
         <span class="hcol sym-col" style="width:100px;" onclick="setSort('ticker')">Ticker<span class="arrow">▼</span></span>
@@ -1805,14 +1806,19 @@ const allocColors = {
   'International equity':'#d97706',
   'Cash & equivalents':'#888888'
 };
+let sectorFilter = 'all';
 function renderAllocBars(){
   const el = document.getElementById('alloc-bars-list');
+  const activeCat = document.getElementById('holdings-category') ? document.getElementById('holdings-category').value : 'all';
   el.innerHTML = allocCategoryOrder.map(cat=>{
     const mv = holdings.filter(h=>h.cat===cat).reduce((s,h)=>s+h.mv,0);
     const pct = (mv/totalMV*100);
-    return `<div class="alloc-row"><div class="alloc-label">${cat}</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:${pct}%;background:${allocColors[cat]}"></div></div><div class="alloc-pct">${pct.toFixed(1)}%</div></div>`;
+    const isActive = activeCat === cat;
+    const rowStyle = `cursor:pointer;padding:4px 6px;margin:-4px -6px;border-radius:6px;${isActive?'background:#eff6ff;':''}`;
+    const labelStyle = isActive ? 'font-weight:700;color:#2563eb;' : '';
+    return `<div class="alloc-row" style="${rowStyle}" onclick="filterHoldingsByCategory('${cat.replace(/'/g,"\\'")}')"><div class="alloc-label" style="${labelStyle}">${cat}</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:${pct}%;background:${allocColors[cat]}"></div></div><div class="alloc-pct">${pct.toFixed(1)}%</div></div>`;
   }).join('');
-  document.getElementById('card-alloc-meta').textContent = allocCategoryOrder.length + ' categories';
+  document.getElementById('card-alloc-meta').textContent = allocCategoryOrder.length + ' categories — tap to filter holdings';
 }
 renderAllocBars();
 
@@ -1831,11 +1837,65 @@ function renderSectorBars(){
   el.innerHTML = rows.map(r=>{
     const pct = r.mv/totalMV*100;
     const color = sectorColors[r.sector] || '#64748b';
-    return `<div class="alloc-row"><div class="alloc-label">${r.sector}</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:${pct}%;background:${color}"></div></div><div class="alloc-pct">${pct.toFixed(1)}%</div></div>`;
+    const isActive = sectorFilter === r.sector;
+    const rowStyle = `cursor:pointer;padding:4px 6px;margin:-4px -6px;border-radius:6px;${isActive?'background:#eff6ff;':''}`;
+    const labelStyle = isActive ? 'font-weight:700;color:#2563eb;' : '';
+    return `<div class="alloc-row" style="${rowStyle}" onclick="filterHoldingsBySector('${r.sector.replace(/'/g,"\\'")}')"><div class="alloc-label" style="${labelStyle}">${r.sector}</div><div class="alloc-bar-wrap"><div class="alloc-bar" style="width:${pct}%;background:${color}"></div></div><div class="alloc-pct">${pct.toFixed(1)}%</div></div>`;
   }).join('');
-  document.getElementById('card-sector-meta').textContent = rows.length + ' sectors';
+  document.getElementById('card-sector-meta').textContent = rows.length + ' sectors — tap to filter holdings';
 }
 renderSectorBars();
+
+// ---- ALLOCATION / SECTOR BARS AS CLICKABLE FILTERS ----
+// Clicking a row filters the "All Holdings" table below by that category or sector.
+// Clicking the same one again clears it (toggle). Category and sector filters are
+// independent and can combine with each other and with the text search.
+function filterHoldingsByCategory(cat){
+  const sel = document.getElementById('holdings-category');
+  sel.value = (sel.value === cat) ? 'all' : cat;
+  renderHoldings();
+  renderAllocBars();
+  scrollToHoldingsTable();
+}
+function filterHoldingsBySector(sector){
+  sectorFilter = (sectorFilter === sector) ? 'all' : sector;
+  renderHoldings();
+  renderSectorBars();
+  scrollToHoldingsTable();
+}
+function clearCategoryFilter(){
+  document.getElementById('holdings-category').value = 'all';
+  renderHoldings();
+  renderAllocBars();
+}
+function clearSectorFilter(){
+  sectorFilter = 'all';
+  renderHoldings();
+  renderSectorBars();
+}
+function scrollToHoldingsTable(){
+  const el = document.getElementById('holdings-table-card');
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+}
+function renderActiveFilters(){
+  const el = document.getElementById('active-filters');
+  if(!el) return;
+  const cat = document.getElementById('holdings-category').value;
+  const chips = [];
+  if(cat !== 'all'){
+    chips.push(`<span class="pill-btn active" style="padding:5px 12px;font-size:12px;cursor:pointer;" onclick="clearCategoryFilter()">${cat} ✕</span>`);
+  }
+  if(sectorFilter !== 'all'){
+    chips.push(`<span class="pill-btn active" style="padding:5px 12px;font-size:12px;cursor:pointer;" onclick="clearSectorFilter()">${sectorFilter} ✕</span>`);
+  }
+  if(chips.length){
+    el.style.display = 'flex';
+    el.innerHTML = '<span style="font-size:11px;color:#888;">Filtered by:</span>' + chips.join('');
+  } else {
+    el.style.display = 'none';
+    el.innerHTML = '';
+  }
+}
 
 // ---- COLLAPSIBLE CARDS (mobile only — CSS media query makes this a no-op on desktop) ----
 function toggleCollapsibleCard(id){
@@ -1902,6 +1962,7 @@ function renderHoldings(){
   const cat = document.getElementById('holdings-category').value;
   let rows = holdings.filter(h =>
     (cat==='all' || h.cat === cat) &&
+    (sectorFilter==='all' || h.sector === sectorFilter) &&
     (!q || h.ticker.toLowerCase().includes(q) || h.name.toLowerCase().includes(q) || h.cat.toLowerCase().includes(q))
   );
 
@@ -1926,7 +1987,8 @@ function renderHoldings(){
   }
 
   const listEl = document.getElementById('holdings-list');
-  document.getElementById('holdings-count').textContent = (q || cat!=='all') ? `${rows.length} of ${holdings.length} positions` : '';
+  document.getElementById('holdings-count').textContent = (q || cat!=='all' || sectorFilter!=='all') ? `${rows.length} of ${holdings.length} positions` : '';
+  renderActiveFilters();
 
   if(rows.length === 0){
     listEl.innerHTML = '<div class="no-results">No holdings match your filter.</div>';
