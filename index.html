@@ -210,6 +210,15 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 .alloc-bar{height:8px;border-radius:4px;background:#2563eb;}
 .alloc-pct{font-size:12px;font-weight:700;width:40px;text-align:right;}
 
+/* SECTOR PERFORMANCE (diverging bar, centered at 0%) */
+.sector-perf-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0f0;}
+.sector-perf-row:last-child{border-bottom:none;}
+.sector-perf-label{font-size:13px;color:#333;width:150px;flex-shrink:0;}
+.sector-perf-track{flex:1;height:8px;background:#f0f0f0;border-radius:4px;position:relative;}
+.sector-perf-center{position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:#ccc;}
+.sector-perf-fill{position:absolute;top:0;height:8px;border-radius:4px;min-width:2px;}
+.sector-perf-val{width:64px;text-align:right;font-size:13px;font-weight:700;flex-shrink:0;}
+
 /* CASH BADGE */
 .on-track{color:#15803d;font-weight:700;}
 .quality-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:13px;}
@@ -402,6 +411,10 @@ body[data-theme="dark"] .report-card .title{color:#e8e9ec;}
 body[data-theme="dark"] .report-card .date{color:#8b909c;}
 body[data-theme="dark"] .alloc-bar-wrap{background:#262a33;}
 body[data-theme="dark"] .alloc-label{color:#b7bcc7;}
+body[data-theme="dark"] .sector-perf-row{border-bottom-color:#262a33;}
+body[data-theme="dark"] .sector-perf-label{color:#d1d4da;}
+body[data-theme="dark"] .sector-perf-track{background:#262a33;}
+body[data-theme="dark"] .sector-perf-center{background:#3a3f4a;}
 body[data-theme="dark"] .quality-row{border-bottom-color:#262a33;}
 body[data-theme="dark"] .quality-row .item{color:#d1d4da;}
 body[data-theme="dark"] .pill-btn{background:#1a1d24;border-color:#2a2e37;color:#b7bcc7;}
@@ -495,6 +508,14 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <div id="contributors-list"></div>
       <div style="font-size:11px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 8px;">Detractors</div>
       <div id="detractors-list"></div>
+    </div>
+
+    <div class="card">
+      <h3>Sector Performance</h3>
+      <div id="sector-perf-list">
+        <div class="no-results">Loading sector data…</div>
+      </div>
+      <p style="font-size:11px;color:#888;margin-top:12px;">SPDR Select Sector ETFs, day % change vs. prior close. Live via Finnhub.</p>
     </div>
 
     <div class="card">
@@ -1630,6 +1651,23 @@ const FINNHUB_API_KEY = 'd9o9n09r01qt6o9atckgd9o9n09r01qt6o9atcl0';
 // fetch on open for these. A GitHub Action refreshes them once daily via Alpha Vantage and
 // commits mutual-fund-quotes.json; the page just reads that static file.
 const mutualFundQuoteTickers = ['FSMDX','FSSNX','TLXIX','VFFSX'];
+// SPDR Select Sector ETFs — used for the Sector Performance card on the Today tab.
+// Independent of the holdings sector tags used elsewhere (that's holdings composition;
+// this is market-wide sector performance for context). Same Finnhub feed, no new API key.
+const sectorETFs = [
+  {key:'XLF', name:'Financials'},
+  {key:'XLK', name:'Technology'},
+  {key:'XLC', name:'Communication Svcs'},
+  {key:'XLY', name:'Consumer Discretionary'},
+  {key:'XLP', name:'Consumer Staples'},
+  {key:'XLE', name:'Energy'},
+  {key:'XLV', name:'Health Care'},
+  {key:'XLRE', name:'Real Estate'},
+  {key:'XLU', name:'Utilities'},
+  {key:'XLI', name:'Industrials'},
+  {key:'XLB', name:'Materials'},
+];
+sectorETFs.forEach(s=>{ s.pct = null; });
 
 // === PORTFOLIO DATA — Morningstar export (holdings/qty/cost-basis/sector) with the last
 // known prices baked in as both the initial paint and the fallback if a live fetch fails.
@@ -1845,6 +1883,34 @@ function renderSectorBars(){
   document.getElementById('card-sector-meta').textContent = rows.length + ' sectors — tap to filter holdings';
 }
 renderSectorBars();
+
+// ---- SECTOR PERFORMANCE (Today tab — market-wide sector day % change via SPDR ETFs) ----
+function renderSectorPerformance(){
+  const el = document.getElementById('sector-perf-list');
+  if(!el) return;
+  const withData = sectorETFs.filter(s=>s.pct!==null);
+  if(withData.length===0){
+    el.innerHTML = '<div class="no-results">Sector data unavailable.</div>';
+    return;
+  }
+  const maxAbs = Math.max(...withData.map(s=>Math.abs(s.pct)), 0.5);
+  el.innerHTML = sectorETFs.map(s=>{
+    if(s.pct===null) return '';
+    const up = s.pct>=0;
+    const halfWidth = (Math.abs(s.pct)/maxAbs)*50;
+    const left = up ? 50 : 50-halfWidth;
+    const color = up ? '#16a34a' : '#dc2626';
+    return `<div class="sector-perf-row">
+      <div class="sector-perf-label">${s.name}</div>
+      <div class="sector-perf-track">
+        <div class="sector-perf-center"></div>
+        <div class="sector-perf-fill" style="left:${left}%;width:${halfWidth}%;background:${color};"></div>
+      </div>
+      <div class="sector-perf-val ${up?'up-color':'dn-color'}">${up?'+':''}${s.pct.toFixed(2)}%</div>
+    </div>`;
+  }).join('');
+}
+renderSectorPerformance();
 
 // ---- ALLOCATION / SECTOR BARS AS CLICKABLE FILTERS ----
 // Clicking a row filters the "All Holdings" table below by that category or sector.
@@ -2767,6 +2833,17 @@ async function fetchLiveQuotes(){
       .catch(() => { /* keep this ticker's existing fallback price — no crash, no gap */ })
   ));
 
+  await Promise.allSettled(sectorETFs.map(s =>
+    fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(s.key)}&token=${FINNHUB_API_KEY}`)
+      .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP '+r.status)))
+      .then(data => {
+        if(data && typeof data.c === 'number' && data.c > 0 && typeof data.pc === 'number' && data.pc > 0){
+          s.pct = ((data.c - data.pc) / data.pc) * 100;
+        }
+      })
+      .catch(() => { /* keep last-known sector % — no crash, no gap */ })
+  ));
+
   let mfOk = false;
   try {
     const mfRes = await fetch('./mutual-fund-quotes.json', {cache:'no-store'});
@@ -2786,6 +2863,7 @@ async function fetchLiveQuotes(){
   renderCoreMetrics();
   renderAllocBars();
   renderSectorBars();
+  renderSectorPerformance();
   renderHoldings();
   renderAllocChart();
   renderTickerBar();
