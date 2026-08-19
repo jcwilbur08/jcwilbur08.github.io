@@ -1,0 +1,38 @@
+name: Refresh Smart News Feed
+
+on:
+  schedule:
+    # 00:15 UTC = 8:15pm ET during EDT (7:15pm ET during EST, Nov-Mar) — after market
+    # close. Tue-Sat UTC covers Mon-Fri US market closes (a Monday close lands as
+    # Tuesday 00:15 UTC). Adjust the hour if you want it earlier/later relative to close.
+    - cron: '15 0 * * 2-6'
+  workflow_dispatch: {}  # lets you trigger a manual test run from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  build-news-feed:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Build news feed
+        env:
+          ALPHA_VANTAGE_KEY: ${{ secrets.ALPHA_VANTAGE_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python scripts/build_news_feed.py
+
+      - name: Commit news-feed.json
+        run: |
+          git config user.name "news-feed-bot"
+          git config user.email "actions@github.com"
+          git add news-feed.json
+          git diff --staged --quiet || git commit -m "Auto-update news-feed.json [skip ci]"
+          git push
