@@ -19,6 +19,7 @@ Only stdlib is used (no pip install step needed in the Action).
 import json
 import os
 import sys
+import time
 import urllib.request
 import urllib.parse
 import urllib.error
@@ -46,10 +47,17 @@ TOP_N_MOVERS = 10
 CLAUDE_MODEL = 'claude-haiku-4-5-20251001'
 
 
-def http_get_json(url, timeout=20):
+def http_get_json(url, timeout=20, retries=2, backoff=2.0):
     req = urllib.request.Request(url, headers={'User-Agent': 'portfolio-command-center-news-bot'})
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return json.loads(resp.read().decode('utf-8'))
+    for attempt in range(retries + 1):
+        try:
+            with urllib.request.urlopen(req, timeout=timeout) as resp:
+                return json.loads(resp.read().decode('utf-8'))
+        except urllib.error.HTTPError as e:
+            if e.code == 429 and attempt < retries:
+                time.sleep(backoff * (attempt + 1))  # 2s, then 4s
+                continue
+            raise
 
 
 def fetch_movers():
@@ -57,7 +65,9 @@ def fetch_movers():
     Returns the FULL ranked list (not pre-truncated) — truncation to the tickers we can
     actually find news for happens later, after we know which ones have coverage."""
     movers = []
-    for ticker in TICKERS:
+    for i, ticker in enumerate(TICKERS):
+        if i > 0:
+            time.sleep(0.3)  # stay well clear of Finnhub's burst limit, not just the per-minute cap
         url = f'https://finnhub.io/api/v1/quote?symbol={urllib.parse.quote(ticker)}&token={FINNHUB_API_KEY}'
         try:
             data = http_get_json(url)
