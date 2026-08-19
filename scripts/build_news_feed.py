@@ -53,7 +53,9 @@ def http_get_json(url, timeout=20):
 
 
 def fetch_movers():
-    """Day % change for every tracked ticker via Finnhub; returns the top N by |% move|."""
+    """Day % change for every tracked ticker via Finnhub, sorted by |% move| descending.
+    Returns the FULL ranked list (not pre-truncated) — truncation to the tickers we can
+    actually find news for happens later, after we know which ones have coverage."""
     movers = []
     for ticker in TICKERS:
         url = f'https://finnhub.io/api/v1/quote?symbol={urllib.parse.quote(ticker)}&token={FINNHUB_API_KEY}'
@@ -65,7 +67,7 @@ def fetch_movers():
         except Exception as e:
             print(f'WARN: Finnhub quote failed for {ticker}: {e}', file=sys.stderr)
     movers.sort(key=lambda m: abs(m['day_pct']), reverse=True)
-    return movers[:TOP_N_MOVERS]
+    return movers
 
 
 def fetch_news_sentiment(tickers):
@@ -86,7 +88,10 @@ def fetch_news_sentiment(tickers):
 
     feed = data.get('feed', [])
     if not feed:
-        print(f'WARN: Alpha Vantage NEWS_SENTIMENT returned no feed. Response keys: {list(data.keys())}', file=sys.stderr)
+        print(f'WARN: Alpha Vantage NEWS_SENTIMENT returned no feed for {len(tickers)} tickers '
+              f'(items field: {data.get("items")}). Response keys: {list(data.keys())}', file=sys.stderr)
+    else:
+        print(f'Alpha Vantage returned {len(feed)} articles for {len(tickers)} queried tickers.')
 
     best = {}
     for article in feed:
@@ -183,22 +188,44 @@ def call_claude(movers, articles):
 
 
 def main():
-    movers = fetch_movers()
-    if not movers:
+    all_movers = fetch_movers()
+    if not all_movers:
         print('ERROR: No movers found — Finnhub fetch likely failed entirely. '
               'Aborting without touching news-feed.json.', file=sys.stderr)
         sys.exit(1)
 
-    tickers = [m['ticker'] for m in movers]
-    articles = fetch_news_sentiment(tickers)
-    synthesized = call_claude(movers, articles)
+    # Query news for the FULL tracked universe (one AV call, no extra cost) rather than
+    # just the top-N movers — several tracked tickers are passive ETFs that rarely get
+    # individual news coverage, so restricting the query to only the biggest movers risked
+    # coming back empty on days when those movers happened to be exactly those ETFs.
+    all_tickers = [m['ticker'] for m in all_movers]
+    articles = fetch_news_sentiment(all_tickers)
+
+    # Now rank by |day % move|, but only among tickers we actually found news for.
+    coverable_movers = [m for m in all_movers if m['ticker'] in articles]
+    print(f'{len(coverable_movers)} of {len(all_movers)} tracked tickers have news coverage today.')
+    top_movers = coverable_movers[:TOP_N_MOVERS]
+
+    if not top_movers:
+        print('WARN: Zero tracked tickers had news coverage today — writing an empty feed '
+              '(client falls back to static headlines).', file=sys.stderr)
+        out = {
+            'generated_at': datetime.now(timezone.utc).isoformat(timespec='seconds').replace('+00:00', 'Z'),
+            'movers': [],
+        }
+        with open('news-feed.json', 'w') as f:
+            json.dump(out, f, indent=2)
+        print('Wrote news-feed.json with 0 movers.')
+        return
+
+    synthesized = call_claude(top_movers, articles)
 
     output_movers = []
-    for m in movers:
+    for m in top_movers:
         t = m['ticker']
         art, synth = articles.get(t), synthesized.get(t)
         if not art or not synth:
-            continue  # no real news or no synthesis for this ticker — skip, don't fabricate
+            continue  # no synthesis for this ticker — skip, don't fabricate
         output_movers.append({
             'ticker': t,
             'day_pct': round(m['day_pct'], 2),
@@ -209,8 +236,8 @@ def main():
         })
 
     if not output_movers:
-        print('WARN: No movers had both news and synthesis — writing an empty feed '
-              'rather than failing (client falls back to static headlines).', file=sys.stderr)
+        print('WARN: Had news coverage but synthesis produced nothing — writing an empty '
+              'feed rather than failing (client falls back to static headlines).', file=sys.stderr)
 
     out = {
         'generated_at': datetime.now(timezone.utc).isoformat(timespec='seconds').replace('+00:00', 'Z'),
