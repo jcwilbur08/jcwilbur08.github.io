@@ -187,6 +187,9 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 .news-item .meta{font-size:11px;color:#888;}
 .news-item .meta a{color:#888;text-decoration:none;}
 .news-item .meta a:hover{color:#2563eb;text-decoration:underline;}
+.news-item .why{font-size:12px;color:#555;line-height:1.5;margin:6px 0;}
+.news-item .why-label{font-weight:700;color:#888;font-size:10px;text-transform:uppercase;letter-spacing:.4px;margin-right:5px;}
+.news-item .news-pct{font-size:13px;font-weight:700;white-space:nowrap;margin-left:10px;flex-shrink:0;}
 .news-toolbar{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
 .news-updated{font-size:11px;color:#888;margin-bottom:16px;display:flex;align-items:center;gap:6px;}
 .news-updated .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;}
@@ -406,6 +409,8 @@ body[data-theme="dark"] .news-item .headline{color:#e8e9ec;}
 body[data-theme="dark"] .news-item .meta{color:#8b909c;}
 body[data-theme="dark"] .news-item .meta a{color:#8b909c;}
 body[data-theme="dark"] .news-updated{color:#8b909c;}
+body[data-theme="dark"] .news-item .why{color:#b7bcc7;}
+body[data-theme="dark"] .news-item .why-label{color:#8b909c;}
 body[data-theme="dark"] .report-card{background:#1a1d24;border-color:#262a33;}
 body[data-theme="dark"] .report-card .title{color:#e8e9ec;}
 body[data-theme="dark"] .report-card .date{color:#8b909c;}
@@ -1557,7 +1562,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
   <div id="news" class="tab-pane">
     <div class="section-title">Smart News — Portfolio-Ranked Intelligence</div>
     <p style="font-size:13px;color:#888;margin-bottom:12px;">Stories ranked by portfolio weight. Holdings-linked news first, then factor/market context. Each headline links to the original source.</p>
-    <div class="news-updated"><span class="dot"></span>Last refreshed Aug 14, 2026 — Bezos files to sell $4.1B in Amazon, Goldman to acquire NEOS Investments, Jefferies issues rare Apple downgrade</div>
+    <div class="news-updated" id="news-updated-line"><span class="dot"></span>Last refreshed Aug 14, 2026 — Bezos files to sell $4.1B in Amazon, Goldman to acquire NEOS Investments, Jefferies issues rare Apple downgrade</div>
     <div id="news-list"></div>
   </div>
 
@@ -2592,8 +2597,9 @@ function wireResearchCrossLinks(){
 }
 wireResearchCrossLinks();
 
-// ---- SMART NEWS (real headlines, portfolio-ranked, each linking to its original source) ----
-const newsItems = [
+// ---- SMART NEWS FALLBACK (hand-curated headlines, used only if news-feed.json — the
+// GitHub Action-generated live feed — is missing or empty) ----
+const fallbackNewsItems = [
   {
     ticker: 'AMZN',
     headline: "Jeff Bezos filed to sell roughly 15 million Amazon shares (~$4.1B) under a pre-set Rule 10b5-1 plan, disclosed the day after shares hit an all-time high on the blowout Q2 print. The stock fell about 2% on the filing.",
@@ -2680,14 +2686,62 @@ const newsItems = [
   }
 ];
 
-function renderNews(){
+// items: [{ticker, headline, why?, source, url, time, day_pct?}]. `why` and `day_pct` are
+// only present on live-feed items (from news-feed.json); fallback items render without them.
+function renderNews(items){
   const el = document.getElementById('news-list');
-  el.innerHTML = newsItems.map(n => `<div class="news-item">
-      <a class="headline" href="${n.url}" target="_blank" rel="noopener"><span class="ticker-tag">${n.ticker}</span>${n.headline}</a>
+  el.innerHTML = items.map(n => {
+    const pctHtml = (typeof n.day_pct === 'number')
+      ? `<span class="news-pct ${n.day_pct>=0?'up-color':'dn-color'}">${n.day_pct>=0?'+':''}${n.day_pct.toFixed(2)}%</span>`
+      : '';
+    const whyHtml = n.why ? `<div class="why"><span class="why-label">Why</span>${n.why}</div>` : '';
+    return `<div class="news-item">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;">
+        <a class="headline" href="${n.url}" target="_blank" rel="noopener" style="flex:1;"><span class="ticker-tag">${n.ticker}</span>${n.headline}</a>
+        ${pctHtml}
+      </div>
+      ${whyHtml}
       <div class="meta"><a href="${n.url}" target="_blank" rel="noopener">${n.source}</a> &nbsp;•&nbsp; ${n.time}</div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
-renderNews();
+renderNews(fallbackNewsItems);
+
+// ---- LIVE NEWS FEED (news-feed.json, written by the news-feed.yml GitHub Action) ----
+// Same pattern as mutual-fund-quotes.json: a static file the client reads on load. If it's
+// missing, empty, or malformed, the hand-curated fallback above stays on screen untouched.
+async function fetchNewsFeed(){
+  try {
+    const res = await fetch('./news-feed.json', {cache:'no-store'});
+    if(!res.ok) throw new Error('HTTP '+res.status);
+    const data = await res.json();
+    if(!data.movers || !data.movers.length) throw new Error('empty feed');
+
+    const genDate = new Date(data.generated_at);
+    const dateStr = isNaN(genDate) ? '' : genDate.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+
+    const items = data.movers.map(m => ({
+      ticker: m.ticker,
+      headline: m.headline,
+      why: m.why,
+      source: m.source,
+      url: m.url,
+      day_pct: m.day_pct,
+      time: dateStr || 'Recent'
+    }));
+    renderNews(items);
+
+    const updatedEl = document.getElementById('news-updated-line');
+    if(updatedEl){
+      const topTickers = items.slice(0,3).map(i=>i.ticker).join(', ');
+      updatedEl.innerHTML = `<span class="dot"></span>Last refreshed ${dateStr || 'recently'} — auto-generated from today's biggest movers (${topTickers})`;
+    }
+  } catch(e) {
+    console.warn('Live news feed unavailable, showing last-known static headlines:', e);
+    // fallbackNewsItems is already rendered — nothing further to do.
+  }
+}
+fetchNewsFeed();
 
 // ---- YTD PORTFOLIO ESTIMATE VS S&P 500 ----
 // Session-only, like the baseline Robinhood prices above: weekly split-adjusted closes
