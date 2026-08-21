@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AAPL Comprehensive Investment Analysis - August 21, 2026</title>
+<style>
+:root{--ink:#142033;--muted:#5d6b7e;--line:#dfe5ec;--navy:#18304f;--blue:#2d628f;--light:#f4f7fa;--green:#1f6b4f;--amber:#9b6819;--red:#a23b3b;--shadow:0 1px 4px rgba(15,31,48,.07)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#eef2f5;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.48;font-size:14px}
+a{color:#275f8f;text-decoration:none}
+a:hover{text-decoration:underline}
+.report{max-width:920px;margin:24px auto;background:white;box-shadow:0 5px 24px rgba(12,30,50,.11)}
+.cover{padding:52px 54px 38px;background:linear-gradient(135deg,#14283f 0%,#1f466b 100%);color:white;min-height:560px;position:relative}
+.kicker{text-transform:uppercase;letter-spacing:.16em;font-weight:700;font-size:11px;opacity:.84}
+h1{font-size:42px;line-height:1.04;margin:18px 0 8px;letter-spacing:-.035em}
+.subtitle{font-size:18px;opacity:.92;margin:0 0 34px}
+.cover-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px}
+.cover-stat{background:rgba(255,255,255,.095);border:1px solid rgba(255,255,255,.14);padding:13px;border-radius:8px}
+.cover-stat span{display:block;font-size:10px;text-transform:uppercase;letter-spacing:.08em;opacity:.72}
+.cover-stat b{display:block;font-size:18px;margin-top:3px}
+.thesis-box{margin-top:34px;padding:18px 20px;border-left:4px solid #d6e3ee;background:rgba(255,255,255,.08);font-size:15px}
+.cover-foot{position:absolute;left:54px;right:54px;bottom:28px;display:flex;justify-content:space-between;font-size:11px;opacity:.76}
+.section{padding:34px 54px;border-top:1px solid var(--line)}
+.section h2{font-size:25px;letter-spacing:-.025em;margin:0 0 17px;color:var(--navy)}
+.section h3{font-size:16px;margin:20px 0 8px;color:var(--navy)}
+.section p{margin:7px 0 11px}
+.lede{font-size:16px;color:#2b3a4d}
+.callout{padding:15px 18px;border-radius:7px;background:#f3f7fa;border:1px solid #dce5ee;margin:15px 0}
+.callout strong{color:var(--navy)}
+.callout.warn{background:#fff8ed;border-color:#ecd7af}
+.callout.good{background:#eff8f4;border-color:#cfe6dc}
+.callout.red{background:#fff4f3;border-color:#ebd0cd}
+.scorecard{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:13px 0 18px}
+.card{border:1px solid var(--line);border-radius:8px;padding:12px;background:white;box-shadow:var(--shadow)}
+.card .label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.card .value{font-size:20px;font-weight:750;margin-top:4px;color:var(--navy)}
+.card .small{font-size:11px;color:var(--muted);margin-top:3px}
+.table-wrap{overflow-x:auto;margin:12px 0 18px}
+table{border-collapse:collapse;width:100%;font-size:12.5px}
+th{text-align:left;background:#edf2f6;color:#30435a;border-bottom:1px solid #cfd8e3;padding:9px 10px;font-size:10px;text-transform:uppercase;letter-spacing:.05em}
+td{padding:9px 10px;border-bottom:1px solid #e5e9ee;vertical-align:top}
+tr:last-child td{border-bottom:0}
+.num{text-align:right;white-space:nowrap}
+.pos{color:var(--green);font-weight:650} .neg{color:var(--red);font-weight:650} .neutral{color:var(--amber);font-weight:650}
+ul{margin:8px 0 12px;padding-left:20px} li{margin:5px 0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.chartbox{border:1px solid var(--line);border-radius:8px;padding:13px;margin:12px 0 18px;background:#fbfcfd}
+.chart-title{font-weight:700;color:var(--navy);margin-bottom:7px}
+.chart-note{font-size:10.5px;color:var(--muted);margin-top:4px}
+svg{width:100%;height:auto;display:block}
+.act{fill:#244f76} .est{fill:#8fa7ba} .svgval{font-size:11px;font-weight:700;fill:#22354a} .svglab{font-size:10px;fill:#5c6b7a}
+.mix1{fill:#244f76} .mix2{fill:#3e719c} .mix3{fill:#6e91ad} .mix4{fill:#9cafc0} .mix5{fill:#c9d3dc} .mixtext{font-size:10px;font-weight:700;fill:white}
+.scenario{fill:#7892aa} .s1{fill:#2f638e} .s2{fill:#6e987e}
+.badge{display:inline-block;padding:4px 8px;border-radius:14px;font-size:10.5px;font-weight:750;letter-spacing:.03em}
+.badge.hold{background:#fff1cf;color:#79520f} .badge.quality{background:#e8f5ef;color:#14523b} .badge.risk{background:#fbe9e7;color:#8a2e2e}
+.rule{height:1px;background:var(--line);margin:20px 0}
+.action-grid{display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden;margin:12px 0}
+.action-grid div{padding:12px 9px;border-right:1px solid var(--line);text-align:center}
+.action-grid div:last-child{border-right:0}
+.action-grid b{display:block;font-size:12px;color:var(--navy)} .action-grid span{display:block;font-size:10.5px;color:var(--muted);margin-top:2px}
+.sources ol{padding-left:22px} .sources li{margin:7px 0;overflow-wrap:anywhere}
+.disclaimer{font-size:10.5px;color:#647184;background:#f5f7f9;padding:17px;border-radius:7px}
+.page-tag{font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#788697;margin-bottom:8px}
+@media(max-width:720px){.report{margin:0;box-shadow:none}.cover,.section{padding-left:24px;padding-right:24px}.cover-grid,.scorecard{grid-template-columns:repeat(2,1fr)}.two-col,.three-col{grid-template-columns:1fr}.action-grid{grid-template-columns:1fr}.action-grid div{border-right:0;border-bottom:1px solid var(--line)}h1{font-size:34px}}
+@media print{body{background:white;font-size:10.5pt}.cover{break-after:page}.report{max-width:none;margin:0;box-shadow:none}.cover{min-height:9.0in;padding:0.42in 0.48in 0.32in}.cover-foot{left:.48in;right:.48in;bottom:.25in}.section{padding:.31in .48in}.section h2{font-size:19pt}.section h3{font-size:12pt}.lede{font-size:11pt}.cover-stat b{font-size:15pt}.card .value{font-size:15pt}table{font-size:8.5pt}th{font-size:7.4pt}.chartbox,.callout,.card,table,.action-grid{break-inside:avoid}.section{break-inside:auto}.pagebreak{break-before:page}a{color:inherit;text-decoration:none}}
+@page{size:Letter;margin:0.35in}
+</style>
+</head>
+<body>
+<main class="report">
+<section class="cover">
+<div class="kicker">Equity Research | Comprehensive Investment Analysis</div>
+<h1>Apple Inc. <span style="font-weight:400;opacity:.75">(AAPL)</span></h1>
+<p class="subtitle">Exceptional franchise, increasingly demanding valuation</p>
+<div><span class="badge hold">HOLD / NO NEW CAPITAL</span> &nbsp; <b>Conviction: 8/10</b></div>
+<div class="cover-grid">
+<div class="cover-stat"><span>Price</span><b>$308.73</b><small>Aug. 21, 2:34pm ET</small></div>
+<div class="cover-stat"><span>Internal fair value</span><b>$285-$300</b><small>Midpoint ~$292</small></div>
+<div class="cover-stat"><span>FY27E P/E</span><b>32.4x</b><small>Consensus EPS $9.52</small></div>
+<div class="cover-stat"><span>Portfolio weight</span><b>6.28%</b><small>Direct baseline</small></div>
+</div>
+<div class="thesis-box"><b>Investment thesis:</b> Apple remains one of the highest-quality cash-generating franchises in global equities. The installed base, Services mix, vertical integration, brand power and a renewed AI-enabled device cycle can sustain attractive EPS compounding. The problem is price: at roughly 32.4x FY2027 consensus EPS and about a 3.0% trailing free-cash-flow yield, the market already capitalizes a large portion of the favorable outcome. For an existing portfolio position above 6%, the optimal decision is to retain the core holding but direct new capital elsewhere until valuation or estimates create a better margin of safety.</div>
+<div class="cover-foot"><span>As of August 21, 2026</span><span>Portfolio baseline: retirement-portfolio-24.xlsx</span></div>
+</section>
+
+<section class="section">
+<div class="page-tag">1 | Executive Summary</div>
+<h2>Investment conclusion</h2>
+<p class="lede">The fundamental case is strong enough to own; the valuation is not compelling enough to add.</p>
+<div class="scorecard">
+<div class="card"><div class="label">Business quality</div><div class="value">9.5/10</div><div class="small">Moat, cash flow, ecosystem</div></div>
+<div class="card"><div class="label">Growth outlook</div><div class="value">8/10</div><div class="small">FY26 strong; FY27 normalizes</div></div>
+<div class="card"><div class="label">Balance sheet</div><div class="value">9/10</div><div class="small">~$62B net cash/investments</div></div>
+<div class="card"><div class="label">Valuation</div><div class="value">4/10</div><div class="small">Premium embeds execution</div></div>
+<div class="card"><div class="label">Portfolio fit</div><div class="value">6/10</div><div class="small">Already a major position</div></div>
+</div>
+<div class="callout good"><strong>What is working:</strong> Q3 FY2026 revenue rose 16% to $109.4B, with iPhone +22%, Mac +29%, Services +12%, and double-digit growth across all geographic segments. Headline EPS rose 29% to $2.02. <sup><a href="https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/">[1]</a></sup> <sup><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm">[2]</a></sup></div>
+<div class="callout warn"><strong>What tempers the enthusiasm:</strong> Q3 gross margin of 50.1% included roughly 200 bps of tariff-refund benefit, and EPS included $0.11 from the same factor. September-quarter revenue growth guidance of 9%-11% is a deceleration, while Services growth and App Store economics face regulatory pressure. <sup><a href="https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/">[1]</a></sup> <sup><a href="https://www.reuters.com/business/retail-consumer/apple-revenue-profits-beat-expectations-iphone-mac-sales-2026-07-30/">[5]</a></sup> <sup><a href="https://www.reuters.com/legal/litigation/apple-changes-fees-alternative-app-stores-eu-2026-08-18/">[7]</a></sup></div>
+<p><strong>Recommendation:</strong> <span class="badge hold">HOLD / NO NEW CAPITAL</span>. Maintain the existing core position. A valuation below roughly $285 would improve expected returns enough to justify incremental buying; below $250 the risk/reward becomes meaningfully more attractive. Above roughly $350 without a corresponding upward revision to the earnings path, selective trimming would become reasonable.</p>
+<div class="action-grid">
+<div><b>Strong Add</b><span>&lt; $250</span></div><div><b>Add</b><span>$250-$285</span></div><div><b>Hold</b><span>$285-$335</span></div><div><b>Hold / Trim</b><span>$335-$350</span></div><div><b>Trim</b><span>&gt; $350</span></div>
+</div>
+</section>
+
+<section class="section pagebreak">
+<div class="page-tag">2 | Business & Financial Profile</div>
+<h2>The franchise is reaccelerating</h2>
+<p>Apple has moved from a period of modest top-line growth into a stronger FY2026 product cycle. Revenue for the first nine months of FY2026 was $364.4B, up 16% year over year, while Q3 delivered broad-based category and geographic gains. <sup><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm">[2]</a></sup></p>
+<div class="two-col">
+<div class="chartbox"><div class="chart-title">Revenue trajectory</div><svg viewBox="0 0 500 225" aria-label="Apple annual revenue chart"><rect x="30" y="90.1" width="62" height="99.9" rx="4" fill="#244f76"/><text x="61.0" y="83.1" text-anchor="middle" class="svgval">$383B</text><text x="61.0" y="210" text-anchor="middle" class="svglab">FY23</text><rect x="119" y="88.1" width="62" height="101.9" rx="4" fill="#244f76"/><text x="150.0" y="81.1" text-anchor="middle" class="svgval">$391B</text><text x="150.0" y="210" text-anchor="middle" class="svglab">FY24</text><rect x="208" y="81.5" width="62" height="108.5" rx="4" fill="#244f76"/><text x="239.0" y="74.5" text-anchor="middle" class="svgval">$416B</text><text x="239.0" y="210" text-anchor="middle" class="svglab">FY25</text><rect x="297" y="65.6" width="62" height="124.4" rx="4" fill="#8fa7ba"/><text x="328.0" y="58.6" text-anchor="middle" class="svgval">$477B</text><text x="328.0" y="210" text-anchor="middle" class="svglab">FY26E</text><rect x="386" y="55.0" width="62" height="135.0" rx="4" fill="#8fa7ba"/><text x="417.0" y="48.0" text-anchor="middle" class="svgval">$518B</text><text x="417.0" y="210" text-anchor="middle" class="svglab">FY27E</text></svg><div class="chart-note">$ billions. FY26E-FY27E are Zacks consensus estimates as of Aug. 20, 2026. <sup><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm">[3]</a></sup> <sup><a href="https://www.zacks.com/zer/report/AAPL?rwid=Y">[9]</a></sup></div></div>
+<div class="chartbox"><div class="chart-title">Q3 FY2026 revenue mix</div><svg viewBox="0 0 600 78" aria-label="Apple quarterly revenue mix"><rect x="0.0" y="20" width="297.5" height="34" fill="#244f76"/><text x="148.7" y="42" text-anchor="middle" font-size="10" font-weight="700" fill="white">iPhone 50%</text><rect x="297.5" y="20" width="168.6" height="34" fill="#3e719c"/><text x="381.8" y="42" text-anchor="middle" font-size="10" font-weight="700" fill="white">Services 28%</text><rect x="466.1" y="20" width="56.8" height="34" fill="#6e91ad"/><rect x="522.8" y="20" width="43.2" height="34" fill="#9cafc0"/><rect x="566.1" y="20" width="33.9" height="34" fill="#c9d3dc"/></svg><div class="chart-note">Services represented 28.1% of revenue but about 42.4% of gross profit, illustrating the importance of mix shift. <sup><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm">[2]</a></sup></div></div>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Q3 FY2026 category</th><th class="num">Revenue</th><th class="num">Y/Y</th><th>Analytical read-through</th></tr></thead><tbody>
+<tr><td>iPhone</td><td class="num">$54.25B</td><td class="num pos">+22%</td><td>Strong Pro-model demand; still ~50% of quarterly revenue.</td></tr>
+<tr><td>Services</td><td class="num">$30.74B</td><td class="num pos">+12%</td><td>High recurring-margin engine; advertising and cloud drove growth.</td></tr>
+<tr><td>Mac</td><td class="num">$10.35B</td><td class="num pos">+29%</td><td>Laptop demand strong, with supply becoming a near-term constraint.</td></tr>
+<tr><td>Wearables / Home / Accessories</td><td class="num">$7.88B</td><td class="num pos">+6%</td><td>Healthy but no longer the primary growth driver.</td></tr>
+<tr><td>iPad</td><td class="num">$6.19B</td><td class="num neg">-6%</td><td>Tough comparison and less compelling category momentum.</td></tr>
+</tbody></table></div>
+<h3>Services economics remain the key structural value driver</h3>
+<p>Services produced a 75.6% Q3 gross margin versus 40.1% for Products. That means a dollar of incremental Services revenue has disproportionate value to Apple’s earnings and cash flow. Yet the same economics that make Services so valuable also make it the focal point of antitrust scrutiny. <sup><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm">[2]</a></sup> <sup><a href="https://www.reuters.com/legal/litigation/apple-changes-fees-alternative-app-stores-eu-2026-08-18/">[7]</a></sup></p>
+<h3>China has improved materially, but remains strategically sensitive</h3>
+<p>Greater China revenue rose 22% year over year in Q3. IDC separately estimated Apple’s China smartphone shipments rose 24.4% in calendar Q2 2026, lifting market share to 18.1%, second to Huawei at 22.6%, even as the overall market contracted 4.3%. This is encouraging evidence that Apple can regain share, but the region remains exposed to local competition, geopolitics, regulation and component economics. <sup><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm">[2]</a></sup> <sup><a href="https://www.idc.com/resource-center/blog/china-smartphone-market-decline-q2-2026/">[8]</a></sup></p>
+</section>
+
+<section class="section pagebreak">
+<div class="page-tag">3 | Earnings Quality & Capital Allocation</div>
+<h2>Cash conversion is excellent; capital returns are enormous</h2>
+<div class="scorecard">
+<div class="card"><div class="label">TTM revenue</div><div class="value">$466.8B</div><div class="small">SEC-derived</div></div>
+<div class="card"><div class="label">TTM net income</div><div class="value">$128.9B</div><div class="small">SEC-derived</div></div>
+<div class="card"><div class="label">TTM operating CF</div><div class="value">$146.7B</div><div class="small">1.14x net income</div></div>
+<div class="card"><div class="label">TTM free cash flow</div><div class="value">$136.7B</div><div class="small">29.3% of revenue</div></div>
+<div class="card"><div class="label">Net cash + investments</div><div class="value">~$62.2B</div><div class="small">Less debt</div></div>
+</div>
+<p>Using Apple’s FY2025 and 9M FY2026 SEC cash-flow statements, trailing twelve-month operating cash flow is approximately $146.7B and capital expenditure is about $10.0B, implying free cash flow of roughly $136.7B. Cash conversion is strong: OCF is about 1.14x trailing net income and FCF is approximately 1.06x. <sup><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm">[2]</a></sup> <sup><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm">[3]</a></sup></p>
+<div class="callout good"><strong>Earnings-quality assessment: High.</strong> Apple’s earnings are backed by cash, working capital has not impaired cash conversion, and capital intensity remains modest relative to revenue. This materially lowers the risk that reported EPS overstates economic earnings.</div>
+<p>At June 27, Apple held $146.5B of cash, cash equivalents and marketable securities versus roughly $84.3B of commercial paper and term debt, leaving approximately $62.2B of net cash and investments. <sup><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm">[2]</a></sup></p>
+<p>Capital returns remain a defining feature. Apple repurchased $62.1B of stock and paid $11.8B of dividends in the first nine months of FY2026. At quarter-end, the company had $38B of authorization remaining under the May 2025 program plus a new $100B program announced in April 2026. <sup><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm">[2]</a></sup></p>
+<div class="callout warn"><strong>Buyback caveat:</strong> repurchases create less value per dollar when the stock trades above intrinsic value. At more than 32x FY2027 earnings, buybacks still support per-share growth, but they are not as economically powerful as they were at lower valuation multiples.</div>
+<h3>R&D is accelerating</h3>
+<p>Q3 R&D expense rose 32% to $11.7B and nine-month R&D rose 33% to $34.0B. Apple attributed the increase in part to infrastructure costs and investment in artificial intelligence. The expense burden is a near-term margin headwind, but it is strategically necessary if Apple is to close the perceived AI gap. <sup><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm">[2]</a></sup></p>
+</section>
+
+<section class="section pagebreak">
+<div class="page-tag">4 | Moat & Competitive Position</div>
+<h2>A rare multi-layer moat</h2>
+<div class="three-col">
+<div class="card"><div class="label">Ecosystem switching costs</div><div class="value">Very High</div><div class="small">Devices, services, identity, payments, media and cloud reinforce each other.</div></div>
+<div class="card"><div class="label">Brand / pricing power</div><div class="value">Very High</div><div class="small">Premium positioning sustains hardware margins despite competition.</div></div>
+<div class="card"><div class="label">Vertical integration</div><div class="value">High</div><div class="small">Custom silicon + hardware + operating systems + services.</div></div>
+</div>
+<p>Apple’s active installed base exceeds 2.5 billion devices. That installed base is not merely a hardware statistic; it is the distribution layer for Services, subscriptions, payments, accessories, future AI features and recurring upgrades. <sup><a href="https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/">[4]</a></sup></p>
+<p>The most defensible competitive advantage is the combination of integrated hardware/software design and customer switching costs. Competitors can replicate individual features, but replicating the cross-device user experience, developer base, retail/service network and global brand simultaneously is much harder.</p>
+<h3>The moat is durable, but regulation can tax it</h3>
+<p>Apple’s platform control is increasingly constrained. In the EU, Apple is changing alternative app-store economics beginning October 1, including a simplified 5% Core Technology Commission. Such changes do not destroy the ecosystem, but they can reduce the monetization rate on parts of Services and narrow the economic moat around distribution. <sup><a href="https://www.reuters.com/legal/litigation/apple-changes-fees-alternative-app-stores-eu-2026-08-18/">[7]</a></sup></p>
+</section>
+
+<section class="section pagebreak">
+<div class="page-tag">5 | AI, Product Cycle & Management Transition</div>
+<h2>AI is an upgrade catalyst before it is a profit center</h2>
+<p>Apple’s multi-year agreement to use Google Gemini models for the revamped Siri is strategically pragmatic: Apple can improve model quality without attempting to outspend hyperscalers on every layer of foundational AI. Apple continues to emphasize on-device and private-cloud privacy architecture. <sup><a href="https://www.reuters.com/business/google-apple-enter-into-multi-year-ai-deal-gemini-models-2026-01-12/">[6]</a></sup></p>
+<p><strong>Variant view:</strong> the market is likely too focused on whether Apple can monetize AI as a standalone service. The more relevant investment question is whether AI improves device replacement rates, retention and premium mix. If advanced Siri and Apple Intelligence meaningfully increase the utility gap between new and old devices, hardware demand can improve even before a major new AI subscription stream emerges.</p>
+<div class="callout"><strong>Why this matters:</strong> Apple does not need to win the foundation-model race to create shareholder value. It needs AI to make the ecosystem more useful, protect retention, accelerate upgrades and preserve premium pricing.</div>
+<h3>CEO succession is a near-term execution checkpoint</h3>
+<p>John Ternus becomes CEO on September 1, 2026, while Tim Cook becomes executive chairman. The board’s long-planned transition and Cook’s continuing role reduce succession risk, but the handoff still matters because the next phase requires faster product innovation and tighter AI execution. Ternus’s hardware-engineering background fits Apple’s integrated model; investors should watch whether the leadership transition speeds product cadence without weakening operational discipline. <sup><a href="https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/">[4]</a></sup></p>
+</section>
+
+<section class="section pagebreak">
+<div class="page-tag">6 | Consensus, Variant Perception & Earnings Path</div>
+<h2>Consensus expects a powerful FY2026, then normalization</h2>
+<div class="table-wrap"><table><thead><tr><th>Fiscal year</th><th class="num">Revenue</th><th class="num">Y/Y</th><th class="num">EPS</th><th class="num">Y/Y</th><th>Read-through</th></tr></thead><tbody>
+<tr><td>FY2025A</td><td class="num">$416.2B</td><td class="num pos">+6.4%</td><td class="num">$7.46</td><td class="num pos">+22.7%</td><td>Services mix + lower share count supported EPS.</td></tr>
+<tr><td>FY2026E</td><td class="num">$477.4B</td><td class="num pos">+14.7%</td><td class="num">$8.85</td><td class="num pos">+18.6%</td><td>Strong product cycle; includes some temporary tariff benefit.</td></tr>
+<tr><td>FY2027E</td><td class="num">$517.9B</td><td class="num pos">+8.5%</td><td class="num">$9.52</td><td class="num pos">+7.6%</td><td>Growth normalizes; valuation becomes more important.</td></tr>
+</tbody></table></div>
+<p>Current consensus therefore creates a crucial setup: Apple must either exceed FY2027 expectations or retain an unusually high multiple to generate strong returns from today’s price. <sup><a href="https://www.zacks.com/zer/report/AAPL?rwid=Y">[9]</a></sup></p>
+<h3>Where this report differs from consensus</h3>
+<ul>
+<li><strong>More constructive on durable business quality:</strong> Services mix, installed-base economics and custom silicon can support premium profitability for longer than standard hardware-company frameworks imply.</li>
+<li><strong>Less aggressive on AI monetization:</strong> AI is treated primarily as a device-cycle and retention catalyst, not a near-term standalone revenue engine.</li>
+<li><strong>More valuation-sensitive:</strong> a 32x+ FY2027 P/E leaves limited room for ordinary execution. Consensus price targets around the low-to-mid $320s imply only modest upside from current levels. <sup><a href="https://finance.yahoo.com/quote/AAPL/">[10]</a></sup></li>
+<li><strong>More cautious on Services regulatory economics:</strong> App Store policy changes should be modeled as a recurring friction rather than a one-time headline risk. <sup><a href="https://www.reuters.com/legal/litigation/apple-changes-fees-alternative-app-stores-eu-2026-08-18/">[7]</a></sup></li>
+</ul>
+</section>
+
+<section class="section pagebreak">
+<div class="page-tag">7 | Valuation</div>
+<h2>Intrinsic value is below the current quote</h2>
+<p>At $308.73, Apple trades at approximately <strong>34.9x FY2026 consensus EPS</strong> and <strong>32.4x FY2027 consensus EPS</strong>. Trailing free cash flow of roughly $136.7B implies an FCF yield of only <strong>3.0%</strong> on an estimated market capitalization of about $4.51T.</p>
+<div class="two-col">
+<div class="chartbox"><div class="chart-title">DCF scenario values</div><svg viewBox="0 0 600 220" aria-label="AAPL DCF scenario values"><rect x="55" y="121.9" width="95" height="53.1" rx="5" fill="#7892aa"/><text x="102.5" y="113.9" text-anchor="middle" font-size="11" font-weight="700" fill="#22354a">$161</text><text x="102.5" y="198" text-anchor="middle" font-size="10" fill="#5c6b7a">Bear (20%)</text><rect x="235" y="79.8" width="95" height="95.2" rx="5" fill="#2f638e"/><text x="282.5" y="71.8" text-anchor="middle" font-size="11" font-weight="700" fill="#22354a">$289</text><text x="282.5" y="198" text-anchor="middle" font-size="10" fill="#5c6b7a">Base (55%)</text><rect x="415" y="37.9" width="95" height="137.1" rx="5" fill="#6e987e"/><text x="462.5" y="29.9" text-anchor="middle" font-size="11" font-weight="700" fill="#22354a">$416</text><text x="462.5" y="198" text-anchor="middle" font-size="10" fill="#5c6b7a">Bull (25%)</text><line x1="20" x2="580" y1="73.3" y2="73.3" stroke="#a23b3b" stroke-dasharray="5 4"/><text x="575" y="65.3" text-anchor="end" class="svglab">Current $309</text></svg><div class="chart-note">Probability-weighted DCF value: ~$295/share.</div></div>
+<div class="callout warn"><strong>Base-case DCF:</strong> $289/share using $136.7B trailing FCF, an 8.0% discount rate, a front-loaded growth path that fades from 12% toward 4%, and 3.0% terminal growth. The discount rate and terminal assumptions are already favorable for a mature mega-cap; the current price requires something close to the bull/base boundary.</div>
+</div>
+<div class="table-wrap"><table><thead><tr><th>Scenario</th><th class="num">Probability</th><th>Key assumptions</th><th class="num">DCF value</th><th class="num">Vs. price</th></tr></thead><tbody>
+<tr><td>Bear</td><td class="num">20%</td><td>$125B starting FCF; ~4% early growth; 8.5% discount; 2.5% terminal</td><td class="num">$161</td><td class="num neg">-48%</td></tr>
+<tr><td>Base</td><td class="num">55%</td><td>$136.7B starting FCF; 12% fading to 4%; 8.0% discount; 3.0% terminal</td><td class="num">$289</td><td class="num neg">-6%</td></tr>
+<tr><td>Bull</td><td class="num">25%</td><td>$140B starting FCF; 14% fading to 5%; 7.5% discount; 3.5% terminal</td><td class="num">$416</td><td class="num pos">+35%</td></tr>
+<tr><td><strong>Probability-weighted</strong></td><td class="num">100%</td><td>20% / 55% / 25%</td><td class="num"><strong>$295</strong></td><td class="num neg"><strong>-4%</strong></td></tr>
+</tbody></table></div>
+<h3>P/E cross-check</h3>
+<p>Applying a 29x-31x multiple to FY2027 consensus EPS of $9.52 produces approximately $276-$295 per share. A 33x multiple reaches about $314. At today’s price, the market is effectively assigning Apple a premium-quality multiple while also expecting consensus earnings delivery. That is possible, but not a favorable margin-of-safety setup.</p>
+<div class="callout"><strong>Internal fair-value range: $285-$300.</strong> This brackets the base DCF, the probability-weighted scenario value and a premium P/E cross-check. It is below the current sell-side average target (~$326), which is the principal valuation-based variant in this report. <sup><a href="https://finance.yahoo.com/quote/AAPL/">[10]</a></sup></div>
+</section>
+
+<section class="section pagebreak">
+<div class="page-tag">8 | Portfolio Fit</div>
+<h2>AAPL is already large enough to matter</h2>
+<p>The designated portfolio baseline contains <strong>340 AAPL shares</strong>, with a baseline market value of <strong>$105,521</strong> and a <strong>6.28% direct portfolio weight</strong>. At the current intraday quote, those shares are worth approximately <strong>$104,968</strong>.</p>
+<div class="two-col">
+<div class="card"><div class="label">Direct AAPL sensitivity</div><div class="value">~0.63 pp</div><div class="small">Portfolio impact from a 10% AAPL move, holding other assets constant.</div></div>
+<div class="card"><div class="label">Known indirect exposure</div><div class="value">+0.15 pp</div><div class="small">From VFFSX alone using Vanguard's 6.57% Apple weight. <sup><a href="https://advisors.vanguard.com/investments/products/vffsx/vanguard-500-index-fund-institutional-select-shares">[11]</a></sup></div></div>
+</div>
+<p>That known VFFSX look-through lifts identifiable Apple exposure to at least roughly <strong>6.43%</strong>, before considering additional indirect exposure embedded in diversified funds such as TLXIX. The latter holds a substantial U.S.-equity allocation, but exact Apple look-through depends on the underlying-fund composition and should not be treated as a precise figure without full constituent data. <sup><a href="https://www.nuveen.com/en-us/mutual-funds/nuveen-lifecycle-index-2045-fund">[12]</a></sup></p>
+<div class="callout warn"><strong>Portfolio implication:</strong> Apple does not need additional capital to remain a meaningful return driver. Because the position is already material and valuation is above internal fair value, the hurdle rate for adding should be higher than it would be for a new 1%-2% starter position.</div>
+<p>A 10% move in AAPL alone changes total portfolio value by roughly 0.63 percentage points before fund look-through. This concentration is acceptable for a high-quality franchise, but it reduces the diversification benefit of adding more at an expensive valuation.</p>
+</section>
+
+<section class="section pagebreak">
+<div class="page-tag">9 | Risks & Thesis Breakers</div>
+<h2>What can go wrong</h2>
+<div class="table-wrap"><table><thead><tr><th>Risk</th><th>Severity</th><th>Why it matters</th><th>What to monitor</th></tr></thead><tbody>
+<tr><td>Valuation compression</td><td><span class="badge risk">High</span></td><td>A move from ~32x FY27 EPS to 26x would overwhelm modest EPS growth.</td><td>Rates, mega-cap multiples, FY27 estimate revisions.</td></tr>
+<tr><td>Services regulation</td><td><span class="badge risk">High</span></td><td>Alternative payments/stores can reduce commission economics in the highest-margin segment.</td><td>App Store growth, take-rate changes, EU/U.S. remedies. <sup><a href="https://www.reuters.com/legal/litigation/apple-changes-fees-alternative-app-stores-eu-2026-08-18/">[7]</a></sup></td></tr>
+<tr><td>AI execution</td><td><span class="badge risk">High</span></td><td>Apple must convert Siri AI into visible product utility after perceived delays versus peers.</td><td>Adoption, upgrade behavior, feature quality, developer engagement. <sup><a href="https://www.reuters.com/business/google-apple-enter-into-multi-year-ai-deal-gemini-models-2026-01-12/">[6]</a></sup></td></tr>
+<tr><td>Supply constraints / memory</td><td><span class="badge risk">Medium</span></td><td>Management expects September-quarter constraints to worsen, limiting shipments despite demand.</td><td>Advanced-node availability, component costs, gross margin. <sup><a href="https://www.reuters.com/business/retail-consumer/apple-revenue-profits-beat-expectations-iphone-mac-sales-2026-07-30/">[5]</a></sup></td></tr>
+<tr><td>China competition / geopolitics</td><td><span class="badge risk">High</span></td><td>Recent share gains can reverse; Huawei remains the local leader.</td><td>Quarterly China revenue, IDC share, policy actions. <sup><a href="https://www.idc.com/resource-center/blog/china-smartphone-market-decline-q2-2026/">[8]</a></sup></td></tr>
+<tr><td>CEO transition</td><td><span class="badge risk">Medium</span></td><td>Strategic execution shifts to John Ternus at a critical AI/product moment.</td><td>Leadership changes, product cadence, capital allocation. <sup><a href="https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/">[4]</a></sup></td></tr>
+</tbody></table></div>
+<h3>Thesis-break conditions</h3>
+<ul>
+<li>Services growth falls into sustained mid-single digits while gross margin or monetization deteriorates.</li>
+<li>The iPhone installed base remains large but upgrade rates weaken despite AI-enabled product launches.</li>
+<li>Gross margin normalizes materially below the high-40% range without an offsetting improvement in growth.</li>
+<li>FY2027/FY2028 EPS estimates decline while the stock remains above 30x forward earnings.</li>
+<li>The leadership transition produces clear evidence of slower execution or loss of key technical talent.</li>
+</ul>
+</section>
+
+<section class="section pagebreak">
+<div class="page-tag">10 | Catalysts & Monitoring Framework</div>
+<h2>What could change the rating</h2>
+<div class="table-wrap"><table><thead><tr><th>Timing</th><th>Catalyst / checkpoint</th><th>Positive signal</th><th>Negative signal</th></tr></thead><tbody>
+<tr><td>Sep. 1, 2026</td><td>John Ternus becomes CEO</td><td>Clear continuity plus faster product/AI execution.</td><td>Unexpected leadership churn or strategic ambiguity.</td></tr>
+<tr><td>Sep. quarter</td><td>Supply-constrained revenue delivery</td><td>Growth at/above 11%; constraints ease quickly.</td><td>Growth below guide; margin hit from memory/component costs.</td></tr>
+<tr><td>Expected Oct. 29, 2026</td><td>FY2026 Q4 earnings</td><td>Services reaccelerates, FY27 estimates move higher.</td><td>Services/App Store weakness becomes structural. <sup><a href="https://www.zacks.com/zer/report/AAPL?rwid=Y">[9]</a></sup></td></tr>
+<tr><td>FY2027 product cycle</td><td>Siri AI / Apple Intelligence adoption</td><td>Clear evidence of upgrade acceleration and higher engagement.</td><td>AI remains a feature checklist rather than a purchase driver.</td></tr>
+<tr><td>Ongoing</td><td>EU / U.S. platform regulation</td><td>Economics stabilize after rule changes.</td><td>Further take-rate erosion or compulsory business-model changes.</td></tr>
+</tbody></table></div>
+<h3>Working / weakening / thesis-break framework</h3>
+<div class="three-col">
+<div class="callout good"><strong>Working</strong><br>Double-digit Services; installed base grows; AI drives upgrades; EPS estimates rise; FCF conversion stays >1.0x net income.</div>
+<div class="callout warn"><strong>Weakening</strong><br>Services slips below ~10%; gross margin ex-tariffs contracts; China share reverses; supply costs persist.</div>
+<div class="callout red"><strong>Broken</strong><br>Sustained Services impairment plus weak upgrade cycle, declining forward EPS and no valuation reset.</div>
+</div>
+</section>
+
+<section class="section pagebreak">
+<div class="page-tag">11 | Final Recommendation</div>
+<h2>Own the franchise; wait on the price</h2>
+<p class="lede"><strong>Rating: HOLD / NO NEW CAPITAL. Conviction: 8/10.</strong></p>
+<p>Apple deserves to remain a core holding because the business combines rare consumer loyalty, ecosystem economics, high-margin Services, custom silicon, enormous free cash flow and a credible path to use AI as an upgrade catalyst. The balance sheet and capital-return capacity add resilience.</p>
+<p>However, the stock currently prices in much of that quality. With FY2027 consensus EPS of $9.52, a ~32.4x forward multiple, an internal fair-value range of $285-$300 and a direct portfolio position already above 6%, there is not enough margin of safety to justify allocating the next dollar to AAPL today.</p>
+<div class="callout"><strong>Portfolio-manager action:</strong> Maintain the existing position. Do not chase strength. Add opportunistically below $285, become aggressive below $250, and reconsider trimming above $350 if earnings estimates have not risen enough to preserve a sub-33x forward multiple.</div>
+<p><strong>Bottom line:</strong> Apple is still a compounder. At the current quote, it is a compounder priced as though the next several years go mostly right.</p>
+</section>
+
+<section class="section sources pagebreak">
+<div class="page-tag">Sources & Methodology</div>
+<h2>Primary and supporting sources</h2>
+<ol>
+<li><a href="https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/">Apple Q3 FY2026 results</a></li><li><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm">Apple Q3 FY2026 Form 10-Q</a></li><li><a href="https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm">Apple FY2025 Form 10-K</a></li><li><a href="https://www.apple.com/newsroom/2026/04/tim-cook-to-become-apple-executive-chairman-john-ternus-to-become-apple-ceo/">Apple CEO succession announcement</a></li><li><a href="https://www.reuters.com/business/retail-consumer/apple-revenue-profits-beat-expectations-iphone-mac-sales-2026-07-30/">Reuters: Apple Q3 results and Q4 outlook</a></li><li><a href="https://www.reuters.com/business/google-apple-enter-into-multi-year-ai-deal-gemini-models-2026-01-12/">Reuters: Apple-Google Gemini agreement</a></li><li><a href="https://www.reuters.com/legal/litigation/apple-changes-fees-alternative-app-stores-eu-2026-08-18/">Reuters: EU alternative app-store fee changes</a></li><li><a href="https://www.idc.com/resource-center/blog/china-smartphone-market-decline-q2-2026/">IDC: China smartphone market Q2 2026</a></li><li><a href="https://www.zacks.com/zer/report/AAPL?rwid=Y">Zacks AAPL research report and estimates</a></li><li><a href="https://finance.yahoo.com/quote/AAPL/">Yahoo Finance AAPL valuation and consensus targets</a></li><li><a href="https://advisors.vanguard.com/investments/products/vffsx/vanguard-500-index-fund-institutional-select-shares">Vanguard 500 Index Fund Institutional Select</a></li><li><a href="https://www.nuveen.com/en-us/mutual-funds/nuveen-lifecycle-index-2045-fund">Nuveen Lifecycle Index 2045 Fund</a></li>
+</ol>
+<h3>Valuation methodology</h3>
+<p>The DCF uses trailing free cash flow derived from Apple SEC filings, adds net cash and marketable securities less debt, and divides equity value by reported shares outstanding. Scenario values are not price forecasts; they are sensitivity outputs designed to show what different long-run cash-flow assumptions imply. Multiples are cross-checked against FY2027 consensus EPS from Zacks. Market price is an IEX snapshot at approximately 2:34 p.m. ET on August 21, 2026.</p>
+<h3>Portfolio methodology</h3>
+<p>Portfolio holdings, quantities, market values and weights are sourced solely from the designated workbook <strong>retirement-portfolio-24.xlsx</strong>. Known indirect Apple exposure through VFFSX is estimated using Vanguard's published Apple fund weight. TLXIX look-through is acknowledged but not quantified because full underlying constituent data is not available in the portfolio export.</p>
+<div class="disclaimer"><strong>Important:</strong> This report is investment research and portfolio decision support, not tax, legal, or individualized fiduciary advice. Market prices, consensus estimates and company guidance can change materially after the stated as-of time. All valuation outputs depend on assumptions and should be revisited as new earnings, product, regulatory and macro data become available.</div>
+</section>
+</main>
+</body>
+</html>
