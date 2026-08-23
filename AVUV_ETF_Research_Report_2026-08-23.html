@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>AVUV ETF Research Report — August 23, 2026</title>
+<style>
+  :root{--ink:#14212b;--muted:#5d6b75;--line:#d7dee3;--soft:#f3f6f8;--navy:#173a52;--teal:#1e6f73;--gold:#a26c14;--red:#8b3a3a;--green:#2d6a4f;--paper:#fff;}
+  *{box-sizing:border-box}
+  body{margin:0;background:#eef2f4;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.42;font-size:14px}
+  .report{max-width:1040px;margin:28px auto;background:var(--paper);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+  .page{padding:54px 62px;border-bottom:1px solid #edf0f2;min-height:900px}
+  .page:last-child{border-bottom:none}
+  .cover{min-height:980px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#102a3b 0%,#173a52 58%,#1e6f73 100%);color:white}
+  .kicker{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;opacity:.85}
+  h1{font-size:42px;line-height:1.06;margin:18px 0 16px;letter-spacing:-.03em}
+  h2{font-size:25px;line-height:1.15;margin:0 0 18px;color:var(--navy);letter-spacing:-.015em}
+  h3{font-size:17px;margin:20px 0 8px;color:var(--navy)}
+  p{margin:7px 0 12px}
+  .lead{font-size:20px;line-height:1.45;max-width:760px;color:#e8f0f4}
+  .cover-meta{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:22px;border-top:1px solid rgba(255,255,255,.26);padding-top:24px}
+  .cover-meta strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#cfe0e6;margin-bottom:4px}
+  .cover-meta span{font-size:15px}
+  .badge{display:inline-block;padding:7px 11px;border-radius:999px;background:#d9ece7;color:#1e5543;font-size:12px;font-weight:700;letter-spacing:.03em}
+  .badge.warn{background:#f6e8c9;color:#78510c}
+  .badge.neutral{background:#e8eef2;color:#3e5363}
+  .summary-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;margin:20px 0 24px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:18px;background:white;break-inside:avoid}
+  .card.soft{background:var(--soft)}
+  .card h3{margin-top:0}
+  .score{font-size:38px;font-weight:800;color:var(--navy);letter-spacing:-.04em}
+  .score small{font-size:16px;color:var(--muted);font-weight:600}
+  .callout{border-left:5px solid var(--teal);background:#eef7f6;padding:16px 18px;margin:16px 0;break-inside:avoid}
+  .callout.warn{border-left-color:var(--gold);background:#fbf5e8}
+  .callout.red{border-left-color:var(--red);background:#f9eeee}
+  .callout strong{color:var(--navy)}
+  table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:12.5px;break-inside:auto}
+  th{background:#eaf0f3;color:#294252;text-align:left;padding:9px 8px;border:1px solid #d4dde2;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+  td{padding:9px 8px;border:1px solid #dbe2e6;vertical-align:top}
+  tr:nth-child(even) td{background:#fafcfd}
+  .num{text-align:right;white-space:nowrap}
+  .best{font-weight:700;color:var(--green)}
+  .risk{color:var(--red);font-weight:700}
+  ul{margin:8px 0 14px;padding-left:20px}
+  li{margin:5px 0}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .metric{border-top:3px solid var(--navy);background:#f8fafb;padding:14px}
+  .metric .label{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700}
+  .metric .value{font-size:24px;font-weight:800;margin-top:3px;color:var(--navy)}
+  .metric .note{font-size:11px;color:var(--muted);margin-top:3px}
+  .barrow{display:grid;grid-template-columns:92px 1fr 52px;align-items:center;gap:10px;margin:10px 0}
+  .barlabel{font-weight:700;color:#334c5d}
+  .bartrack{height:13px;background:#e8edf0;border-radius:8px;overflow:hidden}
+  .bar{height:100%;background:linear-gradient(90deg,var(--navy),var(--teal));border-radius:8px}
+  .barval{text-align:right;font-weight:700}
+  .section-note{font-size:11px;color:var(--muted);margin-top:-8px;margin-bottom:14px}
+  .rank{font-weight:800;font-size:20px;color:var(--navy)}
+  .ticker{font-size:17px;font-weight:800;letter-spacing:.03em}
+  .source-list{font-size:11px;color:#485d6b;word-break:break-word}
+  .source-list li{margin:8px 0}
+  a{color:#1b5e7a;text-decoration:none}
+  .footer-note{font-size:10.5px;color:#6b7982;border-top:1px solid var(--line);padding-top:12px;margin-top:24px}
+  .small{font-size:11px;color:var(--muted)}
+  .avoid{break-inside:avoid}
+  .page-break{break-before:page}
+  @media print{
+    body{background:white;font-size:12px}
+    .report{max-width:none;margin:0;box-shadow:none}
+    .page{min-height:auto;padding:38px 46px;border-bottom:none}
+    .cover{min-height:10in;padding:54px 58px}
+    h1{font-size:36px} h2{font-size:22px} h3{font-size:15px}
+    table{font-size:10.5px} th{font-size:9px}
+    .page{break-after:page}.page:last-child{break-after:auto}
+    .compact-page{padding-top:24px;padding-bottom:22px;font-size:10.8px;line-height:1.30}
+    .compact-page h2{font-size:20px;margin-bottom:10px}.compact-page h3{font-size:13px;margin:10px 0 5px}
+    .compact-page p{margin:4px 0 7px}.compact-page .three-col{gap:8px}.compact-page .metric{padding:8px}.compact-page .metric .value{font-size:19px}
+    .compact-page .callout{padding:10px 13px;margin:9px 0}.compact-page table{font-size:9.2px;margin:6px 0 8px}.compact-page th,.compact-page td{padding:5px 5px}
+    .compact-page .section-note{font-size:9px;margin-top:-3px;margin-bottom:6px}
+    .card,.callout,.metric,.barrow{break-inside:avoid}
+  }
+  @media(max-width:760px){
+    .report{margin:0}.page{padding:34px 22px;min-height:auto}.cover{min-height:100vh}.summary-grid,.two-col,.three-col,.cover-meta{grid-template-columns:1fr}.lead{font-size:17px}h1{font-size:34px}table{display:block;overflow-x:auto;white-space:nowrap}
+  }
+</style>
+
+<style>
+@page { size: Letter; margin: 0; }
+@media print {
+  html,body{margin:0;padding:0;width:8.5in;background:white;font-size:10.3px;line-height:1.25}
+  .report{width:8.5in;max-width:none;margin:0;box-shadow:none}
+  .page{width:8.5in;min-height:11in;padding:28px 40px;border-bottom:none;break-after:page}
+  .page:last-child{break-after:auto}
+  .cover{min-height:11in;height:11in;padding:48px 54px}
+  h1{font-size:34px} h2{font-size:19px;margin-bottom:10px} h3{font-size:12.5px;margin:10px 0 5px}
+  p{margin:4px 0 7px} ul{margin:4px 0 8px;padding-left:18px} li{margin:3px 0}
+  .summary-grid{gap:12px;margin:10px 0 12px} .two-col{gap:11px} .three-col{gap:8px}
+  .card{padding:10px} .callout{padding:9px 12px;margin:8px 0}
+  .score{font-size:31px} .badge{padding:5px 8px;font-size:9.5px}
+  .metric{padding:8px} .metric .label{font-size:8.5px} .metric .value{font-size:18px} .metric .note{font-size:8.5px}
+  table{font-size:8.6px;margin:6px 0 9px} th{font-size:7.4px;padding:4px 5px} td{padding:4px 5px}
+  .section-note,.small,.source-list{font-size:8.2px} .footer-note{font-size:8px;margin-top:12px;padding-top:7px}
+  .barrow{grid-template-columns:76px 1fr 42px;gap:7px;margin:6px 0} .bartrack{height:10px}
+  .compact-page{font-size:9.4px;line-height:1.22;padding-top:22px;padding-bottom:20px}
+  .compact-page h2{font-size:18px} .compact-page h3{font-size:11.5px} .compact-page table{font-size:8px}
+}
+</style>
+</head>
+<body>
+<div class="report">
+
+<section class="page cover">
+  <div>
+    <div class="kicker">ETF Research • U.S. Small-Cap Value</div>
+    <h1>Avantis U.S. Small Cap Value ETF (AVUV)</h1>
+    <p class="lead">A professional assessment of AVUV’s factor design, holdings, valuation, performance, risks and portfolio role — with direct comparisons to VBR, IJS, SLYV and DFSV.</p>
+  </div>
+  <div>
+    <div style="font-size:14px;color:#dce9ed;margin-bottom:12px">Fund-level view: <strong style="color:white">Preferred small-cap value ETF</strong></div>
+    <div style="font-size:14px;color:#dce9ed;margin-bottom:26px">Portfolio-specific view: <strong style="color:white">Add Selectively • Preferred destination for incremental small-cap capital</strong></div>
+    <div class="cover-meta">
+      <div><strong>Report date</strong><span>August 23, 2026</span></div>
+      <div><strong>Portfolio baseline</strong><span>retirement-portfolio-27.xlsx</span></div>
+      <div><strong>Conviction</strong><span>9 / 10 fund quality • 8.5 / 10 portfolio fit</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Executive Summary</div>
+  <h2>AVUV is one of the strongest U.S. small-cap value implementations — the fee buys a differentiated process, not closet indexing</h2>
+  <div class="summary-grid">
+    <div>
+      <p><strong>AVUV combines the diversification and discipline of systematic investing with active flexibility.</strong> Avantis does not replicate a fixed index. Instead, it seeks to overweight smaller companies trading at lower valuations while favoring stronger profitability, then uses flexible trading to reduce unnecessary implementation costs. That makes AVUV a more deliberate factor vehicle than a traditional one-dimensional “cheap stocks” index.</p>
+      <p>The current portfolio is highly diversified at the security level: 784 holdings at Schwab’s August 21 snapshot, with the top ten only about 8% of assets. Yet it is intentionally concentrated by <em>factor</em> and <em>sector</em>: financials, consumer discretionary, energy and industrials comprise most of the portfolio. The fund therefore provides meaningful diversification from mega-cap growth, but can deviate sharply from broad-market benchmarks for years at a time.</p>
+      <div class="callout">
+        <strong>Investment conclusion:</strong> AVUV is our preferred long-horizon small-cap value ETF in this peer set. VBR is the lowest-cost broad value option; SLYV is the better passive S&amp;P SmallCap 600 Value implementation than the more expensive IJS; DFSV is AVUV’s closest philosophical competitor. AVUV earns the top ranking because its value-plus-profitability design, scale, diversification and live performance justify the 0.25% fee.
+      </div>
+    </div>
+    <div class="card soft">
+      <span class="badge">Preferred Small-Cap Value ETF</span>
+      <h3>Analyst scorecard</h3>
+      <div class="score">9.0 <small>/ 10</small></div>
+      <table>
+        <tr><td>Factor design</td><td class="num best">9.5</td></tr>
+        <tr><td>Diversification</td><td class="num best">9.0</td></tr>
+        <tr><td>Liquidity / scale</td><td class="num best">9.0</td></tr>
+        <tr><td>Valuation support</td><td class="num best">9.0</td></tr>
+        <tr><td>Cost efficiency</td><td class="num">8.0</td></tr>
+        <tr><td>Factor / sector risk</td><td class="num risk">7.0</td></tr>
+      </table>
+      <p class="small">Scores are analyst judgments, not third-party ratings.</p>
+    </div>
+  </div>
+
+  <div class="three-col">
+    <div class="metric"><div class="label">Expense ratio</div><div class="value">0.25%</div><div class="note">Avantis, effective 1/1/26</div></div>
+    <div class="metric"><div class="label">Assets</div><div class="value">~$31.8B</div><div class="note">August 2026 third-party data</div></div>
+    <div class="metric"><div class="label">Holdings</div><div class="value">784</div><div class="note">Schwab, 8/21/26</div></div>
+    <div class="metric"><div class="label">P/E</div><div class="value">~13.4×</div><div class="note">8/20/26 portfolio estimate</div></div>
+    <div class="metric"><div class="label">5-year annualized</div><div class="value">13.2%</div><div class="note">Market price through 7/31/26</div></div>
+    <div class="metric"><div class="label">Top-10 weight</div><div class="value">8.2%</div><div class="note">Broad single-name diversification</div></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Fund Structure</div>
+  <h2>AVUV targets three return drivers at once: size, value and profitability</h2>
+  <div class="two-col">
+    <div>
+      <h3>How the strategy differs from an index fund</h3>
+      <p>AVUV is actively managed and does not seek to replicate a specified index. Avantis uses market prices and company financial information to emphasize securities it believes have higher expected returns. In practice, the portfolio seeks smaller companies with lower valuations while incorporating profitability and implementation costs into security weights and trading decisions.</p>
+      <p>This matters because traditional small-cap value indices can be mechanically exposed to weak businesses simply because they look statistically cheap. AVUV’s profitability emphasis is intended to improve the quality of the value exposure without abandoning the value premium.</p>
+      <h3>Portfolio construction implications</h3>
+      <ul>
+        <li><strong>Broad security count:</strong> no single stock drives results; the largest position is only about 1%.</li>
+        <li><strong>Intentional factor concentration:</strong> the portfolio can materially lag when mega-cap growth and momentum dominate.</li>
+        <li><strong>Flexible trading:</strong> AVUV is not forced to rebalance on a single index date, reducing the need to trade when the market knows an index must trade.</li>
+        <li><strong>Sector weights are an output, not a target:</strong> large financials, energy and cyclical weights arise from where small value/profitability opportunities are found.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Current sector exposure</h3>
+      <p class="section-note">Schwab holdings snapshot, August 21, 2026; residual includes real estate/cash and rounding</p>
+      <div class="barrow"><div class="barlabel">Financials</div><div class="bartrack"><div class="bar" style="width:100%"></div></div><div class="barval">27.3%</div></div>
+      <div class="barrow"><div class="barlabel">Cons. Disc.</div><div class="bartrack"><div class="bar" style="width:65%"></div></div><div class="barval">17.7%</div></div>
+      <div class="barrow"><div class="barlabel">Energy</div><div class="bartrack"><div class="bar" style="width:58%"></div></div><div class="barval">15.9%</div></div>
+      <div class="barrow"><div class="barlabel">Industrials</div><div class="bartrack"><div class="bar" style="width:53%"></div></div><div class="barval">14.5%</div></div>
+      <div class="barrow"><div class="barlabel">Technology</div><div class="bartrack"><div class="bar" style="width:19%"></div></div><div class="barval">5.1%</div></div>
+      <div class="barrow"><div class="barlabel">Staples</div><div class="bartrack"><div class="bar" style="width:18%"></div></div><div class="barval">5.0%</div></div>
+      <div class="barrow"><div class="barlabel">Materials</div><div class="bartrack"><div class="bar" style="width:17%"></div></div><div class="barval">4.7%</div></div>
+      <div class="barrow"><div class="barlabel">Health Care</div><div class="bartrack"><div class="bar" style="width:15%"></div></div><div class="barval">4.0%</div></div>
+    </div>
+  </div>
+  <div class="callout warn">
+    <strong>Do not confuse security diversification with economic diversification.</strong> AVUV owns hundreds of companies, but the common drivers are correlated: domestic cyclicality, smaller-company financing conditions, value spreads, credit availability and risk appetite. The fund should be treated as a factor sleeve, not a substitute for a total-market portfolio.
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Holdings & Factor Purity</div>
+  <h2>Single-name concentration is exceptionally low; factor exposure is the real source of active risk</h2>
+  <table>
+    <thead><tr><th>Holding</th><th>Ticker</th><th class="num">Approx. weight</th><th>Economic exposure</th></tr></thead>
+    <tbody>
+      <tr><td>Matson</td><td>MATX</td><td class="num">~1.0%</td><td>Ocean transportation / domestic logistics</td></tr>
+      <tr><td>Lantheus Holdings</td><td>LNTH</td><td class="num">~1.0%</td><td>Diagnostic imaging / radiopharmaceuticals</td></tr>
+      <tr><td>Viasat</td><td>VSAT</td><td class="num">~1.0%</td><td>Satellite communications</td></tr>
+      <tr><td>SM Energy</td><td>SM</td><td class="num">~0.8%</td><td>U.S. oil and gas exploration</td></tr>
+      <tr><td>GATX</td><td>GATX</td><td class="num">~0.8%</td><td>Railcar leasing / industrial assets</td></tr>
+      <tr><td>Macy's</td><td>M</td><td class="num">~0.8%</td><td>Department-store retail</td></tr>
+      <tr><td>SkyWest</td><td>SKYW</td><td class="num">~0.7%</td><td>Regional aviation</td></tr>
+      <tr><td>Rush Enterprises</td><td>RUSHA</td><td class="num">~0.7%</td><td>Commercial vehicle distribution</td></tr>
+      <tr><td>Avnet</td><td>AVT</td><td class="num">~0.7%</td><td>Electronic components distribution</td></tr>
+      <tr><td>Cabot</td><td>CBT</td><td class="num">~0.7%</td><td>Specialty chemicals / materials</td></tr>
+    </tbody>
+  </table>
+  <p class="section-note">Weights are approximate and change daily. The top ten represented roughly 8.2% of assets in late August 2026.</p>
+
+  <div class="two-col">
+    <div class="card">
+      <h3>Why the profitability screen matters</h3>
+      <p>At March 31, 2026, Avantis reported a materially higher weighted profitability-to-book measure than the Russell 2000 Value benchmark while also maintaining a stronger book-to-market tilt. That is the strategy’s core value proposition: seek cheaper securities without indiscriminately maximizing exposure to financially weak companies.</p>
+      <p>The process is still exposed to value traps; profitability is not a guarantee of durable earnings. But structurally, the portfolio is more thoughtful than a simple “lowest P/B wins” screen.</p>
+    </div>
+    <div class="card">
+      <h3>Purity vs. VBR</h3>
+      <p>VBR is a very strong low-cost fund, but its current portfolio sits materially higher on the market-cap spectrum. Third-party data show roughly half of VBR assets in companies above $10 billion, versus only about 1% for AVUV. Investors specifically seeking a <em>small-company</em> factor premium should therefore view VBR as a broader value sleeve rather than a close AVUV substitute.</p>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Peer Comparison</div>
+  <h2>AVUV vs. VBR, IJS, SLYV and DFSV</h2>
+  <table>
+    <thead><tr><th>ETF</th><th>Approach</th><th class="num">Expense</th><th class="num">Holdings</th><th class="num">Approx. assets</th><th>Primary distinction</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ticker">AVUV</span><br>Avantis U.S. Small Cap Value</td><td>Active systematic; size + value + profitability</td><td class="num">0.25%</td><td class="num">784</td><td class="num">~$31.8B</td><td class="best">Best all-around factor implementation</td></tr>
+      <tr><td><span class="ticker">VBR</span><br>Vanguard Small-Cap Value</td><td>Passive broad U.S. small-cap value index</td><td class="num best">0.05%</td><td class="num">~840</td><td class="num">~$37B share class</td><td>Lowest cost; less small-cap / factor-pure than AVUV</td></tr>
+      <tr><td><span class="ticker">SLYV</span><br>SPDR S&amp;P 600 Small Cap Value</td><td>S&amp;P SmallCap 600 Value Index</td><td class="num">0.15%</td><td class="num">~460</td><td class="num">~$5.1B</td><td class="best">Preferred passive S&amp;P 600 Value option</td></tr>
+      <tr><td><span class="ticker">IJS</span><br>iShares S&amp;P Small-Cap 600 Value</td><td>S&amp;P SmallCap 600 Value Index</td><td class="num">0.18%</td><td class="num">506</td><td class="num">~$8.4B</td><td>Same core benchmark as SLYV; slightly higher fee</td></tr>
+      <tr><td><span class="ticker">DFSV</span><br>Dimensional U.S. Small Cap Value</td><td>Active systematic; small/value/profitability</td><td class="num">0.30%</td><td class="num">~1,000</td><td class="num">~$8.4B</td><td>Closest philosophical competitor; broader, newer ETF</td></tr>
+    </tbody>
+  </table>
+  <p class="section-note">Holdings and AUM dates vary by sponsor/third party in August 2026. Structural comparisons are more important than day-to-day asset fluctuations.</p>
+
+  <div class="two-col">
+    <div class="card">
+      <h3>Annual fund cost per $100,000</h3>
+      <div class="barrow"><div class="barlabel">VBR</div><div class="bartrack"><div class="bar" style="width:17%"></div></div><div class="barval">$50</div></div>
+      <div class="barrow"><div class="barlabel">SLYV</div><div class="bartrack"><div class="bar" style="width:50%"></div></div><div class="barval">$150</div></div>
+      <div class="barrow"><div class="barlabel">IJS</div><div class="bartrack"><div class="bar" style="width:60%"></div></div><div class="barval">$180</div></div>
+      <div class="barrow"><div class="barlabel">AVUV</div><div class="bartrack"><div class="bar" style="width:83%"></div></div><div class="barval">$250</div></div>
+      <div class="barrow"><div class="barlabel">DFSV</div><div class="bartrack"><div class="bar" style="width:100%"></div></div><div class="barval">$300</div></div>
+      <p class="small">AVUV costs $200 more per $100,000 annually than VBR. That premium is only justified if the active factor construction produces a better long-run exposure and/or return outcome.</p>
+    </div>
+    <div class="card">
+      <h3>Peer hierarchy</h3>
+      <ol style="padding-left:20px;margin:8px 0 14px">
+        <li><strong>AVUV:</strong> preferred strategic small-cap value sleeve.</li>
+        <li><strong>DFSV:</strong> credible alternative for investors who prefer Dimensional’s implementation.</li>
+        <li><strong>SLYV:</strong> preferred pure passive S&amp;P 600 Value option.</li>
+        <li><strong>VBR:</strong> best ultra-low-cost broad value option, but less factor-pure.</li>
+        <li><strong>IJS:</strong> sound fund, but SLYV offers nearly the same benchmark exposure for less.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Performance & Valuation</div>
+  <h2>AVUV’s live record has been excellent — but 2026’s sharp small-value rally argues for staged rather than impulsive buying</h2>
+  <table>
+    <thead><tr><th>ETF</th><th class="num">YTD</th><th class="num">1 Year</th><th class="num">3 Year ann.</th><th class="num">5 Year ann.</th><th>As of</th></tr></thead>
+    <tbody>
+      <tr><td><strong>AVUV</strong></td><td class="num best">23.6%</td><td class="num best">37.5%</td><td class="num best">16.0%</td><td class="num best">13.2%</td><td>7/31/26</td></tr>
+      <tr><td><strong>VBR</strong></td><td class="num">16.7%</td><td class="num">25.7%</td><td class="num">14.3%</td><td class="num">9.7%</td><td>7/31/26</td></tr>
+      <tr><td><strong>SLYV</strong></td><td class="num">20.2%</td><td class="num">36.9%</td><td class="num">12.4%</td><td class="num">8.0%</td><td>7/31/26</td></tr>
+      <tr><td><strong>IJS</strong></td><td class="num">20.9%</td><td class="num">39.5%</td><td class="num">14.8%</td><td class="num">7.1%</td><td>7/31/26</td></tr>
+      <tr><td><strong>DFSV</strong></td><td class="num">21.4%</td><td class="num">35.1%</td><td class="num">14.4%</td><td class="num">N/A</td><td>7/31/26</td></tr>
+    </tbody>
+  </table>
+  <p class="section-note">Returns are total returns and generally NAV/market-price standardized returns from fund sponsors or major fund-data providers. DFSV launched in 2022 and lacks a five-year live record.</p>
+
+  <div class="two-col">
+    <div class="card">
+      <h3>Valuation remains supportive</h3>
+      <p>AVUV’s portfolio traded at roughly <strong>13.4× trailing earnings</strong> and about <strong>1.6× book value</strong> in late August according to third-party portfolio data. Those figures remain inexpensive relative to the U.S. large-cap market and below VBR/IJS on reported trailing P/E measures, although cross-provider methodologies are not perfectly comparable.</p>
+      <p>Valuation is a genuine source of expected return support, but it is not a timing signal. Cheap securities can stay cheap — or get cheaper — when earnings deteriorate.</p>
+    </div>
+    <div class="card">
+      <h3>Do not extrapolate the recent run</h3>
+      <p>AVUV was up roughly 24% year-to-date through July 31 and more than 37% over the prior year. That is excellent evidence that the factor can work quickly, but it also means the easiest “mean-reversion” money may already have been captured.</p>
+      <p><strong>Implementation view:</strong> use staged additions and portfolio rebalancing rather than chasing a single entry point after a large relative move.</p>
+    </div>
+  </div>
+  <div class="callout">
+    <strong>Relative performance is notable:</strong> through July 31, AVUV’s five-year annualized total return exceeded VBR by roughly 3.5 percentage points and SLYV by more than 5 points. That history is encouraging, but it remains one market cycle and should not be treated as proof that future active excess returns will persist.
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Investment Thesis & Risks</div>
+  <h2>Why AVUV can continue to add value — and what would challenge the thesis</h2>
+  <div class="two-col">
+    <div class="card">
+      <h3>Thesis drivers</h3>
+      <ul>
+        <li><strong>Structural factor exposure:</strong> small size, lower relative prices and higher profitability are well-established expected-return dimensions.</li>
+        <li><strong>Valuation dispersion:</strong> mega-cap growth concentration has left many smaller companies at materially lower multiples.</li>
+        <li><strong>Domestic earnings breadth:</strong> a broader U.S. capex/manufacturing cycle can benefit industrial, energy and financial constituents.</li>
+        <li><strong>Less single-stock dependence:</strong> the top ten are only ~8%, unlike mega-cap index funds where a handful of names dominate.</li>
+        <li><strong>Flexible implementation:</strong> the active process can trade around index events and changing fundamentals rather than following a rigid rebalance calendar.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Key risks</h3>
+      <ul>
+        <li><strong>Financing sensitivity:</strong> smaller companies are more exposed to bank credit, refinancing and elevated interest costs.</li>
+        <li><strong>Value traps:</strong> low multiples can reflect genuinely deteriorating business economics.</li>
+        <li><strong>Sector concentration:</strong> financials and energy can both suffer in recessions or credit stress.</li>
+        <li><strong>Factor drought:</strong> growth/momentum leadership can cause multi-year relative underperformance.</li>
+        <li><strong>Active-model risk:</strong> AVUV can make factor/weighting decisions that lag conventional indices.</li>
+        <li><strong>Recent-run risk:</strong> 2026’s strong gains reduce the tactical margin of safety versus the start of the year.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout warn">
+    <strong>Rates are still a live variable.</strong> The Federal Reserve held the federal-funds target at 3.50%–3.75% on July 29, 2026, while inflation remained above target and three voters preferred a 25 bp hike. Investors should not build the AVUV thesis around imminent rate cuts. A sustained re-acceleration in rates or bank-credit stress would be a meaningful headwind for small caps.
+  </div>
+  <h3>Thesis status</h3>
+  <table>
+    <thead><tr><th>Question</th><th>Current assessment</th></tr></thead>
+    <tbody>
+      <tr><td>Is the long-run factor case intact?</td><td class="best">Yes — working</td></tr>
+      <tr><td>Is AVUV still attractively valued?</td><td class="best">Yes, though less tactically cheap after 2026 rally</td></tr>
+      <tr><td>Is financing risk declining?</td><td>Mixed — rates remain elevated and policy is uncertain</td></tr>
+      <tr><td>What breaks the thesis?</td><td>Persistent factor underperformance driven by weak profitability capture, structural small-company earnings impairment, or evidence that implementation costs overwhelm the expected factor premium.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="page compact-page">
+  <div class="kicker" style="color:var(--teal)">Portfolio Fit</div>
+  <h2>For retirement-portfolio-27, AVUV should be the preferred incremental small-cap sleeve — not simply a fourth layer of overlapping exposure</h2>
+  <div class="three-col">
+    <div class="metric"><div class="label">Current AVUV value</div><div class="value">$28,578</div><div class="note">226 shares @ $126.45</div></div>
+    <div class="metric"><div class="label">Current AVUV weight</div><div class="value">1.70%</div><div class="note">of $1.676M portfolio</div></div>
+    <div class="metric"><div class="label">Direct small-cap sleeves</div><div class="value">4.43%</div><div class="note">AVUV + FSSNX + VTWO</div></div>
+  </div>
+
+  <p>The portfolio already owns <strong>AVUV, Fidelity Small Cap Index (FSSNX) and Vanguard Russell 2000 ETF (VTWO)</strong>. Those exposures are not identical: FSSNX/VTWO provide broad small-cap beta, while AVUV deliberately adds value and profitability tilts. However, continuing to add equally to all three would increase complexity and dilute the purpose of the factor sleeve.</p>
+
+  <table>
+    <thead><tr><th>Current small-cap holding</th><th class="num">Market value</th><th class="num">Portfolio weight</th><th>Role</th></tr></thead>
+    <tbody>
+      <tr><td><strong>AVUV</strong></td><td class="num">$28,578</td><td class="num">1.70%</td><td class="best">Targeted small-value/profitability factor sleeve</td></tr>
+      <tr><td><strong>FSSNX</strong></td><td class="num">$30,430</td><td class="num">1.82%</td><td>Broad U.S. small-cap index beta</td></tr>
+      <tr><td><strong>VTWO</strong></td><td class="num">$15,279</td><td class="num">0.91%</td><td>Russell 2000 broad small-cap beta</td></tr>
+      <tr><td><strong>Direct subtotal</strong></td><td class="num"><strong>$74,286</strong></td><td class="num"><strong>4.43%</strong></td><td>Before look-through exposure inside diversified funds</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Recommendation: Add Selectively.</strong> Route new small-cap allocations preferentially to AVUV and allow it to rise toward roughly <strong>2.5%–3.0%</strong> of total portfolio assets over time. At the current portfolio value and the workbook’s $126.45 AVUV price, that implies approximately <strong>$13.3k–$21.7k</strong> of incremental AVUV exposure (about 105–172 shares) if implemented immediately. The preferred funding source is future contributions/cash or consolidation of redundant broad-small-cap exposure — not simply growing AVUV, FSSNX and VTWO in parallel.
+  </div>
+
+  <div class="two-col">
+    <div class="card">
+      <h3>Preferred architecture</h3>
+      <ul>
+        <li>One broad small-cap core <strong>plus AVUV</strong> as the factor tilt is cleaner than maintaining multiple broad small-cap funds.</li>
+        <li>If FSSNX and VTWO are held in tax-advantaged accounts, consolidation may be operationally easier; tax consequences must be checked before changes in taxable accounts.</li>
+        <li>AVUV above ~4% of total portfolio would become a substantial factor bet unless broad small-cap exposure is reduced simultaneously.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Why it fits the broader portfolio</h3>
+      <ul>
+        <li>Provides a counterweight to large-cap growth and technology concentration.</li>
+        <li>Expands exposure to financials, industrials, energy and domestic cyclicals.</li>
+        <li>Raises expected-return factor diversification without adding single-company thesis risk.</li>
+        <li>Matches a long investment horizon better than a tactical small-cap trade.</li>
+      </ul>
+    </div>
+  </div>
+  <p class="small">Target weights are portfolio-management judgments, not guarantees. Share estimates ignore taxes, bid/ask spreads, commissions and portfolio-value changes after the workbook date.</p>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Decision Framework</div>
+  <h2>Which small-cap value ETF is best for which job?</h2>
+  <table>
+    <thead><tr><th>Investor objective</th><th>Preferred ETF</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Highest-conviction long-horizon small-cap value factor sleeve</td><td><span class="ticker best">AVUV</span></td><td>Strong size/value/profitability design, diversified holdings, excellent scale and compelling live record.</td></tr>
+      <tr><td>Lowest possible fee with broad value exposure</td><td><span class="ticker">VBR</span></td><td>0.05% fee and huge scale; accepts a larger-cap portfolio and weaker factor purity.</td></tr>
+      <tr><td>Simple passive S&amp;P SmallCap 600 Value exposure</td><td><span class="ticker">SLYV</span></td><td>Same core benchmark as IJS at a lower expense ratio.</td></tr>
+      <tr><td>iShares ecosystem / existing IJS implementation</td><td><span class="ticker">IJS</span></td><td>Sound passive product with good liquidity; no compelling reason to switch solely for modest fee differences if tax costs are high.</td></tr>
+      <tr><td>Dimensional systematic philosophy</td><td><span class="ticker">DFSV</span></td><td>Very credible active factor process and broad diversification; slightly higher fee and shorter ETF live record.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="summary-grid">
+    <div class="card">
+      <h3>Final recommendation</h3>
+      <p><span class="badge">ADD SELECTIVELY</span></p>
+      <p><strong>Fund quality:</strong> 9 / 10<br><strong>Portfolio fit:</strong> 8.5 / 10<br><strong>Suggested AVUV range:</strong> 2.5%–3.0% of portfolio, with flexibility up to ~4% only if broad small-cap overlap is reduced.</p>
+      <p>AVUV is a high-quality way to express a durable small-cap value thesis. The fund’s edge is not that it owns “cheap small stocks”; it is that it seeks cheap smaller companies while incorporating profitability and flexible implementation. That is worth paying more than a plain index fee for.</p>
+    </div>
+    <div class="card soft">
+      <h3>Portfolio-manager action list</h3>
+      <ol style="padding-left:20px">
+        <li>Direct the next incremental small-cap dollar to AVUV rather than adding proportionately to all current small-cap vehicles.</li>
+        <li>Consider whether both FSSNX and VTWO are necessary; retain at most one as the broad small-cap core if simplification is desired.</li>
+        <li>Stage AVUV additions after the strong 2026 move rather than treating the current price as an urgent entry.</li>
+        <li>Monitor rates, bank-credit conditions, small-cap earnings revisions and AVUV’s profitability/value exposure.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="callout red">
+    <strong>Primary thesis-break signal:</strong> if AVUV’s active construction stops delivering demonstrably stronger value/profitability exposure than low-cost passive peers while maintaining a 20–25 bp fee premium, the case for paying for active implementation weakens materially.
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Research Basis</div>
+  <h2>Sources, dates and methodology</h2>
+  <p>This report uses sponsor data where available, cross-checked with major ETF data providers. Holdings, weights, valuations and AUM change daily. Performance figures are standardized to July 31, 2026 where practicable. Cross-fund valuation ratios may use different provider methodologies and should be interpreted directionally rather than as perfectly like-for-like accounting measures.</p>
+  <ul class="source-list">
+    <li><strong>Avantis Investors — AVUV fund page:</strong> strategy description, active-management status, 0.25% expense ratio and YTD return through July 31, 2026. <a href="https://www.avantisinvestors.com/avantis-investments/avantis-us-small-cap-value-etf/AVUV/">avantisinvestors.com</a></li>
+    <li><strong>Charles Schwab ETF Research — AVUV:</strong> July 31, 2026 standardized performance; August 21 holdings count, sector mix, price and top-ten concentration. <a href="https://www.schwab.wallst.com/Prospect/Research/etfs/performance.asp?symbol=avuv">Schwab performance</a> / <a href="https://www.schwab.wallst.com/Prospect/Research/etfs/portfolio.asp?symbol=avuv">Schwab portfolio</a></li>
+    <li><strong>StockAnalysis / FinanceCharts:</strong> late-August holdings, assets, P/E, P/B and top holdings cross-checks. <a href="https://stockanalysis.com/etf/avuv/holdings/">stockanalysis.com</a> / <a href="https://www.financecharts.com/etfs/AVUV">financecharts.com</a></li>
+    <li><strong>Vanguard — VBR:</strong> expense ratio, structure and performance. <a href="https://advisors.vanguard.com/investments/products/new/vbr/vanguard-small-cap-value-etf">Vanguard VBR</a></li>
+    <li><strong>iShares — IJS:</strong> S&amp;P SmallCap 600 Value benchmark, expense ratio, holdings, valuation and standardized returns. <a href="https://www.ishares.com/us/products/239775/ishares-s-p-small-cap-600-value-etf">iShares IJS</a></li>
+    <li><strong>State Street — SLYV:</strong> expense ratio, S&amp;P SmallCap 600 Value benchmark and standardized performance through July 31, 2026. <a href="https://www.ssga.com/us/en/individual/etfs/state-street-spdr-sp-600-small-cap-value-etf-slyv">State Street SLYV</a></li>
+    <li><strong>Dimensional:</strong> systematic small/value/profitability framework and DFSV product context; ETF Research Center used to cross-check July 31, 2026 standardized returns. <a href="https://www.dimensional.com/us-en/etfs">dimensional.com</a></li>
+    <li><strong>Federal Reserve:</strong> July 29, 2026 FOMC decision maintaining the federal-funds target range at 3.50%–3.75%. <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260729a.htm">federalreserve.gov</a></li>
+    <li><strong>Portfolio baseline:</strong> <code>retirement-portfolio-27.xlsx</code>, used for current AVUV quantity, market value, portfolio weight, FSSNX/VTWO overlap and target-allocation calculations.</li>
+  </ul>
+  <h3>Analyst caveats</h3>
+  <ul>
+    <li>Past performance does not guarantee future results.</li>
+    <li>Small-cap and value securities can underperform broad U.S. equities for extended periods and generally exhibit higher volatility and liquidity risk.</li>
+    <li>This is portfolio research, not individualized tax, legal or fiduciary advice. Account location, realized gains and tax consequences should be reviewed before implementing fund substitutions.</li>
+  </ul>
+  <div class="footer-note">Prepared August 23, 2026 • Professional ETF Research • AVUV • Portfolio baseline: retirement-portfolio-27.xlsx</div>
+</section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>VGT ETF Research Report — August 23, 2026</title>
+<style>
+  :root{--ink:#14212b;--muted:#5d6b75;--line:#d7dee3;--soft:#f3f6f8;--navy:#173a52;--teal:#1e6f73;--gold:#a26c14;--red:#8b3a3a;--green:#2d6a4f;--paper:#fff;}
+  *{box-sizing:border-box}
+  body{margin:0;background:#eef2f4;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.42;font-size:14px}
+  .report{max-width:1040px;margin:28px auto;background:var(--paper);box-shadow:0 8px 30px rgba(0,0,0,.08)}
+  .page{padding:54px 62px;border-bottom:1px solid #edf0f2;min-height:900px}
+  .page:last-child{border-bottom:none}
+  .cover{min-height:980px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#102a3b 0%,#173a52 58%,#1e6f73 100%);color:white}
+  .kicker{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;opacity:.85}
+  h1{font-size:42px;line-height:1.06;margin:18px 0 16px;letter-spacing:-.03em}
+  h2{font-size:25px;line-height:1.15;margin:0 0 18px;color:var(--navy);letter-spacing:-.015em}
+  h3{font-size:17px;margin:20px 0 8px;color:var(--navy)}
+  p{margin:7px 0 12px}
+  .lead{font-size:20px;line-height:1.45;max-width:760px;color:#e8f0f4}
+  .cover-meta{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:22px;border-top:1px solid rgba(255,255,255,.26);padding-top:24px}
+  .cover-meta strong{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#cfe0e6;margin-bottom:4px}
+  .cover-meta span{font-size:15px}
+  .badge{display:inline-block;padding:7px 11px;border-radius:999px;background:#d9ece7;color:#1e5543;font-size:12px;font-weight:700;letter-spacing:.03em}
+  .badge.warn{background:#f6e8c9;color:#78510c}
+  .badge.neutral{background:#e8eef2;color:#3e5363}
+  .summary-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;margin:20px 0 24px}
+  .card{border:1px solid var(--line);border-radius:10px;padding:18px;background:white;break-inside:avoid}
+  .card.soft{background:var(--soft)}
+  .card h3{margin-top:0}
+  .score{font-size:38px;font-weight:800;color:var(--navy);letter-spacing:-.04em}
+  .score small{font-size:16px;color:var(--muted);font-weight:600}
+  .callout{border-left:5px solid var(--teal);background:#eef7f6;padding:16px 18px;margin:16px 0;break-inside:avoid}
+  .callout.warn{border-left-color:var(--gold);background:#fbf5e8}
+  .callout.red{border-left-color:var(--red);background:#f9eeee}
+  .callout strong{color:var(--navy)}
+  table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:12.5px;break-inside:auto}
+  th{background:#eaf0f3;color:#294252;text-align:left;padding:9px 8px;border:1px solid #d4dde2;font-size:11px;text-transform:uppercase;letter-spacing:.04em}
+  td{padding:9px 8px;border:1px solid #dbe2e6;vertical-align:top}
+  tr:nth-child(even) td{background:#fafcfd}
+  .num{text-align:right;white-space:nowrap}
+  .best{font-weight:700;color:var(--green)}
+  .risk{color:var(--red);font-weight:700}
+  ul{margin:8px 0 14px;padding-left:20px}
+  li{margin:5px 0}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .metric{border-top:3px solid var(--navy);background:#f8fafb;padding:14px}
+  .metric .label{font-size:10.5px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700}
+  .metric .value{font-size:24px;font-weight:800;margin-top:3px;color:var(--navy)}
+  .metric .note{font-size:11px;color:var(--muted);margin-top:3px}
+  .barrow{display:grid;grid-template-columns:92px 1fr 52px;align-items:center;gap:10px;margin:10px 0}
+  .barlabel{font-weight:700;color:#334c5d}
+  .bartrack{height:13px;background:#e8edf0;border-radius:8px;overflow:hidden}
+  .bar{height:100%;background:linear-gradient(90deg,var(--navy),var(--teal));border-radius:8px}
+  .barval{text-align:right;font-weight:700}
+  .section-note{font-size:11px;color:var(--muted);margin-top:-8px;margin-bottom:14px}
+  .rank{font-weight:800;font-size:20px;color:var(--navy)}
+  .ticker{font-size:17px;font-weight:800;letter-spacing:.03em}
+  .source-list{font-size:11px;color:#485d6b;word-break:break-word}
+  .source-list li{margin:8px 0}
+  a{color:#1b5e7a;text-decoration:none}
+  .footer-note{font-size:10.5px;color:#6b7982;border-top:1px solid var(--line);padding-top:12px;margin-top:24px}
+  .small{font-size:11px;color:var(--muted)}
+  .avoid{break-inside:avoid}
+  .page-break{break-before:page}
+  @media print{
+    body{background:white;font-size:12px}
+    .report{max-width:none;margin:0;box-shadow:none}
+    .page{min-height:auto;padding:38px 46px;border-bottom:none}
+    .cover{min-height:10in;padding:54px 58px}
+    h1{font-size:36px} h2{font-size:22px} h3{font-size:15px}
+    table{font-size:10.5px} th{font-size:9px}
+    .page{break-after:page}.page:last-child{break-after:auto}
+    .compact-page{padding-top:24px;padding-bottom:22px;font-size:10.8px;line-height:1.30}
+    .compact-page h2{font-size:20px;margin-bottom:10px}.compact-page h3{font-size:13px;margin:10px 0 5px}
+    .compact-page p{margin:4px 0 7px}.compact-page .three-col{gap:8px}.compact-page .metric{padding:8px}.compact-page .metric .value{font-size:19px}
+    .compact-page .callout{padding:10px 13px;margin:9px 0}.compact-page table{font-size:9.2px;margin:6px 0 8px}.compact-page th,.compact-page td{padding:5px 5px}
+    .compact-page .section-note{font-size:9px;margin-top:-3px;margin-bottom:6px}
+    .card,.callout,.metric,.barrow{break-inside:avoid}
+  }
+  @media(max-width:760px){
+    .report{margin:0}.page{padding:34px 22px;min-height:auto}.cover{min-height:100vh}.summary-grid,.two-col,.three-col,.cover-meta{grid-template-columns:1fr}.lead{font-size:17px}h1{font-size:34px}table{display:block;overflow-x:auto;white-space:nowrap}
+  }
+</style>
+</head>
+<body>
+<div class="report">
+
+<section class="page cover">
+  <div>
+    <div class="kicker">ETF Research • U.S. Information Technology</div>
+    <h1>Vanguard Information Technology ETF (VGT)</h1>
+    <p class="lead">A professional assessment of VGT’s structure, holdings, valuation, performance, risks and portfolio role — with direct comparisons to XLK, FTEC and IYW.</p>
+  </div>
+  <div>
+    <div style="font-size:14px;color:#dce9ed;margin-bottom:12px">Fund-level view: <strong style="color:white">Preferred core technology ETF</strong></div>
+    <div style="font-size:14px;color:#dce9ed;margin-bottom:26px">Portfolio-specific view: <strong style="color:white">Selective Add / Prefer as a consolidation vehicle</strong></div>
+    <div class="cover-meta">
+      <div><strong>Report date</strong><span>August 23, 2026</span></div>
+      <div><strong>Portfolio baseline</strong><span>retirement-portfolio-27.xlsx</span></div>
+      <div><strong>Conviction</strong><span>8 / 10 fund quality • 7 / 10 portfolio fit</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Executive Summary</div>
+  <h2>VGT is one of the best pure-play U.S. technology ETFs — but the portfolio already owns much of what makes it attractive</h2>
+  <div class="summary-grid">
+    <div>
+      <p><strong>VGT is a high-quality, low-cost, broad U.S. information-technology ETF.</strong> It tracks the MSCI US Investable Market Information Technology 25/50 Index and, unlike XLK, extends beyond the S&amp;P 500 into mid- and small-cap technology. At 0.09% expenses, it is effectively tied with FTEC and XLK on cost, while offering materially greater breadth than XLK.</p>
+      <p>Its strength is also its principal risk: the fund is heavily driven by mega-cap platforms and the semiconductor complex. As of Vanguard’s latest published holdings snapshot, NVIDIA, Apple and Microsoft represented roughly 42% of assets; the top ten represented about 61%. The fund’s reported P/E of 36.2x and P/B of 10.7x reflect a portfolio priced for sustained earnings growth.</p>
+      <div class="callout">
+        <strong>Investment conclusion:</strong> VGT is our preferred all-purpose technology ETF for a long-horizon investor who wants a single, low-cost U.S. IT sleeve. FTEC is an excellent near-clone and slightly cheaper; XLK is better for tactical/liquidity use; IYW is less compelling at a 0.38% fee unless the investor explicitly wants Alphabet/Meta exposure inside the same ETF.
+      </div>
+    </div>
+    <div class="card soft">
+      <span class="badge">Preferred Core Tech ETF</span>
+      <h3>Analyst scorecard</h3>
+      <div class="score">8.7 <small>/ 10</small></div>
+      <table>
+        <tr><td>Cost efficiency</td><td class="num best">9.5</td></tr>
+        <tr><td>Portfolio breadth</td><td class="num best">9.0</td></tr>
+        <tr><td>Liquidity / scale</td><td class="num best">9.0</td></tr>
+        <tr><td>Index construction</td><td class="num">8.5</td></tr>
+        <tr><td>Valuation support</td><td class="num">6.0</td></tr>
+        <tr><td>Concentration risk</td><td class="num risk">5.5</td></tr>
+      </table>
+      <p class="small">Scores are analyst judgments, not third-party ratings.</p>
+    </div>
+  </div>
+
+  <div class="three-col">
+    <div class="metric"><div class="label">Expense ratio</div><div class="value">0.09%</div><div class="note">Vanguard, current prospectus</div></div>
+    <div class="metric"><div class="label">Fund / share-class assets</div><div class="value">$138.8B</div><div class="note">VGT net assets, 7/31/26</div></div>
+    <div class="metric"><div class="label">Holdings</div><div class="value">321</div><div class="note">6/30/26</div></div>
+    <div class="metric"><div class="label">P/E</div><div class="value">36.2×</div><div class="note">6/30/26</div></div>
+    <div class="metric"><div class="label">3-year volatility</div><div class="value">21.8%</div><div class="note">Standard deviation, 6/30/26</div></div>
+    <div class="metric"><div class="label">10-year annualized return</div><div class="value">24.0%</div><div class="note">NAV through 7/31/26</div></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Fund Structure</div>
+  <h2>What VGT actually owns — and what it deliberately leaves out</h2>
+  <div class="two-col">
+    <div>
+      <h3>Index mandate</h3>
+      <p>VGT follows a 25/50-capped U.S. investable-market information-technology index. The construction provides exposure to large-, mid- and small-cap U.S. companies classified in information technology. That breadth is a meaningful distinction from XLK, whose investable universe is the S&amp;P 500 technology sector.</p>
+      <p>The mandate is <strong>pure information technology</strong>, not a broad “digital economy” basket. Alphabet, Meta, Netflix and Amazon are not classified as information technology under GICS and therefore are not core VGT constituents. Investors who want those businesses inside the ETF need a different index design such as IYW or a Nasdaq-100 vehicle.</p>
+      <h3>Economic exposures</h3>
+      <ul>
+        <li><strong>AI compute and semiconductors:</strong> NVIDIA, Broadcom, AMD, Micron, Intel and semiconductor-equipment companies.</li>
+        <li><strong>Consumer hardware/ecosystems:</strong> Apple remains one of the dominant portfolio drivers.</li>
+        <li><strong>Enterprise software/cloud:</strong> Microsoft, Oracle, Palantir, Salesforce and cybersecurity/software companies.</li>
+        <li><strong>Networking/infrastructure:</strong> Cisco, Arista and related connectivity suppliers.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>VGT top holdings</h3>
+      <p class="section-note">Vanguard published holdings as of May 31, 2026</p>
+      <div class="barrow"><div class="barlabel">NVIDIA</div><div class="bartrack"><div class="bar" style="width:100%"></div></div><div class="barval">16.77%</div></div>
+      <div class="barrow"><div class="barlabel">Apple</div><div class="bartrack"><div class="bar" style="width:91%"></div></div><div class="barval">15.25%</div></div>
+      <div class="barrow"><div class="barlabel">Microsoft</div><div class="bartrack"><div class="bar" style="width:59%"></div></div><div class="barval">9.87%</div></div>
+      <div class="barrow"><div class="barlabel">Broadcom</div><div class="bartrack"><div class="bar" style="width:27%"></div></div><div class="barval">4.49%</div></div>
+      <div class="barrow"><div class="barlabel">Micron</div><div class="bartrack"><div class="bar" style="width:25%"></div></div><div class="barval">4.19%</div></div>
+      <div class="barrow"><div class="barlabel">AMD</div><div class="bartrack"><div class="bar" style="width:19%"></div></div><div class="barval">3.20%</div></div>
+      <p class="small">The top six holdings alone were about 54% of the fund. Weightings change daily with markets and index rebalances.</p>
+    </div>
+  </div>
+  <div class="callout warn">
+    <strong>Concentration is structural, not accidental.</strong> A “321-stock” headline can overstate diversification when the first three holdings dominate results. VGT diversifies company-specific risk across the technology sector, but it does not diversify sector, factor, duration or AI-cycle risk.
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Peer Comparison</div>
+  <h2>VGT vs. XLK, FTEC and IYW</h2>
+  <table>
+    <thead><tr><th>ETF</th><th>Index / universe</th><th class="num">Expense</th><th class="num">Holdings</th><th class="num">Assets</th><th>Primary distinction</th></tr></thead>
+    <tbody>
+      <tr><td><span class="ticker">VGT</span><br>Vanguard Information Technology</td><td>MSCI US Investable Market IT 25/50; large/mid/small U.S. IT</td><td class="num best">0.09%</td><td class="num">321</td><td class="num">$138.8B VGT<br>$160.2B total fund</td><td class="best">Broad pure-tech core; exceptional scale</td></tr>
+      <tr><td><span class="ticker">FTEC</span><br>Fidelity MSCI Information Technology</td><td>MSCI USA IMI Information Technology 25/50; very similar breadth</td><td class="num best">0.084%</td><td class="num">285</td><td class="num">$19.9B</td><td>Closest substitute to VGT; marginal fee edge</td></tr>
+      <tr><td><span class="ticker">XLK</span><br>Technology Select Sector SPDR</td><td>S&amp;P 500 technology companies only</td><td class="num best">0.08%</td><td class="num">73</td><td class="num">$119.4B</td><td>Highest precision/liquidity for large-cap tactical exposure</td></tr>
+      <tr><td><span class="ticker">IYW</span><br>iShares U.S. Technology</td><td>Russell 1000 Technology RIC capped; expanded definition</td><td class="num risk">0.38%</td><td class="num">149</td><td class="num">$24.9B</td><td>Includes ~14.6% Media &amp; Entertainment; Alphabet/Meta exposure</td></tr>
+    </tbody>
+  </table>
+  <p class="section-note">Asset and holdings dates vary by sponsor from June 30 through August 21, 2026. Values are intended for structural comparison, not same-day NAV reconciliation.</p>
+
+  <div class="two-col">
+    <div class="card">
+      <h3>Annual fund cost per $100,000</h3>
+      <div class="barrow"><div class="barlabel">XLK</div><div class="bartrack"><div class="bar" style="width:21%"></div></div><div class="barval">$80</div></div>
+      <div class="barrow"><div class="barlabel">FTEC</div><div class="bartrack"><div class="bar" style="width:22%"></div></div><div class="barval">$84</div></div>
+      <div class="barrow"><div class="barlabel">VGT</div><div class="bartrack"><div class="bar" style="width:24%"></div></div><div class="barval">$90</div></div>
+      <div class="barrow"><div class="barlabel">IYW</div><div class="bartrack"><div class="bar" style="width:100%"></div></div><div class="barval">$380</div></div>
+      <p class="small">The $6 annual difference between FTEC and VGT per $100,000 is economically immaterial for most investors; index fit, trading ecosystem and portfolio overlap matter more.</p>
+    </div>
+    <div class="card">
+      <h3>Where the peer set differs</h3>
+      <ul>
+        <li><strong>VGT vs. FTEC:</strong> effectively the same investment thesis; choose based on provider preference, liquidity and implementation.</li>
+        <li><strong>VGT vs. XLK:</strong> VGT has a broader tail of mid/small technology; XLK is a more concentrated large-cap S&amp;P 500 sleeve.</li>
+        <li><strong>VGT vs. IYW:</strong> IYW deliberately captures a broader technology ecosystem, including media/entertainment, but at a much higher fee.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Performance & Valuation</div>
+  <h2>Strong long-run returns, but today’s valuation leaves less room for execution mistakes</h2>
+  <table>
+    <thead><tr><th>ETF</th><th class="num">YTD</th><th class="num">1 Year</th><th class="num">3 Year ann.</th><th class="num">5 Year ann.</th><th class="num">10 Year ann.</th><th>Data date</th></tr></thead>
+    <tbody>
+      <tr><td><strong>VGT</strong></td><td class="num">20.40%</td><td class="num">31.73%</td><td class="num">26.51%</td><td class="num">17.83%</td><td class="num">23.98%</td><td>7/31/26</td></tr>
+      <tr><td><strong>XLK</strong></td><td class="num best">22.06%</td><td class="num best">34.26%</td><td class="num">26.10%</td><td class="num best">18.86%</td><td class="num">23.68%</td><td>7/31/26</td></tr>
+      <tr><td><strong>FTEC</strong></td><td class="num">20.5%</td><td class="num">32.1%</td><td class="num best">26.9%</td><td class="num">18.1%</td><td class="num">25.4%*</td><td>7/31/26; *10Y 6/30/26</td></tr>
+      <tr><td><strong>IYW</strong></td><td class="num">26.52%</td><td class="num">45.82%</td><td class="num best">32.66%</td><td class="num best">20.86%</td><td class="num best">26.08%</td><td>6/30/26</td></tr>
+    </tbody>
+  </table>
+  <p class="section-note">Periods and dates are sponsor-reported and are not perfectly synchronized; this table is directional rather than a backtest. Past performance is not indicative of future results.</p>
+
+  <div class="two-col">
+    <div>
+      <h3>VGT valuation and quality</h3>
+      <table>
+        <tr><td>P/E ratio</td><td class="num"><strong>36.2×</strong></td></tr>
+        <tr><td>P/B ratio</td><td class="num"><strong>10.7×</strong></td></tr>
+        <tr><td>Underlying earnings growth</td><td class="num"><strong>32.33%</strong></td></tr>
+        <tr><td>Return on equity</td><td class="num"><strong>38.85%</strong></td></tr>
+        <tr><td>3-year standard deviation</td><td class="num"><strong>21.80%</strong></td></tr>
+        <tr><td>3-year Sharpe ratio</td><td class="num"><strong>1.16</strong></td></tr>
+      </table>
+      <p>VGT’s high multiple is paired with unusually strong aggregate profitability and earnings growth. That combination supports a premium valuation, but the dispersion of outcomes becomes wider if AI infrastructure spending slows, margins normalize, or mega-cap earnings disappoint.</p>
+    </div>
+    <div class="callout red">
+      <strong>Do not confuse historical dominance with low risk.</strong> Technology’s long-run compounding has been exceptional, but the same duration-sensitive growth characteristics can produce large drawdowns when rates, earnings expectations or capital-spending cycles turn. The fund should be sized as a sector overweight, not treated as a diversified equity portfolio.
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Investment Thesis</div>
+  <h2>Why VGT can continue to compound — and what could break the thesis</h2>
+  <div class="two-col">
+    <div class="card">
+      <h3>Structural bull case</h3>
+      <ul>
+        <li><strong>AI infrastructure monetization:</strong> accelerated compute, memory, networking and semiconductor-equipment demand expands the profit pool across multiple VGT holdings.</li>
+        <li><strong>Enterprise software productivity:</strong> cloud, cybersecurity, data infrastructure and AI-enabled software can support durable recurring-revenue growth.</li>
+        <li><strong>High returns on capital:</strong> the fund’s aggregate ROE is exceptionally high, supporting reinvestment and buybacks.</li>
+        <li><strong>Broad index refresh:</strong> VGT automatically adds emerging winners across the U.S. IT market without requiring single-stock selection.</li>
+        <li><strong>Very low implementation cost:</strong> a 0.09% expense ratio leaves almost all index economics with the investor.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Bear case / thesis-break risks</h3>
+      <ul>
+        <li><strong>AI capex digestion:</strong> hyperscaler or enterprise spending could pause after an unusually aggressive buildout cycle.</li>
+        <li><strong>Multiple compression:</strong> a mid-30s aggregate P/E creates sensitivity to rates and growth disappointments.</li>
+        <li><strong>Top-heavy earnings risk:</strong> disappointment at NVIDIA, Apple or Microsoft can overwhelm strong results in the long tail.</li>
+        <li><strong>Semiconductor cyclicality:</strong> memory, logic and equipment demand remain cyclical despite secular AI growth.</li>
+        <li><strong>Policy / geopolitics:</strong> export controls, trade restrictions, antitrust and supply-chain shocks can impair sector earnings.</li>
+      </ul>
+    </div>
+  </div>
+  <h3>Key monitoring checkpoints</h3>
+  <table>
+    <thead><tr><th>Checkpoint</th><th>Constructive signal</th><th>Warning signal</th></tr></thead>
+    <tbody>
+      <tr><td>AI capex</td><td>Hyperscaler budgets remain elevated with improving AI monetization</td><td>Capex growth materially exceeds revenue/FCF conversion for multiple quarters</td></tr>
+      <tr><td>Semiconductor cycle</td><td>Broadening demand beyond a few AI accelerators</td><td>Inventory build and pricing pressure across memory/logic</td></tr>
+      <tr><td>Software</td><td>Stable seat growth and rising AI attach rates</td><td>Persistent optimization, slower renewals, weak monetization</td></tr>
+      <tr><td>Valuation</td><td>Earnings revisions keep pace with price appreciation</td><td>Multiple expansion without estimate revisions</td></tr>
+      <tr><td>Concentration</td><td>Performance broadens across holdings</td><td>Returns increasingly depend on one or two mega-caps</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="page compact-page">
+  <div class="kicker" style="color:var(--teal)">Portfolio Fit</div>
+  <h2>For retirement-portfolio-27, VGT is more compelling as a replacement/consolidation tool than as a simple overlay</h2>
+  <p>Using the latest designated portfolio export, directly identifiable IT and semiconductor positions represent approximately <strong>14.7%</strong> of the portfolio before looking through diversified mutual funds. Apple, Microsoft and Broadcom alone are roughly <strong>11.7%</strong>. Direct semiconductor-oriented positions (Broadcom, Qualcomm, TSM, ASML and SOXQ) are about <strong>4.3%</strong> before embedded exposure inside broad funds.</p>
+
+  <div class="three-col">
+    <div class="metric"><div class="label">Direct IT / semiconductor exposure</div><div class="value">~14.7%</div><div class="note">Before fund look-through</div></div>
+    <div class="metric"><div class="label">AAPL + MSFT + AVGO</div><div class="value">~11.7%</div><div class="note">Current direct positions</div></div>
+    <div class="metric"><div class="label">GOOG + META + NFLX</div><div class="value">~7.4%</div><div class="note">Tech-adjacent communication services</div></div>
+  </div>
+
+  <div class="callout warn">
+    <strong>Implication:</strong> adding VGT with new cash increases factor and mega-cap concentration even though it increases the number of individual holdings. The better use is to consolidate part of the existing single-stock technology sleeve into VGT if the goal is to lower company-specific risk while preserving the technology overweight.
+  </div>
+
+  <h3>Illustrative effect of a new 5% VGT position</h3>
+  <table>
+    <thead><tr><th>Exposure</th><th class="num">Current direct weight</th><th class="num">VGT look-through added at 5% position</th><th class="num">Approx. post-add direct + VGT</th></tr></thead>
+    <tbody>
+      <tr><td>Apple</td><td class="num">6.28%</td><td class="num">+0.76%</td><td class="num"><strong>7.04%</strong></td></tr>
+      <tr><td>Microsoft</td><td class="num">2.88%</td><td class="num">+0.49%</td><td class="num"><strong>3.38%</strong></td></tr>
+      <tr><td>Broadcom</td><td class="num">2.53%</td><td class="num">+0.22%</td><td class="num"><strong>2.75%</strong></td></tr>
+      <tr><td>NVIDIA</td><td class="num">No direct position</td><td class="num">+0.84%</td><td class="num"><strong>0.84%</strong> + embedded funds</td></tr>
+    </tbody>
+  </table>
+  <p class="section-note">Illustration uses Vanguard’s May 31, 2026 VGT weights and does not include look-through exposure from TLXIX, VFFSX or other diversified funds. Actual combined exposure would therefore be higher.</p>
+
+  <h3>Portfolio action framework</h3>
+  <table>
+    <thead><tr><th>Objective</th><th>Preferred action</th><th>Rationale</th></tr></thead>
+    <tbody>
+      <tr><td>Increase technology exposure with new cash</td><td><strong>Selective Add only</strong></td><td>Existing tech/growth concentration is already meaningful; size incrementally.</td></tr>
+      <tr><td>Reduce single-stock risk but keep tech overweight</td><td class="best"><strong>Best use case: VGT</strong></td><td>Replace part of AAPL/MSFT/AVGO/other single-name sleeve with diversified sector exposure.</td></tr>
+      <tr><td>Add Alphabet/Meta inside a tech ETF</td><td><strong>Avoid VGT; consider IYW/QQQM</strong></td><td>VGT’s GICS mandate excludes core communication-services names.</td></tr>
+      <tr><td>Tactical sector trade / options</td><td><strong>Prefer XLK</strong></td><td>Highly liquid S&amp;P 500 technology implementation with options.</td></tr>
+      <tr><td>Lowest-cost near-clone</td><td><strong>FTEC</strong></td><td>Similar MSCI-style broad IT exposure at 0.084%.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Relative Ranking</div>
+  <h2>Which ETF is best for which job?</h2>
+  <table>
+    <thead><tr><th>Rank</th><th>ETF</th><th>Best for</th><th>Why we like it</th><th>Main drawback</th></tr></thead>
+    <tbody>
+      <tr><td class="rank">1</td><td><span class="ticker">VGT</span><br><span class="badge">Overall winner</span></td><td>Core long-term U.S. technology allocation</td><td>Broad pure-IT coverage, 0.09% fee, exceptional scale, strong long-term tracking</td><td>Top-heavy and valuation-sensitive</td></tr>
+      <tr><td class="rank">2</td><td><span class="ticker">FTEC</span></td><td>Low-cost VGT substitute</td><td>Near-identical exposure at a marginally lower fee</td><td>Smaller asset base and trading ecosystem; cost savings are tiny</td></tr>
+      <tr><td class="rank">3</td><td><span class="ticker">XLK</span></td><td>Tactical / liquid large-cap tech sleeve</td><td>0.08% fee, large AUM, options, precise S&amp;P 500 tech exposure</td><td>Only 73 holdings; no mid/small-cap IT tail</td></tr>
+      <tr><td class="rank">4</td><td><span class="ticker">IYW</span></td><td>Expanded “technology ecosystem” exposure</td><td>Includes Alphabet/Meta-style media and internet exposure</td><td>0.38% fee; higher portfolio overlap for this account</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Senior analyst recommendation:</strong> If the mandate is to establish a durable technology-sector ETF position, select <strong>VGT</strong>. In this portfolio, fund it preferentially by trimming overlapping single-name technology exposure rather than layering a large new position on top. If implementation is through Fidelity and trading liquidity is not a concern, <strong>FTEC is essentially interchangeable</strong>. Use <strong>XLK</strong> when tactical liquidity/options matter. We would not pay IYW’s fee premium unless its expanded index definition is specifically desired.
+  </div>
+
+  <h3>Recommendation scale</h3>
+  <table>
+    <tr><td><strong>Fund-level</strong></td><td><span class="badge">Strong Add</span></td><td>Conviction 9/10 as a long-term core technology ETF.</td></tr>
+    <tr><td><strong>Portfolio-specific</strong></td><td><span class="badge warn">Selective Add / Hold</span></td><td>Conviction 7/10 as an additive position; 9/10 if used to consolidate overlapping single stocks.</td></tr>
+  </table>
+
+  <div class="footer-note"><strong>Bottom line:</strong> VGT solves the “which U.S. technology companies should I own?” problem very well. It does not solve the “how much technology should I own?” problem. For this portfolio, position sizing and funding source are more important than the small structural differences among VGT, FTEC and XLK.</div>
+</section>
+
+<section class="page">
+  <div class="kicker" style="color:var(--teal)">Sources & Methodology</div>
+  <h2>Research basis</h2>
+  <p>Fund statistics, holdings, expenses, performance and benchmark descriptions were taken from sponsor and major brokerage research pages available through August 23, 2026. Portfolio calculations use the user-designated <strong>retirement-portfolio-27.xlsx</strong> export. Figures may differ modestly across sources because holdings, NAV, assets and valuation metrics are published on different schedules.</p>
+  <ol class="source-list">
+    <li><strong>Vanguard — VGT product page:</strong> <a href="https://advisors.vanguard.com/investments/products/vgt/vanguard-information-technology-etf">https://advisors.vanguard.com/investments/products/vgt/vanguard-information-technology-etf</a></li>
+    <li><strong>State Street — XLK product page:</strong> <a href="https://www.ssga.com/us/en/intermediary/etfs/state-street-technology-select-sector-spdr-etf-xlk">https://www.ssga.com/us/en/intermediary/etfs/state-street-technology-select-sector-spdr-etf-xlk</a></li>
+    <li><strong>Fidelity — FTEC holdings:</strong> <a href="https://research2.fidelity.com/fidelity/screeners/etf/etfholdings.asp?symbol=FTEC&amp;view=Explore">https://research2.fidelity.com/fidelity/screeners/etf/etfholdings.asp?symbol=FTEC&amp;view=Explore</a></li>
+    <li><strong>Schwab / Morningstar — FTEC summary and performance:</strong> <a href="https://www.schwab.wallst.com/Prospect/Research/etfs/summary.asp?symbol=FTEC">https://www.schwab.wallst.com/Prospect/Research/etfs/summary.asp?symbol=FTEC</a></li>
+    <li><strong>iShares — IYW product page:</strong> <a href="https://www.ishares.com/us/products/239522/ishares-us-technology-etf">https://www.ishares.com/us/products/239522/ishares-us-technology-etf</a></li>
+    <li><strong>Portfolio source:</strong> retirement-portfolio-27.xlsx, user-designated baseline. Direct-sector calculations do not look through diversified mutual funds, so total economic technology exposure is higher than the direct-position figures shown.</li>
+  </ol>
+
+  <h3>Methodology notes</h3>
+  <ul>
+    <li>Peer selection focuses on unlevered U.S. technology-sector ETFs with substantial assets and long operating histories. Nasdaq-100 funds such as QQQ/QQQM are discussed conceptually but are not treated as direct peers because they include non-technology sectors and exclude financials by index design.</li>
+    <li>Valuation metrics are sponsor-reported portfolio aggregates and can differ by calculation methodology (trailing vs. forward, harmonic weighting, treatment of negative earnings).</li>
+    <li>Portfolio-fit calculations use security allocation percentages from the designated workbook and VGT holding weights from Vanguard’s latest accessible published holdings snapshot used in this report.</li>
+    <li>This document is research and portfolio-analysis support, not individualized tax, legal or fiduciary advice. ETF holdings and index classifications can change.</li>
+  </ul>
+  <div class="footer-note">Prepared August 23, 2026 • Professional ETF Research • VGT / XLK / FTEC / IYW</div>
+</section>
+
+</div>
+</body>
+</html>

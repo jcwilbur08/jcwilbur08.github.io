@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>NVIDIA (NVDA) Comprehensive Investment Analysis — 2026-08-21</title>
+<style>
+  :root{
+    --navy:#0b1930; --navy2:#132b4f; --blue:#2a5b9e; --green:#2c7a58;
+    --red:#a84242; --amber:#a36a16; --ink:#182433; --muted:#627083;
+    --line:#d9e0e8; --panel:#f4f7fa; --panel2:#eef3f8; --white:#fff;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#eef1f5;color:var(--ink);font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.48}
+  a{color:var(--blue);text-decoration:none}
+  .report{max-width:980px;margin:0 auto;background:#fff;box-shadow:0 2px 24px rgba(0,0,0,.09)}
+  .cover{background:linear-gradient(135deg,var(--navy),var(--navy2));color:white;padding:58px 62px 46px;min-height:760px;display:flex;flex-direction:column;justify-content:space-between}
+  .eyebrow{font-size:12px;letter-spacing:1.7px;text-transform:uppercase;color:#b8cae4;font-weight:700}
+  h1{font-size:44px;line-height:1.04;margin:12px 0 4px;letter-spacing:-1.2px}
+  .subtitle{font-size:19px;color:#dbe6f3;margin:0 0 28px}
+  .ticker{display:inline-block;border:1px solid rgba(255,255,255,.35);padding:7px 11px;border-radius:4px;font-weight:700;letter-spacing:.5px;margin-bottom:18px}
+  .cover-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:24px}
+  .cover-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);padding:14px;border-radius:7px}
+  .cover-card .k{font-size:10px;letter-spacing:.8px;text-transform:uppercase;color:#b8cae4}
+  .cover-card .v{font-size:22px;font-weight:700;margin-top:3px}
+  .cover-card .s{font-size:10px;color:#c7d5e8;margin-top:3px}
+  .rating{display:inline-flex;align-items:center;gap:9px;background:#e9f6ef;color:#195b40;border-radius:5px;padding:8px 12px;font-size:17px;font-weight:800}
+  .cover-note{font-size:11px;color:#b8cae4;max-width:760px}
+  .body{padding:0 56px 48px}
+  .section{padding:38px 0 24px;border-bottom:1px solid var(--line)}
+  .section:last-child{border-bottom:0}
+  h2{font-size:27px;color:var(--navy);margin:0 0 15px;letter-spacing:-.4px}
+  h3{font-size:18px;color:var(--navy);margin:22px 0 8px}
+  h4{font-size:14px;color:var(--navy);margin:17px 0 6px}
+  p{margin:8px 0 12px}
+  .lead{font-size:17px;line-height:1.55;color:#28384c}
+  .muted{color:var(--muted)}
+  .small{font-size:11px;color:var(--muted)}
+  .callout{border-left:4px solid var(--blue);background:var(--panel);padding:16px 18px;margin:14px 0;border-radius:0 6px 6px 0}
+  .callout.good{border-left-color:var(--green);background:#f0f8f4}
+  .callout.warn{border-left-color:var(--amber);background:#fff8ea}
+  .callout.risk{border-left-color:var(--red);background:#fff3f3}
+  .decision{display:grid;grid-template-columns:1.3fr .7fr;gap:16px;margin:15px 0 8px}
+  .card{border:1px solid var(--line);border-radius:7px;padding:16px;background:#fff}
+  .card.tint{background:var(--panel)}
+  .card h3{margin-top:0}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:15px 0}
+  .metric{border:1px solid var(--line);border-radius:6px;padding:12px;background:#fff}
+  .metric .label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.55px}
+  .metric .value{font-size:21px;font-weight:800;color:var(--navy);margin-top:3px}
+  .metric .detail{font-size:10px;color:var(--muted);margin-top:2px}
+  table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:12.5px}
+  th{background:var(--navy);color:#fff;text-align:left;padding:9px 8px;font-size:11px;letter-spacing:.25px}
+  td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:nth-child(even){background:#fafbfd}
+  .num{text-align:right;white-space:nowrap}
+  .pos{color:#1d6a48;font-weight:700}.neg{color:#9d3030;font-weight:700}.neu{color:#6f5c2a;font-weight:700}
+  ul{margin:7px 0 13px;padding-left:20px} li{margin:5px 0}
+  .thesis-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .thesis-card{border:1px solid var(--line);border-top:4px solid var(--blue);border-radius:6px;padding:14px 15px}
+  .thesis-card b{color:var(--navy)}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .chartbox{border:1px solid var(--line);border-radius:7px;padding:16px;background:#fff;margin:14px 0}
+  .barrow{display:grid;grid-template-columns:115px 1fr 60px;align-items:center;gap:8px;margin:9px 0;font-size:12px}
+  .bartrack{height:15px;background:#e9edf2;border-radius:3px;overflow:hidden}
+  .bar{height:100%;background:var(--blue)}
+  .bar.green{background:var(--green)} .bar.amber{background:#bf8740} .bar.red{background:#b85b5b}
+  .scenario{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:13px 0}
+  .scenario .card{min-height:190px}.scenario .bear{border-top:4px solid var(--red)}.scenario .base{border-top:4px solid var(--blue)}.scenario .bull{border-top:4px solid var(--green)}
+  .price-big{font-size:28px;font-weight:800;color:var(--navy)}
+  .prob{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+  .score{display:inline-block;font-weight:800;border-radius:12px;padding:2px 8px;background:#e9eef4;color:var(--navy);font-size:11px}
+  .source{font-size:10.5px;line-height:1.4;margin:6px 0;color:#49586a}
+  .foot{font-size:9.5px;color:#667486;margin-top:22px}
+  .toc a{display:block;padding:6px 0;border-bottom:1px dotted #ccd4dd;color:#243c5c}
+  .page-break{break-before:page;page-break-before:always}
+  .avoid{break-inside:avoid;page-break-inside:avoid}
+  .headerline{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:12px}
+  .pill{font-size:10px;padding:4px 8px;border-radius:12px;background:#eef3f8;color:#324e72;font-weight:700;white-space:nowrap}
+  .source-tag{font-size:9px;vertical-align:super;color:var(--blue);font-weight:700}
+  @media print{
+    body{background:#fff;font-size:10.2pt}
+    .report{max-width:none;box-shadow:none}
+    .cover{min-height:9.2in;padding:48px 46px 38px}
+    .body{padding:0 42px 35px}
+    .section{padding:28px 0 18px}
+    h1{font-size:35pt} h2{font-size:20pt} h3{font-size:13.5pt}
+    table{font-size:9.2pt} th{font-size:8.4pt}
+    .metrics{gap:7px}.metric .value{font-size:16pt}
+    a{color:inherit}
+    .page-break{break-before:auto!important;page-break-before:auto!important}
+    h2,h3{break-after:avoid;page-break-after:avoid}
+    thead{display:table-header-group}
+    @page{size:Letter;margin:.52in .5in .55in}
+  }
+  @media(max-width:720px){.cover,.body{padding-left:22px;padding-right:22px}.cover-grid,.metrics{grid-template-columns:1fr 1fr}.decision,.split,.thesis-grid,.scenario{grid-template-columns:1fr}h1{font-size:36px}}
+</style>
+</head>
+<body>
+<div class="report">
+  <section class="cover">
+    <div>
+      <div class="eyebrow">Comprehensive Equity Research | Initiating Coverage</div>
+      <h1>NVIDIA Corporation</h1>
+      <p class="subtitle">The AI infrastructure franchise remains exceptional; the underwriting challenge has shifted from demand scarcity to capital intensity, customer concentration and financed growth.</p>
+      <span class="ticker">NASDAQ: NVDA</span><br/>
+      <span class="rating">ADD &nbsp;|&nbsp; Conviction 8/10</span>
+      <div class="cover-grid">
+        <div class="cover-card"><div class="k">Price</div><div class="v">$214.72</div><div class="s">Aug. 21 close</div></div>
+        <div class="cover-card"><div class="k">12-Month Base Target</div><div class="v">$300</div><div class="s">+39.7% price upside</div></div>
+        <div class="cover-card"><div class="k">Prob.-Weighted Value</div><div class="v">$293</div><div class="s">+36.3% vs. close</div></div>
+        <div class="cover-card"><div class="k">Implied Market Cap</div><div class="v">$5.20T</div><div class="s">24.2B shares × close</div></div>
+      </div>
+    </div>
+    <div>
+      <div style="border-top:1px solid rgba(255,255,255,.22);padding-top:15px;display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:12px;color:#dbe6f3">
+        <div><b>Report date:</b> August 21, 2026<br/><b>Data cutoff:</b> U.S. market close / public information available through Aug. 21<br/><b>Next catalyst:</b> Q2 FY27 results — Aug. 26, 2026</div>
+        <div><b>Portfolio baseline:</b> retirement-portfolio-27.xlsx<br/><b>Underwriting status:</b> Actionable initiation; earnings event risk elevated<br/><b>Evidence confidence:</b> High on reported data; medium on forward estimates/valuation</div>
+      </div>
+      <p class="cover-note">Research output for portfolio-management review. Rating and price target reflect the analytical framework in this report and require investor-specific judgment. This is not individualized investment, legal, or tax advice.</p>
+    </div>
+  </section>
+
+  <main class="body">
+    <section class="section">
+      <div class="headerline"><h2>Executive Summary</h2><span class="pill">Decision Hinge: AI ROI vs. Financing Intensity</span></div>
+      <p class="lead"><b>Recommendation: ADD, conviction 8/10, 12-month base target $300.</b> NVIDIA is still the highest-quality pure-play beneficiary of the AI infrastructure cycle because its moat extends well beyond accelerator silicon into CUDA software, networking, rack-scale systems and an annual product cadence. Q1 FY27 revenue reached $81.6 billion (+85% y/y), Data Center reached $75.2 billion (+92% y/y), and management guided Q2 revenue to $91.0 billion without assuming China Data Center compute revenue.<sup class="source-tag"><a href="#s1">[1]</a></sup></p>
+
+      <div class="decision avoid">
+        <div class="card tint">
+          <h3>PM View</h3>
+          <p>The stock at $214.72 is priced at roughly <b>23.6× FY27E EPS and 17.1× FY28E EPS</b> using current published consensus of $9.09 and $12.57.<sup class="source-tag"><a href="#s5">[5]</a></sup> For a franchise still expected to grow FY28 EPS approximately 38%, that multiple embeds a substantial deceleration and leaves room for upside if Rubin sustains the growth runway.</p>
+          <p>The key reason this is <b>ADD rather than STRONG ADD</b> is the emerging financed-growth question. NVIDIA is increasingly investing in the ecosystem and, in one high-profile transaction, agreed to provide a capped guarantee of up to $105 billion supporting an OpenAI data-center lease. The structure may expand the addressable deployment base, but it also makes revenue quality and balance-sheet contingent exposure a new core underwriting variable.<sup class="source-tag"><a href="#s7">[7]</a></sup></p>
+        </div>
+        <div class="card">
+          <h3>What We Need to See</h3>
+          <ul>
+            <li>Q2 revenue at/above the ~$92B Street bar and resilient ~75% gross margin.</li>
+            <li>Q3 guidance that supports continued sequential growth before Rubin becomes material.</li>
+            <li>Rubin availability and customer deployments on schedule in 2H26.</li>
+            <li>Financing/guarantees remain bounded relative to operating cash flow.</li>
+            <li>No evidence that AMD/custom ASICs are producing broad-based share loss.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="metrics">
+        <div class="metric"><div class="label">Q1 FY27 Revenue</div><div class="value">$81.6B</div><div class="detail">+85% y/y; +20% q/q</div></div>
+        <div class="metric"><div class="label">Q1 Data Center</div><div class="value">$75.2B</div><div class="detail">92% of total revenue</div></div>
+        <div class="metric"><div class="label">Q1 OCF</div><div class="value">$50.3B</div><div class="detail">Exceptional cash conversion</div></div>
+        <div class="metric"><div class="label">FY28E EPS</div><div class="value">$12.57</div><div class="detail">Consensus; +38% y/y</div></div>
+      </div>
+
+      <div class="callout warn"><b>Event setup:</b> NVIDIA reports Q2 FY27 results on August 26. Visible Alpha estimates cited by Investopedia imply ~$92.16B revenue, $2.09 adjusted EPS and $85.67B of Data Center revenue; options pricing implies roughly a 6% post-earnings move.<sup class="source-tag"><a href="#s10">[10]</a></sup> The report therefore carries unusually high near-term mark-to-market risk despite a favorable 12-month risk/reward.</div>
+    </section>
+
+    <section class="section page-break">
+      <h2>Investment Thesis</h2>
+      <div class="thesis-grid">
+        <div class="thesis-card"><b>1. The demand curve is broadening, not merely extending.</b><p>AI infrastructure spending is shifting from frontier-model training into inference, agentic workloads, sovereign AI, industrial use cases and enterprise deployments. Q1 Hyperscale revenue rose 115% y/y while AI Clouds, Industrial & Enterprise rose 74%, evidence that growth is no longer one customer class.<sup class="source-tag"><a href="#s2">[2]</a></sup></p></div>
+        <div class="thesis-card"><b>2. NVIDIA's moat is a system moat.</b><p>The defensible unit is increasingly the AI factory: accelerator + CPU + NVLink + networking + software + deployment tooling. CUDA remains important, but networking, interconnect, rack-scale engineering and full-stack optimization make a merchant GPU comparison incomplete. Rubin intensifies that system-level positioning.<sup class="source-tag"><a href="#s11">[11]</a></sup></p></div>
+        <div class="thesis-card"><b>3. Earnings power is compounding faster than the multiple.</b><p>Published consensus calls for FY27 revenue of $387.8B and FY28 revenue of $547.0B, with EPS of $9.09 and $12.57 respectively.<sup class="source-tag"><a href="#s5">[5]</a></sup> At the current price, the FY28 multiple is only ~17×. Even after a deliberate multiple haircut for cyclicality and financing risk, the equity can support a $300 base case.</p></div>
+        <div class="thesis-card"><b>4. Free cash flow funds both innovation and strategic control.</b><p>Q1 operating cash flow was $50.3B and capitalized property/equipment/intangibles were only $1.8B, implying roughly $48.6B of core free cash flow before investment-security purchases.<sup class="source-tag"><a href="#s2">[2]</a></sup> That cash engine supports R&D, buybacks, a higher dividend and strategic ecosystem investments—while also creating the capacity for potentially aggressive financing commitments.</p></div>
+      </div>
+
+      <h3>Variant Perception</h3>
+      <table>
+        <thead><tr><th>Market Concern / Consensus Framing</th><th>Our View</th><th>What Would Prove Us Wrong</th></tr></thead>
+        <tbody>
+          <tr><td>AI hardware is approaching a cyclical peak.</td><td>The mix is moving from training-only toward inference and agentic workloads, which can expand compute consumption even as model efficiency improves.</td><td>Two or more quarters of material sequential Data Center deceleration without an offset from Rubin or inference demand.</td></tr>
+          <tr><td>Custom ASICs and AMD will commoditize accelerators.</td><td>Share loss is likely at the margin, but the relevant competitive unit is now rack/system economics and software/networking integration—not GPU ASP alone.</td><td>Top cloud customers shift meaningful production workloads away from NVIDIA while maintaining comparable utilization and developer economics.</td></tr>
+          <tr><td>Vendor financing signals weak end demand.</td><td>Infrastructure financing can unlock constrained land/power and accelerate deployments, but it is not free. We explicitly require a discount for contingent obligations and revenue-quality questions.</td><td>Guarantees, equity investments or customer-support commitments grow faster than operating cash flow or become a meaningful prerequisite for sales.</td></tr>
+          <tr><td>China is structurally lost.</td><td>We assume limited China upside in the base case; recent H200 shipments are optionality, not core underwriting.</td><td>Export controls broaden to additional products/geographies or U.S./China policy makes even licensed sales unworkable.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section page-break">
+      <h2>Business Model & Competitive Position</h2>
+      <p>NVIDIA has evolved from a GPU semiconductor vendor into an AI computing platform company. Its economic engine is increasingly concentrated in Data Center, where the company sells complete compute and networking platforms into hyperscalers, AI clouds, model developers, enterprises and public-sector/sovereign deployments. In Q1 FY27, Data Center generated $75.25B, or 92.2% of total revenue.<sup class="source-tag"><a href="#s2">[2]</a></sup></p>
+
+      <div class="split">
+        <div class="chartbox avoid">
+          <h3 style="margin-top:0">Q1 FY27 Revenue Mix</h3>
+          <div class="barrow"><span>Hyperscale</span><div class="bartrack"><div class="bar" style="width:46.4%"></div></div><b>46.4%</b></div>
+          <div class="barrow"><span>AI Cloud / Industrial / Enterprise</span><div class="bartrack"><div class="bar green" style="width:45.8%"></div></div><b>45.8%</b></div>
+          <div class="barrow"><span>Edge Computing</span><div class="bartrack"><div class="bar amber" style="width:7.8%"></div></div><b>7.8%</b></div>
+          <p class="small">Platform mix based on $37.87B Hyperscale, $37.38B AI Clouds/Industrial/Enterprise, and $6.37B Edge Computing.<sup class="source-tag"><a href="#s2">[2]</a></sup></p>
+        </div>
+        <div class="card avoid">
+          <h3>Moat Assessment: Strong</h3>
+          <ul>
+            <li><b>Developer ecosystem:</b> CUDA and libraries reduce switching friction and accelerate model deployment.</li>
+            <li><b>Networking/interconnect:</b> NVLink, InfiniBand and Spectrum-X let NVIDIA optimize cluster-level throughput and power efficiency.</li>
+            <li><b>Rack-scale integration:</b> customers increasingly buy performance per megawatt / per token, not standalone silicon.</li>
+            <li><b>Cadence:</b> Blackwell-to-Rubin annual architecture transitions raise execution demands but also compress competitors' catch-up windows.</li>
+            <li><b>Distribution:</b> broad presence across cloud providers, OEMs and AI model makers creates a self-reinforcing software/hardware installed base.</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>Rubin: the Next Product-Cycle Test</h3>
+      <p>NVIDIA states that Rubin is in full production and partner availability is expected in the second half of 2026. The announced architecture integrates Vera CPU, Rubin GPU, NVLink 6, ConnectX-9, BlueField-4 and Spectrum-6, with NVIDIA claiming major reductions in inference token cost and training GPU requirements versus Blackwell.<sup class="source-tag"><a href="#s11">[11]</a></sup> We do not underwrite the marketing performance claims at face value; the investment relevance is the <i>system architecture</i> and the breadth of named customer support.</p>
+
+      <h3>Competitive Landscape</h3>
+      <table>
+        <thead><tr><th>Competitor / Approach</th><th>Threat Level</th><th>Investment Read-Through</th></tr></thead>
+        <tbody>
+          <tr><td><b>AMD Instinct / Helios</b></td><td><span class="score">High</span></td><td>Most credible merchant accelerator challenger. Helios is in full production with shipments expected at the end of Q3 2026, and OpenAI has signaled plans to deploy at scale.<sup class="source-tag"><a href="#s8">[8]</a></sup> This is a real share risk, especially in inference.</td></tr>
+          <tr><td><b>Hyperscaler custom ASICs</b> (TPU / Trainium / internal silicon)</td><td><span class="score">High</span></td><td>Can reduce NVIDIA wallet share in captive workloads. However, heterogeneous customer needs and software portability favor merchant platforms for a large part of the market.</td></tr>
+          <tr><td><b>Broadcom / Marvell custom silicon</b></td><td><span class="score">Medium-High</span></td><td>Beneficiaries of custom accelerator and networking programs. The biggest threat is not a single chip; it is hyperscalers vertically integrating enough of the stack to pressure NVIDIA pricing.</td></tr>
+          <tr><td><b>Cerebras / specialized inference architectures</b></td><td><span class="score">Medium</span></td><td>Potentially attractive for specific inference workloads, but ecosystem breadth, scale and financing remain substantially below NVIDIA.</td></tr>
+          <tr><td><b>Huawei / Chinese domestic accelerators</b></td><td><span class="score">High in China</span></td><td>Export restrictions are catalyzing local substitution. We treat China as an option value rather than a core growth pillar.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="section page-break">
+      <h2>Financial Analysis</h2>
+      <p>The financial profile remains extraordinary: extreme revenue growth, ~75% gross margins, large operating leverage and capital-light internal manufacturing economics. The main analytical adjustment is that reported GAAP net income increasingly includes investment gains as NVIDIA's equity portfolio expands.</p>
+
+      <table class="avoid">
+        <thead><tr><th>Metric</th><th class="num">FY25A</th><th class="num">FY26A</th><th class="num">Q1 FY27A</th><th class="num">FY27E</th><th class="num">FY28E</th></tr></thead>
+        <tbody>
+          <tr><td>Revenue</td><td class="num">$130.5B</td><td class="num">$215.9B</td><td class="num">$81.6B</td><td class="num">$387.8B</td><td class="num">$547.0B</td></tr>
+          <tr><td>Revenue growth</td><td class="num">—</td><td class="num">+65%</td><td class="num">+85% y/y</td><td class="num">+79.6%</td><td class="num">+41.1%</td></tr>
+          <tr><td>Non-GAAP gross margin</td><td class="num">~75.5%</td><td class="num">71.3%</td><td class="num">75.0%</td><td class="num">~75% guide trajectory</td><td class="num">n/a</td></tr>
+          <tr><td>Adjusted / non-GAAP EPS</td><td class="num">$2.99</td><td class="num">$4.77</td><td class="num">$1.87</td><td class="num">$9.09</td><td class="num">$12.57</td></tr>
+          <tr><td>Operating cash flow</td><td class="num">—</td><td class="num">$102.7B</td><td class="num">$50.3B</td><td class="num">—</td><td class="num">—</td></tr>
+          <tr><td>Approx. core FCF*</td><td class="num">—</td><td class="num">$96.7B</td><td class="num">$48.6B</td><td class="num">—</td><td class="num">—</td></tr>
+        </tbody>
+      </table>
+      <p class="small">*Approx. core FCF = operating cash flow less purchases related to property/equipment and intangible assets. This excludes purchases of investment securities. FY27E/FY28E revenue and EPS are Zacks consensus; reported figures are NVIDIA/SEC.<sup class="source-tag"><a href="#s1">[1]</a></sup><sup class="source-tag"><a href="#s4">[4]</a></sup><sup class="source-tag"><a href="#s5">[5]</a></sup></p>
+
+      <div class="chartbox avoid">
+        <h3 style="margin-top:0">Revenue Scale — Actual to Consensus</h3>
+        <div class="barrow"><span>FY25A</span><div class="bartrack"><div class="bar" style="width:23.9%"></div></div><b>$130.5B</b></div>
+        <div class="barrow"><span>FY26A</span><div class="bartrack"><div class="bar" style="width:39.5%"></div></div><b>$215.9B</b></div>
+        <div class="barrow"><span>FY27E</span><div class="bartrack"><div class="bar green" style="width:70.9%"></div></div><b>$387.8B</b></div>
+        <div class="barrow"><span>FY28E</span><div class="bartrack"><div class="bar green" style="width:100%"></div></div><b>$547.0B</b></div>
+        <p class="small">Consensus still embeds exceptional absolute growth: ~$172B incremental revenue in FY27E and another ~$159B in FY28E.<sup class="source-tag"><a href="#s5">[5]</a></sup></p>
+      </div>
+
+      <h3>Earnings Quality: Strong Cash Generation, Noisy GAAP Net Income</h3>
+      <div class="callout warn"><b>Important adjustment:</b> Q1 FY27 GAAP net income of $58.3B was boosted by $15.9B of other income, primarily unrealized investment gains—$13.4B on publicly held equity securities and $2.6B on non-marketable securities.<sup class="source-tag"><a href="#s2">[2]</a></sup> We therefore anchor valuation to adjusted Street EPS and operating cash flow rather than treating Q1 GAAP EPS as fully recurring.</div>
+      <p>That accounting noise does not undermine the cash engine. Q1 operating cash flow was $50.3B, compared with $27.4B a year earlier. The more material change is on the investing side: NVIDIA purchased $18.6B of non-marketable securities during Q1, showing that the balance sheet is becoming a strategic ecosystem tool rather than a passive liquidity reserve.<sup class="source-tag"><a href="#s2">[2]</a></sup></p>
+
+      <h3>Balance Sheet & Capital Allocation</h3>
+      <p>At April 26, NVIDIA held $13.2B of cash, $37.1B of marketable debt securities, $30.2B of marketable equity securities and $43.4B of non-marketable securities. Short- and long-term debt totaled about $8.5B, implying ~$41.9B of net cash when using only cash plus marketable debt securities against funded debt.<sup class="source-tag"><a href="#s2">[2]</a></sup> Q1 share repurchase payments were $19.3B, and management also raised the quarterly dividend to $0.25 per share.<sup class="source-tag"><a href="#s1">[1]</a></sup></p>
+      <p>Capital allocation is now a two-sided thesis driver. Buybacks and the dividend are shareholder-friendly; ecosystem investments can strengthen distribution and demand; but equity stakes, strategic financing and guarantees create harder-to-model contingent exposures. This is the most important change in NVIDIA's financial profile.</p>
+    </section>
+
+    <section class="section page-break">
+      <h2>Demand Quality, Customer Concentration & China</h2>
+      <h3>Customer Concentration</h3>
+      <p>Three direct customers represented 21%, 17% and 16% of Q1 FY27 revenue. NVIDIA also states that one AI research and deployment company contributed a meaningful amount of revenue indirectly by purchasing cloud services from NVIDIA customers.<sup class="source-tag"><a href="#s2">[2]</a></sup> This concentration is manageable while hyperscalers remain financially healthy, but it makes customer capex discipline and AI monetization the critical second-order drivers of NVIDIA's earnings.</p>
+
+      <div class="callout risk"><b>Why this matters:</b> the company is simultaneously becoming more exposed to large AI buyers and more willing to help finance the infrastructure those buyers use. That can deepen customer lock-in and accelerate deployment, but it also increases the need to separate <i>organic end-demand</i> from <i>vendor-enabled demand</i>.</div>
+
+      <h3>Financed Growth: New Underwriting Gate</h3>
+      <p>Reuters reported that NVIDIA agreed to provide a guarantee of up to $105B to support OpenAI's 20-year lease of an Ohio data center being developed by SB Energy, while also investing $1.5B in SB Energy. NVIDIA says the guarantee applies to portions of lease/power payments and a minimum site value rather than the full project cost. Reuters also reported NVIDIA's involvement with six financial institutions targeting more than $500B of third-party AI infrastructure financing.<sup class="source-tag"><a href="#s7">[7]</a></sup><sup class="source-tag"><a href="#s6">[6]</a></sup></p>
+      <p><b>Our interpretation:</b> these structures are not equivalent to immediate funded debt, and they may be economically rational if they secure long-lived, upgradeable capacity and generate high-margin system sales over multiple generations. Nevertheless, the size is material relative to NVIDIA's liquid balance sheet. We therefore require future disclosures to demonstrate that guarantees are capped, collateralized/asset-backed where possible, and small relative to cumulative operating cash flow.</p>
+
+      <h3>China: Optionality, Not the Base Case</h3>
+      <p>Management's Q2 revenue guidance assumes no Data Center compute revenue from China.<sup class="source-tag"><a href="#s1">[1]</a></sup> Q1 revenue based on customer headquarters was $4.55B from China/Hong Kong, down from $9.66B a year earlier.<sup class="source-tag"><a href="#s2">[2]</a></sup> More recently, Reuters reported that small batches of H200 processors were allowed into mainland China, though policy remains fluid and Reuters could not independently verify all shipment details.<sup class="source-tag"><a href="#s9">[9]</a></sup></p>
+      <p>The valuation should not depend on a China recovery. If licensed H200 shipments grow, they create upside to a base case that already excludes meaningful China Data Center compute. If restrictions widen, the downside is partly mitigated by the base-case assumption but not eliminated because the geopolitical risk can affect supply chains, customers and product roadmaps globally.</p>
+    </section>
+
+    <section class="section page-break">
+      <h2>Valuation & Scenario Analysis</h2>
+      <p>Traditional semiconductor cyclicality makes a single long-duration DCF fragile at NVIDIA's current scale and growth rate. We therefore use a forward earnings framework anchored to FY28E—far enough to capture continued Blackwell/Rubin monetization, but close enough to avoid pretending to forecast a decade of AI economics with precision. We cross-check the result against cash generation and published analyst targets.</p>
+
+      <div class="metrics">
+        <div class="metric"><div class="label">Current Price</div><div class="value">$214.72</div><div class="detail">Aug. 21 close</div></div>
+        <div class="metric"><div class="label">FY27E P/E</div><div class="value">23.6×</div><div class="detail">$9.09 consensus EPS</div></div>
+        <div class="metric"><div class="label">FY28E P/E</div><div class="value">17.1×</div><div class="detail">$12.57 consensus EPS</div></div>
+        <div class="metric"><div class="label">FY28E EPS Growth</div><div class="value">38.3%</div><div class="detail">Published consensus</div></div>
+      </div>
+
+      <div class="scenario avoid">
+        <div class="card bear"><div class="prob">Bear Case — 20%</div><div class="price-big">$170</div><p><b>FY28 EPS:</b> ~$9.45<br/><b>Multiple:</b> 18×</p><p>AI capex digestion, share loss in inference/custom silicon, margin pressure and/or financing concerns compress both earnings and the multiple.</p></div>
+        <div class="card base"><div class="prob">Base Case — 55%</div><div class="price-big">$300</div><p><b>FY28 EPS:</b> ~$12.50<br/><b>Multiple:</b> 24×</p><p>Consensus-like earnings, Rubin executes, ~75% gross-margin structure largely holds, and financed-growth exposure remains controlled.</p></div>
+        <div class="card bull"><div class="prob">Bull Case — 25%</div><div class="price-big">$375</div><p><b>FY28 EPS:</b> ~$13.90<br/><b>Multiple:</b> 27×</p><p>Rubin drives upside, inference/agents broaden demand, China contributes incremental revenue and system/networking mix sustains premium economics.</p></div>
+      </div>
+
+      <div class="callout good"><b>Probability-weighted value: $292.75</b> = (20% × $170) + (55% × $300) + (25% × $375), implying approximately <b>36.3% upside</b> from $214.72. Our formal base target is $300, approximately 39.7% above the current price.</div>
+
+      <h3>Cross-Checks</h3>
+      <ul>
+        <li><b>Street target:</b> Investopedia reported a mean target of $296 across 13 analysts tracked by Visible Alpha, broadly consistent with our $300 base case.<sup class="source-tag"><a href="#s10">[10]</a></sup></li>
+        <li><b>Estimate revisions:</b> Zacks shows FY28 EPS consensus rising from $12.13 sixty days earlier and $11.11 ninety days earlier to $12.57 currently—supporting the argument that earnings are still being revised upward even as the stock has pulled back.<sup class="source-tag"><a href="#s5">[5]</a></sup></li>
+        <li><b>Cash-flow cross-check:</b> FY26 approximate core FCF of ~$96.7B implies a trailing P/FCF near 54× at current market cap, but Q1 FY27 annualized core FCF would imply ~27×. The wide range demonstrates why current earnings/cash-flow run-rate matters more than backward-looking multiples.</li>
+      </ul>
+
+      <h3>What Is Priced In?</h3>
+      <p>A 17× FY28E P/E implies the market expects a steep normalization from the current growth phase and assigns meaningful probability to competition, customer capex digestion, geopolitical restrictions and financed-growth concerns. We agree that the terminal multiple should be lower than the extraordinary growth phase would otherwise suggest—but 17× appears too punitive if NVIDIA can still compound EPS at a high-teens or better rate beyond FY28.</p>
+    </section>
+
+    <section class="section page-break">
+      <h2>Catalysts, Risks & Thesis Falsifiers</h2>
+      <h3>Near- and Medium-Term Catalysts</h3>
+      <table>
+        <thead><tr><th>Timing</th><th>Catalyst</th><th>What Matters</th></tr></thead>
+        <tbody>
+          <tr><td><b>Aug. 26, 2026</b></td><td>Q2 FY27 results and Q3 guidance</td><td>Revenue vs. ~$92B bar, Data Center growth, gross margin, China commentary, customer demand, Rubin timing and financing disclosures.<sup class="source-tag"><a href="#s12">[12]</a></sup></td></tr>
+          <tr><td><b>2H26</b></td><td>Rubin partner availability</td><td>On-time product availability, initial customer adoption, performance-per-watt and inference economics.<sup class="source-tag"><a href="#s11">[11]</a></sup></td></tr>
+          <tr><td><b>Ongoing</b></td><td>Hyperscaler/AI-lab capex & monetization</td><td>Cloud growth, utilization, token economics, agentic workload adoption and capacity constraints.</td></tr>
+          <tr><td><b>Ongoing</b></td><td>China H200 licensing/shipment clarity</td><td>Whether recent small shipments become meaningful revenue without creating new policy backlash.<sup class="source-tag"><a href="#s9">[9]</a></sup></td></tr>
+          <tr><td><b>2026–27</b></td><td>AMD Helios / custom ASIC ramp</td><td>Customer production deployments and whether alternatives achieve competitive rack-level economics.<sup class="source-tag"><a href="#s8">[8]</a></sup></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Risk Matrix</h3>
+      <table>
+        <thead><tr><th>Risk</th><th class="num">Severity (1–5)</th><th>Why It Matters</th><th>Monitor</th></tr></thead>
+        <tbody>
+          <tr><td>Export controls / geopolitics</td><td class="num"><b>5</b></td><td>Can eliminate addressable markets, force inventory charges and accelerate domestic substitutes.</td><td>License policy, China revenue, product restrictions.</td></tr>
+          <tr><td>Customer concentration / AI capex</td><td class="num"><b>5</b></td><td>Three direct customers represented 54% of Q1 revenue in aggregate.</td><td>Hyperscaler capex, customer cash flow, utilization.</td></tr>
+          <tr><td>Financing / contingent guarantees</td><td class="num"><b>4</b></td><td>Could weaken revenue quality and introduce balance-sheet tail risk.</td><td>Guarantee notional, funded exposure, collateral, defaults.</td></tr>
+          <tr><td>AMD / custom ASIC competition</td><td class="num"><b>4</b></td><td>Pressure on share, pricing and gross margin, especially in inference.</td><td>Production deployments, cloud availability, perf/$.</td></tr>
+          <tr><td>Supply, power, HBM & system constraints</td><td class="num"><b>4</b></td><td>Growth is increasingly constrained by power and infrastructure, not only chips.</td><td>Lead times, data-center capacity, power contracts.</td></tr>
+          <tr><td>Valuation / expectation risk</td><td class="num"><b>3</b></td><td>Even a reasonable forward multiple can de-rate sharply around quarterly misses.</td><td>Estimate revisions, post-earnings price action.</td></tr>
+          <tr><td>Product transition execution</td><td class="num"><b>3</b></td><td>Annual cadence leaves little room for delays or costly inventory transitions.</td><td>Rubin timing, yields, inventory provisions.</td></tr>
+        </tbody>
+      </table>
+
+      <h3>Thesis-Break Conditions</h3>
+      <div class="callout risk">
+        <ul style="margin-top:0;margin-bottom:0">
+          <li>Data Center sequential growth stalls for multiple quarters while Rubin is on schedule, implying structural demand saturation rather than transition noise.</li>
+          <li>Gross margin sustains below ~72% without a temporary product-transition or export-control explanation.</li>
+          <li>NVIDIA loses material production share at several top hyperscalers and AI labs simultaneously.</li>
+          <li>Financing guarantees/investments expand to the point that a significant portion of sales depends on vendor-enabled customer capacity.</li>
+          <li>Rubin suffers a material schedule/performance setback or the annual architecture cadence breaks.</li>
+          <li>Export controls broaden sufficiently to impair major non-China markets or core product configurations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section page-break">
+      <h2>Portfolio Fit — retirement-portfolio-27.xlsx</h2>
+      <p>The current portfolio has <b>no direct NVDA position</b>. It does, however, have meaningful AI/semiconductor exposure through AVGO, TSM, ASML, SOXQ and QCOM, as well as large hyperscaler/mega-cap positions. Using the latest export, those five direct semiconductor/AI-infrastructure exposures total roughly <b>4.30%</b> of portfolio market value. AMZN, MSFT, GOOG, META and AAPL together represent approximately <b>22.2%</b>.</p>
+
+      <table class="avoid">
+        <thead><tr><th>Relevant Position</th><th class="num">Portfolio Weight</th><th>Exposure Role</th></tr></thead>
+        <tbody>
+          <tr><td>AVGO</td><td class="num">2.53%</td><td>Custom AI accelerators, networking, hyperscaler exposure</td></tr>
+          <tr><td>QCOM</td><td class="num">1.00%</td><td>Edge/handset compute; less direct DC AI overlap</td></tr>
+          <tr><td>TSM</td><td class="num">0.42%</td><td>Foundry beneficiary across AI silicon ecosystem</td></tr>
+          <tr><td>ASML</td><td class="num">0.21%</td><td>Semiconductor-capital-equipment / lithography bottleneck</td></tr>
+          <tr><td>SOXQ</td><td class="num">0.14%</td><td>Diversified semiconductor ETF; NVDA is 13.29% of fund holdings in the cited snapshot.<sup class="source-tag"><a href="#s14">[14]</a></sup></td></tr>
+          <tr><td><b>Subtotal</b></td><td class="num"><b>4.30%</b></td><td>Direct listed holdings/ETF allocation in the export</td></tr>
+        </tbody>
+      </table>
+
+      <p>Known look-through NVDA exposure from two identified funds is small: VFFSX is 2.23% of the portfolio and NVIDIA represented 7.50% of VFFSX as of June 30, implying ~0.17% portfolio look-through; SOXQ adds about 0.02%, for roughly <b>0.19% known indirect NVDA exposure</b> before accounting for other diversified funds.<sup class="source-tag"><a href="#s13">[13]</a></sup><sup class="source-tag"><a href="#s14">[14]</a></sup></p>
+
+      <div class="callout good"><b>Portfolio conclusion:</b> NVDA would add a differentiated full-stack AI platform exposure that is not duplicated by AVGO, TSM or ASML, while also increasing the portfolio's already meaningful mega-cap/AI beta. Because there is no direct position today and the benchmark weight is large, a modest active allocation could reduce underexposure without making NVDA a dominant holding.</div>
+      <p><b>Implementation framework for PM consideration:</b> a staged 1.0%–1.5% starter position would be large enough to matter while respecting the Aug. 26 event risk; an eventual 2.0%–2.5% position would still sit below the portfolio's largest single-stock holdings and keep the identified semiconductor/AI-infrastructure basket in a manageable mid-single-digit range. This is a portfolio-construction framework, not individualized advice; final sizing should reflect account constraints and risk budget.</p>
+
+      <h3>Why Not Wait for a “Perfect” Entry?</h3>
+      <p>Waiting for valuation to look conventionally cheap can fail when estimates are rising this quickly. Zacks consensus FY28 EPS increased from $11.11 ninety days ago to $12.57 currently.<sup class="source-tag"><a href="#s5">[5]</a></sup> The more appropriate discipline is to stage exposure around thesis checkpoints: establish only the amount one is comfortable owning through the earnings event, then add if revenue/gross margin/Rubin/financing disclosures strengthen the underwrite.</p>
+    </section>
+
+    <section class="section page-break">
+      <h2>Monitoring Dashboard</h2>
+      <table>
+        <thead><tr><th>KPI / Thesis Checkpoint</th><th>Current Read</th><th>Green Zone</th><th>Warning / Break Level</th></tr></thead>
+        <tbody>
+          <tr><td>Quarterly revenue growth</td><td class="pos">Q1 +85% y/y</td><td>Sequential growth remains strong; FY27 trajectory near/above consensus</td><td>Multiple quarters of sequential stagnation outside product transitions</td></tr>
+          <tr><td>Data Center growth</td><td class="pos">Q1 +92% y/y</td><td>Rubin/inference preserve growth breadth</td><td>Sharp deceleration with no compensating mix shift</td></tr>
+          <tr><td>Gross margin</td><td class="pos">75.0% non-GAAP</td><td>~74%–76%</td><td>Sustained &lt;72% absent temporary charges</td></tr>
+          <tr><td>Free cash flow</td><td class="pos">~$48.6B Q1 core FCF</td><td>OCF growth broadly tracks adjusted earnings</td><td>Large cash conversion deterioration</td></tr>
+          <tr><td>Customer concentration</td><td class="neu">Top 3 direct customers = 54%</td><td>Broadening enterprise/AI cloud mix</td><td>Further concentration plus customer funding stress</td></tr>
+          <tr><td>Financing / guarantees</td><td class="neu">Material new commitments</td><td>Bounded, asset-backed, small vs. cumulative OCF</td><td>Rapid expansion or default-related funding</td></tr>
+          <tr><td>Competition</td><td class="neu">AMD Helios ramping</td><td>NVDA keeps performance/TCO leadership</td><td>Multi-customer share losses with price pressure</td></tr>
+          <tr><td>China</td><td class="neu">Limited H200 shipments reported</td><td>Incremental licensed revenue</td><td>Broader export restrictions / no viable path</td></tr>
+        </tbody>
+      </table>
+
+      <div class="callout"><b>Thesis status:</b> <span class="pos">WORKING</span>. Fundamental momentum, estimate revisions, cash generation and product cadence support the bull case. The next two proof points are Q2 earnings on Aug. 26 and the first meaningful Rubin deployments. The main new disconfirming-evidence category is financed growth / contingent balance-sheet exposure.</div>
+    </section>
+
+    <section class="section page-break">
+      <h2>Conclusion & Recommendation</h2>
+      <p class="lead"><b>ADD — 8/10 conviction — $300 12-month base target.</b> NVIDIA remains the defining compute platform of the AI infrastructure cycle. The current price does not require perpetual hypergrowth: at ~17× FY28 consensus EPS, it already discounts a large normalization in growth. If Rubin executes and AI infrastructure spending broadens toward inference and agents, the earnings base can continue to outrun the multiple.</p>
+      <p>The investment case is no longer risk-free simply because demand is strong. NVIDIA's scale now makes customer concentration, power availability, geopolitical policy and ecosystem financing central to valuation. The company's willingness to use equity investments and guarantees can accelerate the buildout, but those commitments must generate returns and remain small relative to cash generation. That risk justifies staging rather than treating the stock as a one-decision purchase.</p>
+      <p><b>Bottom line:</b> the risk/reward is favorable enough for an ADD rating, but the most attractive portfolio action is conditional on maintaining discipline around the Aug. 26 earnings event and monitoring financed-growth exposure. A clean quarter with sustained ~75% gross margins, upward revenue guidance and Rubin confirmation would increase confidence; a weak demand print combined with larger financing obligations would lower the rating.</p>
+
+      <div class="metrics">
+        <div class="metric"><div class="label">Recommendation</div><div class="value">ADD</div><div class="detail">Research rating</div></div>
+        <div class="metric"><div class="label">Conviction</div><div class="value">8/10</div><div class="detail">High, not maximal</div></div>
+        <div class="metric"><div class="label">Base Target</div><div class="value">$300</div><div class="detail">~39.7% upside</div></div>
+        <div class="metric"><div class="label">Thesis Status</div><div class="value">WORKING</div><div class="detail">Next proof: Aug. 26</div></div>
+      </div>
+
+      <h3>Evidence / Underwriting Status</h3>
+      <ul>
+        <li><b>Evidence confidence:</b> High for reported financials, balance sheet and current price; medium for consensus estimates, third-party financing details and forward competitive outcomes.</li>
+        <li><b>Underwriting status:</b> Actionable initiation with elevated event risk. The valuation is usable, but the financed-growth gate needs ongoing disclosure.</li>
+        <li><b>Primary unresolved items:</b> exact economics and contingent exposure of recent infrastructure guarantees; ultimate China H200 revenue; Rubin production economics at scale; pace of AMD/custom-ASIC production deployment.</li>
+        <li><b>Major assumptions:</b> ~75% gross margins remain broadly durable; FY28 adjusted EPS lands near consensus; Rubin ships on schedule; export controls do not materially expand beyond the base case; financing obligations remain manageable versus operating cash flow.</li>
+      </ul>
+    </section>
+
+    <section class="section page-break">
+      <h2>Source Register</h2>
+      <p class="small">Priority was given to NVIDIA investor relations and SEC filings, then current market data and reputable financial-news/estimate sources. The connected Bigdata.com research feed was unavailable due to quota during this run; no Bigdata-derived facts are used below.</p>
+
+      <div id="s1" class="source"><b>[1] NVIDIA — Q1 FY27 Financial Results (May 2026).</b> Revenue, margins, EPS, Data Center growth, Q2 guidance, capital returns. <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-First-Quarter-Fiscal-2027/default.aspx">NVIDIA Investor Relations</a>.</div>
+      <div id="s2" class="source"><b>[2] NVIDIA Form 10-Q for quarter ended Apr. 26, 2026.</b> Balance sheet, cash flow, market-platform revenue, geography, customer concentration, investment gains, leases, risk disclosures. <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm">SEC</a>.</div>
+      <div id="s3" class="source"><b>[3] NVIDIA — Q4 & FY26 Financial Results.</b> FY26 revenue, margins, EPS, segment results, capital returns. <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Fourth-Quarter-and-Fiscal-2026/">NVIDIA Investor Relations</a>.</div>
+      <div id="s4" class="source"><b>[4] NVIDIA FY26 Form 10-K.</b> FY26 operating cash flow, capex/intangibles, buybacks and annual risk factors. <a href="https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm">SEC</a>.</div>
+      <div id="s5" class="source"><b>[5] Zacks — NVIDIA Detailed Earnings Estimates.</b> Q2/Q3, FY27/FY28 revenue and adjusted EPS consensus; revision history. <a href="https://stage.zacks.com/stock/quote/NVDA/detailed-earning-estimates">Zacks</a>.</div>
+      <div id="s6" class="source"><b>[6] Reuters — Aug. 21, 2026 market/AI financing preview.</b> NVIDIA earnings date context and >$500B AI-infrastructure financing platforms. <a href="https://www.reuters.com/business/wall-st-week-ahead-nvidia-earnings-jackson-hole-test-pillars-stock-rally-2026-08-21/">Reuters</a>.</div>
+      <div id="s7" class="source"><b>[7] Reuters — Aug. 17, 2026 OpenAI/SB Energy data-center financing.</b> Up to $105B capped guarantee, $1.5B SB Energy investment, guarantee mechanics. <a href="https://www.reuters.com/business/media-telecom/nvidia-invest-15-billion-sb-energy-under-openai-data-center-deal-2026-08-17/">Reuters</a>.</div>
+      <div id="s8" class="source"><b>[8] Reuters — Jul. 23, 2026 AMD Helios.</b> Production status, shipment timing, OpenAI deployment plans and competitive positioning. <a href="https://www.reuters.com/business/amd-expected-launch-next-generation-ai-infrastructure-challenge-nvidia-2026-07-23/">Reuters</a>.</div>
+      <div id="s9" class="source"><b>[9] Reuters — Aug. 19, 2026 H200 China shipments.</b> Reported small-batch shipments and policy uncertainty. <a href="https://www.reuters.com/world/asia-pacific/nvidia-h200-chips-reach-china-small-shipments-ft-reports-2026-08-19/">Reuters</a>.</div>
+      <div id="s10" class="source"><b>[10] Investopedia — Aug. 21, 2026 earnings preview.</b> Visible Alpha revenue/EPS/Data Center estimates, options-implied move and mean analyst target. <a href="https://www.investopedia.com/nvidia-reports-earnings-on-wednesday-here-is-how-much-the-stock-is-expected-to-move-nvda-q2-fy2027-12062509">Investopedia</a>.</div>
+      <div id="s11" class="source"><b>[11] NVIDIA — Rubin launch announcement.</b> Product architecture, customer ecosystem and 2H26 availability statements. <a href="https://nvidianews.nvidia.com/_gallery/download_pdf/695c39b23d633240d175d8e6/">NVIDIA Newsroom</a>.</div>
+      <div id="s12" class="source"><b>[12] NVIDIA Investor Relations — Q2 FY27 Financial Results event page.</b> Aug. 26, 2026 reporting date. <a href="https://investor.nvidia.com/events-and-presentations/events-and-presentations/event-details/2026/NVIDIA-2nd-Quarter-FY27-Financial-Results/default.aspx">NVIDIA Investor Relations</a>.</div>
+      <div id="s13" class="source"><b>[13] Vanguard — VFFSX holdings.</b> NVIDIA weight of 7.50% as of June 30, 2026. <a href="https://advisors.vanguard.com/investments/products/vffsx/vanguard-500-index-fund-institutional-select-shares">Vanguard</a>.</div>
+      <div id="s14" class="source"><b>[14] Schwab ETF holdings page — SOXQ.</b> NVIDIA weight of 13.29% in cited holdings snapshot. <a href="https://www.schwab.wallst.com/schwab/Prospect/research/etfs/schwabETF/index.asp?symbol=SOXQ&type=holdings">Schwab</a>.</div>
+      <div id="s15" class="source"><b>[15] Alpaca delayed SIP market data.</b> NVDA Aug. 21, 2026 close $214.72; last after-hours trade observed $215.38. Used $214.72 close for valuation.</div>
+      <div id="s16" class="source"><b>[16] retirement-portfolio-27.xlsx.</b> User-designated portfolio baseline used for direct holdings, allocation, portfolio-value and look-through calculations.</div>
+
+      <p class="foot"><b>Analytical note:</b> Scenario price targets are analyst-derived, not consensus targets. FY27/FY28 multiple calculations use the Aug. 21 closing price and published adjusted EPS consensus. Portfolio look-through estimates use the stated fund weights and portfolio allocations and may omit additional indirect exposure in diversified funds for which a current constituent weight was not explicitly modeled.</p>
+      <p class="foot"><b>Disclaimer:</b> This report is for research and informational purposes only. It is not individualized investment advice, a recommendation to buy or sell for any particular account, or legal/tax advice. Forward-looking statements and valuation scenarios are uncertain and can be wrong. Securities prices can decline materially, including around earnings events.</p>
+    </section>
+  </main>
+</div>
+</body>
+</html>
