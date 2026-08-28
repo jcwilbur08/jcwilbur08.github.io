@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>NVDA Post-Earnings Entry Point Assessment - August 28, 2026</title>
+<style>
+  :root {
+    --ink:#172033;
+    --muted:#5f6b7a;
+    --line:#d9dee7;
+    --soft:#f5f7fa;
+    --soft2:#eef2f6;
+    --accent:#4f7d2b;
+    --accent2:#2d5b1a;
+    --warn:#a76519;
+    --risk:#9f2f2f;
+    --blue:#244a75;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    color:var(--ink);
+    background:white;
+    line-height:1.43;
+    font-size:10pt;
+  }
+  .report { max-width: 980px; margin:0 auto; padding:36px 44px 28px; }
+  .topbar { height:8px; background:var(--accent); margin:-36px -44px 28px; }
+  h1 { font-size:25pt; line-height:1.08; margin:0 0 8px; letter-spacing:-0.4px; }
+  .subtitle { color:var(--muted); font-size:12pt; margin-bottom:20px; }
+  .meta { display:flex; justify-content:space-between; gap:20px; padding:12px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); color:var(--muted); font-size:9pt; }
+  .rating-row { display:grid; grid-template-columns: repeat(5, 1fr); gap:10px; margin:22px 0 18px; }
+  .tile { border:1px solid var(--line); border-radius:8px; padding:13px 14px; background:white; }
+  .tile .k { color:var(--muted); text-transform:uppercase; letter-spacing:.6px; font-size:8pt; font-weight:700; }
+  .tile .v { font-size:18pt; font-weight:700; margin-top:4px; }
+  .tile .s { color:var(--muted); font-size:8.5pt; margin-top:2px; }
+  .tile.accent { background:#f3f8ef; border-color:#bfd2b0; }
+  .verdict { border-left:5px solid var(--accent); background:#f5f9f2; padding:16px 18px; margin:14px 0 24px; }
+  .verdict strong { color:var(--accent2); }
+  h2 { margin:24px 0 9px; font-size:16pt; border-bottom:1px solid var(--line); padding-bottom:7px; }
+  h3 { margin:15px 0 6px; font-size:12pt; }
+  p { margin:8px 0; }
+  ul { margin:8px 0 8px 20px; padding:0; }
+  li { margin:5px 0; }
+  table { width:100%; border-collapse:collapse; margin:12px 0 18px; }
+  th { text-align:left; background:var(--soft2); border-bottom:1px solid #bec7d3; padding:7px 9px; font-size:8.8pt; }
+  td { border-bottom:1px solid var(--line); padding:7px 9px; vertical-align:top; }
+  td.num, th.num { text-align:right; white-space:nowrap; }
+  .positive { color:var(--accent2); font-weight:700; }
+  .negative { color:var(--risk); font-weight:700; }
+  .neutral { color:var(--blue); font-weight:700; }
+  .buyzones td:first-child { font-weight:700; }
+  .buyzones tr:nth-child(2) td { background:#f4f9f1; }
+  .buyzones tr:nth-child(3) td { background:#f8fbf6; }
+  .callout { background:var(--soft); border:1px solid var(--line); border-radius:8px; padding:14px 16px; margin:14px 0; }
+  .callout.warn { background:#fff8ef; border-color:#e6c69f; }
+  .callout.risk { background:#fff4f4; border-color:#e4b6b6; }
+  .formula { font-family: "Courier New", monospace; font-size:10pt; background:#f7f8fb; border:1px solid var(--line); padding:10px 12px; border-radius:6px; margin:8px 0; }
+  .scenario-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; margin:12px 0 18px; }
+  .scenario { border:1px solid var(--line); border-radius:8px; padding:13px; }
+  .scenario .head { display:flex; justify-content:space-between; font-weight:700; margin-bottom:5px; }
+  .scenario .target { font-size:18pt; font-weight:700; }
+  .bar-wrap { background:#edf0f4; height:9px; border-radius:6px; margin-top:10px; overflow:hidden; }
+  .bar { height:100%; border-radius:6px; background:var(--accent); }
+  .bar.bear { background:var(--risk); }
+  .bar.bull { background:var(--blue); }
+  .decision-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .decision { border:1px solid var(--line); padding:14px 15px; border-radius:8px; }
+  .decision h3 { margin-top:0; }
+  .small { color:var(--muted); font-size:8.2pt; }
+  .foot { margin-top:12px; padding-top:8px; border-top:1px solid var(--line); color:var(--muted); font-size:7.4pt; line-height:1.35; }
+  .page-break { break-before:page; }
+  .avoid { break-inside:avoid; }
+  a { color:var(--blue); text-decoration:none; }
+  @page { size: Letter; margin: 0.52in 0.55in 0.55in; }
+  @media print {
+    .report { max-width:none; padding:0; }
+    .topbar { margin:0 0 22px; }
+    h2, h3 { break-after:avoid; }
+    table, .tile, .scenario, .decision, .callout { break-inside:avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="report">
+  <div class="topbar"></div>
+  <h1>NVIDIA (NVDA) Post-Earnings Entry Point Assessment</h1>
+  <div class="subtitle">Is approximately $227/share still an attractive entry after the post-earnings rally?</div>
+  <div class="meta">
+    <div><strong>Report date:</strong> August 28, 2026</div>
+    <div><strong>Reference price under review:</strong> approximately $227/share</div>
+    <div><strong>Horizon:</strong> 12 months</div>
+  </div>
+
+  <div class="rating-row">
+    <div class="tile accent"><div class="k">Research Rating</div><div class="v">ADD</div><div class="s">Still inside preferred accumulation range</div></div>
+    <div class="tile"><div class="k">Conviction</div><div class="v">9/10</div><div class="s">Post-earnings thesis strengthened</div></div>
+    <div class="tile"><div class="k">Base Target</div><div class="v">$335</div><div class="s">+47.6% vs. $227</div></div>
+    <div class="tile"><div class="k">Weighted Value</div><div class="v">$324</div><div class="s">+42.8% vs. $227</div></div>
+    <div class="tile"><div class="k">Preferred Buy Zone</div><div class="v">$220-240</div><div class="s">Attractive risk/reward</div></div>
+  </div>
+
+  <div class="verdict">
+    <strong>Investment conclusion:</strong> Around $227/share, NVDA remains an attractive entry point even after the post-earnings rally. The stock has moved higher, but the rerating has not consumed enough of the modeled upside to change the recommendation. At this price, the shares still offer roughly 43% upside to the probability-weighted value and nearly 48% upside to the base target. The appropriate posture is <strong>ADD</strong>, using staged purchases rather than treating $227 as an all-or-nothing entry.
+  </div>
+
+  <h2>1. Executive Summary</h2>
+  <p>The post-earnings rally should be viewed in the context of a materially stronger fundamental outlook. The key investment question is no longer whether NVIDIA delivered a strong quarter; it did. The question is whether the share-price response has compressed expected returns enough to make the next dollar less attractive.</p>
+  <p>At approximately $227, the answer remains <strong>no</strong>. The current valuation still discounts a substantial amount of execution risk despite unusually strong forward demand visibility. Under the existing post-earnings framework, the shares remain below both the $335 base target and the $324.25 probability-weighted value by wide margins.</p>
+  <ul>
+    <li><strong>Reward remains compelling:</strong> +47.6% to the base target and +42.8% to probability-weighted value.</li>
+    <li><strong>Valuation remains reasonable:</strong> approximately 14.9x the analyst FY28 EPS framework of $15.25.</li>
+    <li><strong>Demand visibility improved:</strong> the earnings print and call reinforced a multi-year AI infrastructure cycle rather than a near-term peak narrative.</li>
+    <li><strong>Margin and capital-intensity risks increased:</strong> memory/component inflation, large supply commitments, and vendor-supported ecosystem financing justify valuation discipline.</li>
+    <li><strong>Entry discipline matters:</strong> $220-$240 remains the preferred accumulation band; risk/reward becomes less compelling above approximately $270 absent further upward earnings revisions.</li>
+  </ul>
+
+  <h2>2. Scenario Valuation and Expected Return</h2>
+  <div class="scenario-grid avoid">
+    <div class="scenario">
+      <div class="head"><span>Bear Case</span><span>20%</span></div>
+      <div class="target">$175</div>
+      <div class="negative">-22.9% from $227</div>
+      <div class="bar-wrap"><div class="bar bear" style="width:42%"></div></div>
+      <p class="small">AI capex slows, custom silicon gains share, margins deteriorate, and the valuation multiple compresses.</p>
+    </div>
+    <div class="scenario">
+      <div class="head"><span>Base Case</span><span>55%</span></div>
+      <div class="target">$335</div>
+      <div class="positive">+47.6% from $227</div>
+      <div class="bar-wrap"><div class="bar" style="width:80%"></div></div>
+      <p class="small">Strong Blackwell/Rubin execution, durable AI infrastructure spending, and normalized margins support continued earnings growth.</p>
+    </div>
+    <div class="scenario">
+      <div class="head"><span>Bull Case</span><span>25%</span></div>
+      <div class="target">$420</div>
+      <div class="positive">+85.0% from $227</div>
+      <div class="bar-wrap"><div class="bar bull" style="width:100%"></div></div>
+      <p class="small">AI demand exceeds current forecasts, Rubin ramps cleanly, margins recover, and NVIDIA retains dominant full-stack economics.</p>
+    </div>
+  </div>
+
+  <table class="avoid">
+    <thead><tr><th>Scenario</th><th class="num">Probability</th><th class="num">Target</th><th class="num">Return from $227</th><th class="num">Weighted Contribution</th></tr></thead>
+    <tbody>
+      <tr><td>Bear</td><td class="num">20%</td><td class="num">$175</td><td class="num negative">-22.9%</td><td class="num">$35.00</td></tr>
+      <tr><td>Base</td><td class="num">55%</td><td class="num">$335</td><td class="num positive">+47.6%</td><td class="num">$184.25</td></tr>
+      <tr><td>Bull</td><td class="num">25%</td><td class="num">$420</td><td class="num positive">+85.0%</td><td class="num">$105.00</td></tr>
+      <tr><td><strong>Probability-weighted value</strong></td><td class="num"><strong>100%</strong></td><td class="num"><strong>$324.25</strong></td><td class="num positive"><strong>+42.8%</strong></td><td class="num"><strong>$324.25</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Margin-of-safety check:</strong> $227 is approximately 30% below the $324.25 probability-weighted value. If an investor requires at least 40% upside to weighted value, the maximum qualifying entry price is about <strong>$231.61</strong>.
+    <div class="formula">$324.25 / 1.40 = $231.61</div>
+  </div>
+
+  <div class="page-break"></div>
+  <h2>3. Entry-Price Framework</h2>
+  <p>The weighted valuation framework is more useful as a set of price zones than as a single-point forecast. The table below translates expected value into practical entry discipline.</p>
+  <table class="buyzones avoid">
+    <thead><tr><th>Entry Price</th><th class="num">Upside to $324 Weighted Value</th><th>Assessment</th><th>Portfolio Action</th></tr></thead>
+    <tbody>
+      <tr><td>At or below $220</td><td class="num">47%+</td><td class="positive">Very attractive</td><td>Aggressive Add, subject to position-size discipline</td></tr>
+      <tr><td>$220-$240</td><td class="num">35%-47%</td><td class="positive">Attractive Add</td><td>Preferred accumulation range; staged purchases favored</td></tr>
+      <tr><td>$240-$250</td><td class="num">30%-35%</td><td class="neutral">Good entry</td><td>Continue adding, but with greater selectivity</td></tr>
+      <tr><td>$250-$270</td><td class="num">20%-30%</td><td class="neutral">Reasonable</td><td>Smaller incremental adds; require thesis confirmation</td></tr>
+      <tr><td>$270-$290</td><td class="num">12%-20%</td><td>Less compelling</td><td>Hold / selective adds only</td></tr>
+      <tr><td>Above $300</td><td class="num">Below 8%</td><td class="negative">Limited margin of safety</td><td>Wait for higher estimates, lower price, or a new catalyst</td></tr>
+    </tbody>
+  </table>
+
+  <h2>4. Why $227 Still Works</h2>
+  <h3>4.1 Earnings power remains the key valuation denominator</h3>
+  <p>The post-earnings framework uses approximately <strong>$15.25 of FY28 EPS</strong>. At $227, the stock trades at roughly <strong>14.9x FY28E EPS</strong>. That is not a demanding multiple for a company with NVIDIA's growth rate, competitive position, and returns on capital.</p>
+  <div class="formula">$227 / $15.25 = 14.9x FY28E EPS</div>
+  <p>Even if the earnings framework proves too optimistic and FY28 EPS reaches only $13.00, the valuation would still be approximately <strong>17.5x</strong> that lower earnings level.</p>
+  <div class="formula">$227 / $13.00 = 17.5x FY28E EPS</div>
+
+  <h3>4.2 The post-earnings rally was supported by fundamentals, not only multiple expansion</h3>
+  <p>The earnings release and completed call strengthened the duration of the AI infrastructure thesis. Q2 FY27 revenue, Data Center growth, and Q3 guidance all exceeded the pre-earnings bar, while Rubin's production status reduced concern that the current cycle is dependent on a single architecture generation.</p>
+
+  <h3>4.3 The market is still discounting execution risk</h3>
+  <p>The share price does not appear to embed an uninterrupted bull-case outcome. Margin compression, higher supply commitments, and financing exposure justify a lower multiple than one might apply to a less capital-intensive, cleaner cash-conversion profile. That valuation restraint is precisely why the expected-return framework remains attractive at $227.</p>
+
+  <h2>5. Why This Is Not a Strong Add</h2>
+  <div class="decision-grid">
+    <div class="decision">
+      <h3>Margin pressure</h3>
+      <p>Memory and component inflation could pull gross margin toward roughly 71%-72% before improving. Revenue growth may remain exceptional while incremental profitability temporarily weakens.</p>
+    </div>
+    <div class="decision">
+      <h3>Supply commitments</h3>
+      <p>Large supply and capacity commitments improve access to scarce inputs but increase downside operating leverage if AI infrastructure demand slows unexpectedly.</p>
+    </div>
+    <div class="decision">
+      <h3>Vendor-supported demand</h3>
+      <p>NVIDIA's investments, guarantees, and financing relationships can accelerate ecosystem buildout, but vendor-enabled demand should not receive the same valuation treatment as wholly independent demand.</p>
+    </div>
+    <div class="decision">
+      <h3>Competitive and capex-cycle risk</h3>
+      <p>A hyperscaler spending pause, faster custom-accelerator adoption, or a meaningful utilization slowdown could compress both earnings estimates and the market multiple at the same time.</p>
+    </div>
+  </div>
+
+  <div class="callout risk">
+    <strong>Bear-case discipline:</strong> A $175 downside case remains plausible if hyperscaler capex pauses, custom silicon gains materially more share, gross margin falls below 70%, and the market stops valuing NVIDIA as the dominant AI platform. From a $227 entry, that represents roughly <strong>23% downside</strong>.
+  </div>
+
+  <div class="page-break"></div>
+  <h2>6. Portfolio-Manager Action Framework</h2>
+  <table class="avoid">
+    <thead><tr><th>Price / Condition</th><th>Recommended Research Posture</th><th>Rationale</th></tr></thead>
+    <tbody>
+      <tr><td><strong>$215-$220</strong></td><td class="positive">Aggressive Add</td><td>Very strong expected value if fundamentals and estimates remain intact.</td></tr>
+      <tr><td><strong>Approximately $227</strong></td><td class="positive">Add</td><td>Still clears a demanding 40% upside hurdle to weighted value; attractive valuation on FY28 earnings.</td></tr>
+      <tr><td><strong>$240-$250</strong></td><td class="neutral">Add selectively</td><td>Upside remains meaningful, but margin of safety is narrower.</td></tr>
+      <tr><td><strong>$250-$270</strong></td><td>Hold / small adds</td><td>Require further estimate revisions, margin stabilization, or stronger Rubin evidence.</td></tr>
+      <tr><td><strong>Above $270</strong></td><td>Pause active accumulation</td><td>Expected-return asymmetry is less attractive without an upward revision to intrinsic value.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="verdict">
+    <strong>PM conclusion:</strong> Do not require a complete retracement of the post-earnings rally before adding. Around $227, the expected-value math remains favorable. The best implementation is staged accumulation inside the $220-$240 band, retaining dry powder for volatility rather than trying to identify a single perfect entry price.
+  </div>
+
+  <h2>7. Key Monitoring Items and Thesis Falsifiers</h2>
+  <table class="avoid">
+    <thead><tr><th>Watch Item</th><th>Why It Matters</th><th>Negative Signal</th></tr></thead>
+    <tbody>
+      <tr><td>Gross-margin trajectory</td><td>Determines whether extraordinary revenue growth converts into expected earnings power.</td><td>Sustained gross margin below 70% without a credible recovery path.</td></tr>
+      <tr><td>Rubin ramp</td><td>Tests architecture-transition execution and supports duration of the growth cycle.</td><td>Material delays, customer pushouts, or lower-than-expected economics.</td></tr>
+      <tr><td>Hyperscaler AI capex</td><td>The largest customers remain the primary funding source for AI infrastructure growth.</td><td>Broad capex reductions or utilization concerns across multiple major customers.</td></tr>
+      <tr><td>Custom silicon share</td><td>Could pressure NVIDIA's share of accelerator spending even if total AI demand remains strong.</td><td>Evidence that in-house accelerators structurally displace NVIDIA in core training/inference workloads.</td></tr>
+      <tr><td>Financing / ecosystem exposure</td><td>Higher commitments can improve demand visibility but reduce balance-sheet flexibility and demand quality.</td><td>Increasing guarantees or investments accompanied by weaker independent customer economics.</td></tr>
+      <tr><td>Estimate revisions</td><td>The valuation case depends on rising earnings power offsetting the post-earnings rerating.</td><td>FY28 EPS expectations fail to rise or begin declining while the share price continues to appreciate.</td></tr>
+    </tbody>
+  </table>
+
+  <h2>8. Bottom Line</h2>
+  <p><strong>At approximately $227/share, NVIDIA remains a good entry point under the current post-earnings valuation framework.</strong> The stock is no longer as compelling as it was near $210, but it remains comfortably inside the preferred accumulation zone and still offers an attractive upside/downside profile.</p>
+  <p>The core judgment is that the post-earnings rally has <strong>not</strong> outrun the earnings revision cycle. The appropriate posture is therefore to keep the <strong>ADD</strong> rating and <strong>9/10 conviction</strong>, while applying disciplined staged buying and monitoring the margin, supply-commitment, and vendor-financing risks closely.</p>
+
+  <h2>Sources and Methodology</h2>
+  <ul class="small">
+    <li>NVIDIA Q2 FY27 earnings release and earnings call, as incorporated into the post-earnings research update dated August 26, 2026.</li>
+    <li>Primary company source: <a href="https://nvidianews.nvidia.com/news/nvidia-announces-financial-results-for-second-quarter-fiscal-2027">NVIDIA - Q2 FY27 Financial Results</a>.</li>
+    <li>Valuation targets and probabilities are analyst estimates from the post-earnings framework: Bear $175 (20%), Base $335 (55%), Bull $420 (25%).</li>
+  </ul>
+
+  <div class="foot">
+    <strong>Reference-price note:</strong> Approximately $227 is the entry price under assessment, not a representation of the live market price at publication. <strong>Research disclaimer:</strong> This document is an analytical investment-research framework, not a guarantee of future returns. Price targets, earnings estimates, probabilities, and scenario values are inherently uncertain and should be revisited as new company, industry, and market information becomes available.
+  </div>
+</div>
+</body>
+</html>
