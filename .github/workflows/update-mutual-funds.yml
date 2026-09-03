@@ -4,7 +4,7 @@ name: Update Mutual Fund Quotes
 # the Actions tab (useful for testing without waiting for the schedule).
 on:
   schedule:
-    - cron: '0 21 * * 1-5'   # 21:00 UTC — approximately 4-5pm ET depending on daylight
+    - cron: '0 23 * * 1-5'   # 23:00 UTC — approximately 6-7pm ET depending on daylight
                               # saving time (cron runs on fixed UTC, so the ET time drifts
                               # by an hour across DST changes; fine for a once-daily refresh)
   workflow_dispatch: {}
