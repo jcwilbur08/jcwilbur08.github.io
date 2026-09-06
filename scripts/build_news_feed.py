@@ -23,7 +23,7 @@ import time
 import urllib.request
 import urllib.parse
 import urllib.error
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 # Same key already used client-side in index.html for live quotes (free tier, already
 # public in the page source — no need to treat it as a secret here).
@@ -44,6 +44,10 @@ TICKERS = [
 ]
 
 TOP_N_MOVERS = 10
+# How many of the day's biggest movers to query AV news for, one call each.
+# Budget check: 4 AV calls/day already spent on mutual fund NAVs + this many news
+# calls must stay under the free tier's 25/day cap. 15 leaves a 6-call buffer.
+NEWS_CANDIDATE_LIMIT = 15
 CLAUDE_MODEL = 'claude-haiku-4-5-20251001'
 
 
@@ -80,44 +84,62 @@ def fetch_movers():
     return movers
 
 
-def fetch_news_sentiment(tickers):
-    """One batched Alpha Vantage NEWS_SENTIMENT call; returns {ticker: best_article}."""
+def fetch_news_sentiment(tickers, time_from=None):
+    """Per-ticker Alpha Vantage NEWS_SENTIMENT calls; returns {ticker: best_article}.
+
+    IMPORTANT: Alpha Vantage's `tickers` param does an AND-intersection when given
+    multiple comma-separated symbols, NOT a union/OR of per-ticker articles. Verified
+    empirically: 2-3 related tickers together can still return results (if an article
+    happens to mention all of them), but 4+ tickers collapses toward zero, and two
+    unrelated tickers return zero even together. A single batched call across ~36
+    tracked tickers -- the prior approach -- asks for one article mentioning all 36
+    holdings at once, which will never exist. Must query one ticker per call.
+
+    This costs 1 AV call per ticker, so the caller MUST pass a pre-trimmed candidate
+    list (not the full tracked universe) to stay within the 25-calls/day free-tier
+    budget -- 4 of those are already spent daily on mutual fund NAVs.
+    """
     if not ALPHA_VANTAGE_KEY:
         print('WARN: ALPHA_VANTAGE_KEY not set — skipping news fetch.', file=sys.stderr)
         return {}
-    ticker_param = ','.join(tickers)
-    url = (
-        'https://www.alphavantage.co/query?function=NEWS_SENTIMENT'
-        f'&tickers={urllib.parse.quote(ticker_param)}&limit=50&apikey={ALPHA_VANTAGE_KEY}'
-    )
-    try:
-        data = http_get_json(url, timeout=30)
-    except Exception as e:
-        print(f'WARN: Alpha Vantage NEWS_SENTIMENT call failed: {e}', file=sys.stderr)
-        return {}
-
-    feed = data.get('feed', [])
-    if not feed:
-        print(f'WARN: Alpha Vantage NEWS_SENTIMENT returned no feed for {len(tickers)} tickers '
-              f'(items field: {data.get("items")}). Response keys: {list(data.keys())}', file=sys.stderr)
-    else:
-        print(f'Alpha Vantage returned {len(feed)} articles for {len(tickers)} queried tickers.')
 
     best = {}
-    for article in feed:
-        for ts in article.get('ticker_sentiment', []):
-            t = ts.get('ticker')
-            if t not in tickers:
-                continue
-            relevance = float(ts.get('relevance_score', 0) or 0)
-            if t not in best or relevance > best[t]['relevance']:
-                best[t] = {
-                    'relevance': relevance,
-                    'title': article.get('title', ''),
-                    'summary': article.get('summary', ''),
-                    'source': article.get('source', ''),
-                    'url': article.get('url', ''),
-                }
+    for i, ticker in enumerate(tickers):
+        if i > 0:
+            time.sleep(1)  # stay well clear of any burst limit
+        url = (
+            'https://www.alphavantage.co/query?function=NEWS_SENTIMENT'
+            f'&tickers={urllib.parse.quote(ticker)}&limit=10&sort=LATEST&apikey={ALPHA_VANTAGE_KEY}'
+        )
+        if time_from:
+            url += f'&time_from={time_from}'
+        try:
+            data = http_get_json(url, timeout=30)
+        except Exception as e:
+            print(f'WARN: Alpha Vantage NEWS_SENTIMENT failed for {ticker}: {e}', file=sys.stderr)
+            continue
+
+        feed = data.get('feed', [])
+        if not feed:
+            print(f'INFO: no recent news found for {ticker} '
+                  f'(items field: {data.get("items")}).', file=sys.stderr)
+            continue
+
+        for article in feed:
+            for ts in article.get('ticker_sentiment', []):
+                if ts.get('ticker') != ticker:
+                    continue
+                relevance = float(ts.get('relevance_score', 0) or 0)
+                if ticker not in best or relevance > best[ticker]['relevance']:
+                    best[ticker] = {
+                        'relevance': relevance,
+                        'title': article.get('title', ''),
+                        'summary': article.get('summary', ''),
+                        'source': article.get('source', ''),
+                        'url': article.get('url', ''),
+                    }
+
+    print(f'Alpha Vantage returned usable news for {len(best)} of {len(tickers)} queried tickers.')
     return best
 
 
@@ -204,16 +226,18 @@ def main():
               'Aborting without touching news-feed.json.', file=sys.stderr)
         sys.exit(1)
 
-    # Query news for the FULL tracked universe (one AV call, no extra cost) rather than
-    # just the top-N movers — several tracked tickers are passive ETFs that rarely get
-    # individual news coverage, so restricting the query to only the biggest movers risked
-    # coming back empty on days when those movers happened to be exactly those ETFs.
-    all_tickers = [m['ticker'] for m in all_movers]
-    articles = fetch_news_sentiment(all_tickers)
+    # Query news for the top NEWS_CANDIDATE_LIMIT movers only, one AV call per ticker
+    # (see fetch_news_sentiment docstring for why a single batched multi-ticker call
+    # doesn't work). Candidates beyond TOP_N_MOVERS give slack for tickers — often
+    # passive ETFs — that move but have no individual news coverage that day.
+    candidates = all_movers[:NEWS_CANDIDATE_LIMIT]
+    candidate_tickers = [m['ticker'] for m in candidates]
+    time_from = (datetime.now(timezone.utc) - timedelta(hours=48)).strftime('%Y%m%dT%H%M')
+    articles = fetch_news_sentiment(candidate_tickers, time_from=time_from)
 
     # Now rank by |day % move|, but only among tickers we actually found news for.
-    coverable_movers = [m for m in all_movers if m['ticker'] in articles]
-    print(f'{len(coverable_movers)} of {len(all_movers)} tracked tickers have news coverage today.')
+    coverable_movers = [m for m in candidates if m['ticker'] in articles]
+    print(f'{len(coverable_movers)} of {len(candidates)} candidate movers have news coverage today.')
     top_movers = coverable_movers[:TOP_N_MOVERS]
 
     if not top_movers:
