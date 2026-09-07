@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UBER Equity Analysis - August 29, 2026</title>
+<style>
+:root{--navy:#0b1f33;--navy2:#102b46;--ink:#17212b;--muted:#5b6775;--line:#d9e1e8;--soft:#f4f7f9;--green:#157347;--green2:#eaf6ef;--amber:#a35b00;--amber2:#fff5e6;--red:#b42318;--red2:#fdecec;--blue:#1f5d8f;--white:#fff;}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#eef2f5;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5;font-size:14px}
+a{color:var(--blue);text-decoration:none} a:hover{text-decoration:underline}
+.report{max-width:1040px;margin:24px auto;background:white;box-shadow:0 10px 30px rgba(12,31,51,.10)}
+.cover{padding:46px 52px 34px;background:linear-gradient(135deg,var(--navy),#173e60);color:white;position:relative;overflow:hidden}
+.cover:after{content:"";position:absolute;width:380px;height:380px;border:1px solid rgba(255,255,255,.1);border-radius:50%;right:-140px;top:-160px}
+.kicker{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#bcd0df;font-weight:700}
+h1{font-size:36px;line-height:1.07;margin:10px 0 8px;letter-spacing:-.02em}
+.subtitle{font-size:18px;color:#dbe7ef;max-width:760px}
+.asof{font-size:12px;color:#bcd0df;margin-top:22px}
+.rating-strip{display:grid;grid-template-columns:1.25fr repeat(5,1fr);gap:0;border-top:1px solid rgba(255,255,255,.17);margin-top:28px}
+.rating-cell{padding:17px 14px 4px 0}
+.rating-cell .lbl{font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:#bcd0df}
+.rating-cell .val{font-size:22px;font-weight:700;margin-top:2px}
+.rating-cell .small{font-size:11px;color:#d6e2ea}
+.rating-badge{display:inline-block;background:#1f9d62;color:white;padding:7px 12px;border-radius:999px;font-size:15px;font-weight:700;margin-top:3px}
+.content{padding:34px 52px 44px}
+.toc{display:grid;grid-template-columns:repeat(3,1fr);gap:8px 20px;border:1px solid var(--line);background:#fbfcfd;border-radius:10px;padding:18px 20px;margin-bottom:28px}
+.toc a{font-size:12px;color:#34495a}
+.section{margin:30px 0}
+.section h2{font-size:22px;color:var(--navy);margin:0 0 12px;border-bottom:2px solid var(--navy);padding-bottom:7px;letter-spacing:-.01em}
+.section h3{font-size:16px;color:var(--navy2);margin:19px 0 8px}
+.lede{font-size:16px;line-height:1.62;color:#243746}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{border:1px solid var(--line);border-radius:10px;padding:16px;background:white;break-inside:avoid}
+.card.soft{background:#fafcfd}
+.card h3{margin-top:0}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0}
+.metric{background:var(--soft);border-radius:8px;padding:12px 13px;border-left:3px solid #94a9ba}
+.metric .m-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.metric .m-value{font-size:20px;font-weight:700;color:var(--navy);margin-top:2px}
+.metric .m-note{font-size:10px;color:var(--muted)}
+.callout{border-left:4px solid var(--blue);background:#f0f6fb;padding:15px 17px;margin:14px 0;border-radius:0 8px 8px 0}
+.callout.green{border-left-color:var(--green);background:var(--green2)}
+.callout.amber{border-left-color:var(--amber);background:var(--amber2)}
+.callout.red{border-left-color:var(--red);background:var(--red2)}
+.callout .title{font-weight:700;color:var(--navy);margin-bottom:4px}
+ul,ol{margin:7px 0 7px 20px;padding:0} li{margin:5px 0}
+.thesis-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.thesis{border:1px solid var(--line);border-radius:9px;padding:15px;position:relative}
+.thesis .num{position:absolute;right:12px;top:8px;font-size:26px;font-weight:700;color:#d6e0e8}
+.thesis strong{color:var(--navy)}
+table{width:100%;border-collapse:collapse;font-size:12px;margin:12px 0 16px;break-inside:avoid}
+th{background:var(--navy);color:white;text-align:left;padding:8px 9px;font-size:10px;text-transform:uppercase;letter-spacing:.04em}
+td{padding:8px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:nth-child(even) td{background:#fafbfc}
+.numc{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.good{color:var(--green);font-weight:700} .bad{color:var(--red);font-weight:700} .warn{color:var(--amber);font-weight:700}
+.chart-card{border:1px solid var(--line);border-radius:10px;padding:15px 16px;background:#fff;break-inside:avoid}
+.chart-title{font-weight:700;color:var(--navy);font-size:14px} .chart-sub{font-size:10px;color:var(--muted);margin-bottom:11px}
+.bar-row{display:grid;grid-template-columns:88px 1fr 58px 115px;gap:9px;align-items:center;margin:8px 0}
+.bar-label{font-size:11px;font-weight:700} .bar-track{height:12px;background:#e9eef2;border-radius:99px;overflow:hidden} .bar-fill{height:100%;background:linear-gradient(90deg,#2e6f9e,#4c9cc8);border-radius:99px} .bar-value{font-size:11px;font-weight:700;text-align:right} .bar-note{font-size:9px;color:var(--muted)}
+.score{display:inline-block;padding:3px 7px;border-radius:999px;font-size:10px;font-weight:700} .score.g{color:#0b653e;background:#e5f5ec} .score.a{color:#7a4300;background:#fff0d6} .score.r{color:#8f1b13;background:#fde8e6}
+.scenario{display:grid;grid-template-columns:80px 70px 1fr 80px;gap:10px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center}
+.scenario:last-child{border-bottom:0} .scenario .case{font-weight:700;color:var(--navy)} .scenario .prob{font-size:11px;color:var(--muted)} .scenario .desc{font-size:11px} .scenario .px{font-size:20px;font-weight:700;text-align:right}
+.source-list{font-size:10.5px;line-height:1.45} .source-list li{margin-bottom:7px;word-break:break-word}
+.cite{font-size:9px;font-weight:700}
+.footer-note{font-size:10px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:25px}
+.page-break{break-before:page}
+.avoid{break-inside:avoid}
+@page{size:Letter;margin:.47in .50in .52in .50in}
+@media print{body{background:white;font-size:11px} .report{max-width:none;margin:0;box-shadow:none} .cover{padding:32px 35px 25px;min-height:8.9in} .content{padding:25px 34px 30px} h1{font-size:32px} .section{margin:22px 0} .section h2{font-size:18px} .grid2{gap:12px} .card{padding:12px} .metric-grid{gap:7px} .metric{padding:9px 10px} .metric .m-value{font-size:17px} .toc{margin-bottom:20px} a{color:inherit} .page-break{break-before:page}}
+</style>
+</head>
+<body>
+<article class="report">
+<section class="cover">
+  <div class="kicker">Equity Research | Initiating Coverage Style Deep Dive</div>
+  <h1>Uber Technologies, Inc. (NYSE: UBER)</h1>
+  <div class="subtitle">The cash-flow inflection is real. The next debate is whether Uber can remain the global commercialization layer for mobility while preserving asset-light economics through the autonomous transition.</div>
+  <div class="asof">Report date: August 29, 2026 | Market data through August 28, 2026 close | Financial data through Q2 2026</div>
+  <div class="rating-strip">
+    <div class="rating-cell"><div class="lbl">Research Rating</div><div class="rating-badge">ADD / OUTPERFORM</div><div class="small">Long-only research posture</div></div>
+    <div class="rating-cell"><div class="lbl">Price</div><div class="val">$78.82</div><div class="small">Aug. 28 close</div></div>
+    <div class="rating-cell"><div class="lbl">Base Target</div><div class="val">$105</div><div class="small">12-18 months</div></div>
+    <div class="rating-cell"><div class="lbl">Upside</div><div class="val">+33%</div><div class="small">to base target</div></div>
+    <div class="rating-cell"><div class="lbl">Conviction</div><div class="val">8 / 10</div><div class="small">High, not maximum</div></div>
+    <div class="rating-cell"><div class="lbl">Risk</div><div class="val">Med-High</div><div class="small">AV + M&A execution</div></div>
+  </div>
+</section>
+
+<div class="content">
+<nav class="toc">
+ <a href="#summary">1. Executive Summary</a><a href="#thesis">2. Investment Thesis</a><a href="#business">3. Business & Moat</a>
+ <a href="#financials">4. Financial Quality</a><a href="#segments">5. Segment Economics</a><a href="#growth">6. Growth Engines</a>
+ <a href="#av">7. Autonomous Vehicles</a><a href="#dher">8. Delivery Hero</a><a href="#capital">9. Capital Allocation</a>
+ <a href="#valuation">10. Valuation</a><a href="#risks">11. Risks & Falsifiers</a><a href="#monitor">12. Monitoring Framework</a>
+</nav>
+
+<section class="section" id="summary">
+<h2>1. Executive Summary</h2>
+<p class="lede"><strong>View:</strong> Uber has moved decisively from a scale-at-all-costs marketplace into a cash-generative global platform. Q2 2026 Gross Bookings grew 22% in constant currency, trips increased 18%, Adjusted EBITDA rose 33%, and non-GAAP operating income rose 40%. Trailing 12-month free cash flow exceeded $10 billion for the first time. <sup><a class="cite" href="#src1">[1]</a></sup> The stock, however, trades at only about 15.9x trailing free cash flow and about 18.0x 2027 consensus adjusted EPS, leaving a valuation that does not require heroic assumptions if bookings remain in the high teens and incremental margins continue to rise. <sup><a class="cite" href="#src8">[8]</a></sup> <sup><a class="cite" href="#src9">[9]</a></sup></p>
+<div class="callout green"><div class="title">Senior analyst conclusion</div>At $78.82, the risk/reward is favorable enough for an <strong>ADD / OUTPERFORM</strong> stance with a <strong>$105 base-case target</strong>. The strongest part of the thesis is not ride-hailing alone; it is the combination of global demand aggregation, cross-product engagement, advertising, membership, and increasingly powerful free cash flow. The reason this is not a maximum-conviction rating is that Uber is simultaneously committing substantial capital to autonomy and pursuing a large, debt-funded acquisition of Delivery Hero. Those moves increase strategic optionality but reduce the purity of the historical asset-light thesis.</div>
+<div class="metric-grid">
+ <div class="metric"><div class="m-label">Market Cap</div><div class="m-value">$161.0B</div><div class="m-note">S&P Global via StockAnalysis</div></div>
+ <div class="metric"><div class="m-label">Enterprise Value</div><div class="m-value">$165.7B</div><div class="m-note">Current consolidated EV</div></div>
+ <div class="metric"><div class="m-label">TTM Free Cash Flow</div><div class="m-value">$10.1B</div><div class="m-note">~6.3% FCF yield</div></div>
+ <div class="metric"><div class="m-label">Street Avg. Target</div><div class="m-value">$101.78</div><div class="m-note">50 analysts, Buy consensus</div></div>
+</div>
+<div class="grid2">
+ <div class="card"><h3>What is working</h3><ul><li>Gross Bookings have sustained 20%+ constant-currency growth for multiple quarters.</li><li>Earnings growth is materially faster than bookings growth, showing operating leverage.</li><li>Mobility and Delivery are both expanding margins while maintaining strong growth.</li><li>Uber One, ads, grocery/retail, U4B and sparse-market penetration provide incremental growth without requiring a new core marketplace.</li><li>Buybacks are more than offsetting dilution, with shares outstanding down about 2.3% year over year. <sup><a class="cite" href="#src9">[9]</a></sup></li></ul></div>
+ <div class="card"><h3>What needs to be proven</h3><ul><li>Autonomy must strengthen, not disintermediate, Uber's demand and dispatch layer.</li><li>More than $10B of planned AV-related capital commitments must earn attractive returns. <sup><a class="cite" href="#src3">[3]</a></sup></li><li>Delivery Hero must close, integrate and deliver EPS accretion without impairing balance-sheet flexibility.</li><li>Delivery profitability must keep expanding even as global competition intensifies.</li><li>Free cash flow quality must remain strong after accounting for stock compensation and M&A-related capital deployment.</li></ul></div>
+</div>
+</section>
+
+<section class="section" id="thesis">
+<h2>2. Investment Thesis and Variant Perception</h2>
+<div class="thesis-list">
+ <div class="thesis"><div class="num">01</div><strong>Scale is becoming a monetization flywheel, not merely a network-effect story.</strong><p>At 208 million monthly active platform consumers and 3.9 billion quarterly trips, Uber can spread fixed technology, support and marketplace costs over a massive transaction base. Q2 non-GAAP operating income grew 40%, substantially faster than 22% constant-currency bookings growth. <sup><a class="cite" href="#src1">[1]</a></sup></p></div>
+ <div class="thesis"><div class="num">02</div><strong>Cross-platform density creates structural economics that single-product competitors cannot easily replicate.</strong><p>Uber can move a consumer among rides, restaurant delivery, grocery, retail, business travel and future autonomous trips within one identity and payments layer. Management says cross-platform users generate roughly 3x the Gross Bookings and profits of single-product users. <sup><a class="cite" href="#src5">[5]</a></sup></p></div>
+ <div class="thesis"><div class="num">03</div><strong>Delivery is no longer a cash-burning adjunct.</strong><p>Delivery Gross Bookings grew 25% in constant currency in Q2 while segment operating income margin reached 3.8% of Gross Bookings. Grocery and Retail reached a $15B annualized bookings run-rate and ads exceeded a $2.5B annualized revenue run-rate. <sup><a class="cite" href="#src3">[3]</a></sup></p></div>
+ <div class="thesis"><div class="num">04</div><strong>Autonomy is an option on a larger commercialization layer, but capital intensity is now a real valuation constraint.</strong><p>Uber's multi-partner approach improves the probability that its app remains a key demand aggregator. Yet management expects more than $10B of AV-related capital commitments over coming years. The thesis works best if Uber supplies demand, dispatch, fleet services and financing infrastructure without becoming the economic owner of the autonomous driving stack. <sup><a class="cite" href="#src3">[3]</a></sup></p></div>
+</div>
+<div class="callout"><div class="title">Variant perception</div>The market debate is often framed too simplistically as "AV kills Uber" versus "Uber wins AV." The more relevant economic question is <strong>who owns the customer relationship, utilization and commercialization layer</strong> when multiple autonomous fleets coexist. My base case is that a multi-provider AV market raises the value of Uber's demand aggregation, but the market is right to discount the stock for the possibility that Uber must commit materially more capital than it historically needed to generate that value.</div>
+<div class="callout amber"><div class="title">What appears priced in</div>At roughly 18x 2027 adjusted EPS and about 16x trailing FCF, the market appears to price in meaningful deceleration and/or a persistent autonomy/M&A risk discount. That is reasonable, but it looks too severe if bookings remain high-teens or better and earnings growth stays above 20%. <sup><a class="cite" href="#src8">[8]</a></sup> <sup><a class="cite" href="#src9">[9]</a></sup></div>
+</section>
+
+<section class="section page-break" id="business">
+<h2>3. Business Model, Competitive Position and Moat</h2>
+<p>Uber is best understood as a global marketplace and operating system for local movement. It connects demand with mobility drivers, couriers, merchants and freight capacity, then monetizes the network through service fees, membership, advertising and adjacent products. The competitive advantage is not just app recognition; it is the combination of liquidity, local supply operations, dispatch, pricing, payments, identity, insurance relationships, regulatory experience and cross-product demand.</p>
+<div class="grid3">
+ <div class="card soft"><h3>Demand aggregation</h3><p>Large consumer scale lowers customer-acquisition friction and supports new-product launches. More use cases improve retention and frequency.</p></div>
+ <div class="card soft"><h3>Supply density</h3><p>More drivers and couriers improve wait times and utilization, which reinforces consumer reliability and provider earnings.</p></div>
+ <div class="card soft"><h3>Cross-platform economics</h3><p>Mobility can feed Delivery and vice versa, while Uber One and advertising monetize engagement across both sides.</p></div>
+</div>
+<h3>Competitive set</h3>
+<table>
+<thead><tr><th>Area</th><th>Key competitors</th><th>Uber advantage</th><th>Primary vulnerability</th></tr></thead>
+<tbody>
+<tr><td>Mobility</td><td>Lyft, Didi, Bolt, taxis/transit, regional apps</td><td>Global scale, broader product suite, cross-platform demand, supply density</td><td>Price competition, driver incentives, local regulation</td></tr>
+<tr><td>Delivery</td><td>DoorDash, Instacart, Meituan/Didi, iFood, regional platforms</td><td>Shared consumer base, Uber One, ads, mobility cross-sell, international footprint</td><td>Intense local competition; category requires scale and supply incentives</td></tr>
+<tr><td>Autonomy</td><td>Waymo, Zoox, Tesla and AV technology partners</td><td>Demand aggregation, utilization, fleet/commercialization services, regulatory operating footprint</td><td>Large AV providers can distribute directly; economics/take rate remain unproven</td></tr>
+<tr><td>Freight</td><td>Digital brokers, traditional 3PLs, managed transportation</td><td>Technology and enterprise relationships</td><td>Low margins, cyclical freight market, limited strategic contribution today</td></tr>
+</tbody></table>
+<div class="callout green"><div class="title">Moat assessment: Strong, but changing</div>Uber's moat has strengthened as the network has become profitable, because competitors now need to match not only growth but also consumer scale, provider liquidity and cross-product economics. The emerging AV market could either deepen that moat by making Uber the neutral aggregator of multiple fleets or weaken it if the largest AV suppliers become vertically integrated consumer platforms.</div>
+</section>
+
+<section class="section" id="financials">
+<h2>4. Financial Quality: Growth Is Converting Into Earnings and Cash</h2>
+<div class="grid2">
+ <div class="chart-card"><div class="chart-title">Gross Bookings</div><div class="chart-sub">Quarterly, $ billions</div><div class="bar-row"><div class="bar-label">Gross Bookings</div><div class="bar-track"><div class="bar-fill" style="width:80.6%"></div></div><div class="bar-value">$46.756</div><div class="bar-note">Q2 2025</div></div><div class="bar-row"><div class="bar-label">Gross Bookings</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><div class="bar-value">$58.022</div><div class="bar-note">Q2 2026</div></div></div>
+ <div class="chart-card"><div class="chart-title">Earnings and Cash Conversion</div><div class="chart-sub">Quarterly, $ billions</div><div class="bar-row"><div class="bar-label">Adj. EBITDA</div><div class="bar-track"><div class="bar-fill" style="width:75.2%"></div></div><div class="bar-value">$2.119</div><div class="bar-note">Q2 2025</div></div><div class="bar-row"><div class="bar-label">Adj. EBITDA</div><div class="bar-track"><div class="bar-fill" style="width:100.0%"></div></div><div class="bar-value">$2.819</div><div class="bar-note">Q2 2026</div></div><div class="bar-row"><div class="bar-label">Free Cash Flow</div><div class="bar-track"><div class="bar-fill" style="width:87.8%"></div></div><div class="bar-value">$2.475</div><div class="bar-note">Q2 2025</div></div><div class="bar-row"><div class="bar-label">Free Cash Flow</div><div class="bar-track"><div class="bar-fill" style="width:99.0%"></div></div><div class="bar-value">$2.792</div><div class="bar-note">Q2 2026</div></div></div>
+</div>
+<table>
+<thead><tr><th>Q2 2026 KPI</th><th class="numc">Result</th><th class="numc">YoY</th><th>Analyst read-through</th></tr></thead>
+<tbody>
+<tr><td>MAPCs</td><td class="numc">208M</td><td class="numc good">+16%</td><td>User growth remains a major bookings driver.</td></tr>
+<tr><td>Trips</td><td class="numc">3.867B</td><td class="numc good">+18%</td><td>Frequency per active consumer also improved.</td></tr>
+<tr><td>Gross Bookings</td><td class="numc">$58.0B</td><td class="numc good">+22% CC</td><td>Fourth consecutive quarter above 20% CC growth per management. <sup><a class="cite" href="#src3">[3]</a></sup></td></tr>
+<tr><td>Revenue</td><td class="numc">$14.2B</td><td class="numc">+12%</td><td>Understates underlying volume because business-model accounting changes reduced reported revenue growth by 8 points. <sup><a class="cite" href="#src1">[1]</a></sup></td></tr>
+<tr><td>Adjusted EBITDA</td><td class="numc">$2.819B</td><td class="numc good">+33%</td><td>Margin on Gross Bookings improved to 4.9% from 4.5%.</td></tr>
+<tr><td>Non-GAAP Operating Income</td><td class="numc">$2.143B</td><td class="numc good">+40%</td><td>Best measure of core operating leverage in the quarter.</td></tr>
+<tr><td>Free Cash Flow</td><td class="numc">$2.792B</td><td class="numc good">+13%</td><td>TTM FCF exceeded $10B; FCF growth temporarily lagged earnings growth.</td></tr>
+<tr><td>Q3 Gross Bookings guide</td><td class="numc">$58.25-$60.25B</td><td class="numc">+18%-22% CC</td><td>Maintains high-teens/low-20s growth framework.</td></tr>
+<tr><td>Q3 non-GAAP EPS guide</td><td class="numc">$0.84-$0.88</td><td class="numc good">+28%-35%</td><td>Implies continued earnings growth well above bookings growth. <sup><a class="cite" href="#src1">[1]</a></sup></td></tr>
+</tbody></table>
+<div class="grid2">
+ <div class="card"><h3>Earnings quality</h3><p>GAAP net income is a poor stand-alone valuation anchor because equity-investment revaluations are volatile. Q2 GAAP net income of $2.4B included a $1.6B pre-tax gain from equity investments. <sup><a class="cite" href="#src1">[1]</a></sup> I therefore put greater weight on non-GAAP operating income, Adjusted EBITDA and free cash flow.</p></div>
+ <div class="card"><h3>Stock compensation</h3><p>SBC was $556M in Q2 and $1.029B for the first half of 2026. At June 30, unvested awards carried $4.9B of unrecognized compensation cost. <sup><a class="cite" href="#src2">[2]</a></sup> This remains material, but the economic dilution is being more than offset by repurchases: Uber retired 46.6M shares for $3.5B in H1. <sup><a class="cite" href="#src2">[2]</a></sup></p></div>
+</div>
+</section>
+
+<section class="section" id="segments">
+<h2>5. Segment Economics</h2>
+<table>
+<thead><tr><th>Q2 2026</th><th class="numc">Gross Bookings</th><th class="numc">CC Growth</th><th class="numc">Revenue</th><th class="numc">Segment Op. Income</th><th class="numc">SOI / GB</th></tr></thead>
+<tbody>
+<tr><td><strong>Mobility</strong></td><td class="numc">$29.0B</td><td class="numc good">+20%</td><td class="numc">$7.36B</td><td class="numc">$2.22B</td><td class="numc good">7.6%</td></tr>
+<tr><td><strong>Delivery</strong></td><td class="numc">$27.5B</td><td class="numc good">+25%</td><td class="numc">$5.25B</td><td class="numc">$1.06B</td><td class="numc good">3.8%</td></tr>
+<tr><td><strong>Freight</strong></td><td class="numc">$1.57B</td><td class="numc good">+25%</td><td class="numc">$1.58B</td><td class="numc bad">-$24M</td><td class="numc bad">negative</td></tr>
+</tbody></table>
+<div class="grid2">
+ <div class="card"><h3>Mobility: core cash engine</h3><p>Mobility combines strong growth with the highest incremental profitability. The U.S. reaccelerated as Uber reinvested insurance savings, expanded premium and affordable products, and pushed into sparser markets. Management said U4B Gross Bookings grew more than 40%, while suburban/sparse markets grew about 1.5x faster than dense markets and at higher margins. <sup><a class="cite" href="#src3">[3]</a></sup></p></div>
+ <div class="card"><h3>Delivery: second profit pool</h3><p>Delivery is increasingly important because its bookings growth is faster than Mobility while margins continue to expand. Grocery and Retail is now a $15B annualized bookings business growing around 40%, and Uber One members account for more than 70% of Delivery Gross Bookings. <sup><a class="cite" href="#src3">[3]</a></sup></p></div>
+</div>
+<div class="callout amber"><div class="title">Freight remains the weak link</div>Freight grew bookings quickly in Q2 but still produced a segment operating loss. It does not impair the consolidated thesis at current scale, but it has yet to prove that it can earn an attractive return on management attention and capital.</div>
+</section>
+
+<section class="section page-break" id="growth">
+<h2>6. Growth Engines Beyond Core Ride-Hailing</h2>
+<div class="grid3">
+ <div class="card"><h3>Uber One</h3><p>Membership deepens frequency, retention and cross-platform usage. Members now account for more than 70% of Delivery Gross Bookings, up roughly 20 percentage points in two years. <sup><a class="cite" href="#src3">[3]</a></sup></p><span class="score g">HIGH QUALITY</span></div>
+ <div class="card"><h3>Advertising</h3><p>Advertising passed a $2.5B annualized revenue run-rate in Q2 and was still growing about 50%. It should be structurally high-margin because it monetizes existing consumer intent and merchant demand. <sup><a class="cite" href="#src3">[3]</a></sup></p><span class="score g">HIGH MARGIN</span></div>
+ <div class="card"><h3>Grocery & Retail</h3><p>Annualized Gross Bookings reached $15B with roughly 40% growth for multiple quarters. It expands Uber from meal occasions into more of local commerce. <sup><a class="cite" href="#src3">[3]</a></sup></p><span class="score g">LARGE TAM</span></div>
+ <div class="card"><h3>Uber for Business / Health</h3><p>U4B bookings grew 40%+ and premium business trips can carry significantly higher contribution economics than standard rides. <sup><a class="cite" href="#src3">[3]</a></sup></p><span class="score g">MIX BENEFIT</span></div>
+ <div class="card"><h3>Sparse markets</h3><p>Management says U.S. penetration is below 10% in sparse markets versus above 50% in dense markets, leaving a long runway if reliability and supply improve. <sup><a class="cite" href="#src11">[11]</a></sup></p><span class="score g">PENETRATION RUNWAY</span></div>
+ <div class="card"><h3>AI efficiency</h3><p>AI can improve support automation, merchant tools, search and basket building. The investment case should not assign a separate AI multiple, but efficiency and conversion benefits can support incremental margins.</p><span class="score a">EMERGING</span></div>
+</div>
+</section>
+
+<section class="section" id="av">
+<h2>7. Autonomous Vehicles: The Central Strategic Debate</h2>
+<p class="lede">Autonomy is both Uber's largest long-duration opportunity and the most credible threat to the existing mobility economics. The question is not whether robotaxis will grow; it is whether Uber remains the neutral consumer and utilization layer when they do.</p>
+<div class="grid2">
+ <div class="card"><h3>Bull case: Uber as commercialization layer</h3><ul><li>Multiple AV developers create a need for demand aggregation across brands and geographies.</li><li>Uber's marketplace can improve vehicle utilization, a critical determinant of robotaxi economics.</li><li>Uber can provide dispatch, fleet operations, insurance, charging, financing, regulatory relationships and customer support.</li><li>AVs were live on Uber in 7 cities at Q2 and management targeted as many as 15 by year-end 2026. <sup><a class="cite" href="#src3">[3]</a></sup></li><li>Partners had committed approximately 120,000 vehicles to Uber's network over coming years. <sup><a class="cite" href="#src3">[3]</a></sup></li></ul></div>
+ <div class="card"><h3>Bear case: asset-light model erodes</h3><ul><li>The largest AV platforms may prioritize first-party apps and reserve the best economics for themselves.</li><li>Uber has already moved from pure marketplace capex to equity investments, infrastructure and vehicle offtake commitments.</li><li>Management expects more than $10B of AV-related capital commitments over coming years. <sup><a class="cite" href="#src3">[3]</a></sup></li><li>Pricing could become more competitive if robotaxi supply grows faster than demand.</li><li>The long-run take rate on autonomous trips is not yet disclosed or proven at scale.</li></ul></div>
+</div>
+<div class="callout"><div class="title">Current scale gives Uber time</div>Management indicated on the Q2 call that AV rides remain below 0.5% of Uber's overall trip volume, while the company runs roughly 300 million trips per week. <sup><a class="cite" href="#src11">[11]</a></sup> That does not eliminate disruption risk, but it makes near-term earnings impairment from autonomy unlikely. The bigger near-term issue is capital allocation: Uber is funding the transition before the economics are fully visible.</div>
+<h3>AV partnership architecture</h3>
+<table>
+<thead><tr><th>Partner / approach</th><th>What it says about strategy</th><th>Investment implication</th></tr></thead>
+<tbody>
+<tr><td>Waymo / other existing AV operators</td><td>Third-party fleets can distribute through Uber while maintaining their own technology stack.</td><td>Supports aggregator thesis, but partner bargaining power could be significant.</td></tr>
+<tr><td>Rivian</td><td>Uber can invest in a vehicle/autonomy partner and secure exclusive platform supply. Up to $1.25B investment through 2031; initial 10,000 robotaxis, option for up to 40,000 more. <sup><a class="cite" href="#src7">[7]</a></sup></td><td>Deepens supply access but introduces capital and execution exposure.</td></tr>
+<tr><td>AV Labs / commercialization infrastructure</td><td>Uber is building data collection and operational infrastructure while saying it does not intend to recreate the autonomous driver. <sup><a class="cite" href="#src3">[3]</a></sup></td><td>Best-case model keeps high-value infrastructure while avoiding full R&D burden of autonomy stack.</td></tr>
+</tbody></table>
+<div class="callout red"><div class="title">Thesis-break warning</div>If Uber's AV strategy evolves from commercialization infrastructure into persistent ownership of hardware-heavy fleet assets or large recurring vehicle losses, the appropriate valuation multiple should fall even if bookings growth remains strong.</div>
+</section>
+
+<section class="section" id="dher">
+<h2>8. Delivery Hero Acquisition: Strategic Logic vs. Balance-Sheet Complexity</h2>
+<p>Uber's proposed acquisition of Delivery Hero is the largest strategic change in the current underwrite. Uber is offering EUR 41.50 per share, implying $14.8B of equity value for 100% of Delivery Hero, or $13.7B adjusted for Uber's prior stake purchases. The assets Uber expects to acquire span 50 markets with $42B of 2025 Gross Bookings; the combined company would operate in 99 markets with pro forma 2025 Gross Bookings of $236B. <sup><a class="cite" href="#src5">[5]</a></sup></p>
+<div class="grid2">
+ <div class="card"><h3>Why it can create value</h3><ul><li>Markets with both Mobility and Delivery nearly double from 34 to 58. <sup><a class="cite" href="#src5">[5]</a></sup></li><li>Cross-platform engagement should lower acquisition costs and increase frequency.</li><li>Uber One, advertising, AI and merchant tools can be deployed across a much larger installed base.</li><li>Management expects immediate non-GAAP EPS accretion at close and high-single-digit percentage accretion by year three. <sup><a class="cite" href="#src5">[5]</a></sup></li></ul></div>
+ <div class="card"><h3>Why it raises risk</h3><ul><li>Large cross-border regulatory process; closing is expected in H2 2027.</li><li>Integration spans multiple local brands, technology stacks and regulatory regimes.</li><li>Uber is financing the offer with cash plus new debt and has a roughly EUR 14B bridge facility. <sup><a class="cite" href="#src5">[5]</a></sup></li><li>Gross leverage is targeted below 2x, but this is a meaningful change from an increasingly cash-rich standalone trajectory. <sup><a class="cite" href="#src5">[5]</a></sup></li></ul></div>
+</div>
+<div class="callout amber"><div class="title">Underwriting treatment</div>I do <strong>not</strong> give full valuation credit for management's year-three accretion target today. The base target assumes the core Uber business can compound earnings strongly on its own and treats Delivery Hero as incremental upside only after closing and integration evidence improves. This is deliberately more conservative than capitalizing all stated synergies immediately.</div>
+</section>
+
+<section class="section page-break" id="capital">
+<h2>9. Balance Sheet, Free Cash Flow and Capital Allocation</h2>
+<table>
+<thead><tr><th>June 30, 2026 balance sheet / capital item</th><th class="numc">Amount</th><th>Read-through</th></tr></thead>
+<tbody>
+<tr><td>Cash & cash equivalents</td><td class="numc">$4.87B</td><td>Plus $0.52B of short-term investments. <sup><a class="cite" href="#src2">[2]</a></sup></td></tr>
+<tr><td>Short-term + long-term debt</td><td class="numc">$12.72B</td><td>Manageable versus FCF, but likely to rise with Delivery Hero financing. <sup><a class="cite" href="#src2">[2]</a></sup></td></tr>
+<tr><td>H1 2026 free cash flow</td><td class="numc">$5.08B</td><td>Up from $4.73B in H1 2025. <sup><a class="cite" href="#src2">[2]</a></sup></td></tr>
+<tr><td>H1 2026 buybacks</td><td class="numc">$3.5B</td><td>46.6M shares retired. <sup><a class="cite" href="#src2">[2]</a></sup></td></tr>
+<tr><td>Remaining buyback authorization</td><td class="numc">$15.7B</td><td>Meaningful support if management continues repurchases through deal financing. <sup><a class="cite" href="#src2">[2]</a></sup></td></tr>
+<tr><td>Future AV capital commitment</td><td class="numc">&gt;$10B</td><td>Across equity investments, infrastructure and vehicle offtake over coming years. <sup><a class="cite" href="#src3">[3]</a></sup></td></tr>
+</tbody></table>
+<div class="callout"><div class="title">Capital allocation score: B+</div>The standalone business has reached a point where it can fund growth and retire shares, which is a major improvement from earlier periods. However, the combination of Delivery Hero and AV commitments means investors should no longer treat Uber as a simple asset-light FCF compounder. Future returns will depend increasingly on management's ability to allocate large amounts of capital without lowering returns on invested capital.</div>
+</section>
+
+<section class="section" id="valuation">
+<h2>10. Valuation and Price Target Framework</h2>
+<p>Uber's headline GAAP P/E is distorted by investment revaluation gains, so the cleanest approach is a triangulation of adjusted EPS, free cash flow and forward Adjusted EBITDA. The stock closed at $78.82 on August 28. Current market capitalization is about $161B and enterprise value about $166B. <sup><a class="cite" href="#src9">[9]</a></sup></p>
+<div class="metric-grid">
+ <div class="metric"><div class="m-label">P / TTM FCF</div><div class="m-value">15.9x</div><div class="m-note">TTM FCF $10.12B</div></div>
+ <div class="metric"><div class="m-label">P / 2026E Adj. EPS</div><div class="m-value">23.5x</div><div class="m-note">Consensus $3.36</div></div>
+ <div class="metric"><div class="m-label">P / 2027E Adj. EPS</div><div class="m-value">18.0x</div><div class="m-note">Consensus $4.39</div></div>
+ <div class="metric"><div class="m-label">EV / 2027E Adj. EBITDA</div><div class="m-value">11.9x</div><div class="m-note">Consensus $13.92B</div></div>
+</div>
+<p class="footer-note">Consensus adjusted EPS is S&P Global data as presented by StockAnalysis and explicitly uses non-GAAP adjusted EPS. MarketScreener's EBITDA series aligns with Uber's 2025 Adjusted EBITDA of $8.73B and is used here as a forward consensus reference. <sup><a class="cite" href="#src8">[8]</a></sup> <sup><a class="cite" href="#src10">[10]</a></sup></p>
+<h3>Base-case target: $105</h3>
+<table>
+<thead><tr><th>Method</th><th>2027 Underwriting Input</th><th>Multiple / assumption</th><th class="numc">Implied value</th><th>Weight / role</th></tr></thead>
+<tbody>
+<tr><td>Adjusted EPS</td><td>$4.50 base EPS vs. $4.39 consensus</td><td>23.3x</td><td class="numc"><strong>$105</strong></td><td>Primary anchor</td></tr>
+<tr><td>Free cash flow</td><td>~$13.0B analyst base case</td><td>16x equity FCF</td><td class="numc">~$104</td><td>Cash-flow cross-check</td></tr>
+<tr><td>Forward Adjusted EBITDA</td><td>Street 2027E $13.9B</td><td>14.5x-15.5x EV/EBITDA; debt sensitivity</td><td class="numc">~$98-$106</td><td>EV cross-check</td></tr>
+</tbody></table>
+<div class="callout green"><div class="title">Why 23x 2027 adjusted EPS is defensible</div>A low-20s forward multiple is not aggressive for a platform with high-teens bookings growth, 20%+ earnings growth potential, a mid-single-digit and rising Gross Bookings profit margin, strong FCF conversion, negative net share issuance, and embedded ad/membership optionality. I deliberately do not assign a premium multiple for autonomy because the capital requirements and long-run economics remain unresolved.</div>
+<h3>Scenario analysis</h3>
+<div class="card">
+ <div class="scenario"><div class="case">Bear</div><div class="prob">20%</div><div class="desc">Bookings decelerate toward low teens; margin expansion stalls; AV capital needs rise; Delivery Hero integration or regulation disappoints. 2027 adjusted EPS ~$3.80 at 17x.</div><div class="px bad">$65</div></div>
+ <div class="scenario"><div class="case">Base</div><div class="prob">60%</div><div class="desc">High-teens/low-20s bookings growth; operating leverage continues; AV remains additive but subscale; Delivery Hero closes without material balance-sheet stress. EPS ~$4.50 at 23.3x.</div><div class="px">$105</div></div>
+ <div class="scenario"><div class="case">Bull</div><div class="prob">20%</div><div class="desc">Ads, membership, grocery, business and cross-platform density accelerate; Delivery Hero synergies materialize; Uber becomes a preferred AV commercialization layer. EPS ~$5.00 at 25x.</div><div class="px good">$125</div></div>
+</div>
+<p><strong>Probability-weighted scenario value: ~$101/share</strong>, or about 28% above the current price. The $105 published research target is the base-case value rather than the probability-weighted expected value.</p>
+<h3>Valuation zones</h3>
+<table><thead><tr><th>Price zone</th><th>Interpretation</th></tr></thead><tbody>
+<tr><td class="good"><strong>Below $85</strong></td><td>Attractive risk/reward if core growth and Q3 guide remain intact; valuation embeds meaningful AV/M&A skepticism.</td></tr>
+<tr><td><strong>$85-$100</strong></td><td>Reasonable accumulation / hold zone; upside depends increasingly on evidence of margin durability and capital discipline.</td></tr>
+<tr><td class="warn"><strong>$100-$115</strong></td><td>Closer to fair value; requires continued 20%+ earnings growth and visible Delivery Hero / AV execution.</td></tr>
+<tr><td class="bad"><strong>Above $115</strong></td><td>Would require greater confidence in autonomy economics or a stronger earnings path than currently underwritten.</td></tr>
+</tbody></table>
+</section>
+
+<section class="section page-break" id="risks">
+<h2>11. Key Risks, Disconfirming Evidence and Thesis-Break Conditions</h2>
+<table>
+<thead><tr><th>Risk</th><th>Likelihood</th><th>Impact</th><th>What to monitor</th></tr></thead>
+<tbody>
+<tr><td>AV disintermediation / direct distribution</td><td><span class="score a">Medium</span></td><td><span class="score r">High</span></td><td>Share of AV trips distributed by Uber; partner concentration; take rates; economics per AV trip.</td></tr>
+<tr><td>AV capital intensity</td><td><span class="score a">Medium-High</span></td><td><span class="score r">High</span></td><td>Cash commitments, vehicle offtake, financing structures, ROIC and FCF conversion.</td></tr>
+<tr><td>Delivery Hero closing / integration</td><td><span class="score a">Medium</span></td><td><span class="score r">High</span></td><td>Tender acceptance, regulatory remedies, bridge refinancing, leverage, synergy realization.</td></tr>
+<tr><td>Driver / courier classification and regulation</td><td><span class="score a">Medium</span></td><td><span class="score r">High</span></td><td>Country/state labor rulings, minimum compensation, benefits and insurance costs.</td></tr>
+<tr><td>Delivery competition</td><td><span class="score a">High</span></td><td><span class="score a">Medium</span></td><td>Market-level incentives, courier supply costs, category position and segment margins.</td></tr>
+<tr><td>Mobility price elasticity / insurance</td><td><span class="score a">Medium</span></td><td><span class="score a">Medium</span></td><td>Trips vs. price changes, insurance cost trends, driver earnings and wait times.</td></tr>
+<tr><td>SBC and capital returns</td><td><span class="score a">Medium</span></td><td><span class="score a">Medium</span></td><td>Net share count, SBC as % FCF, buyback pace after M&A financing.</td></tr>
+<tr><td>Equity investment volatility</td><td><span class="score a">High</span></td><td><span class="score a">Low-Med</span></td><td>Separate GAAP revaluation gains/losses from operating earnings.</td></tr>
+</tbody></table>
+<div class="callout red"><div class="title">Explicit thesis-break conditions</div><ol><li><strong>Growth break:</strong> two consecutive quarters of constant-currency Gross Bookings growth below roughly 15% without a clear macro shock.</li><li><strong>Operating leverage break:</strong> non-GAAP operating income growth persistently falls below Gross Bookings growth while incentive intensity rises.</li><li><strong>Cash break:</strong> trailing free cash flow falls below roughly $9B and does not recover, excluding discrete acquisition cash costs.</li><li><strong>AV economics break:</strong> AV trip volume scales materially while Uber's monetization deteriorates, or major AV partners bypass Uber at scale and erode marketplace liquidity.</li><li><strong>Capital structure break:</strong> Delivery Hero / AV spending pushes leverage materially above management's stated sub-2x gross leverage framework without a clear deleveraging path.</li><li><strong>Dilution break:</strong> net share count stops declining despite a sustained $10B+ annual FCF run-rate.</li></ol></div>
+</section>
+
+<section class="section" id="monitor">
+<h2>12. Catalysts and Monitoring Framework</h2>
+<table>
+<thead><tr><th>Checkpoint</th><th>What matters</th><th>Positive signal</th><th>Negative signal</th></tr></thead>
+<tbody>
+<tr><td><strong>Q3 2026 earnings</strong></td><td>Gross Bookings, non-GAAP EPS, FCF, Mobility/Delivery margins</td><td>Bookings at/above 20% CC and EPS above guide midpoint</td><td>Bookings below 18% CC or incentive-led margin pressure</td></tr>
+<tr><td><strong>Delivery Hero tender through Nov. 5, 2026</strong></td><td>Acceptance threshold and regulatory process</td><td>Clean progress with limited remedies</td><td>Extended timeline, onerous remedies or increased cash/debt need <sup><a class="cite" href="#src6">[6]</a></sup></td></tr>
+<tr><td><strong>AV launches through 2026</strong></td><td>City count, utilization, partner breadth, unit economics</td><td>Multiple partners launch successfully with strong utilization</td><td>Delayed launches, weak economics or partner concentration</td></tr>
+<tr><td><strong>Ads / Uber One</strong></td><td>Run-rate growth and monetization</td><td>Ads sustain 35%+ growth and membership deepens delivery share</td><td>Ad growth sharply decelerates or membership economics weaken</td></tr>
+<tr><td><strong>Buybacks</strong></td><td>Net share count through M&A / AV spending</td><td>Continued decline in diluted share count</td><td>Buybacks pause for prolonged period while SBC remains elevated</td></tr>
+</tbody></table>
+<div class="callout green"><div class="title">What would make me more constructive</div>Evidence that AV deployments scale across multiple providers while Uber retains attractive economics, plus a Delivery Hero closing path that preserves sub-2x gross leverage and ongoing share retirement, would justify raising both conviction and the valuation multiple.</div>
+<div class="callout amber"><div class="title">What would make me less constructive</div>The most important early warning would be a simultaneous rise in capital intensity and deceleration in core marketplace growth. That combination would undermine the reason Uber deserves a platform multiple rather than a transportation / fleet multiple.</div>
+</section>
+
+<section class="section" id="final">
+<h2>Final Investment View</h2>
+<p class="lede">Uber's investment case has matured. The question is no longer whether the company can become profitable; it has demonstrated substantial operating leverage and more than $10B of trailing free cash flow. The next phase is about the durability and quality of that cash flow as Uber expands internationally, monetizes local commerce, integrates Delivery Hero and positions itself for autonomy.</p>
+<p class="lede"><strong>At $78.82, the valuation offers enough margin of safety for an ADD / OUTPERFORM rating and a $105 base-case target.</strong> The core platform can support that value without requiring a heroic autonomous-vehicle outcome. Autonomy is upside if Uber becomes the dominant commercialization layer, but it is also the most important source of downside if capital requirements rise or direct AV distribution weakens Uber's marketplace role.</p>
+<div class="grid3">
+ <div class="card"><h3>Recommendation</h3><div style="font-size:22px;font-weight:700;color:var(--green)">ADD / OUTPERFORM</div><p>Positive long-only research stance.</p></div>
+ <div class="card"><h3>Base Target</h3><div style="font-size:22px;font-weight:700;color:var(--navy)">$105</div><p>Approx. 33% upside from Aug. 28 close.</p></div>
+ <div class="card"><h3>Conviction</h3><div style="font-size:22px;font-weight:700;color:var(--navy)">8 / 10</div><p>High; capped by AV/M&A capital risk.</p></div>
+</div>
+</section>
+
+<section class="section page-break" id="sources">
+<h2>Source Register, Assumptions and Evidence Status</h2>
+<div class="grid2">
+ <div class="card"><h3>Evidence confidence</h3><p><strong>High</strong> for reported operating metrics, balance-sheet data, buybacks, management guidance and Delivery Hero transaction terms because these are sourced primarily to Uber filings and investor relations. <strong>Medium</strong> for forward valuation, consensus estimates, scenario values and autonomous economics because they depend on estimates and future execution.</p></div>
+ <div class="card"><h3>Underwriting status</h3><p><strong>Completed long-only initiation-style underwrite.</strong> Research target and rating are analytical outputs, not personalized investment advice. Data cutoff is August 29, 2026, with market price through August 28 close.</p></div>
+</div>
+<h3>Major assumptions / unresolved items</h3>
+<ul><li>2027 base adjusted EPS of $4.50 is an analyst assumption, modestly above the current $4.39 consensus reference.</li><li>2027 base free cash flow of roughly $13B is an underwriting estimate rather than a published company target.</li><li>Uber has not disclosed a durable long-run take rate or unit economics for autonomous trips at scale.</li><li>Timing and mix of the more than $10B of AV capital commitments are not fully specified.</li><li>Delivery Hero synergy dollars are not explicitly underwritten; management's high-single-digit year-three EPS accretion is treated as an upside objective, not a guaranteed input.</li><li>MarketScreener labels its EBITDA series simply "EBITDA"; because 2025 matches Uber's reported $8.73B Adjusted EBITDA, the report uses it as a practical forward Adjusted EBITDA consensus proxy.</li></ul>
+<h3>Primary sources</h3>
+<ol class="source-list">
+<li id="src1"><strong>Uber Q2 2026 earnings release</strong><br><a href="https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx">https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Results-for-Second-Quarter-2026/default.aspx</a></li>
+<li id="src2"><strong>Uber Q2 2026 Form 10-Q</strong><br><a href="https://www.sec.gov/Archives/edgar/data/1543151/000154315126000032/uber-20260630.htm">https://www.sec.gov/Archives/edgar/data/1543151/000154315126000032/uber-20260630.htm</a></li>
+<li id="src3"><strong>Uber Q2 2026 prepared remarks</strong><br><a href="https://investor.uber.com/files/doc_earnings/2026/q2/transcript/Uber-Q2-26-Prepared-Remarks.pdf">https://investor.uber.com/files/doc_earnings/2026/q2/transcript/Uber-Q2-26-Prepared-Remarks.pdf</a></li>
+<li id="src4"><strong>Uber 2025 Form 10-K</strong><br><a href="https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm">https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm</a></li>
+<li id="src5"><strong>Uber Delivery Hero acquisition announcement</strong><br><a href="https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Acquisition-Offer-for-Delivery-Hero/default.aspx">https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Announces-Acquisition-Offer-for-Delivery-Hero/default.aspx</a></li>
+<li id="src6"><strong>Uber Delivery Hero offer document announcement</strong><br><a href="https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Publishes-Offer-Document-for-its-Takeover-Offer-for-Delivery-Hero/default.aspx">https://investor.uber.com/news-events/news/press-release-details/2026/Uber-Publishes-Offer-Document-for-its-Takeover-Offer-for-Delivery-Hero/default.aspx</a></li>
+<li id="src7"><strong>Uber and Rivian autonomous vehicle partnership</strong><br><a href="https://investor.uber.com/news-events/news/press-release-details/2026/Uber-and-Rivian-Partner-to-Deploy-up-to-50000-Fully-Autonomous-Robotaxis-2026-TViR4R05gi/default.aspx">https://investor.uber.com/news-events/news/press-release-details/2026/Uber-and-Rivian-Partner-to-Deploy-up-to-50000-Fully-Autonomous-Robotaxis-2026-TViR4R05gi/default.aspx</a></li>
+<li id="src8"><strong>StockAnalysis UBER forecast and analyst targets</strong><br><a href="https://stockanalysis.com/stocks/uber/forecast/">https://stockanalysis.com/stocks/uber/forecast/</a></li>
+<li id="src9"><strong>StockAnalysis UBER valuation and statistics</strong><br><a href="https://stockanalysis.com/stocks/uber/statistics/">https://stockanalysis.com/stocks/uber/statistics/</a></li>
+<li id="src10"><strong>MarketScreener UBER financial consensus</strong><br><a href="https://www.marketscreener.com/quote/stock/UBER-TECHNOLOGIES-INC-58379729/finances/">https://www.marketscreener.com/quote/stock/UBER-TECHNOLOGIES-INC-58379729/finances/</a></li>
+<li id="src11"><strong>Uber Q2 2026 earnings call transcript - Platform Aeronaut</strong><br><a href="https://transcripts.platformaeronaut.com/transcripts/UBER-2Q26-transcript">https://transcripts.platformaeronaut.com/transcripts/UBER-2Q26-transcript</a></li>
+</ol>
+<div class="footer-note">Prepared for investment research purposes. Forecasts, valuation multiples, scenario probabilities and price targets are analyst judgments and can change with new information. Non-GAAP measures are used where they improve comparability but should be read alongside GAAP results and source reconciliations.</div>
+</section>
+</div>
+</article>
+</body></html>
