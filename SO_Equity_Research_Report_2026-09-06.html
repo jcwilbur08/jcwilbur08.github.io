@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Southern Company (SO) - Equity Research Report - September 6, 2026</title>
+<style>
+:root {
+  --navy:#10243d; --blue:#1f4e79; --sky:#eaf2f8; --gold:#b8923f; --green:#1f6b4f;
+  --red:#9f3a38; --amber:#9a6c16; --ink:#1d2833; --muted:#607080; --line:#d9e1e8;
+  --bg:#f5f7fa; --card:#ffffff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.46;font-size:14px}
+a{color:var(--blue);text-decoration:none}
+.report{max-width:1080px;margin:24px auto;background:white;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+.cover{padding:44px 52px 38px;background:linear-gradient(135deg,var(--navy),#1b3e62 72%,#284f72);color:white;position:relative;overflow:hidden}
+.cover:after{content:"";position:absolute;width:310px;height:310px;border:1px solid rgba(255,255,255,.13);border-radius:50%;right:-110px;top:-110px}
+.eyebrow{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700;color:#d7e7f5}
+h1{font-size:39px;line-height:1.08;margin:10px 0 6px;font-weight:750}
+.subtitle{font-size:18px;color:#dce8f3;margin-bottom:26px}
+.cover-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:28px;align-items:end}
+.cover-meta{font-size:13px;color:#d8e3ed}
+.rating-box{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);padding:18px;border-radius:12px}
+.rating-box .rating{font-size:22px;font-weight:800;margin-bottom:2px}
+.rating-box .conviction{font-size:13px;color:#d9e5ef}
+.content{padding:34px 52px 48px}
+.section{margin:0 0 34px}
+.section-title{font-size:22px;color:var(--navy);border-bottom:2px solid var(--gold);padding-bottom:8px;margin:0 0 16px}
+.kicker{text-transform:uppercase;letter-spacing:1.3px;font-size:11px;font-weight:800;color:var(--gold);margin-bottom:5px}
+.lead{font-size:16px;color:#334555}
+.grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:16px 0}
+.card{border:1px solid var(--line);border-radius:10px;padding:15px;background:var(--card)}
+.metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.7px;color:var(--muted);font-weight:700}
+.metric .value{font-size:23px;font-weight:800;color:var(--navy);margin-top:4px}
+.metric .sub{font-size:11px;color:var(--muted);margin-top:4px}
+.view-card{border-left:4px solid var(--blue);background:#f7fafc}
+.thesis-card{border-top:3px solid var(--gold)}
+.thesis-card h3,.card h3{margin:0 0 7px;color:var(--navy);font-size:15px}
+.callout{border-left:4px solid var(--gold);background:#fffaf0;padding:13px 16px;margin:14px 0}
+.callout.red{border-left-color:var(--red);background:#fff7f6}
+.callout.green{border-left-color:var(--green);background:#f3fbf7}
+.badge{display:inline-block;padding:4px 8px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.3px}
+.badge.hold{background:#fff4d6;color:#77520c}
+.badge.pos{background:#e5f4ed;color:#1d6047}
+.badge.risk{background:#f9e5e4;color:#843433}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+th{background:#eef3f7;color:var(--navy);text-align:left;font-weight:800;padding:9px;border-bottom:1px solid #c9d5df}
+td{padding:9px;border-bottom:1px solid #e7edf2;vertical-align:top}
+td.num, th.num{text-align:right;white-space:nowrap}
+.small{font-size:11.5px;color:var(--muted)}
+ul{margin:8px 0 8px 20px;padding:0} li{margin:5px 0}
+.bar-row{display:grid;grid-template-columns:70px 1fr 70px;gap:10px;align-items:center;margin:8px 0}
+.bar-bg{height:12px;background:#e8edf2;border-radius:6px;overflow:hidden}
+.bar{height:100%;background:linear-gradient(90deg,var(--blue),#628bb0)}
+.scenario{padding:14px;border:1px solid var(--line);border-radius:9px}
+.scenario .name{font-size:12px;text-transform:uppercase;font-weight:800;letter-spacing:.7px}
+.scenario .target{font-size:28px;font-weight:800;color:var(--navy)}
+.scenario.bear{border-top:4px solid var(--red)} .scenario.base{border-top:4px solid var(--blue)} .scenario.bull{border-top:4px solid var(--green)}
+.two-col-list{columns:2;column-gap:30px}
+.source-list li{margin-bottom:8px;word-break:break-word}
+.footer-note{border-top:1px solid var(--line);padding-top:13px;margin-top:20px;font-size:11px;color:var(--muted)}
+.page-break{break-before:auto}
+.keep{break-inside:avoid}
+@media(max-width:760px){.report{margin:0}.cover,.content{padding:28px 22px}.cover-grid,.grid-4,.grid-3,.grid-2{grid-template-columns:1fr}.two-col-list{columns:1}h1{font-size:31px}}
+@media print{
+ body{background:white;font-size:11.3px;line-height:1.34} .report{max-width:none;margin:0;box-shadow:none} .cover{height:9.75in;padding:56px 54px;break-after:page} .content{padding:30px 44px} .section{margin-bottom:24px} .section-title{font-size:18px;margin-bottom:12px} h1{font-size:36px} .grid-4{gap:8px} .card{padding:11px} .metric .value{font-size:19px} table{font-size:10.6px} th,td{padding:6px} .page-break{break-before:auto} .keep{break-inside:avoid} a{color:inherit;text-decoration:none}
+ @page{size:Letter;margin:0.55in 0.5in 0.55in 0.5in}
+}
+</style>
+</head>
+<body>
+<div class="report">
+  <section class="cover">
+    <div class="eyebrow">Retirement Portfolio | Equity Research</div>
+    <h1>The Southern Company</h1>
+    <div class="subtitle">NYSE: SO | Regulated Utility Growth Re-Acceleration</div>
+    <div class="cover-grid">
+      <div>
+        <p style="max-width:650px;font-size:16px;color:#eff5fa">Southern has evolved from a mature income utility into one of the stronger regulated power-infrastructure growth stories in the U.S. The opportunity is real, but the market is already assigning a quality premium while long-term rates and financing needs remain elevated.</p>
+        <div class="cover-meta">Report date: September 6, 2026<br>Market-data cut-off: September 4, 2026 close<br>Portfolio source: retirement-portfolio-38.xlsx</div>
+      </div>
+      <div class="rating-box">
+        <div class="rating">HOLD / Accumulate on Weakness</div>
+        <div class="conviction">Conviction: 7 / 10 &nbsp; | &nbsp; 12-month base value: $96</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="content">
+    <section class="section">
+      <div class="kicker">Investment view</div>
+      <h2 class="section-title">Executive Summary</h2>
+      <p class="lead"><strong>Decision hinge:</strong> whether Southern can convert unprecedented Southeast large-load demand into high-quality regulated rate-base growth fast enough to offset a structurally higher cost of capital and the equity/debt funding required by its capital program.</p>
+      <div class="grid-4 keep">
+        <div class="card metric"><div class="label">SO Price</div><div class="value">$88.11</div><div class="sub">Sep. 4 close</div></div>
+        <div class="card metric"><div class="label">12-mo Base Value</div><div class="value">$96</div><div class="sub">~12.4% total return incl. dividend</div></div>
+        <div class="card metric"><div class="label">Forward Yield</div><div class="value">3.45%</div><div class="sub">$0.76 quarterly annualized</div></div>
+        <div class="card metric"><div class="label">Portfolio Weight</div><div class="value">1.97%</div><div class="sub">381.4 shares in latest workbook</div></div>
+      </div>
+
+      <div class="grid-3 keep">
+        <div class="card thesis-card"><h3>1. Growth is no longer “utility-like”</h3><p>Management projects 8%-9% adjusted EPS growth through 2028 and 7%-8% longer term, supported by ~9% regulated rate-base growth and an updated $81B 2026-2030 capital plan.</p></div>
+        <div class="card thesis-card"><h3>2. Large-load contracts improve visibility</h3><p>Contracted large load has surpassed 17 GW after 6 GW was added in Q2, including Georgia Power's 3.2 GW, 25-year OpenAI agreement. The prospective pipeline remains above 75 GW.</p></div>
+        <div class="card thesis-card"><h3>3. Financing is the price of growth</h3><p>The buildout is capital intensive. Southern has an active equity-distribution program and priced $2.375B of convertible notes in August. Rising interest expense is already an earnings offset.</p></div>
+      </div>
+
+      <div class="callout"><strong>Research posture:</strong> the multi-year fundamental setup is constructive, but at $88.11 the stock offers only moderate valuation upside and a 3.45% yield while the 10-year Treasury is 4.77%. The preferred setup is valuation-driven accumulation rather than chasing the equity at a premium multiple.</div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">Company profile</div>
+      <h2 class="section-title">Business Model and Competitive Position</h2>
+      <p>Southern Company serves approximately 9 million customers through regulated electric utilities in Alabama, Georgia and Mississippi, regulated gas distribution businesses, Southern Power and other infrastructure activities. The investment case is increasingly dominated by its regulated electric platform: management indicates more than 90% of earnings and 95% of projected capital spending are tied to state-regulated electric and gas utilities.</p>
+      <table class="keep">
+        <thead><tr><th>2025 segment</th><th class="num">Revenue</th><th class="num">Segment net income</th><th>Investment relevance</th></tr></thead>
+        <tbody>
+          <tr><td>Electric utilities + Southern Power</td><td class="num">$23.8B</td><td class="num">$4.71B</td><td>Core earnings engine; benefits from customer growth, regulated investment and large-load demand.</td></tr>
+          <tr><td>Southern Company Gas</td><td class="num">$5.0B</td><td class="num">$0.73B</td><td>Stable regulated cash earnings; moderates electric concentration.</td></tr>
+          <tr><td>Other / eliminations</td><td class="num">$0.7B net</td><td class="num">($1.10B)</td><td>Includes parent interest and corporate activities; highlights importance of financing cost.</td></tr>
+          <tr><td><strong>Consolidated</strong></td><td class="num"><strong>$29.6B</strong></td><td class="num"><strong>$4.34B</strong></td><td>Large regulated asset base with significant parent-level financing needs.</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Competitive advantage:</strong> Southern's vertically integrated regulated model can coordinate generation, transmission and distribution expansion under state planning processes. In a market where data-center developers prize speed-to-power, that integration is becoming a meaningful strategic asset. The advantage, however, only creates equity value if regulators allow timely cost recovery and customer contracts adequately protect legacy ratepayers.</p>
+    </section>
+
+    <section class="section page-break">
+      <div class="kicker">Latest results</div>
+      <h2 class="section-title">Q2 2026 Earnings and Operating Momentum</h2>
+      <div class="grid-4 keep">
+        <div class="card metric"><div class="label">Q2 Adj. EPS</div><div class="value">$1.13</div><div class="sub">vs. $0.92 prior year</div></div>
+        <div class="card metric"><div class="label">H1 Adj. EPS</div><div class="value">$2.46</div><div class="sub">vs. $2.15 prior year</div></div>
+        <div class="card metric"><div class="label">H1 Revenue</div><div class="value">$15.4B</div><div class="sub">+4.2% year over year</div></div>
+        <div class="card metric"><div class="label">2026 Guide</div><div class="value">$4.50-$4.60</div><div class="sub">management expects near/top end</div></div>
+      </div>
+      <p>Second-quarter adjusted EPS increased 23% year over year. Management attributed the improvement to regulated investment, customer usage and growth, equity-method earnings and lower taxes, partially offset by higher interest expense. Revenue growth was modest in the quarter because utility revenue can be distorted by fuel and weather pass-throughs, but the underlying load-growth indicators were notably stronger.</p>
+      <table class="keep">
+        <thead><tr><th>Operating indicator</th><th>Q2 / H1 2026 read-through</th></tr></thead>
+        <tbody>
+          <tr><td>Contracted large load</td><td><strong>&gt;17 GW</strong> by the mid-2030s after ~6 GW of new contracts in Q2.</td></tr>
+          <tr><td>OpenAI / Georgia Power</td><td><strong>3.2 GW, 25-year</strong> electric-service agreement; phased service begins in 2028 and includes 1 GW of flexible demand response.</td></tr>
+          <tr><td>Late-stage pipeline</td><td>~8 GW in late stages, including ~3 GW expected to move toward finalization; broader prospective pipeline remains <strong>&gt;75 GW</strong>.</td></tr>
+          <tr><td>Data-center usage</td><td>Reported 55% year-over-year growth in Q2; system-wide data-center load exceeded 1.2 GW.</td></tr>
+          <tr><td>Weather-normal sales</td><td>Year-to-date retail electricity sales increased 2.3%; commercial sales growth was particularly strong.</td></tr>
+        </tbody>
+      </table>
+      <div class="callout green"><strong>Positive signal:</strong> the thesis is moving from “pipeline” to “contracted demand.” Contract duration, minimum bills, termination payments and collateral requirements are critical because they reduce the risk that utilities build generation for speculative “ghost demand.”</div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">Structural growth</div>
+      <h2 class="section-title">Capital Plan, Rate Base and AI/Data-Center Demand</h2>
+      <p>Southern's June 2026 shareholder materials increased the strategic capital plan to approximately <strong>$81B for 2026-2030</strong>, with $68B in state-regulated electric investment and $9B in state-regulated gas. Management links the program to ~9% rate-base growth and projects adjusted EPS growth of 8%-9% through 2028, followed by 7%-8% longer-term growth from its 2028 guidance base.</p>
+      <div class="keep">
+        <div class="bar-row"><div>2026</div><div class="bar-bg"><div class="bar" style="width:86%"></div></div><div style="text-align:right">$15.9B</div></div>
+        <div class="bar-row"><div>2027</div><div class="bar-bg"><div class="bar" style="width:100%"></div></div><div style="text-align:right">$18.5B</div></div>
+        <div class="bar-row"><div>2028</div><div class="bar-bg"><div class="bar" style="width:92%"></div></div><div style="text-align:right">$17.1B</div></div>
+        <div class="bar-row"><div>2029</div><div class="bar-bg"><div class="bar" style="width:79%"></div></div><div style="text-align:right">$14.6B</div></div>
+        <div class="bar-row"><div>2030</div><div class="bar-bg"><div class="bar" style="width:65%"></div></div><div style="text-align:right">$12.0B</div></div>
+        <div class="small">Detailed schedule above is from the 2025 Form 10-K and totals $78.1B. The later June 2026 strategic presentation shows an updated $81B plan, suggesting subsequent additions/revisions.</div>
+      </div>
+      <div class="grid-2 keep">
+        <div class="card"><h3>Why the data-center opportunity can create value</h3><ul><li>Large loads increase utilization of generation and grid assets.</li><li>Incremental capital can expand regulated rate base at authorized returns.</li><li>Long contract terms and minimum-bill structures improve revenue visibility.</li><li>Flexible-load provisions can lower peak-capacity stress and improve system efficiency.</li></ul></div>
+        <div class="card"><h3>Why it can still destroy value</h3><ul><li>Generation must often be built before full customer load ramps.</li><li>Project delays, cancellations or technology efficiency gains can strand assets.</li><li>Customer-affordability politics can pressure allowed returns and recovery timing.</li><li>Capital markets must fund a large gap between operating cash flow, dividends and investment.</li></ul></div>
+      </div>
+    </section>
+
+    <section class="section page-break">
+      <div class="kicker">Financed growth gate</div>
+      <h2 class="section-title">Balance Sheet, Funding and Earnings Quality</h2>
+      <p>Southern's growth opportunity is not self-funded. At June 30, 2026, the company reported $3.0B of cash, $4.7B of securities due within one year, $2.1B of notes payable and $68.8B of long-term debt. Market consensus data places net debt near $77.9B and enterprise value near $179B. Financing cost is therefore not a secondary detail; it is a core determinant of equity returns.</p>
+      <div class="grid-4 keep">
+        <div class="card metric"><div class="label">Cash</div><div class="value">$3.0B</div><div class="sub">Jun. 30, 2026</div></div>
+        <div class="card metric"><div class="label">Long-term Debt</div><div class="value">$68.8B</div><div class="sub">excludes current maturities</div></div>
+        <div class="card metric"><div class="label">Consensus Net Debt</div><div class="value">$77.9B</div><div class="sub">2026E market-data treatment</div></div>
+        <div class="card metric"><div class="label">Enterprise Value</div><div class="value">$179B</div><div class="sub">current estimate</div></div>
+      </div>
+      <p>Two recent funding actions underscore the capital requirement:</p>
+      <ul><li><strong>June 2026:</strong> Southern established an equity-distribution program that permits issuance of up to 50 million common shares, including forward-sale structures.</li><li><strong>August 2026:</strong> Southern priced $725M of 2.125% convertible senior notes due 2027 and $1.65B of 3.50% convertible senior notes due 2029, an aggregate $2.375B before purchaser options, while repurchasing a portion of prior convertibles.</li></ul>
+      <div class="callout red"><strong>Key underwriting risk:</strong> earnings growth can look strong while per-share value creation lags if incremental capital earns inadequate spreads over Southern's rising blended cost of debt and equity. The report therefore treats rate-base growth and EPS growth as necessary, but not sufficient, evidence of value creation.</div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">Income profile</div>
+      <h2 class="section-title">Dividend Analysis</h2>
+      <p>The quarterly dividend increased to $0.76 in 2026, or $3.04 annualized, producing a current yield of approximately 3.45%. Southern's presentation highlights 79 years in which the dividend has been equal to or greater than the prior year and 25 consecutive years of increases.</p>
+      <table class="keep"><thead><tr><th>Dividend measure</th><th class="num">Current / recent</th><th>Interpretation</th></tr></thead><tbody>
+        <tr><td>Annualized dividend</td><td class="num">$3.04</td><td>Supported by regulated earnings growth, subject to board approval.</td></tr>
+        <tr><td>Current yield</td><td class="num">3.45%</td><td>Below the 4.77% 10-year Treasury; investors are being paid for growth, not just yield.</td></tr>
+        <tr><td>2025 payout ratio</td><td class="num">75%</td><td>Relatively high historical payout; 2026 adjusted payout is closer to the high-60% range if guidance is achieved.</td></tr>
+        <tr><td>Workbook 5Y DPS growth</td><td class="num">~3.0%</td><td>Dividend growth has lagged the new EPS-growth target, allowing retained capital to support the buildout.</td></tr>
+      </tbody></table>
+      <p><strong>Conclusion:</strong> SO remains a dependable dividend compounder, but its equity case should not be evaluated as a bond substitute. With Treasury yields above SO's dividend yield, the share price requires confidence in 7%-8% long-term EPS growth and stable valuation multiples.</p>
+    </section>
+
+    <section class="section page-break">
+      <div class="kicker">Valuation</div>
+      <h2 class="section-title">What Is Priced In?</h2>
+      <div class="grid-4 keep">
+        <div class="card metric"><div class="label">2026E P/E</div><div class="value">19.7x</div><div class="sub">MarketScreener consensus</div></div>
+        <div class="card metric"><div class="label">2027E P/E</div><div class="value">18.0x</div><div class="sub">at $88.11</div></div>
+        <div class="card metric"><div class="label">2026E EV/EBITDA</div><div class="value">12.7x</div><div class="sub">consensus</div></div>
+        <div class="card metric"><div class="label">P/B</div><div class="value">2.5x</div><div class="sub">2026E</div></div>
+      </div>
+      <p>Those multiples are not distressed utility valuations. The stock is being rewarded for superior growth visibility and a constructive Southeast regulatory/economic backdrop. Recent analyst actions span roughly $79 to $106, with ratings from Underweight through Outperform, illustrating that the central debate is valuation rather than the quality of the franchise.</p>
+
+      <h3 style="color:var(--navy);margin-top:20px">12-Month Scenario Framework</h3>
+      <div class="grid-3 keep">
+        <div class="scenario bear"><div class="name">Bear case</div><div class="target">$76</div><div><strong>-10.3%</strong> total-return estimate</div><p class="small">~16x forward EPS. Long rates stay near/above 5%, large-load conversion slows, financing/dilution rises, and regulatory recovery lags.</p></div>
+        <div class="scenario base"><div class="name">Base case</div><div class="target">$96</div><div><strong>+12.4%</strong> total-return estimate</div><p class="small">~19.5x 2027E EPS around $4.90-$4.95. Execution remains strong but higher-for-longer rates cap the multiple.</p></div>
+        <div class="scenario bull"><div class="name">Bull case</div><div class="target">$108</div><div><strong>+26.0%</strong> total-return estimate</div><p class="small">~21x stronger EPS trajectory. Contracted demand converts cleanly, rates ease, financing is absorbed without material dilution, and quality premium expands.</p></div>
+      </div>
+      <p><strong>Base value: $96.</strong> This is deliberately more conservative than capitalizing the 2028 guidance midpoint at a premium multiple. A high-quality utility can deserve a growth premium, but the current rate environment argues against assuming aggressive multiple expansion.</p>
+      <div class="callout"><strong>Valuation trigger framework:</strong> below roughly $84, prospective total return begins to compensate more clearly for rate and financing risk; around $95-$100, the stock requires near-flawless execution; above ~$105, upside becomes increasingly dependent on lower bond yields or upside to the 2028 earnings trajectory.</div>
+    </section>
+
+    <section class="section">
+      <div class="kicker">Portfolio context</div>
+      <h2 class="section-title">Fit Within the Retirement Portfolio</h2>
+      <p>The latest workbook shows a <strong>381.4-share SO position</strong> with a market value of approximately <strong>$33,548</strong> and a <strong>1.97% portfolio weight</strong>. At the current annualized dividend, the position generates roughly <strong>$1,159</strong> of forward annual income before any future dividend changes.</p>
+      <div class="grid-2 keep">
+        <div class="card"><h3>What SO contributes</h3><ul><li>Regulated utility earnings that diversify technology, financial and cyclical equity risk.</li><li>Defensive demand characteristics with a visible dividend stream.</li><li>Exposure to AI infrastructure growth through power demand rather than semiconductor valuation.</li><li>Potentially lower business-model volatility than the portfolio's direct AI/technology positions.</li></ul></div>
+        <div class="card"><h3>What limits a larger weight</h3><ul><li>Existing 1.97% weight is already meaningful for a single regulated utility.</li><li>Rate sensitivity overlaps with REIT/income-oriented holdings.</li><li>SO's capital needs and leverage reduce the “defensive” purity of the position.</li><li>The workbook's embedded fair-value snapshot is $83 and Morningstar rating is 2 stars, a more cautious external valuation signal than this report's $96 base case.</li></ul></div>
+      </div>
+      <p><strong>Portfolio conclusion:</strong> SO is a useful ballast-and-growth hybrid rather than a pure income holding. The existing position size appears reasonable. A materially larger allocation would be most defensible if valuation resets lower, long-duration yields ease, or new contract/capex evidence raises confidence in per-share returns on the $81B investment program.</p>
+    </section>
+
+    <section class="section page-break">
+      <div class="kicker">Risk / catalyst map</div>
+      <h2 class="section-title">Catalysts, Risks and Thesis-Break Conditions</h2>
+      <div class="grid-2">
+        <div class="card keep"><h3>Potential catalysts</h3><ul>
+          <li>2026 adjusted EPS lands at or above the top of the $4.50-$4.60 range.</li>
+          <li>Additional ~3 GW of near-term late-stage large-load projects reach binding contracts.</li>
+          <li>Georgia/Alabama regulatory approvals demonstrate timely capital recovery without adverse ROE pressure.</li>
+          <li>Long-term Treasury yields retreat, improving utility relative valuation and financing costs.</li>
+          <li>2027 capital-plan update confirms strong rate-base growth without a disproportionate equity-issuance requirement.</li>
+        </ul></div>
+        <div class="card keep"><h3>Principal risks</h3><ul>
+          <li><strong>Interest rates:</strong> higher Treasury yields pressure both valuation and funding expense.</li>
+          <li><strong>Financing/dilution:</strong> ATM equity and convertibles may cap per-share accretion.</li>
+          <li><strong>Data-center demand quality:</strong> pipeline figures can overstate executable demand.</li>
+          <li><strong>Regulatory/affordability:</strong> customer-protection measures can delay or reduce recovery.</li>
+          <li><strong>Construction:</strong> generation/transmission projects face cost, schedule, labor, equipment and interconnection risk.</li>
+          <li><strong>Operational:</strong> nuclear, severe-weather, gas infrastructure and cyber risks remain material.</li>
+        </ul></div>
+      </div>
+      <h3 style="color:var(--navy);margin-top:18px">Explicit thesis-break conditions</h3>
+      <ol>
+        <li>Contracted large-load demand is cancelled, materially delayed or fails to ramp such that expected 2027-2029 sales growth must be reset substantially lower.</li>
+        <li>Regulators disallow material investment, materially compress authorized economics, or require shareholders to absorb large data-center-related stranded costs.</li>
+        <li>Southern misses the 2028 adjusted EPS guidance range of $5.25-$5.45 for reasons other than temporary weather/timing, while leverage or share count rises faster than expected.</li>
+        <li>Funding requirements force sustained equity issuance that prevents mid/high-single-digit per-share growth despite 9% rate-base growth.</li>
+        <li>The 10-year Treasury sustains a level above ~5% without a corresponding upward reset in earnings growth, making an ~18-20x utility multiple structurally difficult to defend.</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <div class="kicker">Monitoring dashboard</div>
+      <h2 class="section-title">Key Checkpoints for the Next 12-24 Months</h2>
+      <table class="keep"><thead><tr><th>Checkpoint</th><th>What to watch</th><th>Positive evidence</th><th>Warning sign</th></tr></thead><tbody>
+        <tr><td>Q3/Q4 2026 earnings</td><td>Adjusted EPS, interest expense, sales growth</td><td>Near/top-end 2026 guide with operating growth intact</td><td>Guide slippage or financing costs consume growth</td></tr>
+        <tr><td>Large-load contracting</td><td>17 GW contracted / 75+ GW pipeline conversion</td><td>More binding contracts with strong collateral</td><td>Pipeline declines after stricter customer screening</td></tr>
+        <tr><td>OpenAI ramp</td><td>2028 start, phased 3.2 GW demand, flex load</td><td>Milestones met; grid build on schedule</td><td>Delay, redesign or material change to load economics</td></tr>
+        <tr><td>Capital funding</td><td>Debt, convertibles, ATM equity, credit metrics</td><td>Low-cost funding and manageable dilution</td><td>Share count / interest costs rise faster than EPS</td></tr>
+        <tr><td>Regulatory outcomes</td><td>Georgia/Alabama resource approvals and rate freezes</td><td>Timely recovery and preserved authorized returns</td><td>Cost disallowance or political affordability pressure</td></tr>
+        <tr><td>Rates</td><td>10Y Treasury / utility multiple</td><td>Yield normalization below ~4.5%</td><td>Sustained 5%+ long rate</td></tr>
+      </tbody></table>
+    </section>
+
+    <section class="section page-break">
+      <div class="kicker">Conclusion</div>
+      <h2 class="section-title">Investment Thesis and Recommendation</h2>
+      <p class="lead"><strong>Southern is one of the better fundamental growth stories in U.S. regulated utilities, but current valuation leaves less room for error than the headline growth rate suggests.</strong></p>
+      <p>The core thesis is that Southeast economic development and AI/data-center electricity demand will convert Southern's regulated infrastructure platform into a 7%-8% long-term EPS compounder, substantially above the growth profile historically associated with the sector. The more than 17 GW of contracted large-load demand and customer-protection contract structures meaningfully improve visibility.</p>
+      <p>The offset is a capital program of unprecedented scale for the company. Equity and convertible financing, high long-term Treasury yields, and rising interest expense create a real financed-growth hurdle. At $88.11, the stock is not cheap enough to ignore these issues: the 2026 P/E is near 20x, while the dividend yield is below the risk-free 10-year Treasury yield.</p>
+      <div class="callout green"><strong>Final research posture: HOLD / Accumulate on Weakness, conviction 7/10.</strong> Base 12-month value is $96, with a bull case of $108 and bear case of $76. The risk/reward improves materially in the low-to-mid $80s or if declining rates / stronger contract conversion increase confidence without a comparable increase in funding needs.</div>
+      <p><strong>Variant perception:</strong> the market increasingly recognizes SO as an AI-power beneficiary, but may still underestimate the durability of regulated load growth and the protection embedded in long-duration large-load contracts. Conversely, bullish investors may underweight the amount of external capital required to monetize that growth. The most important variable is therefore not megawatts contracted; it is <em>per-share return on the capital needed to serve those megawatts</em>.</p>
+    </section>
+
+    <section class="section">
+      <div class="kicker">Evidence and assumptions</div>
+      <h2 class="section-title">Source Register, Confidence and Open Items</h2>
+      <p><strong>Evidence confidence:</strong> High for reported financials, capital plan, dividend and contractual disclosures; Medium-High for large-load timing and management forecast execution; Medium for valuation outcomes, which are rate- and multiple-sensitive.</p>
+      <p><strong>Underwriting status:</strong> Completed long-only initiation underwrite with a valuation-sensitive HOLD posture. Target-price framework is analyst judgment for research/human review, not a guarantee or individualized investment instruction.</p>
+      <p><strong>Data cut-off:</strong> Market price and interest-rate data through September 4, 2026; company operating data through Q2 2026; portfolio data from retirement-portfolio-38.xlsx.</p>
+      <p><strong>Unresolved / monitored items:</strong> the June strategic presentation shows an $81B 2026-2030 capital plan, above the $78.1B detailed schedule in the earlier 2025 Form 10-K; this report treats $81B as the current strategic plan and the 10-K schedule as the detailed prior baseline. Consensus net-debt definitions also differ from simple balance-sheet debt less cash because of current maturities and other financing items.</p>
+      <p><strong>Major assumptions:</strong> 2027 adjusted EPS around $4.90-$4.95; no material impairment of major large-load contracts; regulatory frameworks continue to support recovery of prudent investment; dividend remains at least $3.04 annualized over the next twelve months; no severe credit event.</p>
+      <ol class="source-list">
+        <li>Southern Company, Q2 2026 earnings release, July 30, 2026 - https://www.southerncompany.com/newsroom/financials/southern-company-reports-second-quarter-2026-earnings.html</li>
+        <li>Southern Company, June 2026 Sustainability Shareholder Presentation - https://www.southerncompany.com/content/dam/southerncompany/sustainability/pdfs/sustainability-shareholder-presentation.pdf</li>
+        <li>Southern Company, 2025 Form 10-K - https://www.sec.gov/Archives/edgar/data/92122/000009212226000006/so-20251231.htm</li>
+        <li>Southern Company, Q2 2026 Form 10-Q - https://www.sec.gov/Archives/edgar/data/92122/000009212226000054/so-20260630.htm</li>
+        <li>Southern Company, June 8, 2026 equity-distribution 8-K / prospectus materials - https://www.sec.gov/Archives/edgar/data/92122/000009212226000046/so-20260608.htm</li>
+        <li>Southern Company, August 3, 2026 convertible-note pricing 8-K - https://www.sec.gov/Archives/edgar/data/92122/000009212226000060/so-20260803.htm</li>
+        <li>Federal Reserve H.15 Selected Interest Rates, September 4, 2026 - https://www.federalreserve.gov/releases/h15/</li>
+        <li>MarketScreener, Southern Company valuation and consensus pages (accessed September 6, 2026) - https://www.marketscreener.com/quote/stock/SOUTHERN-COMPANY-14441/</li>
+        <li>Q2 2026 earnings-call transcript used for management commentary on contracted load and pipeline; transcript mirrors management's July 30 call remarks.</li>
+        <li>Alpaca delayed SIP market-data snapshot for September 4, 2026 closing price.</li>
+        <li>Portfolio workbook: retirement-portfolio-38.xlsx (holding size, allocation, cost-basis and dividend metadata).</li>
+      </ol>
+      <div class="footer-note">Prepared for investment-research purposes. All forecasts, valuation ranges and recommendation terminology are analytical judgments based on information available at the stated cut-off and require ongoing review as company results, rates, regulation and market prices change.</div>
+    </section>
+  </main>
+</div>
+</body>
+</html>
