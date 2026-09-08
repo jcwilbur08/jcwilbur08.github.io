@@ -1,85 +1,85 @@
 {
-  "generated_at": "2026-09-07T00:00:02Z",
+  "generated_at": "2026-09-08T04:29:31Z",
   "movers": [
     {
       "ticker": "NFLX",
       "day_pct": -5.35,
-      "headline": "Netflix fell 5.35% Tuesday as U.K. price increases renewed concerns about subscriber churn despite the company's historical ability to grow revenue through pricing actions.",
-      "why": "Netflix implemented its second price hike in approximately 19 months for U.K. streaming plans, with increases also affecting its ad-supported tier. While the company has a track record of maintaining annual revenue growth following price increases, markets appear concerned that accelerating price changes across multiple regions could test subscriber tolerance differently than past cycles.",
-      "source": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/media-advertising/articles/netflix-raised-u-k-prices-202301507.html"
+      "headline": "Netflix declined 5.35% as investor concerns mount over the company's 2026 performance trajectory, with analysts pointing to slowing growth and recent leadership transitions as headwinds.",
+      "why": "The stock has already fallen 17% this year, prompting debate among investors about whether further downside or recovery is more probable. Market observers cite structural growth challenges and the departure of Reed Hastings as factors weighing on near-term sentiment, though some view any weakness as a potential entry point given the underlying business strength.",
+      "source": "The Motley Fool",
+      "url": "https://www.fool.com/investing/2026/09/07/is-netflix-stock-more-likely-to-hit-100-or-60-by-the-end-of-2026/"
+    },
+    {
+      "ticker": "TSM",
+      "day_pct": 2.85,
+      "headline": "Taiwan Semiconductor Manufacturing Company rose 2.85% as its foundational role in producing advanced processors for major tech firms remained a market focal point.",
+      "why": "The company serves as the primary manufacturing partner for leading chipmakers including AMD, Nvidia, and Apple, with facilities spanning Taiwan, Arizona, and Southeast Asia. Its position as the world's largest semiconductor producer and critical supplier to the AI chip ecosystem underscores its importance to the technology sector's growth.",
+      "source": "BGR",
+      "url": "https://www.bgr.com/2249619/amd-where-does-it-make-processors/"
     },
     {
       "ticker": "AAPL",
       "day_pct": -2.51,
-      "headline": "Apple declined 2.51% Tuesday as the company raised prices on Apple TV and Apple One bundles, raising investor concerns about potential subscriber attrition amid intensifying streaming competition.",
-      "why": "Apple TV now costs $14.99 monthly and individual Apple One bundles reached $21.95 monthly, driven by expanded content offerings and higher music licensing expenses. While these increases support Services revenue growth, the move risks subscriber loyalty in a crowded streaming market where consumers face competing options at various price points.",
-      "source": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/media-advertising/articles/apple-aapl-raises-apple-tv-224834727.html"
+      "headline": "Apple fell 2.51% despite advancing its premium product strategy with an anticipated foldable iPhone launch planned for September.",
+      "why": "The company is expected to introduce its first foldable iPhone at an approximately $2,000 price point, representing a significant push into ultra-premium hardware designed to create new customer upgrade cycles. The device launch will accompany new iPhone 18 Pro models and expanded Apple Intelligence AI capabilities, though market sentiment appears focused on near-term macro concerns rather than this strategic product expansion.",
+      "source": "Yahoo Finance Australia",
+      "url": "https://au.finance.yahoo.com/news/tech-bytes-apple-prepares-us-013900628.html"
     },
     {
       "ticker": "MSFT",
       "day_pct": -2.04,
-      "headline": "Microsoft slipped 2.04% Tuesday as the company prepared to celebrate a significant 22.5-acre land donation in Atlanta aimed at community development and affordable housing.",
-      "why": "Microsoft's donation to the Grove Park neighborhood, announced through a community event scheduled for September 12, reflects corporate investment in urban revitalization and affordable housing initiatives. The gift underscores the company's community engagement strategy, though market participants may view charitable allocations with neutral sentiment relative to core business performance.",
-      "source": "Rough Draft Atlanta",
-      "url": "https://roughdraftatlanta.com/2026/09/05/microsoft-donates-quarry-yards-land/"
+      "headline": "Microsoft declined 2.04% as the company faces new copyright infringement litigation from major U.S. publishers over AI training practices.",
+      "why": "The Seattle Times and Newsday have sued Microsoft and OpenAI alleging unauthorized use of proprietary journalistic content to train ChatGPT and Copilot services. The plaintiffs claim the AI systems generate output that substitutes for visits to their websites, damaging publisher revenue, and are seeking damages and injunctions regarding the underlying models and data.",
+      "source": "WinBuzzer",
+      "url": "https://winbuzzer.com/2026/09/07/seattle-times-newsday-sue-openai-microsoft-ai-copying-xcxwbn/"
     },
     {
       "ticker": "CRM",
       "day_pct": -1.97,
-      "headline": "Salesforce fell 1.97% Tuesday despite the Saudi Central Bank increasing its stake by 61.4%, signaling institutional confidence in the company's strong quarterly earnings and dividend policy.",
-      "why": "The Saudi Central Bank expanded its Salesforce holding to 55,832 shares valued at $8.75 million, coinciding with the company's delivery of $5.90 adjusted EPS and 10.8% year-over-year revenue growth. Despite positive fundamentals and analyst backing, some insider selling activity may be tempering broader market enthusiasm for the stock.",
+      "headline": "Salesforce fell 1.97% despite continued institutional accumulation and strong second-quarter results that exceeded analyst expectations.",
+      "why": "Virginia Retirement Systems and other institutional investors expanded positions in the software company during the quarter as it demonstrated robust revenue and earnings performance. The company's AI-focused Agentforce and Data 360 products drove significant annual recurring revenue growth, yet broader market weakness appears to be overshadowing these operational gains.",
       "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-saudi-central-bank-buys-21246-shares-of-salesforce-inc-crm-2026-09-06/"
+      "url": "https://www.marketbeat.com/instant-alerts/filing-virginia-retirement-systems-et-al-takes-4811-million-position-in-salesforce-inc-crm-2026-09-07/"
     },
     {
       "ticker": "PM",
       "day_pct": -1.96,
-      "headline": "Philip Morris International declined 1.96% Tuesday as TD Waterhouse Canada increased its position by 72.2%, reflecting institutional conviction despite modest equity pullback.",
-      "why": "TD Waterhouse Canada significantly expanded its PM stake to 63,181 shares worth $11.23 million during a quarter in which the company beat earnings expectations with $2.20 adjusted EPS and $11.19 billion in revenue. The international tobacco company continues to benefit from analyst support and a 4.3% dividend yield, though broader market dynamics are weighing on the stock.",
+      "headline": "Philip Morris International declined 1.96% as institutional investors added to positions ahead of a strong earnings report and steady dividend support.",
+      "why": "HighTower Advisors increased its stake in the tobacco and smoke-free products company during the second quarter, reflecting ongoing institutional confidence despite consumer sector headwinds. The company delivered earnings above expectations with a competitive 3.2% dividend yield and maintained analyst backing with an average price target suggesting upside potential.",
       "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-td-waterhouse-canada-inc-boosts-stake-in-philip-morris-international-inc-pm-2026-09-06/"
+      "url": "https://www.marketbeat.com/instant-alerts/filing-hightower-advisors-llc-purchases-9240-shares-of-philip-morris-international-inc-pm-2026-09-07/"
     },
     {
       "ticker": "BMY",
       "day_pct": -1.87,
-      "headline": "Bristol Myers Squibb fell 1.87% Tuesday as the Saudi Central Bank increased its position by 90.2%, offsetting concerns about therapy trials paused and legacy drug patent risks.",
-      "why": "The Saudi Central Bank expanded its BMY holdings to 142,922 shares valued at $8.2 million, demonstrating institutional accumulation despite operational challenges. The company faces headwinds including a pause in zola-cel autoimmune therapy trials and upcoming patent expiration risks on Eliquis, even as it expands into new therapeutic areas and offers a 3.8% dividend yield.",
+      "headline": "Bristol Myers Squibb fell 1.87% as new institutional investors initiated positions despite mixed trial results and legacy drug headwinds.",
+      "why": "Paralel Advisors LLC acquired a new stake in the biopharmaceutical company as it navigates portfolio challenges including declining revenues from legacy medications and a pause in zola-cel development. The company reported better-than-expected quarterly results and maintains an attractive dividend yield of approximately 3.8%, though near-term execution risks remain present.",
       "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-saudi-central-bank-purchases-67780-shares-of-bristol-myers-squibb-company-bmy-2026-09-06/"
+      "url": "https://www.marketbeat.com/instant-alerts/filing-paralel-advisors-llc-buys-new-position-in-bristol-myers-squibb-company-bmy-2026-09-07/"
     },
     {
       "ticker": "DIS",
       "day_pct": -1.73,
-      "headline": "Disney fell 1.73% Tuesday as Apple's acquisition of a science fiction thriller based on the 'Waffle House Index' highlighted streaming competitors' content strategies.",
-      "why": "Apple's move to acquire film rights centered on FEMA's disaster metric underscores the tech giant's effort to drive Apple TV+ subscriber growth through commercially appealing content. This acquisition follows Apple's successful Formula 1 film strategy, suggesting intensifying competition in the streaming wars that could pressure Disney's market position.",
-      "source": "Yahoo Finance Singapore",
-      "url": "https://sg.finance.yahoo.com/news/waffle-house-index-real-apple-184700795.html"
+      "headline": "Disney declined 1.73% as some institutional investors trimmed positions, though broader institutional support and recent earnings beats provided underlying support.",
+      "why": "Washington Trust Advisors reduced its Disney holdings by 6.0%, though this was offset by significant buying from other major institutional players including Norges Bank and Bank of New York Mellon. The media and entertainment company recently surpassed earnings expectations, and analysts maintain a moderately bullish stance despite ongoing content spending and competition pressures.",
+      "source": "MarketBeat",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-the-walt-disney-company-dis-shares-sold-by-washington-trust-advisors-inc-2026-09-07/"
     },
     {
       "ticker": "PEP",
       "day_pct": -1.71,
-      "headline": "PepsiCo declined 1.71% Tuesday after NBH Bank initiated a $1.10 million position, despite the company's earnings beat and 4.3% dividend yield attracting institutional investment.",
-      "why": "NBH Bank established a new stake totaling 8,110 shares as PepsiCo continues to surpass analyst expectations on both revenue and earnings while maintaining strong dividend coverage. Institutional ownership stands at 73.07%, yet analyst sentiment remains cautious with a consensus 'Hold' rating, suggesting markets are balancing the company's solid fundamentals against valuation concerns.",
+      "headline": "PepsiCo fell 1.71% despite institutional investors building positions and the beverage company delivering above-expectation second-quarter results.",
+      "why": "Virginia Retirement Systems acquired a substantial new stake in the company as PepsiCo exceeded both revenue and earnings estimates and declared a dividend supporting its 73%-institutional ownership base. The stock currently trades with analyst consensus suggesting a 'Hold' rating, indicating the market has already priced in current business performance.",
       "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-nbh-bank-invests-110-million-in-pepsico-inc-pep-2026-09-06/"
+      "url": "https://www.marketbeat.com/instant-alerts/filing-541816-shares-in-pepsico-inc-pep-acquired-by-virginia-retirement-systems-et-al-2026-09-07/"
     },
     {
       "ticker": "XOM",
       "day_pct": -1.69,
-      "headline": "ExxonMobil fell 1.69% Tuesday as the Saudi Central Bank increased its stake by 86.9%, though support from higher oil prices and production growth was tempered by earnings mixed results.",
-      "why": "The Saudi Central Bank expanded its ExxonMobil position to 290,960 shares valued at $39.78 million during a quarter when the energy giant delivered revenue above expectations but missed on EPS estimates. Analysts maintain a 'Hold' rating, balancing recognition of production growth and crude price support against downside risks from potential price declines and geopolitical tensions.",
-      "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-saudi-central-bank-has-3978-million-holdings-in-exxonmobil-corporation-xom-2026-09-06/"
-    },
-    {
-      "ticker": "GOOG",
-      "day_pct": -1.11,
-      "headline": "Alphabet declined 1.11% Tuesday after raising its quarterly dividend 4.8% to $0.22 per share, signaling capital allocation confidence amid substantial AI infrastructure spending.",
-      "why": "Alphabet announced its second dividend increase in two years, demonstrating that aggressive AI investment has not precluded share returns to stockholders. The 4.8% hike to $0.22 per share, effective with an ex-dividend date of September 4, 2026, reflects the company's confidence in balancing infrastructure reinvestment with shareholder capital returns.",
-      "source": "24/7 Wall St.",
-      "url": "https://247wallst.com/cards/google-googl-dividend-01m1qdmywkk13523m0byrzjm17"
+      "headline": "ExxonMobil declined 1.69% amid mixed quarterly results and continued sensitivity to oil market volatility and geopolitical risk.",
+      "why": "The energy company's diversified operations across upstream exploration, refining, and chemical segments generate strong cash flow supporting its long-standing dividend, yet earnings remain cyclical and dependent on commodity prices. Current market conditions underscore the company's exposure to oil price fluctuations and refining margin compression alongside broader energy sector uncertainty.",
+      "source": "Kalkine Media",
+      "url": "https://kalkinemedia.com/us/stocks/energy/exxonmobil-nysexom-can-strong-cash-flow-support-its-dividend"
     }
   ]
 }
