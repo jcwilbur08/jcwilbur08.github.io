@@ -1,85 +1,85 @@
 {
-  "generated_at": "2026-09-08T04:29:31Z",
+  "generated_at": "2026-09-09T04:36:09Z",
   "movers": [
     {
-      "ticker": "NFLX",
-      "day_pct": -5.35,
-      "headline": "Netflix declined 5.35% as investor concerns mount over the company's 2026 performance trajectory, with analysts pointing to slowing growth and recent leadership transitions as headwinds.",
-      "why": "The stock has already fallen 17% this year, prompting debate among investors about whether further downside or recovery is more probable. Market observers cite structural growth challenges and the departure of Reed Hastings as factors weighing on near-term sentiment, though some view any weakness as a potential entry point given the underlying business strength.",
-      "source": "The Motley Fool",
-      "url": "https://www.fool.com/investing/2026/09/07/is-netflix-stock-more-likely-to-hit-100-or-60-by-the-end-of-2026/"
-    },
-    {
-      "ticker": "TSM",
-      "day_pct": 2.85,
-      "headline": "Taiwan Semiconductor Manufacturing Company rose 2.85% as its foundational role in producing advanced processors for major tech firms remained a market focal point.",
-      "why": "The company serves as the primary manufacturing partner for leading chipmakers including AMD, Nvidia, and Apple, with facilities spanning Taiwan, Arizona, and Southeast Asia. Its position as the world's largest semiconductor producer and critical supplier to the AI chip ecosystem underscores its importance to the technology sector's growth.",
-      "source": "BGR",
-      "url": "https://www.bgr.com/2249619/amd-where-does-it-make-processors/"
-    },
-    {
-      "ticker": "AAPL",
-      "day_pct": -2.51,
-      "headline": "Apple fell 2.51% despite advancing its premium product strategy with an anticipated foldable iPhone launch planned for September.",
-      "why": "The company is expected to introduce its first foldable iPhone at an approximately $2,000 price point, representing a significant push into ultra-premium hardware designed to create new customer upgrade cycles. The device launch will accompany new iPhone 18 Pro models and expanded Apple Intelligence AI capabilities, though market sentiment appears focused on near-term macro concerns rather than this strategic product expansion.",
-      "source": "Yahoo Finance Australia",
-      "url": "https://au.finance.yahoo.com/news/tech-bytes-apple-prepares-us-013900628.html"
-    },
-    {
-      "ticker": "MSFT",
-      "day_pct": -2.04,
-      "headline": "Microsoft declined 2.04% as the company faces new copyright infringement litigation from major U.S. publishers over AI training practices.",
-      "why": "The Seattle Times and Newsday have sued Microsoft and OpenAI alleging unauthorized use of proprietary journalistic content to train ChatGPT and Copilot services. The plaintiffs claim the AI systems generate output that substitutes for visits to their websites, damaging publisher revenue, and are seeking damages and injunctions regarding the underlying models and data.",
-      "source": "WinBuzzer",
-      "url": "https://winbuzzer.com/2026/09/07/seattle-times-newsday-sue-openai-microsoft-ai-copying-xcxwbn/"
-    },
-    {
       "ticker": "CRM",
-      "day_pct": -1.97,
-      "headline": "Salesforce fell 1.97% despite continued institutional accumulation and strong second-quarter results that exceeded analyst expectations.",
-      "why": "Virginia Retirement Systems and other institutional investors expanded positions in the software company during the quarter as it demonstrated robust revenue and earnings performance. The company's AI-focused Agentforce and Data 360 products drove significant annual recurring revenue growth, yet broader market weakness appears to be overshadowing these operational gains.",
-      "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-virginia-retirement-systems-et-al-takes-4811-million-position-in-salesforce-inc-crm-2026-09-07/"
-    },
-    {
-      "ticker": "PM",
-      "day_pct": -1.96,
-      "headline": "Philip Morris International declined 1.96% as institutional investors added to positions ahead of a strong earnings report and steady dividend support.",
-      "why": "HighTower Advisors increased its stake in the tobacco and smoke-free products company during the second quarter, reflecting ongoing institutional confidence despite consumer sector headwinds. The company delivered earnings above expectations with a competitive 3.2% dividend yield and maintained analyst backing with an average price target suggesting upside potential.",
-      "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-hightower-advisors-llc-purchases-9240-shares-of-philip-morris-international-inc-pm-2026-09-07/"
+      "day_pct": -3.9,
+      "headline": "Salesforce fell 3.9% Tuesday as market digests expanded Anthropic partnership and Claudeforce launch.",
+      "why": "Salesforce announced an expanded strategic partnership with Anthropic introducing Claudeforce, which integrates Claude's AI capabilities with Salesforce's enterprise systems. The collaboration includes a plugin offering 37 prebuilt sales skills with a beta launch anticipated in September 2026, though the stock decline suggests investor caution about near-term revenue impact or competitive positioning.",
+      "source": "Demand Gen Report",
+      "url": "https://www.demandgenreport.com/industry-news/news-brief/salesforce-anthropic-expand-partnership-with-claudeforce/54431/"
     },
     {
       "ticker": "BMY",
-      "day_pct": -1.87,
-      "headline": "Bristol Myers Squibb fell 1.87% as new institutional investors initiated positions despite mixed trial results and legacy drug headwinds.",
-      "why": "Paralel Advisors LLC acquired a new stake in the biopharmaceutical company as it navigates portfolio challenges including declining revenues from legacy medications and a pause in zola-cel development. The company reported better-than-expected quarterly results and maintains an attractive dividend yield of approximately 3.8%, though near-term execution risks remain present.",
+      "day_pct": -3.19,
+      "headline": "Bristol Myers Squibb declined 3.19% Tuesday despite strong earnings and increased institutional investment.",
+      "why": "Amundi boosted its Bristol Myers Squibb holdings by 12% to 7.47 million shares in Q2, reflecting continued confidence among major institutional investors who collectively own over 76% of the company. Despite better-than-expected earnings and a Moderate Buy consensus rating with a $66.06 price target, the stock weakness suggests broader market headwinds outweighed these positive fundamentals.",
       "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-paralel-advisors-llc-buys-new-position-in-bristol-myers-squibb-company-bmy-2026-09-07/"
+      "url": "https://www.marketbeat.com/instant-alerts/filing-bristol-myers-squibb-company-bmy-shares-acquired-by-amundi-2026-09-08/"
     },
     {
-      "ticker": "DIS",
-      "day_pct": -1.73,
-      "headline": "Disney declined 1.73% as some institutional investors trimmed positions, though broader institutional support and recent earnings beats provided underlying support.",
-      "why": "Washington Trust Advisors reduced its Disney holdings by 6.0%, though this was offset by significant buying from other major institutional players including Norges Bank and Bank of New York Mellon. The media and entertainment company recently surpassed earnings expectations, and analysts maintain a moderately bullish stance despite ongoing content spending and competition pressures.",
-      "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-the-walt-disney-company-dis-shares-sold-by-washington-trust-advisors-inc-2026-09-07/"
+      "ticker": "QCOM",
+      "day_pct": 3.17,
+      "headline": "Qualcomm rose 3.17% Tuesday on a landmark Amazon partnership for AI chips and optical networking.",
+      "why": "Qualcomm secured a significant multi-generational deal with Amazon covering AI accelerators and optical networking hardware, with Amazon receiving a warrant for up to 25 million shares contingent on purchasing up to $60 billion in Qualcomm products. The arrangement positions Qualcomm as a key supplier for Amazon's large-scale AI data center expansion, validating demand for custom silicon solutions.",
+      "source": "SiliconANGLE",
+      "url": "https://siliconangle.com/2026/09/08/qualcomm-inks-ai-chip-optical-networking-deal-with-amazon/"
     },
     {
-      "ticker": "PEP",
+      "ticker": "GEV",
+      "day_pct": 3.12,
+      "headline": "GE Vernova advanced 3.12% Tuesday as solar sector divergence favors grid infrastructure players.",
+      "why": "The solar sector is fragmenting into two distinct market themes, with cap-weighted indices gaining on strength from grid expansion and regulated utility-focused companies like GE Vernova, while pure-play hardware manufacturers face de-rating pressure. GE Vernova's outperformance reflects investor preference for stable utility cash flows and grid modernization exposure over traditional solar manufacturing.",
+      "source": "ChartMill",
+      "url": "https://www.chartmill.com/news/NXT/Chartmill-54476-Solar-Stocks-Are-Splitting-Into-Two-Different-Trades"
+    },
+    {
+      "ticker": "GEHC",
+      "day_pct": -3.03,
+      "headline": "GE HealthCare Technologies fell 3.03% Tuesday, marking its third consecutive decline amid broader market weakness.",
+      "why": "GE HealthCare's stock extended losses as the broader market deteriorated with the S&P 500 declining 0.58% and the Dow falling 1.18%. The decline reflects general market pressure rather than company-specific catalysts, with the stock unable to gain traction despite no apparent negative news.",
+      "source": "MarketWatch",
+      "url": "https://www.marketwatch.com/data-news/ge-healthcare-technologies-inc-stock-falls-tuesday-underperforms-market-653890d8-eb754ee544d4?mod=goog_fin_scmw"
+    },
+    {
+      "ticker": "AVGO",
+      "day_pct": 2.98,
+      "headline": "Broadcom rose 2.98% Tuesday as CEO outlines AI value concentration in frontier models and custom chips.",
+      "why": "CEO Hock Tan articulated a strategic vision where AI infrastructure emerges as the primary bottleneck, positioning Broadcom's custom accelerators for leading AI developers as critical to capturing value. The company is expanding partnerships with OpenAI and Google while expecting record cash balances in fiscal 2026, signaling confidence in sustained demand for specialized AI silicon.",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-ceo-sees-ai-value-210204442.html"
+    },
+    {
+      "ticker": "ASML",
+      "day_pct": 2.91,
+      "headline": "ASML gained 2.91% Tuesday following UBS Buy reaffirmation and TSMC photomask collaboration announcement.",
+      "why": "UBS reiterated its Buy rating with a EUR 2350 target price while ASML announced a partnership with TSMC on advanced photomask technology, alongside plans to expand its Japan workforce. The collaboration underscores ASML's strategic position in enabling next-generation semiconductor manufacturing and supports confidence in sustained demand.",
+      "source": "www.marketscreener.com",
+      "url": "https://www.marketscreener.com/news/asml-holding-n-v-ubs-reaffirms-its-buy-rating-ce785bd8d881f424"
+    },
+    {
+      "ticker": "TSM",
+      "day_pct": 2.35,
+      "headline": "Taiwan Semiconductor rose 2.35% Tuesday on ASML partnership to develop larger-format photomasks for advanced nodes.",
+      "why": "TSMC and ASML announced a joint initiative to transition the industry to 12-inch photomasks for High NA EUV lithography, targeting a pilot production line by 2031 and full system readiness by 2033. The collaboration aims to increase fab productivity and reduce chipmaking costs, positioning TSMC for more efficient advanced node production and reinforcing its technological leadership.",
+      "source": "TSMC",
+      "url": "https://pr.tsmc.com/english/news/3338"
+    },
+    {
+      "ticker": "NFLX",
+      "day_pct": -1.89,
+      "headline": "Netflix fell 1.89% Tuesday despite a 240% stake increase by VELA Investment Management.",
+      "why": "VELA significantly raised its Netflix position to 19,543 shares valued at $1.395 million in Q2, and analysts maintain a Moderate Buy rating with strong institutional ownership at 80.93%. However, concerns about slowing subscriber growth, Q2 revenue miss, and the absence of dividend returns appear to be offsetting the positive institutional accumulation.",
+      "source": "MarketBeat",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-vela-investment-management-llc-raises-stake-in-netflix-inc-nflx-2026-09-08/"
+    },
+    {
+      "ticker": "V",
       "day_pct": -1.71,
-      "headline": "PepsiCo fell 1.71% despite institutional investors building positions and the beverage company delivering above-expectation second-quarter results.",
-      "why": "Virginia Retirement Systems acquired a substantial new stake in the company as PepsiCo exceeded both revenue and earnings estimates and declared a dividend supporting its 73%-institutional ownership base. The stock currently trades with analyst consensus suggesting a 'Hold' rating, indicating the market has already priced in current business performance.",
-      "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-541816-shares-in-pepsico-inc-pep-acquired-by-virginia-retirement-systems-et-al-2026-09-07/"
-    },
-    {
-      "ticker": "XOM",
-      "day_pct": -1.69,
-      "headline": "ExxonMobil declined 1.69% amid mixed quarterly results and continued sensitivity to oil market volatility and geopolitical risk.",
-      "why": "The energy company's diversified operations across upstream exploration, refining, and chemical segments generate strong cash flow supporting its long-standing dividend, yet earnings remain cyclical and dependent on commodity prices. Current market conditions underscore the company's exposure to oil price fluctuations and refining margin compression alongside broader energy sector uncertainty.",
-      "source": "Kalkine Media",
-      "url": "https://kalkinemedia.com/us/stocks/energy/exxonmobil-nysexom-can-strong-cash-flow-support-its-dividend"
+      "headline": "Visa declined 1.71% Tuesday amid mixed developments in payment partnerships and sponsored events.",
+      "why": "Visa Canada renewed its 30-year partnership with the Toronto International Film Festival while separately Six Flags adopted Upgrade's Flex Pay buy now, pay later service. The stock weakness suggests these incremental partnerships are insufficient to offset broader market pressures or investor concerns about BNPL competitive dynamics.",
+      "source": "Digital Transactions",
+      "url": "https://www.digitaltransactions.net/eye-on-ticketing-six-flags-picks-flex-pays-bnpl-visa-canada-renews-film-festival-deal/"
     }
   ]
 }
