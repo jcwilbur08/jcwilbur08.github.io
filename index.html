@@ -449,7 +449,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 <div class="header">
   <div>
     <h1>Portfolio Command Center</h1>
-    <p>James Wilbur &nbsp;•&nbsp; Private &nbsp;•&nbsp; Holdings as of Sept 10, 2026</p>
+    <p>James Wilbur &nbsp;•&nbsp; Private &nbsp;•&nbsp; Holdings as of Sept 11, 2026</p>
   </div>
   <div style="display:flex;align-items:center;">
     <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
@@ -556,7 +556,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <span>Prices <span id="header-live-status">loading…</span></span>
       <span id="freshness-live">Live quotes (Finnhub): loading…</span>
       <span id="freshness-mf">Mutual funds (Alpha Vantage, daily): loading…</span>
-      <span>Morningstar export (holdings/cost basis): Sept 10, 2026</span>
+      <span>Morningstar export (holdings/cost basis): Sept 11, 2026</span>
       <span>News: Aug 19, 2026</span>
     </div>
   </div>
@@ -1403,6 +1403,23 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
+          <div class="thesis-ticker">UBER</div>
+          <span class="badge badge-watch">WATCH</span>
+          <div><div class="thesis-name">Uber Technologies Inc</div></div>
+        </div>
+        <div class="thesis-meta">
+          <span>Conviction: <strong>Medium-High</strong></span>
+          <span>Weight: ~0.02%</span>
+          <span>5 shares — starter position opened Sept 11, 2026, at ~$71.83</span>
+        </div>
+        <div class="thesis-body">
+          A dedicated equity analysis (Aug 29) rates UBER Add, 8.4/10 — profitable platform growth, improving operating leverage and cash generation, plus autonomous-vehicle optionality, with the portfolio carrying little direct exposure to this business model beforehand. Q2 2026: constant-currency gross bookings +22%, trips +18%, operating income $1.9B, with management emphasizing profitable growth alongside the autonomous-platform buildout. The same-day portfolio-wide research ranking (88 names, Sept 6) placed UBER at #4 overall — the highest-ranked name not yet held at the time — on the same logic: reasonable valuation relative to growth and a genuine diversification benefit versus the portfolio's existing AI-infrastructure and mega-cap concentration. <strong>Update, Sept 11:</strong> the position is now open — a 5-share starter at an average cost of $71.83 (~0.02% of the portfolio per the Sept 11 export), a true toe-hold by any measure. This reads as the same disciplined starter pattern used for ASML, TSM, GEHC, and VIS: establish the beachhead first, then let subsequent earnings prints and the report's own sizing framework determine the pace of further tranches rather than sizing up before more evidence is in.
+        </div>
+        <div class="thesis-conviction">Source: UBER_Equity_Analysis_2026-08-29.html; Retirement_Portfolio_Research_Universe_Ranking_2026-09-06.html (full reports, this firm); Uber Q2 2026 results</div>
+      </div>
+
+      <div class="thesis-card" data-status="WATCH" data-type="equity">
+        <div class="thesis-header">
           <div class="thesis-ticker">PLTR</div>
           <span class="badge badge-watch">WATCH</span>
           <div><div class="thesis-name">Palantir Technologies Inc.</div></div>
@@ -1700,47 +1717,48 @@ sectorETFs.forEach(s=>{ s.pct = null; });
 const MONTH_ABBR = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 const holdings = [
-{ticker:'GOOG', name:'Alphabet Inc Class C', qty:145, price:330.52, prev:328.38, cat:'U.S. individual stocks', div:0.24, cb:9285.597, sector:'Communication Services', divMonths:[3, 6, 9, 12]},
-  {ticker:'AMZN', name:'Amazon Inc', qty:520, price:251.9, prev:252.4, cat:'U.S. individual stocks', div:0, cb:7935.2, sector:'Consumer Discretionary', divMonths:[]},
-  {ticker:'AXP', name:'American Express', qty:100, price:320.73, prev:321.8, cat:'U.S. individual stocks', div:0.98, cb:7680.0, sector:'Financials', divMonths:[2, 5, 8, 11]},
-  {ticker:'AMT', name:'American Tower', qty:231.917, price:172.995, prev:175.43, cat:'U.S. individual stocks', div:4.2, cb:29934.594008, sector:'Real Estate', divMonths:[1, 4, 7, 10]},
-  {ticker:'AAPL', name:'Apple Inc', qty:340, price:326.595, prev:315.34, cat:'U.S. individual stocks', div:0.43, cb:7480.0, sector:'Information Technology', divMonths:[2, 5, 8, 11]},
-  {ticker:'AVUV', name:'Avantis U.S. Sm Cap Val', qty:235, price:123.815, prev:124.31, cat:'U.S. small & mid cap', div:1.18, cb:29260.273, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'BMY', name:'Bristol-Myers Squibb', qty:320, price:63.745, prev:64.41, cat:'U.S. individual stocks', div:5.1, cb:17974.4, sector:'Health Care', divMonths:[2, 5, 8, 11]},
-  {ticker:'AVGO', name:'Broadcom Inc', qty:117, price:360.71, prev:364.38, cat:'U.S. individual stocks', div:1.25, cb:43750.395, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
-  {ticker:'KO', name:'Coca-Cola Co', qty:293.487, price:87.83, prev:87.55, cat:'U.S. individual stocks', div:2.33, cb:12326.454, sector:'Consumer Staples', divMonths:[1, 4, 7, 10]},
-  {ticker:'XOM', name:'ExxonMobil', qty:377.037, price:165.24, prev:164.23, cat:'U.S. individual stocks', div:2.55, cb:22876.56916, sector:'Energy', divMonths:[3, 6, 9, 12]},
-  {ticker:'FSMDX', name:'Fidelity Mid Cap Index', qty:721.98, price:42.42, prev:42.8, cat:'U.S. small & mid cap', div:1.3, cb:27163.919916, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'FSSNX', name:'Fidelity Small Cap Index', qty:861.99, price:36.66, prev:37.15, cat:'U.S. small & mid cap', div:1.1, cb:24526.891062, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'GRID', name:'First Trust NASDAQ CEA', qty:59, price:177.3, prev:180.13, cat:'U.S. diversified funds', div:0.7, cb:10916.3098, sector:'Industrials', divMonths:[3, 6, 9, 12]},
-  {ticker:'GEV', name:'GE Vernova', qty:33, price:923.39, prev:951.04, cat:'U.S. individual stocks', div:0.03, cb:33145.8039, sector:'Industrials', divMonths:[3, 6, 9, 12]},
-  {ticker:'SOXQ', name:'Invesco Semicond ETF', qty:28, price:91.485, prev:93.95, cat:'U.S. diversified funds', div:0.5, cb:2646.4704, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
-  {ticker:'IJH', name:'iShares S&P 400 Mid Cap', qty:270.076, price:73.85, prev:74.56, cat:'U.S. small & mid cap', div:1.2, cb:4537.2768, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'JPM', name:'JPMorgan Chase', qty:357.851, price:353.49, prev:354.71, cat:'U.S. individual stocks', div:1.74, cb:20626.53164, sector:'Financials', divMonths:[1, 4, 7, 10]},
-  {ticker:'MA', name:'Mastercard Inc', qty:173.061, price:565.425, prev:567.5, cat:'U.S. individual stocks', div:0.37, cb:12953.771605, sector:'Financials', divMonths:[2, 5, 8, 11]},
-  {ticker:'META', name:'Meta Platforms', qty:63, price:644.37, prev:653.69, cat:'U.S. individual stocks', div:0, cb:20599.803, sector:'Communication Services', divMonths:[]},
-  {ticker:'MSFT', name:'Microsoft Corp', qty:100, price:492.49, prev:491.65, cat:'U.S. individual stocks', div:0.68, cb:32427.44, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
-  {ticker:'NFLX', name:'Netflix Inc', qty:500, price:76.04, prev:76.03, cat:'U.S. individual stocks', div:0, cb:4715.0, sector:'Communication Services', divMonths:[]},
-  {ticker:'TLXIX', name:'Nuveen Lifecycle Index', qty:4089.97, price:40.23, prev:40.47, cat:'Target-date / mixed', div:1.5, cb:60695.1548, sector:'Diversified Fund', divMonths:[6, 12]},
-  {ticker:'PEP', name:'PepsiCo Inc', qty:155, price:136.64, prev:136.69, cat:'U.S. individual stocks', div:3.38, cb:21213.3465, sector:'Consumer Staples', divMonths:[3, 6, 9, 12]},
-  {ticker:'PM', name:'Philip Morris Intl', qty:181.209, price:189.73, prev:185.71, cat:'U.S. individual stocks', div:4.3, cb:14987.79639, sector:'Consumer Staples', divMonths:[1, 4, 7, 10]},
-  {ticker:'QCOM', name:'Qualcomm Inc', qty:104.415, price:176.89, prev:176.4, cat:'U.S. individual stocks', div:2.0, cb:5809.6506, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
-  {ticker:'CRM', name:'Salesforce Inc', qty:99, price:243.095, prev:244.16, cat:'U.S. individual stocks', div:0, cb:20956.32, sector:'Information Technology', divMonths:[]},
-  {ticker:'SCHD', name:'Schwab US Div Equity', qty:610, price:33.985, prev:34.09, cat:'U.S. diversified funds', div:3.5, cb:20040.513, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'SO', name:'Southern Company', qty:381.4, price:87.76, prev:88.34, cat:'U.S. individual stocks', div:3.3, cb:3188.504, sector:'Utilities', divMonths:[3, 6, 9, 12]},
-  {ticker:'GS', name:'Goldman Sachs', qty:105, price:1019.735, prev:1028.78, cat:'U.S. individual stocks', div:1.66, cb:18483.15, sector:'Financials', divMonths:[3, 6, 9, 12]},
-  {ticker:'DIS', name:'Walt Disney Co', qty:196.17, price:105.85, prev:104.18, cat:'U.S. individual stocks', div:0, cb:15770.1063, sector:'Communication Services', divMonths:[]},
-  {ticker:'UNH', name:'UnitedHealth Group', qty:50.22, price:388.37, prev:393.06, cat:'U.S. individual stocks', div:1.37, cb:11924.739, sector:'Health Care', divMonths:[3, 6, 9, 12]},
-  {ticker:'VFFSX', name:'Vanguard 500 Index', qty:100, price:374.35, prev:376.16, cat:'U.S. diversified funds', div:1.3, cb:5000.0, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'VTWO', name:'Vanguard Russell 2000', qty:126, price:116.33, prev:117.51, cat:'U.S. small & mid cap', div:1.3, cb:3528.0, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'VXUS', name:'Vanguard Total Intl', qty:521, price:86.285, prev:87.41, cat:'International equity', div:2.0, cb:43630.9887, sector:'International / Diversified', divMonths:[3, 6, 9, 12]},
-  {ticker:'V', name:'Visa Inc', qty:100, price:367.26, prev:367.39, cat:'U.S. individual stocks', div:0.68, cb:13650.0, sector:'Financials', divMonths:[3, 6, 9, 12]},
-  {ticker:'BATRA', name:'Atlanta Braves Holdings', qty:25, price:54.83, prev:54.91, cat:'U.S. individual stocks', div:0, cb:1314.0, sector:'Communication Services', divMonths:[]},
-  {ticker:'TSM', name:'Taiwan Semiconductor Mfg ADR', qty:19, price:428.28, prev:435.36, cat:'International equity', div:1.0, cb:8052.39, sector:'Information Technology', divMonths:[3, 9]},
-  {ticker:'ASML', name:'ASML Holding N.V.', qty:2, price:1687.44, prev:1729.52, cat:'International equity', div:0.48, cb:3541.06, sector:'Information Technology', divMonths:[2, 5, 8, 11]},
-  {ticker:'VIS', name:'Vanguard Industrials ETF', qty:16, price:327.205, prev:330.32, cat:'U.S. diversified funds', div:0.86, cb:5545.6896, sector:'Industrials', divMonths:[3, 6, 9, 12]},
-  {ticker:'GEHC', name:'GE HealthCare Technologies Inc.', qty:34, price:64.24, prev:65.17, cat:'U.S. individual stocks', div:0.19, cb:2449.9006, sector:'Health Care', divMonths:[3, 6, 9, 12]},
-  {ticker:'NVDA', name:'NVIDIA Corp', qty:20, price:218.4, prev:223.42, cat:'U.S. individual stocks', div:0.48, cb:4394.16, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+{ticker:'GOOG', name:'Alphabet Inc Class C', qty:145, price:335.49, prev:330.39, cat:'U.S. individual stocks', div:0.24, cb:9285.597, sector:'Communication Services', divMonths:[3, 6, 9, 12]},
+  {ticker:'AMZN', name:'Amazon Inc', qty:520, price:256.79, prev:251.89, cat:'U.S. individual stocks', div:0, cb:7935.2, sector:'Consumer Discretionary', divMonths:[]},
+  {ticker:'AXP', name:'American Express', qty:100, price:324.68, prev:320.71, cat:'U.S. individual stocks', div:0.98, cb:7680.0, sector:'Financials', divMonths:[2, 5, 8, 11]},
+  {ticker:'AMT', name:'American Tower', qty:231.917, price:177.87, prev:172.98, cat:'U.S. individual stocks', div:4.2, cb:29934.594008, sector:'Real Estate', divMonths:[1, 4, 7, 10]},
+  {ticker:'AAPL', name:'Apple Inc', qty:340, price:332.23, prev:326.57, cat:'U.S. individual stocks', div:0.43, cb:7480.0, sector:'Information Technology', divMonths:[2, 5, 8, 11]},
+  {ticker:'AVUV', name:'Avantis U.S. Sm Cap Val', qty:235, price:124.5188, prev:123.78, cat:'U.S. small & mid cap', div:1.18, cb:29260.273, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'BMY', name:'Bristol-Myers Squibb', qty:320, price:63.62, prev:63.75, cat:'U.S. individual stocks', div:5.1, cb:17974.4, sector:'Health Care', divMonths:[2, 5, 8, 11]},
+  {ticker:'AVGO', name:'Broadcom Inc', qty:117, price:361.8, prev:360.83, cat:'U.S. individual stocks', div:1.25, cb:43750.395, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'KO', name:'Coca-Cola Co', qty:293.487, price:88.265, prev:87.83, cat:'U.S. individual stocks', div:2.33, cb:12326.454, sector:'Consumer Staples', divMonths:[1, 4, 7, 10]},
+  {ticker:'XOM', name:'ExxonMobil', qty:377.037, price:165.985, prev:165.24, cat:'U.S. individual stocks', div:2.55, cb:22876.56916, sector:'Energy', divMonths:[3, 6, 9, 12]},
+  {ticker:'FSMDX', name:'Fidelity Mid Cap Index', qty:721.98, price:42.04, prev:42.42, cat:'U.S. small & mid cap', div:1.3, cb:27163.919916, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'FSSNX', name:'Fidelity Small Cap Index', qty:861.99, price:36.29, prev:36.66, cat:'U.S. small & mid cap', div:1.1, cb:24526.891062, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'GRID', name:'First Trust NASDAQ CEA', qty:59, price:180.81, prev:177.24, cat:'U.S. diversified funds', div:0.7, cb:10916.3098, sector:'Industrials', divMonths:[3, 6, 9, 12]},
+  {ticker:'GEV', name:'GE Vernova', qty:33, price:956.905, prev:923.91, cat:'U.S. individual stocks', div:0.03, cb:33145.8039, sector:'Industrials', divMonths:[3, 6, 9, 12]},
+  {ticker:'SOXQ', name:'Invesco Semicond ETF', qty:28, price:93.09, prev:91.475, cat:'U.S. diversified funds', div:0.5, cb:2646.4704, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'IJH', name:'iShares S&P 400 Mid Cap', qty:270.076, price:74.44, prev:73.85, cat:'U.S. small & mid cap', div:1.2, cb:4537.2768, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'JPM', name:'JPMorgan Chase', qty:357.851, price:356.28, prev:353.49, cat:'U.S. individual stocks', div:1.74, cb:20626.53164, sector:'Financials', divMonths:[1, 4, 7, 10]},
+  {ticker:'MA', name:'Mastercard Inc', qty:173.061, price:569.15, prev:565.37, cat:'U.S. individual stocks', div:0.37, cb:12953.771605, sector:'Financials', divMonths:[2, 5, 8, 11]},
+  {ticker:'META', name:'Meta Platforms', qty:63, price:648.23, prev:644.38, cat:'U.S. individual stocks', div:0, cb:20599.803, sector:'Communication Services', divMonths:[]},
+  {ticker:'MSFT', name:'Microsoft Corp', qty:100, price:495.58, prev:492.44, cat:'U.S. individual stocks', div:0.68, cb:32427.44, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'NFLX', name:'Netflix Inc', qty:500, price:77.4, prev:76.01, cat:'U.S. individual stocks', div:0, cb:4715.0, sector:'Communication Services', divMonths:[]},
+  {ticker:'TLXIX', name:'Nuveen Lifecycle Index', qty:4089.97, price:39.92, prev:40.23, cat:'Target-date / mixed', div:1.5, cb:60695.1548, sector:'Diversified Fund', divMonths:[6, 12]},
+  {ticker:'PEP', name:'PepsiCo Inc', qty:155, price:136.3, prev:136.65, cat:'U.S. individual stocks', div:3.38, cb:21213.3465, sector:'Consumer Staples', divMonths:[3, 6, 9, 12]},
+  {ticker:'PM', name:'Philip Morris Intl', qty:181.209, price:191.09, prev:189.77, cat:'U.S. individual stocks', div:4.3, cb:14987.79639, sector:'Consumer Staples', divMonths:[1, 4, 7, 10]},
+  {ticker:'QCOM', name:'Qualcomm Inc', qty:104.415, price:181.93, prev:176.88, cat:'U.S. individual stocks', div:2.0, cb:5809.6506, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'CRM', name:'Salesforce Inc', qty:99, price:247.65, prev:243.0, cat:'U.S. individual stocks', div:0, cb:20956.32, sector:'Information Technology', divMonths:[]},
+  {ticker:'SCHD', name:'Schwab US Div Equity', qty:610, price:34.11, prev:33.99, cat:'U.S. diversified funds', div:3.5, cb:20040.513, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'SO', name:'Southern Company', qty:381.4, price:87.15, prev:87.75, cat:'U.S. individual stocks', div:3.3, cb:3188.504, sector:'Utilities', divMonths:[3, 6, 9, 12]},
+  {ticker:'GS', name:'Goldman Sachs', qty:105, price:1029.1, prev:1019.77, cat:'U.S. individual stocks', div:1.66, cb:18483.15, sector:'Financials', divMonths:[3, 6, 9, 12]},
+  {ticker:'DIS', name:'Walt Disney Co', qty:196.17, price:106.535, prev:105.82, cat:'U.S. individual stocks', div:0, cb:15770.1063, sector:'Communication Services', divMonths:[]},
+  {ticker:'UNH', name:'UnitedHealth Group', qty:50.22, price:378.86, prev:388.28, cat:'U.S. individual stocks', div:1.37, cb:11924.739, sector:'Health Care', divMonths:[3, 6, 9, 12]},
+  {ticker:'VFFSX', name:'Vanguard 500 Index', qty:100, price:372.2, prev:374.35, cat:'U.S. diversified funds', div:1.3, cb:5000.0, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'VTWO', name:'Vanguard Russell 2000', qty:126, price:116.76, prev:116.34, cat:'U.S. small & mid cap', div:1.3, cb:3528.0, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'VXUS', name:'Vanguard Total Intl', qty:521, price:87.13, prev:86.28, cat:'International equity', div:2.0, cb:43630.9887, sector:'International / Diversified', divMonths:[3, 6, 9, 12]},
+  {ticker:'V', name:'Visa Inc', qty:100, price:370.465, prev:367.21, cat:'U.S. individual stocks', div:0.68, cb:13650.0, sector:'Financials', divMonths:[3, 6, 9, 12]},
+  {ticker:'BATRA', name:'Atlanta Braves Holdings', qty:25, price:54.12, prev:54.83, cat:'U.S. individual stocks', div:0, cb:1314.0, sector:'Communication Services', divMonths:[]},
+  {ticker:'TSM', name:'Taiwan Semiconductor Mfg ADR', qty:19, price:433.19, prev:428.03, cat:'International equity', div:1.0, cb:8052.39, sector:'Information Technology', divMonths:[3, 9]},
+  {ticker:'ASML', name:'ASML Holding N.V.', qty:2, price:1698.95, prev:1687.43, cat:'International equity', div:0.48, cb:3541.06, sector:'Information Technology', divMonths:[2, 5, 8, 11]},
+  {ticker:'VIS', name:'Vanguard Industrials ETF', qty:16, price:331.11, prev:327.19, cat:'U.S. diversified funds', div:0.86, cb:5545.6896, sector:'Industrials', divMonths:[3, 6, 9, 12]},
+  {ticker:'GEHC', name:'GE HealthCare Technologies Inc.', qty:34, price:63.92, prev:64.24, cat:'U.S. individual stocks', div:0.19, cb:2449.9006, sector:'Health Care', divMonths:[3, 6, 9, 12]},
+  {ticker:'NVDA', name:'NVIDIA Corp', qty:20, price:218.19, prev:218.36, cat:'U.S. individual stocks', div:0.48, cb:4394.16, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'UBER', name:'Uber Technologies Inc', qty:5, price:71.656, prev:72.56, cat:'U.S. individual stocks', div:0, cb:359.15, sector:'Industrials', divMonths:[]},
   {ticker:'CASH', name:'Cash & Equivalents', qty:1, price:43000, prev:43000, cat:'Cash & equivalents', div:5.0, cb:43000.0, sector:'Cash & Equivalents', divMonths:[]},
 
 ];
