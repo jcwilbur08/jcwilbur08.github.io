@@ -1,85 +1,85 @@
 {
-  "generated_at": "2026-09-10T04:35:42Z",
+  "generated_at": "2026-09-11T04:32:45Z",
   "movers": [
     {
-      "ticker": "META",
-      "day_pct": 6.55,
-      "headline": "Meta rose 6.55% as the company advances AI capabilities through Muse Spark 1.3 release and plans consumer-focused AI agents despite a settlement on teen safety.",
-      "why": "The stock gained ground amid multiple positive catalysts including enhanced coding and AI tools, positive analyst sentiment, and development of consumer AI products. While the company reached a teen safety settlement that could reshape industry standards, the focus on AI innovation and new consumer-facing AI agents appears to be driving investor optimism.",
-      "source": "Investing.com South Africa",
-      "url": "https://m.za.investing.com/news/stock-market-news/meta-platforms-chief-accounting-officer-aaron-anderson-sells-2m-93CH-4457287?ampMode=1"
-    },
-    {
-      "ticker": "GEHC",
-      "day_pct": -2.4,
-      "headline": "GE HealthCare declined 2.4% despite its StarGuide GX 4D SPECT/CT system advancing to FDA 510(k) pending status following CE mark clearance.",
-      "why": "The molecular imaging system represents a significant advancement in nuclear medicine diagnostics with capabilities for broader tracer support and personalized care applications. However, regulatory approval timing uncertainty and the pending FDA review may be tempering near-term investor enthusiasm despite the product's clinical promise.",
-      "source": "Imaging Technology News",
-      "url": "https://www.itnonline.com/content/ge-healthcares%C2%A0starguide%C2%A0gx-4d-spectct-now-fda-510k-pending%C2%A0"
-    },
-    {
-      "ticker": "XOM",
-      "day_pct": 2.22,
-      "headline": "ExxonMobil rose 2.22% as CFO Neil Hansen outlined the company's integrated business model driving shareholder value through accelerated Guyana development and diversified growth initiatives.",
-      "why": "Management highlighted successful synergies from the Pioneer acquisition, accelerated cost recovery in Guyana, and expansion into higher-margin areas including LNG, advanced resins, and battery materials. The company's long-term investment discipline and strong balance sheet position it to capture significant earnings and cash flow growth through the end of the decade.",
+      "ticker": "AAPL",
+      "day_pct": 3.56,
+      "headline": "Apple rose 3.56% Tuesday as the company's new foldable iPhone Duo model gained traction despite executive stock sales.",
+      "why": "Apple's senior vice president and general counsel Jennifer Newstead sold approximately $456,000 in shares as part of a pre-planned trading arrangement. The stock continues to trade near its 52-week highs, buoyed by the recent introduction of the foldable iPhone model, though valuation concerns persist among some analysts.",
       "source": "Investing.com",
-      "url": "https://www.investing.com/news/transcripts/exxonmobil-at-barclays-energypower-conference-growth-through-disruption-93CH-4893590"
-    },
-    {
-      "ticker": "GOOG",
-      "day_pct": -2.09,
-      "headline": "Alphabet's Class C shares fell 2.09% as investors weigh the company's substantial AI infrastructure spending against uncertain timelines for Gemini-related revenue monetization.",
-      "why": "The company is committing substantial capital expenditure to AI data centers before demonstrating clear revenue streams from AI features and ad monetization. While Google Cloud's partnership with Accenture to train engineers on Gemini Enterprise AI shows enterprise adoption, the market is focused on when these heavy infrastructure investments will convert into meaningful financial returns.",
-      "source": "TradingView",
-      "url": "https://www.tradingview.com/news/tradingview:350d7b73cd835:0-key-facts-alphabet-inc-class-c-tied-to-gemini-ai-data-center-capex-google-cloud-accenture-unit/"
+      "url": "https://www.investing.com/news/insider-trading-news/apple-svp-jennifer-newstead-sells-456176-of-company-stock-93CH-4897097"
     },
     {
       "ticker": "GEV",
-      "day_pct": -2.09,
-      "headline": "GEV declined 2.09% as Tennessee pursues nuclear energy leadership, but concerns over waste storage and regulatory transparency weigh on sentiment.",
-      "why": "Though the state's position as a finalist for the federal Nuclear Lifecycle Campus and approval of a fusion research facility reflect growing nuclear opportunity, lawmakers' concerns about waste management and lack of transparency create regulatory uncertainty. These governance issues may be limiting investor confidence despite the underlying long-term opportunity in data center-driven nuclear demand.",
+      "day_pct": -2.85,
+      "headline": "GEV fell 2.85% Tuesday as Tennessee's nuclear energy expansion strategy faces legislative scrutiny over waste storage and accountability.",
+      "why": "Tennessee is advancing its position as a nuclear leader through federal grant competition and a newly approved fusion research facility, capitalizing on demand from data centers. However, state lawmakers have raised concerns about nuclear waste management and the transparency of these initiatives, creating headwinds for the sector.",
       "source": "Tennessee Lookout",
       "url": "https://tennesseelookout.com/2026/09/09/tennessee-wants-to-be-at-the-forefront-of-new-nuclear-energy-projects-what-does-that-mean/"
     },
     {
       "ticker": "ASML",
-      "day_pct": -2.0,
-      "headline": "ASML fell 2.0% despite Berenberg maintaining a Buy rating and unchanged EUR 2100 price target on the semiconductor equipment leader.",
-      "why": "The positive analyst coverage and stable valuation target failed to offset broader market headwinds or sector-specific concerns, suggesting investors may be reassessing near-term demand dynamics or visibility for lithography equipment sales.",
+      "day_pct": -2.43,
+      "headline": "ASML declined 2.43% Tuesday despite Berenberg maintaining its bullish stance on the semiconductor equipment leader.",
+      "why": "Berenberg reaffirmed its Buy rating on ASML with an unchanged price target of EUR 2100, reflecting confidence in the company's lithography equipment business and market position. The analyst support appears insufficient to counter broader market pressures on the semiconductor equipment sector today.",
       "source": "www.marketscreener.com",
       "url": "https://www.marketscreener.com/news/asml-holding-n-v-berenberg-gives-a-buy-rating-ce785bd9db81f020"
     },
     {
-      "ticker": "CRM",
-      "day_pct": -1.99,
-      "headline": "Salesforce declined 1.99% despite JP Morgan's reaffirmed Buy rating and maintained $265 price target, alongside announcement of a quarterly dividend.",
-      "why": "Despite positive analyst sentiment, the company's dividend of $0.44 per share and strong subscription-based revenue model did not prevent the stock from underperforming, indicating the market may be pricing in broader software sector headwinds or profit-taking after recent gains.",
-      "source": "www.marketscreener.com",
-      "url": "https://www.marketscreener.com/news/salesforce-inc-gets-a-buy-rating-from-jp-morgan-ce785bd9dc81ff25"
+      "ticker": "PM",
+      "day_pct": 2.19,
+      "headline": "Philip Morris International gained 2.19% Tuesday as survey research underscores the enduring value of uniquely human capabilities in an AI-driven workplace.",
+      "why": "A WSJ Intelligence survey conducted with Philip Morris indicates that human skills such as judgment, creativity, empathy, and moral reasoning are becoming increasingly valuable as companies deploy AI for routine tasks. The research suggests these distinctly human competencies remain difficult for technology to replicate, positioning companies prioritizing human talent development for competitive advantage.",
+      "source": "Philip Morris International",
+      "url": "https://www.pmi.com/human-cognition/human-advantage-ai-workplace"
+    },
+    {
+      "ticker": "DIS",
+      "day_pct": 1.57,
+      "headline": "Disney rose 1.57% Tuesday as management highlighted strong theme park attendance and upcoming capacity-expanding attractions for 2027.",
+      "why": "CFO Hugh Johnston noted that domestic attendance at Disney's theme parks is accelerating, with per-capita spending growth driven primarily by guests selecting premium experiences rather than broad ticket price increases. The company is investing in new attractions including Tropical Americas and Monstropolis, both expected to open in 2027 and add meaningful capacity to the portfolio.",
+      "source": "WDWMagic",
+      "url": "https://www.wdwmagic.com/other/walt-disney-company/news/09sep2026-disney-cfo-addresses-theme-park-pricing-talks-new-attractions-coming-to-walt-disney-world.htm"
+    },
+    {
+      "ticker": "GEHC",
+      "day_pct": -1.43,
+      "headline": "GE HealthCare fell 1.43% Tuesday despite advancing its StarGuide GX molecular imaging system toward FDA clearance.",
+      "why": "GE HealthCare's advanced SPECT/CT system has received CE mark approval and is now pending 510(k) clearance from the FDA. The technology is designed to support precision nuclear medicine by enabling clinicians to image emerging alpha-emitter tracers with improved sensitivity and resolution, positioning the company in the growing theranostics market.",
+      "source": "Imaging Technology News",
+      "url": "https://www.itnonline.com/content/ge-healthcares%C2%A0starguide%C2%A0gx-4d-spectct-now-fda-510k-pending%C2%A0"
+    },
+    {
+      "ticker": "META",
+      "day_pct": -1.42,
+      "headline": "Meta Platforms declined 1.42% Tuesday as COO Javier Olivan executed a $3.3 million share sale under a pre-established trading plan.",
+      "why": "Olivan sold over 5,300 shares at prices ranging from $612 to $623 as part of a Rule 10b5-1 arrangement. The executive stock sale occurred as Meta benefits from recent positive momentum driven by its new AI agent Muse, which has garnered analyst upgrades and higher price targets.",
+      "source": "Investing.com",
+      "url": "https://m.investing.com/news/insider-trading-news/meta-platforms-coo-javier-olivan-sells-33m-in-shares-93CH-4897098?ampMode=1"
+    },
+    {
+      "ticker": "AMT",
+      "day_pct": -1.4,
+      "headline": "American Tower retreated 1.4% Tuesday despite management's optimistic guidance for data center growth and mid-to-high single-digit per-share growth.",
+      "why": "American Tower presented a path toward accelerating growth beginning in 2027, supported by new spectrum deployment, 6G infrastructure buildout, and AI-driven network changes. The company is managing near-term headwinds including softer application volumes and ongoing legal disputes with major telecom partners, while benefiting from a strengthened balance sheet and expanding data center operations.",
+      "source": "Investing.com",
+      "url": "https://www.investing.com/news/transcripts/american-tower-at-citis-2026-global-tmt-conference-growth-seen-ahead-93CH-4896425"
     },
     {
       "ticker": "UNH",
-      "day_pct": -1.94,
-      "headline": "UnitedHealth Group fell 1.94%, underperforming the broader market despite analyst upgrades and a Zacks Rank #1 rating supported by strong projected Q3 earnings growth.",
-      "why": "The company faces headwinds unrelated to fundamentals, as it declined nearly four times more than the S&P 500 despite expectations for 38% EPS growth and upward estimate revisions. Trading at a discount to industry peers with strong analyst backing, the pullback appears driven by sector rotation or profit-taking rather than deterioration in underlying business momentum.",
+      "day_pct": -1.22,
+      "headline": "UnitedHealth Group fell 1.22% Tuesday, underperforming the broader market despite expectations for robust third-quarter earnings growth.",
+      "why": "UnitedHealth declined more sharply than the overall market, with the stock rated a Strong Buy by Zacks despite trading at a valuation discount to its industry peers. Analysts have recently raised earnings estimates, with Q3 EPS expected to rise over 38%, suggesting the market digested positive news ahead of the earnings report.",
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/markets/stocks/articles/why-unitedhealth-group-unh-dipped-215005675.html"
     },
     {
-      "ticker": "AMZN",
-      "day_pct": -1.78,
-      "headline": "Amazon declined 1.78% as the company announced a $60 billion multi-generational partnership with Qualcomm for custom AI inference silicon and optical connectivity.",
-      "why": "While the deal positions AWS with specialized, power-efficient hardware to manage data center costs and offers new infrastructure options to customers, the massive capital commitment and multi-year development timeline highlight the significant ongoing investment required to support Amazon's AI ambitions before returns materialize.",
-      "source": "TechTarget",
-      "url": "https://www.techtarget.com/it-infrastructure/news/366650224/Amazons-60B-Qualcomm-deal-expands-AI-inference-hardware"
-    },
-    {
-      "ticker": "QCOM",
-      "day_pct": 1.33,
-      "headline": "Qualcomm rose 1.33% following the announcement of a $60 billion partnership with Amazon to develop custom silicon and connectivity solutions for AI inference workloads.",
-      "why": "The multi-generational deal represents substantial revenue opportunity and validates Qualcomm's expansion into the broader data center market with integrated compute and connectivity offerings, signaling long-term growth potential beyond traditional smartphone and mobile markets.",
-      "source": "TechTarget",
-      "url": "https://www.techtarget.com/it-infrastructure/news/366650224/Amazons-60B-Qualcomm-deal-expands-AI-inference-hardware"
+      "ticker": "BMY",
+      "day_pct": -1.02,
+      "headline": "Bristol Myers Squibb decreased 1.02% Tuesday as institutional investors continue accumulating shares amid positive trial results for its CAR-T therapy candidate.",
+      "why": "The National Pension Service increased its BMY holdings by nearly 47,000 shares in the second quarter, reflecting broader institutional confidence in the company. Positive trial data for the arlo-cel multiple myeloma program has provided support, though questions remain regarding CAR-T safety profiles and regulatory approval timing.",
+      "source": "MarketBeat",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-national-pension-service-acquires-46936-shares-of-bristol-myers-squibb-company-bmy-2026-09-10/"
     }
   ]
 }
