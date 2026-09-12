@@ -1,85 +1,85 @@
 {
-  "generated_at": "2026-09-11T04:32:45Z",
+  "generated_at": "2026-09-12T04:29:21Z",
   "movers": [
     {
-      "ticker": "AAPL",
-      "day_pct": 3.56,
-      "headline": "Apple rose 3.56% Tuesday as the company's new foldable iPhone Duo model gained traction despite executive stock sales.",
-      "why": "Apple's senior vice president and general counsel Jennifer Newstead sold approximately $456,000 in shares as part of a pre-planned trading arrangement. The stock continues to trade near its 52-week highs, buoyed by the recent introduction of the foldable iPhone model, though valuation concerns persist among some analysts.",
+      "ticker": "QCOM",
+      "day_pct": 2.88,
+      "headline": "Qualcomm rose 2.88% as the company's partnership with Amazon for AI inference and optical connectivity attracted positive analyst attention.",
+      "why": "While an executive officer sold approximately $457,000 in stock under a pre-planned trading arrangement, this transaction was overshadowed by optimism surrounding Qualcomm's strategic collaboration with Amazon on AI-related technologies, which has garnered favorable analyst reception.",
       "source": "Investing.com",
-      "url": "https://www.investing.com/news/insider-trading-news/apple-svp-jennifer-newstead-sells-456176-of-company-stock-93CH-4897097"
-    },
-    {
-      "ticker": "GEV",
-      "day_pct": -2.85,
-      "headline": "GEV fell 2.85% Tuesday as Tennessee's nuclear energy expansion strategy faces legislative scrutiny over waste storage and accountability.",
-      "why": "Tennessee is advancing its position as a nuclear leader through federal grant competition and a newly approved fusion research facility, capitalizing on demand from data centers. However, state lawmakers have raised concerns about nuclear waste management and the transparency of these initiatives, creating headwinds for the sector.",
-      "source": "Tennessee Lookout",
-      "url": "https://tennesseelookout.com/2026/09/09/tennessee-wants-to-be-at-the-forefront-of-new-nuclear-energy-projects-what-does-that-mean/"
-    },
-    {
-      "ticker": "ASML",
-      "day_pct": -2.43,
-      "headline": "ASML declined 2.43% Tuesday despite Berenberg maintaining its bullish stance on the semiconductor equipment leader.",
-      "why": "Berenberg reaffirmed its Buy rating on ASML with an unchanged price target of EUR 2100, reflecting confidence in the company's lithography equipment business and market position. The analyst support appears insufficient to counter broader market pressures on the semiconductor equipment sector today.",
-      "source": "www.marketscreener.com",
-      "url": "https://www.marketscreener.com/news/asml-holding-n-v-berenberg-gives-a-buy-rating-ce785bd9db81f020"
-    },
-    {
-      "ticker": "PM",
-      "day_pct": 2.19,
-      "headline": "Philip Morris International gained 2.19% Tuesday as survey research underscores the enduring value of uniquely human capabilities in an AI-driven workplace.",
-      "why": "A WSJ Intelligence survey conducted with Philip Morris indicates that human skills such as judgment, creativity, empathy, and moral reasoning are becoming increasingly valuable as companies deploy AI for routine tasks. The research suggests these distinctly human competencies remain difficult for technology to replicate, positioning companies prioritizing human talent development for competitive advantage.",
-      "source": "Philip Morris International",
-      "url": "https://www.pmi.com/human-cognition/human-advantage-ai-workplace"
-    },
-    {
-      "ticker": "DIS",
-      "day_pct": 1.57,
-      "headline": "Disney rose 1.57% Tuesday as management highlighted strong theme park attendance and upcoming capacity-expanding attractions for 2027.",
-      "why": "CFO Hugh Johnston noted that domestic attendance at Disney's theme parks is accelerating, with per-capita spending growth driven primarily by guests selecting premium experiences rather than broad ticket price increases. The company is investing in new attractions including Tropical Americas and Monstropolis, both expected to open in 2027 and add meaningful capacity to the portfolio.",
-      "source": "WDWMagic",
-      "url": "https://www.wdwmagic.com/other/walt-disney-company/news/09sep2026-disney-cfo-addresses-theme-park-pricing-talks-new-attractions-coming-to-walt-disney-world.htm"
-    },
-    {
-      "ticker": "GEHC",
-      "day_pct": -1.43,
-      "headline": "GE HealthCare fell 1.43% Tuesday despite advancing its StarGuide GX molecular imaging system toward FDA clearance.",
-      "why": "GE HealthCare's advanced SPECT/CT system has received CE mark approval and is now pending 510(k) clearance from the FDA. The technology is designed to support precision nuclear medicine by enabling clinicians to image emerging alpha-emitter tracers with improved sensitivity and resolution, positioning the company in the growing theranostics market.",
-      "source": "Imaging Technology News",
-      "url": "https://www.itnonline.com/content/ge-healthcares%C2%A0starguide%C2%A0gx-4d-spectct-now-fda-510k-pending%C2%A0"
-    },
-    {
-      "ticker": "META",
-      "day_pct": -1.42,
-      "headline": "Meta Platforms declined 1.42% Tuesday as COO Javier Olivan executed a $3.3 million share sale under a pre-established trading plan.",
-      "why": "Olivan sold over 5,300 shares at prices ranging from $612 to $623 as part of a Rule 10b5-1 arrangement. The executive stock sale occurred as Meta benefits from recent positive momentum driven by its new AI agent Muse, which has garnered analyst upgrades and higher price targets.",
-      "source": "Investing.com",
-      "url": "https://m.investing.com/news/insider-trading-news/meta-platforms-coo-javier-olivan-sells-33m-in-shares-93CH-4897098?ampMode=1"
+      "url": "https://www.investing.com/news/insider-trading-news/qualcomm-evp-cfo--coo-palkhiwala-sells-457129-in-qcom-stock-93CH-4898563"
     },
     {
       "ticker": "AMT",
-      "day_pct": -1.4,
-      "headline": "American Tower retreated 1.4% Tuesday despite management's optimistic guidance for data center growth and mid-to-high single-digit per-share growth.",
-      "why": "American Tower presented a path toward accelerating growth beginning in 2027, supported by new spectrum deployment, 6G infrastructure buildout, and AI-driven network changes. The company is managing near-term headwinds including softer application volumes and ongoing legal disputes with major telecom partners, while benefiting from a strengthened balance sheet and expanding data center operations.",
-      "source": "Investing.com",
-      "url": "https://www.investing.com/news/transcripts/american-tower-at-citis-2026-global-tmt-conference-growth-seen-ahead-93CH-4896425"
+      "day_pct": 2.82,
+      "headline": "American Tower advanced 2.82% on strong quarterly performance and resilient demand for communications infrastructure.",
+      "why": "The company's extensive wireless tower portfolio and recurring site-leasing revenue model continue to demonstrate stability amid broader economic shifts. Favorable financing conditions and shifting interest rates are also supporting the company's near-term trajectory.",
+      "source": "Kalkine Media",
+      "url": "https://kalkinemedia.com/us/stocks/infrastructure-and-real-estate/can-american-tower-nyseamt-keep-its-momentum"
     },
     {
       "ticker": "UNH",
-      "day_pct": -1.22,
-      "headline": "UnitedHealth Group fell 1.22% Tuesday, underperforming the broader market despite expectations for robust third-quarter earnings growth.",
-      "why": "UnitedHealth declined more sharply than the overall market, with the stock rated a Strong Buy by Zacks despite trading at a valuation discount to its industry peers. Analysts have recently raised earnings estimates, with Q3 EPS expected to rise over 38%, suggesting the market digested positive news ahead of the earnings report.",
-      "source": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/why-unitedhealth-group-unh-dipped-215005675.html"
+      "day_pct": -2.37,
+      "headline": "UnitedHealth fell 2.37% as analyst sentiment on the broader healthcare sector remained cautious despite peer-company momentum.",
+      "why": "The decline occurred as Cantor Fitzgerald reiterated a Neutral rating on Humana, a competitor, though the analysis cited optimistic factors for Medicare Advantage margin recovery. This mixed sentiment in the managed care space may be pressuring the broader healthcare sector valuations.",
+      "source": "Investing.com UK",
+      "url": "https://uk.investing.com/news/stock-market-news/cantor-fitzgerald-reiterates-neutral-rating-on-humana-stock-93CH-4866262"
     },
     {
-      "ticker": "BMY",
-      "day_pct": -1.02,
-      "headline": "Bristol Myers Squibb decreased 1.02% Tuesday as institutional investors continue accumulating shares amid positive trial results for its CAR-T therapy candidate.",
-      "why": "The National Pension Service increased its BMY holdings by nearly 47,000 shares in the second quarter, reflecting broader institutional confidence in the company. Positive trial data for the arlo-cel multiple myeloma program has provided support, though questions remain regarding CAR-T safety profiles and regulatory approval timing.",
+      "ticker": "CRM",
+      "day_pct": 1.94,
+      "headline": "Salesforce gained 1.94% as Stifel reiterated its Buy rating, citing accelerating revenue growth and strong fiscal second-quarter execution.",
+      "why": "The analyst firm highlighted confidence in Salesforce's ability to achieve its fiscal 2030 revenue target of $63 billion, driven by new pricing strategies and continued product adoption. Multiple analysts have issued positive updates emphasizing the company's AI momentum and strategic partnerships.",
+      "source": "Investing.com",
+      "url": "https://www.investing.com/news/analyst-ratings/stifel-reiterates-salesforce-stock-buy-rating-on-revenue-growth-93CH-4898132"
+    },
+    {
+      "ticker": "AMZN",
+      "day_pct": 1.94,
+      "headline": "Amazon rose 1.94% as institutional investment activity and a consensus 'Moderate Buy' rating from analysts supported upside momentum.",
+      "why": "Trivium Point Advisory added Amazon as a new position with approximately $17.23 million in purchases, while analyst consensus remains constructive with an average price target of $323.26, indicating continued confidence despite some insider selling.",
       "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-national-pension-service-acquires-46936-shares-of-bristol-myers-squibb-company-bmy-2026-09-10/"
+      "url": "https://www.marketbeat.com/instant-alerts/filing-trivium-point-advisory-llc-purchases-new-holdings-in-amazoncom-inc-amzn-2026-09-11/"
+    },
+    {
+      "ticker": "NFLX",
+      "day_pct": 1.83,
+      "headline": "Netflix gained 1.83% despite the cancelation of 'Ransom Canyon' following a 43% viewership decline in its second season.",
+      "why": "While fan backlash against the cancellation generated social media controversy, the broader market sentiment on Netflix remained positive. The stock's modest gain suggests investors are not materially concerned about the impact of individual show cancellations on the company's overall streaming performance.",
+      "source": "Yahoo",
+      "url": "https://www.yahoo.com/entertainment/tv/articles/netflix-subscribers-begging-company-undo-191142944.html"
+    },
+    {
+      "ticker": "AAPL",
+      "day_pct": 1.75,
+      "headline": "Apple rose 1.75% as regulatory developments expanded potential trading venues for the company's shares.",
+      "why": "Kalshi Inc.'s plan to seek regulatory approval for single-stock perpetual futures, with Apple as a targeted underlying asset, could enhance liquidity and trading flexibility for the stock, contributing to positive market sentiment.",
+      "source": "Investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/kalshi-stock-futures-plan-targets-tesla-and-apple-shares--bloomberg-93CH-4898406"
+    },
+    {
+      "ticker": "GOOG",
+      "day_pct": 1.53,
+      "headline": "Alphabet gained 1.53% on comparative valuation strength and explosive cloud growth outpacing a key peer in the Magnificent Seven.",
+      "why": "Analysis positioned Alphabet as the superior investment choice relative to Meta, citing its faster cloud expansion, lower valuation multiples, stronger balance sheet, and full-stack AI strategy that produces improving margins. Meta's heavier capital expenditure burden and litigation risks were cited as headwinds.",
+      "source": "24/7 Wall St.",
+      "url": "https://247wallst.com/investing/2026/09/11/alphabet-vs-meta-one-magnificent-seven-stock-is-the-better-buy/"
+    },
+    {
+      "ticker": "AXP",
+      "day_pct": 1.24,
+      "headline": "American Express rose 1.24% following strong quarterly earnings that exceeded expectations and positive fiscal 2026 guidance.",
+      "why": "The company reported EPS of $4.53 and revenue growth of 10% year-over-year, beating analyst expectations. Institutional confidence remains solid with 84.33% of shares held by institutions, and new capital deployment by investment firms signals ongoing conviction in the stock.",
+      "source": "MarketBeat",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-bullseye-investment-management-llc-invests-114-million-in-american-express-company-axp-2026-09-11/"
+    },
+    {
+      "ticker": "TSM",
+      "day_pct": 1.22,
+      "headline": "Taiwan Semiconductor advanced 1.22% as August revenue surged 53% year-over-year, though demand continues to exceed available supply.",
+      "why": "TSMC's August revenue of $16.35 billion significantly exceeded full-year guidance, driven by sustained AI chip demand, though packaging capacity constraints are limiting fulfillment. The company's aggressive expansion of 20 new fabs signals confidence in continued strong demand through 2029-2030.",
+      "source": "24/7 Wall St.",
+      "url": "https://247wallst.com/investing/2026/09/10/taiwan-semiconductor-september-revenue-surges-53-and-cant-keep-up-with-demand/"
     }
   ]
 }
