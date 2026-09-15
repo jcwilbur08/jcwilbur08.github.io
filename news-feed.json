@@ -1,85 +1,85 @@
 {
-  "generated_at": "2026-09-12T04:29:21Z",
+  "generated_at": "2026-09-15T04:49:11Z",
   "movers": [
     {
-      "ticker": "QCOM",
-      "day_pct": 2.88,
-      "headline": "Qualcomm rose 2.88% as the company's partnership with Amazon for AI inference and optical connectivity attracted positive analyst attention.",
-      "why": "While an executive officer sold approximately $457,000 in stock under a pre-planned trading arrangement, this transaction was overshadowed by optimism surrounding Qualcomm's strategic collaboration with Amazon on AI-related technologies, which has garnered favorable analyst reception.",
+      "ticker": "GEV",
+      "day_pct": -8.62,
+      "headline": "GE Vernova fell 8.62% Monday as a sell rating from GLJ Research citing cycle concerns weighed on the renewable energy company.",
+      "why": "A research firm downgraded the stock to sell based on concerns about business cycles, prompting investors to reassess the company's near-term prospects.",
       "source": "Investing.com",
-      "url": "https://www.investing.com/news/insider-trading-news/qualcomm-evp-cfo--coo-palkhiwala-sells-457129-in-qcom-stock-93CH-4898563"
+      "url": "https://www.investing.com/news/stock-market-news/ge-vernova-and-corning-among-market-cap-stock-movers-on-monday-93CH-4900190"
     },
     {
-      "ticker": "AMT",
-      "day_pct": 2.82,
-      "headline": "American Tower advanced 2.82% on strong quarterly performance and resilient demand for communications infrastructure.",
-      "why": "The company's extensive wireless tower portfolio and recurring site-leasing revenue model continue to demonstrate stability amid broader economic shifts. Favorable financing conditions and shifting interest rates are also supporting the company's near-term trajectory.",
-      "source": "Kalkine Media",
-      "url": "https://kalkinemedia.com/us/stocks/infrastructure-and-real-estate/can-american-tower-nyseamt-keep-its-momentum"
-    },
-    {
-      "ticker": "UNH",
-      "day_pct": -2.37,
-      "headline": "UnitedHealth fell 2.37% as analyst sentiment on the broader healthcare sector remained cautious despite peer-company momentum.",
-      "why": "The decline occurred as Cantor Fitzgerald reiterated a Neutral rating on Humana, a competitor, though the analysis cited optimistic factors for Medicare Advantage margin recovery. This mixed sentiment in the managed care space may be pressuring the broader healthcare sector valuations.",
-      "source": "Investing.com UK",
-      "url": "https://uk.investing.com/news/stock-market-news/cantor-fitzgerald-reiterates-neutral-rating-on-humana-stock-93CH-4866262"
+      "ticker": "AVGO",
+      "day_pct": -4.77,
+      "headline": "Broadcom declined 4.77% as investors reacted cautiously to a $21.7 billion AI revenue forecast amid broader calls for slower AI model development.",
+      "why": "Despite the company's massive year-over-year AI revenue growth and strong positioning as an alternative to Nvidia, market sentiment shifted as concerns emerged about decelerating AI investment cycles. The stock sold off despite trading below intrinsic value estimates.",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-drops-over-4-21-210015158.html"
     },
     {
       "ticker": "CRM",
-      "day_pct": 1.94,
-      "headline": "Salesforce gained 1.94% as Stifel reiterated its Buy rating, citing accelerating revenue growth and strong fiscal second-quarter execution.",
-      "why": "The analyst firm highlighted confidence in Salesforce's ability to achieve its fiscal 2030 revenue target of $63 billion, driven by new pricing strategies and continued product adoption. Multiple analysts have issued positive updates emphasizing the company's AI momentum and strategic partnerships.",
-      "source": "Investing.com",
-      "url": "https://www.investing.com/news/analyst-ratings/stifel-reiterates-salesforce-stock-buy-rating-on-revenue-growth-93CH-4898132"
+      "day_pct": 4.73,
+      "headline": "Salesforce rose 4.73% Monday, outperforming as sentiment shifted on news of the company's evolved philanthropic strategy.",
+      "why": "The market reacted positively to the company's strategic pivot in corporate giving, reflecting a broader shift toward impact-driven corporate responsibility that resonates with stakeholder interests.",
+      "source": "Forbes",
+      "url": "https://www.forbes.com/sites/jasonwingard/2026/09/14/why-salesforce-stopped-running-its-philanthropy-like-a-company/"
     },
     {
-      "ticker": "AMZN",
-      "day_pct": 1.94,
-      "headline": "Amazon rose 1.94% as institutional investment activity and a consensus 'Moderate Buy' rating from analysts supported upside momentum.",
-      "why": "Trivium Point Advisory added Amazon as a new position with approximately $17.23 million in purchases, while analyst consensus remains constructive with an average price target of $323.26, indicating continued confidence despite some insider selling.",
+      "ticker": "GS",
+      "day_pct": -3.96,
+      "headline": "Goldman Sachs fell 3.96% Monday as a major institutional investor significantly trimmed its position by over 90%.",
+      "why": "Engineers Gate Manager LP substantially reduced its stake, though the company had recently posted strong earnings and raised its dividend, suggesting the selloff reflected broader portfolio positioning rather than fundamental deterioration.",
       "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-trivium-point-advisory-llc-purchases-new-holdings-in-amazoncom-inc-amzn-2026-09-11/"
+      "url": "https://www.marketbeat.com/instant-alerts/filing-engineers-gate-manager-lp-trims-holdings-in-the-goldman-sachs-group-inc-gs-2026-09-14/"
     },
     {
       "ticker": "NFLX",
-      "day_pct": 1.83,
-      "headline": "Netflix gained 1.83% despite the cancelation of 'Ransom Canyon' following a 43% viewership decline in its second season.",
-      "why": "While fan backlash against the cancellation generated social media controversy, the broader market sentiment on Netflix remained positive. The stock's modest gain suggests investors are not materially concerned about the impact of individual show cancellations on the company's overall streaming performance.",
-      "source": "Yahoo",
-      "url": "https://www.yahoo.com/entertainment/tv/articles/netflix-subscribers-begging-company-undo-191142944.html"
-    },
-    {
-      "ticker": "AAPL",
-      "day_pct": 1.75,
-      "headline": "Apple rose 1.75% as regulatory developments expanded potential trading venues for the company's shares.",
-      "why": "Kalshi Inc.'s plan to seek regulatory approval for single-stock perpetual futures, with Apple as a targeted underlying asset, could enhance liquidity and trading flexibility for the stock, contributing to positive market sentiment.",
-      "source": "Investing.com",
-      "url": "https://www.investing.com/news/stock-market-news/kalshi-stock-futures-plan-targets-tesla-and-apple-shares--bloomberg-93CH-4898406"
+      "day_pct": 3.77,
+      "headline": "Netflix rose 3.77% as Evercore boosted its price target, citing live events and shorter-form content as meaningful new growth vectors.",
+      "why": "An analyst upgrade highlighted emerging revenue drivers beyond traditional series and films, noting strong subscriber traction from live promotional events and elevated engagement with short-form clips.",
+      "source": "Yahoo Finance UK",
+      "url": "https://uk.finance.yahoo.com/news/netflix-stock-jumps-wall-street-210425929.html"
     },
     {
       "ticker": "GOOG",
-      "day_pct": 1.53,
-      "headline": "Alphabet gained 1.53% on comparative valuation strength and explosive cloud growth outpacing a key peer in the Magnificent Seven.",
-      "why": "Analysis positioned Alphabet as the superior investment choice relative to Meta, citing its faster cloud expansion, lower valuation multiples, stronger balance sheet, and full-stack AI strategy that produces improving margins. Meta's heavier capital expenditure burden and litigation risks were cited as headwinds.",
-      "source": "24/7 Wall St.",
-      "url": "https://247wallst.com/investing/2026/09/11/alphabet-vs-meta-one-magnificent-seven-stock-is-the-better-buy/"
+      "day_pct": 3.06,
+      "headline": "Alphabet gained 3.06% Monday following disclosure that Google Cloud's backlog reached $514 billion on 82% year-over-year revenue growth.",
+      "why": "The company's cloud division is establishing itself as a major long-term growth engine, with its backlog now exceeding Alphabet's total trailing annual revenue and positioning the segment to rival Search as the primary profit driver.",
+      "source": "The Motley Fool",
+      "url": "https://www.fool.com/investing/2026/09/13/sundar-pichai-alphabets-backlog-514-billion/"
     },
     {
-      "ticker": "AXP",
-      "day_pct": 1.24,
-      "headline": "American Express rose 1.24% following strong quarterly earnings that exceeded expectations and positive fiscal 2026 guidance.",
-      "why": "The company reported EPS of $4.53 and revenue growth of 10% year-over-year, beating analyst expectations. Institutional confidence remains solid with 84.33% of shares held by institutions, and new capital deployment by investment firms signals ongoing conviction in the stock.",
+      "ticker": "META",
+      "day_pct": 2.71,
+      "headline": "Meta advanced 2.71% as Big Tech's massive bond issuance for AI infrastructure underscores sustained investment commitment despite rising financing costs.",
+      "why": "The company's participation in approximately $220 billion in Big Tech debt issuance signals confidence in AI returns, though the market is pricing in higher financing costs as demand for duration pushes credit spreads wider.",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/big-tech-issued-220-billion-212946047.html"
+    },
+    {
+      "ticker": "BATRA",
+      "day_pct": 2.14,
+      "headline": "Atlanta Braves Holdings gained 2.14% Monday as Baird Financial Group established a new stake of roughly 162,000 shares.",
+      "why": "Institutional investor accumulation provided modest support, though analyst sentiment remains cautious with a consensus hold rating, as recent quarterly results disappointed expectations.",
       "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-bullseye-investment-management-llc-invests-114-million-in-american-express-company-axp-2026-09-11/"
+      "url": "https://www.marketbeat.com/instant-alerts/filing-162983-shares-in-atlanta-braves-holdings-inc-batrk-purchased-by-baird-financial-group-inc-2026-09-14/"
     },
     {
-      "ticker": "TSM",
-      "day_pct": 1.22,
-      "headline": "Taiwan Semiconductor advanced 1.22% as August revenue surged 53% year-over-year, though demand continues to exceed available supply.",
-      "why": "TSMC's August revenue of $16.35 billion significantly exceeded full-year guidance, driven by sustained AI chip demand, though packaging capacity constraints are limiting fulfillment. The company's aggressive expansion of 20 new fabs signals confidence in continued strong demand through 2029-2030.",
-      "source": "24/7 Wall St.",
-      "url": "https://247wallst.com/investing/2026/09/10/taiwan-semiconductor-september-revenue-surges-53-and-cant-keep-up-with-demand/"
+      "ticker": "PM",
+      "day_pct": 1.99,
+      "headline": "Philip Morris International rose 1.99% Monday, supported by a consensus buy rating and recent earnings that exceeded analyst expectations.",
+      "why": "The company reported better-than-expected EPS and accelerating revenue growth, while maintaining strong institutional ownership and trading near its 52-week highs, keeping it in favor among analysts.",
+      "source": "MarketBeat",
+      "url": "https://www.marketbeat.com/instant-alerts/consensus-philip-morris-international-inc-nyse-pm-receives-consensus-rating-of-moderate-buy-from-analysts-2026-09-14/"
+    },
+    {
+      "ticker": "MSFT",
+      "day_pct": 1.97,
+      "headline": "Microsoft rose 1.97% Monday amid a steady flow of executive promotions signaling organizational momentum and leadership stability.",
+      "why": "Multiple promotions within the company, including new leadership appointments in key divisions, reinforced investor confidence in the company's operational execution and succession planning.",
+      "source": "GeekWire",
+      "url": "https://www.geekwire.com/2026/tech-moves-microsoft-amazon-and-kestra-promotions-gradial-names-cmo-yoodli-adds-vp/"
     }
   ]
 }
