@@ -1,18 +1,18 @@
 {
   "FSMDX": {
-    "price": 42.4,
-    "prev": 42.04
+    "price": 42.28,
+    "prev": 42.4
   },
   "FSSNX": {
-    "price": 36.45,
-    "prev": 36.29
+    "price": 36.3,
+    "prev": 36.45
   },
   "TLXIX": {
-    "price": 40.21,
-    "prev": 39.92
+    "price": 39.93,
+    "prev": 40.21
   },
   "VFFSX": {
-    "price": 375.42,
-    "prev": 372.2
+    "price": 373.62,
+    "prev": 375.42
   }
 }
