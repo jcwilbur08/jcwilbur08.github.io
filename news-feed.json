@@ -1,85 +1,85 @@
 {
-  "generated_at": "2026-09-15T04:49:11Z",
+  "generated_at": "2026-09-16T04:44:55Z",
   "movers": [
     {
-      "ticker": "GEV",
-      "day_pct": -8.62,
-      "headline": "GE Vernova fell 8.62% Monday as a sell rating from GLJ Research citing cycle concerns weighed on the renewable energy company.",
-      "why": "A research firm downgraded the stock to sell based on concerns about business cycles, prompting investors to reassess the company's near-term prospects.",
+      "ticker": "QCOM",
+      "day_pct": 4.25,
+      "headline": "Qualcomm advanced 4.25% Tuesday as StoneX reiterated a Buy rating, citing strengthening data center exposure and an Amazon partnership for AI infrastructure.",
+      "why": "The analyst maintained conviction on the semiconductor company's strategic positioning in high-growth data center markets, which are offsetting uneven demand elsewhere. Qualcomm's expansion into automotive revenue streams and recent AI collaborations underscore improving leverage despite current valuation concerns.",
       "source": "Investing.com",
-      "url": "https://www.investing.com/news/stock-market-news/ge-vernova-and-corning-among-market-cap-stock-movers-on-monday-93CH-4900190"
-    },
-    {
-      "ticker": "AVGO",
-      "day_pct": -4.77,
-      "headline": "Broadcom declined 4.77% as investors reacted cautiously to a $21.7 billion AI revenue forecast amid broader calls for slower AI model development.",
-      "why": "Despite the company's massive year-over-year AI revenue growth and strong positioning as an alternative to Nvidia, market sentiment shifted as concerns emerged about decelerating AI investment cycles. The stock sold off despite trading below intrinsic value estimates.",
-      "source": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-drops-over-4-21-210015158.html"
-    },
-    {
-      "ticker": "CRM",
-      "day_pct": 4.73,
-      "headline": "Salesforce rose 4.73% Monday, outperforming as sentiment shifted on news of the company's evolved philanthropic strategy.",
-      "why": "The market reacted positively to the company's strategic pivot in corporate giving, reflecting a broader shift toward impact-driven corporate responsibility that resonates with stakeholder interests.",
-      "source": "Forbes",
-      "url": "https://www.forbes.com/sites/jasonwingard/2026/09/14/why-salesforce-stopped-running-its-philanthropy-like-a-company/"
-    },
-    {
-      "ticker": "GS",
-      "day_pct": -3.96,
-      "headline": "Goldman Sachs fell 3.96% Monday as a major institutional investor significantly trimmed its position by over 90%.",
-      "why": "Engineers Gate Manager LP substantially reduced its stake, though the company had recently posted strong earnings and raised its dividend, suggesting the selloff reflected broader portfolio positioning rather than fundamental deterioration.",
-      "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-engineers-gate-manager-lp-trims-holdings-in-the-goldman-sachs-group-inc-gs-2026-09-14/"
+      "url": "https://www.investing.com/news/analyst-ratings/stonex-reiterates-qualcomm-stock-buy-rating-on-data-center-growth-93CH-4901587"
     },
     {
       "ticker": "NFLX",
-      "day_pct": 3.77,
-      "headline": "Netflix rose 3.77% as Evercore boosted its price target, citing live events and shorter-form content as meaningful new growth vectors.",
-      "why": "An analyst upgrade highlighted emerging revenue drivers beyond traditional series and films, noting strong subscriber traction from live promotional events and elevated engagement with short-form clips.",
-      "source": "Yahoo Finance UK",
-      "url": "https://uk.finance.yahoo.com/news/netflix-stock-jumps-wall-street-210425929.html"
-    },
-    {
-      "ticker": "GOOG",
-      "day_pct": 3.06,
-      "headline": "Alphabet gained 3.06% Monday following disclosure that Google Cloud's backlog reached $514 billion on 82% year-over-year revenue growth.",
-      "why": "The company's cloud division is establishing itself as a major long-term growth engine, with its backlog now exceeding Alphabet's total trailing annual revenue and positioning the segment to rival Search as the primary profit driver.",
-      "source": "The Motley Fool",
-      "url": "https://www.fool.com/investing/2026/09/13/sundar-pichai-alphabets-backlog-514-billion/"
-    },
-    {
-      "ticker": "META",
-      "day_pct": 2.71,
-      "headline": "Meta advanced 2.71% as Big Tech's massive bond issuance for AI infrastructure underscores sustained investment commitment despite rising financing costs.",
-      "why": "The company's participation in approximately $220 billion in Big Tech debt issuance signals confidence in AI returns, though the market is pricing in higher financing costs as demand for duration pushes credit spreads wider.",
-      "source": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/big-tech-issued-220-billion-212946047.html"
-    },
-    {
-      "ticker": "BATRA",
-      "day_pct": 2.14,
-      "headline": "Atlanta Braves Holdings gained 2.14% Monday as Baird Financial Group established a new stake of roughly 162,000 shares.",
-      "why": "Institutional investor accumulation provided modest support, though analyst sentiment remains cautious with a consensus hold rating, as recent quarterly results disappointed expectations.",
+      "day_pct": -3.01,
+      "headline": "Netflix declined 3.01% Tuesday following Bank of America's sale of over 20 million shares and reported insider selling activity.",
+      "why": "Bank of America reduced its Netflix position significantly in the second quarter, signaling reduced conviction from a major institutional holder. The move occurs despite the company delivering earnings slightly above expectations, suggesting concerns about execution or valuation relative to the stock's current levels.",
       "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-162983-shares-in-atlanta-braves-holdings-inc-batrk-purchased-by-baird-financial-group-inc-2026-09-14/"
+      "url": "https://www.marketbeat.com/instant-alerts/filing-bank-of-america-corp-de-sells-20485464-shares-of-netflix-inc-nflx-2026-09-15/"
     },
     {
-      "ticker": "PM",
-      "day_pct": 1.99,
-      "headline": "Philip Morris International rose 1.99% Monday, supported by a consensus buy rating and recent earnings that exceeded analyst expectations.",
-      "why": "The company reported better-than-expected EPS and accelerating revenue growth, while maintaining strong institutional ownership and trading near its 52-week highs, keeping it in favor among analysts.",
+      "ticker": "XOM",
+      "day_pct": 2.57,
+      "headline": "ExxonMobil rose 2.57% Tuesday as the company settled cash tender offers for Pioneer Natural Resources debt securities.",
+      "why": "The energy giant completed its acquisition of outstanding senior notes from its wholly-owned subsidiary, executing financial consolidation ahead of schedule. This capital management activity reflects ExxonMobil's progress in integrating and optimizing the Pioneer acquisition.",
+      "source": "Exxon Mobil Corporation",
+      "url": "https://investor.exxonmobil.com/company-information/press-releases/detail/1211/exxonmobil-announces-pricing-terms-expiration-and-results"
+    },
+    {
+      "ticker": "AMZN",
+      "day_pct": -2.02,
+      "headline": "Amazon fell 2.02% Tuesday despite institutional accumulation and maintained Moderate Buy ratings from Wall Street.",
+      "why": "While SSI Investment Management and other institutional investors added to their positions, the broader market sentiment reflected profit-taking or macro headwinds. Analyst support remains constructive around Amazon's advertising momentum and autonomous transportation initiatives, but failed to offset selling pressure.",
       "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/consensus-philip-morris-international-inc-nyse-pm-receives-consensus-rating-of-moderate-buy-from-analysts-2026-09-14/"
+      "url": "https://www.marketbeat.com/instant-alerts/filing-8363-shares-in-amazoncom-inc-amzn-acquired-by-ssi-investment-management-llc-2026-09-15/"
+    },
+    {
+      "ticker": "DIS",
+      "day_pct": -2.0,
+      "headline": "Disney declined 2.00% Tuesday as the company rolled out a new Playlists feature for Disney+ subscribers.",
+      "why": "The streaming platform's introduction of curated content collections and improved discovery tools represents incremental product enhancement rather than a material growth catalyst. This incremental feature was insufficient to drive investor enthusiasm on the day.",
+      "source": "The Walt Disney Company",
+      "url": "https://thewaltdisneycompany.com/news/disney-plus-playlists-curated-viewing/"
+    },
+    {
+      "ticker": "UNH",
+      "day_pct": -1.99,
+      "headline": "UnitedHealth fell 1.99% Tuesday as the company raised concerns about No Surprises Act disputes pressuring its margins.",
+      "why": "The healthcare giant signaled that independent dispute resolution awards to providers are eroding profitability and forcing the company to raise premiums. Management attributed margin pressure to what it views as exploited loopholes in the federal dispute system, raising concerns about cost inflation in commercial coverage.",
+      "source": "Word & Brown General Agency",
+      "url": "https://jrreport.wordandbrown.com/2026/09/15/unitedhealth-aims-to-shine-sunlight-on-no-surprises-act-problems/"
     },
     {
       "ticker": "MSFT",
-      "day_pct": 1.97,
-      "headline": "Microsoft rose 1.97% Monday amid a steady flow of executive promotions signaling organizational momentum and leadership stability.",
-      "why": "Multiple promotions within the company, including new leadership appointments in key divisions, reinforced investor confidence in the company's operational execution and succession planning.",
-      "source": "GeekWire",
-      "url": "https://www.geekwire.com/2026/tech-moves-microsoft-amazon-and-kestra-promotions-gradial-names-cmo-yoodli-adds-vp/"
+      "day_pct": -1.64,
+      "headline": "Microsoft declined 1.64% Tuesday following an 8% dividend increase to $0.98 per share.",
+      "why": "While the company demonstrated commitment to shareholder returns through an above-historical dividend hike, the market treated the announcement as a modest positive that could not overcome broader tech sector headwinds on the day.",
+      "source": "marketscreener.com",
+      "url": "https://www.marketscreener.com/news/microsoft-corporation-declares-quarterly-dividend-payable-on-december-10-2026-ce785bd2d889f423"
+    },
+    {
+      "ticker": "AVGO",
+      "day_pct": -1.58,
+      "headline": "Broadcom fell 1.58% Tuesday as CEO Hock Tan defended ambitious AI revenue targets amid investor skepticism on AI demand.",
+      "why": "Management reiterated bullish fiscal 2027-2028 AI semiconductor projections reaching $230 billion despite recent calls for moderation in AI spending. Tan's conviction on sustained inference demand and the revelation that Anthropic will become a top customer provided support, but failed to fully offset near-term valuation concerns.",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/broadcom-ceo-hock-tan-defends-111113337.html"
+    },
+    {
+      "ticker": "CRM",
+      "day_pct": -1.46,
+      "headline": "Salesforce declined 1.46% Tuesday as the company unveiled Koa, its first CRM reasoning model built with NVIDIA technology.",
+      "why": "Salesforce and NVIDIA announced a new AI reasoning model designed to enhance Agentforce's multi-step workflow capabilities, leveraging decades of CRM data. The product announcement and broader Missionforce collaboration demonstrate AI integration progress, though the market response was muted relative to investor expectations.",
+      "source": "Salesforce",
+      "url": "https://www.salesforce.com/news/press-releases/2026/09/15/koa-reasoning-model/"
+    },
+    {
+      "ticker": "BATRA",
+      "day_pct": 1.34,
+      "headline": "Atlanta Braves Holdings rose 1.34% Tuesday as institutional investors continued adding positions despite recent earnings misses.",
+      "why": "Baird Financial Group acquired approximately 162,983 shares as part of broader institutional buying activity. Despite analyst downgrades and quarterly results falling short, institutional ownership at nearly 65% reflects conviction in the baseball entertainment enterprise's long-term value.",
+      "source": "MarketBeat",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-162983-shares-in-atlanta-braves-holdings-inc-batrk-purchased-by-baird-financial-group-inc-2026-09-14/"
     }
   ]
 }
