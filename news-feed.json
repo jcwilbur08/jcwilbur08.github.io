@@ -1,85 +1,85 @@
 {
-  "generated_at": "2026-09-17T04:48:03Z",
+  "generated_at": "2026-09-18T04:37:34Z",
   "movers": [
     {
-      "ticker": "GEV",
-      "day_pct": 4.79,
-      "headline": "GE Vernova rose 4.79% as analyst coverage emphasizes diversified demand drivers beyond data centers.",
-      "why": "Bernstein's analysis positions GEV as benefiting from broader infrastructure trends spanning electrification, decarbonization, and energy security, supported by a substantial backlog in electrification and gas turbine commitments. While data center growth remains a meaningful accelerator, the company's revenue foundation extends across multiple structural tailwinds.",
-      "source": "Investing.com",
-      "url": "https://m.investing.com/news/stock-market-news/ge-vernova-stock-outlook-beyond-the-data-center-trade-93CH-4901163?ampMode=1"
-    },
-    {
-      "ticker": "GS",
-      "day_pct": -3.96,
-      "headline": "Goldman Sachs fell 3.96% Wednesday after CEO David Solomon signaled weaker fixed-income trading and rising expenses ahead.",
-      "why": "Solomon's third-quarter guidance highlighted softness in the fixed-income, currencies, and commodities business alongside elevated technology investment costs, offsetting strength in equity trading. These forward-looking comments provided early visibility into the bank's earnings dynamics.",
-      "source": "Investing.com",
-      "url": "https://www.investing.com/news/stock-market-news/goldman-sachs-stock-falls-after-ceo-warns-of-softer-trading-4904361"
-    },
-    {
-      "ticker": "AXP",
-      "day_pct": -3.7,
-      "headline": "American Express declined 3.7% despite expanding its premium lounge footprint with the opening of its first continental European Centurion venue.",
-      "why": "Amex inaugurated its 33rd global Centurion Lounge in Amsterdam, featuring locally inspired design and amenities across 6,000 square feet, extending its Global Lounge Collection beyond 1,550 locations. The expansion aligns with consumer preferences for authentic travel experiences.",
-      "source": "Luxury Travel Advisor",
-      "url": "https://www.luxurytraveladvisor.com/transportation/amex-opens-first-continental-europe-centurion-lounge-amsterdam"
-    },
-    {
-      "ticker": "XOM",
-      "day_pct": -3.54,
-      "headline": "ExxonMobil declined 3.54% as focus remains on low-cost upstream growth from Guyana and Permian assets.",
-      "why": "The company is targeting substantial production increases from advantaged assets in Guyana and the Permian, with Guyana's free cash flow projected to double by 2030 and Permian output reaching 2.5 million barrels of oil equivalent daily by that date. These regions are expected to drive total upstream production toward 5.5 million barrels daily, comprising 65% of advantaged supply.",
-      "source": "Yahoo! Finance Canada",
-      "url": "https://ca.finance.yahoo.com/news/exxonmobils-guyana-permian-assets-power-150600361.html"
-    },
-    {
       "ticker": "CRM",
-      "day_pct": -2.0,
-      "headline": "Salesforce decreased 2.0% following its Dreamforce 2026 event unveiling Agentforce and expanded AI initiatives.",
-      "why": "The company showcased its Koa reasoning model developed with Nvidia and broadened partnerships in enterprise AI, marking a strategic shift from per-seat licensing toward a per-action pricing model that positions Salesforce as a data layer for corporate AI deployments. Current market valuation reflects this AI-centric evolution.",
-      "source": "Yahoo! Finance Canada",
-      "url": "https://ca.finance.yahoo.com/news/salesforce-crm-why-latest-attention-180956321.html"
+      "day_pct": -3.07,
+      "headline": "Salesforce fell 3.07% Tuesday as CEO's warnings about AI ethics overshadowed the company's expanding role in artificial intelligence development.",
+      "why": "Marc Benioff used the company's Dreamforce event to caution the industry against repeating social media's mistakes, drawing parallels between past platform harms and potential AI risks. While Salesforce announced AI products and partnerships with major technology firms, the cautionary messaging appeared to weigh on investor sentiment.",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/article/salesforce-ceo-marc-benioff-we-cannot-let-ai-become-social-media-20-165753890.html"
     },
     {
-      "ticker": "NFLX",
-      "day_pct": -1.91,
-      "headline": "Netflix fell 1.91% amid significant insider selling and Bank of America's reduction of its stake by over 20 million shares.",
-      "why": "Bank of America trimmed its Netflix position substantially during the quarter, while aggregate insider selling reached nearly $16 million, signaling confidence constraints despite the streamer reporting earnings modestly ahead of consensus. Analyst sentiment remains constructively tilted toward the name despite these headwinds.",
+      "ticker": "TSM",
+      "day_pct": 3.0,
+      "headline": "Taiwan Semiconductor rose 3.0% Tuesday as its exclusive control over advanced packaging technology reinforces its competitive moat in AI infrastructure.",
+      "why": "The company's dominant position in CoWoS advanced packaging\u2014a critical bottleneck for AI deployments\u2014provides significant pricing leverage independent of its direct AI chip contributions. Strong sequential revenue and margin growth in recent quarters underscore the durability of this competitive advantage.",
+      "source": "24/7 Wall St.",
+      "url": "https://247wallst.com/investing/2026/09/16/taiwan-semiconductor-is-a-no-brainer-buy-on-repeat-and-not-for-the-reason-you-think/"
+    },
+    {
+      "ticker": "AVGO",
+      "day_pct": 2.29,
+      "headline": "Broadcom advanced 2.29% Tuesday as its accelerating AI business and valuation discount relative to peers attract analyst attention.",
+      "why": "The company's year-over-year AI revenue growth substantially exceeds broader semiconductor industry rates, yet it trades at a lower earnings multiple than competitors. Analysts see this disconnect as an opportunity, with price targets implying meaningful upside from current levels.",
+      "source": "24/7 Wall St.",
+      "url": "https://247wallst.com/investing/2026/09/16/this-ai-stock-could-be-worth-far-more-than-investors-think/"
+    },
+    {
+      "ticker": "AMZN",
+      "day_pct": 2.13,
+      "headline": "Amazon climbed 2.13% Tuesday as institutional buying interest and better-than-expected earnings offset operational headwinds.",
+      "why": "A major fund manager initiated a significant position in the company, reflecting sustained institutional confidence despite recent insider selling. The company's latest earnings beat expectations, though near-term challenges from elevated operating costs and service disruptions remain.",
       "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-bank-of-america-corp-de-sells-20485464-shares-of-netflix-inc-nflx-2026-09-15/"
+      "url": "https://www.marketbeat.com/instant-alerts/filing-e-fund-management-co-ltd-takes-position-in-amazoncom-inc-amzn-2026-09-17/"
     },
     {
       "ticker": "QCOM",
-      "day_pct": -1.58,
-      "headline": "Qualcomm declined 1.58% despite surging to a two-month high on its major Amazon multi-generational AI chip collaboration.",
-      "why": "The company secured a transformative deal with AWS potentially valued up to $60 billion for customized AI infrastructure chips, diversifying revenue beyond smartphone dependence and reshaping its growth narrative. The partnership addresses longer-term diversification concerns, though recent quarterly results showed profit and revenue declines.",
+      "day_pct": 2.09,
+      "headline": "Qualcomm rose 2.09% Tuesday even as rival MediaTek overtook it in market capitalization, signaling sector-wide strength in semiconductor infrastructure.",
+      "why": "The competitive shift reflects investor focus on AI infrastructure partnerships rather than traditional handset market dynamics, with major tech companies backing chipmakers positioned for advanced computing. Qualcomm still participates in this broader structural trend.",
       "source": "Foreign Policy Journal",
-      "url": "https://www.foreignpolicyjournal.com/2026/09/16/qualcomm-nasdaq-qcom-hits-two-month-high-as-amazon-ai-chip-deal-reshapes-growth-outlook/"
+      "url": "https://www.foreignpolicyjournal.com/2026/09/17/mediatek-stock-surpasses-qualcomm-nasdaq-qcom-in-market-cap-as-dimensity-9600-pro-targets-premium-smartphone-turf/"
+    },
+    {
+      "ticker": "DIS",
+      "day_pct": -1.53,
+      "headline": "Disney declined 1.53% Tuesday despite leadership appointments aimed at strengthening its streaming and content strategy.",
+      "why": "The company elevated executives to oversee its direct-to-consumer entertainment business and television content development, signaling continued investment in streaming services. The negative price action suggests these organizational moves alone did not offset broader market concerns about the division.",
+      "source": "The Walt Disney Company",
+      "url": "https://thewaltdisneycompany.com/press-releases/adam-smith-named-chairman-direct-to-consumer-disney-entertainment/"
     },
     {
       "ticker": "MSFT",
-      "day_pct": -1.37,
-      "headline": "Microsoft fell 1.37% as an appeals court upheld dismissal of Digital Millennium Copyright Act claims in the developer lawsuit against OpenAI and the software giant.",
-      "why": "The court sided with Microsoft and OpenAI on DMCA liability stemming from allegations of code misuse in training generative AI systems, though traditional copyright claims remain distinct. The favorable ruling narrowed the lawsuit's scope.",
-      "source": "Reuters",
-      "url": "https://www.reuters.com/legal/government/openai-microsoft-fend-off-part-software-developer-lawsuit-over-ai-training-2026-09-16/"
+      "day_pct": 1.52,
+      "headline": "Microsoft rose 1.52% Tuesday as new time limits on free cloud gaming reflect efforts to improve service profitability.",
+      "why": "The company is implementing monthly caps on complimentary Xbox Cloud Gaming usage to better align costs with consumer behavior, affecting roughly 4% of the heaviest users. This move prioritizes unit economics in the gaming division despite potential near-term churn risk.",
+      "source": "Insider Monkey",
+      "url": "https://www.insidermonkey.com/news/microsoft-msft-puts-a-clock-on-free-xbox-cloud-gaming-1837790/"
     },
     {
-      "ticker": "V",
-      "day_pct": -1.25,
-      "headline": "Visa declined 1.25% on the filing of a Form 8K with limited publicly disclosed material changes.",
-      "why": "The payment processor filed a routine 8K on September 15, with available reporting focused on general market data rather than specific operational or financial developments.",
-      "source": "Investing.com India",
-      "url": "https://in.investing.com/news/stock-market-news/form-8k-visa-inc-class-a-for-15-september-93CH-5594000"
+      "ticker": "GEHC",
+      "day_pct": 1.5,
+      "headline": "GE HealthCare edged up 1.5% Tuesday on routine executive equity grants with no apparent new business developments.",
+      "why": "The company awarded its CFO a standard compensation package of shares and derivative securities. The transaction represents standard equity practices and contains no operational or strategic news.",
+      "source": "Kalkine Media",
+      "url": "https://kalkinemedia.com/us/news/announcements/ge-healthcare-cfo-grogan-william-k-granted-31877-derivative-securities-and-75096-shares"
     },
     {
-      "ticker": "PM",
-      "day_pct": -1.24,
-      "headline": "Philip Morris International fell 1.24% despite Goldman Sachs raising its price target to $222.",
-      "why": "Goldman Sachs modestly increased its PM price target and reiterated a Buy rating, reflecting an updated outlook for the tobacco company's fundamentals.",
-      "source": "www.marketscreener.com",
-      "url": "https://www.marketscreener.com/news/goldman-sachs-adjusts-philip-morris-international-pt-to-222-from-220-maintains-buy-rating-ce785bdddf89f721"
+      "ticker": "NFLX",
+      "day_pct": -1.44,
+      "headline": "Netflix fell 1.44% Tuesday as Florida regulators sued the company over alleged data collection deception tied to its advertising business.",
+      "why": "The state's Attorney General claims Netflix violated consumer protection laws by promising ad-free subscriptions while simultaneously building infrastructure to harvest granular user data for advertising purposes. The lawsuit seeks injunctive relief and financial penalties under state statutes.",
+      "source": "Top Class Actions",
+      "url": "https://topclassactions.com/lawsuit-settlements/lawsuit-news/florida-sues-netflix-claims-company-misled-consumers-about-data-collection/"
+    },
+    {
+      "ticker": "GS",
+      "day_pct": 1.44,
+      "headline": "Goldman Sachs rose 1.44% Tuesday as it expands engineering capabilities in Seattle-area tech hub for AI and cloud transformation.",
+      "why": "The investment bank opened a dedicated engineering office in Bellevue employing over 125 people, reflecting strategic focus on artificial intelligence and cloud infrastructure development. Leadership emphasized the move's importance in attracting advanced technical talent.",
+      "source": "The Business Journals",
+      "url": "https://www.bizjournals.com/seattle/news/2026/09/17/goldman-sachs-bellevue-office-david-solomon.html"
     }
   ]
 }
