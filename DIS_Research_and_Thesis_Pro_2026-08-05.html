@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DIS Research & Thesis Pro (Final) - August 5, 2026</title>
+<style>
+  :root {
+    --navy:#0b1f33;
+    --navy2:#13324f;
+    --gold:#c89b3c;
+    --teal:#167c80;
+    --green:#13734f;
+    --red:#a33a3a;
+    --amber:#a86412;
+    --ink:#17212b;
+    --muted:#5d6a76;
+    --line:#d8dee5;
+    --soft:#f4f7f9;
+    --soft2:#edf2f5;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box}
+  html{font-size:10.5pt}
+  body{margin:0;background:#e9eef2;color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.42}
+  a{color:#175d8d;text-decoration:none;word-break:break-word}
+  .report{max-width:8.5in;margin:0 auto;background:#fff;box-shadow:0 0 18px rgba(0,0,0,.11)}
+  .page{padding:.43in .62in .34in;position:relative}
+  .cover{min-height:10.0in;background:linear-gradient(145deg,var(--navy),#0d2944 58%,#173b5c);color:#fff;padding:.75in .7in .6in;display:flex;flex-direction:column;justify-content:space-between}
+  .cover .eyebrow{letter-spacing:.16em;text-transform:uppercase;color:#d5e1ea;font-size:8.8pt;font-weight:700}
+  .cover h1{font-size:31pt;line-height:1.03;margin:.18in 0 .12in;font-weight:800;max-width:7in}
+  .cover .subtitle{font-size:15pt;color:#dbe7ef;margin:0;max-width:6.5in}
+  .cover .draft-pill{display:inline-block;margin-top:.3in;background:#ffdca0;color:#532f00;border-radius:20px;padding:7px 13px;font-weight:800;font-size:9.5pt;letter-spacing:.04em}
+  .cover-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:.38in}
+  .cover-card{background:rgba(255,255,255,.095);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:13px 12px;min-height:82px}
+  .cover-card .label{font-size:7.8pt;text-transform:uppercase;letter-spacing:.08em;color:#c7d6e0;font-weight:700}
+  .cover-card .value{font-size:17pt;margin-top:5px;font-weight:800;color:#fff}
+  .cover-card .small{font-size:8.3pt;color:#d9e4eb;margin-top:2px}
+  .cover-bottom{border-top:1px solid rgba(255,255,255,.25);padding-top:18px;display:grid;grid-template-columns:1.5fr 1fr;gap:18px;font-size:8.5pt;color:#d8e2e9}
+  .section-title{font-size:18pt;line-height:1.15;color:var(--navy);margin:0 0 8px;border-bottom:3px solid var(--gold);padding-bottom:7px}
+  .subhead{font-size:12.5pt;color:var(--navy2);margin:17px 0 7px;font-weight:800}
+  .kicker{text-transform:uppercase;letter-spacing:.11em;font-size:7.8pt;color:var(--teal);font-weight:800;margin-bottom:4px}
+  .lede{font-size:11.2pt;color:#273746;margin:0 0 13px}
+  p{margin:6px 0 9px}
+  ul{margin:5px 0 10px 19px;padding:0}
+  li{margin:3px 0}
+  .draft-banner{background:#fff5e5;border-left:5px solid #d58a1e;padding:12px 14px;margin:0 0 16px;color:#5b3a0b;border-radius:4px}
+  .draft-banner strong{color:#3e2504}
+  .summary-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:14px;align-items:start}
+  .card{border:1px solid var(--line);border-radius:8px;padding:13px 14px;background:#fff;break-inside:avoid}
+  .card.soft{background:var(--soft)}
+  .card h3{font-size:11.5pt;color:var(--navy);margin:0 0 7px}
+  .callout{border-left:4px solid var(--teal);background:#eff8f7;padding:12px 14px;margin:11px 0;border-radius:3px}
+  .callout.gold{border-left-color:var(--gold);background:#fbf7ed}
+  .callout.red{border-left-color:var(--red);background:#fbf0f0}
+  .callout.green{border-left-color:var(--green);background:#eef8f3}
+  .scorecard{width:100%;border-collapse:collapse;margin:7px 0 12px;font-size:9pt}
+  .scorecard th,.scorecard td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+  .scorecard th{background:var(--navy);color:#fff;text-align:left;font-size:8.2pt;letter-spacing:.02em}
+  .scorecard tr:nth-child(even) td{background:#f7f9fa}
+  .scorecard .num{text-align:right;white-space:nowrap}
+
+  .scorecard thead{display:table-header-group}
+  .scorecard tr{break-inside:avoid;page-break-inside:avoid}
+  .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin:10px 0 15px}
+  .metric{background:var(--soft);border:1px solid #dde4e9;border-radius:7px;padding:10px 10px;min-height:69px;break-inside:avoid}
+  .metric .m-label{font-size:7.5pt;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:800}
+  .metric .m-value{font-size:15pt;color:var(--navy);font-weight:800;margin-top:3px}
+  .metric .m-note{font-size:7.8pt;color:var(--muted);margin-top:2px}
+  .rating{display:inline-block;padding:4px 8px;border-radius:4px;font-weight:800;font-size:8.5pt}
+  .rating.add{background:#dff2e9;color:#0b6543}
+  .rating.hold{background:#edf1f4;color:#43515c}
+  .rating.watch{background:#fff0d7;color:#8a4d00}
+  .rating.trim{background:#f8e3e3;color:#8a2e2e}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:13px}
+  .three-col{display:grid;grid-template-columns:repeat(3,1fr);gap:11px}
+  .thesis-box{border-top:4px solid var(--teal);background:#f6fafb;padding:12px 13px;border-radius:5px;min-height:130px;break-inside:avoid}
+  .thesis-box.bear{border-top-color:var(--red)}
+  .thesis-box h3{margin:0 0 6px;color:var(--navy);font-size:11pt}
+  .chart{border:1px solid var(--line);border-radius:8px;padding:12px 14px;margin:12px 0;background:#fff;break-inside:avoid}
+  .chart h3{font-size:11pt;margin:0 0 5px;color:var(--navy)}
+  .chart .caption{font-size:7.8pt;color:var(--muted);margin-top:6px}
+  .bar-row{display:grid;grid-template-columns:115px 1fr 58px;gap:9px;align-items:center;margin:8px 0;font-size:8.6pt}
+  .bar-track{height:17px;background:#edf1f4;border-radius:4px;position:relative;overflow:hidden}
+  .bar-fill{height:100%;border-radius:4px;background:var(--teal)}
+  .bar-fill.red{background:#b94b4b}
+  .bar-fill.gold{background:#c99b3f}
+  .bar-fill.navy{background:#294f70}
+  .bar-value{text-align:right;font-weight:800}
+  .relative-wrap{position:relative;margin:10px 0 0}
+  .relative-axis{position:absolute;left:46%;top:0;bottom:0;border-left:1px solid #7b8790}
+  .relative-row{display:grid;grid-template-columns:92px 1fr 58px;gap:8px;align-items:center;margin:9px 0;font-size:8.7pt}
+  .relative-track{height:18px;background:#f0f3f5;position:relative;border-radius:4px;overflow:hidden}
+  .relative-track .neg{position:absolute;right:54%;height:100%;background:#b94b4b;border-radius:4px 0 0 4px}
+  .relative-track .pos{position:absolute;left:46%;height:100%;background:#1c7b69;border-radius:0 4px 4px 0}
+  .zone{display:flex;height:32px;border-radius:6px;overflow:hidden;border:1px solid #cfd8df;margin:10px 0 6px}
+  .zone span{display:flex;align-items:center;justify-content:center;font-size:7.3pt;font-weight:800;text-align:center;padding:0 3px}
+  .zone .z1{width:20%;background:#d8eee4;color:#0c563a}
+  .zone .z2{width:16%;background:#e7f3ec;color:#195f44}
+  .zone .z3{width:28%;background:#eef1f4;color:#49555f}
+  .zone .z4{width:22%;background:#fff0d8;color:#80500c}
+  .zone .z5{width:14%;background:#f4dddd;color:#7d2929}
+  .price-marker{position:relative;height:26px;margin:0 0 5px}
+  .price-marker .line{position:absolute;top:0;height:18px;border-left:2px solid var(--navy)}
+  .price-marker .tag{position:absolute;top:12px;transform:translateX(-50%);font-size:7pt;font-weight:800;color:var(--navy);white-space:nowrap}
+  .scenario{border:1px solid var(--line);border-radius:7px;padding:12px;break-inside:avoid}
+  .scenario h3{margin:0 0 7px;font-size:11pt}
+  .scenario.bear h3{color:var(--red)}
+  .scenario.base h3{color:var(--navy)}
+  .scenario.bull h3{color:var(--green)}
+  .scenario .target{font-size:20pt;font-weight:800;margin:4px 0;color:var(--navy)}
+  .scenario .ret{font-size:9pt;font-weight:700}
+  .pill{display:inline-block;padding:3px 7px;border-radius:12px;background:#edf2f5;color:#42515d;font-size:7.5pt;font-weight:700;margin:2px 3px 2px 0}
+  .checkpoint{display:grid;grid-template-columns:105px 1fr 1fr;gap:0;border:1px solid var(--line);border-bottom:none;font-size:8.5pt}
+  .checkpoint:last-child{border-bottom:1px solid var(--line)}
+  .checkpoint div{padding:8px;border-right:1px solid var(--line)}
+  .checkpoint div:last-child{border-right:none}
+  .checkpoint .when{font-weight:800;background:#f2f5f7;color:var(--navy)}
+  .footer{position:fixed;bottom:.12in;left:.62in;right:.62in;border-top:1px solid #d8dee5;padding-top:4px;font-size:6.8pt;color:#78838c;text-align:center;background:#fff}
+  .sources{font-size:8.2pt}
+  .sources-page{padding-top:.12in}
+  .sources-page .sources{font-size:7.65pt;line-height:1.28}
+  .sources-page .sources li{margin:3px 0}
+  .sources-page .small{font-size:7.25pt;line-height:1.28}
+  .sources-page .subhead{margin-top:10px}
+  .sources li{margin:5px 0}
+  .note{font-size:7.6pt;color:var(--muted)}
+  .small{font-size:8.3pt}
+  .strong{font-weight:800}
+  .right{text-align:right}
+  .nowrap{white-space:nowrap}
+  .page-break{break-before:auto;page-break-before:auto}
+  .avoid{break-inside:avoid}
+  .toc{columns:2;column-gap:30px;font-size:9pt}
+  .toc div{break-inside:avoid;border-bottom:1px dotted #cbd4db;padding:5px 0}
+  .toc span{float:right;color:var(--muted)}
+  @page{size:Letter;margin:.22in 0 .58in 0}
+  @media print{
+    body{background:#fff}
+    .report{max-width:none;box-shadow:none}
+    .page{padding:.42in .62in .33in}
+    .cover{min-height:10.0in}
+    a{color:#175d8d}
+  }
+</style>
+</head>
+<body>
+<div class="report">
+
+<section class="cover">
+  <div>
+    <div class="eyebrow">Research & Thesis Pro</div>
+    <h1>The Walt Disney Company</h1>
+    <p class="subtitle">DIS - Institutional-quality equity research and portfolio thesis update</p>
+    <span class="draft-pill">FINAL - PUBLICATION READY</span>
+
+    <div class="cover-grid">
+      <div class="cover-card"><div class="label">Recommendation</div><div class="value">ADD</div><div class="small">Valuation disciplined</div></div>
+      <div class="cover-card"><div class="label">Reference Price</div><div class="value">$99.93</div><div class="small">Aug. 5, 12:26 p.m. ET - IEX</div></div>
+      <div class="cover-card"><div class="label">12-18M Target</div><div class="value">$128</div><div class="small">$120-$135 fair-value range</div></div>
+      <div class="cover-card"><div class="label">Conviction</div><div class="value">7 / 10</div><div class="small">Positive, not fully de-risked</div></div>
+    </div>
+  </div>
+
+  <div class="cover-bottom">
+    <div>
+      <strong>Portfolio source:</strong> retirement-portfolio-13.xlsx, explicitly designated as the current portfolio baseline. The workbook does not contain an internal portfolio as-of date.<br/>
+      <strong>Market reference:</strong> $99.93 IEX trade at approximately 12:26 p.m. ET on August 5, 2026. Shares opened at $102.05, reached $103.19, and remained above the August 4 official close of $98.16 after the earnings call.
+    </div>
+    <div class="right">
+      Prepared August 5, 2026<br/>
+      Finalized approximately 12:30 p.m. ET<br/>
+      Approved for Portfolio Command Center publication
+    </div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="draft-banner"><strong>Final earnings-call refresh completed.</strong> This report incorporates Disney's Q3 FY2026 earnings materials, Form 10-Q, management commentary from the August 5 call as reported across multiple contemporaneous sources, and the post-call market reaction through approximately 12:26 p.m. ET. Disney had not yet posted its official transcript at the finalization cutoff; call takeaways were cross-checked and are presented as paraphrases rather than verbatim quotations.</div>
+
+  <div class="kicker">Decision summary</div>
+  <h2 class="section-title">Executive Summary</h2>
+  <p class="lede"><strong>Disney's turnaround has progressed from cost repair to earnings, cash-flow, and product-strategy validation.</strong> Q3 adjusted EPS rose 28%, segment operating income rose 21%, and quarterly free cash flow rose 63%. The earnings call reinforced resilient domestic parks demand, lower streaming churn, and a broader plan to make Disney+ the company's digital centerpiece, potentially including a free ad-supported entry point, short-form fan content, games, merchandise, and experiences. The offset is unchanged: Sports operating income fell 17%, content remains hit-driven, and the balance sheet must fund approximately $9 billion of annual capital spending while management repurchases at least $9 billion of stock.</p>
+
+  <div class="summary-grid">
+    <div class="card soft">
+      <h3>Investment stance</h3>
+      <p><span class="rating add">ADD - valuation disciplined</span></p>
+      <p>For the existing 1.16% workbook allocation, add only in tranches in the <strong>$93-$102</strong> range. A decline below <strong>$92</strong> would create a stronger risk/reward entry if the operating thesis remains intact. Do not chase above $110 without estimate upgrades.</p>
+      <p><strong>Suggested sizing:</strong> increase toward approximately 1.5% of the investable securities sleeve, with a 2.0% ceiling until FY2027 proves that streaming margin expansion and Sports economics can coexist.</p>
+    </div>
+    <div class="card">
+      <h3>What changed in Q3 and on the call</h3>
+      <ul>
+        <li>Entertainment operating income rose 64%; SVOD operating income more than doubled to $712 million.</li>
+        <li>Management highlighted lower streaming churn and is exploring a free, ad-supported Disney+ entry point.</li>
+        <li>Disney+ is being repositioned as a digital centerpiece spanning video, games, merchandise, experiences, and curated fan content.</li>
+        <li>Experiences operating income rose 20%; U.S. attendance increased 3% and per-capita spending increased 4%.</li>
+        <li>Sports operating income fell 17% as rights costs and NBA playoff timing outweighed strong ratings and advertising demand.</li>
+        <li>FY2026 repurchases increased to at least $9 billion; FY2027 normalized adjusted EPS remains guided to double-digit growth.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><div class="m-label">Workbook Shares</div><div class="m-value">196.17</div><div class="m-note">DIS position</div></div>
+    <div class="metric"><div class="m-label">Average Cost</div><div class="m-value">$80.39</div><div class="m-note">$15,770 cost basis</div></div>
+    <div class="metric"><div class="m-label">Value at $99.93</div><div class="m-value">$19,602</div><div class="m-note">+24.3% unrealized</div></div>
+    <div class="metric"><div class="m-label">Annual Dividend</div><div class="m-value">$294</div><div class="m-note">At $1.50 per share</div></div>
+  </div>
+
+  <table class="scorecard">
+    <thead><tr><th>Dimension</th><th>Assessment</th><th>Implication</th></tr></thead>
+    <tbody>
+      <tr><td>Business quality</td><td><strong>High</strong> - global IP, parks, streaming, sports, consumer products</td><td>A rare multi-channel monetization flywheel</td></tr>
+      <tr><td>Earnings momentum</td><td><strong>Improving</strong> - Q3 adjusted EPS +28%; FY2026 guidance reinforced</td><td>Turnaround is becoming financially visible</td></tr>
+      <tr><td>Valuation</td><td><strong>Attractive</strong> - approximately 14.5x FY2026E adjusted EPS at $99.93</td><td>Provides room for both EPS growth and modest re-rating</td></tr>
+      <tr><td>Balance sheet</td><td><strong>Manageable, not pristine</strong> - simplified net debt approximately $40.9 billion</td><td>Limits tolerance for a prolonged FCF shortfall</td></tr>
+      <tr><td>Income role</td><td><strong>Secondary</strong> - approximately 1.5% dividend yield</td><td>Total-return satellite, not a retirement-income anchor</td></tr>
+      <tr><td>Thesis status</td><td><strong>Strengthening</strong>, but Sports and FY2027 execution remain unproven</td><td>Add modestly; preserve a position-size ceiling</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Report map</div>
+  <h2 class="section-title">Contents and Rating Framework</h2>
+  <div class="toc">
+    <div>1. Executive summary <span>Decision</span></div>
+    <div>2. Portfolio context <span>Position</span></div>
+    <div>3. Core investment thesis <span>Why own</span></div>
+    <div>4. Q3 FY2026 review <span>Results</span></div>
+    <div>5. Segment analysis <span>Drivers</span></div>
+    <div>6. Business quality and moat <span>Durability</span></div>
+    <div>7. Management and capital allocation <span>Execution</span></div>
+    <div>8. Financial outlook <span>Forecast</span></div>
+    <div>9. Valuation and scenarios <span>Price</span></div>
+    <div>10. Catalysts and checkpoints <span>Timing</span></div>
+    <div>11. Risks and thesis-break conditions <span>Discipline</span></div>
+    <div>12. Portfolio fit and expected returns <span>Allocation</span></div>
+    <div>13. Final recommendation <span>Action</span></div>
+    <div>14. Sources and methodology <span>Audit</span></div>
+  </div>
+
+  <h3 class="subhead">Recommendation scale</h3>
+  <table class="scorecard">
+    <thead><tr><th>Rating</th><th>Meaning</th><th>Typical action</th></tr></thead>
+    <tbody>
+      <tr><td>Strong Add</td><td>Material upside with strong operating evidence and attractive valuation</td><td>Build aggressively within risk limits</td></tr>
+      <tr><td><strong>Add</strong></td><td>Attractive expected return, but one or more material execution risks remain</td><td>Add in tranches; preserve sizing discipline</td></tr>
+      <tr><td>Hold</td><td>Reasonable value or thesis intact, but expected return is not compelling enough to add</td><td>Maintain; await better price or evidence</td></tr>
+      <tr><td>Watch</td><td>Thesis uncertainty elevated or valuation unappealing</td><td>No new capital; defined checkpoints</td></tr>
+      <tr><td>Trim / Exit</td><td>Risk-reward deteriorated, thesis broken, or position oversized</td><td>Reduce or close</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout gold"><strong>Why the rating is Add rather than Hold.</strong> The combination of a small existing portfolio weight, low-teens forward P/E, approximately 12%-16% FY2026 adjusted EPS growth, double-digit FY2027 guidance, and a buyback equal to roughly 5% of market capitalization creates an attractive expected-return setup. The rating is not Strong Add because Sports economics, capital intensity, and post-53rd-week growth still require proof.</div>
+
+  <h3 class="subhead">Action zones</h3>
+  <div class="zone"><span class="z1">STRONG ADD<br/>below $92</span><span class="z2">ADD<br/>$93-$102</span><span class="z3">HOLD<br/>$103-$125</span><span class="z4">WATCH / SELECTIVE TRIM<br/>$126-$145</span><span class="z5">TRIM<br/>above $145</span></div>
+  <div class="price-marker">
+    <div class="line" style="left:32.6%;border-color:#a86412"></div><div class="tag" style="left:32.6%;color:#a86412">$99.93 post-call</div>
+    <div class="line" style="left:65.7%;border-color:#167c80"></div><div class="tag" style="left:65.7%;color:#167c80">$128 target</div>
+  </div>
+  <p class="note">Price zones are valuation guidelines, not automatic trading instructions. Operating evidence overrides price alone.</p>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Position-specific analysis</div>
+  <h2 class="section-title">Portfolio Context</h2>
+  <p>The portfolio workbook shows a <strong>196.17-share</strong> DIS position with a <strong>$15,770</strong> cost basis and a <strong>1.16%</strong> allocation to the workbook's investable securities sleeve. At the August 5 publication reference of $99.93, the position is worth approximately <strong>$19,602</strong>, an unrealized gain of <strong>$3,832</strong> or <strong>24.3%</strong>.</p>
+
+  <div class="two-col">
+    <div class="card soft">
+      <h3>Role in the retirement portfolio</h3>
+      <ul>
+        <li><strong>Total-return satellite:</strong> returns should come primarily from EPS growth, buybacks, and valuation normalization.</li>
+        <li><strong>Consumer / media diversification:</strong> exposure differs from the portfolio's larger technology, financial, industrial, and utility holdings.</li>
+        <li><strong>Inflation sensitivity:</strong> pricing power in parks and experiences helps, but discretionary demand and capital spending remain cyclical.</li>
+        <li><strong>Income contribution:</strong> approximately $294 annually is useful but not portfolio-defining.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Sizing recommendation</h3>
+      <p><strong>Current:</strong> 1.16% of the workbook securities sleeve.</p>
+      <p><strong>Recommended near-term range:</strong> 1.25%-1.50% if shares remain at or below $102; the Q3 call supports, rather than undermines, the operating thesis.</p>
+      <p><strong>Interim ceiling:</strong> 2.0% until FY2027 evidence confirms sustainable streaming profitability, stable Experiences demand, and normalized Sports margins.</p>
+      <p><strong>Funding:</strong> prefer incremental cash or trims from lower-conviction single-name holdings rather than reducing broad diversification ETFs.</p>
+    </div>
+  </div>
+
+  <div class="chart">
+    <h3>Relative price performance - Disney has lagged despite improving fundamentals</h3>
+    <div class="relative-wrap">
+      <div class="relative-axis"></div>
+      <div class="relative-row"><div>DIS - 1 year</div><div class="relative-track"><div class="neg" style="width:35.6%"></div></div><div class="bar-value" style="color:#a33a3a">-17.8%</div></div>
+      <div class="relative-row"><div>SPY - 1 year</div><div class="relative-track"><div class="pos" style="width:44.4%"></div></div><div class="bar-value" style="color:#13734f">+22.2%</div></div>
+      <div class="relative-row"><div>DIS - 2026 YTD</div><div class="relative-track"><div class="neg" style="width:24.4%"></div></div><div class="bar-value" style="color:#a33a3a">-12.2%</div></div>
+      <div class="relative-row"><div>SPY - 2026 YTD</div><div class="relative-track"><div class="pos" style="width:25.6%"></div></div><div class="bar-value" style="color:#13734f">+12.8%</div></div>
+    </div>
+    <div class="caption">Price-only returns using Alpaca IEX closing bars: August 4, 2025 to August 4, 2026; YTD from January 2, 2026. Dividends excluded. Relative underperformance creates opportunity only if estimates remain durable.</div>
+  </div>
+
+  <div class="callout"><strong>Portfolio-manager view.</strong> The existing cost basis is favorable, but it should not become an anchor. The relevant question is whether the next dollar invested at roughly $100-$102 can earn a superior risk-adjusted return. On current guidance, the answer is yes - modestly - which supports an Add rather than a passive Hold.</div>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Why own the stock</div>
+  <h2 class="section-title">Core Investment Thesis</h2>
+
+  <div class="three-col">
+    <div class="thesis-box"><h3>1. A unique IP monetization flywheel</h3><p>Disney can monetize the same intellectual property through theatrical releases, streaming, television, merchandise, licensing, parks, resorts, and cruises. Few peers possess this breadth or the operational infrastructure to extend a franchise across so many channels.</p></div>
+    <div class="thesis-box"><h3>2. Streaming profitability is now material</h3><p>Q3 SVOD operating income of $712 million and a 12.9% margin indicate that direct-to-consumer is moving beyond break-even. Subscriber growth, pricing, bundling, and advertising create multiple levers.</p></div>
+    <div class="thesis-box"><h3>3. Experiences funds the transition</h3><p>Experiences generated $3.0 billion of Q3 operating income, up 20%. Parks, resorts, cruises, and consumer products provide durable cash generation while media distribution models evolve.</p></div>
+    <div class="thesis-box"><h3>4. ESPN remains strategically scarce</h3><p>Live sports remains one of the few forms of premium, time-sensitive content. ESPN's brand, rights portfolio, advertising reach, and bundling power are valuable even as rights inflation pressures near-term margins.</p></div>
+    <div class="thesis-box"><h3>5. Capital allocation is accretive</h3><p>At least $9 billion of FY2026 repurchases equates to roughly 5.3% of the August 4 equity value. Repurchasing stock at approximately 14x forward adjusted EPS can materially enhance per-share growth.</p></div>
+    <div class="thesis-box"><h3>6. New leadership fits the asset base</h3><p>Josh D'Amaro's operating background in Experiences aligns with Disney's highest-quality cash engine. The key test is whether he can apply that operating discipline to content, streaming, sports rights, and capital allocation.</p></div>
+  </div>
+
+  <h3 class="subhead">The variant perception</h3>
+  <p>The market continues to value Disney as a difficult mix of declining linear networks, hit-driven studios, expensive sports rights, and capital-intensive theme parks. The more constructive view is that Disney is becoming a two-engine compounder: <strong>high-return Experiences plus increasingly profitable streaming</strong>, supported by ESPN's scarcity value and a powerful share-repurchase program. If this shift is sustained, a mid-to-high teens earnings multiple is defensible; at approximately 14x normalized FY2026 adjusted EPS, the stock does not require heroic assumptions.</p>
+
+  <div class="two-col">
+    <div class="callout green"><strong>Bullish evidence.</strong><ul><li>Q3 segment operating income +21%.</li><li>SVOD operating income more than doubled.</li><li>Experiences operating income +20%.</li><li>Quarterly FCF +63%.</li><li>FY2027 adjusted EPS still expected to grow double digits on a normalized basis.</li></ul></div>
+    <div class="callout red"><strong>Evidence against the thesis.</strong><ul><li>Sports operating income -17%.</li><li>Approximately $9 billion of annual capex raises execution and cycle risk.</li><li>Content performance remains volatile and franchise-dependent.</li><li>Simplified net debt is approximately $40.9 billion.</li><li>The 53rd week flatters reported FY2026 growth.</li></ul></div>
+  </div>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Latest quarter</div>
+  <h2 class="section-title">Q3 FY2026 Earnings Review</h2>
+  <p class="lede">The quarter ended June 27, 2026. Adjusted results were substantially stronger than the GAAP EPS comparison, which was distorted by prior-year tax benefits and current-period impairment and severance items.</p>
+
+  <table class="scorecard">
+    <thead><tr><th>Q3 metric</th><th class="num">Q3 FY2026</th><th class="num">Q3 FY2025</th><th class="num">Change</th><th>Read-through</th></tr></thead>
+    <tbody>
+      <tr><td>Revenue</td><td class="num">$25.248B</td><td class="num">$23.650B</td><td class="num">+7%</td><td>Broad growth across segments</td></tr>
+      <tr><td>Income before taxes</td><td class="num">$3.645B</td><td class="num">$3.211B</td><td class="num">+14%</td><td>Operating improvement outweighed below-the-line noise</td></tr>
+      <tr><td>Total segment operating income</td><td class="num">$5.555B</td><td class="num">$4.575B</td><td class="num">+21%</td><td>Core operating momentum is stronger than revenue growth</td></tr>
+      <tr><td>GAAP diluted EPS</td><td class="num">$1.51</td><td class="num">$2.92</td><td class="num">-48%</td><td>Not the best measure because of unusual items</td></tr>
+      <tr><td>Adjusted EPS</td><td class="num">$2.06</td><td class="num">$1.61</td><td class="num">+28%</td><td>High-quality per-share growth</td></tr>
+      <tr><td>Cash from operations</td><td class="num">$4.866B</td><td class="num">$3.669B</td><td class="num">+33%</td><td>Strong conversion in the quarter</td></tr>
+      <tr><td>Free cash flow</td><td class="num">$3.072B</td><td class="num">$1.889B</td><td class="num">+63%</td><td>Supports repurchases and investment</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="subhead">Earnings-call and Q&amp;A read-through</h3>
+  <table class="scorecard">
+    <thead><tr><th>Call topic</th><th>Management message</th><th>Analytical read-through</th></tr></thead>
+    <tbody>
+      <tr><td>Disney+ product strategy</td><td>Management is exploring a free, ad-supported entry point and intends to make Disney+ a broader digital centerpiece that can integrate games, merchandise, experiences, and fan content.</td><td>Potentially expands reach and lifetime value, but execution must avoid ARPU dilution and product complexity.</td></tr>
+      <tr><td>Streaming economics</td><td>Streaming revenue rose 11%, subscription pricing and volume remained favorable, and customer churn declined.</td><td>Supports the view that profitability can expand without relying solely on price increases; churn and engagement are now central checkpoints.</td></tr>
+      <tr><td>Distribution partnerships</td><td>The TikTok partnership will bring curated short-form fan content into Disney+, and management remains open to selective third-party streaming collaborations following the HBO Max relationship.</td><td>Shows a more pragmatic, platform-neutral distribution posture that can improve discovery and monetize IP beyond traditional windows.</td></tr>
+      <tr><td>Domestic parks demand</td><td>U.S. park attendance increased 3%, per-capita spending increased 4%, and forward bookings remained robust despite weak international visitation.</td><td>Confirms domestic demand resilience and pricing power; international mix and promotional intensity remain watch items.</td></tr>
+      <tr><td>Sports and ESPN</td><td>Strong ratings and advertising demand - including sold-out Super Bowl inventory - did not prevent a 17% decline in Sports operating income because rights costs and playoff timing rose faster than revenue.</td><td>ESPN remains strategically scarce, but the call did not resolve the core question of incremental return on escalating rights commitments.</td></tr>
+      <tr><td>Content slate</td><td>Toy Story 5 demonstrated the full franchise flywheel across box office, streaming engagement, merchandise, and parks, while weaker performance from selected Star Wars and live-action titles highlighted slate volatility.</td><td>The IP engine is powerful but not self-executing; portfolio-level content ROI matters more than any single hit.</td></tr>
+      <tr><td>Capital allocation</td><td>The $1.2 billion A+E sale supports incremental repurchases, and the FY2026 buyback target is now at least $9 billion.</td><td>Accretive near the current valuation, provided FCF remains above $10 billion and net debt does not rise.</td></tr>
+    </tbody>
+  </table>
+  <div class="callout green"><strong>Call impact on recommendation.</strong> The earnings call strengthens the streaming-product and domestic-Experiences components of the thesis, while leaving the Sports and content-volatility risks substantially unchanged. The final rating remains <strong>Add - valuation disciplined</strong>, with conviction unchanged at <strong>7/10</strong>.</div>
+
+  <div class="chart">
+    <h3>Q3 segment operating income growth</h3>
+    <div class="bar-row"><div>Entertainment</div><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><div class="bar-value">+64%</div></div>
+    <div class="bar-row"><div>Experiences</div><div class="bar-track"><div class="bar-fill gold" style="width:31.3%"></div></div><div class="bar-value">+20%</div></div>
+    <div class="bar-row"><div>Sports</div><div class="bar-track"><div class="bar-fill red" style="width:26.6%"></div></div><div class="bar-value" style="color:#a33a3a">-17%</div></div>
+    <div class="caption">The quarter's strongest earnings leverage came from Entertainment and streaming. Sports is the principal earnings-quality counterweight.</div>
+  </div>
+
+  <h3 class="subhead">What was working</h3>
+  <div class="two-col">
+    <div class="card"><h3>Profitability and mix</h3><ul><li>Entertainment operating income rose much faster than revenue.</li><li>SVOD subscription fees increased 15%, supported by subscribers and pricing.</li><li>Experiences benefited from attendance, per-capita spending, and cruise capacity.</li><li>Consumer Products benefited from franchise demand.</li></ul></div>
+    <div class="card"><h3>Cash and capital allocation</h3><ul><li>Quarterly cash from operations rose 33%.</li><li>Quarterly FCF rose 63%.</li><li>Management raised the FY2026 repurchase target to at least $9 billion.</li><li>A+E sale proceeds are intended for incremental repurchases.</li></ul></div>
+  </div>
+
+  <h3 class="subhead">What was weakening</h3>
+  <div class="two-col">
+    <div class="card"><h3>Sports economics</h3><ul><li>Programming and production costs rose 10%.</li><li>New rights and NBA timing pressured margins.</li><li>Sports operating income declined despite revenue growth.</li></ul></div>
+    <div class="card"><h3>Content and advertising</h3><ul><li>Q4 film contribution is expected to be softer from live-action Moana.</li><li>Domestic SVOD advertising is soft.</li><li>Content success remains uneven and difficult to forecast quarter to quarter.</li></ul></div>
+  </div>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Operating engines</div>
+  <h2 class="section-title">Segment Analysis</h2>
+
+  <h3 class="subhead">Entertainment - turnaround engine</h3>
+  <table class="scorecard">
+    <thead><tr><th>Q3 FY2026</th><th class="num">Revenue</th><th class="num">Operating income</th><th class="num">YoY OI</th><th>Assessment</th></tr></thead>
+    <tbody><tr><td>Entertainment</td><td class="num">$11.345B</td><td class="num">$1.680B</td><td class="num">+64%</td><td>Improving mix and streaming economics</td></tr><tr><td>SVOD</td><td class="num">$5.532B</td><td class="num">$0.712B</td><td class="num">More than doubled</td><td>12.9% operating margin</td></tr></tbody>
+  </table>
+  <p><strong>Positive:</strong> streaming is developing real scale economics. Subscriber growth, effective pricing, advertising inventory, and bundling can support continued margin expansion. The reclassification of Consumer Products into Entertainment beginning Q1 FY2027 should better align franchise creation with downstream monetization.</p>
+  <p><strong>Concern:</strong> theatrical and licensing results remain hit-driven. A few underperforming releases can create meaningful quarterly volatility, and domestic streaming advertising remains sensitive to the broader ad market.</p>
+
+  <h3 class="subhead">Sports - strategic asset, economic pressure point</h3>
+  <table class="scorecard"><thead><tr><th>Q3 FY2026</th><th class="num">Revenue</th><th class="num">Operating income</th><th class="num">YoY OI</th><th>Assessment</th></tr></thead><tbody><tr><td>Sports</td><td class="num">$4.500B</td><td class="num">$0.858B</td><td class="num">-17%</td><td>Rights inflation is absorbing revenue growth</td></tr></tbody></table>
+  <p><strong>Positive:</strong> subscription and affiliate revenue rose 8%, advertising rose 5%, and ESPN retains premier live-sports reach. Direct-to-consumer distribution can expand optionality and strengthen bundles.</p>
+  <p><strong>Concern:</strong> programming and production costs rose 10%. ESPN's strategic value does not automatically translate into attractive incremental returns if rights costs continually capture the economics. This is the most important segment-level risk to the thesis.</p>
+
+  <h3 class="subhead">Experiences - cash engine and capital sink</h3>
+  <table class="scorecard"><thead><tr><th>Q3 FY2026</th><th class="num">Revenue</th><th class="num">Operating income</th><th class="num">YoY OI</th><th>Assessment</th></tr></thead><tbody><tr><td>Experiences total</td><td class="num">$9.968B</td><td class="num">$3.017B</td><td class="num">+20%</td><td>Strong demand and operating leverage</td></tr><tr><td>Domestic Parks & Experiences</td><td class="num">$7.116B</td><td class="num">$2.088B</td><td class="num">+27%</td><td>Attendance and spending both positive</td></tr></tbody></table>
+  <p><strong>Positive:</strong> domestic attendance rose 3% and per-capita spending rose 4%. Cruise capacity expanded with Disney Destiny and Disney Adventure. The breadth of the resort ecosystem and franchise attachment creates substantial pricing power and repeat demand.</p>
+  <p><strong>Concern:</strong> approximately $100 million of Q3 operating-income growth came from a tariff refund, so underlying growth was modestly lower. Experiences also requires heavy capital spending and is exposed to consumer confidence, travel costs, weather, geopolitics, and competitive parks investment.</p>
+
+  <div class="callout gold"><strong>Segment synthesis.</strong> Disney is not simply a parks company subsidizing declining television. The stronger formulation is: Experiences supplies cash; Entertainment is becoming a profitable growth engine; Sports provides strategic scarcity but currently dilutes margin progression. The equity can re-rate only if the first two engines sustainably outweigh the third.</div>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Durability</div>
+  <h2 class="section-title">Business Quality, Moat, and Competitive Position</h2>
+
+  <table class="scorecard">
+    <thead><tr><th>Moat element</th><th>Evidence</th><th>Durability</th><th>Threat</th></tr></thead>
+    <tbody>
+      <tr><td>Global IP portfolio</td><td>Disney, Pixar, Marvel, Star Wars, National Geographic, ESPN and legacy franchises</td><td>High</td><td>Franchise fatigue and inconsistent creative output</td></tr>
+      <tr><td>Cross-platform monetization</td><td>Content can drive streaming, licensing, merchandise, parks and cruises</td><td>High</td><td>Requires coordinated execution and sustained audience relevance</td></tr>
+      <tr><td>Experiences ecosystem</td><td>Destination resorts, pricing power, repeat visitation and cruise expansion</td><td>High</td><td>Capital intensity, recession sensitivity and Universal competition</td></tr>
+      <tr><td>Sports scarcity</td><td>ESPN brand, rights portfolio and live audience</td><td>Medium-high</td><td>Rights owners can capture economics through escalating fees</td></tr>
+      <tr><td>Distribution scale</td><td>Large global subscriber, affiliate, advertising and retail relationships</td><td>Medium-high</td><td>Platform fragmentation and consumer churn</td></tr>
+      <tr><td>Brand trust</td><td>Family-oriented brand with global recognition</td><td>High, but not invulnerable</td><td>Creative missteps, controversy and pricing resentment</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="subhead">Competitive landscape</h3>
+  <div class="two-col">
+    <div class="card"><h3>Netflix</h3><p>Best-in-class pure-play streaming scale, engagement and margins. Disney's advantage is broader IP monetization and physical experiences; Netflix's advantage is a simpler, more asset-light business model.</p></div>
+    <div class="card"><h3>Comcast / Universal</h3><p>Universal's film and parks assets are Disney's most direct ecosystem competition. Epic Universe raises the bar for domestic parks investment. Disney retains greater global IP breadth and destination-resort depth.</p></div>
+    <div class="card"><h3>Warner Bros. Discovery</h3><p>Deep IP and HBO quality, but weaker financial flexibility and greater leverage. Disney has a superior balance of content, sports, consumer products and Experiences.</p></div>
+    <div class="card"><h3>Fox and other sports platforms</h3><p>Fox has valuable sports and news cash flows with less capital intensity, but lacks Disney's streaming-to-parks flywheel. Technology platforms can bid for rights and pressure ESPN economics.</p></div>
+  </div>
+
+  <h3 class="subhead">Moat conclusion</h3>
+  <p>Disney's moat is strongest when its businesses reinforce each other. A successful film or series can lower customer-acquisition costs for streaming, increase merchandise sales, enhance park attendance, and extend franchise life. The moat weakens when content quality falters or when segment incentives become siloed. Management's FY2027 reporting realignment is strategically sensible because it emphasizes the economics of intellectual-property creation and monetization rather than legacy organizational boundaries.</p>
+
+  <div class="callout"><strong>Quality rating: 8/10.</strong> Disney owns irreplaceable assets, but the business is more complex and capital intensive than many high-quality compounders. The moat is real; monetizing it consistently is the managerial challenge.</div>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Stewardship</div>
+  <h2 class="section-title">Management and Capital Allocation</h2>
+
+  <h3 class="subhead">Leadership transition</h3>
+  <p>Josh D'Amaro became chief executive officer on March 18, 2026, succeeding Bob Iger. His prior leadership of Experiences gives him credibility in Disney's strongest operating segment. Dana Walden serves as President and Chief Creative Officer, while Hugh Johnston remains CFO. Iger is expected to remain a senior adviser and board member through December 31, 2026.</p>
+
+  <div class="two-col">
+    <div class="card soft"><h3>Early positives</h3><ul><li>FY2026 and FY2027 earnings ambitions remain intact.</li><li>Capital-return target was increased after strong cash generation.</li><li>Consumer Products is being aligned with Entertainment and franchise creation.</li><li>Management is investing behind parks and cruise capacity rather than merely cutting costs.</li></ul></div>
+    <div class="card"><h3>Open questions</h3><ul><li>Can D'Amaro preserve creative autonomy while enforcing return discipline?</li><li>Will ESPN DTC improve economics or simply add distribution cost?</li><li>Can $9 billion of capex and $9 billion of repurchases coexist through a downturn?</li><li>Will buybacks remain disciplined if the share price materially re-rates?</li></ul></div>
+  </div>
+
+  <h3 class="subhead">Capital allocation scorecard</h3>
+  <table class="scorecard">
+    <thead><tr><th>Use of capital</th><th>FY2026 posture</th><th>Assessment</th></tr></thead>
+    <tbody>
+      <tr><td>Organic investment</td><td>Approximately $9B capital expenditures; continued content and Experiences investment</td><td>Strategically rational, but return-on-invested-capital evidence is required</td></tr>
+      <tr><td>Share repurchases</td><td>At least $9B target; $7.245B completed in first nine months</td><td>Highly accretive near current valuation, assuming FCF remains durable</td></tr>
+      <tr><td>Dividend</td><td>$1.50 per share in two $0.75 installments</td><td>Conservative and sustainable; not the primary return driver</td></tr>
+      <tr><td>Asset sales</td><td>A+E interest sale to Hearst for approximately $1.2B</td><td>Sensible portfolio simplification if proceeds are repurchased below intrinsic value</td></tr>
+      <tr><td>Debt reduction</td><td>No aggressive deleveraging target highlighted</td><td>Acceptable, but net debt should not rise while FCF is strong</td></tr>
+    </tbody>
+  </table>
+
+  <div class="metrics">
+    <div class="metric"><div class="m-label">Cash</div><div class="m-value">$5.2B</div><div class="m-note">June 27, 2026</div></div>
+    <div class="metric"><div class="m-label">Gross Borrowings</div><div class="m-value">$46.0B</div><div class="m-note">Balance-sheet debt</div></div>
+    <div class="metric"><div class="m-label">Simplified Net Debt</div><div class="m-value">$40.9B</div><div class="m-note">Debt less cash</div></div>
+    <div class="metric"><div class="m-label">Unused Bank Capacity</div><div class="m-value">$12.25B</div><div class="m-note">Liquidity backstop</div></div>
+  </div>
+
+  <div class="callout red"><strong>Capital-allocation risk.</strong> Repurchasing 5% or more of equity value is attractive at approximately $100, but the same program would be less compelling at $140-$150. Management should not use buybacks to mask weakening operating cash flow or avoid balance-sheet repair.</div>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Earnings model</div>
+  <h2 class="section-title">Financial Performance and Outlook</h2>
+
+  <table class="scorecard">
+    <thead><tr><th>$ billions except EPS</th><th class="num">FY2024A</th><th class="num">FY2025A</th><th class="num">FY2026E</th><th class="num">FY2027E</th><th>Basis</th></tr></thead>
+    <tbody>
+      <tr><td>Revenue</td><td class="num">91.36</td><td class="num">94.43</td><td class="num">~101.0</td><td class="num">~106.0</td><td>FY2026/FY2027 analyst estimates</td></tr>
+      <tr><td>Total segment operating income</td><td class="num">15.60</td><td class="num">17.55</td><td class="num">~19.66</td><td class="num">~21.5</td><td>FY2026 = 9M actual + Q4 management guide</td></tr>
+      <tr><td>Adjusted EPS</td><td class="num">$4.97</td><td class="num">$5.93</td><td class="num">$6.88</td><td class="num">$7.45</td><td>FY2026 includes 53rd week; FY2027 analyst estimate</td></tr>
+      <tr><td>Normalized adjusted EPS</td><td class="num">-</td><td class="num">$5.93</td><td class="num">~$6.64</td><td class="num">$7.45</td><td>FY2026 excludes extra-week benefit</td></tr>
+      <tr><td>Free cash flow</td><td class="num">8.56</td><td class="num">10.08</td><td class="num">>=10.0</td><td class="num">~10.9</td><td>FY2026 implied by CFO and capex guidance</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="subhead">Guidance interpretation</h3>
+  <ul>
+    <li><strong>FY2026 adjusted EPS:</strong> approximately 12% growth excluding the 53rd week and approximately 16% including it. Applied to FY2025 adjusted EPS of $5.93, this implies approximately $6.64 normalized and $6.88 reported.</li>
+    <li><strong>Q4 segment operating income:</strong> approximately $4.9 billion, including roughly $600 million from the extra week.</li>
+    <li><strong>FY2026 cash from operations:</strong> at least $19 billion.</li>
+    <li><strong>FY2026 capital expenditures:</strong> approximately $9 billion, implying at least approximately $10 billion of FCF.</li>
+    <li><strong>FY2027:</strong> double-digit adjusted EPS growth excluding the effect of lapping the FY2026 53rd week.</li>
+  </ul>
+
+  <div class="two-col">
+    <div class="card"><h3>Base-case drivers</h3><ul><li>SVOD margins rise toward the mid-teens.</li><li>Experiences OI grows mid-to-high single digits over the cycle.</li><li>Sports growth recovers after rights timing and cost resets.</li><li>Repurchases reduce diluted shares by roughly 3%-5% annually near current prices.</li><li>Content economics improve, but remain uneven.</li></ul></div>
+    <div class="card"><h3>Forecast sensitivity</h3><ul><li>A 200-basis-point streaming margin miss could reduce annual operating income by roughly $400-$500 million on the current revenue base.</li><li>A 5% Experiences OI decline would remove roughly $500 million from annual segment income.</li><li>Every $10 increase in average repurchase price reduces shares retired by roughly 10% for the same dollars.</li><li>The 53rd week should be stripped from year-over-year comparisons.</li></ul></div>
+  </div>
+
+  <div class="callout gold"><strong>Quality of growth.</strong> Reported FY2026 EPS growth is boosted by an extra operating week, but the underlying approximately 12% growth rate remains solid. The more important test is FY2027: Disney must produce double-digit EPS growth after normalizing calendar effects and absorbing ongoing Sports and Experiences investment.</div>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Price discipline</div>
+  <h2 class="section-title">Valuation</h2>
+
+  <div class="metrics">
+    <div class="metric"><div class="m-label">Equity Value</div><div class="m-value">$172.9B</div><div class="m-note">$99.93 x 1.730B shares</div></div>
+    <div class="metric"><div class="m-label">Enterprise Value</div><div class="m-value">$213.8B</div><div class="m-note">Equity + debt - cash</div></div>
+    <div class="metric"><div class="m-label">FY2026E P/E</div><div class="m-value">14.5x</div><div class="m-note">Using $6.88 adjusted EPS</div></div>
+    <div class="metric"><div class="m-label">FCF Yield</div><div class="m-value">~5.8%</div><div class="m-note">Using $10B FY2026 FCF</div></div>
+  </div>
+
+  <h3 class="subhead">Why P/E plus DCF is appropriate</h3>
+  <p>A single peer multiple is misleading because no competitor has Disney's exact mix of streaming, sports, studios, networks, consumer products, resorts and cruises. A blended framework is more robust:</p>
+  <ul>
+    <li><strong>Forward adjusted P/E</strong> captures per-share earnings power and the benefit of buybacks.</li>
+    <li><strong>Discounted cash flow</strong> captures long-duration FCF, capital intensity and balance-sheet claims.</li>
+    <li><strong>Scenario analysis</strong> prevents a single-point target from implying false precision.</li>
+  </ul>
+
+  <table class="scorecard">
+    <thead><tr><th>Valuation method</th><th>Key assumptions</th><th class="num">Bear</th><th class="num">Base</th><th class="num">Bull</th></tr></thead>
+    <tbody>
+      <tr><td>Forward P/E</td><td>FY2027 EPS x terminal multiple</td><td class="num">$6.75 x 14x<br/><strong>$95</strong></td><td class="num">$7.45 x 17.5x<br/><strong>$130</strong></td><td class="num">$8.00 x 20x<br/><strong>$160</strong></td></tr>
+      <tr><td>DCF</td><td>FY2026 FCF $10B; net debt $40.9B; 1.73B shares</td><td class="num"><strong>$92</strong></td><td class="num"><strong>$123</strong></td><td class="num"><strong>$167</strong></td></tr>
+      <tr><td>Blended output</td><td>60% P/E / 40% DCF</td><td class="num"><strong>~$94</strong></td><td class="num"><strong>~$128</strong></td><td class="num"><strong>~$163</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="subhead">DCF assumptions</h3>
+  <table class="scorecard"><thead><tr><th>Case</th><th>Five-year FCF growth</th><th class="num">WACC</th><th class="num">Terminal growth</th><th class="num">Value / share</th></tr></thead><tbody>
+    <tr><td>Bear</td><td>7%, 7%, 6%, 6%, 5%</td><td class="num">8.5%</td><td class="num">2.5%</td><td class="num">$92</td></tr>
+    <tr><td>Base</td><td>9%, 9%, 8%, 7%, 6%</td><td class="num">8.0%</td><td class="num">3.0%</td><td class="num">$123</td></tr>
+    <tr><td>Bull</td><td>11%, 10%, 9%, 8%, 7%</td><td class="num">7.5%</td><td class="num">3.5%</td><td class="num">$167</td></tr>
+  </tbody></table>
+
+  <div class="callout"><strong>Valuation conclusion.</strong> The $128 target is not based on an aggressive re-rating. It assumes FY2027 adjusted EPS of approximately $7.45 and a 17.5x multiple - a reasonable level for a company with high-quality assets and low-double-digit per-share growth, but below premium consumer and entertainment compounder valuations.</div>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Distribution of outcomes</div>
+  <h2 class="section-title">Bull, Base, and Bear Cases</h2>
+
+  <div class="three-col">
+    <div class="scenario bear"><h3>Bear case</h3><div class="target">$95</div><div class="ret">Approx. -3% total return from $99.93, including one year of dividends</div><p><strong>Conditions:</strong></p><ul><li>Sports rights inflation persists.</li><li>Streaming margin stalls below 10%.</li><li>Experiences growth slows materially.</li><li>FY2027 EPS approximately $6.75.</li><li>Market assigns 14x P/E.</li></ul><span class="pill">Probability: 25%</span></div>
+    <div class="scenario base"><h3>Base case</h3><div class="target">$128</div><div class="ret">Approx. +30% total return from $99.93, including one year of dividends</div><p><strong>Conditions:</strong></p><ul><li>SVOD margins continue improving.</li><li>Experiences grows mid-to-high single digits.</li><li>Sports stabilizes in FY2027.</li><li>FY2027 EPS approximately $7.45.</li><li>Market assigns 17.5x P/E.</li></ul><span class="pill">Probability: 55%</span></div>
+    <div class="scenario bull"><h3>Bull case</h3><div class="target">$160</div><div class="ret">Approx. +62% total return from $99.93, including one year of dividends</div><p><strong>Conditions:</strong></p><ul><li>Streaming margin reaches high teens.</li><li>ESPN DTC improves monetization.</li><li>Parks/cruise capacity ramps strongly.</li><li>FY2027 EPS approximately $8.00.</li><li>Market assigns 20x P/E.</li></ul><span class="pill">Probability: 20%</span></div>
+  </div>
+
+  <h3 class="subhead">Expected-value perspective</h3>
+  <p>Using the illustrative probabilities above, the probability-weighted value is approximately <strong>$126</strong> per share before dividends. This supports the $128 base target and an Add rating at $98-$102, but it does not justify abandoning sizing discipline: the bear case offers limited downside protection if Sports, streaming, and Experiences weaken simultaneously.</p>
+
+  <div class="chart">
+    <h3>Scenario values relative to the August 4 close</h3>
+    <div class="bar-row"><div>Bear - $95</div><div class="bar-track"><div class="bar-fill red" style="width:59.4%"></div></div><div class="bar-value">-3.2%</div></div>
+    <div class="bar-row"><div>Current - $98.16</div><div class="bar-track"><div class="bar-fill navy" style="width:61.4%"></div></div><div class="bar-value">Reference</div></div>
+    <div class="bar-row"><div>Base - $128</div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div><div class="bar-value">+30.4%</div></div>
+    <div class="bar-row"><div>Bull - $160</div><div class="bar-track"><div class="bar-fill gold" style="width:100%"></div></div><div class="bar-value">+63.0%</div></div>
+    <div class="caption">Price upside excludes dividends. Scenario values are estimates, not price guarantees.</div>
+  </div>
+
+  <div class="callout gold"><strong>Post-call market reaction.</strong> DIS opened at $102.05, traded as high as $103.19, and was approximately $99.93 at 12:26 p.m. ET - about 1.8% above the prior close. The fading of the initial gain suggests investors recognized the strong quarter but continued to discount Sports costs, capital intensity, and the need to prove the FY2027 bridge. At $99.93, the base-case total-return potential to $128 remains approximately 30% including one year of dividends.</div>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">What can move the stock</div>
+  <h2 class="section-title">Catalysts and Checkpoints</h2>
+
+  <h3 class="subhead">Catalysts</h3>
+  <div class="two-col">
+    <div class="card"><h3>Near term</h3><ul><li>Full Q3 call commentary and analyst Q&A.</li><li>D23, scheduled for August 14-16, 2026, with potential content and Experiences announcements.</li><li>Closing of the A+E stake sale and incremental repurchases.</li><li>Q4 execution and disclosure around the 53rd-week contribution.</li></ul></div>
+    <div class="card"><h3>Medium term</h3><ul><li>ESPN direct-to-consumer adoption and bundling economics.</li><li>Further SVOD margin expansion and lower churn.</li><li>New cruise capacity and parks investments reaching normalized utilization.</li><li>FY2027 reporting realignment clarifying franchise economics.</li></ul></div>
+  </div>
+
+  <h3 class="subhead">Operating checkpoints</h3>
+  <div class="checkpoint"><div class="when">Post-call checkpoints</div><div><strong>Track:</strong> Sports rights, streaming churn and ad demand, park bookings, and buyback cadence.</div><div><strong>Action:</strong> Maintain Add while the evidence remains consistent with the final thesis.</div></div>
+  <div class="checkpoint"><div class="when">Q4 FY2026</div><div><strong>Track:</strong> Approx. $4.9B segment OI, $600M extra-week contribution, FY2026 FCF.</div><div><strong>Action:</strong> Separate calendar benefit from underlying growth.</div></div>
+  <div class="checkpoint"><div class="when">FY2027 guide</div><div><strong>Track:</strong> Double-digit normalized EPS, streaming margin, Sports OI, capex.</div><div><strong>Action:</strong> Raise position ceiling only if guidance quality is strong.</div></div>
+  <div class="checkpoint"><div class="when">Next 2 quarters</div><div><strong>Track:</strong> Domestic attendance and per-capita spending, cruise utilization, international parks.</div><div><strong>Action:</strong> Watch for simultaneous volume and spending deterioration.</div></div>
+  <div class="checkpoint"><div class="when">Next 12 months</div><div><strong>Track:</strong> Repurchase price, net debt, FCF conversion, asset-sale proceeds.</div><div><strong>Action:</strong> Penalize buybacks funded by leverage or weak cash conversion.</div></div>
+
+  <h3 class="subhead">Key performance indicators</h3>
+  <table class="scorecard">
+    <thead><tr><th>KPI</th><th>Current reference</th><th>Positive threshold</th><th>Warning threshold</th></tr></thead>
+    <tbody>
+      <tr><td>SVOD operating margin</td><td>12.9% in Q3</td><td>Sustained mid-teens trajectory</td><td>Below 8% for two quarters</td></tr>
+      <tr><td>Experiences segment OI</td><td>+20% Q3</td><td>Mid-to-high single-digit normalized growth</td><td>Negative YoY with both attendance and spend down</td></tr>
+      <tr><td>Sports segment OI</td><td>-17% Q3</td><td>Return to growth after timing normalizes</td><td>More than 10% decline into FY2027</td></tr>
+      <tr><td>Free cash flow</td><td>At least ~$10B FY2026 implied</td><td>Growth above inflation with stable conversion</td><td>Below $8B without temporary working-capital explanation</td></tr>
+      <tr><td>Net debt</td><td>~$40.9B simplified</td><td>Stable to declining</td><td>Rising while buybacks remain aggressive</td></tr>
+      <tr><td>Adjusted EPS</td><td>FY2026 $6.64 normalized / $6.88 reported estimate</td><td>FY2027 double-digit normalized growth</td><td>FY2027 guide below mid-single-digit growth</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Downside discipline</div>
+  <h2 class="section-title">Risks and Thesis-Break Conditions</h2>
+
+  <table class="scorecard">
+    <thead><tr><th>Risk</th><th>Mechanism</th><th>Probability</th><th>Severity</th><th>Mitigation / monitor</th></tr></thead>
+    <tbody>
+      <tr><td>Sports rights inflation</td><td>Content costs rise faster than affiliate, advertising and DTC revenue</td><td>High</td><td>High</td><td>Sports OI and rights renewal economics</td></tr>
+      <tr><td>Experiences cycle</td><td>Recession, travel inflation or competition reduces attendance and spending</td><td>Medium</td><td>High</td><td>Bookings, attendance, per-capita spend, cruise load factors</td></tr>
+      <tr><td>Streaming competition</td><td>Churn, pricing limits and ad weakness slow margin expansion</td><td>Medium</td><td>High</td><td>SVOD margin, ARPU, churn, advertising</td></tr>
+      <tr><td>Content execution</td><td>Film and series misses reduce licensing, streaming and merchandise benefits</td><td>High</td><td>Medium</td><td>Slate ROI across multiple releases, not one title</td></tr>
+      <tr><td>Capital intensity</td><td>Large parks/cruise investment produces subpar returns</td><td>Medium</td><td>High</td><td>Incremental ROIC and utilization</td></tr>
+      <tr><td>Balance-sheet / allocation</td><td>Buybacks and capex outpace durable FCF</td><td>Low-medium</td><td>High</td><td>Net debt, liquidity and repurchase price</td></tr>
+      <tr><td>Regulatory / distribution</td><td>Licensing, station, antitrust or distribution changes impair economics</td><td>Low-medium</td><td>Medium-high</td><td>SEC filings and regulatory approvals</td></tr>
+      <tr><td>Leadership transition</td><td>New structure fails to balance creativity and financial discipline</td><td>Medium</td><td>High</td><td>Talent retention, slate quality, execution consistency</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="subhead">Thesis-break conditions - Exit or materially reduce</h3>
+  <div class="callout red">
+    <ol style="margin:4px 0 4px 18px;padding:0">
+      <li><strong>Experiences and streaming weaken together:</strong> sustained Experiences OI decline plus SVOD margin below 8% for two consecutive quarters.</li>
+      <li><strong>Sports economics do not normalize:</strong> Sports OI remains down more than 10% into FY2027 despite revenue growth and after rights timing effects pass.</li>
+      <li><strong>FY2027 growth collapses:</strong> normalized adjusted EPS guidance falls below mid-single-digit growth without a clearly temporary cause.</li>
+      <li><strong>Capital allocation becomes destructive:</strong> net debt rises, FCF falls below $8 billion, and buybacks continue at elevated prices.</li>
+      <li><strong>Multi-franchise brand impairment:</strong> weak engagement and monetization across multiple major franchises, not merely a single film miss.</li>
+      <li><strong>Management credibility breaks:</strong> repeated guidance resets, poor disclosure, or major investments without measurable return thresholds.</li>
+    </ol>
+  </div>
+
+  <p><strong>Price is not a thesis break.</strong> A stock decline can create opportunity if operations remain intact. Conversely, a rising share price can justify trimming even when the business thesis is working, because expected return and position risk matter independently.</p>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Portfolio horizon</div>
+  <h2 class="section-title">Expected Return Drivers by Time Horizon</h2>
+
+  <table class="scorecard">
+    <thead><tr><th>Horizon</th><th>Primary return drivers</th><th>Base expectation</th><th>Main risk</th></tr></thead>
+    <tbody>
+      <tr><td><strong>1 year</strong></td><td>Estimate revisions, Q4 execution, buybacks, Q3/Q4 streaming margins, Sports stabilization</td><td>Approximately 25%-32% total-return potential to $128 target</td><td>Rights costs or weak FY2027 guide</td></tr>
+      <tr><td><strong>3 years</strong></td><td>ESPN DTC, streaming margin expansion, cruise capacity, share-count reduction</td><td>Approximately 10%-13% annualized in base case</td><td>Capital intensity and slower DTC economics</td></tr>
+      <tr><td><strong>5 years</strong></td><td>Return on parks/cruise investment, IP monetization, pricing, global growth</td><td>Approximately 9%-12% annualized</td><td>Franchise fatigue or subpar ROIC</td></tr>
+      <tr><td><strong>10 years</strong></td><td>Durability of IP, creative relevance, pricing power, ecosystem reinvestment</td><td>Approximately 7%-10% annualized with wide dispersion</td><td>Structural media disruption and management execution</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="subhead">Dividend assessment</h3>
+  <p>Disney's annual dividend of $1.50 per share produces a yield of approximately <strong>1.50%</strong> at $99.93 and about <strong>$294</strong> of annual income on the current position. The dividend is well supported by cash flow, but income is not the core reason to own the stock. For retirement planning, DIS should be classified as a <strong>growth-and-capital-return holding with a supplemental dividend</strong>, not as a primary income-replacement asset.</p>
+
+  <h3 class="subhead">Portfolio fit</h3>
+  <div class="two-col">
+    <div class="card soft"><h3>Reasons it fits</h3><ul><li>Small allocation leaves room to add without concentration.</li><li>Global consumer, media and travel exposure diversifies sector risk.</li><li>Buybacks and EPS growth complement higher-yield holdings.</li><li>Ten-year horizon allows time for the streaming and Experiences investment cycle.</li></ul></div>
+    <div class="card"><h3>Reasons to cap it</h3><ul><li>Low current income contribution.</li><li>High operating complexity and capital intensity.</li><li>Consumer-discretionary cyclicality.</li><li>Content and sports-rights outcomes are less predictable than many portfolio core holdings.</li></ul></div>
+  </div>
+
+  <div class="callout green"><strong>Allocation decision.</strong> A measured increase from 1.16% toward 1.5% is consistent with the portfolio's relatively high risk tolerance and 10-year horizon. Moving immediately to a 2%+ position would remain premature until FY2027 guidance provides greater detail on Sports margins, streaming investment, and normalized growth.</div>
+</section>
+
+<section class="page page-break">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Actionable conclusion</div>
+  <h2 class="section-title">Final Recommendation</h2>
+
+  <div class="card soft" style="border:2px solid #167c80;padding:17px">
+    <div class="two-col" style="grid-template-columns:1.35fr .65fr">
+      <div>
+        <h3 style="font-size:17pt;margin:0;color:#0b1f33">ADD - valuation disciplined</h3>
+        <p style="font-size:11pt">Disney's Q3 results strengthen the thesis that improving streaming economics and resilient Experiences cash flow can outweigh linear-media decline and support double-digit per-share growth. At $99.93, valuation is attractive enough to add modestly, while retaining a ceiling because Sports margins, capital intensity, and FY2027 normalization remain material uncertainties.</p>
+      </div>
+      <div style="text-align:center;border-left:1px solid #cbd7dc;padding-left:12px">
+        <div class="note">12-18 month target</div><div style="font-size:30pt;font-weight:800;color:#167c80">$128</div>
+        <div class="note">Fair-value range</div><div style="font-size:13pt;font-weight:800">$120-$135</div>
+        <div class="note" style="margin-top:7px">Conviction</div><div style="font-size:13pt;font-weight:800">7 / 10</div>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="subhead">Recommended implementation</h3>
+  <table class="scorecard">
+    <thead><tr><th>Price / evidence condition</th><th>Recommended action</th><th>Position objective</th></tr></thead>
+    <tbody>
+      <tr><td>At or below $92 with thesis intact</td><td><span class="rating add">Strong Add zone</span> - use 2-3 tranches</td><td>Move toward 1.5%-1.75%</td></tr>
+      <tr><td>$93-$102</td><td><span class="rating add">Add</span> - modest incremental purchase</td><td>Move toward approximately 1.5%</td></tr>
+      <tr><td>$103-$110</td><td><span class="rating hold">Hold / selective add</span> only with estimate support</td><td>Maintain 1.2%-1.5%</td></tr>
+      <tr><td>$111-$125</td><td><span class="rating hold">Hold</span></td><td>Allow earnings to catch up</td></tr>
+      <tr><td>$126-$145</td><td><span class="rating watch">Watch / selective trim</span> based on estimate revisions</td><td>Rebalance if position becomes oversized</td></tr>
+      <tr><td>Above $145 without earnings upgrades</td><td><span class="rating trim">Trim</span></td><td>Harvest valuation expansion</td></tr>
+    </tbody>
+  </table>
+
+  <h3 class="subhead">Publication status and follow-up discipline</h3>
+  <ol style="margin-left:19px">
+    <li>The earnings release, shareholder letter, Form 10-Q, earnings-call commentary, and post-call price action have been incorporated.</li>
+    <li>The recommendation, target, position-sizing framework, catalysts, risks, and thesis-break conditions have been reconciled.</li>
+    <li>Refresh the market-price denominator after the first full post-earnings close; this should not change the thesis unless shares move outside the stated action zones.</li>
+    <li>When Disney posts the official transcript, archive it with the source set and verify that no call detail materially changes this final report.</li>
+    <li>This version is final and approved for Portfolio Command Center publication.</li>
+  </ol>
+
+  <div class="callout gold"><strong>Bottom line.</strong> Disney now offers a credible combination of operating recovery, durable assets, strong FCF, and accretive capital returns at an undemanding valuation. The opportunity is attractive, but the stock should remain a measured satellite position until Sports economics and post-53rd-week growth are proven.</div>
+</section>
+
+<section class="page page-break sources-page">
+  <div class="footer">Research & Thesis Pro - DIS - Final - August 5, 2026</div>
+  <div class="kicker">Audit trail</div>
+  <h2 class="section-title">Sources, Methodology, and Disclosures</h2>
+
+  <h3 class="subhead">Primary sources</h3>
+  <ol class="sources">
+    <li><strong>The Walt Disney Company, Q3 FY2026 earnings report / shareholder letter</strong>, August 5, 2026. <a href="https://s206.q4cdn.com/979796730/files/doc_financials/2026/q3/q3-fy26-earnings.pdf">Official PDF</a>.</li>
+    <li><strong>The Walt Disney Company, Q3 FY2026 Form 10-Q</strong>, quarter ended June 27, 2026. <a href="https://s206.q4cdn.com/979796730/files/doc_financials/2026/q3/6cb3fe4e-d0ee-4bbf-84e5-17cc436ed37e.pdf">Official PDF</a>.</li>
+    <li><strong>Disney Investor Relations, Q3 FY2026 Earnings Results Webcast</strong>, August 5, 2026. <a href="https://investors.thewaltdisneycompany.com/events-and-presentations/event-details/2026/Disneys-Q3-FY26-Earnings-Results-Webcast-2026-PXZSBx9qZg/default.aspx">Official event page</a>.</li>
+    <li><strong>The Walt Disney Company, FY2025 fourth-quarter and full-year results</strong>. <a href="https://investors.thewaltdisneycompany.com/news/news-details/2025/The-Walt-Disney-Company-Reports-Fourth-Quarter-and-Full-Year-Earnings-for-Fiscal-2025/default.aspx">Official release</a>.</li>
+    <li><strong>The Walt Disney Company, Investor FAQs</strong>, dividend and shareholder information. <a href="https://investors.thewaltdisneycompany.com/resources/investor-faqs/default.aspx">Official page</a>.</li>
+    <li><strong>The Walt Disney Company, Josh D'Amaro CEO announcement</strong>, 2026. <a href="https://investors.thewaltdisneycompany.com/news/news-details/2026/Josh-DAmaro-Named-Next-Chief-Executive-Officer-of-The-Walt-Disney-Company/default.aspx">Official release</a>.</li>
+    <li><strong>Reuters, Disney Q3 FY2026 results and market reaction</strong>, August 5, 2026. <a href="https://www.reuters.com/legal/legalindustry/disneys-toy-story-5-fuels-streaming-business-merchandise-sales-june-quarter-2026-08-05/">Reuters report</a>.</li>
+    <li><strong>Associated Press, Disney Q3 results and management commentary</strong>, August 5, 2026. <a href="https://apnews.com/article/d9d5482d48307f7104c677fa4b059a01">AP report</a>.</li>
+    <li><strong>The Wall Street Journal, Disney Q3 earnings and call strategy</strong>, August 5, 2026. <a href="https://www.wsj.com/business/earnings/disney-earnings-q3-2026-dis-stock-bc2fa875">WSJ report</a>.</li>
+    <li><strong>The Verge, Disney+ free-tier and digital-product commentary from the Q3 call</strong>, August 5, 2026. <a href="https://www.theverge.com/streaming/975543/disney-plus-free-tier-q3-2026-earnings">The Verge report</a>.</li>
+    <li><strong>Alpaca IEX market data</strong>, DIS regular-session snapshot at approximately 12:26 p.m. ET on August 5, 2026 and DIS/SPY historical bars through August 4, 2026.</li>
+    <li><strong>Portfolio workbook:</strong> retirement-portfolio-13.xlsx. Used as the sole source for DIS shares, cost basis, and workbook allocation. The workbook contains no internal as-of date.</li>
+  </ol>
+
+  <h3 class="subhead">Methodology</h3>
+  <ul class="small">
+    <li>Market capitalization uses the August 5, 2026 publication-time IEX price of $99.93 and approximately 1.730 billion period-end shares; the prior official close was $98.16.</li>
+    <li>Simplified enterprise value equals equity value plus gross borrowings less cash and equivalents. It is not a substitute for a complete adjusted EV bridge.</li>
+    <li>FY2026 adjusted EPS estimates are derived from management's percentage-growth guidance applied to FY2025 adjusted EPS of $5.93.</li>
+    <li>FY2026 FCF of at least approximately $10 billion is inferred from management guidance of at least $19 billion of cash from operations and approximately $9 billion of capital expenditures.</li>
+    <li>FY2027 estimates, valuation multiples, scenario probabilities, and DCF assumptions are the analyst's estimates and are not company guidance.</li>
+    <li>Total-return scenario calculations include one year of the current $1.50 annual dividend but do not assume reinvestment or tax effects.</li>
+    <li>Non-GAAP measures should be reconciled to the company's GAAP disclosures in the official earnings materials.</li>
+  </ul>
+
+  <h3 class="subhead">Disclosures and limitations</h3>
+  <p class="small">This report is for informational and educational purposes and is not individualized investment, tax, legal, or fiduciary advice. Forecasts and valuation estimates are uncertain and may be wrong. Market prices can move materially before or after the reference date. Disney had not posted the official Q3 FY2026 transcript by the finalization cutoff; management-call takeaways were paraphrased and cross-checked using the official event page and multiple contemporaneous reports. This final version is approved for publication to Portfolio Command Center.</p>
+  <p class="small">Recommendation definitions are internal analytical classifications. They do not constitute an instruction to trade. Portfolio sizing should consider the user's full financial circumstances, liquidity needs, tax position, risk tolerance, retirement timeline, and any developments after August 5, 2026.</p>
+
+  <div style="margin-top:24px;border-top:2px solid var(--gold);padding-top:11px;text-align:center;color:var(--muted);font-size:8pt">
+    END OF REPORT - RESEARCH & THESIS PRO (FINAL) - THE WALT DISNEY COMPANY (DIS)
+  </div>
+</section>
+
+</div>
+</body>
+</html>

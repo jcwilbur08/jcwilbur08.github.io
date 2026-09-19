@@ -1,0 +1,25 @@
+{
+  "ignored": {
+    "batra-research-thesis-pro-2026-08-05": "Already in the library as BATRA_Fundamental_Analysis_2026-08-05.pdf (same report, PDF rather than HTML, so the content hash cannot match).",
+    "googl-research-thesis-pro-2026-08-01": "Damaged upstream: the split gzip/base64 HTML is corrupt at offset 98816 and only reassembles into a truncated document. No PDF fallback exists. Remove this entry once the source report is regenerated.",
+    "meta-equity-analysis-2026-07-29": "Already in the library as META_Fundamental_Analysis_2026-07.pdf (same report, PDF rather than HTML, so the content hash cannot match)."
+  },
+  "managed": {
+    "daily-close": {
+      "date": "2026-09-17",
+      "file": "Daily_Portfolio_Close_2026-09-17.html"
+    },
+    "market-intelligence": {
+      "date": "2026-09-18",
+      "file": "Weekly_Market_Intelligence_2026-09-18.html"
+    },
+    "stocks-to-watch": {
+      "date": "2026-09-19",
+      "file": "Stocks_to_Watch_2026-09-19.html"
+    },
+    "weekly-portfolio": {
+      "date": "2026-09-19",
+      "file": "Weekly_Portfolio_Report_2026-09-19.html"
+    }
+  }
+}
