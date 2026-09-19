@@ -26,6 +26,12 @@ carries an "ignored" list of source slugs the sync must never add, for reports a
 in the library in a different format (where the content hash cannot match) and for
 sources known to be damaged upstream.
 
+Archive rule: every row carries a `key` (ticker for single-company reports, series name for
+rotating series, slug for one-offs). When a newer report lands for a key, the older live
+version is MOVED into archive/ and its row is flagged archived:true (the app's Archived
+filter). A report that arrives older than what is already live for its key is archived on
+arrival. Files already in archive/ are hashed too, so they are never re-added to the root.
+
 Idempotent: a run with nothing new makes no changes and exits 0. Only stdlib is used
 (no pip install step needed in the Action).
 """
@@ -40,6 +46,7 @@ import sys
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INDEX_HTML = os.path.join(REPO_ROOT, 'index.html')
 STATE_FILE = os.path.join(REPO_ROOT, 'scripts', 'report-sync-state.json')
+ARCHIVE_DIR = os.path.join(REPO_ROOT, 'archive')
 
 # Where the Portfolio-Summary checkout lives. The workflow checks it out into a
 # sibling path; override with SUMMARY_REPO when running locally.
@@ -57,6 +64,14 @@ ROTATING_BY_SLUG = {
 ROTATING_BY_KIND = {
     'weekly': ('weekly-portfolio', 'weekly'),
     'daily': ('daily-close', 'daily'),
+}
+
+# Series name -> the `key` the app groups on (must match the keys used in index.html).
+SERIES_KEYS = {
+    'market-intelligence': 'weekly-market-intel',
+    'stocks-to-watch': 'stocks-to-watch',
+    'weekly-portfolio': 'weekly-review',
+    'daily-close': 'daily-close',
 }
 
 # Cap on generated filenames so a long report title doesn't produce an unwieldy path.
@@ -182,6 +197,16 @@ def classify(kind, slug, manifest):
     return spec
 
 
+def key_for(spec, slug, manifest):
+    """Supersession key: one live report per key. Mirrors the keys assigned in index.html."""
+    if spec['series']:
+        return SERIES_KEYS[spec['series']]
+    analysis = (manifest.get('analysisType') or '').lower()
+    if spec['ticker'] and spec['type'] == 'research' and analysis != 'etf-comparison':
+        return spec['ticker'].upper()
+    return 'doc-' + re.sub(r'-?\d{4}-\d{2}-\d{2}$', '', slug)
+
+
 def filename_for(title, date, ext):
     # Drop any trailing date already carried by the title, so the generated name does
     # not end up with it twice ("Daily_Portfolio_Close_2026_09_17_2026-09-17.html").
@@ -222,14 +247,55 @@ def row_file(row):
     return m.group(1) if m else ''
 
 
-def build_row(spec, title, date, filename):
+def build_row(spec, title, date, filename, key, archived=False):
     parts = [f"  {{date:'{date}'", f'title:{js_string(title)}',
              f"type:'{spec['type']}'", f"file:'{filename}'"]
     if spec['ticker']:
         parts.append(f"ticker:'{spec['ticker']}'")
     if spec['assetType']:
         parts.append(f"assetType:'{spec['assetType']}'")
+    parts.append(f"key:'{key}'")
+    if archived:
+        parts.append('archived:true')
     return ', '.join(parts) + '},'
+
+
+def row_key(row):
+    m = re.search(r"key:'([^']+)'", row)
+    return m.group(1) if m else None
+
+
+def row_archived(row):
+    return 'archived:true' in row
+
+
+def move_to_archive(name):
+    """Move a root file into archive/ (non-destructive). Returns its new repo-relative path."""
+    base = os.path.basename(name)
+    src = os.path.join(REPO_ROOT, name)
+    if os.path.isfile(src):
+        os.makedirs(ARCHIVE_DIR, exist_ok=True)
+        os.replace(src, os.path.join(ARCHIVE_DIR, base))
+    return 'archive/' + base
+
+
+def archive_older(rows, key, keep_file, date, hashes):
+    """Archive every live row for `key` that is strictly older than `date`."""
+    moved = []
+    for i, row in enumerate(rows):
+        if row_key(row) != key or row_archived(row) or row_file(row) == keep_file:
+            continue
+        if row_date(row) >= date:
+            continue
+        old = row_file(row)
+        new = move_to_archive(old)
+        row = row.replace(f"file:'{old}'", f"file:'{new}'")
+        rows[i] = re.sub(r"\},?$", ", archived:true},", row)
+        for h, name in list(hashes.items()):
+            if name == old:
+                hashes[h] = new
+        moved.append(old)
+    return moved
 
 
 def insert_row(rows, new_row, date):
@@ -244,14 +310,17 @@ def insert_row(rows, new_row, date):
 # ---------------------------------------------------------------- main
 
 def repo_hash_index():
-    """sha256 -> filename for every document already sitting in the repo root."""
+    """sha256 -> repo-relative path for every document in the repo root and in archive/."""
     index = {}
-    for name in os.listdir(REPO_ROOT):
-        if name == 'index.html' or not name.lower().endswith(('.html', '.pdf')):
+    for folder, prefix in ((REPO_ROOT, ''), (ARCHIVE_DIR, 'archive/')):
+        if not os.path.isdir(folder):
             continue
-        path = os.path.join(REPO_ROOT, name)
-        if os.path.isfile(path):
-            index[hashlib.sha256(open(path, 'rb').read()).hexdigest()] = name
+        for name in os.listdir(folder):
+            if (folder == REPO_ROOT and name == 'index.html') or not name.lower().endswith(('.html', '.pdf')):
+                continue
+            path = os.path.join(folder, name)
+            if os.path.isfile(path):
+                index[hashlib.sha256(open(path, 'rb').read()).hexdigest()] = prefix + name
     return index
 
 
@@ -308,7 +377,7 @@ def main():
     linked = {row_file(r) for r in rows}
     hashes = repo_hash_index()
 
-    added, retired = [], []
+    added, retired, archived = [], [], []
 
     for c in collect_candidates():
         label = f"{c['kind']}/{c['slug']}"
@@ -321,13 +390,20 @@ def main():
 
         digest = hashlib.sha256(content).hexdigest()
         existing = hashes.get(digest)
-        if existing and existing in linked:
-            continue  # already mirrored, possibly under a different filename
+        if existing and (existing in linked or ('archive/' + existing) in linked or existing.startswith('archive/')):
+            continue  # already mirrored (or deliberately archived), possibly under a different filename
 
         title = (c['manifest'].get('title') or '').strip() or html_title(content)
         if not title:
             log(f'  skip {label}: no title in manifest or document')
             continue
+
+        key = key_for(c['spec'], c['slug'], c['manifest'])
+        series = c['spec']['series']
+        # A durable report that is not newer than what is already live for its key goes
+        # straight to the archive instead of onto the main page.
+        stale = (not series) and any(
+            row_key(r) == key and not row_archived(r) and row_date(r) >= c['date'] for r in rows)
 
         filename = existing or filename_for(title, c['date'], ext)
         if not existing:
@@ -336,12 +412,18 @@ def main():
             hashes[digest] = filename
 
         if filename not in linked:
-            insert_row(rows, build_row(c['spec'], title, c['date'], filename), c['date'])
+            if stale:
+                filename = move_to_archive(filename)
+                hashes[digest] = filename
+                log(f'  ~ {label} -> {filename} (older than the live {key} report; archived on arrival)')
+            insert_row(rows, build_row(c['spec'], title, c['date'], filename, key, archived=stale), c['date'])
             linked.add(filename)
             added.append(f"{filename}  [{c['spec']['type']}]")
             log(f'  + {label} -> {filename}')
-
-        series = c['spec']['series']
+            if not series and not stale:
+                for old in archive_older(rows, key, filename, c['date'], hashes):
+                    archived.append(old)
+                    log(f'  > archived {old} (superseded by {filename})')
         if series:
             # Retire the edition this one supersedes, but only if the sync added it.
             previous = managed.get(series)
@@ -356,7 +438,7 @@ def main():
                 log(f'  - retired {old} (superseded by {filename})')
             managed[series] = {'file': filename, 'date': c['date']}
 
-    if not added and not retired:
+    if not added and not retired and not archived:
         log('No new reports — nothing to do.')
         return 0
 
@@ -367,7 +449,7 @@ def main():
         json.dump(state, fh, indent=2, sort_keys=True)
         fh.write('\n')
 
-    log(f'\nAdded {len(added)}, retired {len(retired)}.')
+    log(f'\nAdded {len(added)}, retired {len(retired)}, archived {len(archived)}.')
     return 0
 
 
