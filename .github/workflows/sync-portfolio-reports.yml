@@ -38,6 +38,10 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: jcwilbur08/Portfolio-Summary
+          # Pinned explicitly: Portfolio-Summary's GitHub-configured default branch is
+          # stale (still an old feature branch), so leaving this unset silently checks
+          # out whatever that is instead of the branch reports actually land on.
+          ref: main
           token: ${{ secrets.PORTFOLIO_SUMMARY_TOKEN }}
           path: portfolio-summary
           # Only the report manifests and documents are needed; skipping the rest of the
