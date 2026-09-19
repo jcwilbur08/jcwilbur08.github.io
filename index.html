@@ -205,6 +205,8 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 .type-daily{background:#dcfce7;color:#15803d;}
 .type-weekly{background:#dbeafe;color:#1d4ed8;}
 .type-research{background:#f3e8ff;color:#7c3aed;}
+.type-portfolio{background:#fef3c7;color:#b45309;}
+.type-market{background:#ccfbf1;color:#0f766e;}
 
 /* ALLOCATION BAR */
 .alloc-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
@@ -1581,6 +1583,8 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <div class="reports-toolbar">
       <button class="pill-btn active" onclick="filterReports('all',this)">All</button>
       <button class="pill-btn" onclick="filterReports('research',this)">Research</button>
+      <button class="pill-btn" onclick="filterReports('portfolio',this)">Portfolio</button>
+      <button class="pill-btn" onclick="filterReports('market',this)">Market</button>
       <button class="pill-btn" onclick="filterReports('archived',this)">Archived</button>
       <input type="text" class="search-input" id="reports-search" placeholder="Search reports…" oninput="renderReports()" style="max-width:240px;margin-left:auto;">
     </div>
@@ -2441,6 +2445,15 @@ renderResearchSummary();
 
 // ---- REPORT LIBRARY (real files, linked into /reports on this repo) ----
 const reports = [
+  {date:'2026-09-19', title:'Weekly Portfolio Review — September 19, 2026', type:'weekly', file:'Weekly_Portfolio_Report_2026-09-19.html'},
+  {date:'2026-09-19', title:'Stocks to Watch — Week of September 21, 2026', type:'market', file:'Stocks_to_Watch_2026-09-19.html'},
+  {date:'2026-09-18', title:'Weekly Market Intelligence — Higher Rates, $100 Oil, But Tech Refuses to Break', type:'market', file:'Weekly_Market_Intelligence_2026-09-18.html'},
+  {date:'2026-09-18', title:'Morgan Stanley 14th Annual Laguna Conference — Portfolio & Research Universe Read-Through', type:'portfolio', file:'Morgan_Stanley_Laguna_Conference_2026-09-18.html'},
+  {date:'2026-09-17', title:'Daily Portfolio Close — September 17, 2026', type:'daily', file:'Daily_Portfolio_Close_2026-09-17.html'},
+  {date:'2026-09-12', title:'Retirement Portfolio — Research Universe Ranking (Refresh)', type:'portfolio', file:'Retirement_Portfolio_Research_Universe_Ranking_2026-09-12.html'},
+  {date:'2026-09-12', title:'Dogs of the Dow — 2026 Analyst Review & Opportunity Ranking', type:'portfolio', file:'Dogs_of_the_Dow_2026-09-12.html'},
+  {date:'2026-09-12', title:'Wall Street High-Conviction Stock Picks', type:'portfolio', file:'Wall_Street_High_Conviction_Stock_Picks_2026-09-12.html'},
+  {date:'2026-09-07', title:'UnitedHealth Group (UNH) — Equity Research Report', type:'research', file:'UNH_Equity_Research_Report_2026-09-07.html', ticker:'UNH', assetType:'equity'},
   {date:'2026-09-09', title:'NVIDIA (NVDA) Fundamental Analysis Refresh — Post-Earnings Update & Five-Year Outlook', type:'research', file:'NVDA_Fundamental_Analysis_Refresh_Sep2026.html', ticker:'NVDA', assetType:'equity'},
   {date:'2026-09-06', title:'Retirement Portfolio — Research Universe Ranking (88 Names)', type:'research', file:'Retirement_Portfolio_Research_Universe_Ranking_2026-09-06.html'},
   {date:'2026-09-06', title:'Southern Company (SO) — Equity Research Report', type:'research', file:'SO_Equity_Research_Report_2026-09-06.html', ticker:'SO', assetType:'equity'},
@@ -2475,7 +2488,10 @@ const reports = [
   {date:'2026-08-08', title:'Johnson & Johnson (JNJ) Comprehensive Investment Analysis', type:'research', file:'JNJ_Comprehensive_Investment_Analysis_2026-08-08.html', ticker:'JNJ', assetType:'equity'},
   {date:'2026-08-09', title:'VIS vs. XLI — Industrial Sector ETF Comparison', type:'research', file:'VIS_vs_XLI_Industrial_ETF_Analysis_2026-08-09.html', ticker:'VIS', assetType:'fund'},
   {date:'2026-08-07', title:'GRID ETF — Grid Capex & AI Buildout Analysis', type:'research', file:'GRID_ETF_Grid_Capex_Report_Aug2026.html', ticker:'GRID', assetType:'fund'},
+  {date:'2026-08-05', title:'Disney (DIS) Research & Thesis Pro', type:'research', file:'DIS_Research_and_Thesis_Pro_2026-08-05.html', ticker:'DIS', assetType:'equity'},
   {date:'2026-08-05', title:'Atlanta Braves Holdings (BATRA) Fundamental Analysis', type:'research', file:'BATRA_Fundamental_Analysis_2026-08-05.pdf', ticker:'BATRA', assetType:'equity'},
+  {date:'2026-07-31', title:'AI Stack ETF Comparison — GRID, POWR, SOXQ & AIQ', type:'research', file:'AI_Stack_ETF_Comparison_2026-07-31.html', assetType:'fund'},
+  {date:'2026-07-31', title:'GRID vs. POWR — ETF Comparison', type:'research', file:'GRID_vs_POWR_ETF_Comparison_2026-07-31.html', ticker:'GRID', assetType:'fund'},
   {date:'2026-07-20', title:'PepsiCo (PEP) Fundamental Analysis', type:'research', file:'PEP_Fundamental_Analysis_2026-07-20.pdf', ticker:'PEP', assetType:'equity'},
   {date:'2026-07-18', title:'Retirement Portfolio — Senior Analyst Review', type:'research', file:'Retirement_Portfolio_Senior_Analyst_Review_2026-07-18.pdf'},
   {date:'2026-07-17', title:'CVS Reallocation — PM Report', type:'research', file:'CVS_Reallocation_PM_Report_2026-07-17.pdf'},
@@ -2506,7 +2522,7 @@ function fmtReportDate(d){
   return parts[0];
 }
 
-const typeLabel = {daily:'Daily', weekly:'Weekly', research:'Research'};
+const typeLabel = {daily:'Daily', weekly:'Weekly', research:'Research', portfolio:'Portfolio', market:'Market'};
 const grid = document.getElementById('report-grid');
 function updateReportsTitle(){
   const activeCount = reports.filter(r=>!r.archived).length;
