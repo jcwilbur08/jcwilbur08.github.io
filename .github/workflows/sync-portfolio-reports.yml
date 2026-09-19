@@ -1,0 +1,64 @@
+name: Sync Portfolio Reports
+
+# Mirrors new reports from the private Portfolio-Summary repo into the Report Library.
+# The sync is idempotent: runs with nothing new make no commit at all, so a daily
+# schedule is cheap even when no reports landed.
+on:
+  schedule:
+    # 01:00 UTC daily. Portfolio-Summary writes its daily close at roughly 00:25 UTC
+    # (the evening of the US trading day it covers), so this lands shortly after.
+    - cron: '0 1 * * *'
+  workflow_dispatch: {}  # lets you trigger a manual sync from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync-reports:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repo
+        uses: actions/checkout@v4
+
+      # Portfolio-Summary is private, so the default GITHUB_TOKEN (scoped to this repo
+      # only) cannot read it — this needs a PAT with read access, stored as the
+      # PORTFOLIO_SUMMARY_TOKEN secret. Fail loudly rather than silently syncing nothing.
+      - name: Verify source repo token is configured
+        env:
+          TOKEN: ${{ secrets.PORTFOLIO_SUMMARY_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::error::PORTFOLIO_SUMMARY_TOKEN is not set. Add a PAT with read access"
+            echo "::error::to jcwilbur08/Portfolio-Summary under Settings > Secrets and"
+            echo "::error::variables > Actions."
+            exit 1
+          fi
+
+      - name: Check out Portfolio-Summary (report-inbox only)
+        uses: actions/checkout@v4
+        with:
+          repository: jcwilbur08/Portfolio-Summary
+          token: ${{ secrets.PORTFOLIO_SUMMARY_TOKEN }}
+          path: portfolio-summary
+          # Only the report manifests and documents are needed; skipping the rest of the
+          # repo keeps the checkout small.
+          sparse-checkout: report-inbox
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Sync new reports into the Report Library
+        env:
+          SUMMARY_REPO: ${{ github.workspace }}/portfolio-summary
+        run: python3 scripts/sync_portfolio_reports.py
+
+      - name: Commit synced reports (only if something changed)
+        run: |
+          git config user.name "report-sync-bot"
+          git config user.email "actions@github.com"
+          # The sync both adds and retires files, so stage deletions as well as additions.
+          git add -A ':!portfolio-summary'
+          git diff --staged --quiet || git commit -m "Auto-sync reports from Portfolio-Summary [skip ci]"
+          git push
