@@ -1,85 +1,85 @@
 {
-  "generated_at": "2026-09-18T04:37:34Z",
+  "generated_at": "2026-09-19T04:33:10Z",
   "movers": [
     {
-      "ticker": "CRM",
-      "day_pct": -3.07,
-      "headline": "Salesforce fell 3.07% Tuesday as CEO's warnings about AI ethics overshadowed the company's expanding role in artificial intelligence development.",
-      "why": "Marc Benioff used the company's Dreamforce event to caution the industry against repeating social media's mistakes, drawing parallels between past platform harms and potential AI risks. While Salesforce announced AI products and partnerships with major technology firms, the cautionary messaging appeared to weigh on investor sentiment.",
-      "source": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/article/salesforce-ceo-marc-benioff-we-cannot-let-ai-become-social-media-20-165753890.html"
-    },
-    {
-      "ticker": "TSM",
-      "day_pct": 3.0,
-      "headline": "Taiwan Semiconductor rose 3.0% Tuesday as its exclusive control over advanced packaging technology reinforces its competitive moat in AI infrastructure.",
-      "why": "The company's dominant position in CoWoS advanced packaging\u2014a critical bottleneck for AI deployments\u2014provides significant pricing leverage independent of its direct AI chip contributions. Strong sequential revenue and margin growth in recent quarters underscore the durability of this competitive advantage.",
-      "source": "24/7 Wall St.",
-      "url": "https://247wallst.com/investing/2026/09/16/taiwan-semiconductor-is-a-no-brainer-buy-on-repeat-and-not-for-the-reason-you-think/"
-    },
-    {
-      "ticker": "AVGO",
-      "day_pct": 2.29,
-      "headline": "Broadcom advanced 2.29% Tuesday as its accelerating AI business and valuation discount relative to peers attract analyst attention.",
-      "why": "The company's year-over-year AI revenue growth substantially exceeds broader semiconductor industry rates, yet it trades at a lower earnings multiple than competitors. Analysts see this disconnect as an opportunity, with price targets implying meaningful upside from current levels.",
-      "source": "24/7 Wall St.",
-      "url": "https://247wallst.com/investing/2026/09/16/this-ai-stock-could-be-worth-far-more-than-investors-think/"
-    },
-    {
-      "ticker": "AMZN",
-      "day_pct": 2.13,
-      "headline": "Amazon climbed 2.13% Tuesday as institutional buying interest and better-than-expected earnings offset operational headwinds.",
-      "why": "A major fund manager initiated a significant position in the company, reflecting sustained institutional confidence despite recent insider selling. The company's latest earnings beat expectations, though near-term challenges from elevated operating costs and service disruptions remain.",
-      "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-e-fund-management-co-ltd-takes-position-in-amazoncom-inc-amzn-2026-09-17/"
-    },
-    {
       "ticker": "QCOM",
-      "day_pct": 2.09,
-      "headline": "Qualcomm rose 2.09% Tuesday even as rival MediaTek overtook it in market capitalization, signaling sector-wide strength in semiconductor infrastructure.",
-      "why": "The competitive shift reflects investor focus on AI infrastructure partnerships rather than traditional handset market dynamics, with major tech companies backing chipmakers positioned for advanced computing. Qualcomm still participates in this broader structural trend.",
-      "source": "Foreign Policy Journal",
-      "url": "https://www.foreignpolicyjournal.com/2026/09/17/mediatek-stock-surpasses-qualcomm-nasdaq-qcom-in-market-cap-as-dimensity-9600-pro-targets-premium-smartphone-turf/"
-    },
-    {
-      "ticker": "DIS",
-      "day_pct": -1.53,
-      "headline": "Disney declined 1.53% Tuesday despite leadership appointments aimed at strengthening its streaming and content strategy.",
-      "why": "The company elevated executives to oversee its direct-to-consumer entertainment business and television content development, signaling continued investment in streaming services. The negative price action suggests these organizational moves alone did not offset broader market concerns about the division.",
-      "source": "The Walt Disney Company",
-      "url": "https://thewaltdisneycompany.com/press-releases/adam-smith-named-chairman-direct-to-consumer-disney-entertainment/"
-    },
-    {
-      "ticker": "MSFT",
-      "day_pct": 1.52,
-      "headline": "Microsoft rose 1.52% Tuesday as new time limits on free cloud gaming reflect efforts to improve service profitability.",
-      "why": "The company is implementing monthly caps on complimentary Xbox Cloud Gaming usage to better align costs with consumer behavior, affecting roughly 4% of the heaviest users. This move prioritizes unit economics in the gaming division despite potential near-term churn risk.",
-      "source": "Insider Monkey",
-      "url": "https://www.insidermonkey.com/news/microsoft-msft-puts-a-clock-on-free-xbox-cloud-gaming-1837790/"
-    },
-    {
-      "ticker": "GEHC",
-      "day_pct": 1.5,
-      "headline": "GE HealthCare edged up 1.5% Tuesday on routine executive equity grants with no apparent new business developments.",
-      "why": "The company awarded its CFO a standard compensation package of shares and derivative securities. The transaction represents standard equity practices and contains no operational or strategic news.",
-      "source": "Kalkine Media",
-      "url": "https://kalkinemedia.com/us/news/announcements/ge-healthcare-cfo-grogan-william-k-granted-31877-derivative-securities-and-75096-shares"
+      "day_pct": -5.82,
+      "headline": "Qualcomm fell 5.82% Tuesday despite gains from its AWS partnership on AI silicon development and expanding presence in automotive electronics.",
+      "why": "The stock had rallied 3.33% on September 17 following the strategic AWS collaboration and AI diversification efforts, supported by technical buy signals. The current decline suggests profit-taking or broader market headwinds offset earlier enthusiasm around the partnership and valuation advantages.",
+      "source": "TradingKey",
+      "url": "https://www.tradingkey.com/news/market-movers/262173706-market-movers-qcom-20260917"
     },
     {
       "ticker": "NFLX",
-      "day_pct": -1.44,
-      "headline": "Netflix fell 1.44% Tuesday as Florida regulators sued the company over alleged data collection deception tied to its advertising business.",
-      "why": "The state's Attorney General claims Netflix violated consumer protection laws by promising ad-free subscriptions while simultaneously building infrastructure to harvest granular user data for advertising purposes. The lawsuit seeks injunctive relief and financial penalties under state statutes.",
-      "source": "Top Class Actions",
-      "url": "https://topclassactions.com/lawsuit-settlements/lawsuit-news/florida-sues-netflix-claims-company-misled-consumers-about-data-collection/"
+      "day_pct": -4.67,
+      "headline": "Netflix declined 4.67% Tuesday as the company canceled 'Sweet Magnolias' due to viewership erosion, though new projects including 'Ladies of the House' are in development.",
+      "why": "The cancellation of a five-season drama reflects softening audience engagement on the platform. Netflix is offsetting the loss by developing replacement content with returning talent from the canceled show, including a new winery-focused family drama.",
+      "source": "The Hollywood Reporter",
+      "url": "https://www.hollywoodreporter.com/tv/tv-news/sweet-magnolias-canceled-five-seasons-netflix-1236705797/"
     },
     {
-      "ticker": "GS",
-      "day_pct": 1.44,
-      "headline": "Goldman Sachs rose 1.44% Tuesday as it expands engineering capabilities in Seattle-area tech hub for AI and cloud transformation.",
-      "why": "The investment bank opened a dedicated engineering office in Bellevue employing over 125 people, reflecting strategic focus on artificial intelligence and cloud infrastructure development. Leadership emphasized the move's importance in attracting advanced technical talent.",
+      "ticker": "AVGO",
+      "day_pct": 2.97,
+      "headline": "Broadcom advanced 2.97% Tuesday with limited catalyst details available from current market activity.",
+      "why": "No substantive news regarding Broadcom operations or strategic developments was provided in available reports. The modest gain suggests participation in broader sector strength rather than company-specific drivers.",
+      "source": "Investing.com Canada",
+      "url": "https://ca.investing.com/news/stock-market-news/form-8k-brinker-international-inc-for-17-september-93CH-4843287"
+    },
+    {
+      "ticker": "PEP",
+      "day_pct": -2.93,
+      "headline": "PepsiCo fell 2.93% Tuesday despite broader market gains, as investors positioned ahead of October earnings and digested soft near-term guidance.",
+      "why": "The stock underperformed while the S&P 500 and Nasdaq posted modest gains, indicating relative weakness. Analysts project only fractional earnings growth alongside modest revenue expansion, while the equity trades below sector valuation multiples despite discounted pricing.",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/pepsico-pep-stock-dips-while-214504050.html"
+    },
+    {
+      "ticker": "DIS",
+      "day_pct": -2.54,
+      "headline": "Disney declined 2.54% Tuesday following the announcement of a new Chief Technology Officer role aimed at modernizing infrastructure and accelerating AI-driven growth.",
+      "why": "The appointment of a former AI startup CEO signals Disney's pivot toward technology-led expansion, with Character.AI technical talent expected to join the company. The structural reorganization reflects management's commitment to upgrading enterprise capabilities, though execution risks may weigh on near-term sentiment.",
+      "source": "marketscreener.com",
+      "url": "https://www.marketscreener.com/news/the-walt-disney-company-announces-appointment-of-karandeep-anand-as-senior-executive-vice-president-ce785adadc8ef427"
+    },
+    {
+      "ticker": "META",
+      "day_pct": -2.43,
+      "headline": "Meta fell 2.43% Tuesday as its Muse AI agent rolled out calling capabilities, putting it on par with rival Instinct's concierge offering.",
+      "why": "Both Instinct and Meta have now equipped their AI agents with the ability to interact with U.S. businesses via phone, narrowing competitive differentiation. The feature parity reduces Meta's standalone advantage in the AI agent space despite earlier momentum in user adoption.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/17/rival-ai-agents-instinct-and-metas-muse-both-add-the-ability-to-make-calls/"
+    },
+    {
+      "ticker": "CRM",
+      "day_pct": -2.03,
+      "headline": "Salesforce declined 2.03% Tuesday despite unveiling AIforce, a data integration layer CEO Benioff positioned against Microsoft's Copilot offering.",
+      "why": "The AIforce launch targets data reliability and security advantages over competitor solutions, aiming to extend Salesforce's recent stock momentum. Investors will focus on adoption of this new connectivity layer alongside Agentforce and Data 360 products to gauge sustained growth momentum.",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/technology/ai/articles/salesforce-unveils-aiforce-benioff-takes-160300047.html"
+    },
+    {
+      "ticker": "GEV",
+      "day_pct": 1.66,
+      "headline": "GE Vernova rose 1.66% Tuesday, supported by analyst preference versus NextEra Energy due to strong execution and accelerating energy transition demand.",
+      "why": "Comparisons favor GE Vernova's focused energy transition strategy and clear execution roadmap over NextEra's complex merger dynamics. The company benefits from strengthening secular tailwinds in clean infrastructure demand.",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/energy/articles/ge-vernova-vs-nextera-energy-140501925.html"
+    },
+    {
+      "ticker": "SO",
+      "day_pct": -1.43,
+      "headline": "Southern Company fell 1.43% Tuesday as Morgan Stanley lowered its price target to $85 from $89 while maintaining an Underweight stance.",
+      "why": "The analyst's target reduction and sustained negative rating reflect tempering views on the utility's near-term prospects despite its core electricity and natural gas distribution business. The downgrade suggests limited upside in current valuations.",
+      "source": "marketscreener.com",
+      "url": "https://www.marketscreener.com/news/morgan-stanley-adjusts-pt-on-southern-co-to-85-from-89-keeps-underweight-rating-ce785adadb8bf727"
+    },
+    {
+      "ticker": "AMZN",
+      "day_pct": 1.0,
+      "headline": "Amazon gained 1.0% Tuesday after announcing wage increases for full-time operations workers, with compensation potentially reaching $50,000 annually.",
+      "why": "The wage boost for warehouse and airport operations staff addresses labor market pressures and reduces turnover risk across a significant portion of Amazon's workforce. The move reflects tightening labor conditions and the company's confidence in operational profitability to absorb higher labor costs.",
       "source": "The Business Journals",
-      "url": "https://www.bizjournals.com/seattle/news/2026/09/17/goldman-sachs-bellevue-office-david-solomon.html"
+      "url": "https://www.bizjournals.com/cincinnati/news/2026/09/18/amazon-workers-pay-increase-cvg-airport-hub.html"
     }
   ]
 }
