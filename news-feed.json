@@ -1,85 +1,77 @@
 {
-  "generated_at": "2026-09-19T04:33:10Z",
+  "generated_at": "2026-09-22T04:48:58Z",
   "movers": [
     {
+      "ticker": "META",
+      "day_pct": 11.34,
+      "headline": "Meta rose 11.34% Tuesday as its new Muse AI app demonstrates stronger early mobile traction than ChatGPT achieved in comparable launch windows.",
+      "why": "Muse has attracted more downloads and daily active users in the U.S. and Canada during its initial twelve days compared to ChatGPT's early performance, signaling potential for another major platform success. Meta's proven ability to cross-promote across its portfolio of applications positions the AI tool to capitalize on the company's existing user base.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/"
+    },
+    {
       "ticker": "QCOM",
-      "day_pct": -5.82,
-      "headline": "Qualcomm fell 5.82% Tuesday despite gains from its AWS partnership on AI silicon development and expanding presence in automotive electronics.",
-      "why": "The stock had rallied 3.33% on September 17 following the strategic AWS collaboration and AI diversification efforts, supported by technical buy signals. The current decline suggests profit-taking or broader market headwinds offset earlier enthusiasm around the partnership and valuation advantages.",
-      "source": "TradingKey",
-      "url": "https://www.tradingkey.com/news/market-movers/262173706-market-movers-qcom-20260917"
+      "day_pct": 9.29,
+      "headline": "Qualcomm advanced 9.29% Tuesday following a 7.6% after-hours surge that added roughly $15 billion in market capitalization.",
+      "why": "The chipmaker's stock reached $194.23 per share in extended trading, reflecting strong investor conviction ahead of the regular session. The magnitude of the after-hours move suggests meaningful positive catalysts are driving institutional buying interest.",
+      "source": "24/7 Wall St.",
+      "url": "https://247wallst.com/cards/qualcomm-qcom-price-swing-01m32t2sx14h7akswc03k9d3xg"
+    },
+    {
+      "ticker": "XOM",
+      "day_pct": -3.2,
+      "headline": "ExxonMobil declined 3.2% Tuesday as management fielded questions about refining challenges and supply chain constraints at an industry event.",
+      "why": "Discussion of operational pressures and capital allocation decisions at the conference triggered near-term selling, though the stock maintains support above both its 50-day and 200-day moving averages. Analyst sentiment remains divided, with some skeptics citing persistent headwinds while others retain confidence in the company's longer-term strategic initiatives.",
+      "source": "Traders Union",
+      "url": "https://tradersunion.com/news/stocks/show/3419640-exxon-mobil-slides-2-65percent-today/"
     },
     {
       "ticker": "NFLX",
-      "day_pct": -4.67,
-      "headline": "Netflix declined 4.67% Tuesday as the company canceled 'Sweet Magnolias' due to viewership erosion, though new projects including 'Ladies of the House' are in development.",
-      "why": "The cancellation of a five-season drama reflects softening audience engagement on the platform. Netflix is offsetting the loss by developing replacement content with returning talent from the canceled show, including a new winery-focused family drama.",
-      "source": "The Hollywood Reporter",
-      "url": "https://www.hollywoodreporter.com/tv/tv-news/sweet-magnolias-canceled-five-seasons-netflix-1236705797/"
+      "day_pct": 2.19,
+      "headline": "Netflix gained 2.19% Tuesday as prominent investor Bill Ackman committed $1 billion to the streaming platform, betting on its advertising-tier profitability.",
+      "why": "Ackman's substantial new position reflects confidence in Netflix's ad-supported business model, which is projected to generate $3 billion in annual revenue by 2026. The investment signals conviction despite the company's challenges around subscriber growth deceleration and rising content expenses.",
+      "source": "24/7 Wall St.",
+      "url": "https://247wallst.com/investing/2026/09/21/ackman-bets-1-billion-on-netflix-redemption-after-400-million-2022-loss/"
     },
     {
-      "ticker": "AVGO",
-      "day_pct": 2.97,
-      "headline": "Broadcom advanced 2.97% Tuesday with limited catalyst details available from current market activity.",
-      "why": "No substantive news regarding Broadcom operations or strategic developments was provided in available reports. The modest gain suggests participation in broader sector strength rather than company-specific drivers.",
-      "source": "Investing.com Canada",
-      "url": "https://ca.investing.com/news/stock-market-news/form-8k-brinker-international-inc-for-17-september-93CH-4843287"
-    },
-    {
-      "ticker": "PEP",
-      "day_pct": -2.93,
-      "headline": "PepsiCo fell 2.93% Tuesday despite broader market gains, as investors positioned ahead of October earnings and digested soft near-term guidance.",
-      "why": "The stock underperformed while the S&P 500 and Nasdaq posted modest gains, indicating relative weakness. Analysts project only fractional earnings growth alongside modest revenue expansion, while the equity trades below sector valuation multiples despite discounted pricing.",
-      "source": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/pepsico-pep-stock-dips-while-214504050.html"
-    },
-    {
-      "ticker": "DIS",
-      "day_pct": -2.54,
-      "headline": "Disney declined 2.54% Tuesday following the announcement of a new Chief Technology Officer role aimed at modernizing infrastructure and accelerating AI-driven growth.",
-      "why": "The appointment of a former AI startup CEO signals Disney's pivot toward technology-led expansion, with Character.AI technical talent expected to join the company. The structural reorganization reflects management's commitment to upgrading enterprise capabilities, though execution risks may weigh on near-term sentiment.",
-      "source": "marketscreener.com",
-      "url": "https://www.marketscreener.com/news/the-walt-disney-company-announces-appointment-of-karandeep-anand-as-senior-executive-vice-president-ce785adadc8ef427"
-    },
-    {
-      "ticker": "META",
-      "day_pct": -2.43,
-      "headline": "Meta fell 2.43% Tuesday as its Muse AI agent rolled out calling capabilities, putting it on par with rival Instinct's concierge offering.",
-      "why": "Both Instinct and Meta have now equipped their AI agents with the ability to interact with U.S. businesses via phone, narrowing competitive differentiation. The feature parity reduces Meta's standalone advantage in the AI agent space despite earlier momentum in user adoption.",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/17/rival-ai-agents-instinct-and-metas-muse-both-add-the-ability-to-make-calls/"
-    },
-    {
-      "ticker": "CRM",
-      "day_pct": -2.03,
-      "headline": "Salesforce declined 2.03% Tuesday despite unveiling AIforce, a data integration layer CEO Benioff positioned against Microsoft's Copilot offering.",
-      "why": "The AIforce launch targets data reliability and security advantages over competitor solutions, aiming to extend Salesforce's recent stock momentum. Investors will focus on adoption of this new connectivity layer alongside Agentforce and Data 360 products to gauge sustained growth momentum.",
-      "source": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/technology/ai/articles/salesforce-unveils-aiforce-benioff-takes-160300047.html"
-    },
-    {
-      "ticker": "GEV",
-      "day_pct": 1.66,
-      "headline": "GE Vernova rose 1.66% Tuesday, supported by analyst preference versus NextEra Energy due to strong execution and accelerating energy transition demand.",
-      "why": "Comparisons favor GE Vernova's focused energy transition strategy and clear execution roadmap over NextEra's complex merger dynamics. The company benefits from strengthening secular tailwinds in clean infrastructure demand.",
-      "source": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/energy/articles/ge-vernova-vs-nextera-energy-140501925.html"
-    },
-    {
-      "ticker": "SO",
-      "day_pct": -1.43,
-      "headline": "Southern Company fell 1.43% Tuesday as Morgan Stanley lowered its price target to $85 from $89 while maintaining an Underweight stance.",
-      "why": "The analyst's target reduction and sustained negative rating reflect tempering views on the utility's near-term prospects despite its core electricity and natural gas distribution business. The downgrade suggests limited upside in current valuations.",
-      "source": "marketscreener.com",
-      "url": "https://www.marketscreener.com/news/morgan-stanley-adjusts-pt-on-southern-co-to-85-from-89-keeps-underweight-rating-ce785adadb8bf727"
+      "ticker": "GOOG",
+      "day_pct": 1.88,
+      "headline": "Alphabet rose 1.88% Tuesday as shares test a key resistance level near $354 following a strong rebound from technical support.",
+      "why": "The stock bounced from a double-bottom formation around $325 and is now probing overhead resistance, though the 200-day moving average continues to exert selling pressure at higher levels. A decisive break above $356 would likely confirm sustained bullish momentum for traders.",
+      "source": "Investing.com",
+      "url": "https://www.investing.com/news/stock-market-news/alphabet-tests-354-resistance-after-325-double-bottom-live-93CH-4909305"
     },
     {
       "ticker": "AMZN",
-      "day_pct": 1.0,
-      "headline": "Amazon gained 1.0% Tuesday after announcing wage increases for full-time operations workers, with compensation potentially reaching $50,000 annually.",
-      "why": "The wage boost for warehouse and airport operations staff addresses labor market pressures and reduces turnover risk across a significant portion of Amazon's workforce. The move reflects tightening labor conditions and the company's confidence in operational profitability to absorb higher labor costs.",
-      "source": "The Business Journals",
-      "url": "https://www.bizjournals.com/cincinnati/news/2026/09/18/amazon-workers-pay-increase-cvg-airport-hub.html"
+      "day_pct": 1.87,
+      "headline": "Amazon advanced 1.87% Tuesday despite blocking Meta's Muse AI agent from accessing its e-commerce platform over identification and data-handling concerns.",
+      "why": "Amazon restricted Muse's ability to make purchases on behalf of users, citing transparency and privacy issues as the AI tool's popularity surged to top app store rankings. Meta is developing enhanced security measures, including a confidential computing environment, to address marketplace operators' data protection requirements.",
+      "source": "SiliconANGLE",
+      "url": "https://siliconangle.com/2026/09/21/amazon-blocks-metas-muse-agent-from-shopping-on-users-behalf/"
+    },
+    {
+      "ticker": "GS",
+      "day_pct": 1.85,
+      "headline": "Goldman Sachs gained 1.85% Tuesday as the firm led syndication of $1.1 billion in high-yield debt financing for a data center development.",
+      "why": "A Goldman-led consortium is marketing junk bonds yielding in the low-to-mid 9 percent range to fund a 76-megawatt facility near Richmond that is fully contracted by AI infrastructure provider CoreWeave. The transaction reflects sustained debt market appetite for data center assets backing long-term AI computing capacity agreements.",
+      "source": "Briefs Finance",
+      "url": "https://www.briefs.co/news/goldman-leads-sale-of-1-1-billion-junk-bond-for-coreweave-le/"
+    },
+    {
+      "ticker": "MSFT",
+      "day_pct": 1.59,
+      "headline": "Microsoft rose 1.59% Tuesday as analyst support remains intact despite modest pre-market weakness.",
+      "why": "Jefferies analyst Brent Thill reiterated a Buy rating and $575 price target on the software giant, underscoring confidence in the company's strategic positioning. The research affirmation provides technical support amid sector volatility.",
+      "source": "marketscreener.com",
+      "url": "https://www.marketscreener.com/news/microsoft-corporation-buy-rating-from-jefferies-ce785adbdd8ff624"
+    },
+    {
+      "ticker": "DIS",
+      "day_pct": 1.52,
+      "headline": "Disney gained 1.52% Tuesday as prominent venture investor Jason Calacanis suggested Apple should pursue acquisitions in media and other sectors.",
+      "why": "Calacanis publicly advocated for Apple to deploy its substantial cash reserves toward transformative acquisitions, naming Disney among ten potential targets that could expand Apple's reach into AI, financial services, and entertainment. The commentary highlights Disney's strategic appeal as a content and media asset in the eyes of major technology investors.",
+      "source": "Benzinga",
+      "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/09/61909226/apple-should-acquire-disney-robinhood-uber-or-these-companies-all-in-podcast-host-says"
     }
   ]
 }
