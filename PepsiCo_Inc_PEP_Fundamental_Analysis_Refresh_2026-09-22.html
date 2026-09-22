@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PepsiCo, Inc. (PEP) - Fundamental Analysis Refresh - 2026-09-22</title>
+<style>
+  :root{
+    --navy:#0c2340;
+    --blue:#174a7e;
+    --green:#1f6b4f;
+    --green2:#eaf5ef;
+    --gold:#b98219;
+    --red:#9e3d34;
+    --redbg:#faeeee;
+    --ink:#17202a;
+    --muted:#5d6875;
+    --line:#d9e0e6;
+    --soft:#f4f7f9;
+    --white:#ffffff;
+  }
+  *{box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,Helvetica,sans-serif;margin:0;color:var(--ink);background:#eef2f5;line-height:1.47;font-size:14px}
+  .page{max-width:1060px;margin:22px auto;background:#fff;box-shadow:0 4px 18px rgba(0,0,0,.08)}
+  .hero{padding:42px 48px 28px;background:linear-gradient(135deg,var(--navy),#12365b);color:white;position:relative;overflow:hidden}
+  .hero:after{content:"";position:absolute;right:-80px;top:-120px;width:340px;height:340px;border-radius:50%;border:54px solid rgba(255,255,255,.045)}
+  .eyebrow{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:#bcd3e9;font-weight:700;margin-bottom:8px}
+  h1{font-size:32px;line-height:1.12;margin:0 0 8px;font-weight:750;letter-spacing:-.02em}
+  .subtitle{font-size:17px;color:#dce8f3;margin-bottom:20px}
+  .meta{display:flex;gap:18px;flex-wrap:wrap;color:#cbd9e6;font-size:12px}
+  .meta span{padding-right:18px;border-right:1px solid rgba(255,255,255,.2)}
+  .meta span:last-child{border-right:0}
+  main{padding:30px 48px 44px}
+  h2{font-size:22px;margin:32px 0 14px;color:var(--navy);letter-spacing:-.01em;border-bottom:2px solid #e7edf2;padding-bottom:8px}
+  h3{font-size:16px;margin:22px 0 8px;color:#163b62}
+  p{margin:8px 0 12px}
+  .lead{font-size:16px;line-height:1.55}
+  .callout{border-left:5px solid var(--green);background:var(--green2);padding:16px 18px;margin:18px 0;border-radius:0 7px 7px 0}
+  .callout strong{color:#15563f}
+  .warning{border-left-color:var(--gold);background:#fbf5e8}
+  .risk{border-left-color:var(--red);background:var(--redbg)}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:16px 0 22px}
+  .metric{border:1px solid var(--line);border-radius:8px;padding:14px;background:#fff}
+  .metric .label{font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+  .metric .value{font-size:23px;font-weight:760;margin:4px 0 2px;color:var(--navy)}
+  .metric .sub{font-size:11.5px;color:var(--muted)}
+  .status{display:inline-block;font-weight:800;font-size:12px;letter-spacing:.04em;text-transform:uppercase;border-radius:999px;padding:6px 10px;background:#dff1e8;color:#16583f}
+  .status.gold{background:#f7edcf;color:#76530c}
+  table{width:100%;border-collapse:collapse;margin:12px 0 20px;font-size:12.5px}
+  th{background:#eef3f7;color:#27435d;text-align:left;padding:9px 9px;border-bottom:1px solid #ccd6df;font-weight:750}
+  td{padding:9px;border-bottom:1px solid #e3e8ed;vertical-align:top}
+  tr:last-child td{border-bottom:0}
+  .num{text-align:right;font-variant-numeric:tabular-nums}
+  .good{color:var(--green);font-weight:700}
+  .bad{color:var(--red);font-weight:700}
+  .neutral{color:var(--gold);font-weight:700}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  .panel{border:1px solid var(--line);border-radius:8px;padding:15px;background:#fff}
+  .panel h3{margin-top:0}
+  .barrow{display:grid;grid-template-columns:74px 1fr 52px;gap:8px;align-items:center;margin:8px 0;font-size:12px}
+  .bar{height:10px;background:#e8edf1;border-radius:8px;overflow:hidden}
+  .fill{height:100%;background:linear-gradient(90deg,#2c628f,#5d8fb8);border-radius:8px}
+  .range{position:relative;height:28px;margin:12px 0 4px;background:linear-gradient(90deg,#f5dddd 0%,#f4efd8 45%,#dfefe6 100%);border-radius:14px}
+  .range .dot{position:absolute;top:5px;width:18px;height:18px;border-radius:50%;background:var(--navy);border:3px solid white;box-shadow:0 0 0 1px rgba(0,0,0,.15)}
+  .range-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
+  ul{margin:8px 0 14px 20px;padding:0}
+  li{margin:5px 0}
+  .scenario{border-top:5px solid var(--blue)}
+  .scenario.bear{border-top-color:var(--red)}
+  .scenario.bull{border-top-color:var(--green)}
+  .big{font-size:24px;font-weight:780;color:var(--navy)}
+  .small{font-size:11px;color:var(--muted)}
+  .source{font-size:11px;color:#4d5965;margin:5px 0;word-break:break-word}
+  .source a{color:#2d5e8b;text-decoration:none}
+  .footer{background:#f1f4f6;color:#5e6872;font-size:10.5px;padding:20px 48px 28px;border-top:1px solid #dce2e8}
+  .badge{display:inline-block;padding:3px 7px;border-radius:4px;background:#edf3f8;color:#325776;font-size:10px;font-weight:700;margin-right:4px}
+  .nowrap{white-space:nowrap}
+  .pagebreak{break-before:page}
+  @media(max-width:760px){
+    .page{margin:0}.hero,main,.footer{padding-left:22px;padding-right:22px}.grid{grid-template-columns:1fr 1fr}.two,.three{grid-template-columns:1fr}h1{font-size:27px}
+  }
+  @media print{
+    body{background:#fff;font-size:11.5px}
+    .page{max-width:none;margin:0;box-shadow:none}
+    .hero{padding:28px 32px 20px}
+    main{padding:20px 32px 28px}
+    .footer{padding:16px 32px 22px}
+    h1{font-size:27px} h2{font-size:18px;margin-top:24px} h3{font-size:14px}
+    .metric .value{font-size:20px}
+    .grid{gap:8px}.metric{padding:10px}
+    table{font-size:10.5px}
+    th,td{padding:6px}
+    .panel,.metric,.callout,table,.three,.two{break-inside:avoid}
+    a{color:inherit;text-decoration:none}
+    @page{size:Letter;margin:0.35in}
+  }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="hero">
+    <div class="eyebrow">Equity Research - Refresh / Re-underwrite</div>
+    <h1>PepsiCo, Inc. (PEP)</h1>
+    <div class="subtitle">Fundamental Analysis Refresh: Is the pullback and 4.5% yield enough to add?</div>
+    <div class="meta">
+      <span>Report date: September 22, 2026</span>
+      <span>Market data cut-off: 12:10 p.m. ET</span>
+      <span>Canonical portfolio: retirement-portfolio-47.xlsx</span>
+      <span>Publication status: Validated, not published</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="callout">
+      <strong>Research conclusion: ADD - STAGED (conviction 7/10).</strong> At approximately $131, PepsiCo offers an unusually high dividend yield, a meaningfully compressed earnings multiple, and a credible path to high-teens base-case total return if North America stabilizes. The key caveat is that the stock is not simply "cheap income": its 4.5% dividend yield is still below the roughly 4.93% 10-year Treasury yield, while North America volume and margin trends remain unresolved. For the existing 1.21% portfolio position, the best risk-adjusted posture is a modest pre-earnings add toward roughly 1.35%-1.50%, while preserving capacity to reach ~1.75% only if the October 8 quarter confirms stabilization.
+    </div>
+
+    <div class="grid">
+      <div class="metric"><div class="label">Live price</div><div class="value">$131.20</div><div class="sub">Alpaca IEX, 12:10 p.m. ET</div></div>
+      <div class="metric"><div class="label">Annualized dividend</div><div class="value">$5.92</div><div class="sub">4.51% current yield</div></div>
+      <div class="metric"><div class="label">FY27 P/E</div><div class="value">14.6x</div><div class="sub">vs. $8.98 consensus EPS</div></div>
+      <div class="metric"><div class="label">Current portfolio weight</div><div class="value">1.21%</div><div class="sub">155 shares; avg cost $136.86</div></div>
+    </div>
+
+    <h2>1. What has changed since the previous underwriting?</h2>
+    <p class="lead">The September 20 underwriting already concluded that PEP had moved into an attractive but evidence-gated valuation range. The last two trading days changed the <em>price path</em> more than the <em>fundamental thesis</em>.</p>
+    <table>
+      <thead><tr><th>Change since Sept. 20</th><th>Evidence</th><th>Underwriting impact</th></tr></thead>
+      <tbody>
+        <tr><td><strong>The pullback briefly deepened</strong></td><td>PEP traded to approximately $127.99 on Sept. 21 after closing at $129.75 on Sept. 18; it has rebounded to about $131.20 today.</td><td><span class="neutral">Positive, but modest.</span> The brief $128 print improved the entry point, but today's price is actually slightly above the prior report's $129.75 reference.</td></tr>
+        <tr><td><strong>Yield remains unusually high</strong></td><td>The $5.92 annualized dividend now yields about 4.51% at $131.20; PEP's current yield is well above 2023-2025 levels.</td><td><span class="good">Positive.</span> Income carry and valuation support are stronger than in recent years, but the Treasury comparison still matters.</td></tr>
+        <tr><td><strong>No new earnings proof yet</strong></td><td>The next results are scheduled for Oct. 8. Q3 consensus remains about $2.30 EPS on $24.92B revenue.</td><td><span class="neutral">Unchanged.</span> The central debate - North America volume and margin stabilization - remains unresolved.</td></tr>
+        <tr><td><strong>High rates remain a valuation headwind</strong></td><td>The 10-year Treasury yield is approximately 4.93% today after the recent Fed tightening.</td><td><span class="bad">Negative.</span> Slow-growth staples need a larger earnings yield and a credible growth path to justify equity risk.</td></tr>
+      </tbody>
+    </table>
+
+    <div class="two">
+      <div class="panel">
+        <h3>52-week price context</h3>
+        <p>PEP remains roughly 23%-24% below its February high despite today's rebound.</p>
+        <div class="range"><div class="dot" style="left:7.8%"></div></div>
+        <div class="range-labels"><span>$127.98 low</span><span>$131.20 current</span><span>$171.48 high</span></div>
+        <p class="small">The price has moved close to the lower end of the trailing 52-week range; the valuation reset is real, but the earnings reset is not yet complete.</p>
+      </div>
+      <div class="panel">
+        <h3>Forward P/E de-rating</h3>
+        <div class="barrow"><span>2021</span><div class="bar"><div class="fill" style="width:100%"></div></div><span>26.1x</span></div>
+        <div class="barrow"><span>2022</span><div class="bar"><div class="fill" style="width:96.6%"></div></div><span>25.2x</span></div>
+        <div class="barrow"><span>2023</span><div class="bar"><div class="fill" style="width:81.4%"></div></div><span>21.2x</span></div>
+        <div class="barrow"><span>2024</span><div class="bar"><div class="fill" style="width:69.2%"></div></div><span>18.1x</span></div>
+        <div class="barrow"><span>2025</span><div class="bar"><div class="fill" style="width:64.9%"></div></div><span>16.9x</span></div>
+        <div class="barrow"><span>Current</span><div class="bar"><div class="fill" style="width:58.7%"></div></div><span>15.3x*</span></div>
+        <p class="small">*Live price divided by FY2026 consensus EPS. FY2027 P/E is approximately 14.6x. Historical values from S&P Global data via StockAnalysis.</p>
+      </div>
+    </div>
+
+    <h2>2. Executive investment view</h2>
+    <table>
+      <tbody>
+        <tr><th style="width:25%">Company Quality</th><td><span class="status">High quality</span> Global brands, distribution density, product breadth, international diversification and strong pricing architecture remain real competitive advantages. The quality issue is not franchise durability; it is the speed and cost of fixing North America.</td></tr>
+        <tr><th>Valuation Attractiveness</th><td><span class="status">Attractive / evidence-gated</span> Roughly 15.3x FY2026 EPS, 14.6x FY2027 EPS and about 19x FCF are below recent history and at a large discount to Coca-Cola. The discount is warranted in part by slower growth and execution risk, but appears excessive if FY2027 EPS remains close to $9.</td></tr>
+        <tr><th>Portfolio Fit</th><td><span class="status">Favorable at modest size</span> PEP adds lower-beta income and consumer-staples diversification to a portfolio dominated by equities and growth exposure. The constraint is overlap with KO, PM, SCHD and other defensive/income exposures; this argues for staged sizing rather than a large one-step allocation.</td></tr>
+        <tr><th>Decision hinge</th><td>Whether PFNA and PBNA can stabilize unit velocity while core operating margin holds near the mid-16% range. If that occurs, the current multiple is likely too low. If volumes keep deteriorating despite price/affordability actions, the low multiple may be a value trap.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>3. Business quality and competitive position</h2>
+    <p>PepsiCo's underlying franchise remains unusually broad for a consumer staples company: global beverages, global convenient foods, an extensive direct-store-delivery network, and an international business that can offset localized weakness. That combination creates scale in procurement, shelf space, advertising, innovation and distribution that smaller competitors cannot easily replicate.</p>
+    <p>The current weakness is concentrated in the part of the business that historically deserved the highest confidence: North America. Affordability pressure, health preferences, portion control, and GLP-1 adoption are changing consumption behavior. Reuters reported that GLP-1 use had reached roughly 21% of U.S. households by May 2026, while PepsiCo's North America Foods business has struggled to translate price reductions into a durable volume inflection.</p>
+    <div class="callout warning"><strong>Variant perception:</strong> the market appears to be pricing PEP as a structurally ex-growth staples company. The differentiated long case is not that North America returns to its former premium growth rate; it is that modest stabilization plus resilient international growth is enough to support ~5% EPS growth and a 16.5x-17x multiple instead of the current mid-teens multiple.</div>
+
+    <h2>4. Earnings and financial outlook</h2>
+    <table>
+      <thead><tr><th>Metric</th><th class="num">Q2 / Current</th><th>Read-through</th></tr></thead>
+      <tbody>
+        <tr><td>Net revenue growth</td><td class="num">+6.4%</td><td>Reported growth remained healthy, aided by acquisitions and international strength.</td></tr>
+        <tr><td>Organic revenue growth</td><td class="num">+2.4%</td><td>Within the 2%-4% annual guidance range but not strong enough to justify a premium staples multiple.</td></tr>
+        <tr><td>Core EPS growth</td><td class="num">+4%</td><td>Consistent with a mid-single-digit earnings profile, not a high-growth profile.</td></tr>
+        <tr><td>Core operating margin</td><td class="num">16.8%</td><td>Down 40 bps year over year; margin stabilization is central to the re-rating case.</td></tr>
+        <tr><td>PFNA organic revenue</td><td class="num bad">-2%</td><td>Primary weakness. Flat convenient-food volume was not enough to offset pricing/mix pressure.</td></tr>
+        <tr><td>PBNA organic revenue / volume</td><td class="num">+1% / -4%</td><td>Reported revenue held up better than underlying beverage volume; the volume decline must narrow.</td></tr>
+        <tr><td>FY2026 guidance</td><td class="num">2%-4% organic revenue; 4%-6% core constant-currency EPS</td><td>Still achievable, but Q3 needs to show a better mix of volume and margin quality.</td></tr>
+        <tr><td>FY2026 / FY2027 EPS consensus</td><td class="num">$8.56 / $8.98</td><td>Only ~5% annual EPS growth. This is why valuation discipline matters.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>5. Balance sheet, free cash flow and capital allocation</h2>
+    <div class="two">
+      <div class="panel">
+        <h3>Balance sheet</h3>
+        <table>
+          <tbody>
+            <tr><td>Cash</td><td class="num">~$10.3B</td></tr>
+            <tr><td>Short-term debt</td><td class="num">~$10.6B</td></tr>
+            <tr><td>Long-term debt</td><td class="num">~$42.6B</td></tr>
+            <tr><td>Gross debt</td><td class="num">~$53.2B</td></tr>
+            <tr><td>Approx. net debt / 2026E EBITDA</td><td class="num">~2.2x</td></tr>
+          </tbody>
+        </table>
+        <p class="small">Leverage is manageable for a defensive, cash-generative global staples company, but it is not trivial. The high dividend should not be viewed as risk-free.</p>
+      </div>
+      <div class="panel">
+        <h3>Cash return</h3>
+        <p>For the first 24 weeks of 2026, operating cash flow was $2.37B and company-defined free cash flow was $1.17B, both improved from the prior year. PepsiCo expects approximately $8.9B of total shareholder returns in 2026, including about $7.9B of dividends and $1.0B of repurchases.</p>
+        <p>Trailing payout measures are elevated: approximately 78% of earnings and 87% of free cash flow. That does not make the dividend unsafe, but it does argue for <strong>low-to-mid-single-digit dividend growth</strong> rather than assuming the historic high-single-digit pace continues indefinitely.</p>
+      </div>
+    </div>
+
+    <h2>6. Dividend analysis: attractive, but not sufficient by itself</h2>
+    <div class="grid">
+      <div class="metric"><div class="label">Annualized dividend</div><div class="value">$5.92</div><div class="sub">4% increase in 2026</div></div>
+      <div class="metric"><div class="label">Current yield</div><div class="value">4.51%</div><div class="sub">vs. 4.03% at FY2025 year-end</div></div>
+      <div class="metric"><div class="label">Dividend streak</div><div class="value">54 yrs</div><div class="sub">consecutive annual increases</div></div>
+      <div class="metric"><div class="label">10Y Treasury</div><div class="value">4.93%</div><div class="sub">~42 bps above PEP's yield</div></div>
+    </div>
+    <p>The yield is genuinely compelling relative to PEP's own history, but today's bond market changes the comparison. An investor can earn roughly 4.9% in a 10-year Treasury without equity volatility. Therefore, PEP must earn its place through <strong>dividend growth + EPS growth + some multiple normalization</strong>. The good news is that the current valuation does not require a return to a 20x-plus multiple to produce a satisfactory return.</p>
+
+    <h2>7. Valuation</h2>
+    <table>
+      <thead><tr><th>Security / period</th><th class="num">Forward P/E</th><th class="num">Dividend yield</th><th class="num">FCF yield</th><th>Interpretation</th></tr></thead>
+      <tbody>
+        <tr><td><strong>PEP - current</strong></td><td class="num">~15.3x FY26 / 14.6x FY27</td><td class="num">4.51%</td><td class="num">~5.2%</td><td>Meaningful de-rating and the best yield profile in recent years.</td></tr>
+        <tr><td>PEP - FY2025</td><td class="num">16.9x</td><td class="num">4.03%</td><td class="num">3.90%</td><td>Current valuation is cheaper even before assuming a North America recovery.</td></tr>
+        <tr><td>PEP - FY2023</td><td class="num">21.2x</td><td class="num">3.22%</td><td class="num">3.35%</td><td>Historical premium reflected stronger confidence in volume/margins and lower perceived structural risk.</td></tr>
+        <tr><td>KO - current</td><td class="num">~25.6x</td><td class="num">~2.4%</td><td class="num">~3.8%</td><td>PEP trades at a very large multiple discount, partly justified by weaker near-term growth.</td></tr>
+        <tr><td>MDLZ - current</td><td class="num">~18.7x</td><td class="num">~3.5%</td><td class="num">~4.0%</td><td>PEP is also cheaper than another global snacks peer despite broader business diversification.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout warning"><strong>PEG ratio:</strong> PEP's current PEG is roughly 2.9x-3.0x, which is not optically cheap because expected EPS growth is only about 5%. For a mature, high-payout staples company, PEG is a secondary metric; the more decision-useful measures are forward P/E, FCF yield, dividend yield, and the durability of the cash flows supporting them.</div>
+
+    <h3>Valuation bands for CIO consideration</h3>
+    <table>
+      <thead><tr><th>Price band</th><th class="num">Approx. FY27 P/E</th><th class="num">Dividend yield</th><th>Research posture</th></tr></thead>
+      <tbody>
+        <tr><td>&lt; $128</td><td class="num">&lt; 14.3x</td><td class="num">&gt; 4.63%</td><td><span class="good">High-appeal staging zone</span> if thesis remains intact.</td></tr>
+        <tr><td>$128-$135</td><td class="num">14.3x-15.0x</td><td class="num">4.39%-4.63%</td><td><span class="good">Attractive staged-add range.</span></td></tr>
+        <tr><td>$135-$145</td><td class="num">15.0x-16.1x</td><td class="num">4.08%-4.39%</td><td><span class="neutral">More dependent on Q3 proof.</span></td></tr>
+        <tr><td>&gt; $150</td><td class="num">&gt; 16.7x</td><td class="num">&lt; 3.95%</td><td>Less compelling unless EPS estimates or the growth outlook improve.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>8. Bull / base / bear valuation framework</h2>
+    <div class="three">
+      <div class="panel scenario bear">
+        <h3>Bear case - 25%</h3>
+        <div class="big">$118-$125</div>
+        <p>FY2027 EPS falls to roughly $8.4-$8.6; North America remains weak; margins fail to stabilize; market holds the stock near 14x-14.5x.</p>
+        <p class="small">Midpoint capital return from $131.20: about -7%; dividend partially cushions the downside.</p>
+      </div>
+      <div class="panel scenario">
+        <h3>Base case - 55%</h3>
+        <div class="big">$148-$153</div>
+        <p>FY2027 EPS remains close to $9; PFNA/PBNA improve gradually; international stays solid; 16.5x-17x valuation is restored.</p>
+        <p class="small">Midpoint capital upside: about 15%; plus ~4.5% dividend carry implies roughly 19% gross total-return potential over 12-18 months.</p>
+      </div>
+      <div class="panel scenario bull">
+        <h3>Bull case - 20%</h3>
+        <div class="big">$165-$170</div>
+        <p>North America recovers faster, margin productivity accelerates and FY2027 EPS reaches ~$9.2-$9.4; multiple rerates to ~18x.</p>
+        <p class="small">Midpoint capital upside: roughly 28%; dividend lifts the total-return profile into the low 30%s.</p>
+      </div>
+    </div>
+    <p><strong>Scenario-weighted equity value:</strong> approximately $147 per share, versus $131.20 today. That implies about 12% weighted capital appreciation before dividends. This is attractive, but not sufficiently asymmetric to justify a full-size one-step purchase before the Oct. 8 earnings checkpoint.</p>
+
+    <h2>9. Portfolio fit and sizing</h2>
+    <p>The canonical workbook shows 155 PEP shares with $21,213 of total cost basis and a $136.86 average cost. At the live $131.20 price, the position is worth about $20,336, or approximately 1.21% of portfolio value. The portfolio also owns KO, PM, SCHD and other income/defensive exposures, which limits the diversification benefit of a very large PEP allocation.</p>
+    <table>
+      <thead><tr><th>Illustrative PEP weight</th><th class="num">Approx. incremental shares at $131.20</th><th class="num">Incremental capital</th><th>Interpretation</th></tr></thead>
+      <tbody>
+        <tr><td>1.35%</td><td class="num">~18</td><td class="num">~$2.3K</td><td>Small first tranche; preserves substantial flexibility through earnings.</td></tr>
+        <tr><td>1.50%</td><td class="num">~37</td><td class="num">~$4.9K</td><td><strong>Preferred pre-Q3 ceiling.</strong> Meaningful enough to benefit from the pullback without overcommitting before the key proof point.</td></tr>
+        <tr><td>1.75%</td><td class="num">~69 total incremental</td><td class="num">~$9.1K</td><td>Better treated as a post-Q3 target only if North America volume and margin evidence improves.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout"><strong>Portfolio conclusion:</strong> the pullback is enough to justify incremental capital, but not enough to ignore the Oct. 8 information advantage. A staged move to roughly 1.35%-1.50% offers a good balance between valuation opportunity and event risk.</div>
+
+    <h2>10. Catalysts, risks and contrary evidence</h2>
+    <div class="two">
+      <div class="panel">
+        <h3>Catalysts</h3>
+        <ul>
+          <li>Oct. 8 Q3 earnings showing PFNA organic revenue returning to flat/positive territory.</li>
+          <li>PBNA beverage volume improving materially from the Q2 -4% print.</li>
+          <li>Core operating margin holding near or above the mid-16% range as productivity offsets commodity/freight and marketing investment.</li>
+          <li>International organic growth remaining mid-single digit or better.</li>
+          <li>Long-term rates easing from current ~5% levels, reducing the valuation hurdle for defensive equities.</li>
+          <li>Portfolio simplification and productivity initiatives improving execution and investor confidence.</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Risks / contrary evidence</h3>
+        <ul>
+          <li>GLP-1 and health-conscious behavior may represent a structural reduction in U.S. snack consumption, not merely a cyclical affordability problem.</li>
+          <li>Price reductions can stabilize volume but may sacrifice gross margin and weaken brand economics.</li>
+          <li>High oil, packaging, freight and other commodity costs can offset productivity gains.</li>
+          <li>Dividend payout ratios are elevated, limiting room for rapid dividend growth if FCF disappoints.</li>
+          <li>More than $50B of gross debt reduces financial flexibility relative to a net-cash balance sheet.</li>
+          <li>A 4.5% dividend yield is less compelling when risk-free 10-year yields are near 5%.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>11. Key checkpoints and thesis-break conditions</h2>
+    <h3>Upcoming checkpoints</h3>
+    <ul>
+      <li><strong>October 8 Q3 results:</strong> PFNA/PBNA organic growth and volume, core operating margin, FY2026 guidance and FY2027 commentary.</li>
+      <li>PFNA organic revenue returns to at least flat-to-positive growth with stable or improving volume.</li>
+      <li>PBNA beverage volume improves from Q2's -4% decline.</li>
+      <li>Core operating margin stabilizes near or above the mid-16% range.</li>
+      <li>International organic growth remains mid-single digit or better.</li>
+      <li>FY2027 EPS expectations remain near $9.00 while leverage and cash conversion stay controlled.</li>
+    </ul>
+    <h3>Thesis-break conditions</h3>
+    <ul>
+      <li>PFNA organic revenue remains negative and volume becomes materially negative through multiple quarters despite affordability and innovation actions.</li>
+      <li>Core operating margin falls below roughly 16% on a sustained basis without a credible recovery path.</li>
+      <li>FY2027 EPS expectations fall materially below roughly $8.50 while elevated brand investment remains necessary.</li>
+      <li>Leverage rises materially because of M&A or weak cash conversion while dividend coverage tightens.</li>
+      <li>International organic growth slows toward low-single digits while North America remains weak, removing the main diversification offset.</li>
+    </ul>
+
+    <h2 class="pagebreak">12. Research conclusion</h2>
+    <p class="lead"><strong>Yes - PEP is worth adding after the pullback, but the evidence supports a staged add rather than a full allocation increase before earnings.</strong> The stock is cheaper than its own recent history, materially cheaper than KO, offers a 4.5% dividend yield and can generate an attractive total return without requiring a return to its old premium valuation. The reason not to be more aggressive is that the core operating debate has not yet been resolved: North America volume trends are weak, margins are under pressure, and the dividend yield itself does not exceed the 10-year Treasury yield.</p>
+    <p class="lead">For the current 1.21% position, the research case supports moving toward roughly <strong>1.35%-1.50%</strong> in the current $128-$135 valuation band, while holding the remaining capacity in reserve. A move toward ~1.75% becomes more compelling if Oct. 8 shows improving PFNA/PBNA volumes, stable core margin, maintained guidance, and FY2027 EPS still near $9.</p>
+    <div class="callout risk"><strong>What would change the view?</strong> A sustained breakdown in North America volumes, core margin below ~16%, or FY2027 EPS estimates below ~$8.50 would shift PEP from "cheap quality" toward a potential value trap and would require a fresh re-underwrite rather than further averaging down.</div>
+
+    <h2>13. Open questions requiring further work</h2>
+    <ul>
+      <li>How much of current U.S. snack weakness is attributable to GLP-1 adoption versus affordability, channel mix and price elasticity?</li>
+      <li>Can price reductions and smaller-pack innovation improve unit velocity without another step-down in PFNA margin?</li>
+      <li>What level of 2027 productivity savings is required to offset commodity, freight and brand investment?</li>
+      <li>Does management signal a lower long-run dividend growth rate as payout ratios remain elevated?</li>
+    </ul>
+
+    <h2 class="pagebreak">Source register</h2>
+    <p class="source"><span class="badge">Primary</span> PepsiCo Q2 2026 earnings release / SEC Exhibit 99.1: <a href="https://www.sec.gov/Archives/edgar/data/77476/000007747626000037/q220268-kxexhibit991.htm">https://www.sec.gov/Archives/edgar/data/77476/000007747626000037/q220268-kxexhibit991.htm</a></p>
+    <p class="source"><span class="badge">Primary</span> PepsiCo Q2 2026 Form 10-Q: <a href="https://www.sec.gov/Archives/edgar/data/77476/000007747626000035/pep-20260613.htm">https://www.sec.gov/Archives/edgar/data/77476/000007747626000035/pep-20260613.htm</a></p>
+    <p class="source"><span class="badge">Primary</span> PepsiCo dividend declaration, July 17, 2026: <a href="https://www.pepsico.com/newsroom/press-releases/2026/pepsico-declares-quarterly-dividend-0726">https://www.pepsico.com/newsroom/press-releases/2026/pepsico-declares-quarterly-dividend-0726</a></p>
+    <p class="source"><span class="badge">Primary</span> PepsiCo Q3 2026 reporting schedule: <a href="https://www.pepsico.com/en/newsroom/press-releases/2026/pepsico-announces-timing-and-availability-of-third-quarter-2026-financial-results">PepsiCo investor relations - Oct. 8 reporting date</a></p>
+    <p class="source"><span class="badge">Market data</span> Alpaca IEX live PEP quote, 2026-09-22 12:10 p.m. ET; canonical portfolio data from retirement-portfolio-47.xlsx.</p>
+    <p class="source"><span class="badge">Market data</span> PEP valuation / historical ratios: <a href="https://stockanalysis.com/stocks/pep/financials/ratios/">https://stockanalysis.com/stocks/pep/financials/ratios/</a></p>
+    <p class="source"><span class="badge">Consensus</span> PEP earnings estimates: <a href="https://stage.zacks.com/stock/quote/PEP/detailed-earning-estimates">https://stage.zacks.com/stock/quote/PEP/detailed-earning-estimates</a></p>
+    <p class="source"><span class="badge">Peer data</span> KO: <a href="https://stockanalysis.com/stocks/ko/statistics/">https://stockanalysis.com/stocks/ko/statistics/</a>; MDLZ: <a href="https://stockanalysis.com/stocks/mdlz/statistics/">https://stockanalysis.com/stocks/mdlz/statistics/</a></p>
+    <p class="source"><span class="badge">Industry</span> Reuters, July 14, 2026, on U.S. snacking behavior / GLP-1 adoption: <a href="https://www.reuters.com/business/finance/pepsicos-turnaround-stutters-americans-rethink-snacking-2026-07-14/">Reuters - PepsiCo turnaround and U.S. snacking</a></p>
+    <p class="source"><span class="badge">Market</span> MarketWatch, Sept. 22, 2026, 10-year Treasury yield ~4.932%: <a href="https://www.marketwatch.com/livecoverage/stock-market-today-dow-s-p-500-nasdaq-steady-start-oil-prices-rise-chipmakers-ease-rally/card/treasury-yields-dip-as-oil-price-retreats-bjP5vIJbj4DPVO7Geg8n">MarketWatch - Treasury yields</a></p>
+    <p class="source"><span class="badge">Market</span> MarketWatch, Sept. 18, 2026, PEP close / 52-week high context: <a href="https://www.marketwatch.com/data-news/pepsico-inc-stock-underperforms-friday-when-compared-to-competitors-35285562-7d4d77d203a1">MarketWatch - PEP price context</a></p>
+
+    <div class="callout warning"><strong>Evidence confidence:</strong> High for reported fundamentals, dividend, portfolio position and current price; moderate-high for consensus and scenario valuation because estimates can change before Oct. 8. <strong>Underwriting status:</strong> Refresh complete; staged-add conclusion remains evidence-gated. <strong>Key unresolved item:</strong> Q3 North America volume and margin evidence.</div>
+  </main>
+
+  <footer class="footer">
+    This report is an equity-research work product for portfolio review, not a trade execution instruction, tax opinion, or guarantee of return. Scenario values are analytical estimates based on stated EPS and valuation assumptions. The authoritative Portfolio CIO thesis classification is not changed by this research report. Data may change after the stated cut-off time.
+  </footer>
+</div>
+</body>
+</html>
