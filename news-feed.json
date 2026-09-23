@@ -1,85 +1,85 @@
 {
-  "generated_at": "2026-09-23T04:40:42Z",
+  "generated_at": "2026-09-23T23:05:44Z",
   "movers": [
     {
-      "ticker": "JPM",
-      "day_pct": -3.42,
-      "headline": "JPMorgan Chase declined 3.42% Tuesday as investors awaited the company's October earnings report amid broader financial sector weakness.",
-      "why": "The stock pullback occurred ahead of JPMorgan's highly anticipated earnings announcement, which analysts expect to show substantial year-over-year growth in both EPS and revenue. The company maintains a Hold rating with a forward P/E of 14.11, suggesting modest valuation support.",
+      "ticker": "GOOG",
+      "day_pct": -3.58,
+      "headline": "Alphabet fell 3.58% Tuesday as investors rotated out of large-cap technology stocks in favor of other artificial intelligence names.",
+      "why": "The decline occurred despite the broader Nasdaq Composite posting a modest gain, signaling a sector-level shift in investor preference away from Alphabet specifically toward competing AI-focused companies.",
+      "source": "AD HOC NEWS",
+      "url": "https://www.ad-hoc-news.de/boerse/news/nebenwerte/alphabet-c-stock-falls-3-71-percent-at-the-close/70170418"
+    },
+    {
+      "ticker": "AVGO",
+      "day_pct": -2.62,
+      "headline": "Broadcom declined 2.62% Tuesday after Chinese authorities initiated audits of the company's networking hardware in state-backed data centers.",
+      "why": "The regulatory scrutiny reflects Beijing's broader strategy to reduce dependence on foreign technology by potentially increasing adoption of domestic alternatives like Huawei and H3C. Retail investor sentiment turned bearish following the disclosure.",
       "source": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-co-jpm-stock-214503311.html"
+      "url": "https://finance.yahoo.com/markets/stocks/articles/avgo-stock-falls-premarket-china-082349963.html"
     },
     {
-      "ticker": "AXP",
-      "day_pct": -2.72,
-      "headline": "American Express fell 2.72% Tuesday despite beating quarterly earnings expectations and raising full-year guidance.",
-      "why": "The company reported EPS of $4.53, surpassing estimates, alongside 10% revenue growth year-over-year, yet shares declined as the broader market reassessed valuations. American Express maintains a Moderate Buy consensus with a $373.32 average price target, indicating upside potential from current trading levels.",
-      "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-state-street-corp-acquires-11739541-shares-of-american-express-company-axp-2026-09-22/"
+      "ticker": "AMT",
+      "day_pct": -2.55,
+      "headline": "American Tower fell 2.55% Tuesday amid a routine SEC filing disclosing that a new director holds no beneficial ownership in the company.",
+      "why": "The Form 3 filing by director Kristen M. Ludgate indicated no current share holdings or transactions, a standard regulatory disclosure that appears unrelated to substantive company developments.",
+      "source": "Stock Titan",
+      "url": "https://www.stocktitan.net/sec-filings/AMT/form-3-american-tower-corp-ma-initial-statement-of-beneficial-ownersh-c0a2b5d67e1a.html"
     },
     {
-      "ticker": "GEHC",
-      "day_pct": 2.25,
-      "headline": "GE HealthCare gained 2.25% Tuesday following the announcement of AT&T's CFO Pascal Desroches joining its board effective January 2027.",
-      "why": "Desroches brings substantial financial and regulatory expertise from his tenure at AT&T and prior leadership roles at WarnerMedia, KPMG, and the SEC. His appointment signals GE HealthCare's commitment to strengthening governance as it navigates the healthcare technology landscape.",
-      "source": "Bitget",
-      "url": "https://www.bitget.com/amp/news/detail/12560605859261"
+      "ticker": "AMZN",
+      "day_pct": -2.24,
+      "headline": "Amazon declined 2.24% Tuesday after the company began blocking Meta's AI shopping agent Muse, citing need for explicit retailer consent.",
+      "why": "Amazon's restrictive stance on third-party AI agents contrasts sharply with Shopify's embrace of the same technology, reflecting fundamental disagreement over whether such agents should operate freely on e-commerce platforms without direct merchant approval.",
+      "source": "Belleville News-Democrat",
+      "url": "https://www.bnd.com/news/business/article317353472.html"
     },
     {
-      "ticker": "V",
-      "day_pct": -2.14,
-      "headline": "Visa declined 2.14% Tuesday, though the move appears unrelated to reported insider selling activity in other securities.",
-      "why": "The article references insider transactions at a different company (Repay Holdings) rather than Visa itself, suggesting the decline reflects broader payment-sector dynamics or market conditions independent of company-specific news.",
+      "ticker": "SO",
+      "day_pct": -1.97,
+      "headline": "Southern Company fell 1.97% Tuesday, reaching a 52-week low as the utility struggles despite maintaining its 56-year dividend streak.",
+      "why": "The stock has declined nearly 11% over the past year and now trades at valuations considered stretched by analysis metrics, though the company beat adjusted earnings estimates in the latest quarter and expects benefit from data center demand growth.",
       "source": "Investing.com",
-      "url": "https://www.investing.com/news/insider-trading-news/repay-holdings-general-counsel-tyler-dempsey-sells-142198-in-stock-93CH-4909798"
+      "url": "https://www.investing.com/news/company-news/southern-stock-hits-52week-low-at-8379-usd-93CH-4913362"
     },
     {
-      "ticker": "QCOM",
-      "day_pct": 2.08,
-      "headline": "Qualcomm rose 2.08% Tuesday as the company unveiled its new Snapdragon 8 Elite Gen 6 and Extreme Gen 6 processors with advanced AI and imaging capabilities.",
-      "why": "The new chips emphasize on-device AI with personalized agents and improved camera performance, including 8K 60fps video on the Extreme variant. Motorola's adoption for its Signature 27 smartphone indicates OEM traction for Qualcomm's latest flagship mobile platform.",
-      "source": "IndexBox",
-      "url": "https://www.indexbox.io/blog/qualcomm-unveils-snapdragon-8-elite-gen-6-and-extreme-gen-6-with-on-device-ai-focus/"
+      "ticker": "CRM",
+      "day_pct": 1.84,
+      "headline": "Salesforce rose 1.84% Tuesday following a $25 billion accelerated share repurchase that will reduce diluted share count by roughly 15%.",
+      "why": "The buyback was funded through increased debt to over $42 billion, with management suggesting the company may monetize its Anthropic stake to repay the borrowing, though that stake currently falls significantly short of the new debt amount.",
+      "source": "TIKR.com",
+      "url": "https://www.tikr.com/blog/salesforce-just-bet-25-billion-on-itself-heres-the-catch-nobody-mentions"
     },
     {
-      "ticker": "MA",
-      "day_pct": -2.07,
-      "headline": "Mastercard fell 2.07% Tuesday despite expanding its crypto payment infrastructure through Coinbase's x402 standard integration.",
-      "why": "While the partnership developments position Mastercard to facilitate automated small-value payments in the crypto ecosystem, the actual near-term impact remains uncertain and dependent on sustained adoption rather than announcement alone.",
-      "source": "DailyCoin",
-      "url": "https://dailycoin.com/cardano-bets-on-x402-payments-as-u-s-crypto-rules-stall/"
+      "ticker": "BMY",
+      "day_pct": -1.77,
+      "headline": "Bristol Myers Squibb fell 1.77% Tuesday after announcing a third round of layoffs this year, bringing 2026 cuts to 718 employees.",
+      "why": "The latest 265 job reductions target the company's New Jersey headquarters and field operations as part of a plan to reduce costs by $2 billion through 2027.",
+      "source": "New Jersey 101.5",
+      "url": "https://nj1015.com/bristol-myers-squibb-layoffs-nj/"
     },
     {
-      "ticker": "KO",
-      "day_pct": 1.71,
-      "headline": "Coca-Cola advanced 1.71% Tuesday as the company announced a $10 billion investment in U.S. manufacturing infrastructure through 2030.",
-      "why": "The capital deployment underscores confidence in domestic demand and reflects findings from a commissioned study showing Coca-Cola's $85 billion annual GDP contribution and one million job support. The expansion targets production, distribution, and facilities across multiple states.",
-      "source": "C-Store Dive",
-      "url": "https://www.cstoredive.com/news/coca-cola-us-manufacturing-10-billion-investment/830989/"
+      "ticker": "XOM",
+      "day_pct": 1.59,
+      "headline": "ExxonMobil rose 1.59% Tuesday as the company advanced its carbon capture strategy with Texas approval of the Rose storage project.",
+      "why": "The company has intensified community engagement around its CCS expansion, conducting over 10,000 outreach interactions since 2024 while emphasizing safety protocols and local investment to build support for its Low Carbon Solutions business.",
+      "source": "ExxonMobil",
+      "url": "https://corporate.exxonmobil.com/news/viewpoints/building-trust-among-gulf-coast-communities-as-ccs-expands"
     },
     {
-      "ticker": "NFLX",
-      "day_pct": -1.64,
-      "headline": "Netflix declined 1.64% Tuesday following an HSBC downgrade to Hold from Buy, citing YouTube's competitive gains.",
-      "why": "HSBC analyst Mohammed Khallouf cut his price target by 21%, signaling skepticism about near-term engagement recovery. The analyst's view reflects YouTube's ability to capture share within the broader streaming and video consumption landscape.",
-      "source": "Seeking Alpha",
-      "url": "https://seekingalpha.com/news/4645472-netflix-losing-ground-to-youtube---hsbc"
+      "ticker": "GS",
+      "day_pct": -1.38,
+      "headline": "Goldman Sachs fell 1.38% Tuesday despite beating earnings expectations, as Citigroup trimmed its price target to $1,050 from $1,200.",
+      "why": "The analyst downgrade came even as Goldman reported EPS of $20.98 against consensus of $14.47 and posted a 39.4% year-over-year revenue increase, suggesting concerns extend beyond near-term performance to longer-term valuation.",
+      "source": "MarketBeat",
+      "url": "https://www.marketbeat.com/instant-alerts/analyst-citigroup-cuts-the-goldman-sachs-group-nyse-gs-price-target-to-105000-2026-09-23/"
     },
     {
       "ticker": "TSM",
-      "day_pct": 1.54,
-      "headline": "Taiwan Semiconductor edged up 1.54% Tuesday as a supply-chain report flagged AMD's potential 10% chip price increase for Q4.",
-      "why": "The unconfirmed report links the AMD price adjustment to higher wafer costs from TSMC, suggesting the foundry partner may be flexing pricing power alongside cost pass-through. Official confirmation from AMD remains pending, though the market has already begun pricing in the potential scenario.",
-      "source": "24/7 Wall St.",
-      "url": "https://247wallst.com/investing/2026/09/21/amd-rises-5-as-report-flags-10-chip-price-increase-nvidia-and-taiwan-semiconductor-tick-up/"
-    },
-    {
-      "ticker": "PM",
-      "day_pct": 1.47,
-      "headline": "Philip Morris International gained 1.47% Tuesday following State Street's 1.0% increase in holdings and the company's dividend raise to $1.60 per share.",
-      "why": "Philip Morris beat quarterly earnings expectations with $2.20 EPS and $11.19 billion in revenue, while analysts maintain Moderate Buy ratings with higher price targets. Institutional ownership stands at 78.63%, reflecting strong investor backing for the dividend growth strategy.",
-      "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-philip-morris-international-inc-pm-holdings-lifted-by-state-street-corp-2026-09-22/"
+      "day_pct": -1.2,
+      "headline": "TSMC declined 1.2% Tuesday despite strong customer traction for its next-generation A14 chip process ahead of 2028 volume production.",
+      "why": "Customer tape-outs for smartphone and AI applications are tracking ahead of schedule, with the A14 offering significant improvements in performance and power efficiency over the prior N2 technology, though the company faces timing pressures before mass deployment.",
+      "source": "TradingView",
+      "url": "https://www.tradingview.com/news/zacks:5729b8822094b:0-tsmc-s-a14-gains-customer-traction-ahead-of-2028-volume-production/"
     }
   ]
 }
