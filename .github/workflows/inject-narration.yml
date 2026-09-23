@@ -1,0 +1,48 @@
+name: Inject Narration Widget
+
+# Adds the browser-native "Listen" narration widget to any report HTML file
+# in this repo that doesn't already have one. This is the universal
+# fallback for reports that didn't come from Portfolio-Summary's own
+# report_template.html (which already bakes the same kind of widget in at
+# build time) -- ChatGPT's direct-to-GitHub reports, manually-pasted
+# reports, and anything else that lands here without it.
+#
+# Idempotent: the injector skips any file that already references
+# speechSynthesis, so re-runs (scheduled or manual) only touch new/changed
+# files and make no commit at all when there's nothing to do.
+on:
+  schedule:
+    # 02:00 UTC daily -- an hour after sync-portfolio-reports.yml (01:00 UTC),
+    # so newly-synced reports get a narration pass shortly after they land.
+    - cron: '0 2 * * *'
+  workflow_dispatch: {}  # lets you trigger a manual run from the Actions tab
+  push:
+    branches: [main]
+    paths:
+      - '**/*.html'
+
+permissions:
+  contents: write
+
+jobs:
+  inject-narration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Inject narration widget into reports that don't have it
+        run: python3 scripts/inject_narration.py
+
+      - name: Commit changes (only if something changed)
+        run: |
+          git config user.name "narration-bot"
+          git config user.email "actions@github.com"
+          git add -A
+          git diff --staged --quiet || git commit -m "Inject narration widget into new/updated reports [skip ci]"
+          git push
