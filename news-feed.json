@@ -1,77 +1,85 @@
 {
-  "generated_at": "2026-09-22T04:48:58Z",
+  "generated_at": "2026-09-23T04:40:42Z",
   "movers": [
     {
-      "ticker": "META",
-      "day_pct": 11.34,
-      "headline": "Meta rose 11.34% Tuesday as its new Muse AI app demonstrates stronger early mobile traction than ChatGPT achieved in comparable launch windows.",
-      "why": "Muse has attracted more downloads and daily active users in the U.S. and Canada during its initial twelve days compared to ChatGPT's early performance, signaling potential for another major platform success. Meta's proven ability to cross-promote across its portfolio of applications positions the AI tool to capitalize on the company's existing user base.",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/09/21/metas-muse-is-outpacing-chatgpts-early-mobile-launch/"
+      "ticker": "JPM",
+      "day_pct": -3.42,
+      "headline": "JPMorgan Chase declined 3.42% Tuesday as investors awaited the company's October earnings report amid broader financial sector weakness.",
+      "why": "The stock pullback occurred ahead of JPMorgan's highly anticipated earnings announcement, which analysts expect to show substantial year-over-year growth in both EPS and revenue. The company maintains a Hold rating with a forward P/E of 14.11, suggesting modest valuation support.",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/jpmorgan-chase-co-jpm-stock-214503311.html"
+    },
+    {
+      "ticker": "AXP",
+      "day_pct": -2.72,
+      "headline": "American Express fell 2.72% Tuesday despite beating quarterly earnings expectations and raising full-year guidance.",
+      "why": "The company reported EPS of $4.53, surpassing estimates, alongside 10% revenue growth year-over-year, yet shares declined as the broader market reassessed valuations. American Express maintains a Moderate Buy consensus with a $373.32 average price target, indicating upside potential from current trading levels.",
+      "source": "MarketBeat",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-state-street-corp-acquires-11739541-shares-of-american-express-company-axp-2026-09-22/"
+    },
+    {
+      "ticker": "GEHC",
+      "day_pct": 2.25,
+      "headline": "GE HealthCare gained 2.25% Tuesday following the announcement of AT&T's CFO Pascal Desroches joining its board effective January 2027.",
+      "why": "Desroches brings substantial financial and regulatory expertise from his tenure at AT&T and prior leadership roles at WarnerMedia, KPMG, and the SEC. His appointment signals GE HealthCare's commitment to strengthening governance as it navigates the healthcare technology landscape.",
+      "source": "Bitget",
+      "url": "https://www.bitget.com/amp/news/detail/12560605859261"
+    },
+    {
+      "ticker": "V",
+      "day_pct": -2.14,
+      "headline": "Visa declined 2.14% Tuesday, though the move appears unrelated to reported insider selling activity in other securities.",
+      "why": "The article references insider transactions at a different company (Repay Holdings) rather than Visa itself, suggesting the decline reflects broader payment-sector dynamics or market conditions independent of company-specific news.",
+      "source": "Investing.com",
+      "url": "https://www.investing.com/news/insider-trading-news/repay-holdings-general-counsel-tyler-dempsey-sells-142198-in-stock-93CH-4909798"
     },
     {
       "ticker": "QCOM",
-      "day_pct": 9.29,
-      "headline": "Qualcomm advanced 9.29% Tuesday following a 7.6% after-hours surge that added roughly $15 billion in market capitalization.",
-      "why": "The chipmaker's stock reached $194.23 per share in extended trading, reflecting strong investor conviction ahead of the regular session. The magnitude of the after-hours move suggests meaningful positive catalysts are driving institutional buying interest.",
-      "source": "24/7 Wall St.",
-      "url": "https://247wallst.com/cards/qualcomm-qcom-price-swing-01m32t2sx14h7akswc03k9d3xg"
+      "day_pct": 2.08,
+      "headline": "Qualcomm rose 2.08% Tuesday as the company unveiled its new Snapdragon 8 Elite Gen 6 and Extreme Gen 6 processors with advanced AI and imaging capabilities.",
+      "why": "The new chips emphasize on-device AI with personalized agents and improved camera performance, including 8K 60fps video on the Extreme variant. Motorola's adoption for its Signature 27 smartphone indicates OEM traction for Qualcomm's latest flagship mobile platform.",
+      "source": "IndexBox",
+      "url": "https://www.indexbox.io/blog/qualcomm-unveils-snapdragon-8-elite-gen-6-and-extreme-gen-6-with-on-device-ai-focus/"
     },
     {
-      "ticker": "XOM",
-      "day_pct": -3.2,
-      "headline": "ExxonMobil declined 3.2% Tuesday as management fielded questions about refining challenges and supply chain constraints at an industry event.",
-      "why": "Discussion of operational pressures and capital allocation decisions at the conference triggered near-term selling, though the stock maintains support above both its 50-day and 200-day moving averages. Analyst sentiment remains divided, with some skeptics citing persistent headwinds while others retain confidence in the company's longer-term strategic initiatives.",
-      "source": "Traders Union",
-      "url": "https://tradersunion.com/news/stocks/show/3419640-exxon-mobil-slides-2-65percent-today/"
+      "ticker": "MA",
+      "day_pct": -2.07,
+      "headline": "Mastercard fell 2.07% Tuesday despite expanding its crypto payment infrastructure through Coinbase's x402 standard integration.",
+      "why": "While the partnership developments position Mastercard to facilitate automated small-value payments in the crypto ecosystem, the actual near-term impact remains uncertain and dependent on sustained adoption rather than announcement alone.",
+      "source": "DailyCoin",
+      "url": "https://dailycoin.com/cardano-bets-on-x402-payments-as-u-s-crypto-rules-stall/"
+    },
+    {
+      "ticker": "KO",
+      "day_pct": 1.71,
+      "headline": "Coca-Cola advanced 1.71% Tuesday as the company announced a $10 billion investment in U.S. manufacturing infrastructure through 2030.",
+      "why": "The capital deployment underscores confidence in domestic demand and reflects findings from a commissioned study showing Coca-Cola's $85 billion annual GDP contribution and one million job support. The expansion targets production, distribution, and facilities across multiple states.",
+      "source": "C-Store Dive",
+      "url": "https://www.cstoredive.com/news/coca-cola-us-manufacturing-10-billion-investment/830989/"
     },
     {
       "ticker": "NFLX",
-      "day_pct": 2.19,
-      "headline": "Netflix gained 2.19% Tuesday as prominent investor Bill Ackman committed $1 billion to the streaming platform, betting on its advertising-tier profitability.",
-      "why": "Ackman's substantial new position reflects confidence in Netflix's ad-supported business model, which is projected to generate $3 billion in annual revenue by 2026. The investment signals conviction despite the company's challenges around subscriber growth deceleration and rising content expenses.",
+      "day_pct": -1.64,
+      "headline": "Netflix declined 1.64% Tuesday following an HSBC downgrade to Hold from Buy, citing YouTube's competitive gains.",
+      "why": "HSBC analyst Mohammed Khallouf cut his price target by 21%, signaling skepticism about near-term engagement recovery. The analyst's view reflects YouTube's ability to capture share within the broader streaming and video consumption landscape.",
+      "source": "Seeking Alpha",
+      "url": "https://seekingalpha.com/news/4645472-netflix-losing-ground-to-youtube---hsbc"
+    },
+    {
+      "ticker": "TSM",
+      "day_pct": 1.54,
+      "headline": "Taiwan Semiconductor edged up 1.54% Tuesday as a supply-chain report flagged AMD's potential 10% chip price increase for Q4.",
+      "why": "The unconfirmed report links the AMD price adjustment to higher wafer costs from TSMC, suggesting the foundry partner may be flexing pricing power alongside cost pass-through. Official confirmation from AMD remains pending, though the market has already begun pricing in the potential scenario.",
       "source": "24/7 Wall St.",
-      "url": "https://247wallst.com/investing/2026/09/21/ackman-bets-1-billion-on-netflix-redemption-after-400-million-2022-loss/"
+      "url": "https://247wallst.com/investing/2026/09/21/amd-rises-5-as-report-flags-10-chip-price-increase-nvidia-and-taiwan-semiconductor-tick-up/"
     },
     {
-      "ticker": "GOOG",
-      "day_pct": 1.88,
-      "headline": "Alphabet rose 1.88% Tuesday as shares test a key resistance level near $354 following a strong rebound from technical support.",
-      "why": "The stock bounced from a double-bottom formation around $325 and is now probing overhead resistance, though the 200-day moving average continues to exert selling pressure at higher levels. A decisive break above $356 would likely confirm sustained bullish momentum for traders.",
-      "source": "Investing.com",
-      "url": "https://www.investing.com/news/stock-market-news/alphabet-tests-354-resistance-after-325-double-bottom-live-93CH-4909305"
-    },
-    {
-      "ticker": "AMZN",
-      "day_pct": 1.87,
-      "headline": "Amazon advanced 1.87% Tuesday despite blocking Meta's Muse AI agent from accessing its e-commerce platform over identification and data-handling concerns.",
-      "why": "Amazon restricted Muse's ability to make purchases on behalf of users, citing transparency and privacy issues as the AI tool's popularity surged to top app store rankings. Meta is developing enhanced security measures, including a confidential computing environment, to address marketplace operators' data protection requirements.",
-      "source": "SiliconANGLE",
-      "url": "https://siliconangle.com/2026/09/21/amazon-blocks-metas-muse-agent-from-shopping-on-users-behalf/"
-    },
-    {
-      "ticker": "GS",
-      "day_pct": 1.85,
-      "headline": "Goldman Sachs gained 1.85% Tuesday as the firm led syndication of $1.1 billion in high-yield debt financing for a data center development.",
-      "why": "A Goldman-led consortium is marketing junk bonds yielding in the low-to-mid 9 percent range to fund a 76-megawatt facility near Richmond that is fully contracted by AI infrastructure provider CoreWeave. The transaction reflects sustained debt market appetite for data center assets backing long-term AI computing capacity agreements.",
-      "source": "Briefs Finance",
-      "url": "https://www.briefs.co/news/goldman-leads-sale-of-1-1-billion-junk-bond-for-coreweave-le/"
-    },
-    {
-      "ticker": "MSFT",
-      "day_pct": 1.59,
-      "headline": "Microsoft rose 1.59% Tuesday as analyst support remains intact despite modest pre-market weakness.",
-      "why": "Jefferies analyst Brent Thill reiterated a Buy rating and $575 price target on the software giant, underscoring confidence in the company's strategic positioning. The research affirmation provides technical support amid sector volatility.",
-      "source": "marketscreener.com",
-      "url": "https://www.marketscreener.com/news/microsoft-corporation-buy-rating-from-jefferies-ce785adbdd8ff624"
-    },
-    {
-      "ticker": "DIS",
-      "day_pct": 1.52,
-      "headline": "Disney gained 1.52% Tuesday as prominent venture investor Jason Calacanis suggested Apple should pursue acquisitions in media and other sectors.",
-      "why": "Calacanis publicly advocated for Apple to deploy its substantial cash reserves toward transformative acquisitions, naming Disney among ten potential targets that could expand Apple's reach into AI, financial services, and entertainment. The commentary highlights Disney's strategic appeal as a content and media asset in the eyes of major technology investors.",
-      "source": "Benzinga",
-      "url": "https://www.benzinga.com/trading-ideas/long-ideas/26/09/61909226/apple-should-acquire-disney-robinhood-uber-or-these-companies-all-in-podcast-host-says"
+      "ticker": "PM",
+      "day_pct": 1.47,
+      "headline": "Philip Morris International gained 1.47% Tuesday following State Street's 1.0% increase in holdings and the company's dividend raise to $1.60 per share.",
+      "why": "Philip Morris beat quarterly earnings expectations with $2.20 EPS and $11.19 billion in revenue, while analysts maintain Moderate Buy ratings with higher price targets. Institutional ownership stands at 78.63%, reflecting strong investor backing for the dividend growth strategy.",
+      "source": "MarketBeat",
+      "url": "https://www.marketbeat.com/instant-alerts/filing-philip-morris-international-inc-pm-holdings-lifted-by-state-street-corp-2026-09-22/"
     }
   ]
 }
