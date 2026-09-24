@@ -1,83 +1,83 @@
 {
-  "generated_at": "2026-09-23T23:05:44Z",
+  "generated_at": "2026-09-24T04:42:35Z",
   "movers": [
     {
       "ticker": "GOOG",
       "day_pct": -3.58,
-      "headline": "Alphabet fell 3.58% Tuesday as investors rotated out of large-cap technology stocks in favor of other artificial intelligence names.",
-      "why": "The decline occurred despite the broader Nasdaq Composite posting a modest gain, signaling a sector-level shift in investor preference away from Alphabet specifically toward competing AI-focused companies.",
+      "headline": "Alphabet fell 3.58% Tuesday as investors rotated out of large-cap technology names and toward competing artificial intelligence stocks.",
+      "why": "The stock declined despite the broader Nasdaq Composite posting gains, reflecting a sector-wide shift in investor preference away from Alphabet toward other AI-focused technology names. The weakness persisted into after-hours trading following the regular session close.",
       "source": "AD HOC NEWS",
       "url": "https://www.ad-hoc-news.de/boerse/news/nebenwerte/alphabet-c-stock-falls-3-71-percent-at-the-close/70170418"
     },
     {
       "ticker": "AVGO",
       "day_pct": -2.62,
-      "headline": "Broadcom declined 2.62% Tuesday after Chinese authorities initiated audits of the company's networking hardware in state-backed data centers.",
-      "why": "The regulatory scrutiny reflects Beijing's broader strategy to reduce dependence on foreign technology by potentially increasing adoption of domestic alternatives like Huawei and H3C. Retail investor sentiment turned bearish following the disclosure.",
+      "headline": "Broadcom dropped 2.62% Tuesday after reports that Chinese authorities are auditing the company's networking hardware presence in state-backed data centers.",
+      "why": "Beijing's reported survey effort is part of a broader strategy to reduce dependence on foreign technology and could accelerate adoption of domestic alternatives like Huawei and H3C. Retail investor sentiment turned bearish following the disclosure.",
       "source": "Yahoo Finance",
       "url": "https://finance.yahoo.com/markets/stocks/articles/avgo-stock-falls-premarket-china-082349963.html"
     },
     {
       "ticker": "AMT",
       "day_pct": -2.55,
-      "headline": "American Tower fell 2.55% Tuesday amid a routine SEC filing disclosing that a new director holds no beneficial ownership in the company.",
-      "why": "The Form 3 filing by director Kristen M. Ludgate indicated no current share holdings or transactions, a standard regulatory disclosure that appears unrelated to substantive company developments.",
+      "headline": "American Tower declined 2.55% Tuesday with no clear market catalyst evident from reported corporate actions.",
+      "why": "The stock's decline coincided with a Form 3 filing by director Kristen M. Ludgate indicating no beneficial ownership of shares, though this administrative disclosure appears unrelated to the day's price movement.",
       "source": "Stock Titan",
       "url": "https://www.stocktitan.net/sec-filings/AMT/form-3-american-tower-corp-ma-initial-statement-of-beneficial-ownersh-c0a2b5d67e1a.html"
     },
     {
       "ticker": "AMZN",
       "day_pct": -2.24,
-      "headline": "Amazon declined 2.24% Tuesday after the company began blocking Meta's AI shopping agent Muse, citing need for explicit retailer consent.",
-      "why": "Amazon's restrictive stance on third-party AI agents contrasts sharply with Shopify's embrace of the same technology, reflecting fundamental disagreement over whether such agents should operate freely on e-commerce platforms without direct merchant approval.",
-      "source": "Belleville News-Democrat",
-      "url": "https://www.bnd.com/news/business/article317353472.html"
+      "headline": "Amazon fell 2.24% Tuesday as the company pursues accelerated hiring of former and laid-off employees to fill artificial intelligence and cloud computing roles.",
+      "why": "The boomerang hiring strategy aims to address competitive talent pressures in AI by leveraging returning employees' institutional knowledge. Internal communications suggest the return-to-office policy may be influencing the recruitment effort for these high-priority divisions.",
+      "source": "TradingView",
+      "url": "https://www.tradingview.com/news/stocktwits:3f96b2aaf094b:0-amzn-stock-in-focus-amazon-reportedly-taps-former-employees-and-laid-off-staff-in-accelerated-push-for-ai-talent/"
     },
     {
       "ticker": "SO",
       "day_pct": -1.97,
-      "headline": "Southern Company fell 1.97% Tuesday, reaching a 52-week low as the utility struggles despite maintaining its 56-year dividend streak.",
-      "why": "The stock has declined nearly 11% over the past year and now trades at valuations considered stretched by analysis metrics, though the company beat adjusted earnings estimates in the latest quarter and expects benefit from data center demand growth.",
+      "headline": "Southern Company dropped 1.97% Tuesday, touching a 52-week low amid valuation concerns despite maintaining its 56-year dividend streak.",
+      "why": "The utility has declined 10.92% over the past year despite solid Q2 earnings that beat adjusted profit expectations. While the company projects growth from rising customer demand and data center expansion, InvestingPro analysis suggests the stock remains overvalued.",
       "source": "Investing.com",
       "url": "https://www.investing.com/news/company-news/southern-stock-hits-52week-low-at-8379-usd-93CH-4913362"
     },
     {
       "ticker": "CRM",
       "day_pct": 1.84,
-      "headline": "Salesforce rose 1.84% Tuesday following a $25 billion accelerated share repurchase that will reduce diluted share count by roughly 15%.",
-      "why": "The buyback was funded through increased debt to over $42 billion, with management suggesting the company may monetize its Anthropic stake to repay the borrowing, though that stake currently falls significantly short of the new debt amount.",
-      "source": "TIKR.com",
-      "url": "https://www.tikr.com/blog/salesforce-just-bet-25-billion-on-itself-heres-the-catch-nobody-mentions"
+      "headline": "Salesforce rose 1.84% Tuesday as insider activity reflected the conversion of executive equity awards.",
+      "why": "President and COFO Robin L. Washington converted restricted stock units into common shares, with 908 shares withheld for tax obligations. The transaction increased Washington's overall holdings in the company.",
+      "source": "Stock Titan",
+      "url": "https://www.stocktitan.net/sec-filings/CRM/form-4-salesforce-inc-insider-trading-activity-5c84f3a8754b.html"
     },
     {
       "ticker": "BMY",
       "day_pct": -1.77,
-      "headline": "Bristol Myers Squibb fell 1.77% Tuesday after announcing a third round of layoffs this year, bringing 2026 cuts to 718 employees.",
-      "why": "The latest 265 job reductions target the company's New Jersey headquarters and field operations as part of a plan to reduce costs by $2 billion through 2027.",
+      "headline": "Bristol Myers Squibb fell 1.77% Tuesday following announcement of a third round of layoffs in 2026, bringing total reductions to 718 employees.",
+      "why": "The pharmaceutical company is cutting an additional 265 jobs in New Jersey as part of a cost reduction program targeting $2 billion in savings by 2027. The layoffs affect both global headquarters and field staff positions.",
       "source": "New Jersey 101.5",
       "url": "https://nj1015.com/bristol-myers-squibb-layoffs-nj/"
     },
     {
       "ticker": "XOM",
       "day_pct": 1.59,
-      "headline": "ExxonMobil rose 1.59% Tuesday as the company advanced its carbon capture strategy with Texas approval of the Rose storage project.",
-      "why": "The company has intensified community engagement around its CCS expansion, conducting over 10,000 outreach interactions since 2024 while emphasizing safety protocols and local investment to build support for its Low Carbon Solutions business.",
-      "source": "ExxonMobil",
-      "url": "https://corporate.exxonmobil.com/news/viewpoints/building-trust-among-gulf-coast-communities-as-ccs-expands"
+      "headline": "Exxon Mobil rose 1.59% Tuesday, supported by strong institutional backing and potential expansion opportunities in key production regions.",
+      "why": "The energy major's technical signals remain bullish with consistent dividend support and solid fundamentals. Expansion prospects in Venezuela, Guyana, and the Permian Basin, along with long-term LNG growth potential, provide upside catalysts despite exposure to volatile oil prices.",
+      "source": "Pluang",
+      "url": "https://pluang.com/en/asset/usstock/XOM/10068"
     },
     {
       "ticker": "GS",
       "day_pct": -1.38,
-      "headline": "Goldman Sachs fell 1.38% Tuesday despite beating earnings expectations, as Citigroup trimmed its price target to $1,050 from $1,200.",
-      "why": "The analyst downgrade came even as Goldman reported EPS of $20.98 against consensus of $14.47 and posted a 39.4% year-over-year revenue increase, suggesting concerns extend beyond near-term performance to longer-term valuation.",
+      "headline": "Goldman Sachs declined 1.38% Tuesday despite institutional investors increasing stakes and the company raising its quarterly dividend.",
+      "why": "QRG Capital Management expanded its position by 13.2% in the second quarter, and the firm recently reported strong earnings and revenue results exceeding expectations. Institutional investors control over 71% of the company, though analysts maintain a Hold consensus rating.",
       "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/analyst-citigroup-cuts-the-goldman-sachs-group-nyse-gs-price-target-to-105000-2026-09-23/"
+      "url": "https://www.marketbeat.com/instant-alerts/filing-the-goldman-sachs-group-inc-gs-shares-purchased-by-qrg-capital-management-inc-2026-09-23/"
     },
     {
       "ticker": "TSM",
       "day_pct": -1.2,
-      "headline": "TSMC declined 1.2% Tuesday despite strong customer traction for its next-generation A14 chip process ahead of 2028 volume production.",
-      "why": "Customer tape-outs for smartphone and AI applications are tracking ahead of schedule, with the A14 offering significant improvements in performance and power efficiency over the prior N2 technology, though the company faces timing pressures before mass deployment.",
+      "headline": "TSMC fell 1.2% Tuesday despite advancing customer adoption of its A14 advanced process technology ahead of schedule.",
+      "why": "The A14 process is generating strong customer interest for both smartphone and AI applications, with tape-outs occurring earlier than expected. Production is targeted to begin in 2027 with volume manufacturing in 2028, positioning it as a multi-year revenue contributor.",
       "source": "TradingView",
       "url": "https://www.tradingview.com/news/zacks:5729b8822094b:0-tsmc-s-a14-gains-customer-traction-ahead-of-2028-volume-production/"
     }
