@@ -1,85 +1,85 @@
 {
-  "generated_at": "2026-09-24T04:42:35Z",
+  "generated_at": "2026-09-25T04:51:56Z",
   "movers": [
     {
-      "ticker": "GOOG",
-      "day_pct": -3.58,
-      "headline": "Alphabet fell 3.58% Tuesday as investors rotated out of large-cap technology names and toward competing artificial intelligence stocks.",
-      "why": "The stock declined despite the broader Nasdaq Composite posting gains, reflecting a sector-wide shift in investor preference away from Alphabet toward other AI-focused technology names. The weakness persisted into after-hours trading following the regular session close.",
-      "source": "AD HOC NEWS",
-      "url": "https://www.ad-hoc-news.de/boerse/news/nebenwerte/alphabet-c-stock-falls-3-71-percent-at-the-close/70170418"
-    },
-    {
-      "ticker": "AVGO",
-      "day_pct": -2.62,
-      "headline": "Broadcom dropped 2.62% Tuesday after reports that Chinese authorities are auditing the company's networking hardware presence in state-backed data centers.",
-      "why": "Beijing's reported survey effort is part of a broader strategy to reduce dependence on foreign technology and could accelerate adoption of domestic alternatives like Huawei and H3C. Retail investor sentiment turned bearish following the disclosure.",
-      "source": "Yahoo Finance",
-      "url": "https://finance.yahoo.com/markets/stocks/articles/avgo-stock-falls-premarket-china-082349963.html"
+      "ticker": "META",
+      "day_pct": 4.5,
+      "headline": "Meta rose 4.5% Tuesday as investor confidence strengthened in the company's dual-segment business model.",
+      "why": "The company's two primary operating divisions\u2014Family of Apps and Reality Labs\u2014continue to drive overall financial performance. Meta's earnings trends and analyst recommendations remain supportive of the stock's upward momentum.",
+      "source": "Yahoo Finance Singapore",
+      "url": "https://sg.finance.yahoo.com/quote/META/"
     },
     {
       "ticker": "AMT",
-      "day_pct": -2.55,
-      "headline": "American Tower declined 2.55% Tuesday with no clear market catalyst evident from reported corporate actions.",
-      "why": "The stock's decline coincided with a Form 3 filing by director Kristen M. Ludgate indicating no beneficial ownership of shares, though this administrative disclosure appears unrelated to the day's price movement.",
-      "source": "Stock Titan",
-      "url": "https://www.stocktitan.net/sec-filings/AMT/form-3-american-tower-corp-ma-initial-statement-of-beneficial-ownersh-c0a2b5d67e1a.html"
+      "day_pct": -2.06,
+      "headline": "American Tower declined 2.06% Tuesday, underperforming both the broader market and its Finance sector peers.",
+      "why": "The tower operator has lagged significantly over the past month, down 2.82%, while the S&P 500 gained ground. Investors are awaiting the upcoming earnings report, which is expected to show modest growth in both per-share earnings and revenue relative to the prior-year quarter.",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/american-tower-amt-falls-more-211502772.html"
     },
     {
-      "ticker": "AMZN",
-      "day_pct": -2.24,
-      "headline": "Amazon fell 2.24% Tuesday as the company pursues accelerated hiring of former and laid-off employees to fill artificial intelligence and cloud computing roles.",
-      "why": "The boomerang hiring strategy aims to address competitive talent pressures in AI by leveraging returning employees' institutional knowledge. Internal communications suggest the return-to-office policy may be influencing the recruitment effort for these high-priority divisions.",
-      "source": "TradingView",
-      "url": "https://www.tradingview.com/news/stocktwits:3f96b2aaf094b:0-amzn-stock-in-focus-amazon-reportedly-taps-former-employees-and-laid-off-staff-in-accelerated-push-for-ai-talent/"
+      "ticker": "DIS",
+      "day_pct": 2.03,
+      "headline": "Disney gained 2.03% Tuesday as the company announced price increases on its premium streaming tiers while promoting bundled offerings.",
+      "why": "Disney is raising ad-free tier costs by $2.50 to $21.49 monthly while keeping bundle pricing competitive, which should drive subscribers toward higher-margin combination packages. The strategy mirrors broader industry monetization efforts across streaming platforms.",
+      "source": "Los Angeles Times",
+      "url": "https://www.latimes.com/entertainment-arts/business/story/2026-09-23/disney-plus-hulu-price-increase-bundle"
     },
     {
-      "ticker": "SO",
-      "day_pct": -1.97,
-      "headline": "Southern Company dropped 1.97% Tuesday, touching a 52-week low amid valuation concerns despite maintaining its 56-year dividend streak.",
-      "why": "The utility has declined 10.92% over the past year despite solid Q2 earnings that beat adjusted profit expectations. While the company projects growth from rising customer demand and data center expansion, InvestingPro analysis suggests the stock remains overvalued.",
-      "source": "Investing.com",
-      "url": "https://www.investing.com/news/company-news/southern-stock-hits-52week-low-at-8379-usd-93CH-4913362"
+      "ticker": "V",
+      "day_pct": 1.79,
+      "headline": "Visa advanced 1.79% Tuesday as the payment processor benefits from its established competitive positioning.",
+      "why": "Visa's business model emphasizes high margins and zero credit risk, characteristics that appeal to investors seeking stability in the payments space. The company's structural advantages distinguish it from rivals that carry greater operational complexity.",
+      "source": "Insider Monkey",
+      "url": "https://www.insidermonkey.com/news/visa-v-vs-american-express-axp-which-is-a-better-stock-to-buy-1843999/"
     },
     {
-      "ticker": "CRM",
-      "day_pct": 1.84,
-      "headline": "Salesforce rose 1.84% Tuesday as insider activity reflected the conversion of executive equity awards.",
-      "why": "President and COFO Robin L. Washington converted restricted stock units into common shares, with 908 shares withheld for tax obligations. The transaction increased Washington's overall holdings in the company.",
-      "source": "Stock Titan",
-      "url": "https://www.stocktitan.net/sec-filings/CRM/form-4-salesforce-inc-insider-trading-activity-5c84f3a8754b.html"
+      "ticker": "PEP",
+      "day_pct": -1.56,
+      "headline": "PepsiCo fell 1.56% Tuesday after reports surfaced of planned price increases on snacks and beverages heading into 2026-2027.",
+      "why": "The beverage and snacking company faces headwinds including rising fuel costs and weakening consumer demand, prompting a return to pricing actions after earlier cuts failed to stem volume declines. Activist pressure to optimize the portfolio and improve core business performance adds to investor concerns about near-term execution.",
+      "source": "Reuters",
+      "url": "https://www.reuters.com/business/pepsico-raise-prices-some-chips-sodas-bloomberg-news-reports-2026-09-24/"
     },
     {
-      "ticker": "BMY",
-      "day_pct": -1.77,
-      "headline": "Bristol Myers Squibb fell 1.77% Tuesday following announcement of a third round of layoffs in 2026, bringing total reductions to 718 employees.",
-      "why": "The pharmaceutical company is cutting an additional 265 jobs in New Jersey as part of a cost reduction program targeting $2 billion in savings by 2027. The layoffs affect both global headquarters and field staff positions.",
-      "source": "New Jersey 101.5",
-      "url": "https://nj1015.com/bristol-myers-squibb-layoffs-nj/"
-    },
-    {
-      "ticker": "XOM",
-      "day_pct": 1.59,
-      "headline": "Exxon Mobil rose 1.59% Tuesday, supported by strong institutional backing and potential expansion opportunities in key production regions.",
-      "why": "The energy major's technical signals remain bullish with consistent dividend support and solid fundamentals. Expansion prospects in Venezuela, Guyana, and the Permian Basin, along with long-term LNG growth potential, provide upside catalysts despite exposure to volatile oil prices.",
-      "source": "Pluang",
-      "url": "https://pluang.com/en/asset/usstock/XOM/10068"
+      "ticker": "QCOM",
+      "day_pct": -1.51,
+      "headline": "Qualcomm declined 1.51% Tuesday despite successfully renewing its patent license agreement with Apple.",
+      "why": "The semiconductor company's stock fell despite announcing the extension of its important intellectual property arrangement with Apple, suggesting investors may be focused on other competitive or market dynamics beyond the positive licensing news.",
+      "source": "Seeking Alpha",
+      "url": "https://seekingalpha.com/news/4646542-qualcomm-rises-as-it-renews-patent-license-agreement-with-apple"
     },
     {
       "ticker": "GS",
-      "day_pct": -1.38,
-      "headline": "Goldman Sachs declined 1.38% Tuesday despite institutional investors increasing stakes and the company raising its quarterly dividend.",
-      "why": "QRG Capital Management expanded its position by 13.2% in the second quarter, and the firm recently reported strong earnings and revenue results exceeding expectations. Institutional investors control over 71% of the company, though analysts maintain a Hold consensus rating.",
-      "source": "MarketBeat",
-      "url": "https://www.marketbeat.com/instant-alerts/filing-the-goldman-sachs-group-inc-gs-shares-purchased-by-qrg-capital-management-inc-2026-09-23/"
+      "day_pct": -1.4,
+      "headline": "Goldman Sachs dropped 1.4% Tuesday even as the firm closed an $11.7 billion capital raise for its private equity funds.",
+      "why": "The successful fundraising for West Street Capital Partners IX and related vehicles demonstrates investor confidence in Goldman's alternatives strategy and its path toward $750 billion in fee-paying assets by 2030. However, the market may be weighing execution risk and near-term return uncertainties inherent in deploying this capital.",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/markets/stocks/articles/goldman-sachs-raises-11-7-234248174.html"
     },
     {
-      "ticker": "TSM",
-      "day_pct": -1.2,
-      "headline": "TSMC fell 1.2% Tuesday despite advancing customer adoption of its A14 advanced process technology ahead of schedule.",
-      "why": "The A14 process is generating strong customer interest for both smartphone and AI applications, with tape-outs occurring earlier than expected. Production is targeted to begin in 2027 with volume manufacturing in 2028, positioning it as a multi-year revenue contributor.",
-      "source": "TradingView",
-      "url": "https://www.tradingview.com/news/zacks:5729b8822094b:0-tsmc-s-a14-gains-customer-traction-ahead-of-2028-volume-production/"
+      "ticker": "AVGO",
+      "day_pct": -1.3,
+      "headline": "Broadcom fell 1.3% Tuesday despite analyst valuations suggesting the stock trades at a discount.",
+      "why": "Morningstar analysts have assessed the semiconductor company's fair value at $650, citing strengths in AI chip design, networking products, and strategic relationships with hyperscalers like Google. Competitive and regulatory risks, along with broader semiconductor sector headwinds, may be tempering investor appetite.",
+      "source": "Morningstar",
+      "url": "https://www.morningstar.com/podcasts/the-morning-filter/why-broadcom-stock-is-worth-650-2"
+    },
+    {
+      "ticker": "ASML",
+      "day_pct": -1.27,
+      "headline": "ASML declined 1.27% Tuesday as investors weighed the company's role in a long-term photomask development partnership with Taiwan Semiconductor.",
+      "why": "ASML and TSM are collaborating on 12-inch EUV photomask technology targeting production by 2033, which addresses future chipmaking demands in AI and high-performance computing. While strategically sound, the extended timeline and ecosystem transformation risks for ASML may be restraining near-term investor enthusiasm.",
+      "source": "Insider Monkey",
+      "url": "https://www.insidermonkey.com/news/is-taiwan-semiconductor-tsm-stock-a-better-bet-than-asml-holding-asml-as-advanced-chipmaking-accelerates-1837410/"
+    },
+    {
+      "ticker": "AXP",
+      "day_pct": 1.23,
+      "headline": "American Express rose 1.23% Tuesday, supported by its more attractive valuation and growth profile relative to larger payment processors.",
+      "why": "Analysts highlight American Express's faster earnings growth trajectory, larger dividend yield, and lower valuation relative to Visa, making it a compelling option for investors willing to accept the credit risk inherent in its business model.",
+      "source": "Insider Monkey",
+      "url": "https://www.insidermonkey.com/news/visa-v-vs-american-express-axp-which-is-a-better-stock-to-buy-1843999/"
     }
   ]
 }
