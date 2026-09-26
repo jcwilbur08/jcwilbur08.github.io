@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weekly Market Intelligence — Week Ended September 25, 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#1a2332;--muted:#5a6b84;--line:#e3e9f2;--bg:#f7f9fc;--card:#ffffff;--blue:#1e5aa8;--blue2:#2f7fd1;--teal:#0f766e;--green:#15803d;--amber:#b45309;--red:#b91c1c;--purple:#7c3aed;--grad:linear-gradient(135deg,#0b2a5b 0%,#1e5aa8 45%,#2f7fd1 75%,#38bdf8 100%)}
+html{scroll-behavior:smooth}
+body{font-family:"Segoe UI",-apple-system,BlinkMacSystemFont,Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.65;font-size:15.5px;-webkit-font-smoothing:antialiased}
+.page{max-width:1060px;margin:0 auto;background:#fff;box-shadow:0 2px 24px rgba(11,42,91,.08)}
+.wrap{padding:44px 52px}
+.cover{background:var(--grad);color:#fff;padding:72px 52px 56px;position:relative;overflow:hidden}
+.cover::after{content:"";position:absolute;right:-120px;top:-120px;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.07)}
+.cover::before{content:"";position:absolute;right:-60px;bottom:-160px;width:340px;height:340px;border-radius:50%;background:rgba(255,255,255,.05)}
+.eyebrow{display:inline-block;font-size:12px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:#bfe0ff;border:1px solid rgba(255,255,255,.35);padding:7px 16px;border-radius:999px;margin-bottom:26px;position:relative;z-index:1}
+.cover h1{font-size:46px;line-height:1.12;font-weight:800;letter-spacing:-.5px;margin-bottom:14px;position:relative;z-index:1}
+.cover .sub{font-size:17px;color:#d8e9ff;font-weight:500;margin-bottom:30px;position:relative;z-index:1}
+.thesis{background:rgba(255,255,255,.12);border-left:4px solid #7dd3fc;padding:20px 24px;border-radius:0 12px 12px 0;font-size:16.5px;line-height:1.7;position:relative;z-index:1;backdrop-filter:blur(2px)}
+.thesis strong{color:#fff}
+.covgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px;position:relative;z-index:1}
+.covcard{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:16px 18px;backdrop-filter:blur(2px)}
+.covcard .k{font-size:11px;letter-spacing:1.6px;text-transform:uppercase;color:#bfe0ff;font-weight:700;margin-bottom:6px}
+.covcard .v{font-size:23px;font-weight:800;color:#fff}
+.covcard .d{font-size:12.5px;color:#d8e9ff;margin-top:4px}
+.cover-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:34px;padding-top:22px;border-top:1px solid rgba(255,255,255,.25);font-size:12.5px;color:#cfe4ff;position:relative;z-index:1;flex-wrap:wrap;gap:10px}
+h2{font-size:27px;font-weight:800;letter-spacing:-.3px;margin:0 0 6px;color:#0b2a5b}
+h3{font-size:18px;font-weight:700;margin:26px 0 10px;color:#123a6b}
+.kicker{display:inline-block;font-size:11.5px;font-weight:800;letter-spacing:2.2px;text-transform:uppercase;color:var(--blue2);margin-bottom:8px}
+.lede{font-size:16px;color:var(--muted);margin-bottom:26px;max-width:880px}
+.sec{border-top:1px solid var(--line);padding-top:38px;margin-top:8px}
+.sumgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:22px 0}
+.sumcard{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--blue2);border-radius:12px;padding:20px 22px;box-shadow:0 1px 4px rgba(11,42,91,.05)}
+.sumcard.green{border-left-color:var(--green)}.sumcard.amber{border-left-color:var(--amber)}.sumcard.red{border-left-color:var(--red)}.sumcard.purple{border-left-color:var(--purple)}.sumcard.teal{border-left-color:var(--teal)}
+.sumcard h4{font-size:15.5px;font-weight:800;margin-bottom:8px;color:#0b2a5b}
+.sumcard p{font-size:14px;color:#33415c}
+.sumcard .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-bottom:10px}
+.tag.up{background:#dcfce7;color:#166534}.tag.down{background:#fee2e2;color:#991b1b}.tag.flat{background:#e0e7ff;color:#3730a3}.tag.warn{background:#fef3c7;color:#92400e}
+.callout{background:linear-gradient(135deg,#f0f7ff,#e8f4fd);border:1px solid #bcd8f5;border-radius:14px;padding:24px 28px;margin:26px 0}
+.callout h4{font-size:16px;font-weight:800;color:#0b2a5b;margin-bottom:10px}
+.callout p{font-size:14.5px;color:#2c3c58}
+.callout strong{color:#0b2a5b}
+table{width:100%;border-collapse:collapse;margin:18px 0;font-size:14px;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 1px 4px rgba(11,42,91,.06)}
+thead th{background:#0b2a5b;color:#fff;text-align:left;padding:12px 14px;font-size:12.5px;letter-spacing:.6px;text-transform:uppercase;font-weight:700}
+tbody td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:nth-child(even){background:#f8fafd}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+.pos{color:var(--green);font-weight:700}.neg{color:var(--red);font-weight:700}.neu{color:var(--muted);font-weight:600}
+.bars{margin:22px 0}
+.bar-row{display:grid;grid-template-columns:170px 1fr 90px;gap:12px;align-items:center;margin:9px 0;font-size:13.5px}
+.bar-label{font-weight:700;color:#33415c}
+.bar-track{background:#eef2f7;border-radius:6px;height:22px;position:relative;overflow:hidden}
+.bar-fill{height:100%;border-radius:6px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11.5px;font-weight:800;color:#fff;min-width:44px}
+.bar-val{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.sigrow{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}
+.sig{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center;box-shadow:0 1px 4px rgba(11,42,91,.05)}
+.sig .n{font-size:24px;font-weight:800;color:#0b2a5b}
+.sig .l{font-size:12px;color:var(--muted);font-weight:600;margin-top:4px}
+.sig .s{font-size:11px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;margin-top:8px;display:inline-block;padding:3px 10px;border-radius:999px}
+.s-beat{background:#dcfce7;color:#166534}.s-hot{background:#fee2c7;color:#9a3412}.s-miss{background:#fee2e2;color:#991b1b}.s-wait{background:#e0e7ff;color:#3730a3}
+.twocol{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0}
+.panel{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+.panel h4{font-size:15px;font-weight:800;color:#0b2a5b;margin-bottom:10px}
+.panel ul{margin:0;padding-left:18px;font-size:14px;color:#33415c}
+.panel li{margin-bottom:7px}
+.trend{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px 24px;margin:16px 0;box-shadow:0 1px 4px rgba(11,42,91,.05)}
+.trend h4{font-size:16px;font-weight:800;color:#0b2a5b;margin-bottom:10px}
+.trend h4 .pill{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:999px;margin-left:10px;vertical-align:middle}
+.trend p,.trend li{font-size:14px;color:#33415c}
+.trend ul{padding-left:18px;margin-top:8px}
+.trend li{margin-bottom:6px}
+.cal{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0}
+.day{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;box-shadow:0 1px 4px rgba(11,42,91,.05)}
+.day.hot{border-top:4px solid var(--red)}
+.day.warm{border-top:4px solid var(--amber)}
+.day.cool{border-top:4px solid var(--blue2)}
+.day h5{font-size:13px;font-weight:800;color:#0b2a5b;margin-bottom:10px;letter-spacing:.4px}
+.day ul{list-style:none;padding:0;margin:0;font-size:12.5px;color:#33415c}
+.day li{margin-bottom:8px;padding-left:12px;position:relative;line-height:1.5}
+.day li::before{content:"▸";position:absolute;left:0;color:var(--blue2);font-weight:800}
+.day li b{color:#0b2a5b}
+.scen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:22px 0}
+.scenario{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px;box-shadow:0 1px 4px rgba(11,42,91,.05)}
+.scenario h4{font-size:15px;font-weight:800;margin-bottom:6px}
+.scenario .prob{font-size:12px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;display:inline-block;padding:3px 10px;border-radius:999px}
+.scenario p,.scenario li{font-size:13.5px;color:#33415c}
+.scenario ul{padding-left:16px;margin-top:8px}
+.scenario li{margin-bottom:5px}
+.p-bull{border-top:4px solid var(--green)}.p-base{border-top:4px solid var(--blue2)}.p-bear{border-top:4px solid var(--red)}
+.check{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:14px 0;display:flex;gap:16px;align-items:flex-start;box-shadow:0 1px 4px rgba(11,42,91,.05)}
+.check .box{flex:0 0 30px;height:30px;border:2px solid var(--blue2);border-radius:8px;display:flex;align-items:center;justify-content:center;font-weight:800;color:var(--blue2);font-size:15px}
+.check .txt h4{font-size:15px;font-weight:800;color:#0b2a5b;margin-bottom:6px}
+.check .txt p{font-size:14px;color:#33415c}
+.check .when{display:inline-block;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:#e0e7ff;color:#3730a3;padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.toc{background:#f2f6fb;border:1px solid var(--line);border-radius:14px;padding:26px 30px;margin:34px 0}
+.toc h3{margin:0 0 12px;font-size:15px;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue)}
+.toc ol{margin:0;padding-left:20px;columns:2;column-gap:36px;font-size:14px}
+.toc li{margin-bottom:8px}
+.toc a{color:#123a6b;text-decoration:none;font-weight:600}
+.toc a:hover{text-decoration:underline}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0}
+.strip .cell{background:#0b2a5b;color:#fff;border-radius:12px;padding:18px;text-align:center}
+.strip .cell .n{font-size:26px;font-weight:800}
+.strip .cell .l{font-size:11.5px;letter-spacing:1.2px;text-transform:uppercase;color:#bfe0ff;margin-top:6px;font-weight:700}
+.sources{font-size:13px;color:#475569}
+.sources ol{padding-left:20px}
+.sources li{margin-bottom:7px}
+.sources a{color:var(--blue);word-break:break-all}
+.sources sup a{color:var(--blue2);text-decoration:none;font-weight:700}
+sup a{color:var(--blue2);text-decoration:none;font-weight:700}
+.disc{background:#f8fafc;border:1px solid var(--line);border-radius:12px;padding:20px 24px;font-size:12.5px;color:var(--muted);margin-top:26px}
+.footer{text-align:center;padding:30px;font-size:12px;color:#8fa0b8;border-top:1px solid var(--line)}
+@media(max-width:760px){.wrap{padding:28px 20px}.cover{padding:48px 24px 40px}.cover h1{font-size:32px}.covgrid{grid-template-columns:1fr 1fr}.sumgrid,.twocol,.scen{grid-template-columns:1fr}.cal{grid-template-columns:1fr 1fr}.sigrow{grid-template-columns:1fr 1fr}.strip{grid-template-columns:1fr 1fr}.toc ol{columns:1}.bar-row{grid-template-columns:110px 1fr 64px}}
+@media print{.page{box-shadow:none}.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}thead th{-webkit-print-color-adjust:exact;print-color-adjust:exact}.sec{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ============ COVER ============ -->
+<div class="cover">
+  <span class="eyebrow">Weekly Market Intelligence &middot; CIO Dashboard</span>
+  <h1>Higher Yields,<br>Narrower Leadership</h1>
+  <div class="sub">Week ended Friday, September 25, 2026 &nbsp;&middot;&nbsp; Outlook: September 28 &ndash; October 2, 2026</div>
+  <div class="thesis">
+    <strong>Thesis:</strong> The market digested the Fed&rsquo;s first rate hike in three years and kept climbing &mdash; the S&amp;P 500 gained 1.2% and the Nasdaq 2.1% even as the 10-year Treasury surged 18.5 basis points to 5.18% and the 30-year hit a more-than-20-year high. But leadership narrowed: small caps fell 0.8%, consumers soured, and Friday&rsquo;s rally rode big tech and AI capex while financials bled fund outflows. Next week is the gauntlet &mdash; August PCE and the Q2 GDP final on Wednesday, payrolls on Friday &mdash; that will decide whether the October FOMC delivers a second hike.
+  </div>
+  <div class="covgrid">
+    <div class="covcard"><div class="k">S&amp;P 500</div><div class="v">7,743.41</div><div class="d">+1.2% week &middot; +13.1% YTD &middot; ~1% below mid-Aug peak</div></div>
+    <div class="covcard"><div class="k">10-Yr Treasury</div><div class="v">5.180%</div><div class="d">+18.5 bp on the week &middot; 30-yr at 20+ year high</div></div>
+    <div class="covcard"><div class="k">Fed Funds</div><div class="v">3.75&ndash;4.00%</div><div class="d">+25 bp Sep 16 &middot; dots median 4.1% end-2026</div></div>
+    <div class="covcard"><div class="k">Flash PMI Composite</div><div class="v">58.4</div><div class="d">Highest since Jul 2021 &middot; input costs at 41-mo high</div></div>
+    <div class="covcard"><div class="k">Equity Fund Flows</div><div class="v">+$37.6B</div><div class="d">First inflow in 5 weeks &middot; largest since Jun 17</div></div>
+    <div class="covcard"><div class="k">Coming Week</div><div class="v">PCE + Payrolls</div><div class="d">Aug PCE Wed 8:30a &middot; Sep payrolls Fri 8:30a (cons. +100K)</div></div>
+  </div>
+  <div class="cover-bottom">
+    <span>Prepared for: <strong>CIO Dashboard &mdash; Retirement Portfolio</strong> (Morningstar export 52 baseline)</span>
+    <span>Data through September 25, 2026 close (ET) &middot; Published September 26, 2026</span>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ============ TOC ============ -->
+<div class="toc">
+  <h3>Contents</h3>
+  <ol>
+    <li><a href="#exec">Executive Call</a></li>
+    <li><a href="#perf">Market Performance &amp; Positioning</a></li>
+    <li><a href="#macro">Macro Dashboard</a></li>
+    <li><a href="#micro">Micro &amp; Sector Trends</a></li>
+    <li><a href="#global">Global &amp; Thematic Context</a></li>
+    <li><a href="#portfolio">Portfolio Lens</a></li>
+    <li><a href="#week">Coming Week: Catalyst Calendar</a></li>
+    <li><a href="#playbook">Market-Reaction Playbook</a></li>
+    <li><a href="#checklist">CIO Action Checklist</a></li>
+    <li><a href="#sources">Sources &amp; Methodology</a></li>
+  </ol>
+</div>
+
+<!-- ============ 1. EXECUTIVE CALL ============ -->
+<div class="sec" id="exec">
+  <span class="kicker">1 &middot; Executive Call</span>
+  <h2>The Hike Landed. The Market Moved On &mdash; Selectively.</h2>
+  <p class="lede">Nine days after the Fed resumed hiking, equities chose to look through it: renewed AI optimism pulled a record-size weekly inflow back into equity funds, and Friday belonged to Microsoft, the chip complex, and industrials. But the bond market refused the memo &mdash; yields climbed every day this week &mdash; and the tape underneath was two-tiered: mega-cap tech advanced while small caps and rate-sensitive income lagged.</p>
+
+  <div class="sumgrid">
+    <div class="sumcard red">
+      <span class="tag warn">Monetary policy</span>
+      <h4>The hiking cycle is back &mdash; and priced for more</h4>
+      <p>The September 16 FOMC raised 25 bp to 3.75&ndash;4.00%, unanimous 12&ndash;0, the first hike since July 2023. The dot-plot median sits at 4.1% for end-2026 with 16 of 18 participants seeing further tightening, and markets were pricing roughly 68% odds of another hike at the October 27&ndash;28 meeting during the week.<sup><a href="#src-3">3</a></sup><sup><a href="#src-4">4</a></sup><sup><a href="#src-5">5</a></sup></p>
+    </div>
+    <div class="sumcard green">
+      <span class="tag up">Market action</span>
+      <h4>Big tech carried; small caps didn&rsquo;t</h4>
+      <p>S&amp;P 500 +1.2%, Nasdaq +2.1%, Dow +0.3% &mdash; but the Russell 2000 fell 0.8%, a 2-percentage-point underperformance. U.S. equity funds drew +$37.6B, the first inflow in five weeks, yet small-cap funds lost &minus;$1.02B and financials bled &minus;$2.53B. Friday&rsquo;s leaders were Technology (+0.99%) and Industrials (+0.94%); Energy (&minus;0.87%) lagged.<sup><a href="#src-1">1</a></sup><sup><a href="#src-6">6</a></sup><sup><a href="#src-7">7</a></sup></p>
+    </div>
+    <div class="sumcard amber">
+      <span class="tag warn">Macro mix</span>
+      <h4>Activity hot, consumers cold</h4>
+      <p>September flash PMI composite hit 58.4 &mdash; the strongest since July 2021 &mdash; with input-cost inflation at a 41-month high, jobless claims held at 197K, and new-home sales beat (684K SAAR). But Michigan sentiment sank to 48.1, a four-month low, with one-year inflation expectations at 4.6%. August PCE and the Q2 GDP final &mdash; both due Wednesday &mdash; will adjudicate.<sup><a href="#src-8">8</a></sup><sup><a href="#src-9">9</a></sup><sup><a href="#src-10">10</a></sup></p>
+    </div>
+    <div class="sumcard purple">
+      <span class="tag flat">Earnings &amp; AI</span>
+      <h4>AI capex intact; the bar is higher</h4>
+      <p>Broadcom&rsquo;s September 2 print was the template: AI semiconductor revenue of $16.7B (+221% YoY) and an FY2027 AI outlook of $115B &mdash; and the stock still sold off on margins. Semis rebounded Friday (SOXX/SMH +1.4% on NVDA/AVGO/MU), Costco beat on revenue and EPS but traded flat, and Darden missed and fell 3.6%. Micron reports Wednesday with $50B of revenue guidance on the line.<sup><a href="#src-11">11</a></sup><sup><a href="#src-12">12</a></sup><sup><a href="#src-13">13</a></sup></p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <h4>House view</h4>
+    <p><strong>Tactically cautious into the data gauntlet; constructive on the intermediate trend.</strong> The market has absorbed one hike and is pricing a decent chance of a second &mdash; the risk into Wednesday/Friday is a hot PCE or payrolls print that locks October in and punishes duration and small caps. The opportunity is the mirror image: in-line prints fade hike odds, relieve yields, and broaden leadership. No portfolio action is warranted ahead of the prints; the standing price gates (NVDA $220, TSM &le;$460, GRID $160s) remain the discipline.</p>
+  </div>
+
+  <h3>Market-regime dashboard</h3>
+  <table>
+    <thead><tr><th>Regime factor</th><th>Current read</th><th>Evidence (week ended Sep 25)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Trend</strong></td><td><span class="pos">Constructive</span></td><td>S&amp;P 500 +13.1% YTD at 7,743.41, roughly 1% below its mid-August peak (Reuters).<sup><a href="#src-1">1</a></sup><sup><a href="#src-2">2</a></sup></td></tr>
+      <tr><td><strong>Breadth</strong></td><td><span class="neg">Narrowing</span></td><td>Russell 2000 &minus;0.8% vs S&amp;P +1.2%; small-cap funds &minus;$1.02B outflow; Friday rally concentrated in tech/industrials.<sup><a href="#src-1">1</a></sup><sup><a href="#src-6">6</a></sup></td></tr>
+      <tr><td><strong>Rates</strong></td><td><span class="neg">Tightening</span></td><td>10-yr 5.180% (+18.5 bp wk), 2-yr 4.862% (+12.1 bp); 30-yr at its highest in 20+ years.<sup><a href="#src-2">2</a></sup><sup><a href="#src-14">14</a></sup><sup><a href="#src-15">15</a></sup></td></tr>
+      <tr><td><strong>Growth</strong></td><td><span class="pos">Firm, late-cycle</span></td><td>Flash PMI composite 58.4 (best since Jul 2021); claims 197K; new-home sales and durables beat.<sup><a href="#src-8">8</a></sup><sup><a href="#src-9">9</a></sup><sup><a href="#src-10">10</a></sup></td></tr>
+      <tr><td><strong>Inflation</strong></td><td><span class="neg">Sticky / elevated</span></td><td>Input-cost inflation at 41-month high; Michigan 1-yr expectations 4.6%; August PCE due Wednesday.<sup><a href="#src-8">8</a></sup><sup><a href="#src-9">9</a></sup></td></tr>
+      <tr><td><strong>Positioning</strong></td><td><span class="neu">Selectively re-risking</span></td><td>Equity funds +$37.6B (first inflow in 5 wks); tech +$4.89B; financials &minus;$2.53B; money markets +$11B.<sup><a href="#src-6">6</a></sup></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ============ 2. MARKET PERFORMANCE ============ -->
+<div class="sec" id="perf">
+  <span class="kicker">2 &middot; Market Performance &amp; Positioning</span>
+  <h2>Yields Rose Every Day. Indexes Rose Anyway.</h2>
+  <p class="lede">The defining tension of the week: the 10-year Treasury climbed in all five sessions to 5.18%, and the 30-year reached its highest level in more than two decades &mdash; yet the S&amp;P 500 still finished up 1.2% and the Nasdaq 2.1%, both hovering near record territory. The bond market is pricing the hiking cycle; the stock market, so far, is pricing AI earnings.</p>
+
+  <h3>Index scoreboard &mdash; week ended September 25, 2026</h3>
+  <div class="bars">
+    <div class="bar-row"><div class="bar-label">Nasdaq Composite</div><div class="bar-track"><div class="bar-fill" style="width:100%;background:linear-gradient(90deg,#1e5aa8,#38bdf8)">+2.1%</div></div><div class="bar-val pos">+2.1%</div></div>
+    <div class="bar-row"><div class="bar-label">S&amp;P 500</div><div class="bar-track"><div class="bar-fill" style="width:57%;background:linear-gradient(90deg,#1e5aa8,#38bdf8)">+1.2%</div></div><div class="bar-val pos">+1.2%</div></div>
+    <div class="bar-row"><div class="bar-label">STOXX Europe 600</div><div class="bar-track"><div class="bar-fill" style="width:24%;background:linear-gradient(90deg,#0f766e,#2dd4bf)">+0.5%</div></div><div class="bar-val pos">+0.5%</div></div>
+    <div class="bar-row"><div class="bar-label">Dow Jones</div><div class="bar-track"><div class="bar-fill" style="width:14%;background:linear-gradient(90deg,#1e5aa8,#38bdf8)">+0.3%</div></div><div class="bar-val pos">+0.3%</div></div>
+    <div class="bar-row"><div class="bar-label">Russell 2000</div><div class="bar-track"><div class="bar-fill" style="width:38%;background:linear-gradient(90deg,#b91c1c,#f87171)">&minus;0.8%</div></div><div class="bar-val neg">&minus;0.8%</div></div>
+  </div>
+  <table>
+    <thead><tr><th>Index</th><th class="num">Friday close</th><th class="num">Week</th><th class="num">YTD</th></tr></thead>
+    <tbody>
+      <tr><td><strong>S&amp;P 500</strong></td><td class="num">7,743.41</td><td class="num pos">+1.2%</td><td class="num pos">+13.1%</td></tr>
+      <tr><td><strong>Nasdaq Composite</strong></td><td class="num">27,068.72</td><td class="num pos">+2.1%</td><td class="num pos">+16.5%</td></tr>
+      <tr><td><strong>Dow Jones Industrial Avg</strong></td><td class="num">51,828.62</td><td class="num pos">+0.3%</td><td class="num pos">+7.8%</td></tr>
+      <tr><td><strong>Russell 2000</strong></td><td class="num">2,837.55</td><td class="num neg">&minus;0.8%</td><td class="num pos">+14.3%</td></tr>
+      <tr><td><strong>STOXX Europe 600</strong></td><td class="num">&mdash;</td><td class="num pos">+0.5%</td><td class="num">&mdash;</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13px;color:var(--muted)">Friday closes and weekly/YTD changes via Associated Press; STOXX weekly via Reuters. The S&amp;P 500 ended the week roughly 1% below its mid-August peak, per Reuters&rsquo; Friday &ldquo;Wall St Week Ahead.&rdquo;<sup><a href="#src-1">1</a></sup><sup><a href="#src-2">2</a></sup><sup><a href="#src-16">16</a></sup></p>
+
+  <h3>Cross-asset: the bond selloff was the story</h3>
+  <table>
+    <thead><tr><th>Asset</th><th class="num">Friday level</th><th class="num">Week / Friday move</th><th>Read</th></tr></thead>
+    <tbody>
+      <tr><td><strong>2-yr Treasury</strong></td><td class="num">4.862%</td><td class="num neg">+12.1 bp wk</td><td>Front end repricing for October hike risk</td></tr>
+      <tr><td><strong>10-yr Treasury</strong></td><td class="num">5.180%</td><td class="num neg">+18.5 bp wk</td><td>Rose all five sessions; well above the 5% line</td></tr>
+      <tr><td><strong>30-yr Treasury</strong></td><td class="num">&mdash;</td><td class="num neg">20+ yr high</td><td>Term premium, not just policy &mdash; watch duration</td></tr>
+      <tr><td><strong>DXY dollar index</strong></td><td class="num">101.03</td><td class="num pos">+0.8% wk</td><td>Firmer on rate differentials; euro &minus;1.04%</td></tr>
+      <tr><td><strong>Brent crude</strong></td><td class="num">$104.32</td><td class="num neg">&minus;2.1% Fri</td><td>Elevated on Hormuz headlines despite Friday dip</td></tr>
+      <tr><td><strong>WTI crude</strong></td><td class="num">$92.41</td><td class="num neg">&minus;2.3% Fri</td><td>Weekly move distorted by front-month contract roll</td></tr>
+      <tr><td><strong>Gold (Dec COMEX)</strong></td><td class="num">$4,324.20</td><td class="num pos">+0.61% Fri</td><td>Safe-haven bid intact at record altitude</td></tr>
+      <tr><td><strong>Bitcoin</strong></td><td class="num">~$83,990</td><td class="num neg">&minus;0.44% Fri</td><td>Risk-on elsewhere didn&rsquo;t lift crypto</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13px;color:var(--muted)">Treasury levels are Tradeweb/Dow Jones 3 p.m. ET closes. Weekly changes for oil, gold and Bitcoin beyond Friday moves could not be verified from available sources and are omitted.<sup><a href="#src-14">14</a></sup><sup><a href="#src-15">15</a></sup><sup><a href="#src-17">17</a></sup><sup><a href="#src-18">18</a></sup><sup><a href="#src-2">2</a></sup></p>
+
+  <div class="callout">
+    <h4>Flow picture: money came back &mdash; to large-cap tech, not to small caps</h4>
+    <p>LSEG Lipper (week ended Sept 25): U.S. equity funds took in <strong>+$37.6B</strong>, the first inflow in five weeks and the largest since June 17, on renewed AI optimism. The mix was lopsided: large-cap <strong>+$36.62B</strong>, technology <strong>+$4.89B</strong> (largest since July 29), consumer discretionary +$515M &mdash; against small-cap <strong>&minus;$1.02B</strong>, mid-cap &minus;$372M, and financials <strong>&minus;$2.53B</strong>. Bonds added +$5.93B and money markets +$11B. Translation: investors bought the AI rally and parked the rest in cash &mdash; a barbell of conviction and caution.<sup><a href="#src-6">6</a></sup></p>
+  </div>
+</div>
+
+<!-- ============ 3. MACRO DASHBOARD ============ -->
+<div class="sec" id="macro">
+  <span class="kicker">3 &middot; Macro Dashboard</span>
+  <h2>Growth Is Running Hot. Consumers Feel Cold.</h2>
+  <p class="lede">The week&rsquo;s data deepened the central contradiction: business activity is accelerating into a hiking cycle while household sentiment sinks. September&rsquo;s flash composite PMI printed 58.4 &mdash; the strongest reading since July 2021 &mdash; even as input-cost inflation hit a 41-month high. That is precisely the mix that keeps a hawkish Fed hiking.</p>
+
+  <div class="sigrow">
+    <div class="sig"><div class="n">197K</div><div class="l">Initial jobless claims<br>(vs 201K consensus)</div><span class="s s-beat">Beat</span></div>
+    <div class="sig"><div class="n">58.4</div><div class="l">Flash composite PMI<br>(vs 56.0 in August)</div><span class="s s-hot">Hot</span></div>
+    <div class="sig"><div class="n">684K</div><div class="l">New-home sales SAAR<br>(vs 618K consensus)</div><span class="s s-beat">Beat</span></div>
+    <div class="sig"><div class="n">48.1</div><div class="l">Michigan sentiment (final)<br>(vs 47.6 consensus)</div><span class="s s-miss">4-mo low</span></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Release</th><th class="num">Actual</th><th class="num">Consensus</th><th>Take</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Jobless claims</strong> (wk ended Sep 19)</td><td class="num">197K</td><td class="num">201K</td><td>Labor market &ldquo;regaining footing&rdquo;; 4-wk avg 202K</td></tr>
+      <tr><td><strong>Durable-goods orders</strong> (Aug)</td><td class="num">0.0% MoM</td><td class="num">&minus;0.3%</td><td>Stall, but better than feared; core capex orders <strong>+1.6%</strong></td></tr>
+      <tr><td><strong>New-home sales</strong> (Aug, SAAR)</td><td class="num">684K</td><td class="num">618K</td><td>+6.4% MoM; median price &minus;5.8% YoY &mdash; builders buying volume</td></tr>
+      <tr><td><strong>Flash composite PMI</strong> (Sep)</td><td class="num">58.4</td><td class="num">56.0 (Aug)</td><td>Highest since Jul 2021; new orders 58.2; input costs 41-mo high</td></tr>
+      <tr><td><strong>Michigan sentiment</strong> (Sep final)</td><td class="num">48.1</td><td class="num">47.6</td><td>Lowest in 4 months; 1-yr inflation expectations <strong>4.6%</strong></td></tr>
+      <tr><td><strong>Retail sales</strong> (Aug, prior week)</td><td class="num">+1.2% MoM</td><td class="num">+0.8%</td><td>Control group +1.4% &mdash; consumer still spending</td></tr>
+    </tbody>
+  </table>
+
+  <div class="twocol">
+    <div class="panel">
+      <h4>Still to come &mdash; not yet released</h4>
+      <ul>
+        <li><strong>August PCE</strong> &mdash; Wed Sep 30, 8:30 a.m. ET (BEA)</li>
+        <li><strong>Q2 GDP, third estimate</strong> &mdash; Wed Sep 30, 8:30 a.m. ET (second est. 1.5% ann.)<sup><a href="#src-36">36</a></sup></li>
+        <li><strong>Consumer confidence</strong> (Conf. Board) &mdash; Tue Sep 29, 10:00 a.m. ET<sup><a href="#src-37">37</a></sup></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h4>The tension to watch</h4>
+      <ul>
+        <li>PMI input costs at a 41-month high argue inflation is re-accelerating into the hike.</li>
+        <li>Michigan 1-yr expectations at 4.6% say households expect it too.</li>
+        <li>If Wednesday&rsquo;s PCE confirms, October hike odds go from ~68% toward near-certainty &mdash; and the 10-year&rsquo;s climb continues.</li>
+      </ul>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--muted)">Claims, PMI and Michigan via Reuters; new-home sales via Morningstar/Dow Jones; durables via Seeking Alpha/TradingView; retail sales via WIXX. BEA/Conference Board schedules confirm the pending releases.<sup><a href="#src-8">8</a></sup><sup><a href="#src-9">9</a></sup><sup><a href="#src-10">10</a></sup><sup><a href="#src-19">19</a></sup><sup><a href="#src-20">20</a></sup></p>
+</div>
+
+<!-- ============ 4. MICRO & SECTOR ============ -->
+<div class="sec" id="micro">
+  <span class="kicker">4 &middot; Micro &amp; Sector Trends</span>
+  <h2>The Market Pays for AI Revenue, Not AI Promises</h2>
+  <p class="lede">Broadcom set the week&rsquo;s template three weeks ago: $16.7B of AI semiconductor revenue, up 221%, guided to $115B in FY2027 &mdash; and the stock fell on margins. Friday&rsquo;s semiconductor rebound (SOXX/SMH +1.4% on NVDA, AVGO, MU) shows demand is not the question. Delivery and profitability are.</p>
+
+  <div class="trend">
+    <h4>AI semiconductors: demand proven, margins scrutinized <span class="pill tag up">Constructive</span></h4>
+    <ul>
+      <li><strong>Broadcom (Sep 2):</strong> revenue $29.59B (+86% YoY); AI semi $16.7B (+221%); Q4 guide $34.8B with AI semi $21.7B; FY2026 AI outlook $58B, FY2027 $115B, FY2028 $230B &mdash; shares sold off on gross-margin softness.</li>
+      <li><strong>Friday rebound:</strong> SOXX and SMH each +1.4%, led by Nvidia, Broadcom and Micron.</li>
+      <li><strong>Nvidia</strong> pledged a $12.9B investment in Hugging Face (Sep 3) &mdash; vertical integration of the AI stack continues.</li>
+      <li><strong>Next test:</strong> Micron reports Wednesday AMC guiding ~$50B revenue at ~86% gross margin; the bar is a beat <em>and</em> a clean margin story.</li>
+    </ul>
+  </div>
+
+  <div class="trend">
+    <h4>AI monetization: products landing, stocks choppy <span class="pill tag flat">Mixed</span></h4>
+    <ul>
+      <li><strong>Meta</strong> surged 4.5% Thursday on Connect AI product announcements &mdash; its &ldquo;Muse agent&rdquo; app topped U.S. download rankings &mdash; then gave back 3.5% Friday. Product momentum is real; multiple expansion is not automatic.</li>
+      <li><strong>Microsoft</strong> rose ~4% Friday, among the S&amp;P&rsquo;s top movers &mdash; enterprise AI spend remains the steadier bid.</li>
+      <li><strong>Akamai</strong> gained ~3% Friday on a reported $11.6B Anthropic investment &mdash; inference infrastructure is the next capex frontier.</li>
+      <li><strong>Oracle</strong> invoked force majeure on its $4B &ldquo;Project Jupiter&rdquo; data-center build, warning of 6+ month delays &mdash; a reminder that the buildout has physical bottlenecks.</li>
+    </ul>
+  </div>
+
+  <div class="trend">
+    <h4>Consumer: spending, but selectively <span class="pill tag warn">Softening</span></h4>
+    <ul>
+      <li><strong>Costco</strong> beat (revenue $95.723B vs $94.9B; EPS $6.75 vs $6.54, though $0.15 was a one-time tariff refund) &mdash; and the stock barely moved. Beats are table stakes now.</li>
+      <li><strong>Darden</strong> missed narrowly ($2.05 vs $2.06; revenue $3.20B) and fell ~3.6% Friday despite FY2027 EPS guidance of $11.10&ndash;$11.35.</li>
+      <li><strong>KB Home:</strong> revenue $1.30B in line but down 20% YoY; full-year guidance light &mdash; housing volume is being bought with price.</li>
+      <li><strong>Nike</strong> &mdash; removed from the S&amp;P 100 (replaced by Palo Alto Networks) &mdash; reports Thursday AMC; consensus $0.44 EPS. A consumer-health read-through.</li>
+    </ul>
+  </div>
+
+  <div class="trend">
+    <h4>Market structure: narrow leadership, sector rotation <span class="pill tag warn">Narrowing</span></h4>
+    <ul>
+      <li>Friday: 8 of 11 S&amp;P sectors rose, but leadership was Technology (+0.99%) and Industrials (+0.94%); Energy (&minus;0.87%) and Communication Services (&minus;0.65%) lagged.</li>
+      <li>Fund flows confirm the rotation: tech +$4.89B in, financials &minus;$2.53B out &mdash; notable with Goldman Sachs (&minus;1.40% Thursday) as a Dow drag.</li>
+      <li>UnitedHealth was a bright spot: +0.99% Thursday, among the Dow&rsquo;s leaders.</li>
+    </ul>
+  </div>
+
+  <div class="callout">
+    <h4>What changed this week</h4>
+    <p>The AI trade&rsquo;s filter tightened: <strong>revenue growth no longer suffices &mdash; margin delivery and buildout execution decide the multiple.</strong> Broadcom&rsquo;s post-print fade and Oracle&rsquo;s force majeure are the cautionary tales; Microsoft&rsquo;s Friday strength and the semi rebound are the counterweight. For the portfolio&rsquo;s AI sleeve (AVGO/NVDA/TSM/QCOM), Micron&rsquo;s Wednesday print is the next margin exam.</p>
+  </div>
+  <p style="font-size:13px;color:var(--muted)">Broadcom figures via Tickeron/Motley Fool (official IR release not obtained); Friday moves via Investopedia; Costco via Barron&rsquo;s/indmoney; Darden via Zacks; KB Home via StockStory; Nike index change via FXStreet.<sup><a href="#src-11">11</a></sup><sup><a href="#src-12">12</a></sup><sup><a href="#src-21">21</a></sup><sup><a href="#src-22">22</a></sup><sup><a href="#src-23">23</a></sup><sup><a href="#src-24">24</a></sup></p>
+</div>
+
+<!-- ============ 5. GLOBAL ============ -->
+<div class="sec" id="global">
+  <span class="kicker">5 &middot; Global &amp; Thematic Context</span>
+  <h2>Tightening Is a Global Story Again</h2>
+  <div class="twocol">
+    <div class="panel">
+      <h4>Europe: equities up, politics heavy</h4>
+      <ul>
+        <li>STOXX 600 <strong>+0.5%</strong> &mdash; snapped a three-week losing streak; banks +1.3% led Friday.</li>
+        <li>German 10-year at <strong>3.17%</strong>; eurozone yields rose a seventh straight week; markets price <strong>at least one more ECB hike</strong> in 2026.</li>
+        <li>French&ndash;German 10-yr spread ~109 bp, touching <strong>114.06 intraday &mdash; widest since June 2012</strong>. France is the eurozone&rsquo;s political risk premium.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h4>Asia: BoJ hiked; China quiet</h4>
+      <ul>
+        <li>Bank of Japan raised to <strong>1.25%</strong> (7&ndash;2, Sep 18); yen weakened beyond <strong>&yen;157/$</strong>; September flash PMIs softened (composite 52.5).</li>
+        <li>China had a quiet week; August data (released Sep 15) showed factories firm (+5.2%) but retail soft (+0.4%) and investment negative.</li>
+        <li>U.S.&ndash;Canada: 50% tariffs on ~$20B of goods stand; new Canadian whey import curbs take effect Sep 29.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="panel" style="margin-top:4px">
+    <h4>Energy &amp; geopolitics</h4>
+    <ul>
+      <li>Brent settled Friday at <strong>$104.32</strong> (&minus;2.1%) and WTI at <strong>$92.41</strong> (&minus;2.3%) as reports of U.S.&ndash;Iran talks over a phased Strait of Hormuz reopening cooled the risk premium &mdash; with Houthi attacks on Saudi Arabia still a live threat.</li>
+      <li>A Trump&ndash;Xi meeting was expected around September 24; no new U.S.&ndash;China tariff action surfaced during the week.</li>
+    </ul>
+  </div>
+
+  <h3>Theme map</h3>
+  <table>
+    <thead><tr><th>Theme</th><th>Status</th><th>This week&rsquo;s signal</th></tr></thead>
+    <tbody>
+      <tr><td><strong>AI capex supercycle</strong></td><td><span class="pos">Constructive</span></td><td>Demand intact (AVGO $115B FY27 AI guide); margins and buildout timelines now the filter</td></tr>
+      <tr><td><strong>Global rates</strong></td><td><span class="neg">Tightening</span></td><td>Fed hiking, BoJ hiking, ECB priced for more &mdash; 10-yr U.S. 5.18%, Bund 3.17%</td></tr>
+      <tr><td><strong>Energy security</strong></td><td><span class="neu">Elevated</span></td><td>Brent &gt;$100 on Hormuz risk; talks may ease but attacks persist</td></tr>
+      <tr><td><strong>Consumer resilience</strong></td><td><span class="neg">Softening</span></td><td>Sentiment at 4-mo low; staples under margin pressure (PEP near 52-wk low)</td></tr>
+      <tr><td><strong>China</strong></td><td><span class="neu">Stabilizing, not accelerating</span></td><td>Quiet week; consumption still the weak link</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13px;color:var(--muted)">STOXX/ECB/France via Reuters and Bloomberg (via BigGo Finance); Japan via Reuters/FXStreet; China data via Reuters; Hormuz via AsiaOne; tariffs via Penn Wharton/Retail Insider.<sup><a href="#src-16">16</a></sup><sup><a href="#src-25">25</a></sup><sup><a href="#src-26">26</a></sup><sup><a href="#src-27">27</a></sup><sup><a href="#src-28">28</a></sup><sup><a href="#src-29">29</a></sup></p>
+</div>
+
+<!-- ============ 6. PORTFOLIO LENS ============ -->
+<div class="sec" id="portfolio">
+  <span class="kicker">6 &middot; Portfolio Lens</span>
+  <h2>Built for This Tape &mdash; With One Soft Spot</h2>
+  <p class="lede">The week rewarded exactly what the book owns most of: quality mega-cap tech and AI-linked semiconductors. The pain points &mdash; small caps, rate-sensitive income, financials fund outflows &mdash; map cleanly onto the week&rsquo;s losers. Portfolio lens uses the Morningstar export-52 baseline (42 securities + $43K cash, ~$1.70M total).</p>
+
+  <div class="strip">
+    <div class="cell"><div class="n">42</div><div class="l">Securities</div></div>
+    <div class="cell"><div class="n">6</div><div class="l">Sleeves</div></div>
+    <div class="cell"><div class="n">~$1.70M</div><div class="l">Total w/ cash</div></div>
+    <div class="cell"><div class="n">$43K</div><div class="l">Cash reserve</div></div>
+  </div>
+
+  <table>
+    <thead><tr><th>Sleeve</th><th class="num">Weight</th><th>Week&rsquo;s read-through</th><th>Next-week checkpoint</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Mega-cap software</strong><br><span style="color:var(--muted);font-size:12.5px">AMZN AAPL MSFT GOOG META CRM</span></td><td class="num"><strong>24.5%</strong></td><td>Carried Friday (MSFT +4%); META volatile on AI product news</td><td>Payrolls/PCE &mdash; multiple risk if hike odds jump</td></tr>
+      <tr><td><strong>Financial core</strong><br><span style="color:var(--muted);font-size:12.5px">JPM GS MA V AXP</span></td><td class="num"><strong>22.6%</strong></td><td>Fund outflows &minus;$2.53B from financials; GS &minus;1.4% Thu</td><td>NFP + yields; Jefferies Mon AMC as cap-markets read</td></tr>
+      <tr><td><strong>AI / data center</strong><br><span style="color:var(--muted);font-size:12.5px">AVGO NVDA TSM QCOM ASML SOXQ GEV GRID</span></td><td class="num"><strong>8.1%</strong></td><td>SOXX +1.4% Fri; AVGO margin overhang from Sep 2 print</td><td><strong>Micron Wed AMC</strong> &mdash; the margin exam</td></tr>
+      <tr><td><strong>Small / mid-cap</strong><br><span style="color:var(--muted);font-size:12.5px">FSSNX FSMDX AVUV IJH VTWO</span></td><td class="num"><strong>7.5%</strong></td><td>RUT &minus;0.8%; small-cap funds &minus;$1.02B</td><td>Payrolls relief rally &mdash; or more pain on hot data</td></tr>
+      <tr><td><strong>Rate-sensitive income</strong><br><span style="color:var(--muted);font-size:12.5px">AMT SO SCHD</span></td><td class="num"><strong>5.3%</strong></td><td>10-yr +18.5 bp headwind; 30-yr at 20+ yr high</td><td>August PCE Wed &mdash; the duration verdict</td></tr>
+      <tr><td><strong>Direct energy</strong><br><span style="color:var(--muted);font-size:12.5px">XOM</span></td><td class="num"><strong>3.6%</strong></td><td>Brent $104.32; Energy &minus;0.87% Friday on truce hopes</td><td>Hormuz headlines; OPEC-adjacent newsflow</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h4>Portfolio takeaway</h4>
+    <p>The book&rsquo;s center of gravity &mdash; quality large-cap compounders plus AI optionality &mdash; is aligned with a narrow, tech-led tape. The soft spot is <strong>duration and small-cap exposure (~12.8% combined)</strong>, which is precisely where a hot PCE/payrolls double-header bites hardest. That argues for patience over pre-positioning: the standing gates (NVDA $220, TSM &le;$460, GRID $160s, UNH toward ~2%) are the mechanism for turning any data-driven selloff into opportunity. No holdings report next week; the next company-specific catalyst is <strong>PepsiCo on October 8</strong>.</p>
+  </div>
+</div>
+
+<!-- ============ 7. COMING WEEK ============ -->
+<div class="sec" id="week">
+  <span class="kicker">7 &middot; Coming Week</span>
+  <h2>The Gauntlet: PCE, Payrolls, and Quarter-End</h2>
+  <p class="lede">September 28 &ndash; October 2 packs the two prints that decide the Fed&rsquo;s October meeting &mdash; August PCE and September payrolls &mdash; around a month/quarter-end rebalancing tape. Wednesday is double-barreled (PCE + GDP + Micron); Friday is the main event.</p>
+
+  <div class="cal">
+    <div class="day cool"><h5>MON &middot; SEP 28</h5><ul><li><b>Fed:</b> Barkin speaks</li><li><b>Earnings:</b> Jefferies (AMC) &mdash; capital-markets read for GS</li></ul></div>
+    <div class="day warm"><h5>TUE &middot; SEP 29</h5><ul><li><b>10:00a:</b> Conf. Board consumer confidence (Sep)</li><li><b>Fed:</b> Williams, Goolsbee, Musalem</li><li>Canada whey import curbs take effect</li></ul></div>
+    <div class="day hot"><h5>WED &middot; SEP 30</h5><ul><li><b>8:30a: August PCE</b> + personal income/spending</li><li><b>8:30a:</b> Q2 GDP, 3rd estimate</li><li><b>Earnings:</b> Micron (AMC) &mdash; ~$50B rev guide</li><li><b>Fed:</b> Goolsbee, Barkin</li><li>Month/quarter-end &mdash; rebalancing flows</li></ul></div>
+    <div class="day warm"><h5>THU &middot; OCT 1</h5><ul><li><b>8:30a:</b> Jobless claims</li><li><b>10:00a: ISM Manufacturing</b> (Sep)</li><li><b>Earnings:</b> Accenture (BMO), Nike (AMC, cons $0.44)</li><li><b>Fed:</b> Kashkari, Barkin, Collin, Schmid, Williams</li></ul></div>
+    <div class="day hot"><h5>FRI &middot; OCT 2</h5><ul><li><b>8:30a: September payrolls</b> &mdash; cons +100K (Aug +162K); BNP +90K, UR 4.0%, AHE +0.3%/+3.2%</li><li><b>Fed:</b> Logan speaks</li></ul></div>
+  </div>
+
+  <div class="twocol">
+    <div class="panel">
+      <h4>Policy path into the prints</h4>
+      <ul>
+        <li>Next FOMC: <strong>October 27&ndash;28</strong> (not November &mdash; no November meeting on the 2026 calendar).</li>
+        <li>Dot plot implies one more 2026 hike (median 4.1% vs 3.75&ndash;4.00% now); 16 of 18 participants see further tightening.</li>
+        <li>Markets priced ~68% odds of an October hike during the week (Barron&rsquo;s). A hot PCE or payrolls print pushes that toward certainty; soft prints unwind it.</li>
+        <li>Warsh has given no timing &mdash; &ldquo;removed a dose of accommodation&rdquo; is the stance; the data writes the schedule.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h4>What won&rsquo;t move the needle</h4>
+      <ul>
+        <li>ISM Services is <strong>October 5</strong> &mdash; not this week.</li>
+        <li>JOLTS, construction spending and factory orders dates were not confirmed on official calendars &mdash; treat any &ldquo;scheduled&rdquo; chatter skeptically.</li>
+        <li>Quarter-end rebalancing flows are real but unquantified &mdash; no published size estimates found.</li>
+      </ul>
+    </div>
+  </div>
+  <p style="font-size:13px;color:var(--muted)">Calendar via BEA/Conference Board schedules and FXStreet&rsquo;s week-ahead preview; NFP consensus via Seeking Alpha, BNP Paribas forecast via TradingView; October hike odds via Barron&rsquo;s; earnings calendar via interactive investor/MarketBeat (updated Sep 25).<sup><a href="#src-30">30</a></sup><sup><a href="#src-31">31</a></sup><sup><a href="#src-32">32</a></sup><sup><a href="#src-5">5</a></sup><sup><a href="#src-33">33</a></sup><sup><a href="#src-34">34</a></sup></p>
+</div>
+
+<!-- ============ 8. PLAYBOOK ============ -->
+<div class="sec" id="playbook">
+  <span class="kicker">8 &middot; Market-Reaction Playbook</span>
+  <h2>Three Ways the Data Week Plays</h2>
+  <div class="scen">
+    <div class="scenario p-bear">
+      <span class="prob tag down">Hot data &middot; ~30%</span>
+      <h4>October hike gets locked in</h4>
+      <p>Core PCE runs hot and/or payrolls print well above +100K with firm wages. October hike odds jump toward certainty; the 10-year pushes through recent highs; small caps and rate-sensitive income lag hard; financials stay under outflow pressure.</p>
+      <ul><li><strong>Book:</strong> hold quality; no new duration; let the standing gates (NVDA $220, TSM &le;$460, GRID $160s) do the buying.</li></ul>
+    </div>
+    <div class="scenario p-base">
+      <span class="prob tag flat">Base case &middot; ~50%</span>
+      <h4>In-line prints, odds drift lower</h4>
+      <p>PCE cooperates (~0.2% MoM core) and payrolls land near +100K. October hike odds fade from ~68%; yields stabilize; breadth improves with a small-cap relief bid; the AI trade keeps its margin filter.</p>
+      <ul><li><strong>Book:</strong> a calmer tape is the backdrop for planned adds &mdash; TSM on weakness &le;$460, UNH toward ~2%, GRID only in the $160s.</li></ul>
+    </div>
+    <div class="scenario p-bull">
+      <span class="prob tag up">Weak data &middot; ~20%</span>
+      <h4>Growth scare, defensive bid</h4>
+      <p>Payrolls disappoint sharply (&lt;+50K) alongside soft PCE. Hike odds collapse but recession chatter replaces them; defensives and long duration rally; cyclicals and small caps wobble on earnings risk.</p>
+      <ul><li><strong>Book:</strong> protect; don&rsquo;t chase defensives at highs; cash ($43K) is optionality, not a problem.</li></ul>
+    </div>
+  </div>
+
+  <h3>Key indicators &mdash; watchlist</h3>
+  <table>
+    <thead><tr><th>Indicator</th><th>Why it matters now</th><th>Trigger level</th></tr></thead>
+    <tbody>
+      <tr><td><strong>August core PCE</strong> (Wed 8:30a)</td><td>The Fed&rsquo;s preferred gauge; decides October</td><td>Hot MoM &rarr; hike odds &rarr; certainty</td></tr>
+      <tr><td><strong>September payrolls / AHE</strong> (Fri 8:30a)</td><td>Growth-vs-inflation adjudicator</td><td>&gt;150K or AHE hot &rarr; risk-off; &lt;50K &rarr; growth scare</td></tr>
+      <tr><td><strong>10-yr Treasury</strong></td><td>Transmission to duration &amp; small caps</td><td>Sustained push above 5.18% &rarr; pressure builds</td></tr>
+      <tr><td><strong>October hike odds</strong></td><td>Real-time policy verdict</td><td>~68% &rarr; direction of travel is the signal</td></tr>
+      <tr><td><strong>Micron print</strong> (Wed AMC)</td><td>AI-sleeve margin exam</td><td>Beat + clean margins &rarr; semi bid; margin wobble &rarr; AVGO-like fade</td></tr>
+      <tr><td><strong>FR&ndash;DE 10-yr spread</strong></td><td>Eurozone political risk premium</td><td>Through 114 bp &rarr; widest since 2012; risk-off for Europe</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h4>Bottom line</h4>
+    <p>The week proved equities can climb a wall of rising yields &mdash; <strong>as long as AI earnings deliver and the Fed&rsquo;s next move stays a question, not a certainty.</strong> Wednesday and Friday will convert that question into an answer. Position for the answer, not the question: dry powder, standing gates, no heroics before the prints.</p>
+  </div>
+</div>
+
+<!-- ============ 9. CIO ACTION CHECKLIST (NEW) ============ -->
+<div class="sec" id="checklist">
+  <span class="kicker">9 &middot; New &middot; CIO Action Checklist</span>
+  <h2>The Week&rsquo;s To-Do List</h2>
+  <p class="lede">Decision-ready items for the coming week &mdash; what to watch, when, and what it means for the standing book. Nothing here requires pre-positioning before Wednesday&rsquo;s prints.</p>
+
+  <div class="check"><div class="box">1</div><div class="txt"><span class="when">Wednesday 8:30 a.m. ET</span><h4>Read August PCE + Q2 GDP final &mdash; then decide</h4><p>The week&rsquo;s first decision point. A hot core PCE reprices October hike odds higher and extends the bond selloff; an in-line print relieves yields and opens the door to breadth. The call is made <em>after</em> the print &mdash; the portfolio&rsquo;s rate-sensitive sleeve (AMT, SO, SCHD &mdash; 5.3%) is the transmission channel to watch.</p></div></div>
+
+  <div class="check"><div class="box">2</div><div class="txt"><span class="when">Friday 8:30 a.m. ET</span><h4>September payrolls &mdash; the dominant catalyst</h4><p>Consensus +100K (vs +162K in August); watch average hourly earnings (+0.3% MoM / +3.2% YoY expected) and unemployment (4.0%). Hot wages = October hike locked = pressure on duration and small caps. Cool print = relief rally and a better backdrop for planned adds.</p></div></div>
+
+  <div class="check"><div class="box">3</div><div class="txt"><span class="when">Standing</span><h4>Price gates unchanged &mdash; let them work</h4><p>NVDA add only toward <strong>$220</strong> (BUY, $328 target); TSM add thesis valid at/below <strong>$460</strong> (BUY, $530); UNH accumulate toward <strong>~2%</strong> (BUY, $475); GRID add only in the <strong>$160s</strong>. No adds to hold-for-quality names. A data-driven selloff is what the gates are for &mdash; don&rsquo;t pre-spend the discipline.</p></div></div>
+
+  <div class="check"><div class="box">4</div><div class="txt"><span class="when">Queued</span><h4>Diversification (VXUS / AVUV) waits for the right tape</h4><p>The later diversification priorities stay queued. A cool-data week with stable yields is the better entry backdrop &mdash; do not initiate into a hot PCE/payrolls print that would punish the entry.</p></div></div>
+
+  <div class="check"><div class="box">5</div><div class="txt"><span class="when">Wed&ndash;Thu earnings</span><h4>AI-sleeve read-throughs: Micron, Accenture, Nike</h4><p>Micron (Wed AMC, ~$50B revenue guide) and Accenture (Thu BMO) are read-throughs for AVGO/NVDA/TSM/QCOM &mdash; watch the <em>price reaction</em>, not just the beat, given the market&rsquo;s new margin filter. Nike (Thu AMC, cons $0.44) reads on the consumer. None are portfolio holdings; all inform holding theses.</p></div></div>
+
+  <h3>Portfolio earnings watch &mdash; next 30 days</h3>
+  <table>
+    <thead><tr><th>Company</th><th class="num">Weight</th><th>Date</th><th>Setup</th></tr></thead>
+    <tbody>
+      <tr><td><strong>PepsiCo (PEP)</strong></td><td class="num">1.25%</td><td>Thu Oct 8, before open</td><td>Near 52-wk low (~$130); cons ~$2.30 EPS; margin/volume test after Citi target cut to $142</td></tr>
+      <tr><td><strong>UnitedHealth (UNH)</strong></td><td class="num">1.11%</td><td>Tue Oct 13</td><td>BUY, $475 target; accumulate toward ~2% on weakness</td></tr>
+      <tr><td><strong>Netflix (NFLX)</strong></td><td class="num">2.10%</td><td>Tue Oct 20, after close</td><td>HOLD, $88 target</td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:13px;color:var(--muted)">No portfolio holdings report the week of September 28 &ndash; October 2. PEP date via MarketBeat/ad-hoc-news (Zacks-referenced); UNH/NFLX dates per standing research calendar.<sup><a href="#src-34">34</a></sup><sup><a href="#src-35">35</a></sup></p>
+</div>
+
+<!-- ============ 10. SOURCES ============ -->
+<div class="sec" id="sources">
+  <span class="kicker">10 &middot; Sources &amp; Methodology</span>
+  <h2>Sources</h2>
+  <div class="sources">
+  <ol>
+    <li id="src-1">Associated Press, &ldquo;How major US stock indexes fared Friday, 9/25/2026&rdquo; (index closes, weekly and YTD changes) &mdash; <a href="https://990theanswer.com/news/national/how-major-us-stock-indexes-fared-friday-9252026/36d06c7a598e03539e0e09bdf6b7ede2">990theanswer.com</a></li>
+    <li id="src-2">Reuters, &ldquo;Wall St Week Ahead: Jobs report, inflation data to test US rate path, economic strength&rdquo; (Sep 25, 2026; 30-yr high, S&amp;P vs mid-Aug peak, strategist quotes) &mdash; <a href="https://www.reuters.com/business/wall-st-week-ahead-jobs-report-inflation-data-test-us-rate-path-economic-2026-09-25/">reuters.com</a></li>
+    <li id="src-3">Plus500, &ldquo;FOMC meeting: what you need to know&rdquo; (Sep 16 decision summary) &mdash; <a href="https://www.plus500.com/en/newsandmarketinsights/fomc-meeting-what-you-need-to-know">plus500.com</a></li>
+    <li id="src-4">moomoo, &ldquo;September FOMC review&rdquo; (meeting-day market reaction) &mdash; <a href="http://www.moomoo.com/community/feed/september-fomc-review-warsh-spoke-stocks-slid-is-fed-credibility-117284217487366">moomoo.com</a></li>
+    <li id="src-5">Barron&rsquo;s live coverage, Sep 25&ndash;26, 2026 (October hike odds ~68%) &mdash; <a href="https://www.barrons.com/livecoverage/stock-market-news-today-092526/card/treasury-yields-slip-but-more-volatility-is-likely-ahead-CJuHUckFTIDLrnj7eG5e">barrons.com</a></li>
+    <li id="src-6">Reuters, &ldquo;US equity funds post first inflow in five weeks on renewed AI optimism&rdquo; (LSEG Lipper, week ended Sep 25) &mdash; <a href="https://www.reuters.com/business/us-equity-funds-post-first-inflow-five-weeks-renewed-ai-optimism-2026-09-25/">reuters.com</a></li>
+    <li id="src-7">Edge Consultancy KW, &ldquo;US market wrap &mdash; 25 September 2026&rdquo; (Friday sector moves, oil settlements) &mdash; <a href="https://edgeconsultancykw.com/us-market-wrap-25-september-2026/">edgeconsultancykw.com</a></li>
+    <li id="src-8">Reuters, &ldquo;US business activity at more than five-year high, inflation pressures building&rdquo; (flash PMIs, Sep 23) &mdash; <a href="https://www.reuters.com/business/us-business-activity-more-than-five-year-high-inflation-pressures-building-2026-09-23/">reuters.com</a></li>
+    <li id="src-9">Reuters, &ldquo;US consumer sentiment eases to four-month low in September&rdquo; (Michigan final, Sep 25) &mdash; <a href="https://www.reuters.com/world/us/us-consumer-sentiment-eases-four-month-low-september-2026-09-25/">reuters.com</a></li>
+    <li id="src-10">Reuters, &ldquo;US weekly jobless claims decrease as labor market regains footing&rdquo; (Sep 24) &mdash; <a href="https://superhits979.com/2026/09/24/us-weekly-jobless-claims-decrease-as-labor-market-regains-footing/">superhits979.com (Reuters syndication)</a></li>
+    <li id="src-11">Tickeron, Broadcom (AVGO) earnings summary (Sep 2 print; AI revenue, guidance) &mdash; <a href="https://TICKERON.COM/ticker/AVGO/">tickeron.com</a></li>
+    <li id="src-12">Motley Fool, &ldquo;Prediction: Broadcom will be a $3 trillion company by the end of 2030&rdquo; (Sep 22; AVGO results context) &mdash; <a href="https://www.fool.com/investing/2026/09/22/prediction-broadcom-will-be-a-usd3-trillion-company-by-the-end-of-2030/">fool.com</a></li>
+    <li id="src-13">Stock Moguls, &ldquo;Micron reports Wednesday with $50 billion on the line&rdquo; (Sep 24; guidance) &mdash; <a href="https://www.stockmoguls.com/2026/09/24/micron-reports-wednesday-with-50-billion-on-the-line/">stockmoguls.com</a></li>
+    <li id="src-14">Morningstar/Dow Jones, &ldquo;2-year Treasury yield rises to 4.862% this week&rdquo; (Sep 25) &mdash; <a href="https://www.morningstar.com/news/dow-jones/202609255736/2-year-treasury-yield-rises-to-4862-this-week-data-talk">morningstar.com</a></li>
+    <li id="src-15">Wall Street Journal, &ldquo;JGB yields rise after sharp gains in U.S. Treasury yields&rdquo; (10-yr 5.180%, +18.5 bp week) &mdash; <a href="https://www.wsj.com/finance/jgb-yields-rise-after-sharp-gains-in-u-s-treasury-yields-487f64c2">wsj.com</a></li>
+    <li id="src-16">Reuters, &ldquo;European stocks on track for weekly gain as oil prices ease&rdquo; (STOXX 600 +0.5% week) &mdash; <a href="https://www.lapost.com/content/european-stocks-on-track-for-weekly-gain-as-oil-prices-ease">lapost.com (Reuters syndication)</a></li>
+    <li id="src-17">Stocktwits, &ldquo;The Weekly Spread: what shaped yields and the dollar this week&rdquo; (DXY 101.03, +0.8%) &mdash; <a href="https://stocktwits.com/news-articles/markets/equity/the-weekly-spread-what-shaped-yields-and-the-dollar-this-week-1/cZMXz82RBO8">stocktwits.com</a></li>
+    <li id="src-18">New York Fed, &ldquo;Reference Rates and Target Range&rdquo; (T-bill/SOFR/ON RRP cross-check) &mdash; <a href="https://www.newyorkfed.org/markets/reference-rates-and-target-range">newyorkfed.org</a></li>
+    <li id="src-19">Morningstar/Dow Jones, &ldquo;New-home sales rose in August&rdquo; (684K SAAR, Sep 24) &mdash; <a href="https://www.morningstar.com/news/dow-jones/202609245198/new-home-sales-rose-in-august">morningstar.com</a></li>
+    <li id="src-20">Seeking Alpha via TradingView, &ldquo;Durable goods orders growth stalls in August&rdquo; (Sep 25) &mdash; <a href="https://www.tradingview.com/news/seekingalpha:16497bd7c094b:0-durable-goods-orders-growth-stalls-in-august-but-is-better-than-the-decline-expected/">tradingview.com</a></li>
+    <li id="src-21">Barron&rsquo;s, Costco earnings coverage (Sep 24; $95.723B revenue, $6.75 EPS) &mdash; <a href="https://www.barrons.com/articles/costco-earnings-stock-price-4ebe1a7a">barrons.com</a></li>
+    <li id="src-22">Zacks, &ldquo;Darden Restaurants (DRI) misses Q1 earnings and revenue estimates&rdquo; (Sep 24) &mdash; <a href="https://www.zacks.com/stock/news/2994925/darden-restaurants-dri-misses-q1-earnings-and-revenue-estimates">zacks.com</a></li>
+    <li id="src-23">StockStory, &ldquo;KB Home Q3 CY2026 earnings&rdquo; (Sep 22; $1.30B revenue, &minus;20% YoY) &mdash; <a href="https://mtrustcompany.marketminute.com/article/stockstory-2026-9-22-kb-homes-nysekbh-q3-cy2026-earnings-results-revenue-in-line-with-expectations-but-full-year-sales-guidance-misses-expectations">marketminute.com</a></li>
+    <li id="src-24">Investopedia, &ldquo;Stock market today: Dow Jones, S&amp;P 500&rdquo; (Friday Sep 25 recap; MSFT, META, semis, Akamai) &mdash; <a href="https://www.investopedia.com/stock-market-today-dow-jones-s-and-p-500-09252026-12139934">investopedia.com</a></li>
+    <li id="src-25">BigGo Finance (Bloomberg-sourced), European yields/ECB/France spread; Oracle Project Jupiter force majeure &mdash; <a href="https://finance.biggo.com/news/7a0b38dc-f7aa-4a81-b5ec-dc931bbe1d00">finance.biggo.com</a></li>
+    <li id="src-26">Reuters, &ldquo;Japan&rsquo;s factory activity growth slows in September, PMI shows&rdquo; (Sep 24) &mdash; <a href="https://www.reuters.com/world/asia-pacific/japans-factory-activity-growth-slows-september-pmi-shows-2026-09-24/">reuters.com</a></li>
+    <li id="src-27">FXStreet, &ldquo;Fed vs BoJ: both hiked, the market only believes one&rdquo; (Sep 25; BoJ 1.25%, yen &yen;157, NVDA/Hugging Face, Nike/PANW) &mdash; <a href="https://www.fxstreet.com/analysis/fed-vs-boj-both-hiked-the-market-only-believes-one-of-them-and-the-chart-shows-which-202609251338">fxstreet.com</a></li>
+    <li id="src-28">AsiaOne, &ldquo;Oil prices drop despite Houthi attacks as US-Iran truce hopes grow&rdquo; (Hormuz talks) &mdash; <a href="https://asiaone.news/oil-prices-drop-despite-houthi-attacks-as-us-iran-truce-hopes-grow/">asiaone.news</a></li>
+    <li id="src-29">Penn Wharton Budget Model, &ldquo;Effective tariff rates and revenues&rdquo; (updated Sep 9, 2026) &mdash; <a href="https://budgetmodel.wharton.upenn.edu/p/2026-09-09-effective-tariff-rates-and-revenues-updated-september-9-2026/">budgetmodel.wharton.edu</a></li>
+    <li id="src-30">FXStreet, &ldquo;Forecasting the upcoming week: NFP shifts the focus to US jobs&rdquo; (Sep 25; Fed-speaker calendar) &mdash; <a href="https://www.fxstreet.com/analysis/forecasting-the-upcoming-week-the-rba-is-set-to-hike-rates-nfp-shifts-the-focus-to-us-jobs-202609251659">fxstreet.com</a></li>
+    <li id="src-31">Seeking Alpha, &ldquo;A strong September labor market report to crush stocks and bonds&rdquo; (NFP consensus +100K) &mdash; <a href="https://seekingalpha.com/article/4949788-a-strong-september-labor-market-report-to-crush-stocks-and-bonds">seekingalpha.com</a></li>
+    <li id="src-32">Zacks, &ldquo;Accenture (ACN) earnings expected to grow: should you buy?&rdquo; (Oct 1 BMO; cons $3.19) &mdash; <a href="https://WWW.ZACKS.COM/stock/news/2995154/accenture-acn-earnings-expected-to-grow-should-you-buy">zacks.com</a></li>
+    <li id="src-33">interactive investor, &ldquo;US earnings season &mdash; Q3 2026&rdquo; (calendar updated Sep 25: MU Wed AMC, ACN Thu BMO, NKE Thu AMC, PEP Oct 8) &mdash; <a href="https://www.ii.co.uk/investing-with-ii/international-investing/us-earnings-season">ii.co.uk</a></li>
+    <li id="src-34">MarketBeat, &ldquo;Earnings Reports Next Week&rdquo; (MU/ACN/NKE/JEF dates and consensus) &mdash; <a href="https://www.marketbeat.com/earnings/next-week/">marketbeat.com</a></li>
+    <li id="src-35">ad-hoc-news.de, PepsiCo coverage (Oct 8, 2026 earnings date; Zacks consensus ~$2.30; Citi target cut to $142) &mdash; <a href="https://www.ad-hoc-news.de/boerse/corporate-news/pepsico-stock-falls-near-a-52-week-low-as-margins-tighten/70153688">ad-hoc-news.de</a></li>
+    <li id="src-36">BEA, Q2 2026 GDP second estimate (1.5% annualized; third estimate due Sep 30) &mdash; <a href="https://www.bea.gov/sites/default/files/2026-08/gdp2q26-2nd.pdf">bea.gov</a></li>
+    <li id="src-37">Conference Board, Consumer Confidence release schedule (next: Tue Sep 29, 10:00 a.m. ET) &mdash; <a href="https://www.conference-board.org/topics/consumer-confidence/">conference-board.org</a></li>
+  </ol>
+  </div>
+
+  <h3>Methodology notes</h3>
+  <div class="sources">
+  <ul style="padding-left:20px">
+    <li>Week = Monday, September 21 through Friday, September 25, 2026. Index levels are Friday closes (ET); YTD changes are per AP&rsquo;s Friday tabulation.</li>
+    <li>Treasury yields are Tradeweb/Dow Jones 3 p.m. ET closes; weekly changes in basis points are Friday-to-Friday.</li>
+    <li>Fund flows are LSEG Lipper weekly data for the week ended September 25, 2026, as reported by Reuters.</li>
+    <li>September 16 FOMC figures (decision, dots, SEP medians) are summarized from market reporting; the official statement and Summary of Economic Projections should be verified at federalreserve.gov. The next FOMC meeting is October 27&ndash;28, 2026 &mdash; there is no November meeting on the 2026 calendar.</li>
+    <li>August PCE and the Q2 GDP third estimate were <em>not</em> released during the review week; both are due Wednesday, September 30 at 8:30 a.m. ET per BEA&rsquo;s schedule.</li>
+    <li>Weekly S&amp;P 500 sector returns and advance/decline statistics could not be verified from available sources; only Friday sector moves are reported.</li>
+    <li>Portfolio lens uses the Morningstar export-52 baseline (42 securities + $43,000 modeled cash); sleeve weights are percent of total portfolio value.</li>
+    <li>Scenario probabilities are judgment, not model output.</li>
+  </ul>
+  </div>
+
+  <div class="disc">
+    <strong>Disclaimer.</strong> This report is for informational purposes only and does not constitute investment advice, an offer to buy or sell any security, or a recommendation regarding any portfolio action. Market data are drawn from third-party sources believed reliable but not independently audited. Forward-looking statements &mdash; including scenario probabilities, price targets referenced from standing research, and policy expectations &mdash; involve uncertainty. Past performance does not predict future results. All investment decisions remain the CIO&rsquo;s.
+  </div>
+</div>
+
+</div><!-- /wrap -->
+<div class="footer">Weekly Market Intelligence &middot; CIO Dashboard &middot; Week ended September 25, 2026 &middot; Published September 26, 2026</div>
+</div><!-- /page -->
+</body>
+</html>
