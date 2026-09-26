@@ -18,7 +18,7 @@ import pathlib
 import sys
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-SKIP_FILES = {"index.html"}
+SKIP_FILES = {"index.html", "dashboard-live.html"}
 SKIP_MARKER = "speechSynthesis"
 
 WIDGET = """
