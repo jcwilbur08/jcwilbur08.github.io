@@ -15,6 +15,7 @@ header.top{display:flex;justify-content:space-between;align-items:flex-end;flex-
 .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:11px;color:#8fa3b8}
 h1{font:700 34px/1.1 Georgia,serif;margin:6px 0 4px;color:#fff}
 .sub{color:#8fa3b8;font-size:13px}
+.footsub{margin:30px 0 10px;text-align:center}
 .statusbar{display:flex;align-items:center;gap:10px;background:#0e1c2e;border:1px solid #24405c;border-radius:10px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:#bcd0dd;flex-wrap:wrap}
 .dot{width:10px;height:10px;border-radius:50%;background:#f6ad55;display:inline-block}
 .dot.live{background:#48bb78}.dot.err{background:#f56565}
@@ -95,7 +96,6 @@ th.sortable:hover{color:#fff}
 <div>
 <div class="eyebrow">CIO Dashboard · Retirement Portfolio · Live</div>
 <h1>Portfolio Command Center</h1>
-<div class="sub" id="headSub">Loading…</div>
 </div>
 </header>
 <div class="statusbar"><span class="dot" id="liveDot"></span><span id="statusText">Starting…</span><button class="fbtn sm" id="qRefresh" style="margin-left:auto">Refresh quotes</button></div>
@@ -149,6 +149,7 @@ th.sortable:hover{color:#fff}
 </div><div>
 <div class="card"><h2>Open plan — capital allocation ranking</h2><ul class="plan" id="planBody"></ul><div class="note">Full reasoning: portfolio-ranking-report-2026-09-23 and grid-vis-sector-report-2026-09-23 (HTML + PDF).</div></div>
 </div></div>
+<div class="sub footsub">Loading…</div>
 </section>
 <section id="tab-holdings" class="tabpanel">
 <div class="card"><h2>All holdings — click any row for detail</h2>
@@ -163,6 +164,7 @@ th.sortable:hover{color:#fff}
 <th class="sortable num" data-k="disc" style="text-align:right">vs FV</th>
 </tr></thead><tbody id="holdingsBody"></tbody></table></div>
 <div class="note">Click a column header to sort. Click any row for the full position detail.</div></div>
+<div class="sub footsub">Loading…</div>
 </section>
 <section id="tab-research" class="tabpanel">
 <div class="card"><h2>Analyst report library</h2>
@@ -171,6 +173,7 @@ th.sortable:hover{color:#fff}
 </div>
 <div id="researchLib"></div>
 <div class="note">Reports open in a new tab. Set REPORT_BASE at the top of this file's script if your report files live at a URL.</div></div>
+<div class="sub footsub">Loading…</div>
 </section>
 <div class="modal-ov" id="modalOv"><div class="modal">
 <button class="mclose" id="mClose">Close ✕</button>
@@ -190,8 +193,8 @@ th.sortable:hover{color:#fff}
 // SECURITY: your key is currently hard-coded in your PUBLIC GitHub Pages
 // repo's index.html, which means it is visible to the whole internet.
 // Rotate it in your Finnhub dashboard FIRST, then paste the new key here.
-const FINNHUB_KEY = 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0';
-const BUILD = 'rev8'; // bump on every revision — visible in the header so we know what's live
+const FINNHUB_KEY = 'PASTE_YOUR_FINNHUB_KEY';
+const BUILD = 'rev9'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
@@ -279,6 +282,8 @@ let HOLD = [], CASH = 43000, POS = [], BY = {}, TOTAL = 0, DAYPNL = 0;
 let QUOTES = {}, SPY_PX = null, EARN = [];
 let tradeable = function(){return POS.filter(function(p){return p.t!=='Cash';});};
 /* ---------------- data loading ---------------- */
+function setSub(t){document.querySelectorAll('.footsub').forEach(function(el){el.textContent=t;});}
+function addSub(t){document.querySelectorAll('.footsub').forEach(function(el){el.textContent+=t;});}
 async function loadHoldings(){
   let r;
   try { r = await fetch('holdings.json'); }
@@ -286,8 +291,7 @@ async function loadHoldings(){
   if(!r.ok) throw new Error('http-'+r.status);
   const d = await r.json();
   HOLD = d.holdings; CASH = d.cash || 43000;
-  document.getElementById('headSub').textContent =
-    'Live client-side edition · ' + d.source + ' · ' + HOLD.length + ' positions + cash · Basis: USD';
+  setSub('Live client-side edition · ' + d.source + ' · ' + HOLD.length + ' positions + cash · Basis: USD');
 }
 async function fh(url){
   const r = await fetch(url);
@@ -881,7 +885,7 @@ async function refreshQuotes(){
   try{
     setStatus('Loading holdings…','');
     await loadHoldings();
-    document.getElementById('headSub').textContent += ' · build '+BUILD;
+    addSub(' · build '+BUILD);
     document.getElementById('qRefresh').addEventListener('click', function(){ refreshQuotes(); });
     const needKey = !FINNHUB_KEY || FINNHUB_KEY.indexOf('PASTE_')===0;
     const c = readCache();
@@ -913,7 +917,7 @@ async function refreshQuotes(){
     setStatus('Live · updated '+fmtTime(Date.now()), 'live');
   }catch(e){
     setStatus('Could not load holdings.json — open this page over http(s) (e.g. your GitHub Pages URL), not as a local file.','err');
-    document.getElementById('headSub').textContent = 'Failed to load holdings.json';
+    setSub('Failed to load holdings.json');
   }
 })();
 </script>
