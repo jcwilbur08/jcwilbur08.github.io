@@ -15,6 +15,19 @@ header.top{display:flex;justify-content:space-between;align-items:flex-end;flex-
 .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:11px;color:#8fa3b8}
 h1{font:700 34px/1.1 Georgia,serif;margin:6px 0 4px;color:#fff}
 .sub{color:#8fa3b8;font-size:13px}
+.footsub{margin:30px 0 10px;text-align:center}
+.grow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #1b3049;font-size:13px}
+.grow:last-child{border:0}
+.gmeta{color:#8fa3b8;font-size:11px}
+.pill.hit{background:#123f2a;color:#48bb78}.pill.near{background:#4a3a12;color:#f6ad55}.pill.watch{background:#1b3049;color:#8fa3b8}
+.gbar{background:#0b1a2b;border-radius:4px;height:8px;overflow:hidden;margin-top:6px;min-width:120px}
+.gfill{background:linear-gradient(90deg,#2b6cb0,#63b3ed);height:100%}
+.reqgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px}
+.reqgrid label,.reqlab{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#8fa3b8;margin-bottom:10px}
+select,textarea{width:100%;background:#0b1a2b;border:1px solid #24405c;color:#e8edf2;border-radius:8px;padding:8px 10px;font-size:13px;margin-top:6px;font-family:inherit}
+.briefbox{background:#0b1a2b;border:1px solid #2f5b8a;border-radius:8px;padding:14px 16px;font-size:12.5px;white-space:pre-wrap;margin:10px 0;color:#dbe4ec}
+.reqq{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #1b3049;font-size:13px}
+@media(max-width:860px){.reqgrid{grid-template-columns:1fr}}
 .statusbar{display:flex;align-items:center;gap:10px;background:#0e1c2e;border:1px solid #24405c;border-radius:10px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:#bcd0dd;flex-wrap:wrap}
 .dot{width:10px;height:10px;border-radius:50%;background:#f6ad55;display:inline-block}
 .dot.live{background:#48bb78}.dot.err{background:#f56565}
@@ -95,7 +108,6 @@ th.sortable:hover{color:#fff}
 <div>
 <div class="eyebrow">CIO Dashboard · Retirement Portfolio · Live</div>
 <h1>Portfolio Command Center</h1>
-<div class="sub" id="headSub">Loading…</div>
 </div>
 </header>
 <div class="statusbar"><span class="dot" id="liveDot"></span><span id="statusText">Starting…</span><button class="fbtn sm" id="qRefresh" style="margin-left:auto">Refresh quotes</button></div>
@@ -107,6 +119,7 @@ th.sortable:hover{color:#fff}
 </nav>
 <section id="tab-overview" class="tabpanel active">
 <div class="kpis" id="kpiStrip"></div>
+<div class="card"><h2>Price &amp; weight gates <span class="tag" id="gateCount"></span></h2><div id="gateBody"></div><div class="note">Your standing buy/add gates vs live prices. Edit <span style="font-family:monospace">gates.json</span> to change levels — no dashboard edits needed.</div></div>
 <div class="grid"><div>
 <div class="card"><h2>Sector allocation</h2><div class="donutwrap" id="sectorBody"></div><div class="note" id="sectorNote"></div></div>
 </div><div>
@@ -149,6 +162,7 @@ th.sortable:hover{color:#fff}
 </div><div>
 <div class="card"><h2>Open plan — capital allocation ranking</h2><ul class="plan" id="planBody"></ul><div class="note">Full reasoning: portfolio-ranking-report-2026-09-23 and grid-vis-sector-report-2026-09-23 (HTML + PDF).</div></div>
 </div></div>
+<div class="sub footsub">Loading…</div>
 </section>
 <section id="tab-holdings" class="tabpanel">
 <div class="card"><h2>All holdings — click any row for detail</h2>
@@ -163,14 +177,33 @@ th.sortable:hover{color:#fff}
 <th class="sortable num" data-k="disc" style="text-align:right">vs FV</th>
 </tr></thead><tbody id="holdingsBody"></tbody></table></div>
 <div class="note">Click a column header to sort. Click any row for the full position detail.</div></div>
+<div class="sub footsub">Loading…</div>
 </section>
 <section id="tab-research" class="tabpanel">
+<div class="card"><h2>Request research</h2>
+<div class="reqgrid">
+<label>Holding<select id="reqTicker"></select></label>
+<label>Report type<select id="reqType">
+<option>Full fundamental report</option>
+<option>Update note</option>
+<option>Earnings preview</option>
+<option>Earnings recap</option>
+<option>Thematic / sector</option>
+</select></label>
+</div>
+<label class="reqlab">Focus questions<textarea id="reqFocus" rows="3" placeholder="e.g. Is the margin thesis intact after the latest print? What breaks the bear case?"></textarea></label>
+<div class="fbar"><button class="fbtn" id="reqGen">Generate request brief</button><button class="fbtn" id="reqCopy" style="display:none">Copy brief</button></div>
+<div class="briefbox" id="reqBrief" style="display:none"></div>
+<div class="note">Paste the brief to me in our chat and I'll build it. Publishing a finished report is two uploads: the report HTML plus an updated <span style="font-family:monospace">research.json</span>.</div>
+<h3>Open requests</h3><div id="reqList"></div>
+</div>
 <div class="card"><h2>Analyst report library</h2>
 <div class="fbar" id="resFilters">
 <button class="fbtn on" data-f="all">All</button><button class="fbtn" data-f="company">Company Reports</button><button class="fbtn" data-f="thematic">Thematic &amp; Ranking</button><button class="fbtn" data-f="weekly">Weekly Reports</button><button class="fbtn" data-f="market">Market Research</button>
 </div>
 <div id="researchLib"></div>
 <div class="note">Reports open in a new tab. Set REPORT_BASE at the top of this file's script if your report files live at a URL.</div></div>
+<div class="sub footsub">Loading…</div>
 </section>
 <div class="modal-ov" id="modalOv"><div class="modal">
 <button class="mclose" id="mClose">Close ✕</button>
@@ -191,32 +224,43 @@ th.sortable:hover{color:#fff}
 // repo's index.html, which means it is visible to the whole internet.
 // Rotate it in your Finnhub dashboard FIRST, then paste the new key here.
 const FINNHUB_KEY = 'PASTE_YOUR_FINNHUB_KEY';
-const BUILD = 'rev8'; // bump on every revision — visible in the header so we know what's live
+const BUILD = 'rev10'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
 
-/* ---------------- static data ---------------- */
-const REPORTS = {
- 'AVGO':['avgo-fundamental-analysis.html','BUY','$505','2026-09-22'],
- 'GEV':['gev-fundamental-analysis.html','HOLD','$1,100','2026-09-22'],
- 'NVDA':['nvda-fundamental-analysis.html','BUY','$328','2026-09-22'],
- 'TSM':['tsm-fundamental-analysis.html','BUY','$530','2026-09-22'],
- 'UBER':['uber-fundamental-analysis.html','BUY','$105','2026-09-22'],
- 'UNH':['unh-fundamental-analysis-2026-09-25.html','BUY','$475','2026-09-25'],
- 'ASML':['asml-fundamental-analysis.html','HOLD','$1,950','Sep 2026'],
- 'CRM':['crm-fundamental-analysis.html','HOLD','$276','2026-09-22'],
- 'GEHC':['gehc-fundamental-analysis.html','BUY','$84','2026-09-22'],
- 'NFLX':['nflx-fundamental-analysis.html','HOLD','$88','2026-09-23'],
- 'QCOM':['qcom-fundamental-analysis.html','HOLD','$205','2026-09-22']};
-const THEMATIC = [
- ['ai-stack-investments-2026-09-24.html','AI Stack Investments','Thematic','2026-09-24'],
- ['capital-allocation-ranking-2026-09-22.html','Capital Allocation Ranking','Ranking','2026-09-22'],
- ['portfolio-ranking-report-2026-09-23.html','Portfolio Ranking Report','Ranking','2026-09-23'],
- ['grid-vis-sector-report-2026-09-23.html','GRID Industrial Sector','Sector','2026-09-23']];
-const WEEKLY = [];
-const MARKET_RESEARCH = [
- ['weekly-market-intelligence-2026-09-25.html','Weekly Market Intelligence — Week Ended Sep 25, 2026','Market Intelligence','2026-09-25']];
+/* ---------------- research + gates manifests (research.json / gates.json) ---------------- */
+let MANIFEST = null, GATES = null;
+// Embedded fallbacks so the page still works if the JSON files are missing.
+const RESEARCH_FALLBACK = {"reports":[
+ {"ticker":"AVGO","file":"avgo-fundamental-analysis.html","rating":"BUY","target":"$505","kind":"company","date":"2026-09-22"},
+ {"ticker":"GEV","file":"gev-fundamental-analysis.html","rating":"HOLD","target":"$1,100","kind":"company","date":"2026-09-22"},
+ {"ticker":"NVDA","file":"nvda-fundamental-analysis.html","rating":"BUY","target":"$328","kind":"company","date":"2026-09-22"},
+ {"ticker":"TSM","file":"tsm-fundamental-analysis.html","rating":"BUY","target":"$530","kind":"company","date":"2026-09-22"},
+ {"ticker":"UBER","file":"uber-fundamental-analysis.html","rating":"BUY","target":"$105","kind":"company","date":"2026-09-22"},
+ {"ticker":"UNH","file":"unh-fundamental-analysis-2026-09-25.html","rating":"BUY","target":"$475","kind":"company","date":"2026-09-25"},
+ {"ticker":"ASML","file":"asml-fundamental-analysis.html","rating":"HOLD","target":"$1,950","kind":"company","date":"Sep 2026"},
+ {"ticker":"CRM","file":"crm-fundamental-analysis.html","rating":"HOLD","target":"$276","kind":"company","date":"2026-09-22"},
+ {"ticker":"GEHC","file":"gehc-fundamental-analysis.html","rating":"BUY","target":"$84","kind":"company","date":"2026-09-22"},
+ {"ticker":"NFLX","file":"nflx-fundamental-analysis.html","rating":"HOLD","target":"$88","kind":"company","date":"2026-09-23"},
+ {"ticker":"QCOM","file":"qcom-fundamental-analysis.html","rating":"HOLD","target":"$205","kind":"company","date":"2026-09-22"},
+ {"ticker":null,"title":"AI Stack Investments","sub":"Thematic","file":"ai-stack-investments-2026-09-24.html","rating":null,"target":null,"kind":"thematic","date":"2026-09-24"},
+ {"ticker":null,"title":"Capital Allocation Ranking","sub":"Ranking","file":"capital-allocation-ranking-2026-09-22.html","rating":null,"target":null,"kind":"thematic","date":"2026-09-22"},
+ {"ticker":null,"title":"Portfolio Ranking Report","sub":"Ranking","file":"portfolio-ranking-report-2026-09-23.html","rating":null,"target":null,"kind":"thematic","date":"2026-09-23"},
+ {"ticker":null,"title":"GRID Industrial Sector","sub":"Sector","file":"grid-vis-sector-report-2026-09-23.html","rating":null,"target":null,"kind":"thematic","date":"2026-09-23"},
+ {"ticker":null,"title":"Weekly Market Intelligence — Week Ended Sep 25, 2026","sub":"Market Intelligence","file":"weekly-market-intelligence-2026-09-25.html","rating":null,"target":null,"kind":"market","date":"2026-09-25"}]};
+const GATES_FALLBACK = {"gates":[
+ {"ticker":"TSM","type":"price","action":"ADD","level":460,"dir":"at_or_below","note":"Add thesis valid at or below $460 · 12-mo target $530"},
+ {"ticker":"NVDA","type":"price","action":"ADD","level":220,"dir":"at_or_below","note":"Retain $220 buy gate · 12-mo target $328"},
+ {"ticker":"GRID","type":"price","action":"ADD","level":169,"dir":"at_or_below","note":"Add toward 1% only in the $160s"},
+ {"ticker":"UNH","type":"weight","action":"ACCUMULATE","level":2.0,"dir":"toward","note":"BUY $475 · accumulate toward ~2% of portfolio"}]};
+function RLIST(){ return (MANIFEST&&MANIFEST.reports)||RESEARCH_FALLBACK.reports; }
+function GLIST(){ return (GATES&&GATES.gates)||GATES_FALLBACK.gates; }
+function reportFor(t){ return RLIST().filter(function(r){return r.kind==='company'&&r.ticker===t;})[0]||null; }
+async function loadManifests(){
+  try{ const r=await fetch('research.json'); if(r.ok) MANIFEST=await r.json(); }catch(e){}
+  try{ const r=await fetch('gates.json'); if(r.ok) GATES=await r.json(); }catch(e){}
+}
 // S&P 500 GICS sector weights, approx mid-2026 (S&P Dow Jones Indices via press).
 const SPX_W = {'Information Technology':35.5,'Communication Services':9.5,
  'Consumer Discretionary':10.0,'Financials':13.0,'Health Care':10.0,
@@ -279,6 +323,8 @@ let HOLD = [], CASH = 43000, POS = [], BY = {}, TOTAL = 0, DAYPNL = 0;
 let QUOTES = {}, SPY_PX = null, EARN = [];
 let tradeable = function(){return POS.filter(function(p){return p.t!=='Cash';});};
 /* ---------------- data loading ---------------- */
+function setSub(t){document.querySelectorAll('.footsub').forEach(function(el){el.textContent=t;});}
+function addSub(t){document.querySelectorAll('.footsub').forEach(function(el){el.textContent+=t;});}
 async function loadHoldings(){
   let r;
   try { r = await fetch('holdings.json'); }
@@ -286,8 +332,7 @@ async function loadHoldings(){
   if(!r.ok) throw new Error('http-'+r.status);
   const d = await r.json();
   HOLD = d.holdings; CASH = d.cash || 43000;
-  document.getElementById('headSub').textContent =
-    'Live client-side edition · ' + d.source + ' · ' + HOLD.length + ' positions + cash · Basis: USD';
+  setSub('Live client-side edition · ' + d.source + ' · ' + HOLD.length + ' positions + cash · Basis: USD');
 }
 async function fh(url){
   const r = await fetch(url);
@@ -775,11 +820,11 @@ function openHolding(t){
     return '<div class="mstat"><span>'+r[0]+'</span><b>'+esc(r[1])+'</b></div>';
   }).join('');
   const rb = document.getElementById('mReport');
-  const rep = REPORTS[t];
+  const rep = reportFor(t);
   if(rep){
     rb.style.display='inline-block';
-    rb.setAttribute('href', REPORT_BASE+rep[0]);
-    rb.textContent='Open analyst report — '+rep[1]+' / '+rep[2]+' →';
+    rb.setAttribute('href', REPORT_BASE+rep.file);
+    rb.textContent='Open analyst report — '+rep.rating+' / '+rep.target+' →';
   } else { rb.style.display='none'; }
   document.getElementById('mNoRep').style.display = rep?'none':'block';
   modalOv.classList.add('open');
@@ -787,6 +832,33 @@ function openHolding(t){
 document.getElementById('mClose').addEventListener('click', function(){ modalOv.classList.remove('open'); });
 modalOv.addEventListener('click', function(e){ if(e.target===modalOv) modalOv.classList.remove('open'); });
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') modalOv.classList.remove('open'); });
+
+/* ---------------- render: price & weight gates ---------------- */
+function renderGates(){
+  const gates = GLIST();
+  let hits = 0;
+  const rows = gates.map(function(g){
+    const p = BY[g.ticker]||{};
+    const nm = p.name||g.ticker;
+    let stat, stc, detail, bar='';
+    if(g.type==='price' && p.px){
+      const px = p.px, lv = g.level, dist = (px-lv)/lv*100;
+      if(px<=lv){ stat='HIT'; stc='hit'; hits++; detail='Live $'+px.toFixed(2)+' · gate $'+lv+' — '+Math.abs(dist).toFixed(1)+'% below'; }
+      else if(px<=lv*1.05){ stat='NEAR'; stc='near'; detail='Live $'+px.toFixed(2)+' · gate $'+lv+' — '+dist.toFixed(1)+'% above'; }
+      else { stat='WATCH'; stc='watch'; detail='Live $'+px.toFixed(2)+' · gate $'+lv+' — '+dist.toFixed(1)+'% above'; }
+    } else if(g.type==='weight' && p.wt!=null){
+      const w = p.wt, lv = g.level, pr = Math.min(100, w/lv*100);
+      stat = w>=lv?'HIT':'WATCH'; stc = w>=lv?'hit':'watch'; if(w>=lv) hits++;
+      detail = w.toFixed(2)+'% of '+lv.toFixed(1)+'% target';
+      bar = '<div class="gbar"><div class="gfill" style="width:'+pr.toFixed(0)+'%"></div></div>';
+    } else { stat='—'; stc='watch'; detail='No live data'; }
+    return '<div class="grow"><div><b>'+g.ticker+'</b> <span class="pill '+(g.action==='ADD'?'buy':'hold')+'">'+g.action+'</span>'+
+      '<div class="gmeta">'+esc(nm)+' · '+esc(g.note||'')+'</div>'+bar+'</div>'+
+      '<div style="text-align:right;white-space:nowrap"><span class="pill '+stc+'">'+stat+'</span><div class="gmeta">'+detail+'</div></div></div>';
+  }).join('');
+  document.getElementById('gateBody').innerHTML = rows;
+  document.getElementById('gateCount').textContent = hits+' of '+gates.length+' hit';
+}
 
 /* ---------------- research tab ---------------- */
 let RES_FILTER = 'all';
@@ -797,30 +869,26 @@ function renderResearch(f){
     const c = r==='BUY'?'buy':(r==='HOLD'?'hold':'sell');
     return '<span class="pill '+c+'">'+r+'</span>';
   }
-  function fileCard(x){
-    return '<a class="repcard" href="'+REPORT_BASE+x[0]+'" target="_blank" rel="noopener">'+
-      '<span class="tag">'+x[2]+'</span><div class="rt">'+esc(x[1])+'</div>'+
-      '<div class="rm">'+x[3]+'<br>Open report →</div></a>';
+  const list = RLIST();
+  function card(r){
+    const nm = r.kind==='company' ? esc((BY[r.ticker]&&BY[r.ticker].name)||r.ticker) : esc(r.title);
+    const tag = r.kind==='company' ? '<b>'+r.ticker+'</b> '+pill(r.rating) : '<span class="tag">'+esc(r.sub||r.kind)+'</span>';
+    const meta = r.kind==='company' ? 'Target '+r.target+' · '+r.date : r.date;
+    const cta = r.kind==='company' ? 'Open full report →' : 'Open report →';
+    return '<a class="repcard" href="'+REPORT_BASE+r.file+'" target="_blank" rel="noopener">'+
+      tag+'<div class="rt">'+nm+'</div>'+
+      '<div class="rm">'+meta+'<br>'+cta+'</div></a>';
   }
-  const cards = Object.keys(REPORTS).sort(function(a,b){
-    return REPORTS[a][1]<REPORTS[b][1]?-1:1;
-  }).map(function(t){
-    const rep = REPORTS[t], nm = (BY[t]&&BY[t].name)||t;
-    return '<a class="repcard" href="'+REPORT_BASE+rep[0]+'" target="_blank" rel="noopener">'+
-      '<b>'+t+'</b> '+pill(rep[1])+'<div class="rt">'+esc(nm)+'</div>'+
-      '<div class="rm">Target '+rep[2]+' · '+rep[3]+'<br>Open full report →</div></a>';
-  }).join('');
-  const them = THEMATIC.map(fileCard).join('');
-  const week = WEEKLY.map(fileCard).join('');
+  const byKind = function(k){ return list.filter(function(r){return r.kind===k;}); };
   const secs = {
-    company:['<h3>Company reports ('+Object.keys(REPORTS).length+')</h3><div class="repgrid">'+cards+'</div>'],
-    thematic:['<h3>Thematic &amp; ranking</h3><div class="repgrid">'+them+'</div>'],
-    weekly:[WEEKLY.length
-      ? '<h3>Weekly reports ('+WEEKLY.length+')</h3><div class="repgrid">'+week+'</div>'
+    company:['<h3>Company reports ('+byKind('company').length+')</h3><div class="repgrid">'+byKind('company').map(card).join('')+'</div>'],
+    thematic:['<h3>Thematic &amp; ranking</h3><div class="repgrid">'+byKind('thematic').map(card).join('')+'</div>'],
+    weekly:[byKind('weekly').length
+      ? '<h3>Weekly reports ('+byKind('weekly').length+')</h3><div class="repgrid">'+byKind('weekly').map(card).join('')+'</div>'
       : ''],
-    market:[MARKET_RESEARCH.length
-      ? '<h3>Market research ('+MARKET_RESEARCH.length+')</h3><div class="repgrid">'+MARKET_RESEARCH.map(fileCard).join('')+'</div>'
-      : '<h3>Market research</h3><div class="empty">No market research reports yet.<br>Upload them to the repo root and I will wire them in.</div>']
+    market:[byKind('market').length
+      ? '<h3>Market research ('+byKind('market').length+')</h3><div class="repgrid">'+byKind('market').map(card).join('')+'</div>'
+      : '<h3>Market research</h3><div class="empty">No market research reports yet.<br>Upload them to the repo root and add them to <span style="font-family:monospace">research.json</span>.</div>']
   };
   const order = ['company','thematic','weekly','market'];
   document.getElementById('researchLib').innerHTML =
@@ -832,6 +900,73 @@ function renderResearch(f){
 document.querySelectorAll('#resFilters .fbtn').forEach(function(b){
   b.addEventListener('click', function(){ renderResearch(b.getAttribute('data-f')); });
 });
+
+/* ---------------- research requests ---------------- */
+const REQ_KEY = 'cio_req_v1';
+function readReqs(){ try{ return JSON.parse(localStorage.getItem(REQ_KEY))||[]; }catch(e){ return []; } }
+function writeReqs(r){ try{ localStorage.setItem(REQ_KEY, JSON.stringify(r)); }catch(e){} }
+function initRequestBuilder(){
+  const sel = document.getElementById('reqTicker');
+  sel.innerHTML = '<option value="">General / thematic</option>' + HOLD.slice().sort(function(a,b){return a.ticker<b.ticker?-1:1;})
+    .map(function(h){return '<option value="'+h.ticker+'">'+h.ticker+' — '+esc(h.name)+'</option>';}).join('');
+  document.getElementById('reqGen').addEventListener('click', genBrief);
+  document.getElementById('reqCopy').addEventListener('click', copyBrief);
+  renderReqList();
+}
+function genBrief(){
+  const t = document.getElementById('reqTicker').value;
+  const type = document.getElementById('reqType').value;
+  const focus = document.getElementById('reqFocus').value.trim();
+  const d = etDateStr(new Date());
+  const p = t?(BY[t]||{}):{};
+  const ctx = t
+    ? t+' — '+(p.name||t)+(p.px?(' · live $'+p.px.toFixed(2)+(p.live?'':' (workbook)')):'')+(p.wt!=null?(' · '+p.wt.toFixed(2)+'% wt'):'')
+    : 'General / thematic';
+  const brief = 'RESEARCH REQUEST — '+d+'\nHolding: '+ctx+'\nType: '+type+'\nFocus:\n'+(focus||'(none given)')+
+    '\nDeliverable: HTML + PDF in my standing report format (gradient cover, rating strip, TOC, section kickers/callouts, sources in appendix only). Add the finished report to research.json so the dashboard library picks it up.';
+  const box = document.getElementById('reqBrief');
+  box.textContent = brief; box.style.display='block';
+  document.getElementById('reqCopy').style.display='inline-block';
+  const reqs = readReqs();
+  reqs.unshift({ticker:t||null, type:type, focus:focus, date:d, brief:brief});
+  writeReqs(reqs.slice(0,50));
+  renderReqList();
+}
+function copyBrief(){
+  const txt = document.getElementById('reqBrief').textContent;
+  function done(){ const b=document.getElementById('reqCopy'); b.textContent='Copied ✓'; setTimeout(function(){b.textContent='Copy brief';},1500); }
+  function fallback(){
+    const ta=document.createElement('textarea'); ta.value=txt; document.body.appendChild(ta); ta.select();
+    try{ document.execCommand('copy'); done(); }catch(e){}
+    document.body.removeChild(ta);
+  }
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(txt).then(function(){done();}, function(){fallback();});
+  } else fallback();
+}
+function reqPublished(r){
+  if(!r.ticker) return false;
+  return RLIST().some(function(x){
+    return x.kind==='company' && x.ticker===r.ticker && /^\d{4}-\d{2}-\d{2}$/.test(x.date) && x.date>r.date;
+  });
+}
+function renderReqList(){
+  const reqs = readReqs();
+  const el = document.getElementById('reqList');
+  if(!reqs.length){ el.innerHTML='<div class="empty">No open requests. Build one above.</div>'; return; }
+  el.innerHTML = reqs.map(function(r,i){
+    const pub = reqPublished(r);
+    return '<div class="reqq"><div><b>'+(r.ticker||'General')+'</b> <span class="tag">'+esc(r.type)+'</span>'+
+      '<div class="gmeta">'+r.date+(r.focus?' · '+esc(r.focus.slice(0,80)):'')+'</div></div>'+
+      '<div style="white-space:nowrap"><span class="pill '+(pub?'hit':'watch')+'">'+(pub?'Published ✓':'Open')+'</span> '+
+      '<button class="fbtn sm" data-reqdel="'+i+'">Done</button></div></div>';
+  }).join('');
+  el.querySelectorAll('[data-reqdel]').forEach(function(b){
+    b.addEventListener('click', function(){
+      const r = readReqs(); r.splice(+b.getAttribute('data-reqdel'),1); writeReqs(r); renderReqList();
+    });
+  });
+}
 
 /* ---------------- tabs ---------------- */
 document.querySelectorAll('.tab').forEach(function(b){
@@ -849,6 +984,7 @@ function paintAll(){
   computePositions();
   const divFwd = renderDividends();
   renderKpis(divFwd);
+  renderGates();
   renderSectors();
   renderTop15();
   renderPerf();
@@ -881,7 +1017,9 @@ async function refreshQuotes(){
   try{
     setStatus('Loading holdings…','');
     await loadHoldings();
-    document.getElementById('headSub').textContent += ' · build '+BUILD;
+    await loadManifests();
+    initRequestBuilder();
+    addSub(' · build '+BUILD);
     document.getElementById('qRefresh').addEventListener('click', function(){ refreshQuotes(); });
     const needKey = !FINNHUB_KEY || FINNHUB_KEY.indexOf('PASTE_')===0;
     const c = readCache();
@@ -913,7 +1051,7 @@ async function refreshQuotes(){
     setStatus('Live · updated '+fmtTime(Date.now()), 'live');
   }catch(e){
     setStatus('Could not load holdings.json — open this page over http(s) (e.g. your GitHub Pages URL), not as a local file.','err');
-    document.getElementById('headSub').textContent = 'Failed to load holdings.json';
+    setSub('Failed to load holdings.json');
   }
 })();
 </script>
