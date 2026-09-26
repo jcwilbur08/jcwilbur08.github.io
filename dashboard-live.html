@@ -73,6 +73,7 @@ th.sortable:hover{color:#fff}
 .fbtn{background:#0e1c2e;border:1px solid #24405c;color:#bcd0dd;border-radius:999px;padding:6px 16px;font-size:13px;cursor:pointer}
 .fbtn:hover{border-color:#2b6cb0;color:#fff}
 .fbtn.on{background:#2b6cb0;border-color:#2b6cb0;color:#fff;font-weight:700}
+.fbtn.sm{padding:3px 12px;font-size:11px}
 .empty{border:1px dashed #24405c;border-radius:10px;padding:22px;color:#8fa3b8;font-size:13px;text-align:center}
 .repgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .repcard{background:#0e1c2e;border:1px solid #24405c;border-radius:10px;padding:16px 18px;display:block;color:inherit;text-decoration:none}
@@ -95,7 +96,7 @@ th.sortable:hover{color:#fff}
 <div class="sub" id="headSub">Loading…</div>
 </div>
 </header>
-<div class="statusbar"><span class="dot" id="liveDot"></span><span id="statusText">Starting…</span></div>
+<div class="statusbar"><span class="dot" id="liveDot"></span><span id="statusText">Starting…</span><button class="fbtn sm" id="qRefresh" style="margin-left:auto">Refresh quotes</button></div>
 <div class="banner" id="keyBanner" style="display:none"><b>Finnhub API key needed.</b> Paste your key into <span style="font-family:monospace">FINNHUB_KEY</span> at the top of this file's script. Your current key is hard-coded in your public repo's index.html — it is visible to the internet, so <b>rotate it in your Finnhub dashboard first</b>, then paste the new key here. Until then, workbook prices are shown.</div>
 <nav class="tabs">
 <button class="tab active" data-tab="overview">Overview</button>
@@ -106,6 +107,7 @@ th.sortable:hover{color:#fff}
 <div class="kpis" id="kpiStrip"></div>
 <div class="grid"><div>
 <div class="card"><h2>Sector allocation</h2><div class="donutwrap" id="sectorBody"></div><div class="note" id="sectorNote"></div></div>
+</div><div>
 <div class="card"><h2>Top 15 positions</h2><div id="top15Body"></div><div class="note" id="top15Note"></div></div>
 </div></div>
 <div class="card"><h2>Performance vs S&amp;P 500</h2><div id="perfBody"></div></div>
@@ -251,6 +253,30 @@ function setStatus(txt, mode){
   dot.className = 'dot' + (mode==='live'?' live':(mode==='err'?' err':''));
 }
 
+/* ---------------- quote cache (stale-while-revalidate) ---------------- */
+const QCACHE_KEY = 'cio_qcache_v1';
+const Q_TTL_OPEN = 5*60*1000;        // 5 min while market is open
+const Q_TTL_CLOSED = 4*60*60*1000;   // 4 h when market is closed
+const EARN_TTL = 6*60*60*1000;       // earnings calendar refreshes every 6 h
+function etNow(){ return new Date(new Date().toLocaleString('en-US',{timeZone:'America/New_York'})); }
+function marketIsOpen(){
+  const n = etNow(), d = n.getDay(), mins = n.getHours()*60+n.getMinutes();
+  return d>=1 && d<=5 && mins>=570 && mins<960; // Mon–Fri 9:30–16:00 ET
+}
+function readCache(){ try{ const c=JSON.parse(localStorage.getItem(QCACHE_KEY)); return (c&&c.quotes)?c:null; }catch(e){ return null; } }
+function writeCache(){
+  try{
+    const prev = readCache()||{};
+    localStorage.setItem(QCACHE_KEY, JSON.stringify({
+      qts: (QUOTES&&Object.keys(QUOTES).length)?Date.now():(prev.qts||0),
+      quotes: QUOTES, spy: SPY_PX,
+      ets: (EARN&&EARN.length)?Date.now():(prev.ets||0),
+      earn: EARN
+    }));
+  }catch(e){}
+}
+function fmtTime(ts){ return new Date(ts).toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit',timeZone:'America/New_York'}); }
+
 /* ---------------- state ---------------- */
 let HOLD = [], CASH = 43000, POS = [], BY = {}, TOTAL = 0, DAYPNL = 0;
 let QUOTES = {}, SPY_PX = null, EARN = [];
@@ -271,45 +297,46 @@ async function fh(url){
   if(!r.ok) throw new Error('http '+r.status);
   return r.json();
 }
-async function fetchQuotes(){
-  const needKey = !FINNHUB_KEY || FINNHUB_KEY.indexOf('PASTE_')===0;
+async function fetchQuotes(doQ, doEarn){
+  doQ = doQ!==false; doEarn = doEarn!==false;
   const syms = HOLD.filter(function(h){return h.finnhub;}).map(function(h){return h.ticker;});
-  const total = syms.length + 2; // + SPY + earnings calendar
+  const total = (doQ?syms.length+1:0)+(doEarn?1:0);
   let done = 0;
   function prog(){ setStatus('Fetching live quotes… '+done+'/'+total, ''); }
-  prog();
-  if(needKey){
-    document.getElementById('keyBanner').style.display = 'block';
-    setStatus('No API key — showing workbook prices', 'err');
-    return;
-  }
-  for(const t of syms){
+  if(doQ){
+    prog();
+    for(const t of syms){
+      try{
+        const q = await fh('https://finnhub.io/api/v1/quote?symbol='+encodeURIComponent(t)+'&token='+FINNHUB_KEY);
+        if(q && q.c && q.pc) QUOTES[t] = {c:q.c, pc:q.pc, ok:true};
+        else QUOTES[t] = {ok:false};
+      }catch(e){ QUOTES[t] = {ok:false}; }
+      done++; prog(); await sleep(500); // ~2 calls/sec — stays under the free-tier 60/min
+    }
     try{
-      const q = await fh('https://finnhub.io/api/v1/quote?symbol='+encodeURIComponent(t)+'&token='+FINNHUB_KEY);
-      if(q && q.c && q.pc) QUOTES[t] = {c:q.c, pc:q.pc, ok:true};
-      else QUOTES[t] = {ok:false};
-    }catch(e){ QUOTES[t] = {ok:false}; }
-    done++; prog(); await sleep(500); // ~2 calls/sec — stays under the free-tier 60/min
+      const sq = await fh('https://finnhub.io/api/v1/quote?symbol=SPY&token='+FINNHUB_KEY);
+      if(sq && sq.c) SPY_PX = sq.c;
+    }catch(e){}
+    done++; prog(); await sleep(500);
   }
-  try{
-    const sq = await fh('https://finnhub.io/api/v1/quote?symbol=SPY&token='+FINNHUB_KEY);
-    if(sq && sq.c) SPY_PX = sq.c;
-  }catch(e){}
-  done++; prog(); await sleep(500);
-  // 21-day earnings calendar, filtered to holdings
-  try{
-    const now = new Date();
-    const d0 = etDateStr(now);
-    const d1 = etDateStr(new Date(now.getTime()+21*86400000));
-    const ec = await fh('https://finnhub.io/api/v1/calendar/earnings?from='+d0+'&to='+d1+'&token='+FINNHUB_KEY);
-    const tick = {};
-    HOLD.forEach(function(h){tick[h.ticker]=1;});
-    (ec.earningsCalendar||[]).forEach(function(e){
-      if(tick[e.symbol] && e.date) EARN.push(e);
-    });
-    EARN.sort(function(a,b){return a.date<b.date?-1:1;});
-  }catch(e){}
-  done++; prog();
+  if(doEarn){
+    if(!doQ) prog();
+    EARN = [];
+    // 21-day earnings calendar, filtered to holdings
+    try{
+      const now = new Date();
+      const d0 = etDateStr(now);
+      const d1 = etDateStr(new Date(now.getTime()+21*86400000));
+      const ec = await fh('https://finnhub.io/api/v1/calendar/earnings?from='+d0+'&to='+d1+'&token='+FINNHUB_KEY);
+      const tick = {};
+      HOLD.forEach(function(h){tick[h.ticker]=1;});
+      (ec.earningsCalendar||[]).forEach(function(e){
+        if(tick[e.symbol] && e.date) EARN.push(e);
+      });
+      EARN.sort(function(a,b){return a.date<b.date?-1:1;});
+    }catch(e){}
+    done++; prog();
+  }
 }
 function computePositions(){
   POS = HOLD.map(function(h){
@@ -842,136 +869,77 @@ document.querySelectorAll('.tab').forEach(function(b){
 });
 
 /* ---------------- init ---------------- */
+function paintAll(){
+  computePositions();
+  const divFwd = renderDividends();
+  renderKpis(divFwd);
+  renderSectors();
+  renderTop15();
+  renderPerf();
+  renderAttr();
+  renderFV();
+  renderQualCounts();
+  renderQualWeight();
+  renderEarnings();
+  renderTop20();
+  renderConc();
+  renderBets();
+  renderUG();
+  renderPlan();
+  renderHoldings();
+  renderResearch();
+}
+async function refreshQuotes(){
+  const needKey = !FINNHUB_KEY || FINNHUB_KEY.indexOf('PASTE_')===0;
+  if(needKey){
+    document.getElementById('keyBanner').style.display = 'block';
+    setStatus('No API key — showing workbook prices', 'err');
+    return;
+  }
+  setStatus('Fetching live quotes…', '');
+  await fetchQuotes(true, true);
+  writeCache();
+  paintAll();
+  setStatus('Live · updated '+fmtTime(Date.now()), 'live');
+}
 (async function init(){
   try{
     setStatus('Loading holdings…','');
     await loadHoldings();
-    await fetchQuotes();
-    computePositions();
-    const divFwd = renderDividends();
-    renderKpis(divFwd);
-    renderSectors();
-    renderTop15();
-    renderPerf();
-    renderAttr();
-    renderFV();
-    renderQualCounts();
-    renderQualWeight();
-    renderEarnings();
-    renderTop20();
-    renderConc();
-    renderBets();
-    renderUG();
-    renderPlan();
-    renderHoldings();
-    renderResearch();
+    document.getElementById('qRefresh').addEventListener('click', function(){ refreshQuotes(); });
+    const needKey = !FINNHUB_KEY || FINNHUB_KEY.indexOf('PASTE_')===0;
+    const c = readCache();
+    const ttl = marketIsOpen() ? Q_TTL_OPEN : Q_TTL_CLOSED;
+    const haveCache = !!(c && c.quotes);
+    if(haveCache){
+      QUOTES = c.quotes; SPY_PX = c.spy||null; EARN = c.earn||[];
+      paintAll();
+    }
+    if(needKey){
+      document.getElementById('keyBanner').style.display = 'block';
+      if(!haveCache) paintAll();
+      setStatus('No API key — showing workbook prices', 'err');
+      return;
+    }
+    const qStale = !c || !c.qts || (Date.now()-c.qts) > ttl;
+    const eStale = !c || !c.earn || !c.ets || (Date.now()-c.ets) > EARN_TTL;
+    if(haveCache && !qStale && !eStale){
+      setStatus('Live · updated '+fmtTime(c.qts), 'live');
+      return;
+    }
+    if(haveCache){
+      const ageM = Math.max(1, Math.round((Date.now()-c.qts)/60000));
+      setStatus('Cached · updated '+fmtTime(c.qts)+' ('+ageM+'m ago) — refreshing…', '');
+    }
+    await fetchQuotes(qStale, eStale);
+    writeCache();
+    paintAll();
+    setStatus('Live · updated '+fmtTime(Date.now()), 'live');
   }catch(e){
     setStatus('Could not load holdings.json — open this page over http(s) (e.g. your GitHub Pages URL), not as a local file.','err');
     document.getElementById('headSub').textContent = 'Failed to load holdings.json';
   }
 })();
 </script>
-
-<!-- PCC-NARRATE:START -- universal narration widget, injected by scripts/inject_narration.py.
-     Reads the page aloud via the browser's built-in Web Speech API. Idempotent: this script
-     will not inject a second copy into a file that already references speechSynthesis. -->
-<style>
-  #pcc-narrate-bar{
-    position:fixed; bottom:18px; right:18px; z-index:2147483000;
-    display:flex; align-items:center; gap:6px;
-    background:#12395B; color:#fff; border-radius:999px; padding:8px 8px;
-    box-shadow:0 8px 24px rgba(10,22,40,.35);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  }
-  #pcc-narrate-bar button{
-    background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.20); color:#fff;
-    border-radius:999px; padding:7px 12px; font-size:12px; font-weight:700; cursor:pointer;
-    display:flex; align-items:center; gap:5px; line-height:1;
-  }
-  #pcc-narrate-bar button:hover{background:rgba(255,255,255,.20);}
-  #pcc-narrate-bar button:disabled{opacity:.4; cursor:default;}
-  #pcc-narrate-bar .pcc-narrate-speed{min-width:40px; justify-content:center;}
-  #pcc-narrate-bar .pcc-narrate-label{font-size:11px; color:#bcd0ea; padding:0 4px 0 6px; white-space:nowrap;}
-  .pcc-narrate-highlight{
-    background:rgba(59,130,246,.18) !important; outline:2px solid rgba(59,130,246,.35);
-    border-radius:6px; transition:background .15s ease;
-  }
-  @media print{ #pcc-narrate-bar{display:none !important;} }
-</style>
-<div id="pcc-narrate-bar" style="display:none">
-  <button type="button" id="pcc-narrate-play" aria-label="Play">&#9654; Listen</button>
-  <button type="button" id="pcc-narrate-stop" disabled aria-label="Stop">&#9632;</button>
-  <button type="button" id="pcc-narrate-speed" class="pcc-narrate-speed" disabled aria-label="Playback speed">1x</button>
-  <span class="pcc-narrate-label" id="pcc-narrate-status"></span>
-</div>
-<script>
-(function(){
-  if (!('speechSynthesis' in window)) return;
-  var SEL = 'h1,h2,h3,h4,h5,p,li';
-  var EXCLUDE_ANCESTOR = 'table';
-  var RATES = [1, 1.25, 1.5, 0.85];
-  var bar = document.getElementById('pcc-narrate-bar');
-  var playBtn = document.getElementById('pcc-narrate-play');
-  var stopBtn = document.getElementById('pcc-narrate-stop');
-  var speedBtn = document.getElementById('pcc-narrate-speed');
-  var statusEl = document.getElementById('pcc-narrate-status');
-  var nodes = [], idx = 0, rateIdx = 0, playing = false;
-
-  function collect(){
-    var all = Array.prototype.slice.call(document.querySelectorAll(SEL));
-    var seen = [];
-    return all.filter(function(el){
-      if (el.closest(EXCLUDE_ANCESTOR)) return false;
-      if (el.closest('#pcc-narrate-bar')) return false;
-      var text = (el.innerText || '').trim();
-      if (!text) return false;
-      var prev = seen[seen.length - 1];
-      if (prev && prev.contains(el)) return false;
-      seen.push(el);
-      return true;
-    });
-  }
-  function clearHighlight(){
-    var h = document.querySelector('.pcc-narrate-highlight');
-    if (h) h.classList.remove('pcc-narrate-highlight');
-  }
-  function setStatus(){ statusEl.textContent = nodes.length ? (idx + 1) + ' / ' + nodes.length : ''; }
-  function speakNext(){
-    if (idx >= nodes.length) { stopAll(); return; }
-    var el = nodes[idx];
-    var text = el.innerText.trim();
-    clearHighlight();
-    el.classList.add('pcc-narrate-highlight');
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setStatus();
-    var u = new SpeechSynthesisUtterance(text);
-    u.rate = RATES[rateIdx];
-    u.onend = function(){ if (playing) { idx++; speakNext(); } };
-    window.speechSynthesis.speak(u);
-  }
-  function play(){
-    if (!nodes.length) nodes = collect();
-    if (!nodes.length) return;
-    playing = true;
-    playBtn.innerHTML = '&#9208; Pause';
-    stopBtn.disabled = false;
-    speedBtn.disabled = false;
-    if (!window.speechSynthesis.speaking) speakNext();
-    else window.speechSynthesis.resume();
-  }
-  function pause(){ playing = false; window.speechSynthesis.pause(); playBtn.innerHTML = '&#9654; Resume'; }
-  function stopAll(){
-    playing = false; window.speechSynthesis.cancel(); idx = 0; clearHighlight();
-    playBtn.innerHTML = '&#9654; Listen'; stopBtn.disabled = true; speedBtn.disabled = true; statusEl.textContent = '';
-  }
-  playBtn.addEventListener('click', function(){ if (playing) pause(); else play(); });
-  stopBtn.addEventListener('click', stopAll);
-  speedBtn.addEventListener('click', function(){ rateIdx = (rateIdx + 1) % RATES.length; speedBtn.textContent = RATES[rateIdx] + 'x'; });
-  window.addEventListener('beforeunload', function(){ window.speechSynthesis.cancel(); });
-  bar.style.display = 'flex';
-})();
-</script>
-<!-- PCC-NARRATE:END -->
-
 </body>
 </html>
