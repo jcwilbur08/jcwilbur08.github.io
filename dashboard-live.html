@@ -17,8 +17,9 @@ h1{font:700 34px/1.1 Georgia,serif;margin:6px 0 4px;color:#fff}
 .sub{color:#8fa3b8;font-size:13px}
 .footsub{margin:30px 0 10px;text-align:center}
 .grow{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid #1b3049;font-size:13px}
+.grow>div{min-width:0}
 .grow:last-child{border:0}
-.gmeta{color:#8fa3b8;font-size:11px}
+.gmeta{color:#8fa3b8;font-size:11px;overflow-wrap:anywhere}
 .pill.hit{background:#123f2a;color:#48bb78}.pill.near{background:#4a3a12;color:#f6ad55}.pill.watch{background:#1b3049;color:#8fa3b8}
 .gbar{background:#0b1a2b;border-radius:4px;height:8px;overflow:hidden;margin-top:6px;min-width:120px}
 .gfill{background:linear-gradient(90deg,#2b6cb0,#63b3ed);height:100%}
@@ -27,6 +28,7 @@ h1{font:700 34px/1.1 Georgia,serif;margin:6px 0 4px;color:#fff}
 select,textarea{width:100%;background:#0b1a2b;border:1px solid #24405c;color:#e8edf2;border-radius:8px;padding:8px 10px;font-size:13px;margin-top:6px;font-family:inherit}
 .briefbox{background:#0b1a2b;border:1px solid #2f5b8a;border-radius:8px;padding:14px 16px;font-size:12.5px;white-space:pre-wrap;margin:10px 0;color:#dbe4ec}
 .reqq{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #1b3049;font-size:13px}
+.reqq>div{min-width:0}
 @media(max-width:860px){.reqgrid{grid-template-columns:1fr}}
 .statusbar{display:flex;align-items:center;gap:10px;background:#0e1c2e;border:1px solid #24405c;border-radius:10px;padding:10px 16px;margin-bottom:16px;font-size:13px;color:#bcd0dd;flex-wrap:wrap}
 .dot{width:10px;height:10px;border-radius:50%;background:#f6ad55;display:inline-block}
@@ -223,8 +225,8 @@ th.sortable:hover{color:#fff}
 // SECURITY: your key is currently hard-coded in your PUBLIC GitHub Pages
 // repo's index.html, which means it is visible to the whole internet.
 // Rotate it in your Finnhub dashboard FIRST, then paste the new key here.
-const FINNHUB_KEY = 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0';
-const BUILD = 'rev11'; // bump on every revision — visible in the header so we know what's live
+const FINNHUB_KEY = 'PASTE_YOUR_FINNHUB_KEY';
+const BUILD = 'rev12'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
@@ -854,7 +856,7 @@ function renderGates(){
     } else { stat='—'; stc='watch'; detail='No live data'; }
     return '<div class="grow"><div><b>'+g.ticker+'</b> <span class="pill '+(g.action==='ADD'?'buy':'hold')+'">'+g.action+'</span>'+
       '<div class="gmeta">'+esc(nm)+' · '+esc(g.note||'')+'</div>'+bar+'</div>'+
-      '<div style="text-align:right;white-space:nowrap"><span class="pill '+stc+'">'+stat+'</span><div class="gmeta">'+detail+'</div></div></div>';
+      '<div style="text-align:right"><span class="pill '+stc+'">'+stat+'</span><div class="gmeta">'+detail+'</div></div></div>';
   }).join('');
   document.getElementById('gateBody').innerHTML = rows;
   document.getElementById('gateCount').textContent = hits+' of '+gates.length+' hit';
