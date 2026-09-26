@@ -69,6 +69,11 @@ th.sortable:hover{color:#fff}
 .mstat b{font-size:16px;color:#fff}
 .mclose{float:right;background:none;border:1px solid #2f5b8a;color:#bcd0dd;border-radius:8px;padding:4px 12px;cursor:pointer;font-size:13px}
 .rbtn{display:inline-block;background:#2b6cb0;color:#fff;border-radius:8px;padding:10px 20px;text-decoration:none;font-weight:700;margin-top:4px}
+.fbar{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 16px}
+.fbtn{background:#0e1c2e;border:1px solid #24405c;color:#bcd0dd;border-radius:999px;padding:6px 16px;font-size:13px;cursor:pointer}
+.fbtn:hover{border-color:#2b6cb0;color:#fff}
+.fbtn.on{background:#2b6cb0;border-color:#2b6cb0;color:#fff;font-weight:700}
+.empty{border:1px dashed #24405c;border-radius:10px;padding:22px;color:#8fa3b8;font-size:13px;text-align:center}
 .repgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .repcard{background:#0e1c2e;border:1px solid #24405c;border-radius:10px;padding:16px 18px;display:block;color:inherit;text-decoration:none}
 .repcard:hover{border-color:#2b6cb0}
@@ -160,7 +165,11 @@ th.sortable:hover{color:#fff}
 <div class="note">Click a column header to sort. Click any row for the full position detail.</div></div>
 </section>
 <section id="tab-research" class="tabpanel">
-<div class="card"><h2>Analyst report library</h2><div id="researchLib"></div>
+<div class="card"><h2>Analyst report library</h2>
+<div class="fbar" id="resFilters">
+<button class="fbtn on" data-f="all">All</button><button class="fbtn" data-f="company">Company Reports</button><button class="fbtn" data-f="thematic">Thematic &amp; Ranking</button><button class="fbtn" data-f="weekly">Weekly Reports</button><button class="fbtn" data-f="market">Market Research</button>
+</div>
+<div id="researchLib"></div>
 <div class="note">Reports open in a new tab. Set REPORT_BASE at the top of this file's script if your report files live at a URL.</div></div>
 </section>
 <div class="modal-ov" id="modalOv"><div class="modal">
@@ -204,6 +213,11 @@ const THEMATIC = [
  ['capital-allocation-ranking-2026-09-22.html','Capital Allocation Ranking','Ranking','2026-09-22'],
  ['portfolio-ranking-report-2026-09-23.html','Portfolio Ranking Report','Ranking','2026-09-23'],
  ['grid-vis-sector-report-2026-09-23.html','GRID Industrial Sector','Sector','2026-09-23']];
+const WEEKLY = [
+ ['weekly_report_2026-07-16.pdf','Weekly Report — Jul 16, 2026','Weekly','2026-07-16'],
+ ['weekly_report_2026-07-17.pdf','Weekly Report — Jul 17, 2026','Weekly','2026-07-17'],
+ ['weekly_report_2026-07-24.pdf','Weekly Report — Jul 24, 2026','Weekly','2026-07-24']];
+const MARKET_RESEARCH = [];
 // S&P 500 GICS sector weights, approx mid-2026 (S&P Dow Jones Indices via press).
 const SPX_W = {'Information Technology':35.5,'Communication Services':9.5,
  'Consumer Discretionary':10.0,'Financials':13.0,'Health Care':10.0,
@@ -774,10 +788,18 @@ modalOv.addEventListener('click', function(e){ if(e.target===modalOv) modalOv.cl
 document.addEventListener('keydown', function(e){ if(e.key==='Escape') modalOv.classList.remove('open'); });
 
 /* ---------------- research tab ---------------- */
-function renderResearch(){
+let RES_FILTER = 'all';
+function renderResearch(f){
+  RES_FILTER = f || RES_FILTER;
+  f = RES_FILTER;
   function pill(r){
     const c = r==='BUY'?'buy':(r==='HOLD'?'hold':'sell');
     return '<span class="pill '+c+'">'+r+'</span>';
+  }
+  function fileCard(x){
+    return '<a class="repcard" href="'+REPORT_BASE+x[0]+'" target="_blank" rel="noopener">'+
+      '<span class="tag">'+x[2]+'</span><div class="rt">'+esc(x[1])+'</div>'+
+      '<div class="rm">'+x[3]+'<br>Open report →</div></a>';
   }
   const cards = Object.keys(REPORTS).sort(function(a,b){
     return REPORTS[a][1]<REPORTS[b][1]?-1:1;
@@ -787,15 +809,26 @@ function renderResearch(){
       '<b>'+t+'</b> '+pill(rep[1])+'<div class="rt">'+esc(nm)+'</div>'+
       '<div class="rm">Target '+rep[2]+' · '+rep[3]+'<br>Open full report →</div></a>';
   }).join('');
-  const them = THEMATIC.map(function(x){
-    return '<a class="repcard" href="'+REPORT_BASE+x[0]+'" target="_blank" rel="noopener">'+
-      '<span class="tag">'+x[2]+'</span><div class="rt">'+esc(x[1])+'</div>'+
-      '<div class="rm">'+x[3]+'<br>Open report →</div></a>';
-  }).join('');
+  const them = THEMATIC.map(fileCard).join('');
+  const week = WEEKLY.map(fileCard).join('');
+  const secs = {
+    company:['<h3>Company reports ('+Object.keys(REPORTS).length+')</h3><div class="repgrid">'+cards+'</div>'],
+    thematic:['<h3>Thematic &amp; ranking</h3><div class="repgrid">'+them+'</div>'],
+    weekly:['<h3>Weekly reports ('+WEEKLY.length+')</h3><div class="repgrid">'+week+'</div>'],
+    market:[MARKET_RESEARCH.length
+      ? '<h3>Market research ('+MARKET_RESEARCH.length+')</h3><div class="repgrid">'+MARKET_RESEARCH.map(fileCard).join('')+'</div>'
+      : '<h3>Market research</h3><div class="empty">No market research reports yet.<br>Upload them to the repo root and I will wire them in.</div>']
+  };
+  const order = ['company','thematic','weekly'];
   document.getElementById('researchLib').innerHTML =
-    '<h3>Company reports ('+Object.keys(REPORTS).length+')</h3><div class="repgrid">'+cards+'</div>'+
-    '<h3>Thematic &amp; ranking</h3><div class="repgrid">'+them+'</div>';
+    f==='all' ? order.map(function(k){return secs[k][0];}).join('') : secs[f][0];
+  document.querySelectorAll('#resFilters .fbtn').forEach(function(b){
+    b.classList.toggle('on', b.getAttribute('data-f')===f);
+  });
 }
+document.querySelectorAll('#resFilters .fbtn').forEach(function(b){
+  b.addEventListener('click', function(){ renderResearch(b.getAttribute('data-f')); });
+});
 
 /* ---------------- tabs ---------------- */
 document.querySelectorAll('.tab').forEach(function(b){
@@ -838,107 +871,5 @@ document.querySelectorAll('.tab').forEach(function(b){
   }
 })();
 </script>
-
-<!-- PCC-NARRATE:START -- universal narration widget, injected by scripts/inject_narration.py.
-     Reads the page aloud via the browser's built-in Web Speech API. Idempotent: this script
-     will not inject a second copy into a file that already references speechSynthesis. -->
-<style>
-  #pcc-narrate-bar{
-    position:fixed; bottom:18px; right:18px; z-index:2147483000;
-    display:flex; align-items:center; gap:6px;
-    background:#12395B; color:#fff; border-radius:999px; padding:8px 8px;
-    box-shadow:0 8px 24px rgba(10,22,40,.35);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  }
-  #pcc-narrate-bar button{
-    background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.20); color:#fff;
-    border-radius:999px; padding:7px 12px; font-size:12px; font-weight:700; cursor:pointer;
-    display:flex; align-items:center; gap:5px; line-height:1;
-  }
-  #pcc-narrate-bar button:hover{background:rgba(255,255,255,.20);}
-  #pcc-narrate-bar button:disabled{opacity:.4; cursor:default;}
-  #pcc-narrate-bar .pcc-narrate-speed{min-width:40px; justify-content:center;}
-  #pcc-narrate-bar .pcc-narrate-label{font-size:11px; color:#bcd0ea; padding:0 4px 0 6px; white-space:nowrap;}
-  .pcc-narrate-highlight{
-    background:rgba(59,130,246,.18) !important; outline:2px solid rgba(59,130,246,.35);
-    border-radius:6px; transition:background .15s ease;
-  }
-  @media print{ #pcc-narrate-bar{display:none !important;} }
-</style>
-<div id="pcc-narrate-bar" style="display:none">
-  <button type="button" id="pcc-narrate-play" aria-label="Play">&#9654; Listen</button>
-  <button type="button" id="pcc-narrate-stop" disabled aria-label="Stop">&#9632;</button>
-  <button type="button" id="pcc-narrate-speed" class="pcc-narrate-speed" disabled aria-label="Playback speed">1x</button>
-  <span class="pcc-narrate-label" id="pcc-narrate-status"></span>
-</div>
-<script>
-(function(){
-  if (!('speechSynthesis' in window)) return;
-  var SEL = 'h1,h2,h3,h4,h5,p,li';
-  var EXCLUDE_ANCESTOR = 'table';
-  var RATES = [1, 1.25, 1.5, 0.85];
-  var bar = document.getElementById('pcc-narrate-bar');
-  var playBtn = document.getElementById('pcc-narrate-play');
-  var stopBtn = document.getElementById('pcc-narrate-stop');
-  var speedBtn = document.getElementById('pcc-narrate-speed');
-  var statusEl = document.getElementById('pcc-narrate-status');
-  var nodes = [], idx = 0, rateIdx = 0, playing = false;
-
-  function collect(){
-    var all = Array.prototype.slice.call(document.querySelectorAll(SEL));
-    var seen = [];
-    return all.filter(function(el){
-      if (el.closest(EXCLUDE_ANCESTOR)) return false;
-      if (el.closest('#pcc-narrate-bar')) return false;
-      var text = (el.innerText || '').trim();
-      if (!text) return false;
-      var prev = seen[seen.length - 1];
-      if (prev && prev.contains(el)) return false;
-      seen.push(el);
-      return true;
-    });
-  }
-  function clearHighlight(){
-    var h = document.querySelector('.pcc-narrate-highlight');
-    if (h) h.classList.remove('pcc-narrate-highlight');
-  }
-  function setStatus(){ statusEl.textContent = nodes.length ? (idx + 1) + ' / ' + nodes.length : ''; }
-  function speakNext(){
-    if (idx >= nodes.length) { stopAll(); return; }
-    var el = nodes[idx];
-    var text = el.innerText.trim();
-    clearHighlight();
-    el.classList.add('pcc-narrate-highlight');
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setStatus();
-    var u = new SpeechSynthesisUtterance(text);
-    u.rate = RATES[rateIdx];
-    u.onend = function(){ if (playing) { idx++; speakNext(); } };
-    window.speechSynthesis.speak(u);
-  }
-  function play(){
-    if (!nodes.length) nodes = collect();
-    if (!nodes.length) return;
-    playing = true;
-    playBtn.innerHTML = '&#9208; Pause';
-    stopBtn.disabled = false;
-    speedBtn.disabled = false;
-    if (!window.speechSynthesis.speaking) speakNext();
-    else window.speechSynthesis.resume();
-  }
-  function pause(){ playing = false; window.speechSynthesis.pause(); playBtn.innerHTML = '&#9654; Resume'; }
-  function stopAll(){
-    playing = false; window.speechSynthesis.cancel(); idx = 0; clearHighlight();
-    playBtn.innerHTML = '&#9654; Listen'; stopBtn.disabled = true; speedBtn.disabled = true; statusEl.textContent = '';
-  }
-  playBtn.addEventListener('click', function(){ if (playing) pause(); else play(); });
-  stopBtn.addEventListener('click', stopAll);
-  speedBtn.addEventListener('click', function(){ rateIdx = (rateIdx + 1) % RATES.length; speedBtn.textContent = RATES[rateIdx] + 'x'; });
-  window.addEventListener('beforeunload', function(){ window.speechSynthesis.cancel(); });
-  bar.style.display = 'flex';
-})();
-</script>
-<!-- PCC-NARRATE:END -->
-
 </body>
 </html>
