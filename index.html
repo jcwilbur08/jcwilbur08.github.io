@@ -19,23 +19,23 @@
 <meta name="apple-mobile-web-app-title" content="Portfolio">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:16px;}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:calc(16px * var(--text-scale,1));}
 
 /* SCROLLING TICKER */
 .ticker-bar{background:#1a1a1a;color:#fff;padding:calc(8px + env(safe-area-inset-top)) 0 8px;overflow:hidden;white-space:nowrap;}
 .ticker-track{display:inline-flex;animation:scroll 90s linear infinite;}
 .ticker-track:hover{animation-play-state:paused;}
 .ticker-item{display:inline-flex;align-items:center;gap:8px;padding:0 28px;border-right:1px solid #333;}
-.ticker-item .sym{font-weight:700;font-size:15px;letter-spacing:.3px;}
-.ticker-item .pr{font-size:15px;}
-.ticker-item .up{color:#22c55e;font-size:14px;}
-.ticker-item .dn{color:#ef4444;font-size:14px;}
+.ticker-item .sym{font-weight:700;font-size:calc(15px * var(--text-scale,1));letter-spacing:.3px;}
+.ticker-item .pr{font-size:calc(15px * var(--text-scale,1));}
+.ticker-item .up{color:#22c55e;font-size:calc(14px * var(--text-scale,1));}
+.ticker-item .dn{color:#ef4444;font-size:calc(14px * var(--text-scale,1));}
 @keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
 
 /* HEADER */
 .header{background:#fff;border-bottom:1px solid #e5e5e5;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;}
-.header h1{font-size:24px;font-weight:700;color:#1a1a1a;}
-.header p{font-size:14px;color:#888;margin-top:2px;}
+.header h1{font-size:calc(24px * var(--text-scale,1));font-weight:700;color:#1a1a1a;}
+.header p{font-size:calc(14px * var(--text-scale,1));color:#888;margin-top:2px;}
 .avatar{width:42px;height:42px;border-radius:50%;background:#2563eb;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:16px;}
 
 /* STICKY GROUP (tabs + summary bar travel together) */
@@ -43,7 +43,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 
 /* TABS */
 .tabs{background:#fff;border-bottom:1px solid #e5e5e5;display:flex;overflow-x:auto;}
-.tab-btn{flex:1;min-width:90px;padding:14px 12px;border:none;background:transparent;color:#888;font-size:15px;font-weight:600;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;}
+.tab-btn{flex:1;min-width:90px;padding:14px 12px;border:none;background:transparent;color:#888;font-size:calc(15px * var(--text-scale,1));font-weight:600;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;}
 .tab-btn:hover{color:#1a1a1a;background:#f9f9f9;}
 .tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
 
@@ -51,8 +51,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .summary-bar{background:#1a1a1a;border-bottom:1px solid #000;display:flex;align-items:center;gap:0;overflow-x:auto;padding:0 20px;}
 .summary-item{display:flex;align-items:center;gap:8px;padding:9px 20px;border-right:1px solid #333;white-space:nowrap;}
 .summary-item:last-child{border-right:none;}
-.summary-item .lbl{font-size:12px;font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.5px;}
-.summary-item .val{font-size:15px;font-weight:700;color:#fff;}
+.summary-item .lbl{font-size:calc(12px * var(--text-scale,1));font-weight:700;color:#999;text-transform:uppercase;letter-spacing:.5px;}
+.summary-item .val{font-size:calc(15px * var(--text-scale,1));font-weight:700;color:#fff;}
 .summary-item .val.up-color{color:#4ade80!important;}
 .summary-item .val.dn-color{color:#f87171!important;}
 
@@ -62,66 +62,66 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .tab-pane.active{display:block;}
 
 /* SECTION HEADER */
-.section-title{font-size:20px;font-weight:700;margin-bottom:20px;color:#1a1a1a;}
+.section-title{font-size:calc(20px * var(--text-scale,1));font-weight:700;margin-bottom:20px;color:#1a1a1a;}
 
 /* METRIC CARDS */
 .metrics-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:24px;}
 .metric{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:18px;text-align:center;}
-.metric .lbl{font-size:13px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
-.metric .val{font-size:24px;font-weight:700;color:#1a1a1a;}
-.metric .sub{font-size:13px;color:#888;margin-top:4px;}
+.metric .lbl{font-size:calc(13px * var(--text-scale,1));font-weight:600;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;}
+.metric .val{font-size:calc(24px * var(--text-scale,1));font-weight:700;color:#1a1a1a;}
+.metric .sub{font-size:calc(13px * var(--text-scale,1));color:#888;margin-top:4px;}
 .up-color{color:#16a34a!important;}
 .dn-color{color:#dc2626!important;}
 
 /* CARDS */
 .card{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:20px;margin-bottom:16px;}
-.card h3{font-size:17px;font-weight:700;margin-bottom:16px;color:#1a1a1a;}
+.card h3{font-size:calc(17px * var(--text-scale,1));font-weight:700;margin-bottom:16px;color:#1a1a1a;}
 
 /* TABLE ROWS */
-.trow{display:flex;align-items:center;padding:11px 0;border-bottom:1px solid #f0f0f0;font-size:15px;gap:8px;}
+.trow{display:flex;align-items:center;padding:11px 0;border-bottom:1px solid #f0f0f0;font-size:calc(15px * var(--text-scale,1));gap:8px;}
 .trow:last-child{border-bottom:none;}
 .trow .sym{font-weight:700;width:60px;flex-shrink:0;}
 .trow .name{color:#555;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .trow .price{width:80px;text-align:right;font-weight:600;}
-.trow .chg{width:72px;text-align:right;font-size:14px;font-weight:600;}
+.trow .chg{width:72px;text-align:right;font-size:calc(14px * var(--text-scale,1));font-weight:600;}
 .trow .mv{width:90px;text-align:right;font-weight:600;}
-.trow .wt{width:50px;text-align:right;color:#888;font-size:14px;}
+.trow .wt{width:50px;text-align:right;color:#888;font-size:calc(14px * var(--text-scale,1));}
 
 /* HOLDINGS TABLE - sortable + expandable */
 .holdings-toolbar{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap;}
-.search-input{flex:1;min-width:180px;padding:9px 14px;border:1px solid #ddd;border-radius:8px;font-size:15px;color:#1a1a1a;background:#fafafa;}
+.search-input{flex:1;min-width:180px;padding:9px 14px;border:1px solid #ddd;border-radius:8px;font-size:calc(15px * var(--text-scale,1));color:#1a1a1a;background:#fafafa;}
 .search-input:focus{outline:none;border-color:#2563eb;background:#fff;}
-.category-select{padding:9px 32px 9px 14px;border:1px solid #ddd;border-radius:8px;font-size:15px;color:#1a1a1a;background:#fafafa;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");background-repeat:no-repeat;background-position:right 10px center;background-size:14px;min-width:170px;}
+.category-select{padding:9px 32px 9px 14px;border:1px solid #ddd;border-radius:8px;font-size:calc(15px * var(--text-scale,1));color:#1a1a1a;background:#fafafa;cursor:pointer;-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");background-repeat:no-repeat;background-position:right 10px center;background-size:14px;min-width:170px;}
 .category-select:focus{outline:none;border-color:#2563eb;background-color:#fff;}
-.search-count{font-size:14px;color:#888;white-space:nowrap;}
-.hhead{display:flex;gap:8px;font-size:13px;font-weight:700;color:#888;padding:0 0 10px;border-bottom:1px solid #f0f0f0;text-transform:uppercase;letter-spacing:.5px;}
+.search-count{font-size:calc(14px * var(--text-scale,1));color:#888;white-space:nowrap;}
+.hhead{display:flex;gap:8px;font-size:calc(13px * var(--text-scale,1));font-weight:700;color:#888;padding:0 0 10px;border-bottom:1px solid #f0f0f0;text-transform:uppercase;letter-spacing:.5px;}
 .hhead .hcol{cursor:pointer;user-select:none;display:flex;align-items:center;gap:3px;}
 .hhead .hcol:hover{color:#2563eb;}
-.hhead .hcol .arrow{font-size:11px;opacity:0;}
+.hhead .hcol .arrow{font-size:calc(11px * var(--text-scale,1));opacity:0;}
 .hhead .hcol.sorted .arrow{opacity:1;color:#2563eb;}
 .hrow-wrap{border-bottom:1px solid #f0f0f0;}
 .hrow-wrap:last-child{border-bottom:none;}
-.hrow{display:flex;align-items:center;padding:11px 0;font-size:15px;gap:8px;cursor:pointer;}
+.hrow{display:flex;align-items:center;padding:11px 0;font-size:calc(15px * var(--text-scale,1));gap:8px;cursor:pointer;}
 .hrow:hover{background:#fafbff;}
-.hrow .caret{width:14px;flex-shrink:0;color:#bbb;font-size:12px;transition:transform .15s;}
+.hrow .caret{width:14px;flex-shrink:0;color:#bbb;font-size:calc(12px * var(--text-scale,1));transition:transform .15s;}
 .hrow.expanded .caret{transform:rotate(90deg);color:#2563eb;}
 .hrow .sym{font-weight:700;width:100px;flex-shrink:0;display:flex;align-items:center;gap:4px;white-space:nowrap;overflow:hidden;}
 .hrow .name{color:#555;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
 .hrow .price{width:80px;text-align:right;font-weight:600;}
-.hrow .chg{width:72px;text-align:right;font-size:14px;font-weight:600;}
+.hrow .chg{width:72px;text-align:right;font-size:calc(14px * var(--text-scale,1));font-weight:600;}
 .hrow .mv{width:90px;text-align:right;font-weight:600;}
-.hrow .wt{width:50px;text-align:right;color:#888;font-size:14px;}
-.hdetail{display:none;padding:2px 0 14px 22px;font-size:14px;}
+.hrow .wt{width:50px;text-align:right;color:#888;font-size:calc(14px * var(--text-scale,1));}
+.hdetail{display:none;padding:2px 0 14px 22px;font-size:calc(14px * var(--text-scale,1));}
 .hdetail.open{display:block;}
 .hdetail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;background:#f8f9fa;border-radius:8px;padding:12px 14px;}
-.hdetail-item .lbl{color:#888;font-size:12px;text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px;}
-.hdetail-item .val{color:#1a1a1a;font-weight:700;font-size:15px;}
+.hdetail-item .lbl{color:#888;font-size:calc(12px * var(--text-scale,1));text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px;}
+.hdetail-item .val{color:#1a1a1a;font-weight:700;font-size:calc(15px * var(--text-scale,1));}
 .hdetail-item .val.price-highlight{color:#2563eb;}
 .price-detail-item{display:none;}
-.no-results{padding:24px 0;text-align:center;color:#888;font-size:15px;}
+.no-results{padding:24px 0;text-align:center;color:#888;font-size:calc(15px * var(--text-scale,1));}
 
 /* BADGE */
-.badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:13px;font-weight:700;letter-spacing:.3px;}
+.badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:calc(13px * var(--text-scale,1));font-weight:700;letter-spacing:.3px;}
 .badge-hold{background:#dbeafe;color:#1d4ed8;}
 .badge-build{background:#dcfce7;color:#15803d;}
 .badge-watch{background:#fef9c3;color:#854d0e;}
@@ -130,16 +130,16 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 /* THESIS CARD */
 .thesis-card{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:18px;margin-bottom:12px;}
 .thesis-header{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
-.thesis-ticker{font-size:20px;font-weight:700;}
-.thesis-name{color:#555;font-size:15px;}
-.thesis-meta{display:flex;gap:16px;font-size:14px;color:#888;margin-bottom:10px;}
-.thesis-body{font-size:15px;color:#333;line-height:1.6;background:#f8f9fa;border-radius:8px;padding:12px;}
-.thesis-conviction{font-size:14px;color:#555;margin-top:8px;}
+.thesis-ticker{font-size:calc(20px * var(--text-scale,1));font-weight:700;}
+.thesis-name{color:#555;font-size:calc(15px * var(--text-scale,1));}
+.thesis-meta{display:flex;gap:16px;font-size:calc(14px * var(--text-scale,1));color:#888;margin-bottom:10px;}
+.thesis-body{font-size:calc(15px * var(--text-scale,1));color:#333;line-height:1.6;background:#f8f9fa;border-radius:8px;padding:12px;}
+.thesis-conviction{font-size:calc(14px * var(--text-scale,1));color:#555;margin-top:8px;}
 .ticker-link{cursor:pointer;border-bottom:1px dotted #999;padding-bottom:1px;}
 .ticker-link:active{opacity:.6;}
-.thesis-report-link{margin-top:10px;font-size:14px;font-weight:700;color:#2563eb;cursor:pointer;display:inline-block;}
+.thesis-report-link{margin-top:10px;font-size:calc(14px * var(--text-scale,1));font-weight:700;color:#2563eb;cursor:pointer;display:inline-block;}
 .thesis-report-link:active{opacity:.6;}
-.report-ticker-badge{display:inline-block;background:#1a1a1a;color:#fff;font-size:12px;font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:6px;cursor:pointer;}
+.report-ticker-badge{display:inline-block;background:#1a1a1a;color:#fff;font-size:calc(12px * var(--text-scale,1));font-weight:700;padding:2px 7px;border-radius:4px;margin-bottom:6px;cursor:pointer;}
 .report-ticker-badge:active{opacity:.7;}
 
 /* SLIDER */
@@ -152,90 +152,90 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;b
 .income-stack-seg.dividends{background:#16a34a;}
 .income-stack-seg.withdrawals{background:#eab308;}
 .income-stack-legend{display:flex;flex-wrap:wrap;gap:16px;margin-top:14px;}
-.income-stack-legend-item{display:flex;align-items:center;gap:7px;font-size:15px;color:#333;}
+.income-stack-legend-item{display:flex;align-items:center;gap:7px;font-size:calc(15px * var(--text-scale,1));color:#333;}
 .income-stack-dot{width:11px;height:11px;border-radius:50%;flex-shrink:0;}
 .income-stack-dot.pension{background:#2563eb;}
 .income-stack-dot.dividends{background:#16a34a;}
 .income-stack-dot.withdrawals{background:#eab308;}
 
 /* MONTHLY DIVIDEND CALENDAR */
-.uneven-pill{display:inline-block;background:#dbeafe;color:#1d4ed8;font-size:13px;font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px;}
+.uneven-pill{display:inline-block;background:#dbeafe;color:#1d4ed8;font-size:calc(13px * var(--text-scale,1));font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px;}
 .div-calendar{display:grid;grid-template-columns:repeat(6,1fr);gap:10px 6px;align-items:end;}
 .div-cal-col{display:flex;flex-direction:column;align-items:center;gap:6px;}
 .div-cal-bar-wrap{height:90px;display:flex;align-items:flex-end;width:100%;justify-content:center;}
 .div-cal-bar{width:70%;background:#2563eb;border-radius:5px 5px 0 0;min-height:3px;transition:height .3s;}
-.div-cal-amt{font-size:14px;font-weight:700;color:#1a1a1a;}
-.div-cal-month{font-size:13px;color:#888;}
-.slider-wrap label{display:flex;justify-content:space-between;font-size:15px;font-weight:600;color:#1a1a1a;margin-bottom:8px;}
+.div-cal-amt{font-size:calc(14px * var(--text-scale,1));font-weight:700;color:#1a1a1a;}
+.div-cal-month{font-size:calc(13px * var(--text-scale,1));color:#888;}
+.slider-wrap label{display:flex;justify-content:space-between;font-size:calc(15px * var(--text-scale,1));font-weight:600;color:#1a1a1a;margin-bottom:8px;}
 input[type=range]{width:100%;height:5px;border-radius:3px;background:#ddd;outline:none;-webkit-appearance:none;appearance:none;}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#2563eb;cursor:pointer;}
-input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radius:6px;font-size:15px;color:#1a1a1a;background:#fff;}
+input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radius:6px;font-size:calc(15px * var(--text-scale,1));color:#1a1a1a;background:#fff;}
 
 /* BLUE HIGHLIGHT CARD */
 .blue-card{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:20px;margin-bottom:16px;}
-.blue-card h3{color:#1d4ed8;font-size:16px;font-weight:700;margin-bottom:14px;}
+.blue-card h3{color:#1d4ed8;font-size:calc(16px * var(--text-scale,1));font-weight:700;margin-bottom:14px;}
 .blue-metrics{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 .blue-metric{background:#fff;border:1px solid #bfdbfe;border-radius:8px;padding:14px;}
-.blue-metric .lbl{font-size:13px;color:#3b82f6;font-weight:600;margin-bottom:6px;}
-.blue-metric .val{font-size:22px;font-weight:700;color:#1d4ed8;}
+.blue-metric .lbl{font-size:calc(13px * var(--text-scale,1));color:#3b82f6;font-weight:600;margin-bottom:6px;}
+.blue-metric .val{font-size:calc(22px * var(--text-scale,1));font-weight:700;color:#1d4ed8;}
 
 /* NEWS */
 .news-item{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:14px;margin-bottom:10px;}
-.news-item .headline{font-size:15px;font-weight:600;margin-bottom:5px;display:block;color:#1a1a1a;text-decoration:none;}
+.news-item .headline{font-size:calc(15px * var(--text-scale,1));font-weight:600;margin-bottom:5px;display:block;color:#1a1a1a;text-decoration:none;}
 .news-item .headline:hover{color:#2563eb;text-decoration:underline;}
-.news-item .ticker-tag{display:inline-block;background:#dbeafe;color:#1d4ed8;font-size:13px;font-weight:700;padding:2px 7px;border-radius:4px;margin-right:6px;}
-.news-item .meta{font-size:13px;color:#888;}
+.news-item .ticker-tag{display:inline-block;background:#dbeafe;color:#1d4ed8;font-size:calc(13px * var(--text-scale,1));font-weight:700;padding:2px 7px;border-radius:4px;margin-right:6px;}
+.news-item .meta{font-size:calc(13px * var(--text-scale,1));color:#888;}
 .news-item .meta a{color:#888;text-decoration:none;}
 .news-item .meta a:hover{color:#2563eb;text-decoration:underline;}
-.news-item .why{font-size:14px;color:#555;line-height:1.5;margin:6px 0;}
-.news-item .why-label{font-weight:700;color:#888;font-size:12px;text-transform:uppercase;letter-spacing:.4px;margin-right:5px;}
-.news-item .news-pct{font-size:15px;font-weight:700;white-space:nowrap;margin-left:10px;flex-shrink:0;}
+.news-item .why{font-size:calc(14px * var(--text-scale,1));color:#555;line-height:1.5;margin:6px 0;}
+.news-item .why-label{font-weight:700;color:#888;font-size:calc(12px * var(--text-scale,1));text-transform:uppercase;letter-spacing:.4px;margin-right:5px;}
+.news-item .news-pct{font-size:calc(15px * var(--text-scale,1));font-weight:700;white-space:nowrap;margin-left:10px;flex-shrink:0;}
 .news-toolbar{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
-.news-updated{font-size:13px;color:#888;margin-bottom:16px;display:flex;align-items:center;gap:6px;}
+.news-updated{font-size:calc(13px * var(--text-scale,1));color:#888;margin-bottom:16px;display:flex;align-items:center;gap:6px;}
 .news-updated .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;}
 
 /* REPORT CARDS */
 .report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
 .report-card{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:16px;display:block;text-decoration:none;transition:box-shadow .15s,transform .15s;}
 .report-card:hover{box-shadow:0 4px 14px rgba(0,0,0,.08);transform:translateY(-1px);}
-.report-card .date{font-size:13px;color:#888;margin-bottom:6px;}
-.report-card .title{font-size:16px;font-weight:700;color:#1a1a1a;}
-.report-card .type{display:inline-block;margin-top:8px;font-size:13px;font-weight:700;padding:2px 8px;border-radius:4px;}
-.report-card .fmt{float:right;font-size:12px;font-weight:700;color:#aaa;letter-spacing:.5px;}
+.report-card .date{font-size:calc(13px * var(--text-scale,1));color:#888;margin-bottom:6px;}
+.report-card .title{font-size:calc(16px * var(--text-scale,1));font-weight:700;color:#1a1a1a;}
+.report-card .type{display:inline-block;margin-top:8px;font-size:calc(13px * var(--text-scale,1));font-weight:700;padding:2px 8px;border-radius:4px;}
+.report-card .fmt{float:right;font-size:calc(12px * var(--text-scale,1));font-weight:700;color:#aaa;letter-spacing:.5px;}
 .type-daily{background:#dcfce7;color:#15803d;}
 .type-weekly{background:#dbeafe;color:#1d4ed8;}
 .type-research{background:#f3e8ff;color:#7c3aed;}
 .type-portfolio{background:#fef3c7;color:#b45309;}
 .type-market{background:#ccfbf1;color:#0f766e;}
-.archived-badge{display:inline-block;margin:8px 0 0 6px;font-size:13px;font-weight:700;padding:2px 8px;border-radius:4px;background:#e5e7eb;color:#4b5563;}
-.report-card .superseded{margin-top:8px;font-size:13px;color:#888;line-height:1.35;}
+.archived-badge{display:inline-block;margin:8px 0 0 6px;font-size:calc(13px * var(--text-scale,1));font-weight:700;padding:2px 8px;border-radius:4px;background:#e5e7eb;color:#4b5563;}
+.report-card .superseded{margin-top:8px;font-size:calc(13px * var(--text-scale,1));color:#888;line-height:1.35;}
 
 /* ALLOCATION BAR */
 .alloc-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
-.alloc-label{font-size:14px;color:#555;width:180px;flex-shrink:0;}
+.alloc-label{font-size:calc(14px * var(--text-scale,1));color:#555;width:180px;flex-shrink:0;}
 .alloc-bar-wrap{flex:1;background:#f0f0f0;border-radius:4px;height:8px;}
 .alloc-bar{height:8px;border-radius:4px;background:#2563eb;}
-.alloc-pct{font-size:14px;font-weight:700;width:40px;text-align:right;}
+.alloc-pct{font-size:calc(14px * var(--text-scale,1));font-weight:700;width:40px;text-align:right;}
 
 /* SECTOR PERFORMANCE (diverging bar, centered at 0%) */
 .sector-perf-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0f0;}
 .sector-perf-row:last-child{border-bottom:none;}
-.sector-perf-label{font-size:15px;color:#333;width:150px;flex-shrink:0;}
+.sector-perf-label{font-size:calc(15px * var(--text-scale,1));color:#333;width:150px;flex-shrink:0;}
 .sector-perf-track{flex:1;height:8px;background:#f0f0f0;border-radius:4px;position:relative;}
 .sector-perf-center{position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:#ccc;}
 .sector-perf-fill{position:absolute;top:0;height:8px;border-radius:4px;min-width:2px;}
-.sector-perf-val{width:64px;text-align:right;font-size:15px;font-weight:700;flex-shrink:0;}
+.sector-perf-val{width:64px;text-align:right;font-size:calc(15px * var(--text-scale,1));font-weight:700;flex-shrink:0;}
 
 /* CASH BADGE */
 .on-track{color:#15803d;font-weight:700;}
-.quality-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:15px;}
+.quality-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:calc(15px * var(--text-scale,1));}
 .quality-row:last-child{border-bottom:none;}
 .quality-row .item{color:#333;}
-.status-ok{color:#15803d;font-size:14px;font-weight:700;}
-.status-warn{color:#d97706;font-size:14px;font-weight:700;}
-.status-build{color:#2563eb;font-size:14px;font-weight:700;}
+.status-ok{color:#15803d;font-size:calc(14px * var(--text-scale,1));font-weight:700;}
+.status-warn{color:#d97706;font-size:calc(14px * var(--text-scale,1));font-weight:700;}
+.status-build{color:#2563eb;font-size:calc(14px * var(--text-scale,1));font-weight:700;}
 
-.pill-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;font-size:15px;font-weight:600;cursor:pointer;color:#555;}
+.pill-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;font-size:calc(15px * var(--text-scale,1));font-weight:600;cursor:pointer;color:#555;}
 .pill-btn:hover{background:#f0f4ff;border-color:#2563eb;color:#2563eb;}
 .pill-btn.active{background:#2563eb;color:#fff;border-color:#2563eb;}
 
@@ -245,6 +245,10 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 /* THEME TOGGLE */
 .theme-toggle{width:38px;height:38px;border-radius:50%;border:1px solid #e5e5e5;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;margin-right:12px;transition:background .15s;}
 .theme-toggle:hover{background:#f0f4ff;}
+.text-toggle{width:38px;height:38px;border-radius:50%;border:1px solid #e5e5e5;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#555;margin-right:8px;transition:background .15s;}
+.text-toggle:hover{background:#f0f4ff;}
+.text-toggle:disabled{opacity:.35;cursor:default;}
+.text-toggle:disabled:hover{background:#fff;}
 /* PRIVACY MODE — blur dollar figures in place, no layout/re-render needed */
 .money{transition:filter .15s ease;}
 body[data-privacy="on"] .mv,
@@ -272,7 +276,7 @@ body[data-privacy="on"] #pension-slider-val
 {filter:blur(7px);user-select:none;}
 
 /* CORE / BUILD BADGE TAGS (holdings table) */
-.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.3px;padding:2px 6px;border-radius:4px;margin-left:6px;flex-shrink:0;cursor:help;}
+.tag{display:inline-block;font-size:calc(11px * var(--text-scale,1));font-weight:700;letter-spacing:.3px;padding:2px 6px;border-radius:4px;margin-left:6px;flex-shrink:0;cursor:help;}
 .tag-core{background:#fef3c7;color:#92400e;}
 .tag-build{background:#dcfce7;color:#15803d;}
 
@@ -280,26 +284,26 @@ body[data-privacy="on"] #pension-slider-val
 .target-row{margin-bottom:18px;}
 .target-row:last-child{margin-bottom:0;}
 .target-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:6px;}
-.target-head .name{font-size:15px;font-weight:700;}
-.target-head .sub{font-size:13px;color:#888;}
+.target-head .name{font-size:calc(15px * var(--text-scale,1));font-weight:700;}
+.target-head .sub{font-size:calc(13px * var(--text-scale,1));color:#888;}
 .target-bar-wrap{background:#f0f0f0;border-radius:5px;height:10px;position:relative;overflow:visible;}
 .target-bar{height:10px;border-radius:5px;transition:width .3s;}
 .target-bar.status-red{background:#dc2626;}
 .target-bar.status-amber{background:#d97706;}
 .target-bar.status-green{background:#16a34a;}
 .target-marker{position:absolute;top:-3px;bottom:-3px;width:2px;background:#1a1a1a;}
-.target-foot{display:flex;justify-content:space-between;margin-top:5px;font-size:13px;}
+.target-foot{display:flex;justify-content:space-between;margin-top:5px;font-size:calc(13px * var(--text-scale,1));}
 .target-foot .status-label.status-red{color:#dc2626;font-weight:700;}
 .target-foot .status-label.status-amber{color:#d97706;font-weight:700;}
 .target-foot .status-label.status-green{color:#16a34a;font-weight:700;}
 
 /* $ / % DISPLAY TOGGLE */
 .unit-toggle{display:flex;border:1px solid #ddd;border-radius:8px;overflow:hidden;}
-.unit-toggle button{padding:9px 14px;border:none;background:#fafafa;font-size:15px;font-weight:700;color:#888;cursor:pointer;}
+.unit-toggle button{padding:9px 14px;border:none;background:#fafafa;font-size:calc(15px * var(--text-scale,1));font-weight:700;color:#888;cursor:pointer;}
 .unit-toggle button.active{background:#2563eb;color:#fff;}
 
 /* DATA FRESHNESS FOOTER (compact, bottom of Today tab) */
-.data-freshness-footer{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:12px;color:#aaa;line-height:1.5;padding:14px 4px 4px;border-top:1px solid #eee;margin-top:4px;}
+.data-freshness-footer{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:calc(12px * var(--text-scale,1));color:#aaa;line-height:1.5;padding:14px 4px 4px;border-top:1px solid #eee;margin-top:4px;}
 .data-freshness-footer span:not(:last-child)::after{content:'•';margin-left:14px;color:#ccc;}
 .updated-item{margin-left:auto;display:flex;align-items:center;gap:6px;}
 .updated-item .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;}
@@ -309,14 +313,14 @@ body[data-privacy="on"] #pension-slider-val
 .bottom-nav-inner{display:flex;}
 .bottom-nav-btn{flex:1;min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;padding:7px 2px 6px;border:none;background:transparent;color:#888;cursor:pointer;}
 .bottom-nav-btn .icon{font-size:21px;line-height:1;}
-.bottom-nav-btn .lbl{font-size:11.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
+.bottom-nav-btn .lbl{font-size:calc(11.5px * var(--text-scale,1));font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
 .bottom-nav-btn.active{color:#2563eb;}
 
 /* COLLAPSIBLE CARDS (mobile: collapsed by default, tap to expand; desktop: always open) */
 .card-collapsible{padding:0;}
 .card-header{display:flex;align-items:center;justify-content:space-between;padding:20px;cursor:default;}
 .card-header h3{margin-bottom:0;}
-.card-header-meta{display:none;font-size:13px;color:#888;font-weight:500;margin-top:2px;}
+.card-header-meta{display:none;font-size:calc(13px * var(--text-scale,1));color:#888;font-weight:500;margin-top:2px;}
 .chevron{display:none;width:8px;height:8px;border-right:2px solid #999;border-bottom:2px solid #999;transform:rotate(-45deg);transition:transform .2s;flex-shrink:0;margin-left:10px;}
 .card-collapsible.open .chevron{transform:rotate(45deg);}
 .card-body-inner{padding:0 20px 20px;}
@@ -324,14 +328,14 @@ body[data-privacy="on"] #pension-slider-val
 @media(max-width:768px){
   .metrics-row{grid-template-columns:repeat(2,1fr);}
   .metric{padding:14px 10px;}
-  .metric .val{font-size:21px;}
+  .metric .val{font-size:calc(21px * var(--text-scale,1));}
   .tabs{display:none;}
   .bottom-nav{display:block;}
   .content{padding-bottom:calc(64px + env(safe-area-inset-bottom));}
   .trow .name{display:none;}
   .blue-metrics{grid-template-columns:repeat(2,1fr);gap:10px;}
   .blue-metric{padding:11px 10px;}
-  .blue-metric .val{font-size:19px;}
+  .blue-metric .val{font-size:calc(19px * var(--text-scale,1));}
   .summary-item{padding:9px 14px;}
   .card-collapsible .card-header{cursor:pointer;-webkit-tap-highlight-color:transparent;}
   .card-collapsible .card-header-meta{display:block;}
@@ -340,10 +344,11 @@ body[data-privacy="on"] #pension-slider-val
   .card-collapsible.open .card-body{max-height:1000px;}
   .price-detail-item{display:block;}
   .header{padding:14px 16px;}
-  .header h1{font-size:19px;line-height:1.2;}
-  .header p{font-size:12.5px;margin-top:3px;line-height:1.4;}
+  .header h1{font-size:calc(19px * var(--text-scale,1));line-height:1.2;}
+  .header p{font-size:calc(12.5px * var(--text-scale,1));margin-top:3px;line-height:1.4;}
   .avatar{width:34px;height:34px;font-size:14px;}
   .theme-toggle{width:32px;height:32px;font-size:16px;margin-right:8px;}
+  .text-toggle{width:30px;height:30px;font-size:11.5px;margin-right:5px;}
   /* Holdings table (mobile only): hide the Name column — desktop has room for it,
      but on mobile it stays hidden and the remaining columns are narrowed instead
      so Price can fit in the collapsed row. */
@@ -354,13 +359,13 @@ body[data-privacy="on"] #pension-slider-val
   .hhead .sym-col{width:52px!important;}
   .hrow .sym{width:52px;}
   .hhead .price-col{width:60px!important;}
-  .hrow .price{width:60px;font-size:14px;white-space:nowrap;}
+  .hrow .price{width:60px;font-size:calc(14px * var(--text-scale,1));white-space:nowrap;}
   .hhead .chg-col{width:68px!important;}
-  .hrow .chg{width:68px;font-size:13.5px;white-space:nowrap;}
+  .hrow .chg{width:68px;font-size:calc(13.5px * var(--text-scale,1));white-space:nowrap;}
   .hhead .mv-col{width:70px!important;}
-  .hrow .mv{width:70px;font-size:14px;white-space:nowrap;}
+  .hrow .mv{width:70px;font-size:calc(14px * var(--text-scale,1));white-space:nowrap;}
   .hhead .wt-col{width:30px!important;}
-  .hrow .wt{width:30px;font-size:13px;white-space:nowrap;}
+  .hrow .wt{width:30px;font-size:calc(13px * var(--text-scale,1));white-space:nowrap;}
 }
 
 /* ============ DARK MODE ============ */
@@ -370,6 +375,9 @@ body[data-theme="dark"] .header h1{color:#e8e9ec;}
 body[data-theme="dark"] .header p{color:#8b909c;}
 body[data-theme="dark"] .theme-toggle{background:#1a1d24;border-color:#2a2e37;color:#e8e9ec;}
 body[data-theme="dark"] .theme-toggle:hover{background:#20242e;}
+body[data-theme="dark"] .text-toggle{background:#1a1d24;border-color:#2a2e37;color:#c7cad2;}
+body[data-theme="dark"] .text-toggle:hover{background:#20242e;}
+body[data-theme="dark"] .text-toggle:disabled:hover{background:#1a1d24;}
 body[data-theme="dark"] .tabs{background:#161920;border-bottom-color:#262a33;}
 body[data-theme="dark"] .tab-btn{color:#8b909c;}
 body[data-theme="dark"] .tab-btn:hover{color:#e8e9ec;background:#1a1d24;}
@@ -457,7 +465,9 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <h1>Portfolio Command Center</h1>
     <p>James Wilbur &nbsp;•&nbsp; Private &nbsp;•&nbsp; Holdings as of Sept 25, 2026</p>
   </div>
-  <div style="display:flex;align-items:center;">
+  <div style="display:flex;align-items:center;flex-wrap:wrap;row-gap:8px;">
+    <button class="text-toggle" id="textSizeDec" onclick="decreaseTextSize()" title="Decrease text size">A−</button>
+    <button class="text-toggle" id="textSizeInc" onclick="increaseTextSize()" title="Increase text size">A+</button>
     <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Toggle dark mode">🌙</button>
     <button class="theme-toggle" id="privacyToggle" onclick="togglePrivacy()" title="Hide portfolio values">👁️</button>
     <div class="avatar">JW</div>
@@ -480,7 +490,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <div class="summary-item"><span class="lbl">Day P/L</span><span class="val" id="sum-day">—</span></div>
     <div class="summary-item"><span class="lbl">Day %</span><span class="val" id="sum-day-pct">—</span></div>
     <div class="summary-item"><span class="lbl">Cash</span><span class="val" id="sum-cash-pct">2.6%</span></div>
-    <div class="summary-item updated-item"><span class="dot"></span><span class="lbl">Updated</span><span class="val" id="sum-updated" style="font-weight:600;font-size:14px;">—</span></div>
+    <div class="summary-item updated-item"><span class="dot"></span><span class="lbl">Updated</span><span class="val" id="sum-updated" style="font-weight:600;font-size:calc(14px * var(--text-scale,1));">—</span></div>
   </div>
 </div>
 
@@ -515,9 +525,9 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 
     <div class="card">
       <h3>Dollar Drivers — Top Contributors</h3>
-      <div style="font-size:13px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Contributors</div>
+      <div style="font-size:calc(13px * var(--text-scale,1));font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Contributors</div>
       <div id="contributors-list"></div>
-      <div style="font-size:13px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 8px;">Detractors</div>
+      <div style="font-size:calc(13px * var(--text-scale,1));font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 8px;">Detractors</div>
       <div id="detractors-list"></div>
     </div>
 
@@ -526,7 +536,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <div id="sector-perf-list">
         <div class="no-results">Loading sector data…</div>
       </div>
-      <p style="font-size:13px;color:#888;margin-top:12px;">SPDR Select Sector ETFs, day % change vs. prior close. Live via Finnhub.</p>
+      <p style="font-size:calc(13px * var(--text-scale,1));color:#888;margin-top:12px;">SPDR Select Sector ETFs, day % change vs. prior close. Live via Finnhub.</p>
     </div>
 
     <div class="card">
@@ -551,8 +561,8 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <div style="height:220px;position:relative;">
         <canvas id="ytdChartCanvas"></canvas>
       </div>
-      <p style="font-size:13px;color:#888;margin:14px 0 0;">Constant-current-holdings estimate — today's share counts assumed held since the first 2026 trading day. Not the investor's actual transaction-adjusted return. <span id="ytd-excluded-note"></span></p>
-      <div style="display:flex;gap:16px;margin-top:12px;font-size:13px;color:#555;">
+      <p style="font-size:calc(13px * var(--text-scale,1));color:#888;margin:14px 0 0;">Constant-current-holdings estimate — today's share counts assumed held since the first 2026 trading day. Not the investor's actual transaction-adjusted return. <span id="ytd-excluded-note"></span></p>
+      <div style="display:flex;gap:16px;margin-top:12px;font-size:calc(13px * var(--text-scale,1));color:#555;">
         <span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#16a34a;margin-right:5px;"></span>Portfolio</span>
         <span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#2563eb;margin-right:5px;"></span>SPY total-return proxy</span>
       </div>
@@ -626,7 +636,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       </div>
       <div class="card-body">
         <div class="card-body-inner">
-          <p style="font-size:13px;color:#888;margin:0 0 14px;">Broad multi-sector funds (index funds, target-date, factor ETFs) are grouped as "Diversified Fund" rather than force-fit into one sector.</p>
+          <p style="font-size:calc(13px * var(--text-scale,1));color:#888;margin:0 0 14px;">Broad multi-sector funds (index funds, target-date, factor ETFs) are grouped as "Diversified Fund" rather than force-fit into one sector.</p>
           <div id="sector-bars-list"></div>
         </div>
       </div>
@@ -658,7 +668,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </select>
         <span class="search-count" id="holdings-count"></span>
         <div style="display:flex;align-items:center;gap:8px;">
-          <span style="font-size:13px;color:#888;white-space:nowrap;">Day Chg:</span>
+          <span style="font-size:calc(13px * var(--text-scale,1));color:#888;white-space:nowrap;">Day Chg:</span>
           <div class="unit-toggle" id="unitToggle">
             <button class="active" onclick="setUnitMode('pct',this)">%</button>
             <button onclick="setUnitMode('dollar',this)">$</button>
@@ -758,15 +768,15 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 
     <div class="card">
       <h3>Retirement Income Stack</h3>
-      <p style="font-size:13px;color:#888;margin:-8px 0 14px;">Expected annual income at retirement (uses the years/return/withdrawal assumptions from the Retirement tab). Dividends assume reinvestment until retirement — projected as future portfolio value × today's yield, not just today's dividend grown on its own.</p>
-      <div style="font-size:24px;font-weight:700;color:#1a1a1a;margin-bottom:14px;" id="income-stack-total">$0 total</div>
+      <p style="font-size:calc(13px * var(--text-scale,1));color:#888;margin:-8px 0 14px;">Expected annual income at retirement (uses the years/return/withdrawal assumptions from the Retirement tab). Dividends assume reinvestment until retirement — projected as future portfolio value × today's yield, not just today's dividend grown on its own.</p>
+      <div style="font-size:calc(24px * var(--text-scale,1));font-weight:700;color:#1a1a1a;margin-bottom:14px;" id="income-stack-total">$0 total</div>
       <div class="income-stack-bar" id="income-stack-bar"></div>
       <div class="income-stack-legend" id="income-stack-legend"></div>
     </div>
 
     <div class="card">
       <h3>Monthly Dividend Calendar</h3>
-      <p style="font-size:13px;color:#888;margin:-8px 0 6px;" id="div-calendar-sublabel">Today's actual schedule — adjust Growth/Projection Period below to project forward</p>
+      <p style="font-size:calc(13px * var(--text-scale,1));color:#888;margin:-8px 0 6px;" id="div-calendar-sublabel">Today's actual schedule — adjust Growth/Projection Period below to project forward</p>
       <div class="uneven-pill">Uneven by design</div>
       <div class="div-calendar" id="div-calendar"></div>
     </div>
@@ -814,7 +824,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <button class="pill-btn" onclick="filterThesis('REVIEW',this)">Review</button>
     </div>
     <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
-      <span style="font-size:13px;color:#888;white-space:nowrap;">Asset type:</span>
+      <span style="font-size:calc(13px * var(--text-scale,1));color:#888;white-space:nowrap;">Asset type:</span>
       <div class="unit-toggle" id="assetTypeToggle">
         <button class="active" onclick="filterAssetType('all',this)">All</button>
         <button onclick="filterAssetType('equity',this)">Equities</button>
@@ -1583,7 +1593,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
   <!-- REPORTS -->
   <div id="reports" class="tab-pane">
     <div class="section-title" id="reports-title">Report Library</div>
-    <p style="font-size:15px;color:#888;margin-bottom:16px;">Every card links to the actual report file. Opens in a new tab. Only the latest version of each report is shown here — earlier versions are in the <strong>Archived</strong> filter.</p>
+    <p style="font-size:calc(15px * var(--text-scale,1));color:#888;margin-bottom:16px;">Every card links to the actual report file. Opens in a new tab. Only the latest version of each report is shown here — earlier versions are in the <strong>Archived</strong> filter.</p>
 
     <div class="reports-toolbar">
       <button class="pill-btn active" onclick="filterReports('all',this)">All</button>
@@ -1594,7 +1604,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <input type="text" class="search-input" id="reports-search" placeholder="Search reports…" oninput="renderReports()" style="max-width:240px;margin-left:auto;">
     </div>
     <div id="reports-asset-toggle-wrap" style="display:none;align-items:center;gap:8px;margin-bottom:14px;">
-      <span style="font-size:13px;color:#888;white-space:nowrap;">Asset type:</span>
+      <span style="font-size:calc(13px * var(--text-scale,1));color:#888;white-space:nowrap;">Asset type:</span>
       <div class="unit-toggle" id="reportsAssetToggle">
         <button class="active" onclick="filterReportsAssetType('all',this)">All</button>
         <button onclick="filterReportsAssetType('equity',this)">Equities</button>
@@ -1609,7 +1619,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
   <div id="news" class="tab-pane">
     <div id="news-list"></div>
     <div class="section-title">Smart News — Portfolio-Ranked Intelligence</div>
-    <p style="font-size:15px;color:#888;margin-bottom:12px;">Stories ranked by portfolio weight. Holdings-linked news first, then factor/market context. Each headline links to the original source.</p>
+    <p style="font-size:calc(15px * var(--text-scale,1));color:#888;margin-bottom:12px;">Stories ranked by portfolio weight. Holdings-linked news first, then factor/market context. Each headline links to the original source.</p>
     <div class="news-updated" id="news-updated-line"><span class="dot"></span>Last refreshed Aug 26, 2026 — NVIDIA Q2 FY27 beat-and-raise plus new AWS GPU deal, Apple iPhone shipments +13% YoY, Alphabet dips on AI-capex concerns, Meta settles youth-safety suit for $16.7B</div>
   </div>
 
@@ -1664,6 +1674,33 @@ function togglePrivacy(){
     localStorage.setItem('pcc-privacy', 'on');
   }
 }
+
+// ---- TEXT SIZE CONTROL (A-/A+ in the header) — scales all readable text via the
+// --text-scale CSS variable every font-size in the sheet is defined against. Fixed
+// UI chrome (avatar, theme/privacy toggle, bottom-nav icons) is exempt on purpose,
+// so the icon row doesn't grow. Persists across visits via localStorage. ----
+const TEXT_SCALE_MIN = 0.8, TEXT_SCALE_MAX = 1.4, TEXT_SCALE_STEP = 0.1;
+function applyTextScale(scale){
+  scale = Math.round(scale * 10) / 10;
+  if(scale < TEXT_SCALE_MIN) scale = TEXT_SCALE_MIN;
+  if(scale > TEXT_SCALE_MAX) scale = TEXT_SCALE_MAX;
+  document.documentElement.style.setProperty('--text-scale', scale);
+  localStorage.setItem('pcc-text-scale', scale);
+  const decBtn = document.getElementById('textSizeDec');
+  const incBtn = document.getElementById('textSizeInc');
+  if(decBtn) decBtn.disabled = scale <= TEXT_SCALE_MIN;
+  if(incBtn) incBtn.disabled = scale >= TEXT_SCALE_MAX;
+  return scale;
+}
+function getCurrentTextScale(){
+  const saved = parseFloat(localStorage.getItem('pcc-text-scale'));
+  return isNaN(saved) ? 1 : saved;
+}
+function increaseTextSize(){ applyTextScale(getCurrentTextScale() + TEXT_SCALE_STEP); }
+function decreaseTextSize(){ applyTextScale(getCurrentTextScale() - TEXT_SCALE_STEP); }
+(function restoreTextScale(){
+  applyTextScale(getCurrentTextScale());
+})();
 
 // ---- RESTORE SAVED SLIDER ASSUMPTIONS (Retirement + Income tabs) ----
 // Sets each slider's value directly from localStorage, before any calc function first
@@ -2010,14 +2047,14 @@ function renderActiveFilters(){
   const cat = document.getElementById('holdings-category').value;
   const chips = [];
   if(cat !== 'all'){
-    chips.push(`<span class="pill-btn active" style="padding:5px 12px;font-size:14px;cursor:pointer;" onclick="clearCategoryFilter()">${cat} ✕</span>`);
+    chips.push(`<span class="pill-btn active" style="padding:5px 12px;font-size:calc(14px * var(--text-scale,1));cursor:pointer;" onclick="clearCategoryFilter()">${cat} ✕</span>`);
   }
   if(sectorFilter !== 'all'){
-    chips.push(`<span class="pill-btn active" style="padding:5px 12px;font-size:14px;cursor:pointer;" onclick="clearSectorFilter()">${sectorFilter} ✕</span>`);
+    chips.push(`<span class="pill-btn active" style="padding:5px 12px;font-size:calc(14px * var(--text-scale,1));cursor:pointer;" onclick="clearSectorFilter()">${sectorFilter} ✕</span>`);
   }
   if(chips.length){
     el.style.display = 'flex';
-    el.innerHTML = '<span style="font-size:13px;color:#888;">Filtered by:</span>' + chips.join('');
+    el.innerHTML = '<span style="font-size:calc(13px * var(--text-scale,1));color:#888;">Filtered by:</span>' + chips.join('');
   } else {
     el.style.display = 'none';
     el.innerHTML = '';
