@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
 <title>CIO Portfolio Dashboard — Live</title>
 <link rel="apple-touch-icon" href="dashboard-icon.png">
 <meta name="apple-mobile-web-app-title" content="CIO Dashboard">
 <style>
 *{box-sizing:border-box}
+html,body{overflow-x:clip}
 body{margin:0;background:#0e1622;color:#e8edf2;font:14px/1.5 -apple-system,"Segoe UI",Arial,sans-serif}
 .page{max-width:1220px;margin:0 auto;padding:26px 22px 60px}
 header.top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;margin-bottom:14px}
@@ -29,7 +30,8 @@ h1{font:700 34px/1.1 Georgia,serif;margin:6px 0 4px;color:#fff}
 .card{background:#132233;border:1px solid #24405c;border-radius:10px;padding:18px 20px;margin-bottom:14px}
 .card h2{font:700 17px/1.2 Georgia,serif;color:#fff;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid #b8862b}
 .card h3{font-size:13px;color:#bcd0dd;margin:14px 0 8px;text-transform:uppercase;letter-spacing:.06em}
-.hrow{display:grid;grid-template-columns:64px 1fr 64px 70px;gap:8px;align-items:center;margin:7px 0;font-size:12px}
+.hrow{display:grid;grid-template-columns:auto minmax(0,1fr) 64px 70px;gap:8px;align-items:center;margin:7px 0;font-size:12px}
+.hrow>*{min-width:0}
 .ht{color:#bcd0dd;font-weight:700}.hv{text-align:right;color:#e8edf2}.hd{text-align:right}
 .hbar{background:#0b1a2b;border-radius:4px;height:14px;overflow:hidden}
 .hfill{background:linear-gradient(90deg,#2b6cb0,#63b3ed);height:100%;border-radius:4px}
@@ -84,7 +86,7 @@ th.sortable:hover{color:#fff}
 .pill.buy{background:#123f2a;color:#48bb78}.pill.hold{background:#4a3a12;color:#f6ad55}.pill.sell{background:#4a1a1a;color:#f56565}
 .repcard .rm{color:#8fa3b8;font-size:12px;margin-top:8px}
 .scrollx{overflow-x:auto}
-@media(max-width:860px){.kpis{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}h1{font-size:26px}.repgrid{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}.page{padding:18px 14px 50px}}
+@media(max-width:860px){.kpis{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}h1{font-size:26px}.repgrid{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}.page{padding:18px 14px 50px}.donutwrap{flex-direction:column;align-items:center}.donutwrap svg{width:100%;max-width:230px;height:auto}.legend{min-width:0;width:100%}.kpi b{font-size:22px}}
 </style>
 </head>
 <body>
@@ -115,10 +117,6 @@ th.sortable:hover{color:#fff}
 <div class="card"><h2>Attribution — today's P&amp;L</h2><h3>Top contributors</h3><div id="attrUp"></div><h3>Top detractors</h3><div id="attrDn"></div><div class="note" id="attrNote"></div></div>
 </div><div>
 <div class="card"><h2>Price vs Morningstar fair value</h2><h3>Deepest discounts</h3><div class="scrollx"><table><thead><tr><th>Ticker</th><th style="text-align:right">Price</th><th style="text-align:right">Fair val</th><th style="text-align:right">Disc/Prem</th><th style="text-align:right">M★</th></tr></thead><tbody id="fvDisc"></tbody></table></div><h3>Richest premiums</h3><div class="scrollx"><table><thead><tr><th>Ticker</th><th style="text-align:right">Price</th><th style="text-align:right">Fair val</th><th style="text-align:right">Disc/Prem</th><th style="text-align:right">M★</th></tr></thead><tbody id="fvPrem"></tbody></table></div><div class="note">Live price vs Morningstar fair value (Morningstar export 52). Funds excluded — no fair value published.</div></div>
-</div></div>
-<div class="grid"><div>
-<div class="card"><h2>Morningstar quality mix</h2><h3>Stocks</h3><div id="qualStocks"></div><h3>Funds</h3><div id="qualFunds"></div><div class="note">Five 2★ stocks (AAPL, GS, V, SO, KO) are hold-for-quality positions, not add candidates.</div></div>
-<div class="card"><h2>Day movers</h2><div class="grid" style="grid-template-columns:1fr 1fr"><div><h3>Top gainers</h3><div id="moversUp"></div></div><div><h3>Top detractors</h3><div id="moversDn"></div></div></div>
 </div></div>
 <div class="grid"><div>
 <div class="card"><h2>Dividend income</h2>
@@ -193,6 +191,7 @@ th.sortable:hover{color:#fff}
 // repo's index.html, which means it is visible to the whole internet.
 // Rotate it in your Finnhub dashboard FIRST, then paste the new key here.
 const FINNHUB_KEY = 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0';
+const BUILD = 'rev5'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
@@ -424,13 +423,6 @@ function renderTop15(){
   const d = tradeable().sort(function(a,b){return a.chg-b.chg;})[0];
   document.getElementById('top15Note').textContent =
     'Day change shown at right (vs. prior close). '+g.t+' '+pct(g.chg)+' led gainers; '+d.t+' '+pct(d.chg)+' led decliners.';
-  const gu = tradeable().sort(function(a,b){return b.chg-a.chg;}).slice(0,5);
-  const gd = tradeable().sort(function(a,b){return a.chg-b.chg;}).slice(0,5);
-  document.getElementById('moversUp').innerHTML = gu.map(mrow).join('');
-  document.getElementById('moversDn').innerHTML = gd.map(mrow).join('');
-  function mrow(p){
-    return '<div class="mrow"><b>'+esc(p.t)+'</b><span class="'+cls(p.chg)+'">'+pct(p.chg)+'</span></div>';
-  }
 }
 /* ---------------- history + performance chart ---------------- */
 function loadHist(){
@@ -533,22 +525,6 @@ function renderFV(){
   document.getElementById('fvPrem').innerHTML = prem.map(row).join('');
 }
 
-/* ---------------- Morningstar quality mix (counts) ---------------- */
-function renderQualCounts(){
-  function mix(fund){
-    return ['★★★★★','★★★★','★★★','★★','★'].map(function(c){
-      const n = tradeable().filter(function(p){
-        return p.stars.replace('f','')===c && (p.stars.indexOf('f')>=0)===fund;
-      }).length;
-      const w = fund ? n/6*100 : n/12*100;
-      return '<div class="hrow"><span class="ht">'+c+'</span>'+
-        '<div class="hbar"><div class="hfill" style="width:'+w.toFixed(0)+'%"></div></div>'+
-        '<span class="hv">'+n+' '+(fund?'funds':'stocks')+'</span></div>';
-    }).join('');
-  }
-  document.getElementById('qualStocks').innerHTML = mix(false);
-  document.getElementById('qualFunds').innerHTML = mix(true);
-}
 /* ---------------- dividend dashboard ---------------- */
 function dividendData(){
   const now = new Date();
@@ -878,7 +854,6 @@ function paintAll(){
   renderPerf();
   renderAttr();
   renderFV();
-  renderQualCounts();
   renderQualWeight();
   renderEarnings();
   renderTop20();
@@ -906,6 +881,7 @@ async function refreshQuotes(){
   try{
     setStatus('Loading holdings…','');
     await loadHoldings();
+    document.getElementById('headSub').textContent += ' · build '+BUILD;
     document.getElementById('qRefresh').addEventListener('click', function(){ refreshQuotes(); });
     const needKey = !FINNHUB_KEY || FINNHUB_KEY.indexOf('PASTE_')===0;
     const c = readCache();
@@ -941,107 +917,5 @@ async function refreshQuotes(){
   }
 })();
 </script>
-
-<!-- PCC-NARRATE:START -- universal narration widget, injected by scripts/inject_narration.py.
-     Reads the page aloud via the browser's built-in Web Speech API. Idempotent: this script
-     will not inject a second copy into a file that already references speechSynthesis. -->
-<style>
-  #pcc-narrate-bar{
-    position:fixed; bottom:18px; right:18px; z-index:2147483000;
-    display:flex; align-items:center; gap:6px;
-    background:#12395B; color:#fff; border-radius:999px; padding:8px 8px;
-    box-shadow:0 8px 24px rgba(10,22,40,.35);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  }
-  #pcc-narrate-bar button{
-    background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.20); color:#fff;
-    border-radius:999px; padding:7px 12px; font-size:12px; font-weight:700; cursor:pointer;
-    display:flex; align-items:center; gap:5px; line-height:1;
-  }
-  #pcc-narrate-bar button:hover{background:rgba(255,255,255,.20);}
-  #pcc-narrate-bar button:disabled{opacity:.4; cursor:default;}
-  #pcc-narrate-bar .pcc-narrate-speed{min-width:40px; justify-content:center;}
-  #pcc-narrate-bar .pcc-narrate-label{font-size:11px; color:#bcd0ea; padding:0 4px 0 6px; white-space:nowrap;}
-  .pcc-narrate-highlight{
-    background:rgba(59,130,246,.18) !important; outline:2px solid rgba(59,130,246,.35);
-    border-radius:6px; transition:background .15s ease;
-  }
-  @media print{ #pcc-narrate-bar{display:none !important;} }
-</style>
-<div id="pcc-narrate-bar" style="display:none">
-  <button type="button" id="pcc-narrate-play" aria-label="Play">&#9654; Listen</button>
-  <button type="button" id="pcc-narrate-stop" disabled aria-label="Stop">&#9632;</button>
-  <button type="button" id="pcc-narrate-speed" class="pcc-narrate-speed" disabled aria-label="Playback speed">1x</button>
-  <span class="pcc-narrate-label" id="pcc-narrate-status"></span>
-</div>
-<script>
-(function(){
-  if (!('speechSynthesis' in window)) return;
-  var SEL = 'h1,h2,h3,h4,h5,p,li';
-  var EXCLUDE_ANCESTOR = 'table';
-  var RATES = [1, 1.25, 1.5, 0.85];
-  var bar = document.getElementById('pcc-narrate-bar');
-  var playBtn = document.getElementById('pcc-narrate-play');
-  var stopBtn = document.getElementById('pcc-narrate-stop');
-  var speedBtn = document.getElementById('pcc-narrate-speed');
-  var statusEl = document.getElementById('pcc-narrate-status');
-  var nodes = [], idx = 0, rateIdx = 0, playing = false;
-
-  function collect(){
-    var all = Array.prototype.slice.call(document.querySelectorAll(SEL));
-    var seen = [];
-    return all.filter(function(el){
-      if (el.closest(EXCLUDE_ANCESTOR)) return false;
-      if (el.closest('#pcc-narrate-bar')) return false;
-      var text = (el.innerText || '').trim();
-      if (!text) return false;
-      var prev = seen[seen.length - 1];
-      if (prev && prev.contains(el)) return false;
-      seen.push(el);
-      return true;
-    });
-  }
-  function clearHighlight(){
-    var h = document.querySelector('.pcc-narrate-highlight');
-    if (h) h.classList.remove('pcc-narrate-highlight');
-  }
-  function setStatus(){ statusEl.textContent = nodes.length ? (idx + 1) + ' / ' + nodes.length : ''; }
-  function speakNext(){
-    if (idx >= nodes.length) { stopAll(); return; }
-    var el = nodes[idx];
-    var text = el.innerText.trim();
-    clearHighlight();
-    el.classList.add('pcc-narrate-highlight');
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setStatus();
-    var u = new SpeechSynthesisUtterance(text);
-    u.rate = RATES[rateIdx];
-    u.onend = function(){ if (playing) { idx++; speakNext(); } };
-    window.speechSynthesis.speak(u);
-  }
-  function play(){
-    if (!nodes.length) nodes = collect();
-    if (!nodes.length) return;
-    playing = true;
-    playBtn.innerHTML = '&#9208; Pause';
-    stopBtn.disabled = false;
-    speedBtn.disabled = false;
-    if (!window.speechSynthesis.speaking) speakNext();
-    else window.speechSynthesis.resume();
-  }
-  function pause(){ playing = false; window.speechSynthesis.pause(); playBtn.innerHTML = '&#9654; Resume'; }
-  function stopAll(){
-    playing = false; window.speechSynthesis.cancel(); idx = 0; clearHighlight();
-    playBtn.innerHTML = '&#9654; Listen'; stopBtn.disabled = true; speedBtn.disabled = true; statusEl.textContent = '';
-  }
-  playBtn.addEventListener('click', function(){ if (playing) pause(); else play(); });
-  stopBtn.addEventListener('click', stopAll);
-  speedBtn.addEventListener('click', function(){ rateIdx = (rateIdx + 1) % RATES.length; speedBtn.textContent = RATES[rateIdx] + 'x'; });
-  window.addEventListener('beforeunload', function(){ window.speechSynthesis.cancel(); });
-  bar.style.display = 'flex';
-})();
-</script>
-<!-- PCC-NARRATE:END -->
-
 </body>
 </html>
