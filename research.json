@@ -1,1 +1,144 @@
-{"reports":[{"date":"2026-09-22","file":"avgo-fundamental-analysis.html","kind":"company","rating":"BUY","target":"$505","ticker":"AVGO"},{"date":"2026-09-22","file":"gev-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$1,100","ticker":"GEV"},{"date":"2026-09-22","file":"nvda-fundamental-analysis.html","kind":"company","rating":"BUY","target":"$328","ticker":"NVDA"},{"date":"2026-09-22","file":"tsm-fundamental-analysis.html","kind":"company","rating":"BUY","target":"$530","ticker":"TSM"},{"date":"2026-09-22","file":"uber-fundamental-analysis.html","kind":"company","rating":"BUY","target":"$105","ticker":"UBER"},{"date":"2026-09-25","file":"unh-fundamental-analysis-2026-09-25.html","kind":"company","rating":"BUY","target":"$475","ticker":"UNH"},{"date":"Sep 2026","file":"asml-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$1,950","ticker":"ASML"},{"date":"2026-09-22","file":"crm-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$276","ticker":"CRM"},{"date":"2026-09-22","file":"gehc-fundamental-analysis.html","kind":"company","rating":"BUY","target":"$84","ticker":"GEHC"},{"date":"2026-09-23","file":"nflx-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$88","ticker":"NFLX"},{"date":"2026-09-22","file":"qcom-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$205","ticker":"QCOM"},{"date":"2026-09-24","file":"ai-stack-investments-2026-09-24.html","kind":"thematic","rating":null,"sub":"Thematic","target":null,"ticker":null,"title":"AI Stack Investments"},{"date":"2026-09-22","file":"capital-allocation-ranking-2026-09-22.html","kind":"thematic","rating":null,"sub":"Ranking","target":null,"ticker":null,"title":"Capital Allocation Ranking"},{"date":"2026-09-23","file":"portfolio-ranking-report-2026-09-23.html","kind":"thematic","rating":null,"sub":"Ranking","target":null,"ticker":null,"title":"Portfolio Ranking Report"},{"date":"2026-09-23","file":"grid-vis-sector-report-2026-09-23.html","kind":"thematic","rating":null,"sub":"Sector","target":null,"ticker":null,"title":"GRID Industrial Sector"},{"date":"2026-09-25","file":"weekly-market-intelligence-2026-09-25.html","kind":"market","rating":null,"sub":"Market Intelligence","target":null,"ticker":null,"title":"Weekly Market Intelligence — Week Ended Sep 25, 2026"}],"updated":"2026-09-26"}
+{
+  "reports": [
+    {
+      "date": "2026-09-22",
+      "file": "avgo-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "BUY",
+      "target": "$505",
+      "ticker": "AVGO"
+    },
+    {
+      "date": "2026-09-22",
+      "file": "gev-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "HOLD",
+      "target": "$1,100",
+      "ticker": "GEV"
+    },
+    {
+      "date": "2026-09-22",
+      "file": "nvda-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "BUY",
+      "target": "$328",
+      "ticker": "NVDA"
+    },
+    {
+      "date": "2026-09-26",
+      "file": "tsm-fundamental-analysis-2026-09-26.html",
+      "kind": "company",
+      "rating": "BUY",
+      "target": "$545",
+      "ticker": "TSM",
+      "summary": "Update: BUY maintained, target raised to $545 (~21% upside) on higher FY2027E consensus (~$21.8); August revenue record NT$514.8B (+53% y/y); Q3 tracking with room to spare; 2nm ramp steepening; price below the $460 add line."
+    },
+    {
+      "date": "2026-09-22",
+      "file": "uber-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "BUY",
+      "target": "$105",
+      "ticker": "UBER"
+    },
+    {
+      "date": "2026-09-25",
+      "file": "unh-fundamental-analysis-2026-09-25.html",
+      "kind": "company",
+      "rating": "BUY",
+      "target": "$475",
+      "ticker": "UNH"
+    },
+    {
+      "date": "Sep 2026",
+      "file": "asml-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "HOLD",
+      "target": "$1,950",
+      "ticker": "ASML"
+    },
+    {
+      "date": "2026-09-22",
+      "file": "crm-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "HOLD",
+      "target": "$276",
+      "ticker": "CRM"
+    },
+    {
+      "date": "2026-09-22",
+      "file": "gehc-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "BUY",
+      "target": "$84",
+      "ticker": "GEHC"
+    },
+    {
+      "date": "2026-09-23",
+      "file": "nflx-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "HOLD",
+      "target": "$88",
+      "ticker": "NFLX"
+    },
+    {
+      "date": "2026-09-22",
+      "file": "qcom-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "HOLD",
+      "target": "$205",
+      "ticker": "QCOM"
+    },
+    {
+      "date": "2026-09-24",
+      "file": "ai-stack-investments-2026-09-24.html",
+      "kind": "thematic",
+      "rating": null,
+      "sub": "Thematic",
+      "target": null,
+      "ticker": null,
+      "title": "AI Stack Investments"
+    },
+    {
+      "date": "2026-09-22",
+      "file": "capital-allocation-ranking-2026-09-22.html",
+      "kind": "thematic",
+      "rating": null,
+      "sub": "Ranking",
+      "target": null,
+      "ticker": null,
+      "title": "Capital Allocation Ranking"
+    },
+    {
+      "date": "2026-09-23",
+      "file": "portfolio-ranking-report-2026-09-23.html",
+      "kind": "thematic",
+      "rating": null,
+      "sub": "Ranking",
+      "target": null,
+      "ticker": null,
+      "title": "Portfolio Ranking Report"
+    },
+    {
+      "date": "2026-09-23",
+      "file": "grid-vis-sector-report-2026-09-23.html",
+      "kind": "thematic",
+      "rating": null,
+      "sub": "Sector",
+      "target": null,
+      "ticker": null,
+      "title": "GRID Industrial Sector"
+    },
+    {
+      "date": "2026-09-25",
+      "file": "weekly-market-intelligence-2026-09-25.html",
+      "kind": "market",
+      "rating": null,
+      "sub": "Market Intelligence",
+      "target": null,
+      "ticker": null,
+      "title": "Weekly Market Intelligence \u2014 Week Ended Sep 25, 2026"
+    }
+  ],
+  "updated": "2026-09-26"
+}

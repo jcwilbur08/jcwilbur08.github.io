@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TSMC (TSM) — Fundamental Analysis Update — 26 Sep 2026</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+  * { box-sizing: border-box; }
+  body { font-family: Georgia, 'Times New Roman', serif; color: #1a1a1a; line-height: 1.55; margin: 0; padding: 0 8px; font-size: 15px; }
+  .page { max-width: 900px; margin: 0 auto; }
+  .cover { background: linear-gradient(135deg,#172746 0%,#263e72 62%,#5068a3 100%); color: #fff; padding: 64px 56px 52px; position: relative; overflow: hidden; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .cover .kicker { font-family: Arial, Helvetica, sans-serif; text-transform: uppercase; letter-spacing: 3px; font-size: 12px; color: #c9d4ea; margin-bottom: 12px; }
+  .cover h1 { font-size: 40px; margin: 0 0 6px 0; line-height: 1.15; }
+  .cover h2 { font-size: 20px; font-weight: normal; color: #dbe3f4; margin: 0 0 24px 0; }
+  .rating-box { display: flex; gap: 16px; margin: 24px 0; font-family: Arial, Helvetica, sans-serif; flex-wrap: wrap; }
+  .rating { background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.35); color: #fff; padding: 14px 22px; border-radius: 6px; text-align: center; }
+  .rating .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; opacity: .85; }
+  .rating .val { font-size: 30px; font-weight: bold; }
+  .tgt { background: #fff; border: 1px solid #d5deed; padding: 14px 22px; border-radius: 6px; text-align: center; }
+  .tgt .lbl { font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: #555; }
+  .tgt .val { font-size: 30px; font-weight: bold; color: #0b3d91; }
+  .tgt .sub { font-size: 12px; color: #555; }
+  .meta { font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #dbe3f4; margin-top: 18px; }
+  .meta strong { color: #fff; }
+  h2.sec { font-family: Arial, Helvetica, sans-serif; font-size: 21px; color: #0b3d91; border-bottom: 2px solid #0b3d91; padding-bottom: 6px; margin: 38px 0 14px 0; page-break-after: avoid; }
+  h3.sub { font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #123; margin: 22px 0 8px 0; page-break-after: avoid; }
+  p { margin: 8px 0; }
+  ul, ol { margin: 8px 0 8px 20px; padding: 0; }
+  li { margin: 5px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 13.5px; font-family: Arial, Helvetica, sans-serif; page-break-inside: avoid; }
+  th { background: #0b3d91; color: #fff; text-align: left; padding: 8px 10px; }
+  td { padding: 7px 10px; border-bottom: 1px solid #ddd; }
+  tr:nth-child(even) td { background: #f7f9fc; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .callout { background: #eef3fb; border-left: 4px solid #0b3d91; padding: 12px 16px; margin: 16px 0; font-size: 14.5px; }
+  .warn { background: #fff8e6; border-left: 4px solid #c98a00; padding: 12px 16px; margin: 16px 0; font-size: 14px; }
+  .fn { font-size: 12.5px; color: #555; }
+  .tag { font-family: Arial, Helvetica, sans-serif; font-size: 10.5px; background: #e3e9f2; color: #0b3d91; border-radius: 3px; padding: 1px 6px; margin-left: 4px; white-space: nowrap; }
+  .legend { font-family: Arial, Helvetica, sans-serif; font-size: 12.5px; color: #444; background: #f4f6fa; padding: 10px 14px; border-radius: 5px; margin: 14px 0; }
+  .toc { font-family: Arial, Helvetica, sans-serif; font-size: 14px; margin: 18px 0; }
+  .toc li { margin: 4px 0; }
+  .footer { margin-top: 44px; padding-top: 14px; border-top: 2px solid #0b3d91; font-size: 12px; color: #666; font-family: Arial, Helvetica, sans-serif; }
+  .appendix h2.sec { color: #333; border-color: #999; }
+  a { color: #0b3d91; }
+  @media print { .cover { break-after: page; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="cover">
+  <div class="kicker">Institutional Equity Research &middot; Senior Financial Analyst</div>
+  <h1>Taiwan Semiconductor Manufacturing Co.</h1>
+  <h2>NYSE: TSM (ADR) &middot; TWSE: 2330 &middot; Fundamental Analysis Update &middot; 26 September 2026</h2>
+  <div class="rating-box">
+    <div class="rating"><div class="lbl">Rating</div><div class="val">BUY</div><div class="lbl" style="margin-top:6px">maintained</div></div>
+    <div class="tgt"><div class="lbl">12-Month ADR Target</div><div class="val">$545</div><div class="sub">~21% upside from $450.61 reference close &middot; raised from $530</div></div>
+  </div>
+  <div class="meta">
+    <strong>Prepared for:</strong> Cam, CIO / Portfolio Manager &nbsp;&middot;&nbsp; <strong>Position:</strong> 24 shares (~$10,815; 0.64% of portfolio)<br>
+    <strong>Basis:</strong> USD, NYSE American Depositary Receipts (1 ADR = 5 ordinary shares) &nbsp;&middot;&nbsp; <strong>Reference price:</strong> $450.61, 25 Sep 2026 close (live dashboard quote)
+  </div>
+</div>
+
+<div class="toc">
+  <strong>Contents</strong>
+  <ol>
+    <li>Executive Summary &amp; Investment Thesis</li>
+    <li>Business Overview &amp; Revenue Mix</li>
+    <li>Financial Performance</li>
+    <li>Guidance &amp; Outlook</li>
+    <li>Balance Sheet, Cash Flow &amp; Capital Allocation</li>
+    <li>Technology &amp; Manufacturing Footprint</li>
+    <li>Competitive Position</li>
+    <li>Risks</li>
+    <li>Valuation</li>
+    <li>Catalysts &amp; What to Watch</li>
+    <li>Portfolio Fit</li>
+    <li>Appendices: Sources &middot; Glossary &middot; Disclosures</li>
+  </ol>
+  <div class="legend"><strong>Figure labels:</strong> <span class="tag">R</span> company-reported &nbsp; <span class="tag">C</span> analyst-calculated from reported figures &nbsp; <span class="tag">E</span> consensus/broker/industry estimate (secondary) &nbsp; <span class="tag">O</span> analyst opinion/judgment. All figures in USD unless noted; NT$ figures converted at stated rates. Sources are consolidated in Appendix A — no inline citations.</div>
+</div>
+
+<h2 class="sec">1. Executive Summary &amp; Investment Thesis</h2>
+
+<p>This report updates the 22 September 2026 initiation. Four days later the thesis is intact and the numbers have, if anything, firmed: August revenue printed a record NT$514.81B (+53.3% y/y) <span class="tag">R</span>, Q3 is tracking with room to spare against guidance, and sell-side FY2027 estimates have drifted up (Erste to $21.91; MarketBeat $21.72) <span class="tag">E</span>.</p>
+
+<p>TSMC remains the world's dominant pure-play semiconductor foundry — a <strong>72.5% global foundry revenue share</strong> in Q2 2026 (TrendForce) <span class="tag">E</span> — and the toll road on AI compute: 77% of wafer revenue from 7nm-and-below nodes, high-performance computing at 66% of sales and growing 20% quarter-on-quarter, and 2nm in commercial production with a steep H2 ramp <span class="tag">R</span>.</p>
+
+<p><strong>Thesis</strong> <span class="tag">O</span>: The foundry moat is widening, not narrowing. Samsung's share has roughly halved since early 2023 while TSMC's hit a record; 2nm pricing power is demonstrable (67.7% gross margin while funding a $60–64B capex year internally); and the demand signal — ~$730B of 2026 hyperscaler capex, raised three times this year by Alphabet alone — remains the strongest external validation of the capacity build. The record Q2 print was flattered ~9% by a one-off Vanguard share gain, and the H2 margin path is genuinely tougher (3–4pp of N2 ramp dilution plus 2–3pp of overseas-fab dilution, both company-guided) <span class="tag">R</span>. But at 27.2× FY2026E compressing to ~20.7× FY2027E on ~30% forward EPS growth, the stock is priced for execution, not perfection.</p>
+
+<div class="warn"><strong>The $50B question</strong> <span class="tag">O</span>: the "slightly more than 40%" full-year revenue guide implies <strong>≥$171.4B</strong> <span class="tag">C</span> — which needs roughly <strong>$50B in Q4</strong> after H1's $76.1B and the Q3 guide midpoint of $45.2B <span class="tag">C</span>. That is ~11% above Q3's guide and well above the $167.1B sell-side consensus <span class="tag">E</span>. August already printed at the required monthly run-rate (~$16.1B), so the guide is achievable — but it leaves no room for a soft Q4. Estimate revisions into the October 15 print are the near-term tell.</div>
+
+<div class="callout"><strong>Bottom line:</strong> Maintain <strong>BUY</strong>; raise the 12-month ADR target to <strong>$545</strong> (~21% upside from $450.61), anchored on the same <strong>25× FY2027E consensus EPS of ~$21.8</strong> framework as the prior report <span class="tag">C</span>/<span class="tag">E</span>. The $15 target raise is purely estimate-driven (consensus FY2027E moved $21.20 → ~$21.8); the multiple framework is unchanged. At $450.61 the stock sits <strong>below the $460 add line</strong> — the standing accumulation thesis is actionable here.</div>
+
+<div class="callout"><strong>Portfolio note:</strong> Cam holds 24 shares (~$10,815, 0.64% of the ~$1.70M portfolio). Morningstar rates TSM 4 stars with a $534 fair value (Sept 2026 export) — our $545 target sits modestly above both Morningstar and the $523 sell-side average, reflecting the 2nm pricing-power premium.</div>
+
+<h2 class="sec">2. Business Overview &amp; Revenue Mix</h2>
+
+<p>Founded in 1987, TSMC pioneered the pure-play foundry model: it manufactures chips designed by others and competes with no customer's products — the "trust model" underpinning its ecosystem lock-in <span class="tag">R</span>. In 2025 it deployed 305 distinct process technologies and manufactured 12,682 products for 534 customers <span class="tag">R</span>.</p>
+
+<h3 class="sub">Q2 2026 revenue mix (company-reported)</h3>
+<table>
+  <tr><th>By technology node</th><th class="num">% of wafer revenue</th><th>By platform</th><th class="num">% of net revenue</th></tr>
+  <tr><td>2nm (first commercial quarter)</td><td class="num">3%</td><td>High-Performance Computing</td><td class="num">66% (+20% q/q)</td></tr>
+  <tr><td>3nm</td><td class="num">30%</td><td>Smartphone</td><td class="num">22% (−4% q/q)</td></tr>
+  <tr><td>5nm</td><td class="num">33%</td><td>IoT</td><td class="num">5% (+4%)</td></tr>
+  <tr><td>7nm</td><td class="num">11%</td><td>Automotive</td><td class="num">4% (+15%)</td></tr>
+  <tr><td>16/20nm and older</td><td class="num">23%</td><td>DCE / Other</td><td class="num">3%</td></tr>
+</table>
+<p class="fn">Advanced nodes (≤7nm): <strong>77%</strong> of wafer revenue <span class="tag">R</span>. By geography: North America 78% · Asia Pacific 8% · China 6% · Japan 4% · EMEA 4% <span class="tag">R</span>.</p>
+<p>TSMC does not disclose customer-level revenue splits. Apple, NVIDIA, AMD, Broadcom and Qualcomm were identified by TSMC as major US customers in its March 2025 Arizona investment announcement <span class="tag">R</span> — finer revenue attribution (e.g., NVIDIA ~22%) is industry estimation and should be treated as unverified <span class="tag">E</span>. The smartphone cycle read-through for 2026 is Apple's September 2026 launch (iPhone 18 Pro and foldable iPhone), with the A20 Pro expected on TSMC 2nm — a direct N2 demand driver <span class="tag">E</span>.</p>
+
+<h2 class="sec">3. Financial Performance</h2>
+
+<h3 class="sub">Quarterly results <span class="tag">R</span> (NT$ billions unless noted)</h3>
+<table>
+  <tr><th></th><th class="num">Q2 2025</th><th class="num">Q1 2026</th><th class="num">Q2 2026</th><th class="num">Q2 y/y</th></tr>
+  <tr><td>Revenue (NT$B)</td><td class="num">933.79</td><td class="num">1,134.10</td><td class="num">1,270.38</td><td class="num">+36.0%</td></tr>
+  <tr><td>Revenue (US$B)</td><td class="num">30.07</td><td class="num">35.90</td><td class="num">40.20</td><td class="num">+33.7%</td></tr>
+  <tr><td>Gross margin</td><td class="num">58.6%</td><td class="num">66.2%</td><td class="num">67.7%</td><td class="num">+9.1 pp</td></tr>
+  <tr><td>Operating margin</td><td class="num">49.6%</td><td class="num">58.1%</td><td class="num">60.3%</td><td class="num">+10.7 pp</td></tr>
+  <tr><td>Net income (NT$B)</td><td class="num">398.27</td><td class="num">572.48</td><td class="num">706.56</td><td class="num">+77.4%</td></tr>
+  <tr><td>Net margin</td><td class="num">42.7%</td><td class="num">50.5%</td><td class="num">55.6%</td><td class="num">+12.9 pp</td></tr>
+  <tr><td>Diluted EPS (NT$/share)</td><td class="num">15.36</td><td class="num">22.08</td><td class="num">27.25</td><td class="num">+77.4%</td></tr>
+  <tr><td>Diluted EPS (US$/ADR)</td><td class="num">2.47</td><td class="num">3.49</td><td class="num">4.31</td><td class="num">—</td></tr>
+  <tr><td>Operating cash flow (NT$B)</td><td class="num">497.07</td><td class="num">698.97</td><td class="num">783.36</td><td class="num">—</td></tr>
+  <tr><td>Capex (NT$B / US$B)</td><td class="num">297.22 / 9.6</td><td class="num">350.76 / 11.10</td><td class="num">496.00 / 15.70</td><td class="num">—</td></tr>
+  <tr><td>Company-defined FCF (NT$B)</td><td class="num">199.85</td><td class="num">348.21</td><td class="num">287.36</td><td class="num">—</td></tr>
+</table>
+
+<div class="warn"><strong>Quality-of-earnings notes:</strong> (1) Q2 2026 included <strong>NT$63.2B of disposal/mark-to-market gains on Vanguard International Semiconductor shares — ~9% of net income was non-recurring</strong> <span class="tag">R</span>/<span class="tag">C</span>. Ex-VIS, net margin was ~50.6% and implied ADR EPS ~$3.92 <span class="tag">C</span>. (2) The effective tax rate rose to 18.1% (from 16.8% in Q1) on tax for undistributed retained earnings <span class="tag">R</span>. (3) Gross-margin expansion was "primarily due to cost improvement efforts and higher capacity utilization, <em>partially offset by margin dilution from overseas fabs</em>" — the company explicitly flags overseas-fab dilution <span class="tag">R</span>. (4) Days of inventory rose to 87 (+7 q/q), "primarily due to N2 ramp" — working-capital build ahead of 2nm volume; monitor <span class="tag">R</span>/<span class="tag">O</span>.</div>
+
+<h3 class="sub">High-frequency tracker: monthly revenue <span class="tag">R</span></h3>
+<table>
+  <tr><th></th><th class="num">Revenue (NT$B)</th><th class="num">m/m</th><th class="num">y/y</th></tr>
+  <tr><td>July 2026</td><td class="num">467.58</td><td class="num">+5.6%</td><td class="num">+44.7%</td></tr>
+  <tr><td><strong>August 2026</strong></td><td class="num"><strong>514.81</strong></td><td class="num"><strong>+10.1%</strong></td><td class="num"><strong>+53.3%</strong></td></tr>
+  <tr><td>Jan–Aug 2026 cumulative</td><td class="num">3,386.87</td><td class="num">—</td><td class="num">+39.3%</td></tr>
+</table>
+<p class="fn">August was the first NT$500B+ month on record <span class="tag">R</span>. July + August = NT$982.39B <span class="tag">C</span> — see Section 4 for the Q3 tracking math.</p>
+
+<h3 class="sub">Trailing twelve months to 30 June 2026 <span class="tag">C</span></h3>
+<table>
+  <tr><th>Metric</th><th class="num">TTM value</th></tr>
+  <tr><td>Revenue</td><td class="num">NT$4,440.5B ≈ <strong>US$142.9B</strong></td></tr>
+  <tr><td>Gross profit / margin</td><td class="num">NT$2,852.4B / <strong>64.2%</strong></td></tr>
+  <tr><td>Operating income / margin</td><td class="num">NT$2,490.1B / <strong>56.1%</strong></td></tr>
+  <tr><td>Net income / margin</td><td class="num"><strong>NT$2,238.7B</strong> (≈US$72B) / <strong>50.4%</strong></td></tr>
+  <tr><td>Diluted EPS</td><td class="num">NT$86.28/share ≈ <strong>US$13.86/ADR</strong></td></tr>
+  <tr><td>EBITDA (op. income + D&amp;A)</td><td class="num">NT$3,179.0B ≈ <strong>US$100.6B</strong></td></tr>
+  <tr><td>Operating cash flow</td><td class="num"><strong>NT$2,634.7B</strong></td></tr>
+  <tr><td>Capex</td><td class="num"><strong>NT$1,491.1B</strong> (≈US$47.2B; 33.6% of sales)</td></tr>
+  <tr><td>Free cash flow</td><td class="num"><strong>NT$1,143.6B</strong> (≈US$36.2B; 25.8% margin)</td></tr>
+</table>
+<p class="fn">Computed as FY2025 + H1 2026 − H1 2025 from company filings. Cross-check: sum of company-reported quarterly FCF (Q3 2025 139.38 + Q4 2025 368.60 + Q1 2026 348.21 + Q2 2026 287.36) = NT$1,143.55B ✓. TTM US$13.86/ADR EPS corroborated by published secondary TTM EPS of $13.86.</p>
+<h2 class="sec">4. Guidance &amp; Outlook</h2>
+<ul>
+  <li><strong>Q3 2026</strong> <span class="tag">R</span> (July 16): revenue <strong>US$44.6–45.8B</strong>; gross margin 65–67%; operating margin 56–58%; based on NT$32.0/US$. Management cites "continued strong demand for our leading-edge process technologies, including the steep ramp-up of our 2-nanometer technology." No reiteration or revision since — the quiet period begins October 5.</li>
+  <li><strong>Q3 tracking</strong> <span class="tag">C</span>: July + August = <strong>NT$982.39B</strong>. Against guidance of NT$1,427.2–1,465.6B (at NT$32), September must print <strong>NT$444.8–483.2B</strong> (midpoint NT$464.0B) — essentially flat vs July and ~10% below August's record. Tracking with room to spare <span class="tag">O</span>.</li>
+  <li><strong>FY2026 revenue:</strong> "slightly more than 40%" growth in USD terms (raised from "more than 30%") <span class="tag">R</span> → implies <strong>≥US$171.4B</strong> <span class="tag">C</span> (vs US$122.42B in 2025).</li>
+  <li><strong>FY2026 capex: US$60–64B</strong> (raised from US$52–56B) <span class="tag">R</span>; ~70–80% to advanced processes, ~10% specialty, 10–20% advanced packaging/testing/mask. H1 2026 capex was US$26.80B <span class="tag">R</span> → H2 run-rate roughly US$33–37B <span class="tag">C</span>.</li>
+  <li><strong>Margin headwinds (company-guided)</strong> <span class="tag">R</span>: N2 ramp dilutes gross margin by <strong>3–4pp in H2 2026</strong>; overseas fabs dilute by <strong>2–3pp in early stages, widening to 3–4pp</strong> in later stages. N3 gross margin is expected to reach the corporate average in H2 2026, a partial offset.</li>
+</ul>
+<div class="warn"><strong>Consensus tension</strong> <span class="tag">O</span>: sell-side FY2026 revenue consensus is US$167.1B (+36.5%) <span class="tag">E</span> — <em>below</em> the ~US$171.4B implied by the guide. H1 ($76.1B) plus the Q3 guide midpoint ($45.2B) leaves ~$50B needed in Q4 <span class="tag">C</span>. Either consensus has not caught up, or the guide embeds a very strong Q4. August's monthly run-rate (~$16.1B) already matches what Q4 needs on average — so the guide is credible, but it demands the N2 ramp and AI demand stay hot through year-end. Watch estimate revisions into the print.</div>
+
+<h2 class="sec">5. Balance Sheet, Cash Flow &amp; Capital Allocation</h2>
+<p><strong>Position at 30 June 2026</strong> <span class="tag">R</span> (Q2 2026 management report): cash &amp; marketable securities NT$3,518.01B (~US$110B per CFO); ending cash NT$3,134.22B; interest-bearing debt NT$1,031.68B → <strong>net cash reserves NT$2,486.33B</strong> (~US$78.7B). Current ratio 2.5×; equity 69.1% of assets. H1 operating cash flow covered PPE payments 1.75× <span class="tag">C</span>; H1 FCF ≈ NT$635.6B (~US$20.1B) <span class="tag">C</span>.</p>
+<ul>
+  <li><strong>Capex</strong> is the single largest use of cash: FY2026 guide US$60–64B <span class="tag">R</span>; TTM capex was 33.6% of sales <span class="tag">C</span>. The balance sheet funds the build internally — no equity needed.</li>
+  <li><strong>Dividend</strong> <span class="tag">R</span>: the Q1 2026 dividend of NT$7.00000137/common share went ex-div <strong>September 16</strong> (≈$1.10745/ADR) and is <strong>payable October 8, 2026</strong>. The next ADR dividend is ex-div <strong>December 10, 2026</strong> ($1.08544), payable January 7, 2027. Trailing-four ADR payouts total $3.7811 → <strong>0.84% yield</strong> at $450.61 <span class="tag">C</span>. Management reiterates "a sustainable and steadily increased cash dividend per share."</li>
+  <li><strong>Buybacks:</strong> no open-market buyback program found in the last twelve months of company disclosures — balance-sheet strength is retained for the capex cycle. Treat as unverified-negative; do not assert none exists <span class="tag">O</span>.</li>
+  <li><strong>Other:</strong> sold 8.1% of Vanguard International Semiconductor (May 15, 2026) <span class="tag">R</span>; board approved up to NT$60B domestic bond issuance and a US$10B capital injection into TSMC Global <span class="tag">R</span>.</li>
+</ul>
+
+<h2 class="sec">6. Technology &amp; Manufacturing Footprint</h2>
+<ul>
+  <li><strong>2nm (N2):</strong> first revenue in Q2 2026 — 3% of wafer revenue <span class="tag">R</span>. Management calls the N2 family "another large and long-lasting process node," with N2P and A16 enhancements to follow; "steep ramp-up" expected in H2 2026 <span class="tag">R</span>. End-2026 capacity is industry-estimated at ~90–130k wafers/month (conflicting estimates — treat as rough) <span class="tag">E</span>. Demand confirmation: Qualcomm's Snapdragon 8 Elite Gen 6 (unveiled Sept 22) is the first mass-market 2nm mobile chip <span class="tag">E</span>.</li>
+  <li><strong>A16 (1.6nm-class):</strong> TSMC's first backside-power (Super Power Rail) node; company guidance is production-ready in H2 2026 <span class="tag">R</span>; Taiwanese media now point to <strong>mass production in Q4 2026</strong>, meaningful volume in 2027 <span class="tag">E</span>. Disclosed gains: +8–10% speed or −15–20% power vs N2P <span class="tag">R</span>. NVIDIA is reported to have booked A16 capacity for next-gen AI GPUs (single source) <span class="tag">E</span>.</li>
+  <li><strong>A14 (1.4nm-class):</strong> customer tape-outs are <strong>ahead of schedule</strong> (reported Sept 23) <span class="tag">E</span>; +10–15% performance or −25–30% power vs N2; pre-production 2027, volume production <strong>2028</strong>. A13 debuted at the April 2026 North America Technology Symposium <span class="tag">R</span>.</li>
+  <li><strong>Arizona:</strong> Fab 1 in volume production (4nm) since Q4 2024 <span class="tag">R</span>; Fab 2 tool move-in through 2026 with volume production pulled forward to H2 2027 (3nm); Fab 3 (N2/A16) under construction; first on-site advanced-packaging line being readied <span class="tag">E</span>. Total US investment framework now <strong>~US$265B</strong> after the additional US$100B announced alongside Q2 results <span class="tag">R</span>. CFO (July 2026): "very happy with the progress in Arizona."</li>
+  <li><strong>Japan (JASM Kumamoto):</strong> Fab 1 in volume production since end-2024 <span class="tag">R</span>; Fab 2 construction started Oct 2025, reportedly upgraded toward 3nm with a 2028 production target <span class="tag">E</span>.</li>
+  <li><strong>Germany (ESMC Dresden):</strong> 28/22nm planar + 16/12nm FinFET; 40,000 300mm wafers/month; equipment move-in H2 2026, production targeted late 2027 <span class="tag">E</span>.</li>
+  <li><strong>Advanced packaging (CoWoS):</strong> industry estimates put current capacity at ~75–80k wafers/month rising to ~120–130k by end-2026 (single source — rough) <span class="tag">E</span>; advanced packaging is estimated at slightly over 10% of revenue heading to low-teens in 2026 <span class="tag">E</span>. TSMC broke ground on a Kaohsiung packaging-validation park (Sept 21, 2026), operations targeted Q4 2029 <span class="tag">E</span>. The 10–20% of 2026 capex allocated to advanced packaging/testing/mask confirms its strategic weight <span class="tag">R</span>.</li>
+  <li><strong>Ecosystem:</strong> Cadence expanded its TSMC partnership (Sept 24) — A14/N3P/N2P design-tool certification and 3DFabric IP — a leading indicator of customer design-in at the next nodes <span class="tag">E</span>.</li>
+</ul>
+
+<h2 class="sec">7. Competitive Position</h2>
+<p><strong>Foundry market share (TrendForce, Q2 2026)</strong> <span class="tag">E</span>: TSMC <strong>72.5%</strong> (record) · Samsung 5.9% · SMIC 5.4% · UMC 3.9% · GlobalFoundries 3.2%. Top-10 combined revenue US$53.49B, +11.5% q/q (record). Samsung's share has roughly halved since Q1 2023 (12.4% → 5.9%); SMIC is closing on second place.</p>
+<p><strong>Moat sources</strong> <span class="tag">O</span>: (1) process-technology lead — the only foundry shipping 2nm at scale, with A16 and A14 roadmaped; (2) scale/cost — 4.3M+ wafers/quarter amortize R&amp;D (NT$73.1B in Q2 alone <span class="tag">R</span>) and the capex base; (3) ecosystem lock-in — 534 customers, 12,682 products, 305 process technologies <span class="tag">R</span>; (4) the trust model — a pure-play foundry with no competing chip products. At 72.5% share, TSMC's quarterly foundry revenue exceeds Samsung Foundry's by more than 12× — the market is effectively a monopoly at the leading edge.</p>
+<div class="warn"><strong>Competitive watch — Samsung's 2nm is stirring</strong> <span class="tag">E</span>/<span class="tag">O</span>: Samsung's SF2 yields are reported (leaks) to have recovered from ~50% in late 2025 to ~60%+ in Q1 2026 and possibly ~80% by early September. Tesla's AI5 began prototype production at Samsung's Taylor, TX fab on <strong>September 15, 2026</strong> (mass-production verification targeted end-2026; $16.5B deal through 2033), and <strong>OpenAI added Samsung Foundry to its silicon program (Sept 10)</strong> as a TSMC second source. Tesla also dual-fabs at TSMC Arizona. None of this has moved TrendForce share data — but it is the first credible leading-edge share threat in two years. Samsung postponed its 1.4nm-class node from 2027 to 2029 <span class="tag">E</span>, conceding the roadmap race. Intel's 18A entered high-volume manufacturing in January 2026 (Panther Lake) with external foundry volume still exploratory — no share impact.</div>
+<h2 class="sec">8. Risks</h2>
+<ol>
+  <li><strong>Taiwan geographic concentration</strong> <span class="tag">O</span>: the leading-edge base remains in Taiwan; cross-strait escalation is the canonical tail risk. August saw 125 PLA ADIZ incursions — less than half the August 2024/2025 tempo — and Taiwan proposed a record NT$1T (~$31B) 2027 defense budget <span class="tag">E</span>. Chronic gray-zone pressure, no acute crisis — but it is the stock's core existential risk. Mitigants in progress (Arizona/Japan/Germany) currently <em>dilute</em> margins (company-stated <span class="tag">R</span>) and will take years to reach Taiwan cost structure.</li>
+  <li><strong>US trade policy — Section 232</strong> <span class="tag">E</span>: Proclamation 11002 (Jan 14, 2026) imposed a narrowly scoped <strong>25% tariff on specified advanced computing chips</strong> (effective Jan 15, 2026), with broad carve-outs for US data centers, startups, R&amp;D and consumer electronics. A broader "Phase 2" remains in active deliberation — Commerce's September "build in America or pay" framing signals escalation risk, not a settled outcome. Separately, a 15% polysilicon tariff with minimum import prices takes effect December 4, 2026. Do not model a settled broad-based tariff — scope and timing are unresolved <span class="tag">O</span>.</li>
+  <li><strong>Export controls:</strong> US restrictions on advanced AI chips to China persist; direct China revenue was 6% in Q2 2026 (down from 9% in Q2 2025) <span class="tag">R</span> — manageable directly, but second-order customer-demand effects (NVIDIA/AMD China exposure) matter <span class="tag">O</span>.</li>
+  <li><strong>Customer concentration</strong> <span class="tag">O</span>: Apple and NVIDIA are widely believed to be the two largest customers (top two ≈36% per industry research <span class="tag">E</span>), but TSMC does not disclose splits — size single-customer risk qualitatively, not with invented precision.</li>
+  <li><strong>Capex intensity &amp; FCF:</strong> US$60–64B capex in 2026 vs ~US$36B TTM FCF — the dividend is safe (net cash; ~25% payout), but FCF conversion stays depressed until the build moderates <span class="tag">O</span>.</li>
+  <li><strong>FX:</strong> NT$ appreciation compresses reported margins (cited as a drag in 2025) <span class="tag">R</span>; Q3 2026 guide assumes NT$32.0/US$ <span class="tag">R</span> (Q2 averaged NT$31.60).</li>
+  <li><strong>Cycle risk:</strong> HPC is 66% of revenue <span class="tag">R</span> — AI-capex digestion or a smartphone downturn would hit utilization; inventory days are already rising on the N2 ramp <span class="tag">O</span>.</li>
+  <li><strong>Execution:</strong> 2nm yield/ramp cadence, Arizona Fab 2 timeline, and the H2 margin bridge (3–4pp N2 dilution + 2–3pp overseas dilution vs the 65–67% Q3 GM guide) are the near-term operational watch items <span class="tag">O</span>.</li>
+</ol>
+
+<h2 class="sec">9. Valuation</h2>
+<p class="fn"><strong>Reference:</strong> $450.61 (25 Sep 2026 close — live dashboard quote via Finnhub). ADR = 5 ordinary shares <span class="tag">R</span>; diluted shares 25,932M (Q2 2026) <span class="tag">R</span> → 5,186.4M ADR-equivalents <span class="tag">C</span>. 52-week high $479 (~6% above current <span class="tag">C</span>); YTD +48.3%, 1-yr +64.8% <span class="tag">E</span>.</p>
+<table>
+  <tr><th>Multiple</th><th class="num">Value</th><th>Basis</th></tr>
+  <tr><td>Market capitalization</td><td class="num"><strong>~$2.34T</strong></td><td>450.61 × 5,186.4M <span class="tag">C</span></td></tr>
+  <tr><td>Enterprise value</td><td class="num"><strong>~$2.26T</strong></td><td>mkt cap − ~$78.7B net cash <span class="tag">C</span></td></tr>
+  <tr><td>TTM P/E</td><td class="num"><strong>32.5×</strong></td><td>$450.61 / US$13.86 TTM EPS/ADR <span class="tag">C</span></td></tr>
+  <tr><td>FY2026E P/E</td><td class="num"><strong>27.2×</strong></td><td>$450.61 / $16.55 (Zacks) <span class="tag">C</span>/<span class="tag">E</span></td></tr>
+  <tr><td>FY2027E P/E</td><td class="num"><strong>~20.7×</strong></td><td>$450.61 / ~$21.8 (consensus range $21.7–21.9) <span class="tag">C</span>/<span class="tag">E</span></td></tr>
+  <tr><td>EV / TTM EBITDA</td><td class="num"><strong>22.4×</strong></td><td>$2,260B / US$100.6B TTM EBITDA <span class="tag">C</span></td></tr>
+  <tr><td>Price / TTM FCF</td><td class="num"><strong>64.6×</strong></td><td>$2,337B / US$36.2B TTM FCF (1.5% FCF yield) <span class="tag">C</span></td></tr>
+  <tr><td>EV / FY2026E sales</td><td class="num"><strong>13.5×</strong></td><td>$2,260B / $167.1B (Zacks) <span class="tag">C</span>/<span class="tag">E</span></td></tr>
+  <tr><td>EV / FY2027E sales</td><td class="num"><strong>10.5×</strong></td><td>$2,260B / $215.6B (Zacks) <span class="tag">C</span>/<span class="tag">E</span></td></tr>
+  <tr><td>Dividend yield</td><td class="num"><strong>0.84%</strong></td><td>TTM ADR payouts $3.7811 / $450.61 <span class="tag">C</span></td></tr>
+  <tr><td>PEG (FY2026E)</td><td class="num"><strong>~0.9</strong></td><td>27.2× / ~30% FY2027 EPS growth <span class="tag">C</span></td></tr>
+</table>
+
+<p><strong>Consensus</strong> <span class="tag">E</span> (September 2026): <strong>Buy</strong> — Zacks Rank #1 (Strong Buy); average target <strong>$523.22</strong> (MarketBeat, ~16% upside from $450.61 <span class="tag">C</span>) to $552.26 (DailyIQ, 45 analysts). FY2026E EPS $16.55 (Zacks), FY2027E ~$21.8 (MarketBeat $21.72; Erste $21.91, raised Sept 23). Q3 2026 consensus: revenue $45.54B / EPS $4.45 — squarely on the company guide. FY2026E revenue $167.1B sits below the guide-implied ~$171.4B — the revision watch item from Section 4.</p>
+
+<p><strong>Valuation judgment</strong> <span class="tag">O</span>: the multiple is full in absolute terms (32.5× trailing, 64.6× FCF) but the growth-adjusted picture is reasonable — ~30% forward EPS growth puts PEG near 0.9, and the P/E compresses to ~20.7× on FY2027E if delivered. The market is paying for certainty of AI-compute demand and 2nm pricing power, funded by a net-cash balance sheet. Downside protection is thin on multiple compression if AI capex pauses; upside requires the 2nm ramp and overseas execution to stay on track. Net cash is only ~3.4% of market cap — not a valuation backstop at this size.</p>
+
+<div class="callout"><strong>Target derivation:</strong> <strong>$545 ≈ 25× FY2027E consensus EPS of ~$21.8</strong> <span class="tag">C</span>/<span class="tag">E</span> — the same 25× framework as the prior report's $530 (≈25× $21.20); the $15 raise is purely estimate-driven (consensus FY2027E moved $21.20 → ~$21.8). The multiple is a modest premium to today's ~20.7× FY2027E, justified by 2nm pricing power and the record 72.5% foundry share. The target sits between the MarketBeat consensus ($523) and the DailyIQ average ($552), modestly above Morningstar's $534 fair value. <strong>BUY.</strong></div>
+
+<h2 class="sec">10. Catalysts &amp; What to Watch</h2>
+<ol>
+  <li><strong>Q3 2026 earnings — Thursday, October 15, 2026, 2:00 AM ET</strong> <span class="tag">R</span> (TSMC IR calendar). Quiet period: October 5–14. Consensus: revenue $45.54B / EPS $4.45 <span class="tag">E</span>. The GM print vs 65–67% guide — through the N2 ramp dilution — is the single most important number.</li>
+  <li><strong>September monthly revenue</strong> (expected ~Oct 9–10) — needs NT$444.8–483.2B to land the Q3 guide <span class="tag">C</span>; August printed +53.3% y/y.</li>
+  <li><strong>2nm ramp metrics</strong> — wafer-revenue mix (was 3% in Q2), yield commentary, N2P/A16 updates; Qualcomm's 2nm Snapdragon ramp as a demand read.</li>
+  <li><strong>The Q4 bridge</strong> — whether management's "slightly more than 40%" guide (~$50B Q4) survives the October call, and whether sell-side revenue estimates converge toward it.</li>
+  <li><strong>Capex deployment</strong> — H2 2026 spend (~US$33–37B implied <span class="tag">C</span>) and any update to the US$60–64B budget; Arizona Fab 2 equipment-installation milestones.</li>
+  <li><strong>Dividend</strong> — Q1 2026 NT$7/share payable October 8, 2026 <span class="tag">R</span>; Q2 2026 dividend declaration expected with Q3 results (prior pattern).</li>
+  <li><strong>Policy</strong> — Section 232 Phase 2 scope/timing; any Taiwan–US tariff-framework finalization; September 24 Xi–Trump meeting read-through (unconfirmed).</li>
+  <li><strong>Competition</strong> — Samsung 2nm yield trajectory and Tesla AI5 ramp at Taylor; any further second-sourcing moves by major AI customers.</li>
+</ol>
+
+<h2 class="sec">11. Portfolio Fit</h2>
+<p>Cam holds <strong>24 shares (~$10,815; 0.64% of the ~$1.70M portfolio)</strong> — a starter position in the portfolio's only pure-play semiconductor foundry exposure, and its principal AI-compute pick-and-shovel holding (complementing Apple on the device side and AVGO/Broadcom-adjacent exposure in the AI stack).</p>
+<p><strong>Recommendation for the book</strong> <span class="tag">O</span>: the 0.64% weight is light for the highest-quality compounder in the portfolio and the single best expression of AI infrastructure demand. <strong>The standing add thesis (valid at or below $460) is live at $450.61</strong> — the dashboard price gate agrees. Favor adding on any AI-capex wobble (multiple compression toward 25× trailing has historically been the entry window) rather than chasing strength into the October 15 print. Size any add against existing mega-cap tech concentration (AAPL 6.80%, AMZN 7.80%) to avoid doubling the same AI-demand factor. The next natural review point is the Q3 print.</p>
+
+<div class="appendix">
+<h2 class="sec">12. Appendices</h2>
+
+<h3 class="sub">A. Key sources</h3>
+<ul class="fn">
+  <li>TSMC Q2 2026 earnings release &amp; quarterly management report (Jul 16, 2026) — investor.tsmc.com</li>
+  <li>TSMC Q2 2026 financial statements (Jul 16, 2026) — investor.tsmc.com</li>
+  <li>TSMC 6-K: Q2 2026 results presentation (Jul 16, 2026) — via StockTitan / Quartr</li>
+  <li>TSMC Q2 2026 earnings call transcript (Jul 16, 2026) — via MarketBeat</li>
+  <li>TSMC Q1 2026 earnings release (Apr 16, 2026) — investor.tsmc.com</li>
+  <li>TSMC Q3 2026 guidance page &amp; earnings-conference calendar — investor.tsmc.com</li>
+  <li>TSMC 2025 annual report &amp; 20-F (filed Apr 16, 2026) — via StockTitan</li>
+  <li>TSMC 6-K: Q1 2026 dividend (Sep 1, 2026) — via StockTitan</li>
+  <li>TSMC August 2026 monthly revenue — company disclosure via TradingKey / MarketBeat (Sep 9–10, 2026)</li>
+  <li>TrendForce Q2 2026 foundry rankings (Sep 9, 2026) — via Barchart / Motley Fool</li>
+  <li>MarketBeat TSM consensus, targets &amp; estimates (Sep 11–22, 2026) — marketbeat.com</li>
+  <li>Zacks: TSM earnings &amp; valuation coverage (Sep 18, 2026) — zacks.com</li>
+  <li>Erste Group estimate revisions (reported Sep 23, 2026)</li>
+  <li>CRS: Section 232 semiconductor tariff explainer (Proclamation 11002; Mar 23, 2026) — everycrsreport.com</li>
+  <li>Troutman: polysilicon Section 232 tariffs (Dec 4, 2026 effective) — troutman.com</li>
+  <li>ISW: China–Taiwan update (Sep 1, 2026) — understandingwar.org</li>
+  <li>Reuters: Taiwan 2027 defense budget proposal (Sep 14, 2026)</li>
+  <li>TechTimes: NVIDIA Rubin/TSMC 3nm (Sep 9, 2026); Samsung 2nm yields &amp; OpenAI second-source (Sep 10, 2026); Tesla AI5 at Taylor (Jul 14 / Sep 2026)</li>
+  <li>SEDaily: Samsung Texas fab chip output on Tesla orders (Sep 15, 2026)</li>
+  <li>TradingKey: TSMC A16 mass-production timeline (Sep 2026)</li>
+  <li>Zacks: TSMC A14 customer traction (Sep 23, 2026)</li>
+  <li>HPCwire: Cadence–TSMC partnership expansion (Sep 24, 2026)</li>
+  <li>TrendForce: iPhone 17 / A19 N3P analysis (Sep 10, 2025); Apple Event 2026 live coverage — Analytics Insight (Sep 9, 2026)</li>
+  <li>Finainews / AIWeekly: hyperscaler 2026 capex tracking (Sep 2026)</li>
+  <li>TipRanks / WiseSheets: TSM ADR dividend history</li>
+  <li>Finnhub: TSM quote, returns &amp; TTM P/E (Sep 25–26, 2026)</li>
+</ul>
+<p class="fn"><strong>Not verified / omitted by design:</strong> Q2 2026 wafer shipments; exact dates of 52-week high/low (low inconsistently reported across screeners); Buy/Hold/Sell analyst distribution counts; reliable PEG methodology; buyback activity (none found — unverified negative); numerical CoWoS capacity (industry estimates only); customer-level revenue splits; wafer-price figures; finalized scope/timing of any Section 232 "Phase 2"; any new export-control rules in the last 60 days.</p>
+
+<h3 class="sub">B. Glossary</h3>
+<ul class="fn">
+  <li><strong>ADR</strong> — American Depositary Receipt; 1 TSM ADR = 5 TWSE ordinary shares.</li>
+  <li><strong>CoWoS</strong> — Chip-on-Wafer-on-Substrate, TSMC's advanced packaging technology for AI accelerators.</li>
+  <li><strong>N2 / N3 / N5</strong> — TSMC process-node families (2nm, 3nm, 5nm); N2P = performance-enhanced 2nm; A16/A14 = angstrom-class successors.</li>
+  <li><strong>GM / OM</strong> — gross margin / operating margin. <strong>pp</strong> — percentage points.</li>
+  <li><strong>FCF</strong> — free cash flow (company-defined: operating cash flow less capex, unless noted).</li>
+  <li><strong>HPC / DCE</strong> — high-performance computing / digital consumer electronics (revenue platforms).</li>
+  <li><strong>Section 232</strong> — US Trade Expansion Act provision used to impose tariffs on national-security grounds.</li>
+</ul>
+
+<h3 class="sub">C. Disclosures</h3>
+<p class="fn">Report dated 26 September 2026 — an update to the 22 September 2026 report, which it supersedes. Reference price $450.61 is the 25 September 2026 closing price from the CIO dashboard's live quote feed (Finnhub); reconcile against a live quote before trading. Figures labeled <span class="tag">R</span> are company-reported, <span class="tag">C</span> analyst-calculated, <span class="tag">E</span> consensus/industry estimates, <span class="tag">O</span> analyst opinion. This report is prepared for Cam as CIO/Portfolio Manager for investment decision-making; it is not a solicitation. Price targets are 12-month forward-looking estimates subject to market, geopolitical, and company-specific risks detailed in Section 8.</p>
+</div>
+
+<div class="footer">
+  Prepared by Muse, Senior Financial Analyst, for Cam (CIO / Portfolio Manager) &middot; 26 September 2026 &middot; USD/ADR basis &middot; Update to report dated 22 September 2026
+</div>
+
+</div>
+</body>
+</html>
