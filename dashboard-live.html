@@ -248,7 +248,7 @@ const FINNHUB_KEY = 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0';
   });
 })();
 
-const BUILD = 'rev21'; // bump on every revision — visible in the header so we know what's live
+const BUILD = 'rev22'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
@@ -879,6 +879,7 @@ function renderResearch(f){
   }
   const list = RLIST();
   function card(r){
+    const isEq = !!r.ticker;
     const nm = isEq ? esc((BY[r.ticker]&&BY[r.ticker].name)||r.ticker) : esc(r.title);
     const tag = isEq ? '<b>'+r.ticker+'</b> '+pill(r.rating) : '<span class="tag">'+esc(r.sub||r.kind)+'</span>';
     const meta = isEq ? ((r.target?('Target '+r.target+' · '):'')+r.date) : r.date;
