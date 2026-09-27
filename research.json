@@ -106,6 +106,238 @@
    "date": "2026-09-27"
   },
   {
+   "ticker": "AMZN",
+   "file": "amzn-fundamental-analysis-2026-09-27.html",
+   "rating": "BUY",
+   "target": "$315",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "META",
+   "file": "meta-fundamental-analysis-2026-09-27.html",
+   "rating": "HOLD",
+   "target": "$800",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "AAPL",
+   "file": "aapl-fundamental-analysis-2026-09-27.html",
+   "rating": "HOLD",
+   "target": "$350",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "MSFT",
+   "file": "msft-fundamental-analysis-2026-09-27.html",
+   "rating": "BUY",
+   "target": "$590",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "GOOG",
+   "file": "goog-fundamental-analysis-2026-09-27.html",
+   "rating": "BUY",
+   "target": "$410",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "DIS",
+   "file": "dis-fundamental-analysis-2026-09-27.html",
+   "rating": "BUY",
+   "target": "$125",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "MA",
+   "file": "ma-fundamental-analysis-2026-09-27.html",
+   "rating": "BUY",
+   "target": "$650",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "V",
+   "file": "v-fundamental-analysis-2026-09-27.html",
+   "rating": "HOLD",
+   "target": "$385",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "GS",
+   "file": "gs-fundamental-analysis-2026-09-27.html",
+   "rating": "HOLD",
+   "target": "$1,020",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "BATRA",
+   "file": "batra-fundamental-analysis-2026-09-27.html",
+   "rating": "HOLD",
+   "target": "$63",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "XOM",
+   "file": "xom-fundamental-analysis-2026-09-27.html",
+   "rating": "HOLD",
+   "target": "$168",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "SO",
+   "file": "so-fundamental-analysis-2026-09-27.html",
+   "rating": "BUY",
+   "target": "$92",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "KO",
+   "file": "ko-fundamental-analysis-2026-09-27.html",
+   "rating": "HOLD",
+   "target": "$94",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "PEP",
+   "file": "pep-fundamental-analysis-2026-09-27.html",
+   "rating": "BUY",
+   "target": "$152",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "PM",
+   "file": "pm-fundamental-analysis-2026-09-27.html",
+   "rating": "BUY",
+   "target": "$210",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "BMY",
+   "file": "bmy-fundamental-analysis-2026-09-27.html",
+   "rating": "HOLD",
+   "target": "$68",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "AMT",
+   "file": "amt-fundamental-analysis-2026-09-27.html",
+   "rating": "BUY",
+   "target": "$225",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "TLXIX",
+   "file": "tlxix-fund-overview-2026-09-27.html",
+   "rating": "KEEP",
+   "target": null,
+   "kind": "fund",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "VXUS",
+   "file": "vxus-fund-overview-2026-09-27.html",
+   "rating": "KEEP",
+   "target": null,
+   "kind": "fund",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "VFFSX",
+   "file": "vffsx-fund-overview-2026-09-27.html",
+   "rating": "TRIM",
+   "target": null,
+   "kind": "fund",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "AVUV",
+   "file": "avuv-fund-overview-2026-09-27.html",
+   "rating": "KEEP",
+   "target": null,
+   "kind": "fund",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "FSSNX",
+   "file": "fssnx-fund-overview-2026-09-27.html",
+   "rating": "KEEP",
+   "target": null,
+   "kind": "fund",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "FSMDX",
+   "file": "fsmdx-fund-overview-2026-09-27.html",
+   "rating": "KEEP",
+   "target": null,
+   "kind": "fund",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "SCHD",
+   "file": "schd-fund-overview-2026-09-27.html",
+   "rating": "KEEP",
+   "target": null,
+   "kind": "fund",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "IJH",
+   "file": "ijh-fund-overview-2026-09-27.html",
+   "rating": "KEEP",
+   "target": null,
+   "kind": "fund",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "VTWO",
+   "file": "vtwo-fund-overview-2026-09-27.html",
+   "rating": "KEEP",
+   "target": null,
+   "kind": "fund",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "GRID",
+   "file": "grid-fund-overview-2026-09-27.html",
+   "rating": "KEEP",
+   "target": null,
+   "kind": "fund",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "VIS",
+   "file": "vis-fund-overview-2026-09-27.html",
+   "rating": "KEEP",
+   "target": null,
+   "kind": "fund",
+   "date": "2026-09-27"
+  },
+  {
+   "ticker": "SOXQ",
+   "file": "soxq-fund-overview-2026-09-27.html",
+   "rating": "KEEP",
+   "target": null,
+   "kind": "fund",
+   "date": "2026-09-27"
+  },
+  {
    "date": "2026-09-24",
    "file": "ai-stack-investments-2026-09-24.html",
    "kind": "thematic",
