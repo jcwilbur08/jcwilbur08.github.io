@@ -34,8 +34,8 @@
    "summary": "Update: BUY maintained, target raised to $545 (~21% upside) on higher FY2027E consensus (~$21.8); August revenue record NT$514.8B (+53% y/y); Q3 tracking with room to spare; 2nm ramp steepening; price below the $460 add line."
   },
   {
-   "date": "2026-09-22",
-   "file": "uber-fundamental-analysis.html",
+   "date": "2026-09-26",
+   "file": "uber-update-note-2026-09-26.html",
    "kind": "company",
    "rating": "BUY",
    "target": "$105",
@@ -98,6 +98,14 @@
    "date": "2026-09-26"
   },
   {
+   "ticker": "JPM",
+   "file": "jpm-fundamental-analysis-2026-09-27.html",
+   "rating": "HOLD",
+   "target": "$360",
+   "kind": "company",
+   "date": "2026-09-27"
+  },
+  {
    "date": "2026-09-24",
    "file": "ai-stack-investments-2026-09-24.html",
    "kind": "thematic",
@@ -145,8 +153,8 @@
    "sub": "Market Intelligence",
    "target": null,
    "ticker": null,
-   "title": "Weekly Market Intelligence \u2014 Week Ended Sep 25, 2026"
+   "title": "Weekly Market Intelligence — Week Ended Sep 25, 2026"
   }
  ],
- "updated": "2026-09-26"
+ "updated": "2026-09-27"
 }
