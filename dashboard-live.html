@@ -100,7 +100,7 @@ th.sortable:hover{color:#fff}
 .repcard .rt{font:700 16px Georgia,serif;color:#fff;margin:6px 0}
 .repcard b{color:#fff}
 .pill{display:inline-block;border-radius:999px;padding:2px 12px;font-size:11px;font-weight:700;margin-left:8px}
-.pill.buy{background:#123f2a;color:#48bb78}.pill.hold{background:#4a3a12;color:#f6ad55}.pill.sell{background:#4a1a1a;color:#f56565}
+.pill.buy{background:#123f2a;color:#48bb78}.pill.hold{background:#4a3a12;color:#f6ad55}.pill.sell{background:#4a1a1a;color:#f56565}.pill.neutral{background:#1b3049;color:#bcd0dd}
 .repcard .rm{color:#8fa3b8;font-size:12px;margin-top:8px}
 .scrollx{overflow-x:auto}
 @media(max-width:860px){.kpis{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}body{font-size:16.5px}h1{font-size:29px}.eyebrow{font-size:12.5px}.sub{font-size:14.5px}.card h2{font-size:20px}.card h3{font-size:14px}.kpi b{font-size:26px}.kpi span{font-size:12px}.kpi small{font-size:12.5px}.grow{font-size:16px}.gmeta{font-size:13.5px}.pill{font-size:12.5px}.tag{font-size:12px}.note{font-size:13.5px}.statusbar{font-size:15px}.hrow{font-size:14px}table{font-size:14px}th{font-size:12.5px}.leg{font-size:13.5px}.mrow{font-size:15px}.mrow>*{min-width:0}.act{font-size:15px}.act .d{font-size:13.5px}.act>*{min-width:0}.plan li{font-size:15px}.tab{font-size:15px;padding:10px 26px}.fbtn{font-size:15px}.fbtn.sm{font-size:13px}.reqq{font-size:15px;flex-wrap:wrap}.reqgrid label,.reqlab{font-size:12.5px}select,textarea{font-size:16px}.briefbox{font-size:14.5px}.repcard .rt{font-size:18px}.repcard .rm{font-size:13.5px}.mstat span{font-size:11.5px}.mstat b{font-size:18px}.empty{font-size:15px}.tsctl{display:inline-flex}.repgrid{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}.page{padding:18px 14px 50px}.donutwrap{flex-direction:column;align-items:center}.donutwrap svg{width:100%;max-width:230px;height:auto}.legend{min-width:0;width:100%}th,td{padding-left:5px;padding-right:5px}
@@ -248,7 +248,7 @@ const FINNHUB_KEY = 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0';
   });
 })();
 
-const BUILD = 'rev14'; // bump on every revision — visible in the header so we know what's live
+const BUILD = 'rev15'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
@@ -268,6 +268,7 @@ const RESEARCH_FALLBACK = {"reports":[
  {"ticker":"GEHC","file":"gehc-fundamental-analysis.html","rating":"BUY","target":"$84","kind":"company","date":"2026-09-22"},
  {"ticker":"NFLX","file":"nflx-fundamental-analysis.html","rating":"HOLD","target":"$88","kind":"company","date":"2026-09-23"},
  {"ticker":"QCOM","file":"qcom-fundamental-analysis.html","rating":"HOLD","target":"$205","kind":"company","date":"2026-09-22"},
+ {"ticker":"AXP","file":"axp-fundamental-analysis-2026-09-26.html","rating":"Constructive","target":null,"kind":"company","date":"2026-09-26"},
  {"ticker":null,"title":"AI Stack Investments","sub":"Thematic","file":"ai-stack-investments-2026-09-24.html","rating":null,"target":null,"kind":"thematic","date":"2026-09-24"},
  {"ticker":null,"title":"Capital Allocation Ranking","sub":"Ranking","file":"capital-allocation-ranking-2026-09-22.html","rating":null,"target":null,"kind":"thematic","date":"2026-09-22"},
  {"ticker":null,"title":"Portfolio Ranking Report","sub":"Ranking","file":"portfolio-ranking-report-2026-09-23.html","rating":null,"target":null,"kind":"thematic","date":"2026-09-23"},
@@ -890,14 +891,14 @@ function renderResearch(f){
   RES_FILTER = f || RES_FILTER;
   f = RES_FILTER;
   function pill(r){
-    const c = r==='BUY'?'buy':(r==='HOLD'?'hold':'sell');
+    const c = r==='BUY'?'buy':(r==='HOLD'?'hold':(r==='SELL'?'sell':'neutral'));
     return '<span class="pill '+c+'">'+r+'</span>';
   }
   const list = RLIST();
   function card(r){
     const nm = r.kind==='company' ? esc((BY[r.ticker]&&BY[r.ticker].name)||r.ticker) : esc(r.title);
     const tag = r.kind==='company' ? '<b>'+r.ticker+'</b> '+pill(r.rating) : '<span class="tag">'+esc(r.sub||r.kind)+'</span>';
-    const meta = r.kind==='company' ? 'Target '+r.target+' · '+r.date : r.date;
+    const meta = r.kind==='company' ? ((r.target?('Target '+r.target+' · '):'')+r.date) : r.date;
     const cta = r.kind==='company' ? 'Open full report →' : 'Open report →';
     return '<a class="repcard" href="'+REPORT_BASE+r.file+'" target="_blank" rel="noopener">'+
       tag+'<div class="rt">'+nm+'</div>'+
