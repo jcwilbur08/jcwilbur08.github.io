@@ -248,7 +248,7 @@ const FINNHUB_KEY = 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0';
   });
 })();
 
-const BUILD = 'rev20'; // bump on every revision — visible in the header so we know what's live
+const BUILD = 'rev21'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
@@ -1023,13 +1023,47 @@ async function refreshQuotes(){
   setStatus('Live · updated '+fmtTime(Date.now()), 'live');
 }
 (async function init(){
+  async function fetchRetry(url, tries){
+    let last = new Error('fetch-failed');
+    for(let i=0;i<tries;i++){
+      try{
+        const r = await fetch(url);
+        if(r.ok) return r;
+        last = new Error('http-'+r.status);
+      }catch(e){ last = (e instanceof Error)?e:new Error('fetch-failed'); }
+      if(i<tries-1) await new Promise(function(res){ setTimeout(res, 700*(i+1)); });
+    }
+    throw last;
+  }
+  function shortErr(e){ return (e && e.message) ? e.message.slice(0,80) : 'unknown'; }
+  function bootFail(stage, e){
+    const msg = 'Data load failed at "'+stage+'" ('+shortErr(e)+').';
+    setStatus(msg+' Tap Retry — no page reload needed.','err');
+    setSub('Boot failed: '+stage);
+    let btn = document.getElementById('bootRetry');
+    if(!btn){
+      btn = document.createElement('button');
+      btn.id = 'bootRetry'; btn.className = 'fbtn sm'; btn.textContent = 'Retry';
+      btn.style.marginLeft = '8px';
+      btn.addEventListener('click', function(){ btn.remove(); init(); });
+      document.querySelector('.statusbar').appendChild(btn);
+    }
+  }
+  async function loadHoldingsRetry(){
+    const r = await fetchRetry('holdings.json', 3);
+    const d = await r.json();
+    HOLD = d.holdings; CASH = d.cash || 43000;
+    setSub('Live client-side edition · ' + d.source + ' · ' + HOLD.length + ' positions + cash · Basis: USD');
+  }
   try{
     setStatus('Loading holdings…','');
-    await loadHoldings();
+    await loadHoldingsRetry();
+  }catch(e){ bootFail('holdings.json', e); return; }
+  try{
     await loadManifests();
     initRequestBuilder();
     addSub(' · build '+BUILD);
-    document.getElementById('qRefresh').addEventListener('click', function(){ refreshQuotes(); });
+    if(!window.__qRefreshBound){ window.__qRefreshBound = true; document.getElementById('qRefresh').addEventListener('click', function(){ refreshQuotes(); }); }
     const needKey = !FINNHUB_KEY || FINNHUB_KEY.indexOf('PASTE_')===0;
     const c = readCache();
     const ttl = marketIsOpen() ? Q_TTL_OPEN : Q_TTL_CLOSED;
@@ -1058,10 +1092,7 @@ async function refreshQuotes(){
     writeCache();
     paintAll();
     setStatus('Live · updated '+fmtTime(Date.now()), 'live');
-  }catch(e){
-    setStatus('Could not load holdings.json — open this page over http(s) (e.g. your GitHub Pages URL), not as a local file.','err');
-    setSub('Failed to load holdings.json');
-  }
+  }catch(e){ bootFail('setup/render', e); return; }
 })();
 </script>
 </body>
