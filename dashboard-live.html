@@ -236,27 +236,23 @@ body.tx6{font-size:25px}body.tx6 h1{font-size:43px}body.tx6 .eyebrow{font-size:1
 // Rotate it in your Finnhub dashboard FIRST, then paste the new key here.
 const FINNHUB_KEY = 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0';
 /* ---------------- text-size stepper (mobile) ---------------- */
+/* Always opens at step 1/7 (smallest); position is not persisted. */
 (function(){
-  var KEY='cio_textsize', N=7, DEF=4, cur=DEF;
+  var N=7, cur=0;
   var CLS=['tx0','tx1','tx2','tx3','tx4','tx5','tx6'];
   var pos=document.getElementById('tsPos');
+  try{ localStorage.removeItem('cio_textsize'); }catch(e){}
   function apply(i){
     cur=Math.max(0,Math.min(N-1,i));
     for(var j=0;j<N;j++){ document.body.classList.toggle(CLS[j], j===cur); }
     if(pos){ pos.textContent=(cur+1)+'/'+N; }
-    try{ localStorage.setItem(KEY,String(cur)); }catch(e){}
   }
-  try{
-    var v=localStorage.getItem(KEY);
-    if(v==='lg') cur=4; else if(v==='sm'||v==='') cur=2;
-    else if(v!==null){ v=parseInt(v,10); if(!isNaN(v)) cur=Math.max(0,Math.min(N-1,v+2)); }
-  }catch(e){}
   apply(cur);
   document.getElementById('tsDown').addEventListener('click',function(){apply(cur-1);});
   document.getElementById('tsUp').addEventListener('click',function(){apply(cur+1);});
 })();
 
-const BUILD = 'rev26'; // bump on every revision — visible in the header so we know what's live
+const BUILD = 'rev27'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
