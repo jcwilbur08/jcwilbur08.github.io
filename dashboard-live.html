@@ -119,7 +119,7 @@ body.tx4{font-size:25px}body.tx4 h1{font-size:43px}body.tx4 .eyebrow{font-size:1
 <h1>Portfolio Command Center</h1>
 </div>
 </header>
-<div class="statusbar"><span class="dot" id="liveDot"></span><span id="statusText">Starting…</span><span class="tsctl" id="tsCtl"><span class="tslab">Text</span><button class="fbtn sm" id="tsDown" aria-label="Smaller text">A−</button><button class="fbtn sm" id="tsUp" aria-label="Larger text">A+</button></span><button class="fbtn sm" data-ts="sm">A−</button><button class="fbtn sm on" data-ts="">A</button><button class="fbtn sm" data-ts="lg">A+</button></span><button class="fbtn sm" id="qRefresh">Refresh quotes</button></div>
+<div class="statusbar"><span class="dot" id="liveDot"></span><span id="statusText">Starting…</span><span class="tsctl" id="tsCtl"><span class="tslab">Text</span><button class="fbtn sm" id="tsDown" aria-label="Smaller text">A−</button><button class="fbtn sm" id="tsUp" aria-label="Larger text">A+</button></span><button class="fbtn sm" id="qRefresh">Refresh quotes</button></div>
 <div class="banner" id="keyBanner" style="display:none"><b>Finnhub API key needed.</b> Paste your key into <span style="font-family:monospace">FINNHUB_KEY</span> at the top of this file's script. Your current key is hard-coded in your public repo's index.html — it is visible to the internet, so <b>rotate it in your Finnhub dashboard first</b>, then paste the new key here. Until then, workbook prices are shown.</div>
 <nav class="tabs">
 <button class="tab active" data-tab="overview">Overview</button>
@@ -252,7 +252,7 @@ const FINNHUB_KEY = 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0';
   document.getElementById('tsUp').addEventListener('click',function(){apply(cur+1);});
 })();
 
-const BUILD = 'rev24'; // bump on every revision — visible in the header so we know what's live
+const BUILD = 'rev25'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
