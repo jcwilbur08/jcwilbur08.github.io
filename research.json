@@ -386,7 +386,18 @@
    "target": null,
    "ticker": null,
    "title": "Weekly Market Intelligence — Week Ended Sep 25, 2026"
+  },
+  {
+   "date": "2026-09-29",
+   "file": "ai-capital-spending-valuation-hurdle-2026-09-29.html",
+   "kind": "thematic",
+   "rating": null,
+   "sub": "Thematic",
+   "summary": "2026 research synthesis: hyperscaler capex migrating toward ~$800B (2026) and $1.1–1.2T (2027E per MS/UBS); Goldman frames ~$7.6T cumulative AI infra spend 2026–31; the debate has shifted from ‘is demand real?’ to whether monetization can earn an acceptable return on the capital base.",
+   "target": null,
+   "ticker": null,
+   "title": "AI Capital Spending & Valuation Hurdle"
   }
  ],
- "updated": "2026-09-27"
+ "updated": "2026-09-29"
 }
