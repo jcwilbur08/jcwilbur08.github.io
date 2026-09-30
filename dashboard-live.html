@@ -252,7 +252,7 @@ const FINNHUB_KEY = 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0';
   document.getElementById('tsUp').addEventListener('click',function(){apply(cur+1);});
 })();
 
-const BUILD = 'rev29'; // bump on every revision — visible in the header so we know what's live
+const BUILD = 'rev30'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
@@ -355,7 +355,7 @@ async function fetchQuotes(doQ, doEarn){
   doQ = doQ!==false; doEarn = doEarn!==false;
   const syms = HOLD.filter(function(h){return h.finnhub;}).map(function(h){return h.ticker;});
   const funds = HOLD.filter(function(h){return !h.finnhub;}).map(function(h){return h.ticker;});
-  const total = (doQ?syms.length+funds.length+1:0)+(doEarn?1:0);
+  const total = (doQ?syms.length+2:0)+(doEarn?1:0); // +1 SPY, +1 nav.json
   let done = 0;
   function prog(){ setStatus('Fetching live quotes… '+done+'/'+total, ''); }
   if(doQ){
@@ -373,19 +373,22 @@ async function fetchQuotes(doQ, doEarn){
       if(sq && sq.c) SPY_PX = sq.c;
     }catch(e){}
     done++; prog(); await sleep(500);
-    // Mutual funds: nightly NAVs from Yahoo Finance (Finnhub doesn't cover them).
-    // Falls back to the workbook price with the wb badge if the fetch fails.
-    for(const t of funds){
-      try{
-        const j = await fh('https://query1.finance.yahoo.com/v8/finance/chart/'+encodeURIComponent(t)+'?interval=1d&range=5d');
-        const res = j && j.chart && j.chart.result && j.chart.result[0];
-        const q0 = res && res.indicators && res.indicators.quote && res.indicators.quote[0];
-        const closes = (q0 && q0.close || []).filter(function(c){return c!=null;});
-        if(closes.length>=2) QUOTES[t] = {c:closes[closes.length-1], pc:closes[closes.length-2], ok:true};
+    // Mutual funds: nightly NAVs from nav.json, written by the repo's
+    // nightly-nav workflow (same-origin fetch, so no CORS problem).
+    // A NAV older than 5 days is treated as stale -> workbook price + wb badge.
+    try{
+      const nj = await fh('nav.json');
+      const t0 = new Date(); t0.setHours(0,0,0,0);
+      const fmap = (nj && nj.funds) || {};
+      for(const t of funds){
+        const e = fmap[t];
+        const d = e && e.date ? new Date(e.date+'T00:00:00') : null;
+        const age = d && !isNaN(d) ? Math.round((t0-d)/86400000) : 999;
+        if(e && e.nav && e.prev && age>=0 && age<=5) QUOTES[t] = {c:e.nav, pc:e.prev, ok:true};
         else QUOTES[t] = {ok:false};
-      }catch(e){ QUOTES[t] = {ok:false}; }
-      done++; prog(); await sleep(400);
-    }
+      }
+    }catch(e){ for(const t of funds){ QUOTES[t] = {ok:false}; } }
+    done++; prog();
   }
   if(doEarn){
     if(!doQ) prog();
