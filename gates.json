@@ -1,37 +1,45 @@
 {
   "gates": [
     {
-      "action": "ADD",
-      "dir": "at_or_below",
-      "level": 460,
-      "note": "Add thesis valid at or below $460 \u00b7 12-mo target $545",
       "ticker": "TSM",
-      "type": "price"
+      "type": "price",
+      "action": "ADD",
+      "level": 460,
+      "dir": "at_or_below",
+      "note": "Add thesis valid at or below $460 \u00b7 12-mo target $545"
     },
     {
-      "action": "ADD",
-      "dir": "at_or_below",
-      "level": 220,
-      "note": "Retain $220 buy gate \u00b7 12-mo target $328",
       "ticker": "NVDA",
-      "type": "price"
-    },
-    {
+      "type": "price",
       "action": "ADD",
+      "level": 220,
       "dir": "at_or_below",
-      "level": 169,
-      "note": "Add toward 1% only in the $160s",
-      "ticker": "GRID",
-      "type": "price"
+      "note": "Retain $220 buy gate \u00b7 12-mo target $328"
     },
     {
-      "action": "ACCUMULATE",
-      "dir": "toward",
-      "level": 2.0,
-      "note": "BUY $475 \u00b7 accumulate toward ~2% of portfolio",
+      "ticker": "GRID",
+      "type": "price",
+      "action": "ADD",
+      "level": 169,
+      "dir": "at_or_below",
+      "note": "Add toward 1% only in the $160s"
+    },
+    {
       "ticker": "UNH",
-      "type": "weight"
+      "type": "weight",
+      "action": "ACCUMULATE",
+      "level": 2.0,
+      "dir": "toward",
+      "note": "BUY $475 \u00b7 accumulate toward ~2% of portfolio"
+    },
+    {
+      "ticker": "UBER",
+      "type": "price",
+      "action": "ADD",
+      "level": 68,
+      "dir": "at_or_below",
+      "note": "Tranche 1 of staged add on sub-$68 weakness \u00b7 toward ~0.5% wt \u00b7 12-mo target $105"
     }
   ],
-  "updated": "2026-09-26"
+  "updated": "2026-09-30"
 }
