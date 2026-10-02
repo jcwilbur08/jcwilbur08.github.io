@@ -39,7 +39,15 @@
       "level": 68,
       "dir": "at_or_below",
       "note": "Tranche 1 of staged add on sub-$68 weakness \u00b7 toward ~0.5% wt \u00b7 12-mo target $105"
+    },
+    {
+      "ticker": "GEHC",
+      "type": "price",
+      "action": "ADD",
+      "level": 62,
+      "dir": "at_or_below",
+      "note": "Begin accumulating starter toward ~0.5% wt at or below $62 \u00b7 base value $92"
     }
   ],
-  "updated": "2026-09-30"
+  "updated": "2026-10-02"
 }
