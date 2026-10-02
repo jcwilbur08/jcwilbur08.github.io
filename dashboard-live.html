@@ -25,7 +25,9 @@ h1{font:700 34px/1.1 Georgia,serif;margin:6px 0 4px;color:#fff}
 .gfill{background:linear-gradient(90deg,#2b6cb0,#63b3ed);height:100%}
 .reqgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:4px}
 .reqgrid label,.reqlab{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#8fa3b8;margin-bottom:10px}
-select,textarea{width:100%;background:#0b1a2b;border:1px solid #24405c;color:#e8edf2;border-radius:8px;padding:8px 10px;font-size:13px;margin-top:6px;font-family:inherit}
+select,textarea,input[type=text]{width:100%;background:#0b1a2b;border:1px solid #24405c;color:#e8edf2;border-radius:8px;padding:8px 10px;font-size:13px;margin-top:6px;font-family:inherit}
+.srchwrap{margin:0 0 14px}.srchwrap input[type=text]{margin-top:0}
+.srchwrap input[type=text]:focus{outline:none;border-color:#2b6cb0}
 .briefbox{background:#0b1a2b;border:1px solid #2f5b8a;border-radius:8px;padding:14px 16px;font-size:12.5px;white-space:pre-wrap;margin:10px 0;color:#dbe4ec}
 .reqq{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #1b3049;font-size:13px}
 .reqq>div{min-width:0}
@@ -103,7 +105,7 @@ th.sortable:hover{color:#fff}
 .pill.buy{background:#123f2a;color:#48bb78}.pill.hold{background:#4a3a12;color:#f6ad55}.pill.sell{background:#4a1a1a;color:#f56565}.pill.neutral{background:#1b3049;color:#bcd0dd}
 .repcard .rm{color:#8fa3b8;font-size:12px;margin-top:8px}
 .scrollx{overflow-x:auto}
-@media(max-width:860px){.kpis{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}body{font-size:16.5px}h1{font-size:29px}.eyebrow{font-size:12.5px}.sub{font-size:14.5px}.card h2{font-size:20px}.card h3{font-size:14px}.kpi b{font-size:26px}.kpi span{font-size:12px}.kpi small{font-size:12.5px}.grow{font-size:16px}.gmeta{font-size:13.5px}.pill{font-size:12.5px}.tag{font-size:12px}.note{font-size:13.5px}.statusbar{font-size:15px}.hrow{font-size:14px}table{font-size:14px}th{font-size:12.5px}.leg{font-size:13.5px}.mrow{font-size:15px}.mrow>*{min-width:0}.act{font-size:15px}.act .d{font-size:13.5px}.act>*{min-width:0}.plan li{font-size:15px}.tab{font-size:15px;padding:10px 26px}.fbtn{font-size:15px}.fbtn.sm{font-size:13px}.reqq{font-size:15px;flex-wrap:wrap}.reqgrid label,.reqlab{font-size:12.5px}select,textarea{font-size:16px}.briefbox{font-size:14.5px}.repcard .rt{font-size:18px}.repcard .rm{font-size:13.5px}.mstat span{font-size:11.5px}.mstat b{font-size:18px}.empty{font-size:15px}.tsctl{display:inline-flex}.repgrid{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}.page{padding:18px 14px 50px}.donutwrap{flex-direction:column;align-items:center}.donutwrap svg{width:100%;max-width:230px;height:auto}.legend{min-width:0;width:100%}th,td{padding-left:5px;padding-right:5px}
+@media(max-width:860px){.kpis{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}body{font-size:16.5px}h1{font-size:29px}.eyebrow{font-size:12.5px}.sub{font-size:14.5px}.card h2{font-size:20px}.card h3{font-size:14px}.kpi b{font-size:26px}.kpi span{font-size:12px}.kpi small{font-size:12.5px}.grow{font-size:16px}.gmeta{font-size:13.5px}.pill{font-size:12.5px}.tag{font-size:12px}.note{font-size:13.5px}.statusbar{font-size:15px}.hrow{font-size:14px}table{font-size:14px}th{font-size:12.5px}.leg{font-size:13.5px}.mrow{font-size:15px}.mrow>*{min-width:0}.act{font-size:15px}.act .d{font-size:13.5px}.act>*{min-width:0}.plan li{font-size:15px}.tab{font-size:15px;padding:10px 26px}.fbtn{font-size:15px}.fbtn.sm{font-size:13px}.reqq{font-size:15px;flex-wrap:wrap}.reqgrid label,.reqlab{font-size:12.5px}select,textarea,input[type=text]{font-size:16px}.briefbox{font-size:14.5px}.repcard .rt{font-size:18px}.repcard .rm{font-size:13.5px}.mstat span{font-size:11.5px}.mstat b{font-size:18px}.empty{font-size:15px}.tsctl{display:inline-flex}.repgrid{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}.page{padding:18px 14px 50px}.donutwrap{flex-direction:column;align-items:center}.donutwrap svg{width:100%;max-width:230px;height:auto}.legend{min-width:0;width:100%}th,td{padding-left:5px;padding-right:5px}
 body.tx0{font-size:12.5px}body.tx0 h1{font-size:21.5px}body.tx0 .eyebrow{font-size:8.5px}body.tx0 .sub{font-size:10px}body.tx0 .card h2{font-size:15px}body.tx0 .card h3{font-size:9.5px}body.tx0 .kpi b{font-size:20px}body.tx0 .kpi span{font-size:8.5px}body.tx0 .kpi small{font-size:8.5px}body.tx0 .grow{font-size:12px}body.tx0 .gmeta{font-size:9.5px}body.tx0 .pill{font-size:8.5px}body.tx0 .tag{font-size:8px}body.tx0 .note{font-size:9.5px}body.tx0 .statusbar{font-size:10px}body.tx0 .hrow{font-size:10px}body.tx0 table{font-size:10px}body.tx0 th{font-size:8.5px}body.tx0 .leg{font-size:9px}body.tx0 .mrow{font-size:10.5px}body.tx0 .act{font-size:10.5px}body.tx0 .act .d{font-size:9px}body.tx0 .plan li{font-size:10px}body.tx0 .tab{font-size:10px}body.tx0 .fbtn{font-size:10px}body.tx0 .reqq{font-size:10px}body.tx0 .briefbox{font-size:10px}body.tx0 .repcard .rt{font-size:12.5px}body.tx0 .repcard .rm{font-size:9px}body.tx0 .mstat span{font-size:7.5px}body.tx0 .mstat b{font-size:12.5px}body.tx0 .empty{font-size:10px}
 body.tx1{font-size:14.5px}body.tx1 h1{font-size:25px}body.tx1 .eyebrow{font-size:9.5px}body.tx1 .sub{font-size:11.5px}body.tx1 .card h2{font-size:17.5px}body.tx1 .card h3{font-size:11px}body.tx1 .kpi b{font-size:23.5px}body.tx1 .kpi span{font-size:10px}body.tx1 .kpi small{font-size:9.5px}body.tx1 .grow{font-size:14px}body.tx1 .gmeta{font-size:11px}body.tx1 .pill{font-size:10px}body.tx1 .tag{font-size:9.5px}body.tx1 .note{font-size:11px}body.tx1 .statusbar{font-size:11.5px}body.tx1 .hrow{font-size:11.5px}body.tx1 table{font-size:11.5px}body.tx1 th{font-size:9.5px}body.tx1 .leg{font-size:10.5px}body.tx1 .mrow{font-size:12.5px}body.tx1 .act{font-size:12px}body.tx1 .act .d{font-size:10.5px}body.tx1 .plan li{font-size:11.5px}body.tx1 .tab{font-size:11.5px}body.tx1 .fbtn{font-size:11.5px}body.tx1 .reqq{font-size:11.5px}body.tx1 .briefbox{font-size:11.5px}body.tx1 .repcard .rt{font-size:14.5px}body.tx1 .repcard .rm{font-size:10.5px}body.tx1 .mstat span{font-size:9px}body.tx1 .mstat b{font-size:14.5px}body.tx1 .empty{font-size:11.5px}
 body.tx2{font-size:16.5px}body.tx2 h1{font-size:28.5px}body.tx2 .eyebrow{font-size:11px}body.tx2 .sub{font-size:13px}body.tx2 .card h2{font-size:19.5px}body.tx2 .card h3{font-size:12.5px}body.tx2 .kpi b{font-size:26.5px}body.tx2 .kpi span{font-size:11.5px}body.tx2 .kpi small{font-size:11px}body.tx2 .grow{font-size:15.5px}body.tx2 .gmeta{font-size:12.5px}body.tx2 .pill{font-size:11.5px}body.tx2 .tag{font-size:10.5px}body.tx2 .note{font-size:12.5px}body.tx2 .statusbar{font-size:13.5px}body.tx2 .hrow{font-size:13.5px}body.tx2 table{font-size:13px}body.tx2 th{font-size:11px}body.tx2 .leg{font-size:12px}body.tx2 .mrow{font-size:14px}body.tx2 .act{font-size:14px}body.tx2 .act .d{font-size:12px}body.tx2 .plan li{font-size:13.5px}body.tx2 .tab{font-size:13.5px}body.tx2 .fbtn{font-size:13.5px}body.tx2 .reqq{font-size:13.5px}body.tx2 .briefbox{font-size:13px}body.tx2 .repcard .rt{font-size:16.5px}body.tx2 .repcard .rm{font-size:12px}body.tx2 .mstat span{font-size:10px}body.tx2 .mstat b{font-size:16.5px}body.tx2 .empty{font-size:13.5px}
@@ -212,6 +214,7 @@ body.tx6{font-size:25px}body.tx6 h1{font-size:43px}body.tx6 .eyebrow{font-size:1
 <div class="fbar" id="resFilters">
 <button class="fbtn on" data-f="all">All</button><button class="fbtn" data-f="company">Company Reports</button><button class="fbtn" data-f="fund">Fund Overviews</button><button class="fbtn" data-f="thematic">Thematic &amp; Ranking</button><button class="fbtn" data-f="weekly">Weekly Reports</button><button class="fbtn" data-f="market">Market Research</button>
 </div>
+<div class="srchwrap"><input type="text" id="resSearch" placeholder="Search ticker or keywords…" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
 <div id="researchLib"></div>
 <div class="note">Reports open in a new tab. Set REPORT_BASE at the top of this file's script if your report files live at a URL.</div></div>
 <div class="sub footsub">Loading…</div>
@@ -252,7 +255,7 @@ const FINNHUB_KEY = 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0';
   document.getElementById('tsUp').addEventListener('click',function(){apply(cur+1);});
 })();
 
-const BUILD = 'rev36'; // bump on every revision — visible in the header so we know what's live
+const BUILD = 'rev37'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
@@ -893,6 +896,12 @@ function renderGates(){
 
 /* ---------------- research tab ---------------- */
 let RES_FILTER = 'all';
+let RES_QUERY = '';
+function repText(r){
+  const isEq = !!r.ticker;
+  const nm = isEq ? ((BY[r.ticker]&&BY[r.ticker].name)||r.ticker) : (r.title||'');
+  return [r.ticker||'', nm, r.rating||'', r.target||'', r.summary||'', r.kind||'', r.sub||'', r.date||'', r.file||''].join(' ');
+}
 function renderResearch(f){
   RES_FILTER = f || RES_FILTER;
   f = RES_FILTER;
@@ -901,6 +910,11 @@ function renderResearch(f){
     return '<span class="pill '+c+'">'+r+'</span>';
   }
   const list = RLIST();
+  const words = RES_QUERY.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const qlist = words.length ? list.filter(function(r){
+    const t = repText(r).toLowerCase();
+    return words.every(function(w){ return t.indexOf(w) !== -1; });
+  }) : list;
   function card(r){
     const isEq = !!r.ticker;
     const nm = isEq ? esc((BY[r.ticker]&&BY[r.ticker].name)||r.ticker) : esc(r.title);
@@ -911,7 +925,7 @@ function renderResearch(f){
       tag+'<div class="rt">'+nm+'</div>'+
       '<div class="rm">'+meta+'<br>'+cta+'</div></a>';
   }
-  const byKind = function(k){ return list.filter(function(r){return r.kind===k;}); };
+  const byKind = function(k){ return qlist.filter(function(r){return r.kind===k;}); };
   const secs = {
     company:['<h3>Company reports ('+byKind('company').length+')</h3><div class="repgrid">'+byKind('company').map(card).join('')+'</div>'],
     thematic:['<h3>Thematic &amp; ranking</h3><div class="repgrid">'+byKind('thematic').map(card).join('')+'</div>'],
@@ -925,13 +939,18 @@ function renderResearch(f){
   };
   const order = ['company','fund','thematic','weekly','market'];
   document.getElementById('researchLib').innerHTML =
-    f==='all' ? order.map(function(k){return secs[k][0];}).join('') : secs[f][0];
+    (words.length && !qlist.length)
+      ? '<div class="empty">No reports match &ldquo;'+esc(RES_QUERY.trim())+'&rdquo;.<br>Try a ticker (e.g. NVDA) or a keyword (e.g. dividend).</div>'
+      : (f==='all' ? order.map(function(k){return secs[k][0];}).join('') : secs[f][0]);
   document.querySelectorAll('#resFilters .fbtn').forEach(function(b){
     b.classList.toggle('on', b.getAttribute('data-f')===f);
   });
 }
 document.querySelectorAll('#resFilters .fbtn').forEach(function(b){
   b.addEventListener('click', function(){ renderResearch(b.getAttribute('data-f')); });
+});
+document.getElementById('resSearch').addEventListener('input', function(){
+  RES_QUERY = this.value; renderResearch();
 });
 
 /* ---------------- research requests ---------------- */
