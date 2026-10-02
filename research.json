@@ -1,403 +1,407 @@
 {
- "reports": [
-  {
-   "date": "2026-09-22",
-   "file": "avgo-fundamental-analysis.html",
-   "kind": "company",
-   "rating": "BUY",
-   "target": "$505",
-   "ticker": "AVGO"
-  },
-  {
-   "date": "2026-09-22",
-   "file": "gev-fundamental-analysis.html",
-   "kind": "company",
-   "rating": "HOLD",
-   "target": "$1,100",
-   "ticker": "GEV"
-  },
-  {
-   "date": "2026-09-22",
-   "file": "nvda-fundamental-analysis.html",
-   "kind": "company",
-   "rating": "BUY",
-   "target": "$328",
-   "ticker": "NVDA"
-  },
-  {
-   "date": "2026-09-26",
-   "file": "tsm-fundamental-analysis-2026-09-26.html",
-   "kind": "company",
-   "rating": "BUY",
-   "target": "$545",
-   "ticker": "TSM",
-   "summary": "Update: BUY maintained, target raised to $545 (~21% upside) on higher FY2027E consensus (~$21.8); August revenue record NT$514.8B (+53% y/y); Q3 tracking with room to spare; 2nm ramp steepening; price below the $460 add line."
-  },
-  {
-   "date": "2026-09-26",
-   "file": "uber-update-note-2026-09-26.html",
-   "kind": "company",
-   "rating": "BUY",
-   "target": "$105",
-   "ticker": "UBER"
-  },
-  {
-   "date": "2026-09-25",
-   "file": "unh-fundamental-analysis-2026-09-25.html",
-   "kind": "company",
-   "rating": "BUY",
-   "target": "$475",
-   "ticker": "UNH"
-  },
-  {
-   "date": "Sep 2026",
-   "file": "asml-fundamental-analysis.html",
-   "kind": "company",
-   "rating": "HOLD",
-   "target": "$1,950",
-   "ticker": "ASML"
-  },
-  {
-   "date": "2026-09-22",
-   "file": "crm-fundamental-analysis.html",
-   "kind": "company",
-   "rating": "HOLD",
-   "target": "$276",
-   "ticker": "CRM"
-  },
-  {
-   "date": "2026-09-22",
-   "file": "gehc-fundamental-analysis.html",
-   "kind": "company",
-   "rating": "BUY",
-   "target": "$84",
-   "ticker": "GEHC"
-  },
-  {
-   "date": "2026-09-23",
-   "file": "nflx-fundamental-analysis.html",
-   "kind": "company",
-   "rating": "HOLD",
-   "target": "$88",
-   "ticker": "NFLX"
-  },
-  {
-   "date": "2026-09-22",
-   "file": "qcom-fundamental-analysis.html",
-   "kind": "company",
-   "rating": "HOLD",
-   "target": "$205",
-   "ticker": "QCOM"
-  },
-  {
-   "ticker": "AXP",
-   "file": "axp-fundamental-analysis-2026-09-26.html",
-   "rating": "Constructive",
-   "target": null,
-   "kind": "company",
-   "date": "2026-09-26"
-  },
-  {
-   "ticker": "JPM",
-   "file": "jpm-fundamental-analysis-2026-09-27.html",
-   "rating": "HOLD",
-   "target": "$360",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "AMZN",
-   "file": "amzn-fundamental-analysis-2026-09-27.html",
-   "rating": "BUY",
-   "target": "$315",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "META",
-   "file": "meta-fundamental-analysis-2026-09-27.html",
-   "rating": "HOLD",
-   "target": "$800",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "AAPL",
-   "file": "aapl-fundamental-analysis-2026-09-27.html",
-   "rating": "HOLD",
-   "target": "$350",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "MSFT",
-   "file": "msft-fundamental-analysis-2026-09-27.html",
-   "rating": "BUY",
-   "target": "$590",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "GOOG",
-   "file": "goog-fundamental-analysis-2026-09-27.html",
-   "rating": "BUY",
-   "target": "$410",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "DIS",
-   "file": "dis-fundamental-analysis-2026-09-27.html",
-   "rating": "BUY",
-   "target": "$125",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "MA",
-   "file": "ma-fundamental-analysis-2026-09-27.html",
-   "rating": "BUY",
-   "target": "$650",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "V",
-   "file": "v-fundamental-analysis-2026-09-27.html",
-   "rating": "HOLD",
-   "target": "$385",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "GS",
-   "file": "gs-fundamental-analysis-2026-09-27.html",
-   "rating": "HOLD",
-   "target": "$1,020",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "BATRA",
-   "file": "batra-fundamental-analysis-2026-09-27.html",
-   "rating": "HOLD",
-   "target": "$63",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "XOM",
-   "file": "xom-fundamental-analysis-2026-09-27.html",
-   "rating": "HOLD",
-   "target": "$168",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "SO",
-   "file": "so-fundamental-analysis-2026-09-27.html",
-   "rating": "BUY",
-   "target": "$92",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "KO",
-   "file": "ko-fundamental-analysis-2026-09-27.html",
-   "rating": "HOLD",
-   "target": "$94",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "PEP",
-   "file": "pep-fundamental-analysis-2026-09-27.html",
-   "rating": "BUY",
-   "target": "$152",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "PM",
-   "file": "pm-fundamental-analysis-2026-09-27.html",
-   "rating": "BUY",
-   "target": "$210",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "BMY",
-   "file": "bmy-fundamental-analysis-2026-09-27.html",
-   "rating": "HOLD",
-   "target": "$68",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "AMT",
-   "file": "amt-fundamental-analysis-2026-09-27.html",
-   "rating": "BUY",
-   "target": "$225",
-   "kind": "company",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "TLXIX",
-   "file": "tlxix-fund-overview-2026-09-27.html",
-   "rating": "KEEP",
-   "target": null,
-   "kind": "fund",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "VXUS",
-   "file": "vxus-fund-overview-2026-09-27.html",
-   "rating": "KEEP",
-   "target": null,
-   "kind": "fund",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "VFFSX",
-   "file": "vffsx-fund-overview-2026-09-27.html",
-   "rating": "TRIM",
-   "target": null,
-   "kind": "fund",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "AVUV",
-   "file": "avuv-fund-overview-2026-09-27.html",
-   "rating": "KEEP",
-   "target": null,
-   "kind": "fund",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "FSSNX",
-   "file": "fssnx-fund-overview-2026-09-27.html",
-   "rating": "KEEP",
-   "target": null,
-   "kind": "fund",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "FSMDX",
-   "file": "fsmdx-fund-overview-2026-09-27.html",
-   "rating": "KEEP",
-   "target": null,
-   "kind": "fund",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "SCHD",
-   "file": "schd-fund-overview-2026-09-27.html",
-   "rating": "KEEP",
-   "target": null,
-   "kind": "fund",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "IJH",
-   "file": "ijh-fund-overview-2026-09-27.html",
-   "rating": "KEEP",
-   "target": null,
-   "kind": "fund",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "VTWO",
-   "file": "vtwo-fund-overview-2026-09-27.html",
-   "rating": "KEEP",
-   "target": null,
-   "kind": "fund",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "GRID",
-   "file": "grid-fund-overview-2026-09-27.html",
-   "rating": "KEEP",
-   "target": null,
-   "kind": "fund",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "VIS",
-   "file": "vis-fund-overview-2026-09-27.html",
-   "rating": "KEEP",
-   "target": null,
-   "kind": "fund",
-   "date": "2026-09-27"
-  },
-  {
-   "ticker": "SOXQ",
-   "file": "soxq-fund-overview-2026-09-27.html",
-   "rating": "KEEP",
-   "target": null,
-   "kind": "fund",
-   "date": "2026-09-27"
-  },
-  {
-   "date": "2026-09-24",
-   "file": "ai-stack-investments-2026-09-24.html",
-   "kind": "thematic",
-   "rating": null,
-   "sub": "Thematic",
-   "target": null,
-   "ticker": null,
-   "title": "AI Stack Investments"
-  },
-  {
-   "date": "2026-09-22",
-   "file": "capital-allocation-ranking-2026-09-22.html",
-   "kind": "thematic",
-   "rating": null,
-   "sub": "Ranking",
-   "target": null,
-   "ticker": null,
-   "title": "Capital Allocation Ranking"
-  },
-  {
-   "date": "2026-09-23",
-   "file": "portfolio-ranking-report-2026-09-23.html",
-   "kind": "thematic",
-   "rating": null,
-   "sub": "Ranking",
-   "target": null,
-   "ticker": null,
-   "title": "Portfolio Ranking Report"
-  },
-  {
-   "date": "2026-09-23",
-   "file": "grid-vis-sector-report-2026-09-23.html",
-   "kind": "thematic",
-   "rating": null,
-   "sub": "Sector",
-   "target": null,
-   "ticker": null,
-   "title": "GRID Industrial Sector"
-  },
-  {
-   "date": "2026-09-25",
-   "file": "weekly-market-intelligence-2026-09-25.html",
-   "kind": "market",
-   "rating": null,
-   "sub": "Market Intelligence",
-   "target": null,
-   "ticker": null,
-   "title": "Weekly Market Intelligence — Week Ended Sep 25, 2026"
-  },
-  {
-   "date": "2026-09-29",
-   "file": "ai-capital-spending-valuation-hurdle-2026-09-29.html",
-   "kind": "thematic",
-   "rating": null,
-   "sub": "Thematic",
-   "summary": "2026 research synthesis: hyperscaler capex migrating toward ~$800B (2026) and $1.1–1.2T (2027E per MS/UBS); Goldman frames ~$7.6T cumulative AI infra spend 2026–31; the debate has shifted from ‘is demand real?’ to whether monetization can earn an acceptable return on the capital base.",
-   "target": null,
-   "ticker": null,
-   "title": "AI Capital Spending & Valuation Hurdle"
-  }
- ],
- "updated": "2026-09-29"
+  "reports": [
+    {
+      "date": "2026-09-26",
+      "file": "tsm-fundamental-analysis-2026-09-26.html",
+      "kind": "company",
+      "rating": "BUY",
+      "target": "$545",
+      "ticker": "TSM",
+      "summary": "Update: BUY maintained, target raised to $545 (~21% upside) on higher FY2027E consensus (~$21.8); August revenue record NT$514.8B (+53% y/y); Q3 tracking with room to spare; 2nm ramp steepening; price below the $460 add line."
+    },
+    {
+      "date": "2026-09-26",
+      "file": "uber-update-note-2026-09-26.html",
+      "kind": "company",
+      "rating": "BUY",
+      "target": "$105",
+      "ticker": "UBER"
+    },
+    {
+      "date": "2026-09-25",
+      "file": "unh-fundamental-analysis-2026-09-25.html",
+      "kind": "company",
+      "rating": "BUY",
+      "target": "$475",
+      "ticker": "UNH"
+    },
+    {
+      "date": "Sep 2026",
+      "file": "asml-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "HOLD",
+      "target": "$1,950",
+      "ticker": "ASML"
+    },
+    {
+      "date": "2026-09-22",
+      "file": "crm-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "HOLD",
+      "target": "$276",
+      "ticker": "CRM"
+    },
+    {
+      "date": "2026-09-23",
+      "file": "nflx-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "HOLD",
+      "target": "$88",
+      "ticker": "NFLX"
+    },
+    {
+      "date": "2026-09-22",
+      "file": "qcom-fundamental-analysis.html",
+      "kind": "company",
+      "rating": "HOLD",
+      "target": "$205",
+      "ticker": "QCOM"
+    },
+    {
+      "ticker": "AXP",
+      "file": "axp-fundamental-analysis-2026-09-26.html",
+      "rating": "Constructive",
+      "target": null,
+      "kind": "company",
+      "date": "2026-09-26"
+    },
+    {
+      "ticker": "JPM",
+      "file": "jpm-fundamental-analysis-2026-09-27.html",
+      "rating": "HOLD",
+      "target": "$360",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "AMZN",
+      "file": "amzn-fundamental-analysis-2026-09-27.html",
+      "rating": "BUY",
+      "target": "$315",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "META",
+      "file": "meta-fundamental-analysis-2026-09-27.html",
+      "rating": "HOLD",
+      "target": "$800",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "AAPL",
+      "file": "aapl-fundamental-analysis-2026-09-27.html",
+      "rating": "HOLD",
+      "target": "$350",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "MSFT",
+      "file": "msft-fundamental-analysis-2026-09-27.html",
+      "rating": "BUY",
+      "target": "$590",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "GOOG",
+      "file": "goog-fundamental-analysis-2026-09-27.html",
+      "rating": "BUY",
+      "target": "$410",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "DIS",
+      "file": "dis-fundamental-analysis-2026-09-27.html",
+      "rating": "BUY",
+      "target": "$125",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "MA",
+      "file": "ma-fundamental-analysis-2026-09-27.html",
+      "rating": "BUY",
+      "target": "$650",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "V",
+      "file": "v-fundamental-analysis-2026-09-27.html",
+      "rating": "HOLD",
+      "target": "$385",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "GS",
+      "file": "gs-fundamental-analysis-2026-09-27.html",
+      "rating": "HOLD",
+      "target": "$1,020",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "BATRA",
+      "file": "batra-fundamental-analysis-2026-09-27.html",
+      "rating": "HOLD",
+      "target": "$63",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "XOM",
+      "file": "xom-fundamental-analysis-2026-09-27.html",
+      "rating": "HOLD",
+      "target": "$168",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "SO",
+      "file": "so-fundamental-analysis-2026-09-27.html",
+      "rating": "BUY",
+      "target": "$92",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "KO",
+      "file": "ko-fundamental-analysis-2026-09-27.html",
+      "rating": "HOLD",
+      "target": "$94",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "PEP",
+      "file": "pep-fundamental-analysis-2026-09-27.html",
+      "rating": "BUY",
+      "target": "$152",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "PM",
+      "file": "pm-fundamental-analysis-2026-09-27.html",
+      "rating": "BUY",
+      "target": "$210",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "BMY",
+      "file": "bmy-fundamental-analysis-2026-09-27.html",
+      "rating": "HOLD",
+      "target": "$68",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "AMT",
+      "file": "amt-fundamental-analysis-2026-09-27.html",
+      "rating": "BUY",
+      "target": "$225",
+      "kind": "company",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "TLXIX",
+      "file": "tlxix-fund-overview-2026-09-27.html",
+      "rating": "KEEP",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "VXUS",
+      "file": "vxus-fund-overview-2026-09-27.html",
+      "rating": "KEEP",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "VFFSX",
+      "file": "vffsx-fund-overview-2026-09-27.html",
+      "rating": "TRIM",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "AVUV",
+      "file": "avuv-fund-overview-2026-09-27.html",
+      "rating": "KEEP",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "FSSNX",
+      "file": "fssnx-fund-overview-2026-09-27.html",
+      "rating": "KEEP",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "FSMDX",
+      "file": "fsmdx-fund-overview-2026-09-27.html",
+      "rating": "KEEP",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "SCHD",
+      "file": "schd-fund-overview-2026-09-27.html",
+      "rating": "KEEP",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "IJH",
+      "file": "ijh-fund-overview-2026-09-27.html",
+      "rating": "KEEP",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "VTWO",
+      "file": "vtwo-fund-overview-2026-09-27.html",
+      "rating": "KEEP",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "GRID",
+      "file": "grid-fund-overview-2026-09-27.html",
+      "rating": "KEEP",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "VIS",
+      "file": "vis-fund-overview-2026-09-27.html",
+      "rating": "KEEP",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-09-27"
+    },
+    {
+      "ticker": "SOXQ",
+      "file": "soxq-fund-overview-2026-09-27.html",
+      "rating": "KEEP",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-09-27"
+    },
+    {
+      "date": "2026-09-24",
+      "file": "ai-stack-investments-2026-09-24.html",
+      "kind": "thematic",
+      "rating": null,
+      "sub": "Thematic",
+      "target": null,
+      "ticker": null,
+      "title": "AI Stack Investments"
+    },
+    {
+      "date": "2026-09-22",
+      "file": "capital-allocation-ranking-2026-09-22.html",
+      "kind": "thematic",
+      "rating": null,
+      "sub": "Ranking",
+      "target": null,
+      "ticker": null,
+      "title": "Capital Allocation Ranking"
+    },
+    {
+      "date": "2026-09-23",
+      "file": "portfolio-ranking-report-2026-09-23.html",
+      "kind": "thematic",
+      "rating": null,
+      "sub": "Ranking",
+      "target": null,
+      "ticker": null,
+      "title": "Portfolio Ranking Report"
+    },
+    {
+      "date": "2026-09-23",
+      "file": "grid-vis-sector-report-2026-09-23.html",
+      "kind": "thematic",
+      "rating": null,
+      "sub": "Sector",
+      "target": null,
+      "ticker": null,
+      "title": "GRID Industrial Sector"
+    },
+    {
+      "date": "2026-09-25",
+      "file": "weekly-market-intelligence-2026-09-25.html",
+      "kind": "market",
+      "rating": null,
+      "sub": "Market Intelligence",
+      "target": null,
+      "ticker": null,
+      "title": "Weekly Market Intelligence \u2014 Week Ended Sep 25, 2026"
+    },
+    {
+      "date": "2026-09-29",
+      "file": "ai-capital-spending-valuation-hurdle-2026-09-29.html",
+      "kind": "thematic",
+      "rating": null,
+      "sub": "Thematic",
+      "summary": "2026 research synthesis: hyperscaler capex migrating toward ~$800B (2026) and $1.1\u20131.2T (2027E per MS/UBS); Goldman frames ~$7.6T cumulative AI infra spend 2026\u201331; the debate has shifted from \u2018is demand real?\u2019 to whether monetization can earn an acceptable return on the capital base.",
+      "target": null,
+      "ticker": null,
+      "title": "AI Capital Spending & Valuation Hurdle"
+    },
+    {
+      "ticker": "GEV",
+      "file": "gev-fundamental-analysis-2026-09-30.html",
+      "rating": "HOLD",
+      "target": "$1,100",
+      "kind": "company",
+      "date": "2026-09-30",
+      "summary": "Update: HOLD maintained, $1,100 target maintained. Stock flat at ~$949.50 since Sep 22; Q3 confirmed Oct 28. New: Crusoe data-center turbine order, BWRX-300 NRC permit, Egypt services deal, $0.50 dividend. GLJ Sell/$470 margin-vintage thesis is the key debate; valuation ~61x FY26E prices perfection. Add gate: $875 (Sep 14 low)."
+    },
+    {
+      "ticker": "AVGO",
+      "file": "avgo-fundamental-analysis-2026-09-30.html",
+      "rating": "BUY",
+      "target": "$535",
+      "kind": "company",
+      "date": "2026-09-30",
+      "summary": "Update: BUY maintained, target raised $505 -> $535 (~52% upside). FY27 AI outlook reaffirmed at $115B; FQ3 beat (AI rev +221%); stock -3.5% to $351.19, 29% off high. New risk: China SASAC switch review. Morningstar $650/5*. Add gate: $340 toward ~3% weight."
+    },
+    {
+      "ticker": "GEHC",
+      "file": "gehc-fundamental-analysis-2026-10-02.html",
+      "rating": "ADD",
+      "target": "$92",
+      "kind": "company",
+      "date": "2026-10-02",
+      "summary": "Update: ADD (was BUY/$84), $92 base value maintained (~43% upside). Q2 beat, guidance reaffirmed, record $23.9B backlog; stock -13% to $64.29 on sentiment. Dividend raised 14%. PCS -$26M loss, interim CFO, China down, litigation overhang keep conviction at 7/10. Add gate: $62 toward ~0.5% weight."
+    },
+    {
+      "ticker": "NVDA",
+      "file": "NVDA_Update_Add_Ranges_Gates_20261002.html",
+      "rating": "ADD",
+      "target": "$340",
+      "kind": "company",
+      "date": "2026-10-02",
+      "summary": "Cam's update: ADD (staged & gated), conviction 8/10 (was 9/10). 12-mo base $340 (+45.3%); prob-weighted $328 (+40.3%) \u2014 matches our Sep-22 $328 target. Core add band $215-235 (top cut from $240); $235-250 conditional on Nov print. Key debate: demand quality \u2014 $94B ecosystem stakes, $105B guarantee cap, $279B supply obligations. Build 0.44% toward ~1.0% in three tranches."
+    }
+  ],
+  "updated": "2026-09-29"
 }
