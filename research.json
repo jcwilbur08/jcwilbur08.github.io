@@ -465,6 +465,36 @@
       "rating": null,
       "target": null,
       "summary": "Selective OVERWEIGHT: ~18-19x forward vs 20.5x history and 0.8x S&P (historic low), with double-digit earnings growth expected from Q4'26. Held names checked: BMY HOLD/$68, UNH constructive (accumulate gate stands), GEHC ADD/$92 ($62 gate live). 12 recommended equities (LLY JNJ ABBV PFE AMGN VRTX GILD BSX ISRG ABT ELV HCA) and 7 ETFs (XLV VHT IBB XBI IHI IXJ RYH). Portfolio only ~2.5% in healthcare vs ~11-13% benchmark."
+    },
+    {
+      "ticker": "JNJ",
+      "file": "jnj-fundamental-analysis-2026-10-03.html",
+      "rating": "HOLD",
+      "target": "$275",
+      "kind": "company",
+      "date": "2026-10-03",
+      "sub": null,
+      "summary": "Initiate HOLD, $275 target (~7% upside from $256.03; 21.4x FY2027E $12.83). Dividend King (64 straight raises), 0.8x leverage, Darzalex +18.9%/Tremfya +72.5%/Spravato +40%; but ~23x forward on the July-29-cut guide is full. Overhangs: $5.5-7B talc framework (95% acceptance needed), Stelara -55% cliff, 2027 -$1.36/sh deal drag. Q3 Oct 13. Recommended gate: ADD at/below $230 toward ~1%."
+    },
+    {
+      "ticker": "VHT",
+      "file": "vht-fund-overview-2026-10-03.html",
+      "rating": "BUY",
+      "target": null,
+      "kind": "fund",
+      "date": "2026-10-03",
+      "sub": null,
+      "summary": "Initiate BUY as core healthcare holding toward 5-8% of NAV. 414 holdings, 0.09% ER, ~$20B AUM, 10-yr 10.6% ann., ~1.5% yield growing ~20%. Broader and less concentrated than XLV (top-10 51.5% vs 61.6%) at the same cost. 4-star Morningstar, Bronze medalist. Top: LLY 12.8%, JNJ 8.7%, ABBV 6.3%."
+    },
+    {
+      "ticker": "LLY",
+      "file": "lly-fundamental-analysis-2026-10-03.html",
+      "rating": "ADD",
+      "target": "$1,300",
+      "kind": "company",
+      "date": "2026-10-03",
+      "sub": null,
+      "summary": "Initiate ADD, $1,300 target (~14% upside from $1,142.85; 27.9x FY2027E $46.65). Best growth asset in healthcare: Q2 rev +48% ($2.3B beat), guide raised ($85-87B rev), Foundayo oral GLP-1 approved Apr 2026, retatrutide 28.3% Ph3 (BLA Q1 2027), supply normalized. But 31.2x forward is full; risks: Novo/Pfizer/Amgen competition, pricing pressure. Recommended gate: ADD at/below $1,000 toward ~1%."
     }
   ],
   "updated": "2026-09-29"
