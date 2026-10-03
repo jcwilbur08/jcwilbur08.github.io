@@ -539,34 +539,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <p style="font-size:calc(13px * var(--text-scale,1));color:#888;margin-top:12px;">SPDR Select Sector ETFs, day % change vs. prior close. Live via Finnhub.</p>
     </div>
 
-    <div class="card">
-      <h3>YTD Performance vs. S&P 500</h3>
-      <div class="metrics-row" style="margin-bottom:16px;">
-        <div class="metric">
-          <div class="lbl">Portfolio Estimate</div>
-          <div class="val up-color" id="ytd-port-val">—</div>
-          <div class="sub" id="ytd-coverage-val">—</div>
-        </div>
-        <div class="metric">
-          <div class="lbl">S&P 500 Proxy</div>
-          <div class="val up-color" id="ytd-spy-val">—</div>
-          <div class="sub">SPY, split-adjusted</div>
-        </div>
-        <div class="metric">
-          <div class="lbl">Relative Spread</div>
-          <div class="val" id="ytd-spread-val">—</div>
-          <div class="sub">Portfolio vs. SPY</div>
-        </div>
-      </div>
-      <div style="height:220px;position:relative;">
-        <canvas id="ytdChartCanvas"></canvas>
-      </div>
-      <p style="font-size:calc(13px * var(--text-scale,1));color:#888;margin:14px 0 0;">Constant-current-holdings estimate — today's share counts assumed held since the first 2026 trading day. Not the investor's actual transaction-adjusted return. <span id="ytd-excluded-note"></span></p>
-      <div style="display:flex;gap:16px;margin-top:12px;font-size:calc(13px * var(--text-scale,1));color:#555;">
-        <span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#16a34a;margin-right:5px;"></span>Portfolio</span>
-        <span><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#2563eb;margin-right:5px;"></span>SPY total-return proxy</span>
-      </div>
-    </div>
+    <!-- YTD vs. S&P 500 card REMOVED Oct 2, 2026 (pending accuracy rework). Re-add: see ytd_vs_spy_module.md, step 1 — paste the card HTML here. -->
 
     <div class="data-freshness-footer">
       <span>Prices <span id="header-live-status">loading…</span></span>
@@ -2883,111 +2856,7 @@ async function fetchNewsFeed(){
 }
 fetchNewsFeed();
 
-// ---- YTD PORTFOLIO ESTIMATE VS S&P 500 ----
-// Session-only, like the baseline Robinhood prices above: weekly split-adjusted closes
-// (Jan 2 -> Aug 14, 2026) as published previously, then extended through Oct 2, 2026 with
-// weekly Friday closes (Aug 21 -> Sep 25) and Oct 2 regular-session closes. The extension is
-// chain-linked: each new point = the published Aug 14 level compounded by the weekly change
-// in the covered book at current share counts (and in SPY), so history is not restated. Constant-holdings construct — today's share counts assumed held since the
-// first 2026 trading day; this is an estimate, not the investor's actual transaction-
-// adjusted return. FSMDX/FSSNX/TLXIX/VFFSX have no tradable price history on Robinhood;
-// XOM is excluded too — its historical feed breaks down before ~6/29/26 (interpolated
-// flat data), consistent with its 2026 restructuring into ExxonMobil Holdings Corp.
-const ytdVsSpy = {
-  dates: ["2026-01-02","2026-01-05","2026-01-12","2026-01-20","2026-01-26","2026-02-02","2026-02-09","2026-02-17","2026-02-23","2026-03-02","2026-03-09","2026-03-16","2026-03-23","2026-03-30","2026-04-06","2026-04-13","2026-04-20","2026-04-27","2026-05-04","2026-05-11","2026-05-18","2026-05-26","2026-06-01","2026-06-08","2026-06-15","2026-06-22","2026-06-29","2026-07-06","2026-07-13","2026-07-20","2026-07-27","2026-08-03","2026-08-14","2026-08-21","2026-08-28","2026-09-04","2026-09-11","2026-09-18","2026-09-25","2026-10-02"],
-  portfolio: [0.0,1.595,0.317,-1.235,-0.076,-0.082,-2.596,-0.881,-1.258,-3.556,-5.666,-6.752,-8.474,-4.916,-0.234,3.142,4.051,5.129,5.837,5.429,7.201,7.605,4.979,4.664,6.168,3.503,6.475,7.258,7.777,6.381,8.936,10.823,10.465,9.309,10.931,10.087,9.914,8.003,8.395,6.768],
-  spy: [0.0,1.596,1.243,0.887,1.288,1.091,-0.208,0.916,0.413,-1.579,-3.056,-5.065,-7.184,-4.002,-0.543,3.948,4.504,5.486,7.97,8.197,9.144,10.731,7.96,8.575,9.305,6.707,9.018,10.507,8.8,8.162,9.348,13.187,13.593,12.039,12.57,12.693,11.83,11.449,12.863,12.614],
-  coveragePct: 78.1,
-  excluded: ['FSMDX','FSSNX','TLXIX','VFFSX','XOM']
-};
-
-function renderYtdCard(){
-  const n = ytdVsSpy.portfolio.length;
-  const portFinal = ytdVsSpy.portfolio[n-1];
-  const spyFinal = ytdVsSpy.spy[n-1];
-  const spread = portFinal - spyFinal;
-  const upP = portFinal >= 0, upS = spyFinal >= 0, upSpread = spread >= 0;
-
-  const portEl = document.getElementById('ytd-port-val');
-  if(portEl){ portEl.textContent = (upP?'+':'')+portFinal.toFixed(1)+'%'; portEl.className = 'val '+(upP?'up-color':'dn-color'); }
-  const spyEl = document.getElementById('ytd-spy-val');
-  if(spyEl){ spyEl.textContent = (upS?'+':'')+spyFinal.toFixed(1)+'%'; spyEl.className = 'val '+(upS?'up-color':'dn-color'); }
-  const spreadEl = document.getElementById('ytd-spread-val');
-  if(spreadEl){ spreadEl.textContent = (upSpread?'+':'')+spread.toFixed(1)+' pp'; spreadEl.className = 'val '+(upSpread?'up-color':'dn-color'); }
-  const covEl = document.getElementById('ytd-coverage-val');
-  if(covEl) covEl.textContent = ytdVsSpy.coveragePct.toFixed(1)+'% covered';
-  const exclEl = document.getElementById('ytd-excluded-note');
-  if(exclEl) exclEl.textContent = 'Excluded (no tradable price history): '+ytdVsSpy.excluded.join(', ')+'.';
-
-  try {
-    if (typeof Chart === 'undefined') throw new Error('Chart.js failed to load from CDN');
-    const canvas = document.getElementById('ytdChartCanvas');
-    if(!canvas) return;
-    const labels = ytdVsSpy.dates.map(d=>{
-      const parts = d.split('-');
-      return MONTH_ABBR[+parts[1]]+' '+(+parts[2]);
-    });
-    if(window.ytdChartInstance){
-      window.ytdChartInstance.data.labels = labels;
-      window.ytdChartInstance.data.datasets[0].data = ytdVsSpy.portfolio;
-      window.ytdChartInstance.data.datasets[1].data = ytdVsSpy.spy;
-      window.ytdChartInstance.update();
-      return;
-    }
-    window.ytdChartInstance = new Chart(canvas, {
-      type: 'line',
-      data: {
-        labels: labels,
-        datasets: [
-          {
-            label: 'Portfolio',
-            data: ytdVsSpy.portfolio,
-            borderColor: '#16a34a',
-            backgroundColor: 'rgba(22,163,74,0.08)',
-            borderWidth: 2.5,
-            pointRadius: 0,
-            pointHoverRadius: 4,
-            tension: 0.25,
-            fill: false
-          },
-          {
-            label: 'SPY total-return proxy',
-            data: ytdVsSpy.spy,
-            borderColor: '#2563eb',
-            backgroundColor: 'rgba(37,99,235,0.06)',
-            borderWidth: 2.5,
-            pointRadius: 0,
-            pointHoverRadius: 4,
-            tension: 0.25,
-            fill: false
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        interaction: { mode: 'index', intersect: false },
-        plugins: {
-          legend: { display: false },
-          tooltip: {
-            callbacks: {
-              label: (ctx) => `${ctx.dataset.label}: ${ctx.parsed.y>=0?'+':''}${ctx.parsed.y.toFixed(1)}%`
-            }
-          }
-        },
-        scales: {
-          x: { ticks: { maxTicksLimit: 7, font:{size:10} }, grid: { display:false } },
-          y: { ticks: { callback:(v)=>v+'%', font:{size:10} }, grid: { color:'rgba(0,0,0,.06)' } }
-        }
-      }
-    });
-  } catch(chartErr) {
-    console.warn('YTD chart unavailable:', chartErr.message);
-    const canvas = document.getElementById('ytdChartCanvas');
-    if(canvas) canvas.parentElement.style.display = 'none';
-  }
-}
-renderYtdCard();
+// ---- YTD vs. S&P 500 REMOVED Oct 2, 2026 (pending accuracy rework). Re-add: see ytd_vs_spy_module.md, step 2 — paste the JS block here. ----
 
 // ---- THEME TOGGLE (session only, no persistence) ----
 function toggleTheme(){
@@ -3086,7 +2955,7 @@ async function fetchLiveQuotes(){
 
   const liveStatusText = liveOk > 0
     ? `live as of ${timeStr}`
-    : (FINNHUB_API_KEY === 'YOUR_FINNHUB_API_KEY_HERE'
+    : (FINNHUB_API_KEY === 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0'
         ? 'showing last-known values (add your Finnhub key to go live)'
         : 'showing last-known values (live fetch unavailable)');
   const headerStatusEl = document.getElementById('header-live-status');
