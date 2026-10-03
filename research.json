@@ -434,6 +434,37 @@
       "rating": null,
       "target": null,
       "summary": "Narration script for the Weekly Market Intelligence audio briefing, week ended Oct 2, 2026."
+    },
+    {
+      "ticker": "LOW",
+      "file": "low-fundamental-analysis-2026-10-03.html",
+      "rating": "BUY",
+      "target": "$225",
+      "kind": "company",
+      "date": "2026-10-03",
+      "sub": null,
+      "summary": "Initiate BUY, $225 target (~24% upside from $180.80; 17.3x FY2027E $13.03). At a 52-wk low (-26.5% 1-yr), ~15-16x forward, 6.9% FCF yield, 2.8% Aristocrat yield; Morningstar FVE $255 (~41% upside). Q2: rev $25.96B +8.3%, comps +0.2%, adj EPS $4.40 beat; guidance cut to low end. Pro >30% via FBM/ADG. Recommended gate: ADD at/below $165 toward ~1%."
+    },
+    {
+      "ticker": "HD",
+      "file": "hd-fundamental-analysis-2026-10-03.html",
+      "rating": "ADD",
+      "target": "$340",
+      "kind": "company",
+      "date": "2026-10-03",
+      "sub": null,
+      "summary": "Initiate ADD, $340 target (~20% upside from $282.85; 22.7x FY2026E $15.00). Best operator in home improvement: Pro >50%, 8 straight positive Pro comp quarters, Q2 comps +1.7% (strongest since Q3 FY22), guidance reaffirmed; -28.9% 1-yr de-rating, 3.3% yield. Housing tape (7.28% mortgages) keeps it ADD not BUY. Recommended gate: ADD at/below $260 toward ~1%."
+    },
+    {
+      "title": "Healthcare Sector Outlook \u2014 October 2026",
+      "file": "healthcare-sector-outlook-2026-10-03.html",
+      "kind": "thematic",
+      "sub": "Sector",
+      "date": "2026-10-03",
+      "ticker": null,
+      "rating": null,
+      "target": null,
+      "summary": "Selective OVERWEIGHT: ~18-19x forward vs 20.5x history and 0.8x S&P (historic low), with double-digit earnings growth expected from Q4'26. Held names checked: BMY HOLD/$68, UNH constructive (accumulate gate stands), GEHC ADD/$92 ($62 gate live). 12 recommended equities (LLY JNJ ABBV PFE AMGN VRTX GILD BSX ISRG ABT ELV HCA) and 7 ETFs (XLV VHT IBB XBI IHI IXJ RYH). Portfolio only ~2.5% in healthcare vs ~11-13% benchmark."
     }
   ],
   "updated": "2026-09-29"
