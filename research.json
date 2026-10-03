@@ -401,6 +401,39 @@
       "kind": "company",
       "date": "2026-10-02",
       "summary": "Cam's update: ADD (staged & gated), conviction 8/10 (was 9/10). 12-mo base $340 (+45.3%); prob-weighted $328 (+40.3%) \u2014 matches our Sep-22 $328 target. Core add band $215-235 (top cut from $240); $235-250 conditional on Nov print. Key debate: demand quality \u2014 $94B ecosystem stakes, $105B guarantee cap, $279B supply obligations. Build 0.44% toward ~1.0% in three tranches."
+    },
+    {
+      "title": "Weekly Market Intelligence \u2014 Week Ended October 2, 2026",
+      "file": "Weekly_Market_Intelligence_2026-10-02.html",
+      "kind": "weekly",
+      "sub": "Weekly",
+      "date": "2026-10-02",
+      "ticker": null,
+      "rating": null,
+      "target": null,
+      "summary": "Weak Sept payrolls (+29K vs ~90K expected) cut near-term hike odds, but 10Y at 5.26% (5.34% intraday, highest since 2002) leaves the discount-rate problem unresolved. Narrow leadership: semis/AI + energy. Regime: late-cycle nominal resilience, high term premium. Week ahead: ISM Services Mon, FOMC minutes Wed, PEP Q3 Thu, UMich sentiment + DAL Fri. Base 55% / bull 25% / bear 20%."
+    },
+    {
+      "title": "Stocks to Watch \u2014 Week of October 5\u20139, 2026",
+      "file": "Stocks_to_Watch_2026-10-05.html",
+      "kind": "weekly",
+      "sub": "Weekly",
+      "date": "2026-10-05",
+      "ticker": null,
+      "rating": null,
+      "target": null,
+      "summary": "Week of Oct 5\u20139 watchlist: PEP (Oct 8 Q3), JPM (curve/credit read), AMT (duration monitor), XOM (oil/inflation hedge), NVDA (AI earnings vs rates), DAL (Oct 9 demand/fuel), DIS (TV restructuring), QCOM (\u22128.5% week needs causal separation). Event-reaction matrix and conditions-before-action framework."
+    },
+    {
+      "title": "Weekly Market Intelligence \u2014 Audio Briefing Script",
+      "file": "audio-script.txt",
+      "kind": "weekly",
+      "sub": "Audio script",
+      "date": "2026-10-02",
+      "ticker": null,
+      "rating": null,
+      "target": null,
+      "summary": "Narration script for the Weekly Market Intelligence audio briefing, week ended Oct 2, 2026."
     }
   ],
   "updated": "2026-09-29"
