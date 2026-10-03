@@ -2890,6 +2890,7 @@ function fmtDollar(n){ return '$'+Math.abs(n).toLocaleString('en-US',{minimumFra
 async function fetchLiveQuotes(){
   const liveTickers = holdings.filter(h => h.ticker!=='CASH' && !mutualFundQuoteTickers.includes(h.ticker));
   let liveOk = 0;
+  let liveErr = ''; // first failure reason (e.g. 'HTTP 401'), shown in the status line
 
   await Promise.allSettled(liveTickers.map(h =>
     fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(h.ticker)}&token=${FINNHUB_API_KEY}`)
@@ -2901,7 +2902,7 @@ async function fetchLiveQuotes(){
           liveOk++;
         }
       })
-      .catch(() => { /* keep this ticker's existing fallback price — no crash, no gap */ })
+      .catch(err => { if(!liveErr) liveErr = (err && err.message) || 'network error'; /* keep this ticker's existing fallback price — no crash, no gap */ })
   ));
 
   let sectorOk = 0;
@@ -2916,7 +2917,7 @@ async function fetchLiveQuotes(){
           console.warn('Sector ETF quote for', s.key, 'returned no usable c/pc:', data);
         }
       })
-      .catch(err => { console.warn('Sector ETF fetch failed for', s.key, err); /* keep last-known sector % — no crash, no gap */ })
+      .catch(err => { if(!liveErr) liveErr = (err && err.message) || 'network error'; console.warn('Sector ETF fetch failed for', s.key, err); /* keep last-known sector % — no crash, no gap */ })
   ));
   sectorFetchAttempted = true;
   if(sectorOk === 0) console.warn('Sector Performance: 0 of', sectorETFs.length, 'sector ETF quotes loaded from Finnhub.');
@@ -2953,11 +2954,15 @@ async function fetchLiveQuotes(){
   const timeStr = now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
   const dateStr = now.toLocaleDateString('en-US',{month:'short',day:'numeric'});
 
+  const liveErrHint = !liveErr ? '' :
+    (/HTTP 40[13]/.test(liveErr) ? liveErr+' — Finnhub rejected the key, check it'
+    : /HTTP 429/.test(liveErr) ? liveErr+' — rate limit (60 calls/min), wait a minute and reload'
+    : liveErr);
   const liveStatusText = liveOk > 0
     ? `live as of ${timeStr}`
-    : (FINNHUB_API_KEY === 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0'
+    : (FINNHUB_API_KEY === 'YOUR_FINNHUB_API_KEY_HERE'
         ? 'showing last-known values (add your Finnhub key to go live)'
-        : 'showing last-known values (live fetch unavailable)');
+        : 'showing last-known values (live fetch unavailable'+(liveErrHint?': '+liveErrHint:'')+')');
   const headerStatusEl = document.getElementById('header-live-status');
   if(headerStatusEl) headerStatusEl.textContent = liveStatusText;
 
@@ -2967,7 +2972,7 @@ async function fetchLiveQuotes(){
   const freshLiveEl = document.getElementById('freshness-live');
   if(freshLiveEl) freshLiveEl.textContent = liveOk > 0
     ? `Live quotes (Finnhub): ${dateStr}, ${timeStr}`
-    : 'Live quotes (Finnhub): unavailable — showing last-known prices';
+    : 'Live quotes (Finnhub): unavailable'+(liveErrHint?' ('+liveErrHint+')':'')+' — showing last-known prices';
 
   const freshMfEl = document.getElementById('freshness-mf');
   if(freshMfEl) freshMfEl.textContent = mfOk
