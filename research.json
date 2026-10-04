@@ -617,6 +617,51 @@
    "kind": "company",
    "date": "2026-10-04",
    "summary": "Update (new scale): Buy, conviction 7/10, $92 base value maintained (~43% upside from $64.29). Re-rating translation of the Oct 2 note — no material news since. ≤$62 accumulate gate live toward 0.5%; break below $58 on fundamental news = reassess. Q3 estimated ~Oct 28 (unconfirmed)."
+  },
+  {
+   "ticker": "ASML",
+   "file": "asml-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$2,050",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 6/10, $2,050 target (~10% upside from $1,867.31; 35x FY2027E ~$58.49; = Morningstar FVE). Morningstar 4-star to 3-star is a mechanical valuation move, FVE unchanged. Q3 Oct 14; MATCH Act DUVi-ban risk live. Accumulate gate recommended ≤$1,700 toward ~1% (not installed)."
+  },
+  {
+   "ticker": "AVGO",
+   "file": "avgo-fundamental-analysis-2026-10-04.html",
+   "rating": "Strong Buy",
+   "target": "$535",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Strong Buy, conviction 8/10, $535 target maintained (~51% upside from $355.14; ~27x FY2027E ~$19.50). New: up to $60B financing assembled for Anthropic AI-chip purchases (demand-quality now a tracking item); Anthropic IPO mid-Nov a visibility catalyst. FQ4 Dec 9. Analyst call: INSTALL the ≤$340 gate toward ~3% (pending approval)."
+  },
+  {
+   "ticker": "GEV",
+   "file": "gev-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$1,100",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 7/10, $1,100 target maintained (~11% upside from $988.70). +4% on the $0.50 dividend declaration; Evercore reaffirmed Outperform/$1,350. GLJ Sell/$470 margin thesis unaddressed — Q3 Oct 28 must answer it. ≤$875 gate reaffirmed (recommended, not installed)."
+  },
+  {
+   "ticker": "PEP",
+   "file": "pep-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$152",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 6/10, $152 target (~21% upside from $125.89; ~25% total w/ 4.6% yield). Fresh 52-wk low; Q3 Thu Oct 8 BMO (cons ~$2.30 EPS) is binary — the print decides the rating. JPM to Hold; Elliott restructuring accelerating. Do NOT add into the print; accumulate ≤~$120 post-print on maintained guide (gates not installed)."
+  },
+  {
+   "ticker": "NFLX",
+   "file": "nflx-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$88",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 6/10, $88 target maintained (+31% upside from $67.06) — resolves the flagged HOLD-vs-31%-upside tension: the rating was wrong, not the target. Stock -7% to near 52-wk low; 17.5x forward. Q3 Tue Oct 20 AMC; engagement deceleration is the watch item. Hold 500 sh through the print; staged trims on strength above $80/$88."
   }
  ],
  "updated": "2026-10-04"

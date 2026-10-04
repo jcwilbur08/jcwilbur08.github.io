@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>GE Vernova (GEV) - Fundamental Update - 2026-10-04</title>
+<style>
+:root{--ink:#182033;--muted:#657089;--navy:#18294b;--blue:#315ca8;--teal:#188a8a;--green:#247a57;--amber:#a76d13;--red:#a54343;--lav:#7459a8;--paper:#fff;--wash:#f4f7fb;--line:#dce3ee;--soft:#eef3f9}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#e8edf4;line-height:1.52;font-size:15px}
+a{color:#274f91;text-decoration:none} a:hover{text-decoration:underline}.report{max-width:1040px;margin:26px auto;background:var(--paper);box-shadow:0 8px 40px #1b2f501c}.page{padding:50px 62px}.cover{background:linear-gradient(135deg,#172746 0%,#263e72 62%,#5068a3 100%);color:#fff;padding:66px 62px 54px;min-height:760px;position:relative;overflow:hidden}.cover:after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:1px solid #ffffff20;right:-190px;top:-180px;box-shadow:0 0 0 80px #ffffff08,0 0 0 160px #ffffff05}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;opacity:.78}.cover h1{font-size:43px;line-height:1.06;max-width:740px;margin:28px 0 12px;letter-spacing:-.03em}.cover h2{font-size:19px;font-weight:500;margin:0 0 35px;opacity:.86;color:#fff}.ticker{display:inline-flex;align-items:center;gap:12px;border:1px solid #ffffff35;border-radius:999px;padding:8px 14px;font-weight:800;margin-bottom:22px;background:#ffffff0e}.rating-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:35px;max-width:850px}.metric{background:#ffffff12;border:1px solid #ffffff28;padding:16px 15px;border-radius:12px;backdrop-filter:blur(3px)}.metric .k{font-size:11px;text-transform:uppercase;letter-spacing:.09em;opacity:.72}.metric .v{font-size:23px;font-weight:800;margin-top:5px}.metric .s{font-size:11px;opacity:.72;margin-top:2px}.cover-note{position:absolute;left:62px;right:62px;bottom:45px;font-size:12px;opacity:.72}.toc{display:grid;grid-template-columns:1fr 1fr;gap:8px 25px;padding:16px 0}.toc a{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);color:var(--ink)}.toc span{width:26px;color:var(--blue);font-weight:800}.section{padding-top:10px;margin-top:10px}.section-kicker{color:var(--blue);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.13em;margin-bottom:5px}h2{font-size:29px;letter-spacing:-.02em;color:var(--navy);margin:0 0 18px}h3{font-size:19px;color:var(--navy);margin:26px 0 9px}h4{font-size:15px;color:var(--navy);margin:18px 0 5px}.lead{font-size:18px;color:#34425e;line-height:1.55}.callout{border-left:5px solid var(--blue);background:var(--wash);padding:18px 20px;margin:20px 0;border-radius:0 10px 10px 0}.callout.green{border-color:var(--green);background:#f1f8f4}.callout.amber{border-color:var(--amber);background:#fff8ec}.callout.red{border-color:var(--red);background:#fff4f4}.callout strong{color:var(--navy)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff}.card .label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800}.card .big{font-size:25px;font-weight:800;color:var(--navy);margin:4px 0}.card p{margin:6px 0 0}.score{display:inline-block;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:800}.pos{background:#e9f5ee;color:#17613f}.mix{background:#eef3fb;color:#315ca8}.neg{background:#faecec;color:#8f3535}.neutral{background:#f2eff8;color:#6b4b9e}table{width:100%;border-collapse:collapse;margin:15px 0 22px;font-size:13px}th{background:#edf2f8;color:#33435e;text-align:left;padding:10px 9px;border-bottom:2px solid #cbd6e5;font-size:11px;text-transform:uppercase;letter-spacing:.04em}td{padding:10px 9px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}.num{text-align:right;font-variant-numeric:tabular-nums}.strong{font-weight:800;color:var(--navy)}.small{font-size:12px;color:var(--muted)}ul,ol{padding-left:20px}li{margin:6px 0}.thesis{display:grid;grid-template-columns:50px 1fr;gap:12px;margin:14px 0;padding:15px;border:1px solid var(--line);border-radius:12px}.thesis .n{width:38px;height:38px;border-radius:10px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800}.thesis h3{margin:0 0 4px;font-size:17px}.thesis p{margin:0}.barrow{display:grid;grid-template-columns:150px 1fr 80px;gap:10px;align-items:center;margin:10px 0}.bar{height:12px;background:#e6ebf2;border-radius:10px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--teal));border-radius:10px}.fill.red{background:var(--red)}.fill.green{background:var(--green)}.fill.purple{background:var(--lav)}.scenario{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:20px 0}.scenario .case{border-radius:12px;padding:17px;border:1px solid var(--line)}.scenario .bear{border-top:5px solid var(--red)}.scenario .base{border-top:5px solid var(--blue)}.scenario .bull{border-top:5px solid var(--green)}.case .price{font-size:28px;font-weight:850;color:var(--navy)}.case .up{font-weight:800}.case ul{font-size:12px;padding-left:18px}.timeline{border-left:2px solid #c7d4e8;margin:18px 0 18px 8px;padding-left:25px}.event{margin:0 0 18px;position:relative}.event:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--blue);left:-31px;top:6px}.event .when{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:800}.footer-note{margin-top:35px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}.source-list{font-size:12px;overflow-wrap:anywhere}.source-list li{margin:8px 0}.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.pill{background:var(--soft);border:1px solid var(--line);padding:5px 9px;border-radius:999px;font-size:12px;font-weight:700;color:#40506d}.decision{border:2px solid var(--navy);border-radius:14px;padding:22px;margin:20px 0}.decision h3{margin:0 0 8px}.checkgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}.check{padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}.check b{color:var(--navy)}.break{break-before:page}.avoidbreak{break-inside:avoid}.quote{font-size:20px;font-weight:650;color:var(--navy);padding:16px 0}.disclaimer{font-size:10.5px;color:#6a7386;line-height:1.45}
+@media print{body{background:#fff;font-size:10.35px;line-height:1.39}.report{max-width:none;margin:0;box-shadow:none}.page{padding:26px 36px}.cover{min-height:11in;padding:52px 48px 42px;break-after:page}.cover h1{font-size:38px}.cover-note{left:48px;right:48px}.break{break-before:page}.card,.thesis,.scenario .case,.callout,.decision{break-inside:avoid}.card{padding:12px}.thesis{padding:10px;margin:9px 0}.thesis .n{width:31px;height:31px}.grid2{gap:12px}.grid3{gap:10px}.scenario{gap:10px;margin:12px 0}.scenario .case{padding:11px}.case .price{font-size:23px}table{font-size:9.6px;margin:10px 0 14px;break-inside:auto}thead{display:table-header-group}tr{break-inside:avoid}th{padding:6px 6px;font-size:9px}td{padding:6px 6px}h2{font-size:22px;margin-bottom:12px}h3{font-size:14.5px;margin:16px 0 6px}h4{font-size:12.5px}.lead{font-size:14.5px}.callout{padding:12px 14px;margin:12px 0}.metric .v{font-size:20px}.small{font-size:9.5px}.footer-note{margin-top:18px;padding-top:9px}.timeline{margin:10px 0 10px 8px}.event{margin-bottom:10px}.decision{padding:14px;margin:12px 0}.quote{font-size:16px;padding:9px 0}.barrow{margin:6px 0}.check{padding:6px 0}ul,ol{margin-top:5px;margin-bottom:6px}li{margin:3px 0}a{color:inherit;text-decoration:none}}
+@media(max-width:760px){.report{margin:0}.page,.cover{padding:32px 24px}.cover{min-height:740px}.cover h1{font-size:34px}.rating-strip,.grid2,.grid3,.scenario,.checkgrid{grid-template-columns:1fr}.cover-note{position:static;margin-top:50px}.toc{grid-template-columns:1fr}.barrow{grid-template-columns:110px 1fr 65px}}
+</style>
+</head>
+<body><main class="report">
+<section class="cover">
+<div class="eyebrow">Public Equity Research | Fundamental Update</div>
+<div class="ticker">NYSE: GEV &nbsp; | &nbsp; GE Vernova Inc.</div>
+<h1>Fundamental Update</h1>
+<h2>The backlog machine keeps humming and the Street keeps raising targets — but the stock just repriced four days of dividend news into a fuller multiple. Hold the core, add only on weakness.</h2>
+<div class="rating-strip">
+<div class="metric"><div class="k">Research Rating</div><div class="v">Buy</div><div class="s">New scale · was HOLD</div></div>
+<div class="metric"><div class="k">Reference Price</div><div class="v">$988.70</div><div class="s">Oct. 2, 2026 NYSE close</div></div>
+<div class="metric"><div class="k">12-Mo Target</div><div class="v">$1,100</div><div class="s">~11% upside · maintained</div></div>
+<div class="metric"><div class="k">Conviction</div><div class="v">7 / 10</div><div class="s">Thesis intact, multiple full</div></div>
+<div class="metric"><div class="k">Q3 Earnings</div><div class="v">Oct 28</div><div class="s">7:30 AM ET webcast · confirmed</div></div>
+</div>
+<div class="cover-note">Report date: October 4, 2026 &nbsp; | &nbsp; Data cut-off: October 2, 2026 (NYSE close) &nbsp; | &nbsp; Prior report: September 30, 2026 (HOLD, $1,100) — this update supersedes it; legacy HOLD maps to Buy under the new rating scale &nbsp; | &nbsp; Research use only; not investment advice.</div>
+</section>
+
+<section class="page">
+<div class="section-kicker">Executive Summary</div><h2>Investment conclusion</h2>
+<p class="lead"><strong>Four days, one dividend, and a 4% move.</strong> GE Vernova is the same company it was on September 30 — gas-turbine backlog at 116 GW, electrification orders above $5B in the first half, a $0.50 dividend declared — but the price is $39 higher and the setup is tighter. At $988.70 the stock trades at roughly <strong>64 times</strong> 2026 consensus earnings and about <strong>27 times</strong> 2027 EBITDA. Under the new rating scale effective October 3, the legacy HOLD translates cleanly to <strong>Buy</strong>: conviction 7/10 with roughly 11% upside to the maintained $1,100 target clears the Buy bar (conviction 6–7 <em>and</em> at least 10% upside) but not Strong Buy (which demands 8–10 conviction <em>and</em> 15%+ upside). The target stays at $1,100 because the price moved on a dividend announcement, not on fundamentals — raising it into a sentiment bounce would be undisciplined.</p>
+<div class="decision avoidbreak"><h3>Research posture: BUY | $1,100 target maintained | Conviction 7/10 | Add gate: $875 (recommended, not installed)</h3><p>At $988.70, the stock sits essentially on its 200-day moving average after a 3.8% dividend-driven jump on October 1, with the October 28 Q3 print three weeks out. This is a hold-the-core, add-on-weakness setup — not a chase. The recommended add gate is <strong>$875</strong>, the September 14 selloff low, roughly 11% below the current price. A retest of that level on no new fundamental information would be the accumulation opportunity; strength toward $1,050+ into the print would be the time to reassess, not add.</p></div>
+<div class="grid3">
+<div class="card"><div class="label">Price since Sep 30</div><div class="big">+4.1%</div><p>$949.50 → $988.70; the $0.50 dividend declaration drove a 3.8% move on Oct 1 (intraday high $1,003.78).</p></div>
+<div class="card"><div class="label">Backlog trajectory</div><div class="big">$176B → $200B+</div><p>Q2 backlog $176B; management projects surpassing $200B in early 2027. Gas turbines: 116 GW under contract.</p></div>
+<div class="card"><div class="label">Valuation tension</div><div class="big">~64x / ~27x</div><p>FY2026E P/E ~64x and 2027E EV/EBITDA ~27x — the perfection premium is now fuller than four days ago.</p></div>
+</div>
+<div class="callout amber"><strong>Decision hinge.</strong> The thesis works if the October 28 print confirms backlog conversion, Power and Electrification margins hold, and 2026 guidance is at least maintained — with a confident answer on 2027 delivery margins against the GLJ vintage thesis. It weakens materially if Q3 EPS disappoints like Q2 did ($2.47 reported vs. $3.17 consensus), if wind losses deepen beyond the ~$400M full-year guide, or if tariff cost clarity comes in at the high end of the conflicting company figures.</div>
+<h3>What changed vs. the September 30 report</h3>
+<div class="grid2">
+<div class="card"><span class="score pos">Positive deltas</span><ul><li><strong>Dividend-driven move:</strong> +3.8% on Oct 1 after the $0.50 declaration; stock back above the 50-day moving average.</li><li><strong>Evercore reaffirmed Outperform, $1,350</strong> (Oct 1) — bullish sell-side momentum continued.</li><li><strong>Springfield City Utilities order</strong> (early Oct): three LM6000VELOX aeroderivative packages, +150 MW, operations in 2027.</li><li>Industry reporting notes a Texas hybrid plant pairing HA gas turbines with BWRX-300 SMRs for data-center baseload — gas-plus-nuclear optionality in one project.</li><li>Consensus average target ~$1,172 implies ~18% upside; 26 of 35 analysts rate it Buy.</li></ul></div>
+<div class="card"><span class="score neg">Negative / watch deltas</span><ul><li><strong>Upside compressed:</strong> $1,100 target now implies ~11% upside vs. ~16% four days ago — the dividend bounce, not fundamentals, moved the price.</li><li><strong>Q2 EPS miss</strong> ($2.47 vs. $3.17) makes margin execution the sharper Q3 test; revenue beat but earnings missed by 22%.</li><li>GLJ Research <strong>Sell/$470</strong> margin-vintage thesis still the articulated bear; 2027 EBITDA $7.4B vs. ~$9.5B consensus.</li><li>Stock sits ~17% below its $1,195.94 52-week high but at 64x earnings — the multiple did the recent work, not estimate revisions.</li><li>Wind still guided to ~$400M full-year EBITDA loss; tariff figures ($100–200M vs. $250–350M) unresolved.</li></ul></div>
+</div>
+<div class="footer-note">Reference price $988.70 reflects the October 2, 2026 NYSE close per Zacks, Finnhub and Cam's position data (ad-hoc-news/MarketBeat show $990.79 — a ~$2 provider variance). Company-reported figures come from GE Vernova releases and filings; consensus figures from market-data providers; calculated figures show their derivation. Full source register at the end of this report.</div>
+</section>
+
+<section class="page break">
+<div class="section-kicker">Contents</div><h2>Table of contents</h2>
+<div class="toc">
+<a href="#changed"><span>01</span>What changed since September 30</a>
+<a href="#earnings"><span>02</span>Q3 earnings preview — October 28</a>
+<a href="#fundamentals"><span>03</span>Fundamentals: guidance, backlog, segments</a>
+<a href="#valuation"><span>04</span>Valuation: the perfection premium</a>
+<a href="#technicals"><span>05</span>Technicals and add gates</a>
+<a href="#risks"><span>06</span>Risks and catalysts into year-end</a>
+<a href="#portfolio"><span>07</span>Portfolio context and sizing</a>
+<a href="#sources"><span>08</span>Sources and methodology</a>
+</div>
+</section>
+<section class="page break" id="changed"><div class="section-kicker">01 | News Flow</div><h2>What changed since September 30</h2>
+<p class="lead">Four days, one corporate action, and a sentiment repricing. The news flow was modestly positive on fundamentals; the price action was bigger than the news.</p>
+<div class="timeline">
+<div class="event"><div class="when">Sep 30 — Dividend declared</div><p>The board declared a $0.50 per share quarterly dividend, payable November 24, 2026 to holders of record October 27, 2026 — roughly a 0.20% forward yield at the current price. Not a thesis driver; a signal of balance-sheet confidence alongside $3.9B returned to shareholders year-to-date.</p></div>
+<div class="event"><div class="when">Oct 1 — Market reaction</div><p>Shares rose 3.8% on the session, traded as high as $1,003.78, and closed near $986 on volume of about 2.94 million shares — roughly 11% above average. The dividend news gave the market a reason to re-rate what it already knew, and the stock reclaimed its 50-day moving average.</p></div>
+<div class="event"><div class="when">Oct 1 — Evercore reaffirmed Outperform, $1,350</div><p>Evercore restated its outperform rating with a $1,350 target — the second-highest on the Street after Guggenheim's $1,450. Bullish sell-side momentum continues: Bernstein ($1,298), Jefferies ($1,185, raised), and the September Goldman upgrade to market outperform all sit well above the current price.</p></div>
+<div class="event"><div class="when">Early Oct — Springfield City Utilities order</div><p>GE Vernova secured an order from Springfield City Utilities (Missouri) for three LM6000VELOX aeroderivative gas turbine packages to expand capacity at the 100-MW McCartney Generating Station. The units add about 150 MW of dual-fuel (natural gas with fuel-oil backup) capacity, expected online in 2027, driven by a sharply higher planning reserve margin requirement (36% winter vs. 15% today). Small in dollars, large in signal: municipal utilities are now buying fast-start aeroderivatives for reliability — another leg of the demand story.</p></div>
+<div class="event"><div class="when">Early Oct — Texas HA + BWRX-300 hybrid (industry reporting)</div><p>Industry reporting notes a Texas hybrid plant pairing HA-class gas turbines with BWRX-300 SMRs in modular builds to deliver fast baseload power for data centers. This is the gas-plus-nuclear optionality thesis in a single project: near-term revenue from turbines, long-dated option value from the SMR — and it follows the September 29 NRC construction permit at Clinch River.</p></div>
+</div>
+<h3>The bear call stands: GLJ Research, Sell / $470 (Sep 14)</h3>
+<p>Nothing in the last four days addressed the margin-vintage thesis, so it stands as the articulated bear case: turbines delivering in 2027 were ordered in 2024, before recent price increases, implying roughly 3 points of backlog margin on the 2027 vintage versus 10–11 points on the 2028 vintage. GLJ's 2027 EBITDA estimate of $7.42B sits about 22% below the roughly $9.5B consensus, and it values the stock at 14 times its 2027 EBITDA. The Q2 EPS miss — $2.47 reported vs. $3.17 consensus, a 22% shortfall on a revenue beat — gives the vintage question more bite, not less. Management's commentary on 2027 delivery margins, slot-reservation conversion, and pricing on 2031 slots will be read directly against this thesis on October 28. A confident answer is a catalyst; an evasive one is a de-rating event.</p>
+<div class="callout"><strong>Why the bear call matters even if you disagree.</strong> The GLJ thesis is now the central debate into the print, and the stock's 4% dividend bounce did nothing to resolve it. If anything, the higher price raises the bar for the rebuttal: at 64x 2026 earnings, the margin for an inconclusive answer is thinner than it was at $949.</div>
+<h3>Sell-side scoreboard</h3>
+<p>Consensus remains constructive: 35 analysts tracked by one provider break down to 2 Strong Buy, 26 Buy, 5 Hold, and 2 Sell — a Moderate Buy — with an average target of about $1,172, roughly 19% above the current price. My $1,100 target sits below the consensus average — deliberately, because the Buy rating reflects a full multiple more than a broken thesis. Evercore's October 1 reaffirmation at $1,350 keeps the bullish end of the range anchored; GLJ's $470 keeps the bearish end honest.</p>
+</section>
+
+<section class="page break" id="earnings"><div class="section-kicker">02 | Earnings Preview</div><h2>Q3 earnings preview — October 28</h2>
+<p class="lead">Third-quarter 2026 results are confirmed for <strong>October 28, 2026</strong>, with a 7:30 AM Eastern webcast. Three weeks out, this is the single most important near-term event for the position — and the Q2 EPS miss raises its stakes.</p>
+<table><thead><tr><th>Metric</th><th class="num">Q3 2026 consensus</th><th class="num">Q3 2025 actual</th><th class="num">Implied YoY</th></tr></thead><tbody>
+<tr><td class="strong">Revenue</td><td class="num">~$12.0–12.1B</td><td class="num">$9.97B</td><td class="num">+20–21%</td></tr>
+<tr><td class="strong">Diluted EPS</td><td class="num">~$4.0–4.1</td><td class="num">$1.64</td><td class="num">+144–150%</td></tr>
+</tbody></table>
+<p>For the full year, consensus centers on revenue of about $46.3B — the high end of the company's $45.5–46.5B guide — and EPS of about $15.4. For 2027, consensus expects EPS of about $24.1 on revenue of about $52.6B. The CFO told investors on the Q2 call to expect continued year-over-year revenue growth and adjusted EBITDA margin expansion in Q3, with positive free cash flow.</p>
+<div class="callout red"><strong>The Q2 miss is the context Q3 must overcome.</strong> Q2 revenue of $11.1B beat, but diluted EPS of $2.47 missed the $3.17 consensus by $0.70 (22%). Orders and revenue are not the question — margin conversion is. A second consecutive earnings miss at 64x forward earnings would validate the vintage skeptics and likely retest the $875 level fast.</div>
+<h3>What to watch on the call</h3>
+<div class="checkgrid">
+<div class="check"><b>Backlog progression.</b> The march from $176B toward $200B+ in early 2027 — and how much converted to firm orders.</div>
+<div class="check"><b>2027 margin vintage.</b> Direct response to the GLJ thesis: pricing on 2027 deliveries vs. 2028.</div>
+<div class="check"><b>Wind loss trajectory.</b> Tracking against the ~$400M full-year EBITDA loss guide after the $275M Q2 hole.</div>
+<div class="check"><b>Tariff clarity.</b> Reconciling the conflicting company figures ($100–200M vs. $250–350M).</div>
+<div class="check"><b>2031 slot sales.</b> Progress toward selling 50%+ of 2031 delivery slots by year-end.</div>
+<div class="check"><b>Guidance.</b> Any tweak to the FY2026 revenue, FCF, or 12–14% EBITDA margin guide.</div>
+</div>
+<div class="callout green"><strong>Positioning note.</strong> With the stock back near its 200-day moving average after a sentiment-driven 4% move and three weeks to the print, there is no informational edge in adding ahead of October 28. The add gate below is designed for weakness <em>before or after</em> the print — not for anticipation of it.</div>
+</section>
+
+<section class="page break" id="fundamentals"><div class="section-kicker">03 | Fundamentals</div><h2>Guidance, backlog, and segments</h2>
+<p>No new company guidance since the last report — the framework below is from the Q2 report (July 22), which raised the outlook.</p>
+<h3>FY2026 guidance (company-reported)</h3>
+<table><thead><tr><th>Metric</th><th class="num">Guide</th><th>Prior guide</th></tr></thead><tbody>
+<tr><td class="strong">Revenue</td><td class="num">$45.5–46.5B</td><td class="num">$44.5–45.5B (raised)</td></tr>
+<tr><td class="strong">Free cash flow</td><td class="num">$11.5–12.5B</td><td class="num">$6.5–7.5B (raised)</td></tr>
+<tr><td class="strong">Adjusted EBITDA margin</td><td class="num">12–14%</td><td class="num">Unchanged</td></tr>
+</tbody></table>
+<p>The second quarter itself was strong on the top line and soft on the bottom line: orders of $24.2B (up 88% organically), revenue of $11.1B (up 22%), adjusted EBITDA of $1.25B at an 11.3% margin, diluted EPS of $2.47 (a $0.70 miss), and free cash flow of $5.1B in the quarter alone. Cash ended the quarter at $13.1B.</p>
+<h3>The backlog engine</h3>
+<p>Remaining performance obligations stood at <strong>$176B</strong> at quarter-end, up $13B sequentially, and management told investors in mid-September it expects backlog to surpass <strong>$200B in early 2027</strong>, with $100B of cumulative future services revenue by the end of 2027. Services are more than 55% of the backlog — the high-margin, recurring layer of the business.</p>
+<p>In gas turbines specifically, the company has <strong>116 GW under contract</strong> (53 GW firm backlog plus 63 GW of slot reservation agreements), added 20 GW in Q2, converted about 10 GW of reservations to firm orders, and is targeting <strong>at least 125 GW by year-end 2026</strong> while already reserving 2031–2032 delivery slots. Heavy-duty gas equipment orders quadrupled in Q2 with 52 units including 15 HA-class machines. The Springfield order adds another aeroderivative proof point: smaller, fast-start units for grid reliability are a distinct demand leg from the large-frame data-center build.</p>
+<h3>Segment snapshot (Q2)</h3>
+<table><thead><tr><th>Segment</th><th class="num">Revenue</th><th class="num">EBITDA margin</th><th>Trend</th></tr></thead><tbody>
+<tr><td class="strong">Power</td><td class="num">$5.48B (+14%)</td><td class="num">18.8%</td><td>Orders +134%; the profit engine.</td></tr>
+<tr><td class="strong">Electrification</td><td class="num">—</td><td class="num">18.4%</td><td>Backlog $40.6B (+69%); data-center orders &gt;$5B in 1H.</td></tr>
+<tr><td class="strong">Wind</td><td class="num">$2.03B (−10% organic)</td><td class="num">Negative (~−$275M)</td><td>Full-year loss guided ~$400M; the swing factor.</td></tr>
+</tbody></table>
+<div class="callout amber"><strong>Wind remains the swing factor.</strong> A $275M quarterly EBITDA loss against a ~$400M full-year guide leaves little room for slippage. The Vineyard Wind truce removes legal risk, not operating risk — U.S. onshore demand softness, permitting delays, and tariffs are the binding constraints. Any Q3 commentary suggesting the loss guide is at risk would pressure the stock regardless of Power strength.</div>
+<h3>Tariffs: an unresolved discrepancy</h3>
+<p>Two company-sourced figures do not obviously reconcile: Reuters' Q2 reporting put 2026 tariff costs at roughly $100–200M, while the CFO guided to a $250–350M net tariff impact for 2026 on the Q1 call, described as fully built into the outlook. The difference may be definitional or a Q2 revision — either way, the October 28 call needs to settle it.</p>
+</section>
+
+<section class="page break" id="valuation"><div class="section-kicker">04 | Valuation</div><h2>The perfection premium — now fuller</h2>
+<p class="lead">The September 30 report called this "a great business trading at a price that assumes it stays great without interruption." Four days and $39 later, that sentence is truer and less comfortable.</p>
+<div class="grid3">
+<div class="card"><div class="label">FY2026E P/E</div><div class="big">~64x</div><p>On ~$15.46 consensus EPS at $988.70. (Author's calculation.)</p></div>
+<div class="card"><div class="label">FY2027E P/E</div><div class="big">~41x</div><p>On ~$24.09 consensus EPS. Earnings must compound ~56%.</p></div>
+<div class="card"><div class="label">2027E EV/EBITDA</div><div class="big">~27x</div><p>On ~$9.5B consensus EBITDA; ~34x on GLJ's $7.4B bear case.</p></div>
+</div>
+<h3>Peer context</h3>
+<table><thead><tr><th>Company</th><th class="num">Forward P/E</th><th>Assessment</th></tr></thead><tbody>
+<tr><td class="strong">GE Vernova</td><td class="num">~64x '26E / ~41x '27E</td><td>Priced for flawless execution.</td></tr>
+<tr><td>Siemens Energy</td><td class="num">~31–32x '26E</td><td>Closest peer; roughly half the multiple.</td></tr>
+<tr><td>GE Aerospace</td><td class="num">~38–41x '26E</td><td>Premium industrial compounder; still below GEV.</td></tr>
+<tr><td>Caterpillar</td><td class="num">~29–30x '26E</td><td>Cyclical industrial reference point.</td></tr>
+<tr><td>Vestas</td><td class="num">~22x (normalized)</td><td>Wind pure-play; shows what the market pays for wind exposure.</td></tr>
+</tbody></table>
+<p>GEV trades at roughly <strong>double</strong> Siemens Energy on 2026 earnings and about 1.5 times GE Aerospace — a business with a $210B backlog that just raised guidance. The premium can be justified only if the gas-turbine supercycle sustains pricing power well into the 2030s and Electrification margins keep expanding. That is plausible; it is not cheap — and the 4% dividend bounce made it less cheap without changing the justification.</p>
+<h3>Scenario framework (author's judgment)</h3>
+<div class="scenario">
+<div class="case bear"><div class="price">$700</div><div class="up" style="color:var(--red);font-weight:800">Bear · −29%</div><ul><li>2027 margins validate the GLJ vintage thesis</li><li>Q3 EPS disappoints again; wind losses deepen</li><li>Multiple compresses to ~20x 2027 EBITDA</li></ul></div>
+<div class="case base"><div class="price">$1,100</div><div class="up" style="color:var(--blue);font-weight:800">Base · +11%</div><ul><li>Backlog converts; Power margins hold</li><li>Wind loss contained at ~$400M guide</li><li>Multiple roughly flat; earnings do the work</li></ul></div>
+<div class="case bull"><div class="price">$1,350</div><div class="up" style="color:var(--green);font-weight:800">Bull · +37%</div><ul><li>2031 slots sell out; pricing power confirmed</li><li>Wind turns toward breakeven; SMR optionality valued</li><li>2028 20%+ EBITDA margin framework gains credibility</li></ul></div>
+</div>
+<div class="callout"><strong>Why Buy — and why not Strong Buy.</strong> The base case offers ~11% upside with conviction at 7/10. Under the new rating scale that is Buy (conviction 6–7 <em>and</em> at least 10% upside), full stop. Strong Buy would require either 8–10 conviction — which the GLJ vintage debate, the Q2 EPS miss, and a 64x multiple do not support — or 15%+ upside, which would require the stock back near $955 or the target up near $1,135. The probability-weighted value across these scenarios is roughly <strong>$1,050</strong> (~6% above the reference price), which argues for keeping the formal $1,100 base-case target rather than raising it into a sentiment move.</div>
+</section>
+<section class="page break" id="technicals"><div class="section-kicker">05 | Technicals</div><h2>Technicals and add gates</h2>
+<p class="lead">The dividend bounce repaired the near-term chart: the stock reclaimed its 50-day average and now sits essentially on the 200-day — a natural pause point, not a breakout.</p>
+<div class="grid2">
+<div class="card"><div class="label">50-day moving average</div><div class="big">~$966</div><p>Reclaimed on the Oct 1 bounce; first support on any pullback.</p></div>
+<div class="card"><div class="label">200-day moving average</div><div class="big">~$991</div><p>Current price sits essentially on it; reclaiming it with volume turns the trend back up.</p></div>
+</div>
+<h3>Levels that matter</h3>
+<table><thead><tr><th>Level</th><th class="num">Price</th><th>Significance</th></tr></thead><tbody>
+<tr><td class="strong">Resistance</td><td class="num">$1,004</td><td>Oct 1 intraday high; then the $1,196 52-week high.</td></tr>
+<tr><td>Current zone</td><td class="num">$986–991</td><td>200-day average; a pause point after the 4% bounce.</td></tr>
+<tr><td>Minor support</td><td class="num">$960–966</td><td>50-day average zone; the breakout level to hold.</td></tr>
+<tr><td class="strong">Key support / add gate</td><td class="num">$875</td><td>September 14 GLJ-selloff closing low; the clean accumulation level.</td></tr>
+<tr><td>Downside reference</td><td class="num">$800</td><td>Break of $875 opens the path here; 52-week low is $530.</td></tr>
+</tbody></table>
+<div class="decision avoidbreak"><h3>Recommended add gate: GEV at or below $875 — reaffirmed (not installed; pending CIO approval)</h3><p><strong>Analyst call:</strong> keep the September 30 recommendation on the table, unchanged. The four-day, 4.1% dividend bounce is a reason <em>not</em> to chase, not a reason to lower the bar — the bear case was fully priced at $875 and nothing since has disproven it. <strong>Action:</strong> ADD on weakness at or below <strong>$875</strong>, about 11% below the current price. <strong>Sizing:</strong> build toward roughly <strong>2.5% standalone weight</strong> (from ~1.9% today), keeping combined electrification exposure (GEV + GRID) at or below ~3%. At $875 the gap is about $9.5K, or roughly 11 additional shares. <strong>Invalidation:</strong> a break below $875 on fundamental news (a Q3 miss, wind guide cut, or 2027 margin confirmation of the GLJ thesis) is not a buy — it is a reassess. The gate is for price weakness without thesis damage.</p></div>
+<div class="callout green"><strong>Why $875 still, not higher.</strong> Buying every 3–4% dip in a 64x-multiple stock three weeks ahead of a binary earnings event is how small losses compound. The $875 level is the market's own verdict on the bear case — it held after the worst one-day drop since December 2025. Adding where the bear thesis was fully priced in gives the best risk/reward in the structure, and the level has not been tested since.</div>
+</section>
+
+<section class="page break" id="risks"><div class="section-kicker">06 | Risks & Catalysts</div><h2>Risks and catalysts into year-end</h2>
+<div class="grid2">
+<div class="card"><span class="score neg">Key risks</span><ul><li><strong>2027 margin vintage.</strong> If 2027 deliveries were priced in 2024 at thin margins, consensus EBITDA is 20%+ too high — the GLJ thesis. Q2's EPS miss adds weight to the question.</li><li><strong>Q3 print (Oct 28).</strong> A second consecutive EPS miss at 64x earnings would likely retest $875 fast — and possibly break it.</li><li><strong>Wind losses.</strong> $275M Q2 EBITDA loss vs. ~$400M full-year guide leaves no room for slippage.</li><li><strong>AI data-center durability.</strong> The demand engine; a hyperscaler capex pause or regulatory overhang hits the multiple first.</li><li><strong>Rates.</strong> The 10-year above 5% pressures capital-intensive project economics and growth multiples.</li></ul></div>
+<div class="card"><span class="score pos">Catalysts</span><ul><li><strong>Q3 beat + 2027 margin rebuttal</strong> — the single biggest upside event.</li><li><strong>2031 slot sales</strong> — 50%+ sold by year-end would confirm pricing power into the next decade.</li><li><strong>Backlog crossing $200B</strong> in early 2027 — a psychological milestone.</li><li><strong>Spring 2027 capital markets day</strong> — refreshed 2028/2030 guidance; the 20%+ EBITDA margin framework gets its hearing.</li><li><strong>BWRX-300 commercialization</strong> — post-NRC-permit optionality, now with a Texas hybrid-plant proof point; longer-dated.</li><li><strong>Buybacks</strong> — $3.9B returned YTD; continued support under the stock.</li></ul></div>
+</div>
+</section>
+
+<section class="page break" id="portfolio"><div class="section-kicker">07 | Portfolio Fit</div><h2>Portfolio context and sizing</h2>
+<p>GEV is a <strong>~1.9% position</strong> — a meaningful satellite, not a core holding. Combined with the ~0.63% GRID position, total electrification exposure is about <strong>2.5%</strong> of the portfolio. That framing matters for sizing: the electrification theme is already represented, so GEV adds should be disciplined rather than thematic doubling-down.</p>
+<table><thead><tr><th>Metric</th><th class="num">Position</th></tr></thead><tbody>
+<tr><td>Shares / average cost</td><td class="num">33 shares @ ~$1,004.42 ($33,145.80 basis)</td></tr>
+<tr><td>Value @ $988.70</td><td class="num">$32,627.10 (−$518.70, −1.6% unrealized)</td></tr>
+<tr><td>Portfolio weight</td><td class="num">~1.9% (of ~$1.69M combined portfolio)</td></tr>
+<tr><td>Rating / target</td><td class="num">Buy / $1,100 · Conviction 7/10</td></tr>
+<tr><td>Gate status</td><td class="num">≤$875 recommended, <strong>not installed</strong> — pending CIO approval</td></tr>
+<tr><td>Combined electrification cap</td><td class="num">~3% (GEV + GRID) — adds above this need a thesis upgrade, not just a lower price</td></tr>
+</tbody></table>
+<div class="callout"><strong>Sizing discipline.</strong> The $875 add gate builds GEV toward ~2.5% standalone (~11 additional shares, ~$9.5K at the gate). If GRID also hits its $169 gate and builds toward 1%, combined electrification reaches ~3.5% — acceptable only if both theses are intact at that point. Do not let two independent gates accidentally create a concentrated bet.</div>
+<div class="footer-note">Portfolio weights use the October 2, 2026 Morningstar export 54 baseline with modeled $43K cash. Weights shift with live prices; the dashboard's Holdings tab shows current values.</div>
+</section>
+
+<section class="page break" id="sources"><div class="section-kicker">08 | Appendix</div><h2>Sources and methodology</h2>
+<p>All references are collected here. The body of this report carries no inline source tags by editorial policy. Figures are described in the text as company-reported, provider/consensus, or author-calculated.</p>
+<h3>Company-reported (GE Vernova)</h3>
+<ul class="source-list">
+<li>Q2 2026 earnings release and 10-Q (July 22, 2026): orders $24.2B (+88% organic), revenue $11.104B (+22%), adjusted EBITDA $1.250B (11.3% margin), diluted EPS $2.47, backlog $176B (+$13B q/q), FY2026 guidance (revenue $45.5–46.5B, FCF $11.5–12.5B, adj. EBITDA margin 12–14%), gas turbine figures (116 GW under contract: 53 GW firm + 63 GW slot reservations; 20 GW added in Q2; ≥125 GW year-end target; 52 heavy-duty units incl. 15 HA), segment results (Power revenue $5.477B, EBITDA margin 18.8%; Wind revenue $2.03B, ~−$275M EBITDA; Electrification backlog $40.6B, +69%), cash $13.1B, $3.9B returned to shareholders YTD, FCF $5.1B in the quarter.</li>
+<li>Investor events page, gevernova.com/investors/events (verified October 4, 2026): Q3 2026 results October 28, 2026, 7:30 AM EDT webcast.</li>
+<li>Press release (September 30, 2026): $0.50 quarterly dividend declared, payable November 24, 2026, record date October 27, 2026.</li>
+<li>Q2 2026 earnings call (July 22, 2026): CFO commentary on Q3 expectations (continued YoY revenue growth and adjusted EBITDA margin expansion, positive FCF), FY2026 segment outlook (Power organic revenue +18–20%, Power EBITDA margin 17–19%).</li>
+<li>Q1 2026 earnings call (April 22, 2026): CFO tariff commentary (~$250–350M net 2026 impact).</li>
+<li>Morgan Stanley Laguna conference appearance (September 16, 2026): backlog to surpass $200B in early 2027; $100B cumulative future services revenue by end 2027; 2031–2032 slot reservations.</li>
+</ul>
+<h3>Market data and consensus providers</h3>
+<ul class="source-list">
+<li>Zacks / stockinvest.us / Finnhub (October 2, 2026): NYSE close $988.70 (+$1.25, +0.13%), open $1,004, high $1,006, low $960.53, volume ~2.16M; after-hours $986.88. YTD +51.28%, 1-year +66.17%, 5-day +3.24%, 1-month +4.96%, 3-month −11.01%.</li>
+<li>MarketBeat / ad-hoc-news.de (October 2–4, 2026): close $990.79 (+0.34%) — a ~$2 variance vs. Zacks/Finnhub, noted in text; market cap $263.9B; 52-week range $530.16–$1,195.94; consensus 35 analysts (2 Strong Buy / 26 Buy / 5 Hold / 2 Sell, Moderate Buy), average target $1,171.87, range $470–$1,450; Q2 EPS $2.47 vs. $3.17 consensus.</li>
+<li>Barchart earnings estimates (October 2026): Q3 2026 EPS $4.13 (7 est., range $3.33–4.60), revenue ~$12.0–12.1B; FY2026 EPS $15.46 (9 est.), FY2027 EPS $24.09 (10 est.), revenue ~$46.3B / ~$52.6B.</li>
+<li>Evercore (October 1, 2026): Outperform reaffirmed, $1,350 target. Jefferies (September 17, 2026): Buy reaffirmed, target raised $1,155 → $1,185. Bernstein (September 15, 2026): Outperform reaffirmed, target raised $1,206 → $1,298. Goldman Sachs (September 14, 2026): upgraded Buy → market outperform. GLJ Research (September 14, 2026): initiated Sell, $470; 2027 EBITDA $7.42B vs. ~$9.5B consensus; −8.6% that day to $874.66. Morgan Stanley (August 3, 2026): downgraded Overweight → Underweight. BNP Paribas Exane (August 20, 2026): target cut $1,190 → $1,090, Neutral.</li>
+<li>American Public Power Association (early October 2026): Springfield City Utilities order — three LM6000VELOX aeroderivative packages, +150 MW at McCartney Generating Station, dual-fuel, operations 2027, driven by 36% winter planning reserve margin requirement.</li>
+<li>Turbomachinery International (October 2026): Texas hybrid plant pairing HA gas turbines with BWRX-300 SMRs for data-center baseload; Siemens Energy gas-services orders +62% record quarter.</li>
+<li>Reuters Events (September 29, 2026): Crusoe ordered 29 GE Vernova 35 MW aeroderivative turbines for data centers (10 for Abilene, TX campus).</li>
+<li>thelincolnianonline.com / transcriptdaily.com (October 1, 2026): shares +3.8% on dividend announcement; intraday high $1,003.78; volume 2.94M (+11% vs. average).</li>
+<li>Peer multiples: prior report's provider compilations (Siemens Energy ~31–32x '26E, GE Aerospace ~38–41x '26E, Caterpillar ~29–30x '26E, Vestas ~22x normalized) — carried forward, directionally consistent with current screens.</li>
+</ul>
+<h3>Methodology notes</h3>
+<ul class="source-list">
+<li>Forward P/E figures (~64x FY2026E, ~41x FY2027E) are the author's calculations: $988.70 ÷ $15.46 and $988.70 ÷ $24.09 using Barchart consensus EPS.</li>
+<li>EV/EBITDA (~27x 2027E) is the author's calculation: ~$263.9B market cap less ~$11B estimated net cash (from $13.1B Q2 cash and 0.21 debt-to-equity) ≈ $252.9B enterprise value ÷ ~$9.5B consensus 2027 EBITDA; ~34x on GLJ's $7.42B bear-case EBITDA.</li>
+<li>Upside percentages are calculated from the $988.70 reference price; the ~$2 provider variance ($990.79) is immaterial to conclusions.</li>
+<li>Support/resistance levels are the author's technical read of provider moving-average and price-history data; they are judgment, not forecasts.</li>
+<li>Scenario values ($700 / $1,100 / $1,350) are the author's judgment framework; the $1,100 base case is the formal 12-month target. Probability-weighted value ≈ $1,050 (weights 25/55/20).</li>
+<li>Rating translation: legacy HOLD (September 30) → Buy under the October 3 rating scale (conviction 7/10, ~11% upside clears Buy: conviction 6–7 and ≥10% upside). The target is unchanged.</li>
+<li>Prior report: gev-fundamental-analysis-2026-09-30.html (September 30, 2026; HOLD, $1,100 target; $949.50 reference) — superseded by this update.</li>
+</ul>
+<div class="footer-note">This report is for informational purposes for Cam as CIO/Portfolio Manager and is not investment advice or a recommendation to any other party. Estimates and scenarios will change with new information; the October 28 Q3 print is the next scheduled update point.</div>
+<div class="disclaimer">Research cut-off: October 2, 2026 (NYSE close). Portfolio weights reference the October 2, 2026 Morningstar export 54 baseline with modeled $43,000 cash.</div>
+</section>
+</main></body>
+</html>
