@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Home Depot (HD) - Fundamental Analysis Update - 2026-10-04</title>
+<style>
+:root{--ink:#182033;--muted:#657089;--navy:#18294b;--blue:#315ca8;--teal:#188a8a;--green:#247a57;--amber:#a76d13;--red:#a54343;--lav:#7459a8;--paper:#fff;--wash:#f4f7fb;--line:#dce3ee;--soft:#eef3f9}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#e8edf4;line-height:1.52;font-size:15px}
+a{color:#274f91;text-decoration:none} a:hover{text-decoration:underline}.report{max-width:1040px;margin:26px auto;background:var(--paper);box-shadow:0 8px 40px #1b2f501c}.page{padding:50px 62px}.cover{background:linear-gradient(135deg,#172746 0%,#263e72 62%,#5068a3 100%);color:#fff;padding:66px 62px 54px;min-height:760px;position:relative;overflow:hidden}.cover:after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:1px solid #ffffff20;right:-190px;top:-180px;box-shadow:0 0 0 80px #ffffff08,0 0 0 160px #ffffff05}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;opacity:.78}.cover h1{font-size:43px;line-height:1.06;max-width:740px;margin:28px 0 12px;letter-spacing:-.03em}.cover h2{font-size:19px;font-weight:500;margin:0 0 35px;opacity:.86;color:#fff}.ticker{display:inline-flex;align-items:center;gap:12px;border:1px solid #ffffff35;border-radius:999px;padding:8px 14px;font-weight:800;margin-bottom:22px;background:#ffffff0e}.rating-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:35px;max-width:850px}.metric{background:#ffffff12;border:1px solid #ffffff28;padding:16px 15px;border-radius:12px;backdrop-filter:blur(3px)}.metric .k{font-size:11px;text-transform:uppercase;letter-spacing:.09em;opacity:.72}.metric .v{font-size:23px;font-weight:800;margin-top:5px}.metric .s{font-size:11px;opacity:.72;margin-top:2px}.cover-note{position:absolute;left:62px;right:62px;bottom:45px;font-size:12px;opacity:.72}.toc{display:grid;grid-template-columns:1fr 1fr;gap:8px 25px;padding:16px 0}.toc a{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);color:var(--ink)}.toc span{width:26px;color:var(--blue);font-weight:800}.section{padding-top:10px;margin-top:10px}.section-kicker{color:var(--blue);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.13em;margin-bottom:5px}h2{font-size:29px;letter-spacing:-.02em;color:var(--navy);margin:0 0 18px}h3{font-size:19px;color:var(--navy);margin:26px 0 9px}h4{font-size:15px;color:var(--navy);margin:18px 0 5px}.lead{font-size:18px;color:#34425e;line-height:1.55}.kicker{color:var(--blue);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.13em;margin-bottom:5px}.callout{border-left:5px solid var(--blue);background:var(--wash);padding:18px 20px;margin:20px 0;border-radius:0 10px 10px 0}.callout.green{border-color:var(--green);background:#f1f8f4}.callout.amber{border-color:var(--amber);background:#fff8ec}.callout.red{border-color:var(--red);background:#fff4f4}.callout strong{color:var(--navy)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff}.card .label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800}.card .big{font-size:25px;font-weight:800;color:var(--navy);margin:4px 0}.card p{margin:6px 0 0}.score{display:inline-block;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:800}.pos{background:#e9f5ee;color:#17613f}.mix{background:#eef3fb;color:#315ca8}.neg{background:#faecec;color:#8f3535}.neutral{background:#f2eff8;color:#6b4b9e}table{width:100%;border-collapse:collapse;margin:15px 0 22px;font-size:13px}th{background:#edf2f8;color:#33435e;text-align:left;padding:10px 9px;border-bottom:2px solid #cbd6e5;font-size:11px;text-transform:uppercase;letter-spacing:.04em}td{padding:10px 9px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}.num{text-align:right;font-variant-numeric:tabular-nums}.strong{font-weight:800;color:var(--navy)}.small{font-size:12px;color:var(--muted)}ul,ol{padding-left:20px}li{margin:6px 0}.barrow{display:grid;grid-template-columns:150px 1fr 80px;gap:10px;align-items:center;margin:10px 0}.bar{height:12px;background:#e6ebf2;border-radius:10px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--teal));border-radius:10px}.fill.red{background:var(--red)}.fill.green{background:var(--green)}.fill.purple{background:var(--lav)}.scenario{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:20px 0}.scenario .case{border-radius:12px;padding:17px;border:1px solid var(--line)}.scenario .bear{border-top:5px solid var(--red)}.scenario .base{border-top:5px solid var(--blue)}.scenario .bull{border-top:5px solid var(--green)}.case .price{font-size:28px;font-weight:850;color:var(--navy)}.case ul{font-size:12px;padding-left:18px}.timeline{border-left:2px solid #c7d4e8;margin:18px 0 18px 8px;padding-left:25px}.event{margin:0 0 18px;position:relative}.event:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--blue);left:-31px;top:6px}.event .when{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:800}.footer-note{margin-top:35px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}.source-list{font-size:12px;overflow-wrap:anywhere}.source-list li{margin:8px 0}.pillrow{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0}.pill{background:var(--soft);border:1px solid var(--line);padding:5px 9px;border-radius:999px;font-size:12px;font-weight:700;color:#40506d}.decision{border:2px solid var(--navy);border-radius:14px;padding:22px;margin:20px 0}.decision h3{margin:0 0 8px}.checkgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px 22px}.check{padding:9px 0;border-bottom:1px solid var(--line);font-size:13px}.check b{color:var(--navy)}.break{break-before:page}.avoidbreak{break-inside:avoid}.disclaimer{font-size:10.5px;color:#6a7386;line-height:1.45}
+@media print{body{background:#fff;font-size:10.35px;line-height:1.39}.report{max-width:none;margin:0;box-shadow:none}.page{padding:26px 36px}.cover{min-height:11in;padding:52px 48px 42px;break-after:page}.cover h1{font-size:38px}.cover-note{left:48px;right:48px}.break{break-before:page}.card,.scenario .case,.callout,.decision{break-inside:avoid}.card{padding:12px}.grid2{gap:12px}.grid3{gap:10px}.scenario{gap:10px;margin:12px 0}.scenario .case{padding:11px}.case .price{font-size:23px}table{font-size:9.6px;margin:10px 0 14px;break-inside:auto}thead{display:table-header-group}tr{break-inside:avoid}th{padding:6px 6px;font-size:9px}td{padding:6px 6px}h2{font-size:22px;margin-bottom:12px}h3{font-size:14.5px;margin:16px 0 6px}h4{font-size:12.5px}.lead{font-size:14.5px}.callout{padding:12px 14px;margin:12px 0}.metric .v{font-size:20px}.small{font-size:9.5px}.footer-note{margin-top:18px;padding-top:9px}.timeline{margin:10px 0 10px 8px}.event{margin-bottom:10px}.decision{padding:14px;margin:12px 0}.barrow{margin:6px 0}.check{padding:6px 0}ul,ol{margin-top:5px;margin-bottom:6px}li{margin:3px 0}a{color:inherit;text-decoration:none}}
+@media(max-width:760px){.report{margin:0}.page,.cover{padding:32px 24px}.cover{min-height:740px}.cover h1{font-size:34px}.rating-strip,.grid2,.grid3,.scenario,.checkgrid{grid-template-columns:1fr}.cover-note{position:static;margin-top:50px}.toc{grid-template-columns:1fr}.barrow{grid-template-columns:110px 1fr 65px}}
+</style></head>
+<body>
+<div class="report">
+<div class="cover">
+<div class="eyebrow">Public Equity Research | Update &mdash; New Rating Scale</div>
+<div class="ticker">NYSE: HD &nbsp; | &nbsp; The Home Depot, Inc.</div>
+<h1>Fundamental Analysis</h1>
+<h2>The best operator in home improvement, de-rated 28% &mdash; Pro dominance and reaccelerating comps at a now-reasonable multiple. Re-rated under the new conviction-anchored scale.</h2>
+<div class="rating-strip">
+<div class="metric"><div class="k">Research Rating</div><div class="v">BUY</div><div class="s">New scale &middot; was ADD</div></div>
+<div class="metric"><div class="k">12-Mo Target</div><div class="v">$340</div><div class="s">~20% upside</div></div>
+<div class="metric"><div class="k">Reference Price</div><div class="v">$282.85</div><div class="s">Oct 2, 2026 close</div></div>
+<div class="metric"><div class="k">Conviction</div><div class="v">7/10</div><div class="s">Load-bearing</div></div>
+<div class="metric"><div class="k">Dividend Yield</div><div class="v">3.3%</div><div class="s">$9.32 annualized</div></div>
+<div class="metric"><div class="k">52-Week Range</div><div class="v">$277&ndash;$405</div><div class="s">-28% 1-yr</div></div>
+</div>
+<div class="cover-note">Reference price is the October 2, 2026 NYSE close; markets closed for the weekend. Rating under the conviction-anchored scale effective October 3, 2026: Strong Buy (8&ndash;10, &ge;15% upside), Buy (6&ndash;7, &ge;10%), Hold (4&ndash;5), Reduce (3), Sell (1&ndash;2). Not investment advice.</div>
+</div>
+
+<div class="page">
+<h2>Investment conclusion</h2>
+<div class="callout"><p><strong>Re-rating translation (new scale):</strong> the October 3 initiation's ADD maps to <strong>BUY</strong> under the new rating system &mdash; conviction 7/10 with ~20% upside clears the Buy bar (6&ndash;7 conviction AND &ge;10% upside) but not Strong Buy (which requires 8&ndash;10 conviction). The target, thesis, and gate are unchanged: <strong>$340 twelve-month target</strong> (22.7x FY2026E consensus EPS of $15.00), staged accumulation at or below <strong>$260</strong> toward ~1% of NAV.</p></div>
+<div class="callout green"><p>Home Depot is the best operator in North American home improvement and the market has finally stopped charging a full premium for it. Down 28.4% over the past year and sitting ~2% above its 52-week low of $277.15, the stock trades at about 19.8x trailing earnings &mdash; reasonable for a wide-moat compounder &mdash; with a 3.3% dividend yield, the highest in recent memory. The business is inflecting, not deteriorating: Q2 comps of +1.7% were the strongest since Q3 FY2022 and extended a clean acceleration (0.2 &rarr; 0.4 &rarr; 0.6 &rarr; 1.7), Pro is over half of sales with eight straight quarters of positive Pro comps, and the SRS/GMS acquisitions are building a contractor-distribution moat Lowe's cannot easily replicate. The housing tape is the constraint &mdash; 7.28% mortgages, soft existing-home sales &mdash; which is why this is a <strong>Buy to stage</strong>, not a Strong Buy to chase: earn the position on weakness, with the gate doing the work.</p></div>
+
+<h2>Table of contents</h2>
+<ol class="toc">
+<li>What changed since October 3</li>
+<li>The quarter: acceleration with guidance reaffirmed</li>
+<li>Business mix: the Pro fortress (SRS, GMS, and $400M of cross-sell)</li>
+<li>Capital allocation: 3.3% yield, paused buyback, deleveraging</li>
+<li>Valuation and target framework</li>
+<li>Head-to-head: HD vs Lowe's</li>
+<li>Portfolio fit and recommended gate</li>
+<li>Risks and catalysts into year-end</li>
+<li>Sources and methodology</li>
+</ol>
+
+<h2>1. What changed since October 3</h2>
+<p class="kicker">One day &middot; no fundamental developments &middot; reference price unchanged</p>
+<p>Nothing material changed in the 24 hours since initiation. The incremental items are all confirmatory or cosmetic:</p>
+<ul>
+<li><strong>Price:</strong> HD closed October 2 at <strong>$282.85</strong> (+0.14%), the same reference price as the initiation. The 52-week range refines to <strong>$277.15&ndash;$405.13</strong>; the stock sits ~2% above its yearly low, -28.4% over one year, -17.8% year-to-date.</li>
+<li><strong>Analyst tape:</strong> MarketBeat's October 1 consensus refresh shows 18 Buy / 13 Hold / 1 Sell with an average target of <strong>$375.18</strong> (~33% implied upside). Bernstein cut its target $354 &rarr; $344 (Market Perform) on September 9; Stifel held Hold at $346 on September 28. The street's spread &mdash; our $340 sits near the cautious end &mdash; reflects the housing debate, not company execution.</li>
+<li><strong>Pro delivery build-out:</strong> Home Depot opened its 18th flatbed delivery center in Westminster, Massachusetts on October 2 &mdash; ~1.1 million square feet serving 80 regional stores and 200+ local jobs &mdash; another brick in the contractor-delivery network that underpins the Pro thesis.</li>
+<li><strong>Q3 date confirmed:</strong> the company's investor-relations calendar lists <strong>November 17, 2026</strong> for the Q3 FY2026 release &mdash; the next fundamental checkpoint.</li>
+<li><strong>Seasonal:</strong> the 2026 holiday decor collection rolls out October 5, with seasonal savings beginning October 29 &mdash; normal-course retail calendar, no thesis impact.</li>
+</ul>
+<p>No change to rating, target, conviction, or gate. The initiation's work stands; only the ruler changed.</p>
+
+<h2>2. The quarter: acceleration with guidance reaffirmed</h2>
+<p class="kicker">Q2 FY2026 &mdash; reported August 18, 2026</p>
+<p>Home Depot's second quarter was the cleanest print in the sector. Revenue of $47.86 billion rose 5.7% and beat consensus of $47.27 billion. Comparable sales of +1.7% total (+1.3% US) beat the ~0.9% consensus and marked the strongest quarter since Q3 FY2022, with average ticket up 2.8% more than offsetting a 1.0% decline in transactions. Adjusted EPS of $4.92 rose 5.1% and beat the $4.71&ndash;$4.73 consensus range. Gross margin of 33.7% expanded, though it was flattered by roughly $685 million of IEEPA tariff refunds; adjusted operating margin of 14.7% slipped just 10 basis points. Online sales grew 11% for the fifth straight double-digit quarter, now 16.6% of net sales.</p>
+<p>Crucially, management reaffirmed full-year guidance across the board: sales growth of 2.5&ndash;4.5%, comps flat to +2%, adjusted operating margin of 12.8&ndash;13.0%, and EPS growth of flat to 4% (about $14.69&ndash;$15.28). In a tape where Lowe's cut to the low end of every range, the reaffirmation is the tell &mdash; HD's demand is holding while the category softens. The stock rose 1.9% on the print, a quiet endorsement.</p>
+
+<h2>3. Business mix: the Pro fortress</h2>
+<p class="kicker">Pro &gt;50% of sales &middot; 8 straight positive Pro comp quarters &middot; 1,340 SRS locations</p>
+<p>Home Depot's moat is the professional contractor, and it keeps getting deeper. Pro customers are now more than half of sales, with eight consecutive quarters of positive Pro comps &mdash; a streak Lowe's cannot match. The $18.25 billion SRS Distribution acquisition (June 2024) brought roofing and landscaping supply at contractor scale, and the September 2025 GMS acquisition added $5.5 billion of drywall and steel-framing revenue across ~1,200 locations. Over 1,340 SRS locations now operate, roughly 90% of HD stores have completed a sale through SRS in the past year, and management expects $400 million of cross-sell revenue in 2026, scaling in 2027.</p>
+<p>The strategic logic is sound: distribution-led Pro exposure tilts the mix toward repair, replace, and remodel &mdash; resilient, non-discretionary demand &mdash; and away from new construction. Near-term wholesale distribution carries lower margins, but the wallet-share capture with complex-Pro contractors (roofers, landscapers, drywallers) is structural. DIY remains core in-store but is growing slower; the future of this company is the job site, not the weekend warrior.</p>
+
+<h2>4. Capital allocation: 3.3% yield, paused buyback, deleveraging</h2>
+<p class="kicker">$9.32 annualized dividend &middot; 16-year streak &middot; ~2.4x leverage</p>
+<p>The dividend is now a genuine attraction: $2.33 quarterly ($9.32 annualized) yields about 3.3% at the current price &mdash; above Lowe's 2.8%, a reversal of the historical pattern. The 16-year raise streak is intact, but the trajectory bears watching: raises have decelerated from +15% (2022) to +10% to +7.7% to +2.2% to just +1.3% in February 2026, and the payout ratio sits at ~62&ndash;66%. The next declaration (with Q4 results, February 2027) needs to show the raise re-accelerating, or the market will read the dividend story as maturing.</p>
+<p>Buybacks remain paused since the SRS deal &mdash; first-half FY2026 cash went to $4.6 billion of dividends, $3.0 billion of debt repayment, and capex &mdash; and pro forma net debt/EBITDA of ~2.4x post-GMS keeps the pause in place. Deleveraging is progressing ($3.0 billion repaid in H1), and buyback resumption is the latent EPS lever when it returns.</p>
+
+<h2>5. Valuation and target framework</h2>
+<p class="kicker">~19.8x trailing &middot; 5.4% FCF yield &middot; below Morningstar FVE and street average</p>
+<p>At $282.85, Home Depot trades at roughly 19.8x trailing earnings and 18.3&ndash;20.4x forward estimates, with EV/EBITDA near 12.6&ndash;13.7x and a free-cash-flow yield around 5.4% on $15.1 billion of trailing FCF. That is a full multiple cheaper than the 27x trailing P/E of last August &mdash; the 28% de-rating has done the market's work. The shares sit ~13% below Morningstar's $325 fair value estimate (3 stars, wide moat) and ~25% below the $375.18 sell-side average target.</p>
+<div class="callout"><p><strong>$340 twelve-month target (about 20% upside).</strong> Framework: 22.7x FY2026 consensus EPS of $15.00 &mdash; in line with HD's historical premium multiple, justified by the Pro moat, accelerating comps, and 24.8% ROIC, applied to trough-adjacent earnings with the housing recovery as the re-rating driver. Cross-checks: Morningstar FVE $325 (~15% upside); consensus average $375.18 (~33%); Bernstein $344; Stifel $346. Our target splits the difference &mdash; we underwrite quality at a fair multiple, not a housing snap-back. Probability-weighted value across our scenarios (bear $270 / base $340 / bull $400 at 25/50/25 weights) is ~$338, consistent with the base case.</p></div>
+
+<div class="scenario">
+<div class="case bear"><div class="label" style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800">Bear &middot; 25%</div><div class="price">$270</div><ul><li>Comps stall near flat; 7%+ mortgages persist through 2027</li><li>Tariff absorption pressures H2 margins; guidance trimmed</li><li>Multiple compresses to ~17x on no-growth EPS</li></ul></div>
+<div class="case base"><div class="label" style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800">Base &middot; 50%</div><div class="price">$340</div><ul><li>Comps +1&ndash;2%; Pro cross-sell ramps per plan</li><li>Guidance held; 22.7x trough-adjacent $15.00 EPS</li><li>Housing recovery framed as 2027+ event</li></ul></div>
+<div class="case bull"><div class="label" style="font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800">Bull &middot; 25%</div><div class="price">$400</div><ul><li>Mortgage rates break lower; turnover inflects</li><li>Comps +3&ndash;4%; buyback resumes on deleveraging</li><li>Multiple re-rates toward 25x on recovery earnings</li></ul></div>
+</div>
+
+<h2>6. Head-to-head: HD vs Lowe's</h2>
+<p class="kicker">Better operator, fuller price &mdash; earn the premium, then buy the dip</p>
+<table>
+<tr><th>Metric</th><th>Home Depot (HD)</th><th>Lowe's (LOW)</th></tr>
+<tr><td>Market cap / TTM revenue</td><td class="num">~$282B / ~$169B</td><td class="num">~$101B / ~$90B</td></tr>
+<tr><td>Stores</td><td class="num">2,364 (+1,340 SRS)</td><td class="num">1,761</td></tr>
+<tr><td>Q2 FY2026 comps</td><td class="num">+1.7%</td><td class="num">+0.2%</td></tr>
+<tr><td>Comp trend (4 qtrs)</td><td class="num">0.2 &rarr; 0.4 &rarr; 0.6 &rarr; 1.7</td><td class="num">0.4 &rarr; 1.3 &rarr; 0.6 &rarr; 0.2</td></tr>
+<tr><td>Pro mix</td><td class="num">&gt;50% of sales</td><td class="num">&gt;30% of sales</td></tr>
+<tr><td>Q2 adj. operating margin</td><td class="num">14.7%</td><td class="num">~14.0%</td></tr>
+<tr><td>Forward P/E</td><td class="num">18.3&ndash;20.4x</td><td class="num">15.6&ndash;16.7x</td></tr>
+<tr><td>FCF yield</td><td class="num">~5.4%</td><td class="num">~6.9%</td></tr>
+<tr><td>Dividend yield / streak</td><td class="num">3.3% / 16 yrs</td><td class="num">2.8% / 50+ yrs</td></tr>
+<tr><td>Leverage</td><td class="num">~2.4x net debt/EBITDA</td><td class="num">3.0x adj. debt/EBITDA</td></tr>
+<tr><td>Morningstar FVE / upside</td><td class="num">$325 / ~15%</td><td class="num">$255 / ~41%</td></tr>
+</table>
+<p>Home Depot earns its premium: larger revenue base, superior margins, deeper Pro penetration, accelerating comps, lower leverage. But the premium is the debate &mdash; at 18&ndash;20x forward versus Lowe's 15&ndash;16x, with ~15% upside to Morningstar fair value against LOW's 41%, HD is the quality compounder you accumulate on weakness, not the value you buy today. Our rating reflects exactly that: <strong>Buy the operator on the dip; the discount sits at LOW.</strong> Over a full housing cycle, own both; sequence LOW first.</p>
+
+<h2>7. Portfolio fit and recommended gate</h2>
+<p class="kicker">New position &middot; initiate toward ~1% on weakness</p>
+<p>Home Depot is not currently held &mdash; it sits on the watchlist alongside Lowe's. A starter toward ~1% of NAV (about $17,000, or roughly 60 shares at the gate) buys the highest-quality cyclical the portfolio would own &mdash; a wide-moat, 24.8% ROIC compounder with a 3.3% yield &mdash; and pairs naturally with a Lowe's starter as a barbell within the sector: LOW for valuation, HD for quality.</p>
+<div class="decision">
+<h3>Analyst recommendation: install the gate</h3>
+<p><strong>HD: ACCUMULATE at or below $260 toward ~1% of NAV</strong> (about 60 shares / ~$15,600 at the gate). At $260 the forward multiple compresses to ~17.3x, the yield rises to 3.6%, and the entry sits ~20% below Morningstar fair value &mdash; a fair price for the best operator in the category. The stock is 2% off its 52-week low and the housing tape is doing the derating work; the gate simply converts that derating into a position. Break below $240 on fundamental news means reassess, not buy. <em>Gate recommendation only &mdash; not installed in the dashboard panel pending CIO approval.</em></p>
+</div>
+
+<h2>8. Risks and catalysts into year-end</h2>
+<p class="kicker">Housing is the swing factor</p>
+<p><strong>Risks:</strong> (1) Housing turnover &mdash; management itself frames recovery as "more of a 2027+ event"; if 7%+ mortgages persist, large-ticket discretionary stays soft and the comp acceleration stalls. (2) Margin optics &mdash; Q2's $685 million of IEEPA tariff refunds flattered gross margin; the underlying ~10bp operating-margin slip is the cleaner read, and H2 carries residual tariff absorption. (3) Leverage &mdash; ~$51 billion of net debt from SRS/GMS constrains buybacks and dividend growth until deleveraging advances. (4) Valuation &mdash; 19.8x trailing still embeds a premium; a market de-rating would hit HD before LOW.</p>
+<p><strong>Catalysts:</strong> Q3 FY2026 earnings on <strong>November 17</strong> (company-confirmed via IR calendar); the $400 million SRS cross-sell ramp through 2026; any turn in mortgage rates or existing-home sales &mdash; HD's December 2025 "market recovery case" (5&ndash;6% sales growth, 4&ndash;5% comps) is the re-rating blueprint if turnover inflects.</p>
+
+<div class="timeline">
+<div class="event"><div class="when">Oct 5, 2026</div>Holiday decor collection rolls out nationwide (seasonal; no thesis impact)</div>
+<div class="event"><div class="when">Oct 29, 2026</div>Holiday seasonal savings begin</div>
+<div class="event"><div class="when">Nov 17, 2026</div>Q3 FY2026 earnings &mdash; the next fundamental checkpoint (comps, Pro demand, guidance)</div>
+<div class="event"><div class="when">Feb 2027</div>Q4 results + dividend declaration &mdash; watch for the raise re-accelerating</div>
+</div>
+
+<h2>9. Sources and methodology</h2>
+<p class="small">Reference price $282.85 is the October 2, 2026 NYSE close (reported). Reported figures are company filings and earnings releases (Q2 FY2026 reported August 18, 2026). Calculated figures: upside percentages, multiples, yields, and scenario values. Estimated figures: consensus EPS/targets (third-party aggregations, vary by provider) and scenario probabilities. Opinions: rating, conviction, gate levels. The report body carries no inline citations; all references are listed below.</p>
+<ul class="source-list">
+<li>Company Q2 FY2026 earnings release and 10-Q (Aug 2026)</li>
+<li>The Home Depot investor-relations calendar: Q3 FY2026 release November 17, 2026</li>
+<li>Company release: Westminster, MA flatbed delivery center opened October 2, 2026 (18th; ~1.1M sq ft; 200+ jobs)</li>
+<li>Company release: 2026 holiday decor collection rollout October 5, 2026; seasonal savings October 29, 2026 (Sep 29, 2026)</li>
+<li>Morningstar "After Earnings" note: FVE $325, 3 stars, wide moat (~Aug 24, 2026)</li>
+<li>MarketBeat consensus refresh (Oct 1, 2026): 18 Buy / 13 Hold / 1 Sell; average target $375.18</li>
+<li>Bernstein: target cut $354 &rarr; $344, Market Perform (Sep 9, 2026)</li>
+<li>Stifel: Hold maintained, $346 target (Sep 28, 2026)</li>
+<li>Barchart: FY2026E ~$15.00 consensus EPS</li>
+<li>Freddie Mac PMMS: 30-yr 7.28%, week ending Oct 1, 2026</li>
+<li>Finnhub market data: HD quote, 52-week range, returns (Oct 2026)</li>
+<li>Prior initiation: hd-fundamental-analysis-2026-10-03.html (Oct 3, 2026)</li>
+</ul>
+
+<div class="footer-note">Senior Financial Analyst &mdash; prepared for the CIO/Portfolio Manager. For discussion purposes; not investment advice. Positions and gates referenced are the CIO's own records and dashboard.</div>
+</div>
+</div>
+</body>
+</html>

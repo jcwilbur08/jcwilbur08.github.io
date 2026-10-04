@@ -662,6 +662,51 @@
    "kind": "company",
    "date": "2026-10-04",
    "summary": "Update (new scale): Buy, conviction 6/10, $88 target maintained (+31% upside from $67.06) — resolves the flagged HOLD-vs-31%-upside tension: the rating was wrong, not the target. Stock -7% to near 52-wk low; 17.5x forward. Q3 Tue Oct 20 AMC; engagement deceleration is the watch item. Hold 500 sh through the print; staged trims on strength above $80/$88."
+  },
+  {
+   "ticker": "HD",
+   "file": "hd-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$340",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 7/10, $340 target maintained (~20% upside from $282.85). Best operator; Q3 Nov 17; Bernstein cut to $344. Analyst call: INSTALL the ≤$260 gate toward ~1% (pending approval). Paired with LOW as the sector barbell — sequence LOW first on valuation."
+  },
+  {
+   "ticker": "LOW",
+   "file": "low-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$225",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 7/10, $225 target (~24% upside from $180.80; ~1% above the 52-wk low). Q2 rev +8.3% but guide cut to low end; 2.8% yield. ≤$165 gate reaffirmed toward ~1% (recommended, not installed)."
+  },
+  {
+   "ticker": "MA",
+   "file": "ma-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$650",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 7/10, $650 target maintained (~18% upside from $552.26). Dividend raised to $0.87/qtr; washed out -8% from Aug high. Not Strong Buy: Morningstar $550 FVE says fairly priced; Q3 ~Oct 29 decides conviction. Recommended ≤~$520 accumulate gate toward 6-6.5% (not installed); no trim (tax-punitive +638% gain)."
+  },
+  {
+   "ticker": "ADBE",
+   "file": "adbe-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$320",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 7/10, $320 target (~35% upside from $237.69; ~11.5x FY2027E ~$27.70). No material news in 24h. ≤$210 gate reaffirmed toward ~1% (recommended, not installed); MAX Nov 10-12 and FQ4 ~Dec 9 are the tests."
+  },
+  {
+   "ticker": "SO",
+   "file": "so-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$92",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 6/10, $92 target maintained (~10% price upside from $83.72; ~13.5% total w/ 3.6% yield — rating rests on total return, stated honestly). Google-Georgia Power nuclear uprate deal; 10-yr ~5.2% is the overhang. Q3 Nov 5. Accumulate on rate-driven weakness toward ~2.5% (not installed)."
   }
  ],
  "updated": "2026-10-04"
