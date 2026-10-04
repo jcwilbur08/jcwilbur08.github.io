@@ -572,6 +572,51 @@
    "rating": null,
    "target": null,
    "summary": "Full-coverage ranking: 52 securities (39 equities + 13 funds/ETFs) by conviction-weighted expected return. Tier 1 (highest conviction): NVDA ADD/$340 (8/10), AVGO BUY/$535, UNH BUY/$475, GEHC ADD/$92. Tier 2 (17 names) led by UBER +54%, ADBE +35%, AMT +39%, LOW +24%. Tier 3 (18 holds). Funds: VHT BUY as the structural healthcare close; 11 KEEPs; VFFSX TRIM (basis caveat). Implied upside vs Oct 2 reference prices; 6 live gates + 11 recommended-not-installed."
+  },
+  {
+   "ticker": "TSM",
+   "file": "tsm-fundamental-analysis-2026-10-04.html",
+   "rating": "Strong Buy",
+   "target": "$545",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Strong Buy, conviction 8/10, $545 target maintained (~15% upside from $472.78; 25x FY2027E ~$21.80). August revenue record NT$514.8B (+53% y/y); UBS raised 2027 capex f'cast to $90B; 2nm reservations up 10-20%. Q3 prints Oct 15. Accumulate gate ≤$460 stands; not actionable at current price."
+  },
+  {
+   "ticker": "NVDA",
+   "file": "nvda-fundamental-analysis-2026-10-04.html",
+   "rating": "Strong Buy",
+   "target": "$328",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Strong Buy, conviction 8/10, $328 prob-weighted target (~40% upside from $233.95). Blackwell ramp, hyperscaler capex intact; November print is the catalyst. Analyst call: KEEP the dashboard gate at $220 (lower-half discipline), do not move to $235. Staged adds on weakness toward 1% weight."
+  },
+  {
+   "ticker": "UNH",
+   "file": "unh-fundamental-analysis-2026-10-04.html",
+   "rating": "Strong Buy",
+   "target": "$475",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Strong Buy, conviction 8/10, $475 target maintained (~28% upside from $371.90; matches Morningstar FVE). Q3 prints Oct 13 (cons ~$4.12 EPS); MCR ex-reserve development is the proving ground. DOJ probes unresolved; CalPERS suit core claims proceed. Accumulate toward 2% of NAV on weakness."
+  },
+  {
+   "ticker": "UBER",
+   "file": "uber-fundamental-analysis-2026-10-04.html",
+   "rating": "Strong Buy",
+   "target": "$105",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Strong Buy, conviction 8/10, $105 target maintained (~54% upside from $68.11). The ≤$68 dashboard gate FIRED Oct 2 (closed $67.88 Oct 1) — recommendation: execute tranche 1 (~25 sh) on the next open; reserve tranches 2-3 for post-Q3-print and sub-$62 washout. Q3 ~Nov 3; AV rollout accelerating (Waymo ~500K rides/wk)."
+  },
+  {
+   "ticker": "GEHC",
+   "file": "gehc-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$92",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 7/10, $92 base value maintained (~43% upside from $64.29). Re-rating translation of the Oct 2 note — no material news since. ≤$62 accumulate gate live toward 0.5%; break below $58 on fundamental news = reassess. Q3 estimated ~Oct 28 (unconfirmed)."
   }
  ],
  "updated": "2026-10-04"
