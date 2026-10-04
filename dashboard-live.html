@@ -93,6 +93,10 @@ th.sortable:hover{color:#fff}
 .fbtn:hover{border-color:#2b6cb0;color:#fff}
 .fbtn.on{background:#2b6cb0;border-color:#2b6cb0;color:#fff;font-weight:700}
 .fbtn.sm{padding:3px 12px;font-size:11px}
+.archbar{display:flex;align-items:center;gap:8px;margin:10px 0 0;flex-wrap:wrap}
+.archlab{font-size:12px;color:#8fa3b8;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.repcard.archived{opacity:.72}
+.archnote{color:#c98f2d;font-size:12px;margin-top:4px}
 .tsctl{display:none;align-items:center;gap:6px;margin-left:auto}
 .tslab{font-size:11px;color:#8fa3b8;text-transform:uppercase;letter-spacing:.06em}
 .empty{border:1px dashed #24405c;border-radius:10px;padding:22px;color:#8fa3b8;font-size:13px;text-align:center}
@@ -214,6 +218,7 @@ body.tx6{font-size:25px}body.tx6 h1{font-size:43px}body.tx6 .eyebrow{font-size:1
 <div class="fbar" id="resFilters">
 <button class="fbtn on" data-f="all">All</button><button class="fbtn" data-f="held">Held</button><button class="fbtn" data-f="watch">Watchlist</button><button class="fbtn" data-f="company">Company Reports</button><button class="fbtn" data-f="fund">Fund Overviews</button><button class="fbtn" data-f="thematic">Thematic &amp; Ranking</button><button class="fbtn" data-f="weekly">Weekly Reports</button><button class="fbtn" data-f="market">Market Research</button>
 </div>
+<div class="fbar archbar" id="resArch"><span class="archlab">Showing:</span><button class="fbtn sm on" data-a="current">Current</button><button class="fbtn sm" data-a="archived">Archive</button></div>
 <div class="srchwrap"><input type="text" id="resSearch" placeholder="Search ticker or keywords…" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
 <div id="researchLib"></div>
 <div class="note">Reports open in a new tab. Set REPORT_BASE at the top of this file's script if your report files live at a URL.</div></div>
@@ -255,7 +260,7 @@ const FINNHUB_KEY = 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0';
   document.getElementById('tsUp').addEventListener('click',function(){apply(cur+1);});
 })();
 
-const BUILD = 'rev45'; // bump on every revision — visible in the header so we know what's live
+const BUILD = 'rev46'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
@@ -897,6 +902,7 @@ function renderGates(){
 /* ---------------- research tab ---------------- */
 let RES_FILTER = 'all';
 let RES_QUERY = '';
+let RES_ARCH = 'current'; // 'current' = latest edition per company/topic; 'archived' = superseded editions
 function repText(r){
   const isEq = !!r.ticker;
   const nm = isEq ? ((BY[r.ticker]&&BY[r.ticker].name)||r.name||r.ticker) : (r.title||'');
@@ -912,33 +918,56 @@ function renderResearch(f){
     return '<span class="pill '+c+'">'+r+'</span>';
   }
   const list = RLIST();
+  // Archive logic (rev46): group reports by ticker (company/fund) or by kind+sub (thematic/weekly/market);
+  // the newest-dated report per group is "current", older editions are "archived".
+  function normDate(d){
+    d = String(d||'').trim();
+    var m = d.match(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{4})$/i);
+    if(m){ var mi={jan:'01',feb:'02',mar:'03',apr:'04',may:'05',jun:'06',jul:'07',aug:'08',sep:'09',oct:'10',nov:'11',dec:'12'};
+      return m[2]+'-'+mi[m[1].toLowerCase().slice(0,3)]+'-01'; }
+    m = d.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if(m) return m[1]+'-'+m[2]+'-'+m[3];
+    return d;
+  }
+  function gkey(r){ return r.ticker ? ('T:'+String(r.ticker).toUpperCase()) : ('K:'+(r.kind||'')+'|'+(r.sub||'')); }
+  const best = {};
+  list.forEach(function(r){
+    const k = gkey(r), d = normDate(r.date);
+    if(!best[k] || d > best[k].date) best[k] = {date:d, disp:r.date||'', file:r.file};
+  });
+  function isArchived(r){ const b = best[gkey(r)]; return !!b && normDate(r.date) < b.date; }
   const words = RES_QUERY.trim().toLowerCase().split(/\s+/).filter(Boolean);
   const qlist = words.length ? list.filter(function(r){
     const t = repText(r).toLowerCase();
     return words.every(function(w){ return t.indexOf(w) !== -1; });
   }) : list;
+  const vlist = qlist.filter(function(r){ return RES_ARCH==='archived' ? isArchived(r) : !isArchived(r); });
+  const archMatchNote = (words.length && !vlist.length && qlist.length)
+    ? ' '+qlist.filter(isArchived).length+' archived edition(s) match — switch to Archive to view them.' : '';
   function card(r){
     const isEq = !!r.ticker;
     const nm = isEq ? esc((BY[r.ticker]&&BY[r.ticker].name)||r.name||r.ticker) : esc(r.title);
     const tag = isEq ? '<b>'+r.ticker+'</b> '+pill(r.rating) : '<span class="tag">'+esc(r.sub||r.kind)+'</span>';
     const meta = isEq ? ((r.target?('Target '+r.target+' · '):'')+r.date) : r.date;
     const cta = isEq ? 'Open full report →' : 'Open report →';
-    return '<a class="repcard" href="'+REPORT_BASE+r.file+'" target="_blank" rel="noopener">'+
+    const arch = isArchived(r);
+    const archNote = arch ? '<div class="rm archnote">Archived · superseded by the '+esc(best[gkey(r)].disp)+' edition</div>' : '';
+    return '<a class="repcard'+(arch?' archived':'')+'" href="'+REPORT_BASE+r.file+'" target="_blank" rel="noopener">'+
       tag+'<div class="rt">'+nm+'</div>'+
-      '<div class="rm">'+meta+'<br>'+cta+'</div></a>';
+      '<div class="rm">'+meta+'<br>'+cta+'</div>'+archNote+'</a>';
   }
-  const byKind = function(k){ return qlist.filter(function(r){return r.kind===k;}); };
+  const byKind = function(k){ return vlist.filter(function(r){return r.kind===k;}); };
   // Ownership views: Held = report ticker is in current holdings (BY), Watchlist = company/fund report not in holdings.
   const isHeld = function(r){ return !!r.ticker && !!BY[r.ticker]; };
   function ownSections(own){
     const h = own ? 'Held' : 'Watchlist';
-    const m = qlist.filter(function(r){ return (r.kind==='company'||r.kind==='fund') && !!r.ticker && (isHeld(r)===own); });
+    const m = vlist.filter(function(r){ return (r.kind==='company'||r.kind==='fund') && !!r.ticker && (isHeld(r)===own); });
     const mc = m.filter(function(r){return r.kind==='company';});
     const mf = m.filter(function(r){return r.kind==='fund';});
     let html = '';
     if(mc.length) html += '<h3>'+h+' — company reports ('+mc.length+')</h3><div class="repgrid">'+mc.map(card).join('')+'</div>';
     if(mf.length) html += '<h3>'+h+' — fund overviews ('+mf.length+')</h3><div class="repgrid">'+mf.map(card).join('')+'</div>';
-    return html || '<div class="empty">No '+(own?'held-company':'watchlist')+' reports found.</div>';
+    return html || '<div class="empty">No '+(RES_ARCH==='archived'?'archived ':'')+(own?'held-company':'watchlist')+' reports in this view.</div>';
   }
   const secs = {
     company:['<h3>Company reports ('+byKind('company').length+')</h3><div class="repgrid">'+byKind('company').map(card).join('')+'</div>'],
@@ -953,13 +982,19 @@ function renderResearch(f){
   };
   const order = ['company','fund','thematic','weekly','market'];
   document.getElementById('researchLib').innerHTML =
-    (words.length && !qlist.length)
-      ? '<div class="empty">No reports match &ldquo;'+esc(RES_QUERY.trim())+'&rdquo;.<br>Try a ticker (e.g. NVDA) or a keyword (e.g. dividend).</div>'
+    (words.length && !vlist.length)
+      ? '<div class="empty">No reports match &ldquo;'+esc(RES_QUERY.trim())+'&rdquo;.'+esc(archMatchNote)+'<br>Try a ticker (e.g. NVDA) or a keyword (e.g. dividend).</div>'
       : (f==='held' ? ownSections(true) : (f==='watch' ? ownSections(false) : (f==='all' ? order.map(function(k){return secs[k][0];}).join('') : secs[f][0])));
   document.querySelectorAll('#resFilters .fbtn').forEach(function(b){
     b.classList.toggle('on', b.getAttribute('data-f')===f);
   });
+  document.querySelectorAll('#resArch .fbtn').forEach(function(b){
+    b.classList.toggle('on', b.getAttribute('data-a')===RES_ARCH);
+  });
 }
+document.querySelectorAll('#resArch .fbtn').forEach(function(b){
+  b.addEventListener('click', function(){ RES_ARCH = b.getAttribute('data-a'); renderResearch(); });
+});
 document.querySelectorAll('#resFilters .fbtn').forEach(function(b){
   b.addEventListener('click', function(){ renderResearch(b.getAttribute('data-f')); });
 });
