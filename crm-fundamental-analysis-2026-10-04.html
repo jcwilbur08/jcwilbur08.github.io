@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Salesforce (CRM) - Fundamental Analysis Update - 2026-10-04</title>
+<style>
+:root{--ink:#182033;--muted:#657089;--navy:#18294b;--blue:#315ca8;--teal:#188a8a;--green:#247a57;--amber:#a76d13;--red:#a54343;--lav:#7459a8;--paper:#fff;--wash:#f4f7fb;--line:#dce3ee;--soft:#eef3f9}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;color:var(--ink);background:#e8edf4;line-height:1.52;font-size:15px}
+a{color:#274f91;text-decoration:none} a:hover{text-decoration:underline}.report{max-width:1040px;margin:26px auto;background:var(--paper);box-shadow:0 8px 40px #1b2f501c}.page{padding:50px 62px}.cover{background:linear-gradient(135deg,#0f2a52 0%,#1d4e89 62%,#4a7fc1 100%);color:#fff;padding:66px 62px 54px;min-height:760px;position:relative;overflow:hidden}.cover:after{content:"";position:absolute;width:520px;height:520px;border-radius:50%;border:1px solid #ffffff20;right:-190px;top:-180px;box-shadow:0 0 0 80px #ffffff08,0 0 0 160px #ffffff05}.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;opacity:.78}.cover h1{font-size:43px;line-height:1.06;max-width:740px;margin:28px 0 12px;letter-spacing:-.03em}.cover h2{font-size:19px;font-weight:500;margin:0 0 35px;opacity:.86;color:#fff}.ticker{display:inline-flex;align-items:center;gap:12px;border:1px solid #ffffff35;border-radius:999px;padding:8px 14px;font-weight:800;margin-bottom:22px;background:#ffffff0e}.rating-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:35px;max-width:850px}.metric{background:#ffffff12;border:1px solid #ffffff28;padding:16px 15px;border-radius:12px;backdrop-filter:blur(3px)}.metric .k{font-size:11px;text-transform:uppercase;letter-spacing:.09em;opacity:.72}.metric .v{font-size:23px;font-weight:800;margin-top:5px}.metric .s{font-size:11px;opacity:.72;margin-top:2px}.cover-note{position:absolute;left:62px;right:62px;bottom:45px;font-size:12px;opacity:.72}.toc{display:grid;grid-template-columns:1fr 1fr;gap:8px 25px;padding:16px 0}.toc a{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid var(--line);color:var(--ink)}.toc span{width:26px;color:var(--blue);font-weight:800}.section{padding-top:10px;margin-top:10px}.section-kicker{color:var(--blue);font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.13em;margin-bottom:5px}h2{font-size:29px;letter-spacing:-.02em;color:var(--navy);margin:0 0 18px}h3{font-size:19px;color:var(--navy);margin:26px 0 9px}h4{font-size:15px;color:var(--navy);margin:18px 0 5px}.lead{font-size:18px;color:#34425e;line-height:1.55}.callout{border-left:5px solid var(--blue);background:var(--wash);padding:18px 20px;margin:20px 0;border-radius:0 10px 10px 0}.callout.green{border-color:var(--green);background:#f1f8f4}.callout.amber{border-color:var(--amber);background:#fff8ec}.callout.red{border-color:var(--red);background:#fff4f4}.callout strong{color:var(--navy)}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.card{border:1px solid var(--line);border-radius:12px;padding:18px;background:#fff}.card .label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:800}.card .big{font-size:25px;font-weight:800;color:var(--navy);margin:4px 0}.card p{margin:6px 0 0}.score{display:inline-block;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:800}.pos{background:#e9f5ee;color:#17613f}.mix{background:#eef3fb;color:#315ca8}.neg{background:#faecec;color:#8f3535}.neutral{background:#f2eff8;color:#6b4b9e}table{width:100%;border-collapse:collapse;margin:15px 0 22px;font-size:13px}th{background:#edf2f8;color:#33435e;text-align:left;padding:10px 9px;border-bottom:2px solid #cbd6e5;font-size:11px;text-transform:uppercase;letter-spacing:.04em}td{padding:10px 9px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}.num{text-align:right;font-variant-numeric:tabular-nums}.strong{font-weight:800;color:var(--navy)}.small{font-size:12px;color:var(--muted)}ul,ol{padding-left:20px}li{margin:6px 0}.barrow{display:grid;grid-template-columns:150px 1fr 80px;gap:10px;align-items:center;margin:10px 0}.bar{height:12px;background:#e6ebf2;border-radius:10px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,var(--blue),var(--teal));border-radius:10px}.fill.red{background:var(--red)}.fill.green{background:var(--green)}.fill.purple{background:var(--lav)}.scenario{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin:20px 0}.scenario .case{border-radius:12px;padding:17px;border:1px solid var(--line)}.scenario .bear{border-top:5px solid var(--red)}.scenario .base{border-top:5px solid var(--blue)}.scenario .bull{border-top:5px solid var(--green)}.case .price{font-size:28px;font-weight:850;color:var(--navy)}.case ul{font-size:12px;padding-left:18px}.timeline{border-left:2px solid #c7d4e8;margin:18px 0 18px 8px;padding-left:25px}.event{margin:0 0 18px;position:relative}.event:before{content:"";position:absolute;width:10px;height:10px;border-radius:50%;background:var(--blue);left:-31px;top:6px}.event .when{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:800}.footer-note{margin-top:35px;padding-top:14px;border-top:1px solid var(--line);font-size:11px;color:var(--muted)}.source-list{font-size:12px;overflow-wrap:anywhere}.source-list li{margin:8px 0}.decision{border:2px solid var(--navy);border-radius:14px;padding:22px;margin:20px 0}.decision h3{margin:0 0 8px}.break{break-before:page}.avoidbreak{break-inside:avoid}.disclaimer{font-size:10.5px;color:#6a7386;line-height:1.45}
+@media print{body{background:#fff;font-size:10.35px;line-height:1.39}.report{max-width:none;margin:0;box-shadow:none}.page{padding:26px 36px}.cover{min-height:11in;padding:52px 48px 42px;break-after:page}.cover h1{font-size:38px}.cover-note{left:48px;right:48px}.break{break-before:page}.card,.scenario .case,.callout,.decision{break-inside:avoid}.card{padding:12px}.grid2{gap:12px}.grid3{gap:10px}.scenario{gap:10px;margin:12px 0}.scenario .case{padding:11px}.case .price{font-size:23px}table{font-size:9.6px;margin:10px 0 14px;break-inside:auto}thead{display:table-header-group}tr{break-inside:avoid}th{padding:6px 6px;font-size:9px}td{padding:6px 6px}h2{font-size:22px;margin-bottom:12px}h3{font-size:14.5px;margin:16px 0 6px}h4{font-size:12.5px}.lead{font-size:14.5px}.callout{padding:12px 14px;margin:12px 0}.metric .v{font-size:20px}.small{font-size:9.5px}.footer-note{margin-top:18px;padding-top:9px}.timeline{margin:10px 0 10px 8px}.event{margin-bottom:10px}.decision{padding:14px;margin:12px 0}.barrow{margin:6px 0}ul,ol{margin-top:5px;margin-bottom:6px}li{margin:3px 0}a{color:inherit;text-decoration:none}}
+@media(max-width:760px){.report{margin:0}.page,.cover{padding:32px 24px}.cover{min-height:740px}.cover h1{font-size:34px}.rating-strip,.grid2,.grid3,.scenario{grid-template-columns:1fr}.cover-note{position:static;margin-top:50px}.toc{grid-template-columns:1fr}.barrow{grid-template-columns:110px 1fr 65px}}
+</style>
+</head>
+<body><main class="report">
+<section class="cover">
+<div class="eyebrow">Public Equity Research | Fundamental Update</div>
+<div class="ticker">NYSE: CRM &nbsp; | &nbsp; Salesforce, Inc.</div>
+<h1>Fundamental Analysis Update</h1>
+<h2>Agentforce is a $1.5B ARR business growing 240%, and Dreamforce answered the interface threat &mdash; but the market still prices this compounder at ~14x forward earnings.</h2>
+<div class="rating-strip">
+<div class="metric"><div class="k">Research Rating</div><div class="v">Buy</div><div class="s">New conviction scale</div></div>
+<div class="metric"><div class="k">12-Mo Target</div><div class="v">$285</div><div class="s">~21% upside</div></div>
+<div class="metric"><div class="k">Reference Price</div><div class="v">$234.69</div><div class="s">Oct. 2, 2026 close</div></div>
+<div class="metric"><div class="k">Conviction</div><div class="v">6/10</div><div class="s">Quality, reasonably priced</div></div>
+<div class="metric"><div class="k">FCF Yield</div><div class="v">~7.9%</div><div class="s">TTM ~$15.2B</div></div>
+</div>
+<div class="cover-note">Report date: October 4, 2026 &nbsp; | &nbsp; Data cut-off: October 2, 2026 after U.S. market close &nbsp; | &nbsp; Prior edition: September 22, 2026 (HOLD/$276, legacy scale) &nbsp; | &nbsp; Research use only; targets require ongoing review.</div>
+</section>
+
+<section class="page">
+<div class="section-kicker">Executive Summary</div><h2>Investment conclusion</h2>
+<p class="lead"><strong>Salesforce is the highest-quality large-cap software compounder the market is currently discounting.</strong> Agentforce has crossed $1.5B of ARR growing 240% year over year, combined Agentforce + Data 360 ARR is nearly $3.9B growing 210%+, current RPO is accelerating at +14%, and the business converts revenue into roughly $15B of annual free cash flow &mdash; yet the stock trades at about 14x forward earnings while the S&amp;P 500 trades near 19x and direct peers ServiceNow and Oracle trade at 28x and 18x.</p>
+<div class="decision avoidbreak"><h3>Research posture: Buy | Conviction 6/10 | 12-month target $285</h3><p>At $234.69, CRM trades at roughly <strong>18.4x FY2028E</strong> consensus non-GAAP EPS of ~$15.5 and <strong>12.7x trailing free cash flow</strong> &mdash; an undemanding multiple for an 11%-growing business with 34%+ non-GAAP operating margins and a real, scaling AI franchise. The $285 target implies ~21% price upside and sits squarely inside the Street&rsquo;s $275&ndash;$286 consensus cluster. Conviction is 6 rather than higher because the headline earnings are flattered by strategic-investment gains, full-year free-cash-flow growth guidance was cut to ~4&ndash;5%, and the company levered up $25B to fund the accelerated buyback. This is a quality-compounder Buy on a reasonable price &mdash; not a deep-value call, and not a momentum chase.</p></div>
+<div class="grid3">
+<div class="card"><div class="label">AI franchise at scale</div><div class="big">$3.9B ARR</div><p>Agentforce + Data 360 ARR, up 210%+ y/y; Agentforce alone &gt;$1.5B (+240%).</p></div>
+<div class="card"><div class="label">Forward demand signal</div><div class="big">+14%</div><p>Current RPO growth, reported and constant currency &mdash; accelerating.</p></div>
+<div class="card"><div class="label">Valuation vs. market</div><div class="big">~14x</div><p>Forward non-GAAP P/E vs. ~19x for the S&amp;P 500 and ~28x for ServiceNow.</p></div>
+</div>
+<div class="callout amber"><strong>Re-rating note (new scale, effective Oct 3).</strong> The September 22 edition carried a legacy HOLD with an $276 target (~18% upside). Under the conviction-anchored scale, ~21% upside with 6/10 conviction maps to <strong>Buy</strong> &mdash; the old HOLD understated the risk/reward. The target rises $276 &rarr; $285 on Dreamforce de-risking the interface-threat narrative and the Fin acquisition closing; the earnings-quality and leverage caveats from the prior edition are carried forward unchanged.</div>
+<h3>Key debates</h3>
+<div class="grid2">
+<div class="card"><span class="score pos">Bullish evidence</span><ul><li>Agentforce ARR &gt;$1.5B (+240%); 7.0B agentic work units delivered, 3.2B in Q2 alone (+97% q/q) &mdash; usage-based monetization is real.</li><li>Dreamforce answered the &ldquo;SaaSpocalypse&rdquo; interface threat: AIforce routes Salesforce data and permissions into any AI interface (Claude, Slack, Amazon) via MCP.</li><li>Slackbot is the fastest-adopted product in company history (1.5M monthly actives since January); 100,000 users activated Agentforce Coworker in 35 days.</li><li>cRPO +14% and Slack&rsquo;s fastest net-new ACV quarter since acquisition point to H2 organic reacceleration.</li><li>~$15B annual FCF, $50B buyback authorization, $0.44 quarterly dividend &mdash; capital return is aggressive at a 7.9% FCF yield.</li></ul></div>
+<div class="card"><span class="score neg">Bearish evidence</span><ul><li>Q2&rsquo;s $5.90 non-GAAP EPS was materially aided by $2.61B of strategic-investment gains (~$2.43/share) &mdash; headline earnings overstate operating power.</li><li>FY2027 operating/free-cash-flow growth guidance cut to ~4&ndash;5% from the earlier ~9&ndash;10% framework.</li><li>$25B of new senior notes for the ASR; net debt ~$27B; goodwill + intangibles ~62% of assets.</li><li>~3 points of guided 11&ndash;12% revenue growth comes from Informatica &mdash; organic growth is closer to ~8%.</li><li>A service disruption hit core services during Dreamforce itself &mdash; a poor advertisement for platform reliability.</li><li>Most sales and service customers have not yet upgraded to premium AI-enabled editions.</li></ul></div>
+</div>
+<div class="footer-note">Reference price $234.69 is the October 2, 2026 NYSE close. Reported figures are company filings and releases; estimates are labeled as such in the methodology note. Full source register appears at the end.</div>
+</section>
+
+<section class="page break">
+<div class="section-kicker">Table of Contents</div><h2>Contents</h2>
+<div class="toc">
+<a href="#changed"><span>1</span>What changed since September 22</a>
+<a href="#business"><span>2</span>Business overview</a>
+<a href="#financials"><span>3</span>Financial performance &amp; guidance</a>
+<a href="#ai"><span>4</span>Agentforce &amp; Data 360 &mdash; the AI franchise</a>
+<a href="#valuation"><span>5</span>Valuation &amp; target framework</a>
+<a href="#risks"><span>6</span>Risks</a>
+<a href="#catalysts"><span>7</span>Catalysts &amp; what to watch</a>
+<a href="#portfolio"><span>8</span>Portfolio fit &amp; gate language</a>
+<a href="#appendix"><span>9</span>Appendix: sources &amp; methodology</a>
+</div>
+</section>
+
+<section class="page break" id="changed">
+<div class="section-kicker">01 | Update</div><h2>What changed since September 22</h2>
+<p class="section-kicker" style="margin-bottom:14px">Twelve days, one flagship conference, one closed acquisition</p>
+<div class="timeline">
+<div class="event"><div class="when">Sep 10 &mdash; M&amp;A closed</div><p><strong>Fin acquisition completed</strong> ($3.6B, announced June). Intercom&rsquo;s AI customer agent brings 30,000+ enterprise customers and a 76% average resolution rate across chat, email, WhatsApp, SMS, voice and Slack. It is now one of the seven named role-specific agents in the Dreamforce lineup (Fin: complex customer-experience workflows). One of the two $200M acquisition contributions to the FY2027 guide raise is now de-risked; <strong>Contentful ($1.5B) remains expected to close in Q3 FY2027</strong>.</p></div>
+<div class="event"><div class="when">Sep 15&ndash;17 &mdash; Dreamforce 2026</div><p><strong>The most important product event since the Agentforce launch.</strong> Salesforce unveiled <strong>AIforce</strong> &mdash; an interface layer that routes Salesforce&rsquo;s data, permissions and business logic into external AI environments (Claude, Slack, Amazon) via the Model Context Protocol, so workers never need to open Salesforce. Three launch surfaces: <strong>Claudeforce</strong> (prebuilt MCP server inside Anthropic&rsquo;s Claude, 37 ready-made sales skills, beta, piloted by Deloitte, GitLab and Legora), <strong>Slackforce</strong> (Slackbot with Salesforce context, Slack CRM, Slack Code), and <strong>Agentforce Coworker</strong> (AI teammate inside Lightning; 100,000 activations in 35 days). <strong>Koa</strong>, the first purpose-built CRM reasoning model (built on NVIDIA Nemotron, trained on synthetic scenarios from 27 years of deployments), goes GA in winter 2026. Seven named agents &mdash; Casey, Paige, Carter, Marshall, Piper, Fin, Hunter (outbound sales, GA planned November). Benioff shared the stage with Anthropic&rsquo;s Dario Amodei, NVIDIA&rsquo;s Jensen Huang and OpenAI&rsquo;s Sam Altman; Siemens confirmed Agentforce connected to Teamcenter. AWS partnership expanded (Bedrock model access, AWS Marketplace distribution). Zero data retention by model providers.</p></div>
+<div class="event"><div class="when">Sep 16 &mdash; Analyst action</div><p><strong>Mizuho raised its target $265 &rarr; $280 (Outperform)</strong>, citing the new interfaces unveiled at Dreamforce and calling the 2026 setup &ldquo;much better&rdquo; than 2025. Wells Fargo raised $230 &rarr; $250 (Equal Weight). Earlier in the window: Morgan Stanley $315 (Sep 2), Cantor Fitzgerald $250 &rarr; $300 Overweight (Sep 2), Citizens JMP $315 Market Outperform (Sep 18), DA Davidson $225 (Sep 17), Needham Buy reaffirmed (Sep 17), Jefferies Buy reaffirmed (Sep 24).</p></div>
+<div class="event"><div class="when">Sep 16 &mdash; Outage</div><p><strong>A widespread service disruption</strong> hit core Salesforce services across multiple regions during Dreamforce&rsquo;s second day &mdash; severe delays, intermittent errors, some services inaccessible &mdash; while the company was on stage pitching platform reliability. The timing was embarrassing and bears watching, but there is no evidence of lasting customer or financial impact.</p></div>
+<div class="event"><div class="when">Sep 22 &rarr; Oct 2 &mdash; Price action</div><p>Stock drifted <strong>-8.8% from the post-Q2 high of $251.61 to $234.69</strong>, giving back part of the +22.6% earnings-day pop on no company-specific negative news &mdash; a sentiment fade, not a fundamental deterioration. The 52-week range is $146.32&ndash;$269.11; the stock sits ~13% below its high and is down ~11% YTD.</p></div>
+</div>
+<div class="callout green"><strong>Net assessment.</strong> The last twelve days were modestly positive on fundamentals: Dreamforce materially strengthened the AI narrative (the interface-threat answer is now a shipped product, not a slide), Fin closed, and the analyst community moved targets up. The outage and the price fade are noise against that. Nothing in the window changes the earnings-quality or leverage caveats &mdash; they remain the binding constraints on conviction.</div>
+</section>
+
+<section class="page break" id="business">
+<div class="section-kicker">02 | Business &amp; Industry</div><h2>Business quality and competitive position</h2>
+<p>Salesforce is the largest enterprise CRM software vendor; subscriptions and support are ~95% of revenue, plus professional services. In Q3 FY2026 the company renamed its subscription lines to reference Agentforce with no change to revenue allocation: Agentforce Sales ($9.0B FY2026, +8%), Agentforce Service ($9.8B, +8%), Agentforce 360 Platform / Slack / Other ($8.9B, +23%, includes Informatica), Agentforce Marketing &amp; Commerce ($5.4B, +3%), Agentforce Integration &amp; Analytics ($6.2B, +8%).</p>
+<h3>Q2 FY2027 regional snapshot</h3>
+<div class="barrow"><div>Americas</div><div class="bar"><div class="fill" style="width:65%"></div></div><div class="num">$7.4B</div></div>
+<div class="barrow"><div>Europe</div><div class="bar"><div class="fill green" style="width:24%"></div></div><div class="num">$2.76B</div></div>
+<div class="barrow"><div>Asia-Pacific</div><div class="bar"><div class="fill purple" style="width:10%"></div></div><div class="num">$1.17B</div></div>
+<p class="small">Quarter ended July 31, 2026; growth +10% / +13% / +12% in constant currency respectively.</p>
+<h3>Competitive position</h3>
+<div class="grid2">
+<div class="card"><span class="score pos">Advantage</span><h3>System-of-record footprint</h3><p>The CRM installed base is the distribution surface for every AI product &mdash; Agentforce, Slackbot and Coworker all monetize on top of data and workflows customers already run on Salesforce.</p></div>
+<div class="card"><span class="score pos">Advantage</span><h3>Data gravity</h3><p>Data 360 ingested 104 trillion records in Q2 (+355%), 82 trillion via Zero Copy (+731%). Models commoditize; the proprietary customer-data estate does not.</p></div>
+<div class="card"><span class="score mix">Contested</span><h3>vs. Microsoft Dynamics</h3><p>Microsoft competes on bundled Copilot/AI pricing inside enterprise agreements. Salesforce&rsquo;s answer is usage-based AWU monetization and now the AIforce interface layer &mdash; be the data and permissions layer every assistant must call.</p></div>
+<div class="card"><span class="score mix">Contested</span><h3>vs. ServiceNow / hyperscalers</h3><p>ServiceNow (27.8x forward) and the hyperscalers compete on workflow and data platforms. Salesforce&rsquo;s edge is the CRM system of record plus Slack distribution; Zero Copy is the architectural answer to native cloud data stacks.</p></div>
+</div>
+<div class="callout"><strong>The interface threat, answered.</strong> The existential question for every application vendor &mdash; what happens when employees open an AI assistant instead of the app? &mdash; got a shipped answer at Dreamforce: AIforce puts Salesforce&rsquo;s governed data, permissions and business logic inside Claude, Slack and other surfaces via MCP. The moat thesis shifts from &ldquo;owns the screen&rdquo; to &ldquo;owns the governed data and workflow layer every screen must call.&rdquo;</div>
+</section>
+
+<section class="page break" id="financials">
+<div class="section-kicker">03 | Financials</div><h2>Financial quality and earnings trajectory</h2>
+<h3>Q2 FY2027 (quarter ended 31 Jul 2026; reported 26 Aug 2026)</h3>
+<table><thead><tr><th>Metric</th><th class="num">Q2 FY2027</th><th class="num">y/y</th></tr></thead><tbody>
+<tr><td>Total revenue</td><td class="num"><strong>$11.35B</strong></td><td class="num">+11%</td></tr>
+<tr><td>Subscription &amp; support</td><td class="num"><strong>$10.82B</strong></td><td class="num">+12%</td></tr>
+<tr><td>Informatica contribution</td><td class="num">$456M total / $440M sub</td><td class="num">&mdash;</td></tr>
+<tr><td>Current RPO (cRPO)</td><td class="num"><strong>$33.5B</strong></td><td class="num">+14%</td></tr>
+<tr><td>Total RPO</td><td class="num"><strong>$66.3B</strong></td><td class="num">+11%</td></tr>
+<tr><td>GAAP operating margin</td><td class="num"><strong>20.5%</strong></td><td class="num">&mdash;</td></tr>
+<tr><td>Non-GAAP operating margin</td><td class="num"><strong>34.1%</strong></td><td class="num">&mdash;</td></tr>
+<tr><td>GAAP diluted EPS</td><td class="num"><strong>$4.29</strong></td><td class="num">+119%</td></tr>
+<tr><td>Non-GAAP diluted EPS</td><td class="num"><strong>$5.90</strong></td><td class="num">+103%</td></tr>
+<tr><td>Operating cash flow</td><td class="num"><strong>$1.3B</strong></td><td class="num">+71%</td></tr>
+<tr><td>Free cash flow</td><td class="num"><strong>$1.1B</strong></td><td class="num">+81%</td></tr>
+</tbody></table>
+<div class="callout amber"><strong>Earnings-quality filter &mdash; read this before the headline.</strong> Q2&rsquo;s $5.90 non-GAAP EPS included <strong>$2.61B of net gains on strategic investments (~$2.43/share)</strong> versus $6M a year earlier. The full-year FY2027 non-GAAP guide of $16.67&ndash;$16.71 explicitly &ldquo;assumes no change to the value of our strategic investment portfolio&rdquo; &mdash; the gain is embedded in the guide but is not recurring operating earnings. Analysts appear to strip it out: consensus FY2027 non-GAAP EPS sits at ~$13.3&ndash;$14.2, well below the company&rsquo;s $16.67&ndash;$16.71. Value the business on the core number, not the headline.</div>
+<h3>Guidance</h3>
+<div class="grid2">
+<div class="card"><div class="label">FY2027 revenue guide</div><div class="big">$46.1&ndash;46.4B</div><p>+11&ndash;12% y/y (raised $200M: $100M organic, $200M Contentful/Fin, &minus;$100M FX). ~3pts from Informatica &rarr; organic ~8%.</p></div>
+<div class="card"><div class="label">FY2027 margin guide</div><div class="big">34.3%</div><p>Non-GAAP operating margin maintained; GAAP operating margin 20.1%.</p></div>
+<div class="card"><div class="label">Q3 FY2027 guide</div><div class="big">$11.42&ndash;11.50B</div><p>+11&ndash;12%; non-GAAP EPS $3.42&ndash;$3.44; cRPO ~14% ex-Contentful/Fin.</p></div>
+<div class="card"><div class="label">Cash-flow guide</div><div class="big">~4&ndash;5%</div><p>Operating and free-cash-flow growth &mdash; cut from the earlier ~9&ndash;10% framework. The number to watch on Dec 2.</p></div>
+</div>
+<h3>Balance sheet &amp; capital allocation</h3>
+<ul>
+<li><strong>The $25B ASR:</strong> March 2026 senior-notes issuance funded a $25B accelerated share repurchase; diluted shares fell from ~962M to ~821M. <strong>Final settlement expected October 2026</strong> &mdash; confirms the true post-buyback share count and leverage.</li>
+<li><strong>Balance sheet (30 Apr 2026 10-Q):</strong> cash $8.9B; marketable securities $2.9B; strategic investments $7.8B; noncurrent debt $39.3B; equity $34.2B. Net debt ~$27.4B.</li>
+<li><strong>Capital returns:</strong> FY2026 $14.3B ($12.7B buybacks + $1.6B dividends); $50B repurchase authorization in place. Dividend raised 5.8% to $0.44/quarter ($1.76 annualized, 0.75% yield), payable October 8.</li>
+<li><strong>Intangibles:</strong> goodwill $59.3B + acquired intangibles $6.7B &asymp; 62% of total assets &mdash; acquisition ROI (Informatica, Fin, pending Contentful) is the key balance-sheet risk.</li>
+</ul>
+</section>
+
+<section class="page break" id="ai">
+<div class="section-kicker">04 | AI Franchise</div><h2>Agentforce &amp; Data 360 &mdash; from narrative to operating stream</h2>
+<p class="lead">The AI business is no longer a pilot program: nearly $3.9B of ARR growing 210%+, 7.0B agentic work units delivered, and Dreamforce added a shipped answer to the interface threat.</p>
+<div class="grid3">
+<div class="card"><div class="label">Agentforce ARR</div><div class="big">&gt;$1.5B</div><p>+240% y/y; metric now includes AI offerings, Slackbot and Headless 360.</p></div>
+<div class="card"><div class="label">Agentforce + Data 360 ARR</div><div class="big">~$3.9B</div><p>+210%+ y/y &mdash; a genuine AI business at scale.</p></div>
+<div class="card"><div class="label">Agentic Work Units</div><div class="big">7.0B</div><p>Cumulative; 3.2B in Q2 alone (+97% q/q) &mdash; the usage-based monetization vector.</p></div>
+</div>
+<h3>Dreamforce 2026: the product substance</h3>
+<ul>
+<li><strong>AIforce</strong> &mdash; interface layer routing Salesforce data, permissions and logic into any MCP-compatible AI environment. The strategic answer to AI assistants becoming the screen employees open first.</li>
+<li><strong>Claudeforce</strong> &mdash; prebuilt MCP server inside Anthropic&rsquo;s Claude; 37 ready-made sales skills; beta; piloted by Deloitte, GitLab, Legora.</li>
+<li><strong>Slackforce</strong> &mdash; Slackbot (1.5M monthly actives since January, fastest-adopted product in company history), Slack CRM record ops from chat, Slack Code multiplayer coding agents.</li>
+<li><strong>Agentforce Coworker</strong> &mdash; AI teammate inside Lightning; 100,000 activations in first 35 days.</li>
+<li><strong>Koa</strong> &mdash; first purpose-built CRM reasoning model (NVIDIA Nemotron post-training; synthetic training data from 27 years of deployments); GA winter 2026.</li>
+<li><strong>Seven named agents:</strong> Casey (service), Paige (IT/HR), Carter (e-commerce), Marshall (supply chain), Piper (inbound sales), Fin (complex CX), Hunter (outbound sales, GA November).</li>
+<li><strong>Distribution:</strong> expanded AWS partnership (Bedrock model access, AWS Marketplace); Siemens connected Agentforce to Teamcenter; zero data retention by model providers.</li>
+</ul>
+<div class="callout"><strong>What to underwrite.</strong> The AI franchise has three monetization vectors: subscriptions (Agentforce SKUs, bookings more than doubled q/q), usage (AWUs, +97% q/q), and distribution (Slack&rsquo;s fastest net-new ACV quarter since acquisition). The Q3 print must show these converting into subscription revenue acceleration &mdash; that is the H2 reacceleration management promised.</div>
+</section>
+
+<section class="page break" id="valuation">
+<div class="section-kicker">05 | Valuation</div><h2>Valuation &amp; target framework</h2>
+<h3>Multiples at $234.69 (Oct 2, 2026 close)</h3>
+<table><thead><tr><th>Multiple</th><th class="num">Value</th><th class="num">Basis</th></tr></thead><tbody>
+<tr><td>TTM GAAP P/E</td><td class="num">21.5x</td><td class="num">$234.69 &divide; $10.91</td></tr>
+<tr><td>FY2027E non-GAAP P/E</td><td class="num">16.6&ndash;17.6x</td><td class="num">$234.69 &divide; ~$13.3&ndash;$14.2 consensus (core, ex-investment gains)</td></tr>
+<tr><td><strong>FY2028E non-GAAP P/E</strong></td><td class="num"><strong>15.2x</strong></td><td class="num">$234.69 &divide; ~$15.47 consensus</td></tr>
+<tr><td><strong>Price / TTM FCF</strong></td><td class="num"><strong>12.7x</strong></td><td class="num">$193.2B &divide; ~$15.2B (7.9% FCF yield)</td></tr>
+<tr><td>EV / TTM revenue</td><td class="num">~5.0x</td><td class="num">~$220B EV &divide; ~$44B</td></tr>
+<tr><td>Dividend yield</td><td class="num">0.75%</td><td class="num">$1.76 &divide; $234.69</td></tr>
+</tbody></table>
+<div class="callout green"><strong>Target math: $285 = ~18.4x FY2028E consensus non-GAAP EPS of ~$15.5.</strong> An 18&ndash;19x multiple is fair &mdash; not generous &mdash; for ~10&ndash;11% EPS growth with 34%+ non-GAAP margins and a wide-moat software franchise; direct comps ServiceNow (~28x) and Oracle (~18x) both trade at or above it. The target sits inside the Street&rsquo;s $275&ndash;$286 consensus cluster (~$275 MarketBeat, ~$283 Yahoo, ~$287 Stockopedia) and implies ~21% price upside from $234.69. Cross-check: 12.7x trailing FCF is the clearest value signal &mdash; the market charges Salesforce a below-market multiple for above-market cash conversion.</div>
+<h3>Scenario grid (12-month)</h3>
+<div class="scenario">
+<div class="case bear"><div class="label strong">Bear &middot; $200</div><div class="price">$200</div><ul><li>H2 organic reacceleration fails; cRPO decelerates below 10%</li><li>Agentforce ARR growth stalls as pilots don&rsquo;t convert</li><li>FCF guide cut proves structural; multiple compresses to ~13x</li><li>Leverage + M&amp;A indigestion dominate the narrative</li></ul></div>
+<div class="case base"><div class="label strong">Base &middot; $285</div><div class="price">$285</div><ul><li>Q3 confirms cRPO ~14%; Agentforce converts to subscription growth</li><li>Fin/Contentful integrate cleanly; ASR settles in October</li><li>FY2028 core EPS ~$15.5 at ~18.4x; FCF yield compresses toward 6.5%</li><li>Consensus cluster $275&ndash;$286 reached</li></ul></div>
+<div class="case bull"><div class="label strong">Bull &middot; $340</div><div class="price">$340</div><ul><li>AIforce adoption inflects; AWU monetization scales materially</li><li>Organic growth reaccelerates to low-teens; FCF growth recovers</li><li>Multiple re-rates toward 22x on proven AI monetization</li><li>Approaches the $315&ndash;$325 bull targets (MS, Citizens, Roth)</li></ul></div>
+</div>
+<p class="small">Probability-weighted value across the scenarios (25/55/20) is ~$281 &mdash; consistent with the $285 base target. Scenario values are analyst underwriting, not guidance.</p>
+</section>
+
+<section class="page break" id="risks">
+<div class="section-kicker">06 | Risks</div><h2>Risks</h2>
+<div class="grid2">
+<div class="card"><span class="score neg">High</span><h3>Earnings quality</h3><p>$2.61B of Q2 investment gains (~$2.43/share) flatter both the quarter and the FY2027 guide. Core operating EPS is lower &mdash; valuing on the headline $16.67&ndash;$16.71 guide overpays.</p></div>
+<div class="card"><span class="score neg">High</span><h3>Leverage</h3><p>$25B of new notes for the ASR; net debt ~$27B; goodwill + intangibles ~62% of assets. Debt-funded buybacks while digesting Informatica/Fin/Contentful concentrate execution risk.</p></div>
+<div class="card"><span class="score mix">Medium</span><h3>Cash-flow guide cut</h3><p>FY2027 OCF/FCF growth of ~4&ndash;5% vs. the earlier ~9&ndash;10% framework. Timing or structural? The December 2 print must answer.</p></div>
+<div class="card"><span class="score mix">Medium</span><h3>Acquired growth</h3><p>~3+ points of guided growth is Informatica; organic is ~8%. Contentful still pending; $200M of the FY2027 raise depends on the two H2 closings.</p></div>
+<div class="card"><span class="score mix">Medium</span><h3>Seat-based pricing vs. AI automation</h3><p>AWUs are the strategic answer, but most sales/service customers have not upgraded to premium AI editions &mdash; seat compression risk is live until conversion proves out.</p></div>
+<div class="card"><span class="score neutral">Watch</span><h3>Platform reliability</h3><p>The Dreamforce-week outage was embarrassing; no lasting impact is evident, but recurrence would damage the trust narrative AIforce depends on.</p></div>
+</div>
+</section>
+
+<section class="page break" id="catalysts">
+<div class="section-kicker">07 | Catalysts</div><h2>Catalysts &amp; what to watch</h2>
+<div class="timeline">
+<div class="event"><div class="when">October 2026 &mdash; ASR settlement</div><p>Final settlement of the $25B accelerated repurchase confirms the true post-buyback share count and leverage position.</p></div>
+<div class="event"><div class="when">Q3 FY2027 &mdash; Contentful close</div><p>$1.5B acquisition expected to close; removes the last $100M of acquisition-related uncertainty in the FY2027 guide.</p></div>
+<div class="event"><div class="when">November 2026 &mdash; Hunter GA</div><p>Outbound-sales agent general availability &mdash; first Dreamforce product to face real enterprise procurement.</p></div>
+<div class="event"><div class="when">~December 2, 2026 &mdash; Q3 earnings (estimated)</div><p><strong>The critical print.</strong> Revenue guide $11.42&ndash;$11.50B, non-GAAP EPS $3.42&ndash;$3.44, cRPO ~14% ex-acquisitions. Three questions: does Agentforce ARR convert into subscription acceleration? Does the OCF/FCF guide hold? Any update to the FY2027 framework?</p></div>
+<div class="event"><div class="when">Winter 2026 &mdash; Koa GA</div><p>General availability of the CRM reasoning model &mdash; the credibility test for Salesforce&rsquo;s model-building ambitions.</p></div>
+</div>
+</section>
+
+<section class="page break" id="portfolio">
+<div class="section-kicker">08 | Portfolio Fit</div><h2>Portfolio fit &amp; gate language</h2>
+<p>Cam holds <strong>99 shares (~$23,234 at the reference close; ~1.4% of the $1.69M portfolio)</strong> at a $20,956 cost basis (avg ~$211.68) &mdash; up ~10.9% unrealized. A reasonable quality-compounder slot: not a concentration risk, not a stub.</p>
+<div class="grid2">
+<div class="card"><div class="label">Role in the book</div><div class="big">Compounder</div><p>Enterprise-software compounder with ~$15B annual FCF and AI optionality; balances the hardware/capex cyclicality of NVDA, AVGO and TSM.</p></div>
+<div class="card"><div class="label">Income</div><div class="big">~$174/yr</div><p>$1.76/share dividend is immaterial &mdash; this is a total-return holding, not an income position.</p></div>
+</div>
+<div class="decision avoidbreak"><h3>Gate language (recommended &mdash; not installed; research recommends, Cam decides)</h3><p><strong>ACCUMULATE CRM at or below $210 toward ~1.5&ndash;2.0% of NAV</strong> (~35&ndash;45 additional shares, ~$7.4K&ndash;$9.5K at the gate). At $210 the forward multiple compresses to ~13.5x FY2028E and the FCF yield rises above 9% &mdash; a valuation-anchored entry on a quality franchise, not a chase. <strong>Do not add into the December 2 print</strong> &mdash; the cleanest entry is a post-print washout on maintained guidance. Break below $190 on fundamental news = full reassessment, not a buy. No trim &mdash; the rating requires no action and the position is not a concentration concern.</p></div>
+<div class="callout"><strong>Why Buy, not Strong Buy.</strong> The AI franchise is real and the multiple is undemanding &mdash; but the $2.61B investment-gain flattery, the FCF-guide cut, and $25B of new leverage keep conviction at 6. Strong Buy requires 8&ndash;10 conviction; this name earns its Buy on price and quality, not on a de-risked earnings path. The December 2 print is the conviction hinge: a clean cRPO print with the cash-flow guide intact moves conviction toward 7; a guide trim moves this to Hold.</div>
+</section>
+
+<section class="page break" id="appendix">
+<div class="section-kicker">09 | Appendix</div><h2>Sources &amp; methodology</h2>
+<p class="small"><strong>Methodology note.</strong> Reference price $234.69 is the October 2, 2026 NYSE close. <em>Reported</em> figures are company filings, earnings releases and IR materials. <em>Calculated</em> figures are analyst arithmetic from reported inputs (multiples, yields, upside). <em>Estimated</em> figures are third-party consensus aggregations and provider estimates (notably the ~December 2, 2026 Q3 earnings date, which is not company-confirmed) &mdash; these vary by provider and vintage. <em>Opinion</em> figures are scenario values, the target, and the rating. No inline citations appear in the body by standing policy; all references live in this register.</p>
+<h3>Source register</h3>
+<ul class="source-list">
+<li>Salesforce Q2 FY2027 earnings press release and 8-K (company IR), 26 Aug 2026</li>
+<li>Salesforce Q2 FY2027 10-Q (SEC), incl. Contentful ($1.5B) and Fin/Intercom ($3.6B) acquisition disclosures</li>
+<li>Salesforce IR release: Fin acquisition completed, 10 Sep 2026</li>
+<li>Dreamforce 2026 keynote coverage: AIforce, Claudeforce (37 skills, beta), Slackforce, Agentforce Coworker (100K activations/35 days), Koa (NVIDIA Nemotron), seven named agents, AWS expansion, zero data retention</li>
+<li>Market data: Finnhub (Oct 2 close $234.69, 52-wk $146.32&ndash;$269.11, TTM EPS $10.91, P/E 21.51, market cap ~$193.2B); Yahoo Finance (day range $233.17&ndash;$239.00, Q3 earnings est. Dec 2, 2026, 1y target $283.36); MarketBeat price history</li>
+<li>Analyst actions: Mizuho $265&rarr;$280 Outperform (Sep 16); Wells Fargo $230&rarr;$250 Equal Weight (Sep 18); Morgan Stanley $315 (Sep 2); Cantor Fitzgerald $250&rarr;$300 Overweight (Sep 2); Citizens JMP $315 Market Outperform (Sep 18); DA Davidson $225 (Sep 17); Needham Buy reaffirmed (Sep 17); Jefferies Buy reaffirmed (Sep 24)</li>
+<li>Consensus: MarketBeat Moderate Buy, avg target ~$274.80&ndash;$275.14; Stockopedia consensus $286.71; tradestie Wall St target $282.58 (+20.4%), forward P/E 17.89; InsiderMonkey (13.99x next-year estimates vs S&amp;P ~19x; FCF $17.73B)</li>
+<li>Service disruption during Dreamforce (Sep 16): press-reported multi-region core-services outage</li>
+<li>Prior edition: crm-fundamental-analysis.html (Sep 22, 2026, HOLD/$276 legacy scale) with full R/C/E/O research pack</li>
+</ul>
+<h3>Known limitations</h3>
+<ul class="source-list">
+<li>Q3 FY2027 earnings date (~Dec 2, 2026) is a provider estimate, not company-confirmed.</li>
+<li>Balance-sheet figures use the 30 Apr 2026 10-Q; the Q2 FY2027 balance sheet cash flows are not yet reflected in EV/leverage math.</li>
+<li>Consensus estimates are third-party aggregations that vary by provider and vintage; the gap between the company&rsquo;s $16.67&ndash;$16.71 non-GAAP guide and ~$13.3&ndash;$14.2 consensus reflects analysts stripping investment gains &mdash; an interpretation, not a disclosed reconciliation.</li>
+<li>Fin (76% resolution rate, 30,000+ customers) and Dreamforce adoption figures (Slackbot 1.5M MAU, Coworker 100K activations) are company-reported and unverified by independent sources.</li>
+<li>Forward-looking statements (guidance, acquisition closings, product GA dates) are management expectations, not guarantees.</li>
+</ul>
+<div class="footer-note">
+<p class="disclaimer">This report is independent research prepared for informational purposes for Cam as CIO/Portfolio Manager. It is not investment advice, an offer to buy or sell any security, or a recommendation to execute any transaction. All investments carry risk, including loss of principal. Figures are based on company filings, earnings releases, and third-party data providers as cited; estimates and targets reflect the author&rsquo;s judgment and may prove wrong. Verify all figures before acting. &mdash; Senior Financial Analyst desk, October 4, 2026.</p>
+</div>
+</section>
+</main></body>
+</html>

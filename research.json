@@ -707,6 +707,339 @@
    "kind": "company",
    "date": "2026-10-04",
    "summary": "Update (new scale): Buy, conviction 6/10, $92 target maintained (~10% price upside from $83.72; ~13.5% total w/ 3.6% yield — rating rests on total return, stated honestly). Google-Georgia Power nuclear uprate deal; 10-yr ~5.2% is the overhang. Q3 Nov 5. Accumulate on rate-driven weakness toward ~2.5% (not installed)."
+  },
+  {
+   "ticker": "AMT",
+   "file": "amt-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$225",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 7/10, $225 target maintained (~39% price upside from $162.20; ~43% total w/ 4.4% yield). 2026 is the trough year for tenant billings; 2027 re-acceleration guided. Q3 Oct 27. Recommended ≤~$160 accumulate gate toward ~3% (not installed)."
+  },
+  {
+   "ticker": "AMZN",
+   "file": "amzn-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$315",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 7/10, $315 target maintained (+25% upside from $251.52). AWS–Synopsys $1B+ silicon deal; Q3 Oct 29 is binary on AWS >35% growth. Recommended <~$225 weakness-add gate toward 8.5% cap (not installed); trim only above ~$300 if weight >9%."
+  },
+  {
+   "ticker": "DIS",
+   "file": "dis-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$125",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 7/10, $125 target maintained (~22% price upside from $102.19; ~24% total return). Streaming profitability inflecting; parks steady. TV restructuring in progress."
+  },
+  {
+   "ticker": "GOOG",
+   "file": "goog-fundamental-analysis-2026-10-04.html",
+   "rating": "Strong Buy",
+   "target": "$410",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Strong Buy, conviction 8/10, $410 target maintained (~20% upside from $340.35). Anthropic IPO roadshow (Alphabet ~14% stake); Waymo $16B round at $126B. Q3 Oct 28 is the proving ground on Cloud backlog conversion. Recommended $310–315 weakness-add gate toward 3.5–4% (not installed)."
+  },
+  {
+   "ticker": "WMT",
+   "file": "wmt-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$120",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 6/10, $120 target (~15% upside from $104.26). Mizuho cut PT $130→$125; CEO ruled out personalized pricing. Q3 Nov 19. ≤$95 gate reaffirmed toward ~1% (recommended, not installed)."
+  },
+  {
+   "ticker": "LLY",
+   "file": "lly-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$1,300",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 7/10, $1,300 target maintained (~14% upside from $1,142.85). Foundayo ATTAIN-1 data; JPM raised to $1,500. Q3 ~Oct 29 is the conviction hinge. ≤$1,000 gate reaffirmed toward ~1% (recommended, not installed)."
+  },
+  {
+   "ticker": "MSFT",
+   "file": "msft-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$590",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 7/10, $590 target maintained (~14% upside from $517.53). Wells Fargo $725; Azure ≥45% at the Oct 27 print decides conviction. Recommended $490–500 weakness-add gate toward ~4% (not installed)."
+  },
+  {
+   "ticker": "PM",
+   "file": "pm-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$210",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 6/10, $210 target maintained (~12% price upside from $187.46; ~15% total w/ dividend). Q3 week of Oct 20; first $1.60 dividend payable Oct 26. Hold core; add toward ~$175 on weakness."
+  },
+  {
+   "ticker": "CRM",
+   "file": "crm-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$285",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 6/10, $285 target raised from $276 (~21% upside from $234.69). Dreamforce: Agentforce/AIforce push; Fin acquisition closed. Recommended ≤$210 accumulate gate toward 1.5–2% (not installed); Dec 2 print is the hinge."
+  },
+  {
+   "ticker": "META",
+   "file": "meta-fundamental-analysis-2026-10-04.html",
+   "rating": "Hold",
+   "target": "$800",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 6/10, $800 target maintained (~10% upside from $728.08) — higher conviction with insufficient upside. New Mexico jury verdict (43M privacy violations, $35–40B sought) is a new tail risk. Q3 Oct 28. No action; add only below ~$680."
+  },
+  {
+   "ticker": "GS",
+   "file": "gs-fundamental-analysis-2026-10-04.html",
+   "rating": "Hold",
+   "target": "$1,020",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 5/10, $1,020 target maintained (~13% upside from $902.56; 2.9x Sep-2027 TBVPS). WSJ: Waldron eyed as CEO successor (2027/28). Q3 Oct 13 BMO. Add only on washout ≤~$800 (recommended, not installed); trim only above ~$1,100."
+  },
+  {
+   "ticker": "QCOM",
+   "file": "qcom-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$215",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 6/10, $215 target (~16% upside from $184.87). AWS $60B data-center deal + Apple patent renewal; auto exit raised to ~$7B. Morningstar 2★→3★ is mechanical. FQ4 ~Nov 4 is the proving ground. Recommended ≤$170 accumulate gate toward ~1.5% (not installed)."
+  },
+  {
+   "ticker": "BMY",
+   "file": "bmy-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$68",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 6/10, $68 target maintained (~11% price upside from $61.15; ~15% total w/ 4.1% yield). CAMZYOS pediatric approval + ZENBEXUS Ph3 win; Piper to $82. Q3 Oct 29. Accumulate ≤~$55 toward ~1.5% (not installed); halve on 2027 pipeline failure."
+  },
+  {
+   "ticker": "KO",
+   "file": "ko-fundamental-analysis-2026-10-04.html",
+   "rating": "Hold",
+   "target": "$94",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 5/10, $94 target maintained (~10% upside from $85.65 — just under the Buy floor). Elite operator at a full 26x; Morningstar $75/2★. Q3 Oct 27. Accumulate ≤~$74 toward ~2% (recommended, not installed); no trim (tax-punitive)."
+  },
+  {
+   "ticker": "BATRA",
+   "file": "batra-fundamental-analysis-2026-10-04.html",
+   "rating": "Hold",
+   "target": "$60",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 5/10, $60 target (revised from $63 on share count; ~4% upside from $57.62). Braves won NL wild-card series; Dec 1 MLB lockout now base case — the real buying opportunity is a lockout dislocation, not playoff momentum. Add only in low $50s (not installed)."
+  },
+  {
+   "ticker": "JPM",
+   "file": "jpm-fundamental-analysis-2026-10-04.html",
+   "rating": "Hold",
+   "target": "$360",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 5/10, $360 target maintained (~8% price upside from $332.38). IB/ Markets pre-warned mid-to-high teens; Q3 Oct 13 8:30 AM ET. No trim gate per Cam's direction — re-underwrite triggers only: washout toward ~$300 (upgrade candidate) or credit/NII deterioration."
+  },
+  {
+   "ticker": "V",
+   "file": "v-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$405",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 6/10, $405 target raised from $385 (~12% upside from $360.66; 27x FY2027E). 160+ stablecoin card programs disclosed; FQ4 Oct 27 AMC. Accumulate ≤~$330 toward ~2.5% post-print (recommended, not installed); no trim (tax-punitive)."
+  },
+  {
+   "ticker": "JNJ",
+   "file": "jnj-fundamental-analysis-2026-10-04.html",
+   "rating": "Hold",
+   "target": "$275",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 6/10, $275 target maintained (~7% upside from $256.03). ICOTYDE 2-yr data strong; BofA/JPM raised to $278/$285 (Neutral). Q3 Oct 13. ≤$230 gate reaffirmed toward ~1% (recommended, not installed); don't add into the print."
+  },
+  {
+   "ticker": "KHC",
+   "file": "khc-fundamental-analysis-2026-10-04.html",
+   "rating": "Hold",
+   "target": "$24",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 5/10, $24 target maintained (~8% price upside from $22.19; ~15% total w/ 7.2% yield). Street consensus Reduce; Berkshire 13F mid-Nov is the binary watch. ≤$20 gate reaffirmed toward ~1% (recommended, not installed). Q3 ~Oct 28."
+  },
+  {
+   "ticker": "DELL",
+   "file": "dell-fundamental-analysis-2026-10-04.html",
+   "rating": "Hold",
+   "target": "$600",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 6/10, $600 target maintained (~7% upside from $562.52). $95B AI backlog intact; +3.75% Friday. ≤$500 gate reaffirmed toward ~1% (recommended, not installed); break below $465 on fundamentals = reassess. Q3 ~Nov 24."
+  },
+  {
+   "ticker": "PLTR",
+   "file": "pltr-fundamental-analysis-2026-10-04.html",
+   "rating": "Hold",
+   "target": "$200",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 5/10, $200 target maintained (~6% upside from $188.75). Armada sovereign-AI partnership (Oct 1); Q3 confirmed Nov 2. ≤$150 gate reaffirmed toward ~1% (recommended, not installed)."
+  },
+  {
+   "ticker": "AAPL",
+   "file": "aapl-fundamental-analysis-2026-10-04.html",
+   "rating": "Hold",
+   "target": "$350",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 5/10, $350 target maintained (~5% upside from $333.69). iPhone 18 reads strong; foldable ships Oct 23; FQ4 Oct 29. Trim only on euphoria above ~$365; add on weakness below ~$310."
+  },
+  {
+   "ticker": "XOM",
+   "file": "xom-fundamental-analysis-2026-10-04.html",
+   "rating": "Hold",
+   "target": "$168",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 5/10, $168 target maintained (~3% price upside from $163.80; thinnest upside in coverage). Brent sub-$100 Oct 1 on Gulf supply recovery; Guyana one-billionth barrel. Q3 Oct 30 BMO. Accumulate into $130s on oil weakness; trim only above ~$180."
+  },
+  {
+   "ticker": "AXP",
+   "file": "axp-fundamental-analysis-2026-10-04.html",
+   "rating": "Buy",
+   "target": "$365",
+   "kind": "company",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 7/10, $365 target RESET from $425 (math correction: prior target sat at the bull case; ~21% upside from $302.76). YTD -18.2%. Q3 Oct 23. Accumulate ≤~$285 toward ~2% post-print (recommended, not installed); no trim (tax-punitive)."
+  },
+  {
+   "ticker": "TLXIX",
+   "file": "tlxix-fund-overview-2026-10-04.html",
+   "rating": "Hold",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; target-date vehicle with no upside leg by design. 5-star, 0.10% net ER, $40.07 NAV, ~$164K (9.7%, largest fund position; portfolio's only bond exposure). No add/no trim; reduce only above ~12%."
+  },
+  {
+   "ticker": "VXUS",
+   "file": "vxus-fund-overview-2026-10-04.html",
+   "rating": "Hold",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; index vehicle priced at its index by construction. 0.05% ER, $85.43, ~$46K (2.7%). Accumulate below ~$78 toward ~3.5% on sustained ex-US pullback (recommended, not installed); no trim."
+  },
+  {
+   "ticker": "VFFSX",
+   "file": "vffsx-fund-overview-2026-10-04.html",
+   "rating": "Reduce",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Reduce, conviction 3/10 — legacy TRIM translated directly; desk's first Reduce. Flawless fund but redundant third layer of S&P 500 beta (~$37.8K, 2.2%). Consolidate; redeploy via TSM/NVDA gates. $5,000 recorded basis almost certainly misrecorded — verify before any sale."
+  },
+  {
+   "ticker": "AVUV",
+   "file": "avuv-fund-overview-2026-10-04.html",
+   "rating": "Hold",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; high-conviction index-style Hold on 5-yr top-decile factor record. 0.25% ER, $120.03, ~$31K (1.8%). Keep FSSNX; fold VTWO into it in its own account (noted, cross-account unavailable)."
+  },
+  {
+   "ticker": "FSSNX",
+   "file": "fssnx-fund-overview-2026-10-04.html",
+   "rating": "Hold",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 7/10 — canonical 'higher conviction with insufficient upside' case: cheapest/tightest small-cap tracker, expected upside ~0 by design. 0.025% ER, $35.60 NAV, ~$31K (1.86%). FSSNX + AVUV barbell stands; VTWO keeps its own account."
+  },
+  {
+   "ticker": "FSMDX",
+   "file": "fsmdx-fund-overview-2026-10-04.html",
+   "rating": "Hold",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; best-built mid-cap index vehicle (4★, 0.025% ER, 0.05% tracking error), expected excess return ~0% by construction. Hold as mid-cap core; IJH cross-account overlap not actionable."
+  },
+  {
+   "ticker": "SCHD",
+   "file": "schd-fund-overview-2026-10-04.html",
+   "rating": "Hold",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; best-in-class dividend vehicle (0.06% ER, ~3.2% yield) but yield ~200bp below the 10-yr Treasury; distribution deceleration watch. Hold as dividend-sleeve anchor."
+  },
+  {
+   "ticker": "IJH",
+   "file": "ijh-fund-overview-2026-10-04.html",
+   "rating": "Hold",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; profitability screen is the structural edge, 0.05% ER, surgical tracking, +329% on his cost. Hold as mid-cap vehicle in its account; FSMDX keeps its own."
+  },
+  {
+   "ticker": "VTWO",
+   "file": "vtwo-fund-overview-2026-10-04.html",
+   "rating": "Hold",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; best-in-class Russell 2000 tracker (0.06% ER, ~$8.60/yr fee drag). Duplication vs FSSNX stands only on different retirement accounts; each account keeps its own vehicle."
+  },
+  {
+   "ticker": "GRID",
+   "file": "grid-fund-overview-2026-10-04.html",
+   "rating": "Buy",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 6/10 — legacy KEEP→Buy on ~12–15% forward outlook vs its electrification role. EO 14420 demand-shoring tailwind; 0.56% ER, $182.91. Installed ≤$169 accumulate gate reaffirmed (~8% above gate; no action)."
+  },
+  {
+   "ticker": "VIS",
+   "file": "vis-fund-overview-2026-10-04.html",
+   "rating": "Hold",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Hold, conviction 5/10 — legacy KEEP translated; build path closed by the desk's own Oct 4 industrials outlook (index at ~23× forward; new dollars go to GRID/GEV/single names, not the index). Hold the 16-share anchor; revisit build toward ~1% only on a washout toward $280–300."
+  },
+  {
+   "ticker": "SOXQ",
+   "file": "soxq-fund-overview-2026-10-04.html",
+   "rating": "Reduce",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Reduce, conviction 3/10 — vehicle still fine (0.19% ER, 5★, Zacks Rank 1) but the 0.17% position duplicates his Strong-Buy NVDA/TSM. Analyst call: liquidate the ~$2,895 and redeploy into the standing NVDA staged-add band ($215–235) / TSM ≤$460 gate (advisory, Cam decides)."
+  },
+  {
+   "ticker": "VHT",
+   "file": "vht-fund-overview-2026-10-04.html",
+   "rating": "Buy",
+   "target": "—",
+   "kind": "fund",
+   "date": "2026-10-04",
+   "summary": "Update (new scale): Buy, conviction 6/10 — reaffirms the Oct 3 BUY; nothing fundamental changed in 24 hrs. $311.90 ref price, 0.09% ER, ~$19B AUM, Zacks Rank 1; expected ~10–12% 12-mo total return (estimate). Initiate toward 5–8% of NAV as the core healthcare holding (recommended, not installed)."
   }
  ],
  "updated": "2026-10-04"
