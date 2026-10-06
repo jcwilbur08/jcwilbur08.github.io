@@ -1040,7 +1040,48 @@
    "kind": "fund",
    "date": "2026-10-04",
    "summary": "Update (new scale): Buy, conviction 6/10 — reaffirms the Oct 3 BUY; nothing fundamental changed in 24 hrs. $311.90 ref price, 0.09% ER, ~$19B AUM, Zacks Rank 1; expected ~10–12% 12-mo total return (estimate). Initiate toward 5–8% of NAV as the core healthcare holding (recommended, not installed)."
+  },
+  {
+   "ticker": "ORCL",
+   "file": "orcl-fundamental-analysis-2026-10-05.html",
+   "rating": "Buy",
+   "target": "$200",
+   "kind": "fundamental",
+   "date": "2026-10-05",
+   "name": "Oracle Corporation",
+   "summary": "New coverage: Buy, conviction 7/10, $200 target (~41% upside from $142.30). OCI +121% YoY, $664B RPO (8.6x revenue), 16.7x FY2027E — but financing overhang unresolved ($156B+ debt, Oct 28 analyst day must frame FY2028 FCF inflection). Recommended gate: ≤$130 toward ~1% (not installed)."
+  },
+  {
+   "ticker": "CLX",
+   "name": "The Clorox Company",
+   "file": "clx-fundamental-analysis-2026-10-05.html",
+   "rating": "Hold",
+   "target": "$92",
+   "kind": "fundamental",
+   "date": "2026-10-05",
+   "summary": "New coverage: Hold, conviction 4/10, $92 target (~14% upside from $80.41). 6.2% yield, 49-year Dividend Aristocrat streak intact but defended with penny increases; payout 104% of trailing earnings. FY26 adj EPS -28%; GOJO debt-funded. Recommended gate: <$72 toward ~1% (not installed)."
+  },
+  {
+   "ticker": "SPCX",
+   "name": "Space Exploration Technologies Corp (SpaceX)",
+   "file": "spcx-fundamental-analysis-2026-10-05.html",
+   "rating": "Buy",
+   "target": "$220",
+   "kind": "fundamental",
+   "date": "2026-10-05",
+   "summary": "New coverage: Buy, conviction 6/10, $220 target (~38% upside from $158.96). IPO June 12, 2026 at $135 (largest ever); Starlink $4.29B Q2 +66% with 12M subs; AI segment +247% to $2.56B with first positive adj. EBITDA; Q2 FCF -$25B. Beta 5.1. Recommended gate: <=$130 toward ~1% (not installed). Supersedes the private-company pass."
+  },
+  {
+   "title": "Next-Dollar Capital Allocation Ranking — October 2026",
+   "file": "report_20261006-152729.html",
+   "kind": "thematic",
+   "sub": "Ranking",
+   "date": "2026-10-06",
+   "ticker": null,
+   "rating": null,
+   "target": null,
+   "summary": "Cam's own capital-allocation ranking (34 stocks, $1.687M book, $43K cash): ADBE #1 (Strong Add starter, $314 anchor, ~32% gap, $235–245 gate), AMT #2, UBER #3, AVGO #4, GOOG #5, UNH #6, PEP #7, NVDA #8, CRM #9, ORCL #10. Hard-gate overlays: NFLX Trim, BMY blocked on pipeline review, TSM above add bands, PLTR valuation-gated."
   }
  ],
- "updated": "2026-10-04"
+ "updated": "2026-10-06"
 }
