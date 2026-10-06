@@ -58,7 +58,11 @@ td{padding:7px 8px;border-bottom:1px solid #1b3049;color:#dbe4ec}
 .num{text-align:right;white-space:nowrap}
 .donutwrap{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 .legend{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;flex:1;min-width:240px}
-.leg{display:flex;align-items:center;gap:8px;font-size:12px;color:#bcd0dd}
+.leg{display:flex;align-items:center;gap:8px;font-size:12px;color:#bcd0dd;cursor:pointer;border-radius:6px;padding:2px 6px;margin:-2px -6px}
+.leg:hover{background:rgba(99,179,237,.12)}
+.leg.sel{background:rgba(99,179,237,.20);box-shadow:inset 0 0 0 1px rgba(99,179,237,.5)}
+.posclear{display:inline-block;margin-left:8px;border:1px solid #3b4a5a;background:#16283a;color:#bcd0dd;border-radius:10px;font-size:11px;line-height:1;padding:3px 8px;cursor:pointer;vertical-align:middle}
+.posclear:hover{border-color:#63b3ed;color:#fff}
 .leg b{margin-left:auto;color:#fff;font-weight:600}
 .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
 .mrow{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #1b3049;font-size:13px}
@@ -117,6 +121,7 @@ body.tx3{font-size:18.5px}body.tx3 h1{font-size:31.5px}body.tx3 .eyebrow{font-si
 body.tx4{font-size:21px}body.tx4 h1{font-size:36px}body.tx4 .eyebrow{font-size:14px}body.tx4 .sub{font-size:16.5px}body.tx4 .card h2{font-size:25px}body.tx4 .card h3{font-size:16px}body.tx4 .kpi b{font-size:34px}body.tx4 .kpi span{font-size:14.5px}body.tx4 .kpi small{font-size:14px}body.tx4 .grow{font-size:20px}body.tx4 .gmeta{font-size:16px}body.tx4 .pill{font-size:14.5px}body.tx4 .tag{font-size:13.5px}body.tx4 .note{font-size:16px}body.tx4 .statusbar{font-size:17px}body.tx4 .hrow{font-size:17px}body.tx4 table{font-size:16.5px}body.tx4 th{font-size:14px}body.tx4 .leg{font-size:15px}body.tx4 .mrow{font-size:18px}body.tx4 .act{font-size:17.5px}body.tx4 .act .d{font-size:15.5px}body.tx4 .plan li{font-size:17px}body.tx4 .tab{font-size:17px}body.tx4 .fbtn{font-size:17px}body.tx4 .reqq{font-size:17px}body.tx4 .briefbox{font-size:16.5px}body.tx4 .repcard .rt{font-size:21px}body.tx4 .repcard .rm{font-size:15.5px}body.tx4 .mstat span{font-size:13px}body.tx4 .mstat b{font-size:21px}body.tx4 .empty{font-size:17px}
 body.tx5{font-size:23px}body.tx5 h1{font-size:39.5px}body.tx5 .eyebrow{font-size:15.5px}body.tx5 .sub{font-size:18px}body.tx5 .card h2{font-size:27.5px}body.tx5 .card h3{font-size:17.5px}body.tx5 .kpi b{font-size:37px}body.tx5 .kpi span{font-size:16px}body.tx5 .kpi small{font-size:15.5px}body.tx5 .grow{font-size:22px}body.tx5 .gmeta{font-size:17.5px}body.tx5 .pill{font-size:16px}body.tx5 .tag{font-size:15px}body.tx5 .note{font-size:17.5px}body.tx5 .statusbar{font-size:18.5px}body.tx5 .hrow{font-size:18.5px}body.tx5 table{font-size:18px}body.tx5 th{font-size:15.5px}body.tx5 .leg{font-size:16.5px}body.tx5 .mrow{font-size:19.5px}body.tx5 .act{font-size:19px}body.tx5 .act .d{font-size:17px}body.tx5 .plan li{font-size:18.5px}body.tx5 .tab{font-size:18.5px}body.tx5 .fbtn{font-size:18.5px}body.tx5 .reqq{font-size:18.5px}body.tx5 .briefbox{font-size:18px}body.tx5 .repcard .rt{font-size:23px}body.tx5 .repcard .rm{font-size:17px}body.tx5 .mstat span{font-size:14px}body.tx5 .mstat b{font-size:23px}body.tx5 .empty{font-size:18.5px}
 body.tx6{font-size:25px}body.tx6 h1{font-size:43px}body.tx6 .eyebrow{font-size:16.5px}body.tx6 .sub{font-size:19.5px}body.tx6 .card h2{font-size:30px}body.tx6 .card h3{font-size:19px}body.tx6 .kpi b{font-size:40.5px}body.tx6 .kpi span{font-size:17.5px}body.tx6 .kpi small{font-size:16.5px}body.tx6 .grow{font-size:24px}body.tx6 .gmeta{font-size:19px}body.tx6 .pill{font-size:17.5px}body.tx6 .tag{font-size:16px}body.tx6 .note{font-size:19px}body.tx6 .statusbar{font-size:20px}body.tx6 .hrow{font-size:20px}body.tx6 table{font-size:19.5px}body.tx6 th{font-size:16.5px}body.tx6 .leg{font-size:18px}body.tx6 .mrow{font-size:21.5px}body.tx6 .act{font-size:21px}body.tx6 .act .d{font-size:18.5px}body.tx6 .plan li{font-size:20px}body.tx6 .tab{font-size:20px}body.tx6 .fbtn{font-size:20px}body.tx6 .reqq{font-size:20px}body.tx6 .briefbox{font-size:19.5px}body.tx6 .repcard .rt{font-size:25px}body.tx6 .repcard .rm{font-size:18.5px}body.tx6 .mstat span{font-size:15.5px}body.tx6 .mstat b{font-size:25px}body.tx6 .empty{font-size:20px}
+
 </style>
 <style id="themeLight" disabled>/* Light theme (mockup) — enabled by the toggle */
 body{background:#eef2f6;color:#162132}
@@ -161,7 +166,12 @@ select,textarea,input[type=text]{background:#fff;border-color:#c7d3df;color:#162
 .empty{border-color:#c7d3df;color:#64748b}
 .up{color:#147d58}
 .down{color:#c0392b}
-.act .b{color:#147d58}</style>
+.act .b{color:#147d58}
+.leg:hover{background:#e8f0f8}
+.leg.sel{background:#dbe9f7;box-shadow:inset 0 0 0 1px #2b6cb0}
+.posclear{border-color:#c7d3df;background:#fff;color:#3f5d78}
+.posclear:hover{border-color:#2b6cb0;color:#12304a}
+</style>
 </head>
 <body>
 <div class="page">
@@ -185,7 +195,7 @@ select,textarea,input[type=text]{background:#fff;border-color:#c7d3df;color:#162
 <div class="grid"><div>
 <div class="card"><h2>Sector allocation</h2><div class="donutwrap" id="sectorBody"></div><div class="note" id="sectorNote"></div></div>
 </div><div>
-<div class="card"><h2>Top 15 positions</h2><div id="top15Body"></div><div class="note" id="top15Note"></div></div>
+<div class="card"><h2><span id="posTitle">Top 15 positions</span> <button class="posclear" id="posClear" style="display:none" aria-label="Clear sector filter">✕</button></h2><div id="top15Body"></div><div class="note" id="top15Note"></div></div>
 </div></div>
 <div class="card"><h2>Performance vs S&amp;P 500</h2><div id="perfBody"></div></div>
 <div class="grid"><div>
@@ -506,6 +516,7 @@ function renderKpis(divFwd){
   }
 }
 
+var SECTOR_FILTER=null; /* selected sector for the positions drill-down; null = top 15 */
 /* ---------------- render: sector donut + top 15 ---------------- */
 function arcPath(a0,a1,r,cx,cy){
   const x0=cx+r*Math.cos(a0), y0=cy+r*Math.sin(a0);
@@ -523,8 +534,8 @@ function renderSectors(){
     const s=pair[0], pv=pair[1], frac=pv/100;
     if(frac<=0) return;
     const a1=ang+frac*2*Math.PI, gap=0.008, col=COLORS[i%COLORS.length];
-    arcs+='<path d="'+arcPath(ang+gap,a1-gap,84,110,110)+'" stroke="'+col+'" stroke-width="30" fill="none"/>';
-    legs+='<div class="leg"><span class="sw" style="background:'+col+'"></span>'+esc(s)+'<b>'+pv.toFixed(1)+'%</b></div>';
+    arcs+='<path d="'+arcPath(ang+gap,a1-gap,84,110,110)+'" stroke="'+col+'" stroke-width="30" fill="none" data-sec="'+esc(s)+'" style="cursor:pointer"/>';
+    legs+='<div class="leg'+(s===SECTOR_FILTER?' sel':'')+'" data-sec="'+esc(s)+'"><span class="sw" style="background:'+col+'"></span>'+esc(s)+'<b>'+pv.toFixed(1)+'%</b></div>';
     ang=a1;
   });
   document.getElementById('sectorBody').innerHTML =
@@ -534,23 +545,46 @@ function renderSectors(){
     '<div class="legend">'+legs+'</div>';
   const fin = order.filter(function(p){return p[0]==='Financials';})[0];
   document.getElementById('sectorNote').textContent =
-    'Sectors mapped from holdings; TLXIX target-date shown separately.'+
+    'Sectors mapped from holdings; TLXIX target-date shown separately. Tap a sector to filter the positions list.'+
     (fin?(' Financials '+fin[1].toFixed(1)+'% (JPM/GS/MA/V/AXP) remains the largest active overweight.'):'');
 }
-function renderTop15(){
-  const t15 = tradeable().sort(function(a,b){return b.wt-a.wt;}).slice(0,15);
-  const ref = t15[0].wt;
-  document.getElementById('top15Body').innerHTML = t15.map(function(p){
+function renderPositions(){
+  var all = tradeable().sort(function(a,b){return b.wt-a.wt;});
+  var list = SECTOR_FILTER ? all.filter(function(p){return p.sector===SECTOR_FILTER;}) : all.slice(0,15);
+  var ref = list.length ? list[0].wt : 1;
+  document.getElementById('posTitle').textContent = SECTOR_FILTER ? SECTOR_FILTER+' positions' : 'Top 15 positions';
+  document.getElementById('posClear').style.display = SECTOR_FILTER ? '' : 'none';
+  document.getElementById('top15Body').innerHTML = list.length ? list.map(function(p){
     return '<div class="hrow"><span class="ht">'+esc(p.t)+'</span>'+
       '<div class="hbar"><div class="hfill" style="width:'+(p.wt/ref*100).toFixed(1)+'%"></div></div>'+
       '<span class="hv">'+p.wt.toFixed(2)+'%</span>'+
       '<span class="hd '+cls(p.chg)+'">'+pct(p.chg)+'</span></div>';
-  }).join('');
-  const g = tradeable().sort(function(a,b){return b.chg-a.chg;})[0];
-  const d = tradeable().sort(function(a,b){return a.chg-b.chg;})[0];
-  document.getElementById('top15Note').textContent =
-    'Day change shown at right (vs. prior close). '+g.t+' '+pct(g.chg)+' led gainers; '+d.t+' '+pct(d.chg)+' led decliners.';
+  }).join('') : '<div class="empty">No tradeable positions in this sector.</div>';
+  var note;
+  if(SECTOR_FILTER){
+    var sw = 0;
+    POS.forEach(function(p){ if(p.sector===SECTOR_FILTER) sw += p.mv; });
+    note = list.length+' position'+(list.length===1?'':'s')+' \u00b7 '+(sw/TOTAL*100).toFixed(1)+
+      '% of portfolio. Tap the sector again or \u2715 to return to top 15.';
+  } else {
+    var g = all.slice().sort(function(a,b){return b.chg-a.chg;})[0];
+    var d = all.slice().sort(function(a,b){return a.chg-b.chg;})[0];
+    note = 'Day change shown at right (vs. prior close). '+g.t+' '+pct(g.chg)+' led gainers; '+d.t+' '+pct(d.chg)+' led decliners. Tap a sector to filter.';
+  }
+  document.getElementById('top15Note').textContent = note;
 }
+/* Sector drill-down: tap a legend row or donut arc to filter the positions card. */
+document.getElementById('sectorBody').addEventListener('click', function(e){
+  var el = e.target && e.target.closest ? e.target.closest('[data-sec]') : null;
+  if(!el) return;
+  var s = el.getAttribute('data-sec');
+  if(s==='Cash') return;
+  SECTOR_FILTER = (SECTOR_FILTER===s) ? null : s;
+  renderSectors(); renderPositions();
+});
+document.getElementById('posClear').addEventListener('click', function(){
+  SECTOR_FILTER = null; renderSectors(); renderPositions();
+});
 /* ---------------- history + performance chart ---------------- */
 function loadHist(){
   try{ return JSON.parse(localStorage.getItem(HIST_KEY)) || []; }catch(e){ return []; }
@@ -1138,7 +1172,7 @@ function paintAll(){
   renderKpis(divFwd);
   renderGates();
   renderSectors();
-  renderTop15();
+  renderPositions();
   renderPerf();
   renderAttr();
   renderFV();
