@@ -1,53 +1,53 @@
 {
-  "gates": [
-    {
-      "ticker": "TSM",
-      "type": "price",
-      "action": "ADD",
-      "level": 460,
-      "dir": "at_or_below",
-      "note": "Add thesis valid at or below $460 \u00b7 12-mo target $545"
-    },
-    {
-      "ticker": "NVDA",
-      "type": "price",
-      "action": "ADD",
-      "level": 220,
-      "dir": "at_or_below",
-      "note": "Retain $220 buy gate \u00b7 12-mo target $328"
-    },
-    {
-      "ticker": "GRID",
-      "type": "price",
-      "action": "ADD",
-      "level": 169,
-      "dir": "at_or_below",
-      "note": "Add toward 1% only in the $160s"
-    },
-    {
-      "ticker": "UNH",
-      "type": "weight",
-      "action": "ACCUMULATE",
-      "level": 2.0,
-      "dir": "toward",
-      "note": "BUY $475 \u00b7 accumulate toward ~2% of portfolio"
-    },
-    {
-      "ticker": "UBER",
-      "type": "price",
-      "action": "ADD",
-      "level": 68,
-      "dir": "at_or_below",
-      "note": "Tranche 1 of staged add on sub-$68 weakness \u00b7 toward ~0.5% wt \u00b7 12-mo target $105"
-    },
-    {
-      "ticker": "GEHC",
-      "type": "price",
-      "action": "ADD",
-      "level": 62,
-      "dir": "at_or_below",
-      "note": "Begin accumulating starter toward ~0.5% wt at or below $62 \u00b7 base value $92"
-    }
-  ],
-  "updated": "2026-10-02"
+ "gates": [
+  {
+   "ticker": "TSM",
+   "type": "price",
+   "action": "ADD",
+   "level": 460,
+   "dir": "at_or_below",
+   "note": "Add thesis valid at or below $460 · 12-mo target $545"
+  },
+  {
+   "ticker": "NVDA",
+   "type": "price",
+   "action": "ADD",
+   "level": 220,
+   "dir": "at_or_below",
+   "note": "Retain $220 buy gate · 12-mo target $328"
+  },
+  {
+   "ticker": "UNH",
+   "type": "weight",
+   "action": "ACCUMULATE",
+   "level": 2.0,
+   "dir": "toward",
+   "note": "BUY $475 · accumulate toward ~2% of portfolio"
+  },
+  {
+   "ticker": "UBER",
+   "type": "price",
+   "action": "ADD",
+   "level": 68,
+   "dir": "at_or_below",
+   "note": "Tranche 1 of staged add on sub-$68 weakness · toward ~0.5% wt · 12-mo target $105"
+  },
+  {
+   "ticker": "GEHC",
+   "type": "price",
+   "action": "ADD",
+   "level": 62,
+   "dir": "at_or_below",
+   "note": "Begin accumulating starter toward ~0.5% wt at or below $62 · base value $92"
+  },
+  {
+   "ticker": "ADBE",
+   "type": "price",
+   "action": "ADD",
+   "level": 235,
+   "dir": "at_or_below",
+   "note": "Starter add at or below $235 toward ~1% wt · 12-mo target $320"
+  }
+ ],
+ "updated": "2026-10-06"
 }
