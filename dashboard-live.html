@@ -63,6 +63,8 @@ td{padding:7px 8px;border-bottom:1px solid #1b3049;color:#dbe4ec}
 .leg.sel{background:rgba(99,179,237,.20);box-shadow:inset 0 0 0 1px rgba(99,179,237,.5)}
 .posclear{display:inline-block;margin-left:8px;border:1px solid #3b4a5a;background:#16283a;color:#bcd0dd;border-radius:10px;font-size:11px;line-height:1;padding:3px 8px;cursor:pointer;vertical-align:middle}
 .posclear:hover{border-color:#63b3ed;color:#fff}
+.tick{cursor:pointer}
+.tick:hover{color:#63b3ed;text-decoration:underline}
 .leg b{margin-left:auto;color:#fff;font-weight:600}
 .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
 .mrow{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #1b3049;font-size:13px}
@@ -171,6 +173,8 @@ select,textarea,input[type=text]{background:#fff;border-color:#c7d3df;color:#162
 .leg.sel{background:#dbe9f7;box-shadow:inset 0 0 0 1px #2b6cb0}
 .posclear{border-color:#c7d3df;background:#fff;color:#3f5d78}
 .posclear:hover{border-color:#2b6cb0;color:#12304a}
+
+.tick:hover{color:#2b6cb0}
 </style>
 </head>
 <body>
@@ -224,10 +228,10 @@ select,textarea,input[type=text]{background:#fff;border-color:#c7d3df;color:#162
 </div></div>
 <div class="grid"><div>
 <div class="card"><h2>Recent activity</h2>
-<div class="act"><div class="d">Oct 6</div><div><span class="b">SELL</span> 28 SOXQ @ ~$104.90 <span class="tag">liquidated per Reduce 3/10 call · proceeds toward NVDA</span></div></div>
-<div class="act"><div class="d">Oct 6</div><div><span class="b">BUY</span> 16 ADBE @ $230.00 <span class="tag">starter per next-dollar ranking · now 16 sh</span></div></div>
-<div class="act"><div class="d">Oct 6</div><div><span class="b">BUY</span> 5 UBER @ ~$68.12 <span class="tag">fired-gate tranche 1 (partial) · now 75 sh</span></div></div>
-<div class="act"><div class="d">Oct 6</div><div><span class="b">BUY</span> 1 NVDA @ ~$235.00 <span class="tag">inside $215–235 band · now 34 sh</span></div></div>
+<div class="act"><div class="d">Oct 6</div><div><span class="b">SELL</span> 28 <span class="tick" data-t="SOXQ">SOXQ</span> @ ~$104.90 <span class="tag">liquidated per Reduce 3/10 call · proceeds toward NVDA</span></div></div>
+<div class="act"><div class="d">Oct 6</div><div><span class="b">BUY</span> 16 <span class="tick" data-t="ADBE">ADBE</span> @ $230.00 <span class="tag">starter per next-dollar ranking · now 16 sh</span></div></div>
+<div class="act"><div class="d">Oct 6</div><div><span class="b">BUY</span> 5 <span class="tick" data-t="UBER">UBER</span> @ ~$68.12 <span class="tag">fired-gate tranche 1 (partial) · now 75 sh</span></div></div>
+<div class="act"><div class="d">Oct 6</div><div><span class="b">BUY</span> 1 <span class="tick" data-t="NVDA">NVDA</span> @ ~$235.00 <span class="tag">inside $215–235 band · now 34 sh</span></div></div>
 <div class="act"><div class="d">Oct 6</div><div><span class="b">GATE</span> ADBE ≤$235 installed · GRID ≤$169 removed <span class="tag">6 live gates</span></div></div>
 <div class="act"><div class="d">Oct 6</div><div><span class="b">BASELINE</span> Morningstar export 55 adopted <span class="tag">SOXQ→ADBE · NVDA 34 sh · UBER 75 sh · $1.706M total</span></div></div>
 <div class="act"><div class="d">Sep 25</div><div><span class="b">BASELINE</span> Morningstar export 52 adopted <span class="tag">TSM 22→24 sh · GEHC 51→52 sh</span></div></div>
@@ -555,7 +559,7 @@ function renderPositions(){
   document.getElementById('posTitle').textContent = SECTOR_FILTER ? SECTOR_FILTER+' positions' : 'Top 15 positions';
   document.getElementById('posClear').style.display = SECTOR_FILTER ? '' : 'none';
   document.getElementById('top15Body').innerHTML = list.length ? list.map(function(p){
-    return '<div class="hrow"><span class="ht">'+esc(p.t)+'</span>'+
+    return '<div class="hrow"><span class="ht tick" data-t="'+esc(p.t)+'">'+esc(p.t)+'</span>'+
       '<div class="hbar"><div class="hfill" style="width:'+(p.wt/ref*100).toFixed(1)+'%"></div></div>'+
       '<span class="hv">'+p.wt.toFixed(2)+'%</span>'+
       '<span class="hd '+cls(p.chg)+'">'+pct(p.chg)+'</span></div>';
@@ -584,6 +588,12 @@ document.getElementById('sectorBody').addEventListener('click', function(e){
 });
 document.getElementById('posClear').addEventListener('click', function(){
   SECTOR_FILTER = null; renderSectors(); renderPositions();
+});
+/* Ticker drill-down: any ticker on the Overview tab opens the holding card. */
+document.getElementById('tab-overview').addEventListener('click', function(e){
+  var el = e.target && e.target.closest ? e.target.closest('[data-t]') : null;
+  if(!el) return;
+  openHolding(el.getAttribute('data-t'));
 });
 /* ---------------- history + performance chart ---------------- */
 function loadHist(){
@@ -659,7 +669,7 @@ function renderAttr(){
   const up = tr.slice().sort(function(a,b){return b.pnl-a.pnl;}).slice(0,5);
   const dn = tr.slice().sort(function(a,b){return a.pnl-b.pnl;}).slice(0,5);
   function arow(p){
-    return '<div class="mrow"><b>'+esc(p.t)+(p.live?'':' <span class="tag wb">wb</span>')+'</b>'+
+    return '<div class="mrow"><b><span class="tick" data-t="'+esc(p.t)+'">'+esc(p.t)+'</span>'+(p.live?'':' <span class="tag wb">wb</span>')+'</b>'+
       '<span class="'+cls(p.pnl)+'">'+moneyS(p.pnl)+' <small>('+pct(p.chg,1)+')</small></span></div>';
   }
   document.getElementById('attrUp').innerHTML = up.map(arow).join('');
@@ -677,7 +687,7 @@ function renderFV(){
   const disc = fv.slice().sort(function(a,b){return a.disc-b.disc;}).slice(0,10);
   const prem = fv.slice().sort(function(a,b){return b.disc-a.disc;}).slice(0,5);
   function row(r){
-    return '<tr><td><b>'+esc(r.t)+'</b></td><td class="num">$'+r.px.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+'</td>'+
+    return '<tr><td><b class="tick" data-t="'+esc(r.t)+'">'+esc(r.t)+'</b></td><td class="num">$'+r.px.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+'</td>'+
       '<td class="num">$'+Math.round(r.fv).toLocaleString('en-US')+'</td>'+
       '<td class="num '+cls(-r.disc)+'">'+(r.disc>=0?'+':'')+r.disc.toFixed(1)+'%</td>'+
       '<td class="num">'+esc(r.stars)+'</td></tr>';
@@ -728,11 +738,11 @@ function renderDividends(){
   document.getElementById('divFwd').textContent = money(d.fwdTotal);
   document.getElementById('divYld').textContent = (d.fwdTotal/TOTAL*100).toFixed(2)+'%';
   document.getElementById('divTop').innerHTML = d.rows.slice(0,8).map(function(r){
-    return '<div class="mrow"><b>'+esc(r.t)+'</b><span>'+money(r.fwd)+' <small>('+r.y.toFixed(2)+'%)</small></span></div>';
+    return '<div class="mrow"><b class="tick" data-t="'+esc(r.t)+'">'+esc(r.t)+'</b><span>'+money(r.fwd)+' <small>('+r.y.toFixed(2)+'%)</small></span></div>';
   }).join('');
   document.getElementById('divUpc').innerHTML = d.upcoming.length ?
     d.upcoming.map(function(u){
-      return '<div class="mrow"><b>'+esc(u.t)+'</b><span>'+
+      return '<div class="mrow"><b class="tick" data-t="'+esc(u.t)+'">'+esc(u.t)+'</b><span>'+
         u.dt.toLocaleDateString('en-US',{month:'short',day:'numeric'})+' · ~'+money(u.amt)+'</span></div>';
     }).join('') :
     '<div class="note">No scheduled payments in the next 60 days.</div>';
@@ -778,7 +788,7 @@ function renderEarnings(){
       when = dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
     }catch(err){}
     const h = hh[e.hour] ? ' · '+hh[e.hour] : '';
-    return '<div class="mrow"><b>'+esc(e.symbol)+'</b><span>'+when+h+'</span></div>';
+    return '<div class="mrow"><b class="tick" data-t="'+esc(e.symbol)+'">'+esc(e.symbol)+'</b><span>'+when+h+'</span></div>';
   }).join('');
 }
 
@@ -791,7 +801,7 @@ function renderConc(){
     let flag='';
     if(p.wt>=5){ flag=' <span class="tag">concentrated</span>'; nBig++; }
     else if(p.wt<0.5){ flag=' <span class="tag">tail</span>'; nTail++; tailW+=p.wt; }
-    return '<div class="hrow"><span class="ht">'+esc(p.t)+flag+'</span>'+
+    return '<div class="hrow"><span class="ht"><span class="tick" data-t="'+esc(p.t)+'">'+esc(p.t)+'</span>'+flag+'</span>'+
       '<div class="hbar"><div class="hfill" style="width:'+(p.wt/ref*100).toFixed(1)+'%"></div></div>'+
       '<span class="hv">'+p.wt.toFixed(2)+'%</span>'+
       '<span class="hd '+cls(p.chg)+'">'+pct(p.chg,1)+'</span></div>';
@@ -835,7 +845,7 @@ function renderUG(){
   const losers = ug.slice().sort(function(a,b){return a.g-b.g;}).slice(0,5);
   const tot = ug.reduce(function(a,u){return a+u.g;},0);
   function row(u){
-    return '<tr><td><b>'+esc(u.t)+'</b></td><td class="num">'+money(u.mv)+'</td>'+
+    return '<tr><td><b class="tick" data-t="'+esc(u.t)+'">'+esc(u.t)+'</b></td><td class="num">'+money(u.mv)+'</td>'+
       '<td class="num '+cls(u.g)+'">'+moneyS(u.g)+'</td>'+
       '<td class="num '+cls(u.g)+'">'+(u.gpct>=0?'+':'')+u.gpct.toFixed(1)+'%</td></tr>';
   }
@@ -849,7 +859,7 @@ function renderTop20(){
   const t20 = POS.slice().sort(function(a,b){return b.wt-a.wt;}).slice(0,20);
   document.getElementById('top20Body').innerHTML = t20.map(function(p){
     const nm = p.name.length>36 ? p.name.slice(0,36)+'…' : p.name;
-    return '<tr><td><b>'+esc(p.t)+'</b></td><td>'+esc(nm)+'</td>'+
+    return '<tr><td><b class="tick" data-t="'+esc(p.t)+'">'+esc(p.t)+'</b></td><td>'+esc(nm)+'</td>'+
       '<td class="num">'+qtyFmt(p.qty)+'</td>'+
       '<td class="num">$'+p.px.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+(p.live?'':' <span class="tag wb">wb</span>')+'</td>'+
       '<td class="num">'+money(p.mv)+'</td><td class="num">'+p.wt.toFixed(2)+'%</td>'+
@@ -976,7 +986,7 @@ function renderGates(){
       detail = w.toFixed(2)+'% of '+lv.toFixed(1)+'% target';
       bar = '<div class="gbar"><div class="gfill" style="width:'+pr.toFixed(0)+'%"></div></div>';
     } else { stat='—'; stc='watch'; detail='No live data'; }
-    return '<div class="grow"><div><b>'+g.ticker+'</b> <span class="pill '+(g.action==='ADD'?'buy':(g.action==='TRIM'?'sell':'hold'))+'">'+g.action+'</span>'+
+    return '<div class="grow"><div><b class="tick" data-t="'+esc(g.ticker)+'">'+esc(g.ticker)+'</b> <span class="pill '+(g.action==='ADD'?'buy':(g.action==='TRIM'?'sell':'hold'))+'">'+g.action+'</span>'+
       '<div class="gmeta">'+esc(nm)+' · '+esc(g.note||'')+'</div>'+bar+'</div>'+
       '<div style="text-align:right"><span class="pill '+stc+'">'+stat+'</span><div class="gmeta">'+detail+'</div></div></div>';
   }).join('');
