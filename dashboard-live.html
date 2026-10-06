@@ -98,6 +98,13 @@ th.sortable:hover{color:#fff}
 .fbtn{background:#0e1c2e;border:1px solid #24405c;color:#bcd0dd;border-radius:999px;padding:6px 16px;font-size:13px;cursor:pointer}
 .fbtn:hover{border-color:#2b6cb0;color:#fff}
 .fbtn.on{background:#2b6cb0;border-color:#2b6cb0;color:#fff;font-weight:700}
+.rfbtn{background:#0e1c2e;border:1px solid #24405c;color:#8fa3b8;border-radius:999px;padding:6px 16px;font-size:13px;cursor:pointer}
+.rfbtn:hover{border-color:#2b6cb0;color:#fff}
+.rfbtn.on[data-r="STRONG BUY"]{background:#0c3f24;border-color:#0c3f24;color:#6ee7a0;font-weight:700}
+.rfbtn.on[data-r="BUY"]{background:#123f2a;border-color:#123f2a;color:#48bb78;font-weight:700}
+.rfbtn.on[data-r="HOLD"]{background:#4a3a12;border-color:#4a3a12;color:#f6ad55;font-weight:700}
+.rfbtn.on[data-r="REDUCE"]{background:#4a2413;border-color:#4a2413;color:#fb923c;font-weight:700}
+.rfbtn.on[data-r="SELL"]{background:#4a1a1a;border-color:#4a1a1a;color:#f56565;font-weight:700}
 .fbtn.sm{padding:3px 12px;font-size:11px}
 .archbar{display:flex;align-items:center;gap:8px;margin:10px 0 0;flex-wrap:wrap}
 .archlab{font-size:12px;color:#8fa3b8;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
@@ -175,6 +182,13 @@ select,textarea,input[type=text]{background:#fff;border-color:#c7d3df;color:#162
 .posclear:hover{border-color:#2b6cb0;color:#12304a}
 
 .tick:hover{color:#2b6cb0}
+
+.rfbtn{background:#fff;border-color:#c7d3df;color:#8fa3b8}
+.rfbtn.on[data-r="STRONG BUY"]{background:#d3f2e3;border-color:#d3f2e3;color:#0a5c3f}
+.rfbtn.on[data-r="BUY"]{background:#dcf5e9;border-color:#dcf5e9;color:#0c6748}
+.rfbtn.on[data-r="HOLD"]{background:#fff5d9;border-color:#fff5d9;color:#9a6500}
+.rfbtn.on[data-r="REDUCE"]{background:#ffe9d6;border-color:#ffe9d6;color:#b3541e}
+.rfbtn.on[data-r="SELL"]{background:#fdeeee;border-color:#fdeeee;color:#a63a3a}
 </style>
 </head>
 <body>
@@ -283,6 +297,7 @@ select,textarea,input[type=text]{background:#fff;border-color:#c7d3df;color:#162
 <div class="fbar" id="resFilters">
 <button class="fbtn on" data-f="all">All</button><button class="fbtn" data-f="held">Held</button><button class="fbtn" data-f="watch">Watchlist</button><button class="fbtn" data-f="company">Company Reports</button><button class="fbtn" data-f="fund">Fund Overviews</button><button class="fbtn" data-f="thematic">Thematic &amp; Ranking</button><button class="fbtn" data-f="weekly">Weekly Reports</button><button class="fbtn" data-f="market">Market Research</button>
 </div>
+<div class="fbar" id="resRatings"><span class="archlab">Rating:</span><button class="rfbtn on" data-r="STRONG BUY">Strong Buy</button><button class="rfbtn on" data-r="BUY">Buy</button><button class="rfbtn on" data-r="HOLD">Hold</button><button class="rfbtn on" data-r="REDUCE">Reduce</button><button class="rfbtn on" data-r="SELL">Sell</button></div>
 <div class="fbar archbar" id="resArch"><span class="archlab">Showing:</span><button class="fbtn sm on" data-a="current">Current</button><button class="fbtn sm" data-a="archived">Archive</button></div>
 <div class="srchwrap"><input type="text" id="resSearch" placeholder="Search ticker or keywords…" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
 <div id="researchLib"></div>
@@ -1037,6 +1052,8 @@ function renderResearch(f){
     return words.every(function(w){ return t.indexOf(w) !== -1; });
   }) : list;
   const vlist = qlist.filter(function(r){ return RES_ARCH==='archived' ? isArchived(r) : !isArchived(r); });
+  var _allOn = Object.keys(RES_RATINGS).every(function(k){ return RES_RATINGS[k]; });
+  const rlist = _allOn ? vlist : vlist.filter(function(r){ return !!RES_RATINGS[normRating(r.rating)]; });
   const archMatchNote = (words.length && !vlist.length && qlist.length)
     ? ' '+qlist.filter(isArchived).length+' archived edition(s) match — switch to Archive to view them.' : '';
   function card(r){
@@ -1051,12 +1068,12 @@ function renderResearch(f){
       tag+'<div class="rt">'+nm+'</div>'+
       '<div class="rm">'+meta+'<br>'+cta+'</div>'+archNote+'</a>';
   }
-  const byKind = function(k){ return vlist.filter(function(r){return r.kind===k;}); };
+  const byKind = function(k){ return rlist.filter(function(r){return r.kind===k;}); };
   // Ownership views: Held = report ticker is in current holdings (BY), Watchlist = company/fund report not in holdings.
   const isHeld = function(r){ return !!r.ticker && !!BY[r.ticker]; };
   function ownSections(own){
     const h = own ? 'Held' : 'Watchlist';
-    const m = vlist.filter(function(r){ return (r.kind==='company'||r.kind==='fund') && !!r.ticker && (isHeld(r)===own); });
+    const m = rlist.filter(function(r){ return (r.kind==='company'||r.kind==='fund') && !!r.ticker && (isHeld(r)===own); });
     const mc = m.filter(function(r){return r.kind==='company';});
     const mf = m.filter(function(r){return r.kind==='fund';});
     let html = '';
@@ -1092,6 +1109,25 @@ document.querySelectorAll('#resArch .fbtn').forEach(function(b){
 });
 document.querySelectorAll('#resFilters .fbtn').forEach(function(b){
   b.addEventListener('click', function(){ renderResearch(b.getAttribute('data-f')); });
+});
+/* Rating filter: multi-toggle pills; all on = no filtering. Legacy ratings mapped to the current scale. */
+var RES_RATINGS = {'STRONG BUY':true,'BUY':true,'HOLD':true,'REDUCE':true,'SELL':true};
+function normRating(r){
+  var k = String(r||'').toUpperCase();
+  if(k==='STRONG BUY') return 'STRONG BUY';
+  if(k==='BUY'||k==='ADD') return 'BUY';
+  if(k==='HOLD'||k==='KEEP') return 'HOLD';
+  if(k==='REDUCE'||k==='TRIM') return 'REDUCE';
+  if(k==='SELL') return 'SELL';
+  return null;
+}
+document.querySelectorAll('#resRatings .rfbtn').forEach(function(b){
+  b.addEventListener('click', function(){
+    var r = b.getAttribute('data-r');
+    RES_RATINGS[r] = !RES_RATINGS[r];
+    b.classList.toggle('on', RES_RATINGS[r]);
+    renderResearch();
+  });
 });
 document.getElementById('resSearch').addEventListener('input', function(){
   RES_QUERY = this.value; renderResearch();
