@@ -1,7 +1,7 @@
 {
  "asOf": "2026-10-07",
  "cash": 43000,
- "source": "retirement-portfolio-58.xlsx",
+ "source": "retirement-portfolio-57-2.xlsx",
  "holdings": [
   {
    "ticker": "TLXIX",
@@ -12,12 +12,12 @@
    "costBasis": 60695.1548,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 40.41,
+   "fallbackPrice": 40.18,
    "finnhub": false,
    "dps": 0.88627,
    "divSched": null,
    "divFreq": "Annually",
-   "lastPrice": 40.41
+   "lastPrice": 40.18
   },
   {
    "ticker": "AMZN",
@@ -33,7 +33,7 @@
    "dps": 0,
    "divSched": null,
    "divFreq": null,
-   "lastPrice": 259.47
+   "lastPrice": 259.92
   },
   {
    "ticker": "JPM",
@@ -49,7 +49,7 @@
    "dps": 6.15,
    "divSched": "Jan, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 329.75
+   "lastPrice": 329.58
   },
   {
    "ticker": "AAPL",
@@ -65,7 +65,7 @@
    "dps": 1.06,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 335.81
+   "lastPrice": 336.67
   },
   {
    "ticker": "MA",
@@ -81,7 +81,7 @@
    "dps": 3.37,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 572.11
+   "lastPrice": 570.06
   },
   {
    "ticker": "GS",
@@ -97,7 +97,7 @@
    "dps": 18,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 886.38
+   "lastPrice": 887.21
   },
   {
    "ticker": "XOM",
@@ -113,7 +113,7 @@
    "dps": 4.12,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 164.26
+   "lastPrice": 164.05
   },
   {
    "ticker": "MSFT",
@@ -129,7 +129,7 @@
    "dps": 3.64,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 529.37
+   "lastPrice": 529.76
   },
   {
    "ticker": "GOOG",
@@ -145,7 +145,7 @@
    "dps": 0.86,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 346.29
+   "lastPrice": 347.37
   },
   {
    "ticker": "META",
@@ -161,7 +161,7 @@
    "dps": 2.1,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 721.5
+   "lastPrice": 721.31
   },
   {
    "ticker": "VXUS",
@@ -172,12 +172,12 @@
    "costBasis": 44763.9384,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 84.81,
+   "fallbackPrice": 84.79,
    "finnhub": false,
    "dps": 2.188402,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 84.81
+   "lastPrice": 84.79
   },
   {
    "ticker": "AVGO",
@@ -193,7 +193,7 @@
    "dps": 2.6,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 374.99
+   "lastPrice": 376.51
   },
   {
    "ticker": "AMT",
@@ -209,7 +209,7 @@
    "dps": 7.07,
    "divSched": "Feb, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 167.37
+   "lastPrice": 166.18
   },
   {
    "ticker": "VFFSX",
@@ -220,12 +220,12 @@
    "costBasis": 5000,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 382.62,
+   "fallbackPrice": 381.79,
    "finnhub": false,
    "dps": 3.9731,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 382.62
+   "lastPrice": 381.79
   },
   {
    "ticker": "V",
@@ -241,7 +241,7 @@
    "dps": 2.68,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 373.2
+   "lastPrice": 372.1
   },
   {
    "ticker": "PM",
@@ -257,7 +257,7 @@
    "dps": 6.01,
    "divSched": "Jan, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 192.43
+   "lastPrice": 192.69
   },
   {
    "ticker": "NFLX",
@@ -273,7 +273,7 @@
    "dps": 0,
    "divSched": null,
    "divFreq": null,
-   "lastPrice": 69.71
+   "lastPrice": 69.7
   },
   {
    "ticker": "GEV",
@@ -289,7 +289,7 @@
    "dps": 1.75,
    "divSched": "Feb, Apr, Jul, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 997.38
+   "lastPrice": 997.09
   },
   {
    "ticker": "SO",
@@ -305,23 +305,7 @@
    "dps": 3,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 85.66
-  },
-  {
-   "ticker": "FSSNX",
-   "name": "Fidelity Small Cap Index Fund",
-   "qty": 880.84,
-   "sector": "US Small Cap",
-   "stars": "★★★f",
-   "costBasis": 25178.459064,
-   "fairValue": null,
-   "fwdYield": null,
-   "fallbackPrice": 35.57,
-   "finnhub": false,
-   "dps": 0.388,
-   "divSched": null,
-   "divFreq": "Semi-Annually",
-   "lastPrice": 35.57
+   "lastPrice": 85.44
   },
   {
    "ticker": "FSMDX",
@@ -332,12 +316,28 @@
    "costBasis": 27773.264655000003,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 42.46,
+   "fallbackPrice": 41.99,
    "finnhub": false,
    "dps": 0.322,
    "divSched": null,
    "divFreq": "Semi-Annually",
-   "lastPrice": 42.46
+   "lastPrice": 41.99
+  },
+  {
+   "ticker": "FSSNX",
+   "name": "Fidelity Small Cap Index Fund",
+   "qty": 880.84,
+   "sector": "US Small Cap",
+   "stars": "★★★f",
+   "costBasis": 25178.459064,
+   "fairValue": null,
+   "fwdYield": null,
+   "fallbackPrice": 35.1,
+   "finnhub": false,
+   "dps": 0.388,
+   "divSched": null,
+   "divFreq": "Semi-Annually",
+   "lastPrice": 35.1
   },
   {
    "ticker": "AVUV",
@@ -348,12 +348,12 @@
    "costBasis": 32182.0709,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 119.27,
+   "fallbackPrice": 119.13,
    "finnhub": false,
    "dps": 1.5612,
    "divSched": null,
    "divFreq": "Irregular",
-   "lastPrice": 119.27
+   "lastPrice": 119.13
   },
   {
    "ticker": "AXP",
@@ -369,7 +369,7 @@
    "dps": 3.54,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 303.5
+   "lastPrice": 304.25
   },
   {
    "ticker": "KO",
@@ -385,7 +385,7 @@
    "dps": 2.1,
    "divSched": "Apr, Jul, Oct, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 86.01
+   "lastPrice": 85.82
   },
   {
    "ticker": "CRM",
@@ -401,7 +401,7 @@
    "dps": 1.736,
    "divSched": "Jan, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 225.37
+   "lastPrice": 224.56
   },
   {
    "ticker": "DIS",
@@ -417,7 +417,7 @@
    "dps": 1.5,
    "divSched": "Jan, Jul",
    "divFreq": "Semi-Annually",
-   "lastPrice": 104.77
+   "lastPrice": 104.75
   },
   {
    "ticker": "PEP",
@@ -433,7 +433,7 @@
    "dps": 5.805,
    "divSched": "Jan, Mar, Jun, Sep",
    "divFreq": "Quarterly",
-   "lastPrice": 124.015
+   "lastPrice": 123.73
   },
   {
    "ticker": "SCHD",
@@ -444,12 +444,12 @@
    "costBasis": 20040.513,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 32.69,
+   "fallbackPrice": 32.65,
    "finnhub": false,
    "dps": 1.048,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 32.69
+   "lastPrice": 32.65
   },
   {
    "ticker": "IJH",
@@ -460,12 +460,12 @@
    "costBasis": 4646.4752568,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 72.79,
+   "fallbackPrice": 72.76,
    "finnhub": false,
    "dps": 0.888367,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 72.79
+   "lastPrice": 72.76
   },
   {
    "ticker": "BMY",
@@ -481,7 +481,7 @@
    "dps": 2.52,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 59.82
+   "lastPrice": 59.7
   },
   {
    "ticker": "UNH",
@@ -497,7 +497,7 @@
    "dps": 9.06,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 374.2
+   "lastPrice": 375.98
   },
   {
    "ticker": "QCOM",
@@ -513,7 +513,7 @@
    "dps": 3.62,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 177.57
+   "lastPrice": 177.12
   },
   {
    "ticker": "VTWO",
@@ -524,12 +524,12 @@
    "costBasis": 3528,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 112.23,
+   "fallbackPrice": 112.21,
    "finnhub": false,
    "dps": 1.3091,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 112.23
+   "lastPrice": 112.21
   },
   {
    "ticker": "ASML",
@@ -545,7 +545,7 @@
    "dps": 9.07663,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 1798.85
+   "lastPrice": 1804.96
   },
   {
    "ticker": "TSM",
@@ -561,7 +561,7 @@
    "dps": 3.769968,
    "divSched": "Jan, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 473.2
+   "lastPrice": 472.2
   },
   {
    "ticker": "GRID",
@@ -572,12 +572,12 @@
    "costBasis": 11269.9086,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 179.82,
+   "fallbackPrice": 179.79,
    "finnhub": false,
    "dps": 1.4296,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 179.82
+   "lastPrice": 179.79
   },
   {
    "ticker": "NVDA",
@@ -593,7 +593,7 @@
    "dps": 0.52,
    "divSched": "Apr, Jun, Oct, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 236.89
+   "lastPrice": 237.47
   },
   {
    "ticker": "ADBE",
@@ -609,7 +609,7 @@
    "dps": 0,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 233.44
+   "lastPrice": 232.77
   },
   {
    "ticker": "UBER",
@@ -625,7 +625,7 @@
    "dps": 0,
    "divSched": null,
    "divFreq": null,
-   "lastPrice": 68.58
+   "lastPrice": 68.45
   },
   {
    "ticker": "GEHC",
@@ -641,7 +641,7 @@
    "dps": 0.16,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 64.765
+   "lastPrice": 64.67
   },
   {
    "ticker": "VIS",
@@ -652,12 +652,12 @@
    "costBasis": 2033.5500000000002,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 322.52,
+   "fallbackPrice": 322.09,
    "finnhub": false,
    "dps": 3.0941,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 322.52
+   "lastPrice": 322.09
   },
   {
    "ticker": "BATRA",
@@ -673,7 +673,7 @@
    "dps": 0,
    "divSched": null,
    "divFreq": null,
-   "lastPrice": 57.73
+   "lastPrice": 57.56
   }
  ]
 }
