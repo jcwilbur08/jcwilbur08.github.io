@@ -29,4 +29,106 @@ a{color:#0c69a1;overflow-wrap:anywhere}footer{border-top:1px solid var(--line);m
 <section class="section"><h2>6. Next checkpoints and thesis-break conditions</h2><div class="two"><div><h3>Immediate proof points</h3><ul><li><strong>October 15, 2026 Q3 results:</strong> GAAP and operating margins versus 65%–67% and 56%–58% guidance; N2 yield and mix; Q4 forecast and capex.</li><li><strong>November 10 monthly report:</strong> October momentum versus an elevated September base.</li><li><strong>2027 capacity visibility:</strong> advanced packaging, contracted leading-edge demand and return on the investment program.</li></ul></div><div><h3>Escalate for CIO review if</h3><ul><li>Multiple quarters of demand-driven leading-edge slowdown and reduced customer production plans.</li><li>Gross margins remain below ~56%–58% through cycle, without a credible temporary explanation.</li><li>N2 qualification or yield delays cause lasting margin/volume pressure; overseas ramp dilutes more than planned.</li><li>Peak capex persists while utilization and FCF deteriorate, implying potential overbuild.</li></ul></div></div><div class="callout amber"><strong>Important disclosure</strong>This is a monthly-sales event report, not a Q3 earnings release. Gross profit, EPS, reported operating cash flow, segment contribution and management's updated guidance were not released with these September figures. Consequently, it is premature to issue a fully underwritten new fair value or a formal upgrade based on the release alone.</div></section>
 <section class="section"><h2>Sources and analytical method</h2><ol><li><a href="https://pr.tsmc.com/english/news/3343">[1] TSMC official September 2026 revenue release</a></li><li><a href="https://investor.tsmc.com/schinese/monthly-revenue/2026">[2] TSMC monthly revenue data, 2026</a></li><li><a href="https://investor.tsmc.com/english/quarterly-results/2026/q2">[3] TSMC Q2 2026 results and Q3 revenue/margin guidance</a></li><li><a href="https://www.reuters.com/world/asia-pacific/tsmcs-third-quarter-revenue-surges-50-yy-beating-market-forecast-2026-10-08/">[4] Reuters, Q3 revenue versus consensus (October 8)</a></li><li><a href="https://stockanalysis.com/stocks/tsm/statistics/">[5] StockAnalysis, TSM intraday quote and financial ratios</a></li><li><a href="https://www.reuters.com/world/asia-pacific/globalfoundries-make-key-ai-chip-component-tsmc-2026-10-08/">[6] Reuters, GlobalFoundries packaging agreement (October 8)</a></li><li><a href="https://investor.tsmc.com/english/financial-calendar">[7] TSMC financial calendar</a></li></ol><p class="note">Source precedence: primary company press release for revenue and guidance; Reuters/LSEG for published market forecast; StockAnalysis for a timestamped market snapshot. Q3 and percentage bridges calculated from the displayed inputs. Data as available October 8, 2026. This research does not constitute a trade instruction. It has not been published to the Portfolio Command Center.</p></section>
 <footer>Portfolio Equity Research • October 8, 2026 • TSMC (NYSE: TSM) • Research conclusion only; Portfolio CIO controls authoritative ratings and sizing.</footer>
-</main></article></body></html>
+</main></article>
+<!-- PCC-NARRATE:START -- universal narration widget, injected by scripts/inject_narration.py.
+     Reads the page aloud via the browser's built-in Web Speech API. Idempotent: this script
+     will not inject a second copy into a file that already references speechSynthesis. -->
+<style>
+  #pcc-narrate-bar{
+    position:fixed; bottom:18px; right:18px; z-index:2147483000;
+    display:flex; align-items:center; gap:6px;
+    background:#12395B; color:#fff; border-radius:999px; padding:8px 8px;
+    box-shadow:0 8px 24px rgba(10,22,40,.35);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  #pcc-narrate-bar button{
+    background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.20); color:#fff;
+    border-radius:999px; padding:7px 12px; font-size:12px; font-weight:700; cursor:pointer;
+    display:flex; align-items:center; gap:5px; line-height:1;
+  }
+  #pcc-narrate-bar button:hover{background:rgba(255,255,255,.20);}
+  #pcc-narrate-bar button:disabled{opacity:.4; cursor:default;}
+  #pcc-narrate-bar .pcc-narrate-speed{min-width:40px; justify-content:center;}
+  #pcc-narrate-bar .pcc-narrate-label{font-size:11px; color:#bcd0ea; padding:0 4px 0 6px; white-space:nowrap;}
+  .pcc-narrate-highlight{
+    background:rgba(59,130,246,.18) !important; outline:2px solid rgba(59,130,246,.35);
+    border-radius:6px; transition:background .15s ease;
+  }
+  @media print{ #pcc-narrate-bar{display:none !important;} }
+</style>
+<div id="pcc-narrate-bar" style="display:none">
+  <button type="button" id="pcc-narrate-play" aria-label="Play">&#9654; Listen</button>
+  <button type="button" id="pcc-narrate-stop" disabled aria-label="Stop">&#9632;</button>
+  <button type="button" id="pcc-narrate-speed" class="pcc-narrate-speed" disabled aria-label="Playback speed">1x</button>
+  <span class="pcc-narrate-label" id="pcc-narrate-status"></span>
+</div>
+<script>
+(function(){
+  if (!('speechSynthesis' in window)) return;
+  var SEL = 'h1,h2,h3,h4,h5,p,li';
+  var EXCLUDE_ANCESTOR = 'table';
+  var RATES = [1, 1.25, 1.5, 0.85];
+  var bar = document.getElementById('pcc-narrate-bar');
+  var playBtn = document.getElementById('pcc-narrate-play');
+  var stopBtn = document.getElementById('pcc-narrate-stop');
+  var speedBtn = document.getElementById('pcc-narrate-speed');
+  var statusEl = document.getElementById('pcc-narrate-status');
+  var nodes = [], idx = 0, rateIdx = 0, playing = false;
+
+  function collect(){
+    var all = Array.prototype.slice.call(document.querySelectorAll(SEL));
+    var seen = [];
+    return all.filter(function(el){
+      if (el.closest(EXCLUDE_ANCESTOR)) return false;
+      if (el.closest('#pcc-narrate-bar')) return false;
+      var text = (el.innerText || '').trim();
+      if (!text) return false;
+      var prev = seen[seen.length - 1];
+      if (prev && prev.contains(el)) return false;
+      seen.push(el);
+      return true;
+    });
+  }
+  function clearHighlight(){
+    var h = document.querySelector('.pcc-narrate-highlight');
+    if (h) h.classList.remove('pcc-narrate-highlight');
+  }
+  function setStatus(){ statusEl.textContent = nodes.length ? (idx + 1) + ' / ' + nodes.length : ''; }
+  function speakNext(){
+    if (idx >= nodes.length) { stopAll(); return; }
+    var el = nodes[idx];
+    var text = el.innerText.trim();
+    clearHighlight();
+    el.classList.add('pcc-narrate-highlight');
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setStatus();
+    var u = new SpeechSynthesisUtterance(text);
+    u.rate = RATES[rateIdx];
+    u.onend = function(){ if (playing) { idx++; speakNext(); } };
+    window.speechSynthesis.speak(u);
+  }
+  function play(){
+    if (!nodes.length) nodes = collect();
+    if (!nodes.length) return;
+    playing = true;
+    playBtn.innerHTML = '&#9208; Pause';
+    stopBtn.disabled = false;
+    speedBtn.disabled = false;
+    if (!window.speechSynthesis.speaking) speakNext();
+    else window.speechSynthesis.resume();
+  }
+  function pause(){ playing = false; window.speechSynthesis.pause(); playBtn.innerHTML = '&#9654; Resume'; }
+  function stopAll(){
+    playing = false; window.speechSynthesis.cancel(); idx = 0; clearHighlight();
+    playBtn.innerHTML = '&#9654; Listen'; stopBtn.disabled = true; speedBtn.disabled = true; statusEl.textContent = '';
+  }
+  playBtn.addEventListener('click', function(){ if (playing) pause(); else play(); });
+  stopBtn.addEventListener('click', stopAll);
+  speedBtn.addEventListener('click', function(){ rateIdx = (rateIdx + 1) % RATES.length; speedBtn.textContent = RATES[rateIdx] + 'x'; });
+  window.addEventListener('beforeunload', function(){ window.speechSynthesis.cancel(); });
+  bar.style.display = 'flex';
+})();
+</script>
+<!-- PCC-NARRATE:END -->
+
+</body></html>
