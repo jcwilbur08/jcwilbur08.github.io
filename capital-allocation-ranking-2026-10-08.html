@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <title>Capital Allocation Ranking — Six Names</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      color-scheme:light dark;
+      --paper:#edf3f3;--surface:#ffffff;--ink:#11282b;--muted:#54696b;--faint:#7a8c8e;
+      --line:#d6e1e1;--deep:#09272b;--deep-2:#0c3c40;--teal:#0d8179;--teal-2:#18a79b;
+      --lime:#c5ea6b;--amber:#e6b65f;--red:#bd5a5e;--soft:#e9f6f3;--soft-2:#edf4f5;
+      --soft-warn:#fbf3e3;--shadow:0 22px 60px rgba(7,42,44,.10)
+    }
+    @media(prefers-color-scheme:dark){:root{
+      --paper:#071518;--surface:#102225;--ink:#eff7f5;--muted:#b6c7c7;--faint:#8ea2a2;
+      --line:#2a4143;--deep:#061d20;--deep-2:#0a3438;--teal:#3ac2b4;--teal-2:#49d0c3;
+      --lime:#c5ea6b;--amber:#ecc675;--red:#e48588;--soft:#123331;--soft-2:#152c30;
+      --soft-warn:#352e20;--shadow:0 22px 60px rgba(0,0,0,.34)
+    }}
+    :root[data-theme="light"]{color-scheme:light;--paper:#edf3f3;--surface:#fff;--ink:#11282b;--muted:#54696b;--faint:#7a8c8e;--line:#d6e1e1;--deep:#09272b;--deep-2:#0c3c40;--teal:#0d8179;--teal-2:#18a79b;--lime:#c5ea6b;--amber:#e6b65f;--red:#bd5a5e;--soft:#e9f6f3;--soft-2:#edf4f5;--soft-warn:#fbf3e3;--shadow:0 22px 60px rgba(7,42,44,.10)}
+    :root[data-theme="dark"]{color-scheme:dark;--paper:#071518;--surface:#102225;--ink:#eff7f5;--muted:#b6c7c7;--faint:#8ea2a2;--line:#2a4143;--deep:#061d20;--deep-2:#0a3438;--teal:#3ac2b4;--teal-2:#49d0c3;--lime:#c5ea6b;--amber:#ecc675;--red:#e48588;--soft:#123331;--soft-2:#152c30;--soft-warn:#352e20;--shadow:0 22px 60px rgba(0,0,0,.34)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.62 "DM Sans",sans-serif}a{color:inherit}.report{width:min(1160px,100%);margin:0 auto;background:var(--surface);box-shadow:var(--shadow)}
+    .cover{min-height:700px;padding:64px 70px 54px;display:flex;flex-direction:column;justify-content:space-between;color:#f4fffc;position:relative;overflow:hidden;background:linear-gradient(138deg,#071f25 0%,#0b4850 56%,#11867d 100%)}
+    .cover:after{content:"";position:absolute;width:520px;height:520px;right:-190px;bottom:-275px;border:1px solid rgba(255,255,255,.16);border-radius:50%;box-shadow:0 0 0 68px rgba(255,255,255,.045),0 0 0 136px rgba(255,255,255,.03)}
+    .cover-top,.cover-main,.cover-foot{position:relative;z-index:1}.cover-top{display:flex;align-items:center;justify-content:space-between;gap:22px;font-size:.8rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.cover-top .type{padding:8px 12px;border:1px solid rgba(255,255,255,.42);border-radius:999px}.cover-main{max-width:860px;margin:56px 0}.universe{font-weight:800;font-size:clamp(2.2rem,6vw,5.4rem);letter-spacing:-.055em;line-height:.94;color:#d3ffef;margin-bottom:22px}.cover h1{font:700 clamp(2rem,4.5vw,4rem)/1.1 "Libre Baskerville",serif;letter-spacing:-.045em;margin:0 0 24px}.cover .dek{font-size:clamp(1rem,1.7vw,1.24rem);line-height:1.65;max-width:760px;color:#d4ebe8;margin:0}.cover-foot{display:flex;justify-content:space-between;align-items:end;gap:30px;border-top:1px solid rgba(255,255,255,.22);padding-top:22px}.cover-foot strong,.cover-foot span{display:block}.cover-foot span{font-size:.84rem;color:#bfe1dc}.rank-mark{font:700 2.7rem/1 "Libre Baskerville",serif;letter-spacing:-.05em}
+    .rating-strip{display:grid;grid-template-columns:1.25fr repeat(3,1fr);background:var(--deep);color:#fff}.rating-cell{padding:21px 24px;border-right:1px solid rgba(255,255,255,.12)}.rating-cell:last-child{border:0}.rating-cell span{display:block;color:#94bcba;font-size:.67rem;text-transform:uppercase;letter-spacing:.11em;font-weight:800;margin-bottom:6px}.rating-cell strong{font-size:1.16rem}.rating-cell.primary{background:var(--lime);color:#132b24}.rating-cell.primary span{color:#405a45}.rating-cell.primary strong{font-size:1.42rem}
+    .toolbar{display:flex;justify-content:flex-end;align-items:center;padding:14px 70px;border-bottom:1px solid var(--line);background:var(--surface)}.theme{appearance:none;border:1px solid var(--line);background:var(--soft-2);color:var(--ink);border-radius:999px;padding:9px 13px;font:700 .78rem "DM Sans",sans-serif;display:inline-flex;align-items:center;gap:8px;cursor:pointer}.theme svg{width:16px;height:16px}.page{padding:62px 70px}.page+.page{border-top:1px solid var(--line)}
+    .kicker{display:flex;align-items:center;gap:12px;color:var(--teal);font-size:.73rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:13px}.kicker:before{content:"";width:34px;height:3px;background:var(--teal)}h2{font:700 clamp(1.9rem,4vw,3.15rem)/1.16 "Libre Baskerville",serif;letter-spacing:-.04em;margin:0 0 23px}h3{font-size:1.08rem;line-height:1.3;margin:0 0 9px}.lead{font:400 1.18rem/1.72 "Libre Baskerville",serif;max-width:900px;margin:0;color:var(--ink)}p{margin:0 0 16px}.muted{color:var(--muted)}
+    .toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;counter-reset:toc;margin-top:28px}.toc a{counter-increment:toc;display:flex;align-items:baseline;gap:13px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:700}.toc a:before{content:counter(toc,decimal-leading-zero);color:var(--teal);font-size:.72rem;letter-spacing:.08em}.toc a span{margin-left:auto;color:var(--faint);font-size:.76rem}
+    .thesis-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;margin-top:34px;align-items:start}.callout{background:var(--soft);padding:26px 28px;border-radius:5px}.callout p:last-child{margin:0}.verdict{background:var(--deep);color:#e9f7f4;padding:28px}.verdict h3{color:#8ce3d7}.verdict p{color:#cfdfdf}.verdict p:last-child{margin:0}.warning{background:var(--soft-warn);padding:19px 22px;margin-top:24px;font-size:.9rem}.warning strong{color:var(--ink)}
+    .ranking{margin-top:34px;border-top:3px solid var(--ink)}.rank-row{display:grid;grid-template-columns:78px 1.25fr 1fr 1.1fr;gap:24px;padding:27px 0;border-bottom:1px solid var(--line);align-items:start}.rank-no{font:700 2.55rem/1 "Libre Baskerville",serif;color:var(--teal)}.ticker{font-size:1.25rem;font-weight:800;letter-spacing:-.02em}.rating{font-size:.77rem;font-weight:800;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-top:4px}.case p,.action p{font-size:.92rem;color:var(--muted);margin:0}.action strong{display:block;color:var(--ink);font-size:.86rem;margin-bottom:5px}.tag{display:inline-block;margin-top:10px;padding:5px 9px;background:var(--soft);color:var(--teal);font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.07em;border-radius:3px}.tag.wait{background:var(--soft-warn);color:var(--ink)}
+    .chart{background:var(--soft-2);padding:26px;margin-top:34px}.chart-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}.chart-head h3{font-size:1.12rem}.chart-head p{font-size:.78rem;color:var(--muted);margin:0}.chart svg{width:100%;height:auto;display:block;overflow:visible}.chart text{font-family:"DM Sans",sans-serif;fill:var(--ink)}.chart .grid{stroke:var(--line);stroke-width:1}.chart .bar{fill:var(--teal)}.chart .bar.top{fill:var(--lime)}.chart .bar-2{fill:var(--teal-2)}.chart .axis{fill:var(--muted);font-size:11px}.chart .label{font-size:12px;font-weight:800}.chart .value{font-size:12px;font-weight:800}
+    .data-table{width:100%;border-collapse:collapse;margin-top:28px}.data-table th{text-align:left;color:var(--muted);font-size:.69rem;text-transform:uppercase;letter-spacing:.08em;padding:10px 11px;border-bottom:2px solid var(--ink)}.data-table td{padding:14px 11px;border-bottom:1px solid var(--line);vertical-align:top}.data-table .num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}.data-table .rank{color:var(--teal);font-weight:800}.data-table small{display:block;color:var(--muted);font-size:.77rem;margin-top:3px}
+    .plan{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}.plan-block{padding:24px 0;border-top:3px solid var(--ink)}.plan-block h3{font-size:1.05rem}.plan-block p{color:var(--muted);margin:0}.plan-block.now{border-color:var(--teal)}.plan-block.wait{border-color:var(--amber)}
+    .timeline{margin-top:30px}.event{display:grid;grid-template-columns:120px 150px 1fr;gap:24px;padding:19px 0;border-top:1px solid var(--line);align-items:start}.event .date{font-weight:800;color:var(--teal)}.event .name{font-weight:800}.event p{font-size:.91rem;color:var(--muted);margin:0}.event.behind .date{color:var(--faint)}
+    .sources{background:color-mix(in srgb,var(--paper) 72%,var(--surface));font-size:.86rem}.source-list{list-style:none;padding:0;margin:26px 0 0;counter-reset:sources}.source-list li{counter-increment:sources;display:grid;grid-template-columns:38px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}.source-list li:before{content:counter(sources,decimal-leading-zero);color:var(--teal);font-weight:800}.disclosure{font-size:.76rem;color:var(--muted);margin-top:30px}
+    @media(max-width:780px){.report{box-shadow:none}.cover{min-height:650px;padding:42px 22px 34px}.cover-top{align-items:flex-start}.cover-main{margin:50px 0}.cover-foot{align-items:flex-start;flex-direction:column}.rating-strip{grid-template-columns:1fr 1fr}.rating-cell.primary{grid-column:1/-1}.toolbar{padding:12px 20px}.page{padding:46px 21px}.toc,.thesis-grid,.plan{grid-template-columns:1fr}.rank-row{grid-template-columns:54px 1fr;gap:13px 16px}.rank-no{grid-row:1/4}.case,.action{grid-column:2}.chart{padding:20px 10px}.chart-head{padding:0 8px;align-items:start;flex-direction:column;gap:5px}.event{grid-template-columns:94px 1fr;gap:6px 14px}.event p{grid-column:2}.data-table,.data-table tbody,.data-table tr,.data-table td{display:block}.data-table thead{display:none}.data-table tr{padding:12px 0;border-bottom:1px solid var(--line)}.data-table td{display:flex;justify-content:space-between;gap:20px;padding:5px 0;border:0;text-align:right}.data-table td:before{content:attr(data-label);text-align:left;color:var(--muted);font-size:.69rem;text-transform:uppercase;letter-spacing:.06em;font-weight:800}.data-table .num{text-align:right}.data-table small{max-width:190px}.chart svg{min-height:300px}.source-list li{grid-template-columns:30px 1fr}}
+    @media print{body{background:#fff}.report{width:100%;box-shadow:none}.cover{min-height:100vh;page-break-after:always}.toolbar{display:none}.page{padding:46px 50px}.page+.page{page-break-before:always}.rank-row,.callout,.verdict,.chart,.plan-block{break-inside:avoid}.sources{background:#fff}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<main class="report">
+  <section class="cover">
+    <div class="cover-top"><span class="type">PORTFOLIO DECISION REPORT</span><span>October 8, 2026</span></div>
+    <div class="cover-main">
+      <div class="universe">NVDA · UBER · ADBE<br>UNH · TSM · ASML</div>
+      <h1>Six strong ideas. Only one gets the next dollar.</h1>
+      <p class="dek">A conviction-weighted ranking built around upside, portfolio room, live entry discipline, and an earnings week that turns three attractive names into deliberate waits.</p>
+    </div>
+    <div class="cover-foot">
+      <div><strong>Capital allocation ranking</strong><span>Portfolio baseline: approximately $1.705M · 42 positions + $43K modeled cash</span></div>
+      <div class="rank-mark">#1 NVDA</div>
+    </div>
+  </section>
+
+  <section class="rating-strip" aria-label="Ranking summary">
+    <div class="rating-cell primary"><span>Top allocation priority</span><strong>NVDA · 8/10</strong></div>
+    <div class="rating-cell"><span>Ranking universe</span><strong>6 names</strong></div>
+    <div class="rating-cell"><span>Immediate posture</span><strong>Selective</strong></div>
+    <div class="rating-cell"><span>Ranking date</span><strong>Oct 8, 2026</strong></div>
+  </section>
+
+  <div class="toolbar"><button class="theme" id="themeToggle" type="button" aria-label="Switch color theme">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"/></svg>
+    <span>Theme</span></button></div>
+
+  <section class="page" id="map">
+    <div class="kicker">Report map</div>
+    <h2>The ranking, then the execution.</h2>
+    <p class="lead">The question is not which company has the best story. It is which position offers the best risk-adjusted use of the next incremental dollar—at today’s price, today’s weight, and today’s event risk.</p>
+    <nav class="toc" aria-label="Report contents">
+      <a href="#decision">Decision frame <span>01</span></a>
+      <a href="#ranking">Ranked order <span>02</span></a>
+      <a href="#comparison">Cross-name comparison <span>03</span></a>
+      <a href="#execution">Execution plan <span>04</span></a>
+      <a href="#calendar">Earnings calendar <span>05</span></a>
+      <a href="#sources">Sources & method <span>06</span></a>
+    </nav>
+  </section>
+
+  <section class="page" id="decision">
+    <div class="kicker">01 · Decision frame</div>
+    <h2>Earnings-week triage changes the order.</h2>
+    <p class="lead">UNH, ASML, and TSM report within seven days. That does not weaken their theses; it makes patience part of the thesis. Immediate capital belongs with names that combine high conviction, meaningful upside, portfolio room, and no near-term print.</p>
+    <div class="thesis-grid">
+      <div class="callout">
+        <h3>The allocation rule</h3>
+        <p>Do not chase above a defined gate, and do not initiate new adds inside roughly one week of earnings. A high rank identifies the best next-dollar destination; it does not override entry discipline.</p>
+      </div>
+      <div class="verdict">
+        <h3>Bottom line</h3>
+        <p><strong>NVDA is the cleanest incremental dollar.</strong> It carries 8/10 conviction, sits inside the $215–235 staged-add band, remains only 0.57% of portfolio value, and has no imminent earnings event.</p>
+      </div>
+    </div>
+    <div class="warning"><strong>Three deliberate waits:</strong> UNH reports October 13, ASML October 14, and TSM October 15. Existing positions remain intact; fresh dollars wait for the prints and their post-earnings setups.</div>
+  </section>
+
+  <section class="page" id="ranking">
+    <div class="kicker">02 · Ranked order</div>
+    <h2>The next-dollar ladder.</h2>
+    <p class="lead">Merit determines the order. Gates determine whether an order becomes a trade.</p>
+    <div class="ranking">
+      <article class="rank-row">
+        <div class="rank-no">01</div><div><div class="ticker">NVDA</div><div class="rating">Strong Buy · 8/10 · $328 target</div><span class="tag">Band live</span></div>
+        <div class="case"><h3>Best balance</h3><p>42.3% implied upside, 0.57% portfolio weight, and a $230.48 reference price inside the $215–235 staged-add band. No imminent earnings print.</p></div>
+        <div class="action"><strong>Action</strong><p>Highest-priority incremental add within the existing staged plan. Dashboard gate remains ≤$220.</p></div>
+      </article>
+      <article class="rank-row">
+        <div class="rank-no">02</div><div><div class="ticker">UBER</div><div class="rating">Strong Buy · 8/10 · $105 target</div><span class="tag wait">Wait for re-entry</span></div>
+        <div class="case"><h3>Highest raw upside</h3><p>49.5% implied upside and the smallest position in the set at 0.31%. Approximately 19 shares remain in the previously authorized first tranche.</p></div>
+        <div class="action"><strong>Action</strong><p>The $70.24 reference price is above the ≤$68 gate. Preserve the authorization, but wait for a re-entry or a new authorization.</p></div>
+      </article>
+      <article class="rank-row">
+        <div class="rank-no">03</div><div><div class="ticker">ADBE</div><div class="rating">Buy · 7/10 · $320 target</div><span class="tag wait">Gate closed</span></div>
+        <div class="case"><h3>Print behind it</h3><p>32.7% implied upside, a 0.48% starter position, and a record FQ3 already reported: $6.76B revenue, $6.13 EPS, and $2.52B operating cash flow.</p></div>
+        <div class="action"><strong>Action</strong><p>At $241.05, the stock is above the installed ≤$235 gate. Pause the build until it re-enters.</p></div>
+      </article>
+      <article class="rank-row">
+        <div class="rank-no">04</div><div><div class="ticker">UNH</div><div class="rating">Strong Buy · 8/10 · $475 target</div><span class="tag wait">Post-print</span></div>
+        <div class="case"><h3>Largest sizing gap</h3><p>28.0% implied upside and 1.09% current weight versus a 2% accumulation goal. The position has more dollar room than any other name here.</p></div>
+        <div class="action"><strong>Action</strong><p>No add before the October 13 report. Reassess the accumulate path after earnings and updated guidance.</p></div>
+      </article>
+      <article class="rank-row">
+        <div class="rank-no">05</div><div><div class="ticker">TSM</div><div class="rating">Strong Buy · 8/10 · $545 target</div><span class="tag">Gate executed</span></div>
+        <div class="case"><h3>Demand confirmed</h3><p>19.0% implied upside. September revenue reached NT$511.86B, up 54.6% year over year; the ≤$460 gate fired and two shares were added near $458.</p></div>
+        <div class="action"><strong>Action</strong><p>The immediate gate has already done its job. Hold through the October 15 print; do not stack another add in front of it.</p></div>
+      </article>
+      <article class="rank-row">
+        <div class="rank-no">06</div><div><div class="ticker">ASML</div><div class="rating">Buy · 6/10 · $2,050 target</div><span class="tag wait">Proposed gate</span></div>
+        <div class="case"><h3>Quality, lower urgency</h3><p>15.8% implied upside and the lowest conviction score in the group. The October 14 print adds event risk to an otherwise intact thesis.</p></div>
+        <div class="action"><strong>Action</strong><p>Wait. The proposed ≤$1,700 add gate toward roughly 1% is not installed and still requires approval.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="page" id="comparison">
+    <div class="kicker">03 · Cross-name comparison</div>
+    <h2>Upside is not the same as priority.</h2>
+    <p class="lead">UBER leads on raw upside, yet NVDA ranks first because its entry band is currently live and its earnings window is cleaner. Event risk and gate status separate an attractive target from an executable allocation.</p>
+    <figure class="chart" aria-labelledby="chartTitle">
+      <div class="chart-head"><h3 id="chartTitle">Implied price upside to desk target</h3><p>Reference prices: October 8, 2026</p></div>
+      <svg viewBox="0 0 760 330" role="img" aria-label="Horizontal bars showing implied upside: UBER 49.5 percent, NVDA 42.3 percent, ADBE 32.7 percent, UNH 28.0 percent, TSM 19.0 percent, ASML 15.8 percent">
+        <line class="grid" x1="155" y1="16" x2="155" y2="300"/><line class="grid" x1="267" y1="16" x2="267" y2="300"/><line class="grid" x1="379" y1="16" x2="379" y2="300"/><line class="grid" x1="491" y1="16" x2="491" y2="300"/><line class="grid" x1="603" y1="16" x2="603" y2="300"/><line class="grid" x1="715" y1="16" x2="715" y2="300"/>
+        <text class="axis" x="155" y="322" text-anchor="middle">0%</text><text class="axis" x="267" y="322" text-anchor="middle">10%</text><text class="axis" x="379" y="322" text-anchor="middle">20%</text><text class="axis" x="491" y="322" text-anchor="middle">30%</text><text class="axis" x="603" y="322" text-anchor="middle">40%</text><text class="axis" x="715" y="322" text-anchor="middle">50%</text>
+        <text class="label" x="16" y="43">UBER · #2</text><rect class="bar-2" x="155" y="25" width="554" height="25"/><text class="value" x="719" y="43">49.5%</text>
+        <text class="label" x="16" y="91">NVDA · #1</text><rect class="bar top" x="155" y="73" width="474" height="25"/><text class="value" x="639" y="91">42.3%</text>
+        <text class="label" x="16" y="139">ADBE · #3</text><rect class="bar" x="155" y="121" width="366" height="25"/><text class="value" x="531" y="139">32.7%</text>
+        <text class="label" x="16" y="187">UNH · #4</text><rect class="bar" x="155" y="169" width="314" height="25"/><text class="value" x="479" y="187">28.0%</text>
+        <text class="label" x="16" y="235">TSM · #5</text><rect class="bar" x="155" y="217" width="213" height="25"/><text class="value" x="378" y="235">19.0%</text>
+        <text class="label" x="16" y="283">ASML · #6</text><rect class="bar" x="155" y="265" width="177" height="25"/><text class="value" x="342" y="283">15.8%</text>
+      </svg>
+    </figure>
+
+    <table class="data-table" aria-label="Capital allocation comparison table">
+      <thead><tr><th>Rank / name</th><th>Rating</th><th class="num">Price</th><th class="num">Target</th><th class="num">Upside</th><th class="num">Weight</th><th>Entry state</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Rank / name"><span class="rank">1</span> · NVDA<small>42 sh @ $222.14 avg</small></td><td data-label="Rating">Strong Buy · 8/10</td><td data-label="Price" class="num">$230.48</td><td data-label="Target" class="num">$328</td><td data-label="Upside" class="num">42.3%</td><td data-label="Weight" class="num">0.57%</td><td data-label="Entry state">$215–235 band; ≤$220 gate</td></tr>
+        <tr><td data-label="Rank / name"><span class="rank">2</span> · UBER<small>76 sh @ $69.48 avg</small></td><td data-label="Rating">Strong Buy · 8/10</td><td data-label="Price" class="num">$70.24</td><td data-label="Target" class="num">$105</td><td data-label="Upside" class="num">49.5%</td><td data-label="Weight" class="num">0.31%</td><td data-label="Entry state">Above ≤$68 gate</td></tr>
+        <tr><td data-label="Rank / name"><span class="rank">3</span> · ADBE<small>34 sh @ $232.68 avg</small></td><td data-label="Rating">Buy · 7/10</td><td data-label="Price" class="num">$241.05</td><td data-label="Target" class="num">$320</td><td data-label="Upside" class="num">32.7%</td><td data-label="Weight" class="num">0.48%</td><td data-label="Entry state">Above ≤$235 gate</td></tr>
+        <tr><td data-label="Rank / name"><span class="rank">4</span> · UNH<small>50.22 sh @ $237.45 avg</small></td><td data-label="Rating">Strong Buy · 8/10</td><td data-label="Price" class="num">$370.95</td><td data-label="Target" class="num">$475</td><td data-label="Upside" class="num">28.0%</td><td data-label="Weight" class="num">1.09%</td><td data-label="Entry state">Accumulate toward 2%; post-print</td></tr>
+        <tr><td data-label="Rank / name"><span class="rank">5</span> · TSM<small>28 sh @ $429.60 avg</small></td><td data-label="Rating">Strong Buy · 8/10</td><td data-label="Price" class="num">$457.99</td><td data-label="Target" class="num">$545</td><td data-label="Upside" class="num">19.0%</td><td data-label="Weight" class="num">0.75%</td><td data-label="Entry state">≤$460 fired; 2 sh added</td></tr>
+        <tr><td data-label="Rank / name"><span class="rank">6</span> · ASML<small>7 sh @ $1,731.53 avg</small></td><td data-label="Rating">Buy · 6/10</td><td data-label="Price" class="num">$1,769.79</td><td data-label="Target" class="num">$2,050</td><td data-label="Upside" class="num">15.8%</td><td data-label="Weight" class="num">0.73%</td><td data-label="Entry state">≤$1,700 proposed, not installed</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page" id="execution">
+    <div class="kicker">04 · Execution plan</div>
+    <h2>Allocate by window, not by excitement.</h2>
+    <p class="lead">The six names separate into two groups: one actionable band and five disciplined waits. That is a feature of the process, not a shortage of ideas.</p>
+    <div class="plan">
+      <div class="plan-block now"><h3>Now: NVDA</h3><p>Use the existing staged plan. The $230.48 reference sits inside Cam’s $215–235 band, while the dashboard’s stricter ≤$220 gate remains the preferred level for additional discipline.</p></div>
+      <div class="plan-block wait"><h3>Re-entry watch: UBER</h3><p>Keep the remaining approximately 19 authorized tranche-one shares open, but do not chase $70.24 above the ≤$68 gate.</p></div>
+      <div class="plan-block wait"><h3>Re-entry watch: ADBE</h3><p>The starter is built and the quarter is behind it. Resume only at or below the installed $235 gate; the current $241.05 reference pauses the sequence.</p></div>
+      <div class="plan-block wait"><h3>After earnings: UNH</h3><p>Reassess the path from 1.09% toward 2% after October 13. The size gap is meaningful, but the next print should set the entry.</p></div>
+      <div class="plan-block wait"><h3>After earnings: TSM</h3><p>The ≤$460 gate fired and two shares were added near $458. Let the October 15 results absorb the next decision.</p></div>
+      <div class="plan-block wait"><h3>After earnings: ASML</h3><p>Wait through October 14. The ≤$1,700 add gate is only a proposal; it is not active until approved.</p></div>
+    </div>
+  </section>
+
+  <section class="page" id="calendar">
+    <div class="kicker">05 · Earnings calendar</div>
+    <h2>Three prints define the near-term cadence.</h2>
+    <div class="timeline">
+      <div class="event behind"><div class="date">Reported</div><div class="name">ADBE · FQ3</div><p>Record $6.76B revenue versus $6.69B expected; $6.13 EPS versus $6.09 expected; $27.50B ARR; record $2.52B operating cash flow. CEO transition remains an execution variable.</p></div>
+      <div class="event"><div class="date">Oct 13</div><div class="name">UNH · Q3</div><p>Consensus cited at $4.12 EPS and $111.31B revenue; FY2026 guide stands at $19.50–$20.00. Four consecutive beats do not remove event risk.</p></div>
+      <div class="event"><div class="date">Oct 14</div><div class="name">ASML · Q3</div><p>Company guide: €11–12B sales and 55–57% gross margin. Street revenue expectations cited near $13.1–13.2B, high relative to the guide.</p></div>
+      <div class="event"><div class="date">Oct 15</div><div class="name">TSM · Q3</div><p>September revenue of NT$511.86B, up 54.6% year over year, and Q3 revenue near NT$1.49T provide fresh demand confirmation.</p></div>
+      <div class="event"><div class="date">Oct 29</div><div class="name">UBER · Q3</div><p>Approximately three weeks away at the ranking date, leaving time for the ≤$68 gate to govern a possible re-entry.</p></div>
+      <div class="event"><div class="date">Mid-Nov.</div><div class="name">NVDA · FQ3</div><p>No imminent print. That cleaner event window is one reason NVDA outranks UBER despite UBER’s higher raw target upside.</p></div>
+    </div>
+  </section>
+
+  <section class="page sources" id="sources">
+    <div class="kicker">06 · Sources & method</div>
+    <h2>Decision inputs.</h2>
+    <p class="muted">All market references and portfolio positions are snapshots as of October 8, 2026. Sources appear only here, consistent with the standing report format.</p>
+    <ol class="source-list">
+      <li><div><strong>Finnhub</strong> — October 8, 2026 quotes for ADBE, TSM, NVDA, ASML, UBER, and UNH.</div></li>
+      <li><div><strong>Morningstar portfolio export 58-2</strong> — October 8, 2026 share counts, average costs, position values, portfolio weights, and portfolio baseline.</div></li>
+      <li><div><strong>Desk reports</strong> — ADBE initiation, October 3; TSM, NVDA, UBER, and UNH updates, October 4; ASML full fundamental report, October 8. These reports supply ratings, conviction scores, and price targets.</div></li>
+      <li><div><strong>Cam’s NVDA update</strong> — October 2 staged-add band of $215–235.</div></li>
+      <li><div><strong>Dashboard gates</strong> — Current buy-side gate states for ADBE, TSM, NVDA, UBER, and UNH; ASML’s ≤$1,700 level is proposed, not installed.</div></li>
+      <li><div><strong>ADBE FQ3 coverage</strong> — Webull/Benzinga, MarketBeat, and Stock Moguls, October 8, 2026, for reported-quarter metrics and leadership transition.</div></li>
+      <li><div><strong>UNH Q3 previews</strong> — AmericanBankingNews, MarketBeat, Barchart, and Alphastreet, October 6–8, 2026, for consensus figures and recent surprise record.</div></li>
+    </ol>
+    <p class="disclosure">Method: qualitative next-dollar ranking based on desk conviction, target upside, current portfolio weight, authorized or installed entry levels, and proximity to earnings. This is a portfolio decision framework, not a mechanical score. Price targets and upside estimates are uncertain and may change after new results.</p>
+  </section>
+</main>
+<script>
+(function(){
+  var root=document.documentElement;
+  var button=document.getElementById('themeToggle');
+  button.addEventListener('click',function(){
+    var current=root.getAttribute('data-theme');
+    if(!current){current=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}
+    root.setAttribute('data-theme',current==='dark'?'light':'dark');
+  });
+})();
+</script>
+</body>
+</html>

@@ -47,7 +47,15 @@
    "level": 235,
    "dir": "at_or_below",
    "note": "Starter add at or below $235 toward ~1% wt · 12-mo target $320"
+  },
+  {
+   "ticker": "ASML",
+   "type": "price",
+   "action": "ADD",
+   "level": 1700,
+   "dir": "at_or_below",
+   "note": "Add at or below $1,700 toward ~1% wt · 12-mo target $2,050"
   }
  ],
- "updated": "2026-10-06"
+ "updated": "2026-10-08"
 }
