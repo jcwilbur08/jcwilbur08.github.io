@@ -1081,7 +1081,17 @@
    "rating": null,
    "target": null,
    "summary": "Cam's own capital-allocation ranking (34 stocks, $1.687M book, $43K cash): ADBE #1 (Strong Add starter, $314 anchor, ~32% gap, $235–245 gate), AMT #2, UBER #3, AVGO #4, GOOG #5, UNH #6, PEP #7, NVDA #8, CRM #9, ORCL #10. Hard-gate overlays: NFLX Trim, BMY blocked on pipeline review, TSM above add bands, PLTR valuation-gated."
+  },
+  {
+   "title": "TSMC (TSM) — September 2026 Monthly Revenue Update",
+   "file": "report_20261008-190428.html",
+   "kind": "company",
+   "date": "2026-10-08",
+   "ticker": "TSM",
+   "rating": "Strong Buy",
+   "target": "$545",
+   "summary": "Cam's TSM September revenue update (Oct 8): Sep revenue NT$511.86B, +54.6% YoY; 3Q26 revenue ~NT$1.494T (+51% YoY), +2.3% vs the LSEG NT$1.46T consensus cited by Reuters — beating the NT$445–483B September threshold for the dollar guidance range. Positive fundamental update, valuation discipline retained; Oct 15 earnings is the decisive next checkpoint (gross margins, N2 ramp, FY2026 capex, Q4 demand). Research only — not published to PCC."
   }
  ],
- "updated": "2026-10-06"
+ "updated": "2026-10-08"
 }
