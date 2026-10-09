@@ -1142,6 +1142,46 @@
    "kind": "company",
    "date": "2026-10-09",
    "summary": "New coverage: Hold, conviction 5/10, $115 target (~18% upside from $97.59). 13.3x forward P/E (cheapest in 10 yrs) and 5.25% yield with 54 straight annual raises — but the standalone earnings base disappears when the $48.7B Kenvue deal closes in Q4 2026 (EU decision Oct 13); the investor underwrites a merger integration ($2.1B synergies = ~15% of Kenvue cost base, inherited Tylenol/talc litigation, S&P Negative). August guidance cut (organic ~flat, China diaper scare); Q3 prints Oct 27. Recommended gate: ≤$90 toward ~1% (not installed)."
+  },
+  {
+   "ticker": "CTAS",
+   "name": "Cintas Corporation",
+   "file": "ctas-fundamental-analysis-2026-10-09.html",
+   "rating": "Hold",
+   "target": "$216",
+   "kind": "company",
+   "date": "2026-10-09",
+   "summary": "New coverage: Hold, conviction 6/10, $216 target (~7% upside from $202.41). Elite wide-moat compounder — record 51.5% gross / 23.6% op margins in Q1 FY2027, raised FY2027 guidance, 42 straight annual dividend raises, 42.6% ROE — but ~37x forward and 1.01x Morningstar's $200 FV means the price reflects it; stock fell 3.4% on a beat-and-raise. Swing factor: ~$5.5B UniFirst deal (FTC second request, close targeted by year-end). Recommended gate: ≤$180 toward ~1% (not installed)."
+  },
+  {
+   "ticker": "COST",
+   "name": "Costco Wholesale Corporation",
+   "file": "cost-fundamental-analysis-2026-10-09.html",
+   "rating": "Hold",
+   "target": "$1,050",
+   "kind": "company",
+   "date": "2026-10-09",
+   "summary": "New coverage: Hold, conviction 5/10, $1,050 target (~11% upside from $946.92). The best retailer on earth — 92.3% US/Canada renewal, 84.1M members, digital +19.5%, Q4 FY2026 beat — but Morningstar is 1-star at $650 FV (46% below the price) and ~44-46x trailing sits on the 5-yr average premium with zero discount; documented sell-offs even on beats. Speculated ~$20 special dividend (late 2026) is a kicker, not a thesis. Recommended gate: ≤$850 toward ~1% (not installed)."
+  },
+  {
+   "ticker": "CEG",
+   "name": "Constellation Energy Corporation",
+   "file": "ceg-fundamental-analysis-2026-10-09.html",
+   "rating": "Buy",
+   "target": "$345",
+   "kind": "company",
+   "date": "2026-10-09",
+   "summary": "New coverage: Buy, conviction 6/10, $345 target (~16% upside from $298.07). The AI-power thesis is contracted — Google 3.59 GW pair (Oct 6) and Amazon 20-yr Calvert Cliffs PPA on 15-20 yr terms; Calpine closed Jan 2026 (~55 GW); FY26 adj EPS guide raised to $11.50-12.50. But +12% on the Google news already; ~24x forward is a premium to Vistra/Talen; Q2 margin compression; FERC/PJM and utility-bill politics are the binding risks; ~3.0x leverage. Goldman's $305 Neutral is the discipline anchor. Recommended gate: ≤$260 toward ~1% (not installed)."
+  },
+  {
+   "ticker": "NVO",
+   "name": "Novo Nordisk A/S",
+   "file": "nvo-fundamental-analysis-2026-10-09.html",
+   "rating": "Buy",
+   "target": "$46",
+   "kind": "company",
+   "date": "2026-10-09",
+   "summary": "New coverage: Buy, conviction 6/10, $46 target (~19% upside from $38.64). Washed-out quality — wide moat at 11.6x forward vs Lilly 39x, ~5% yield, 2026 guidance raised twice (now 0% to -6% CER): the bleeding is slowing while the market prices terminal decline. But Lilly is structurally winning (Zepbound, orforglipron, retatrutide); CagriSema FDA decision expected Q4 2026 is binary; patent cliff + MFN/TrumpRx pricing cap upside. Morningstar 3-star DKK 275; Q3 Nov 4. ADR 1:1 verified. Recommended gate: ≤$34 toward ~1% (not installed)."
   }
  ],
  "updated": "2026-10-09"
