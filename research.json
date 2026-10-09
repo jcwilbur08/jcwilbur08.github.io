@@ -1046,7 +1046,7 @@
    "file": "orcl-fundamental-analysis-2026-10-05.html",
    "rating": "Buy",
    "target": "$200",
-   "kind": "fundamental",
+   "kind": "company",
    "date": "2026-10-05",
    "name": "Oracle Corporation",
    "summary": "New coverage: Buy, conviction 7/10, $200 target (~41% upside from $142.30). OCI +121% YoY, $664B RPO (8.6x revenue), 16.7x FY2027E — but financing overhang unresolved ($156B+ debt, Oct 28 analyst day must frame FY2028 FCF inflection). Recommended gate: ≤$130 toward ~1% (not installed)."
@@ -1057,7 +1057,7 @@
    "file": "clx-fundamental-analysis-2026-10-05.html",
    "rating": "Hold",
    "target": "$92",
-   "kind": "fundamental",
+   "kind": "company",
    "date": "2026-10-05",
    "summary": "New coverage: Hold, conviction 4/10, $92 target (~14% upside from $80.41). 6.2% yield, 49-year Dividend Aristocrat streak intact but defended with penny increases; payout 104% of trailing earnings. FY26 adj EPS -28%; GOJO debt-funded. Recommended gate: <$72 toward ~1% (not installed)."
   },
@@ -1067,7 +1067,7 @@
    "file": "spcx-fundamental-analysis-2026-10-05.html",
    "rating": "Buy",
    "target": "$220",
-   "kind": "fundamental",
+   "kind": "company",
    "date": "2026-10-05",
    "summary": "New coverage: Buy, conviction 6/10, $220 target (~38% upside from $158.96). IPO June 12, 2026 at $135 (largest ever); Starlink $4.29B Q2 +66% with 12M subs; AI segment +247% to $2.56B with first positive adj. EBITDA; Q2 FCF -$25B. Beta 5.1. Recommended gate: <=$130 toward ~1% (not installed). Supersedes the private-company pass."
   },
@@ -1112,7 +1112,27 @@
    "rating": null,
    "target": null,
    "summary": "Desk capital-allocation ranking of six names (Oct 8, live prices): NVDA #1 (Strong Buy 8/10, +42% upside, inside $215–$235 band, no print), UBER #2 (Strong Buy 8/10, +49% upside, ~19 sh of fired tranche open), ADBE #3 (Buy 7/10, +33%, record FQ3 print behind it but $241 above the $235 gate), UNH #4 (Strong Buy 8/10, +28%, reports Oct 13 — wait), TSM #5 (Strong Buy 8/10, +19%, reports Oct 15 — wait), ASML #6 (Buy 6/10, +16%, reports Oct 14 — wait). Frame: earnings-week triage — three of six report within seven days."
+  },
+  {
+   "ticker": "HOOD",
+   "name": "Robinhood Markets Inc",
+   "file": "hood-fundamental-analysis-2026-10-09.html",
+   "rating": "Buy",
+   "target": "$130",
+   "kind": "company",
+   "date": "2026-10-09",
+   "summary": "New coverage: Buy, conviction 6/10, $130 target (~19% upside from $109.02). Best-in-class 42% net margin / 22.4% ROE, record $21.7B quarterly net deposits (~28% annualized), 28.4M funded customers, $369B platform assets; Q2 proved the model grows (+32% revenue) with crypto -38%. But 47.5x trailing P/E and 20-22x sales (richest in peer set), Morningstar $50 fair value (Very High uncertainty), multi-state prediction-market crackdown, beta 2.47; Q3 prints Oct 27 AMC. Recommended gate: ≤$98 toward ~1% (not installed)."
+  },
+  {
+   "ticker": "SIEGY",
+   "name": "Siemens AG",
+   "file": "siegy-fundamental-analysis-2026-10-09.html",
+   "rating": "Buy",
+   "target": "$166",
+   "kind": "company",
+   "date": "2026-10-09",
+   "summary": "New coverage: Buy, conviction 6/10, $166 target (~12% upside from $148.52). €300 ordinary-share equivalent = 24x FY2027E EPS ~€12.49. Wide-moat quality: record €132bn backlog, FY26 EPS guidance raised twice to €11.20–11.50, Smart Infrastructure at all-time-high 18.3% margins on data-center/electrification, €6bn buyback running. But Morningstar 2-star overvalued (FVE ~€241 vs €275), Q3 beat sold off 4–5%, Evercore downgraded Oct 2; Q4 prints Nov 12. ADR ratio 2:1 derived, not primary-confirmed. Recommended gate: ≤$135 toward ~1% (not installed)."
   }
  ],
- "updated": "2026-10-08"
+ "updated": "2026-10-09"
 }
