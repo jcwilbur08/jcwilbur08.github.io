@@ -21,6 +21,78 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:calc(16px * var(--text-scale,1));}
 
+/* EARNINGS (replaces News tab) — all selectors scoped to #earnings / ed-* */
+#earnings{--ed-ink:#1a1a1a;--ed-soft:#555;--ed-muted:#888;--ed-card:#fff;--ed-border:#e5e5e5;--ed-accent:#2563eb;--ed-accent-soft:#dbeafe;--ed-good:#16a34a;--ed-good-soft:#dcfce7;--ed-bad:#dc2626;--ed-warn:#b45309;--ed-warn-soft:#fef3c7;font-variant-numeric:tabular-nums;}
+body[data-theme="dark"] #earnings{--ed-ink:#e8e9ec;--ed-soft:#b7bcc7;--ed-muted:#8b909c;--ed-card:#1a1d24;--ed-border:#262a33;--ed-accent:#5b8def;--ed-accent-soft:#111d33;--ed-good:#4ade80;--ed-good-soft:rgba(74,222,128,.14);--ed-bad:#f87171;--ed-warn:#fbbf24;--ed-warn-soft:rgba(251,191,36,.14);}
+#earnings .ed-toolbar{display:flex;gap:8px;flex-wrap:wrap;margin:-8px 0 8px;}
+#earnings .ed-hero{padding:8px 0 0;}
+#earnings .ed-eyebrow{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:calc(12px * var(--text-scale,1));font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ed-muted);}
+#earnings .ed-title{font-size:calc(22px * var(--text-scale,1));font-weight:700;line-height:1.25;margin:8px 0 10px;color:var(--ed-ink);letter-spacing:-.01em;}
+#earnings .ed-lede{max-width:70ch;color:var(--ed-soft);font-size:calc(15px * var(--text-scale,1));line-height:1.55;margin:0 0 18px;}
+#earnings .ed-callout{display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:var(--ed-card);border:1px solid var(--ed-border);border-radius:10px;padding:16px 20px;}
+#earnings .ed-big{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:calc(34px * var(--text-scale,1));font-weight:700;color:var(--ed-accent);line-height:1;}
+#earnings .ed-desc{font-size:calc(14px * var(--text-scale,1));color:var(--ed-soft);max-width:46ch;line-height:1.5;}
+#earnings .ed-desc strong{color:var(--ed-ink);}
+#earnings .ed-mini-stats{display:flex;gap:24px;flex-wrap:wrap;margin-left:auto;}
+#earnings .ed-mini-stat{text-align:right;}
+#earnings .ed-mini-stat .ed-n{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;font-size:calc(18px * var(--text-scale,1));color:var(--ed-ink);}
+#earnings .ed-mini-stat .ed-l{font-size:calc(12px * var(--text-scale,1));text-transform:uppercase;letter-spacing:.06em;color:var(--ed-muted);}
+#earnings .ed-block{padding-top:34px;scroll-margin-top:120px;}
+#earnings .ed-block-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:4px;}
+#earnings .ed-block-head h2{font-size:calc(20px * var(--text-scale,1));font-weight:700;margin:0;color:var(--ed-ink);letter-spacing:-.01em;}
+#earnings .ed-count{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:calc(13px * var(--text-scale,1));color:var(--ed-muted);}
+#earnings .ed-block-sub{color:var(--ed-soft);font-size:calc(14px * var(--text-scale,1));max-width:72ch;line-height:1.5;margin:6px 0 20px;}
+#earnings .ed-subgroup-label{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:calc(12px * var(--text-scale,1));font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--ed-muted);display:flex;align-items:center;gap:10px;margin:26px 0 12px;}
+#earnings .ed-subgroup-label::after{content:"";flex:1;height:1px;background:var(--ed-border);}
+#earnings .ed-subgroup-label.ed-reported{color:var(--ed-good);}
+#earnings .ed-subgroup-label.ed-upcoming{color:var(--ed-accent);}
+#earnings .ed-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,310px),1fr));gap:14px;}
+#earnings .ed-card{background:var(--ed-card);border:1px solid var(--ed-border);border-radius:10px;padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px;min-width:0;}
+#earnings .ed-card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;}
+#earnings .ed-ticker-block{display:flex;flex-direction:column;gap:1px;min-width:0;}
+#earnings .ed-ticker{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;font-size:calc(17px * var(--text-scale,1));letter-spacing:.01em;color:var(--ed-ink);}
+#earnings .ed-name{font-size:calc(13px * var(--text-scale,1));color:var(--ed-muted);}
+#earnings .ed-badges{display:flex;flex-direction:column;align-items:flex-end;gap:5px;flex-shrink:0;}
+#earnings .ed-pill{font-size:calc(12px * var(--text-scale,1));text-transform:uppercase;letter-spacing:.05em;font-weight:700;padding:3px 9px;border-radius:20px;white-space:nowrap;}
+#earnings .ed-pill.ed-reported{background:var(--ed-good-soft);color:var(--ed-good);}
+#earnings .ed-pill.ed-upcoming{background:var(--ed-accent-soft);color:var(--ed-accent);}
+#earnings .ed-alloc{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:calc(12px * var(--text-scale,1));color:var(--ed-muted);}
+#earnings .ed-card-meta{display:flex;justify-content:space-between;align-items:center;font-size:calc(13px * var(--text-scale,1));color:var(--ed-soft);border-top:1px solid var(--ed-border);padding-top:9px;gap:10px;}
+#earnings .ed-date{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+#earnings .ed-reaction{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:700;text-align:right;}
+#earnings .ed-reaction.ed-up{color:var(--ed-good);}
+#earnings .ed-reaction.ed-down{color:var(--ed-bad);}
+#earnings .ed-reaction.ed-flat{color:var(--ed-warn);}
+#earnings .ed-figures{font-size:calc(14px * var(--text-scale,1));color:var(--ed-ink);line-height:1.5;}
+#earnings .ed-figures b{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;}
+#earnings .ed-vs{color:var(--ed-muted);}
+#earnings ul.ed-bullets{margin:0;padding-left:1.15em;display:flex;flex-direction:column;gap:5px;font-size:calc(14px * var(--text-scale,1));color:var(--ed-soft);line-height:1.45;}
+#earnings ul.ed-bullets li::marker{color:var(--ed-accent);}
+#earnings ul.ed-bullets.ed-watch li::marker{color:var(--ed-warn);}
+#earnings .ed-stat-tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(148px,1fr));gap:12px;margin-bottom:26px;}
+#earnings .ed-stat-tile{background:var(--ed-card);border:1px solid var(--ed-border);border-radius:10px;padding:13px 15px;}
+#earnings .ed-stat-tile .ed-label{font-size:calc(12px * var(--text-scale,1));text-transform:uppercase;letter-spacing:.05em;color:var(--ed-muted);font-weight:600;}
+#earnings .ed-stat-tile .ed-value{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:calc(20px * var(--text-scale,1));font-weight:700;margin:4px 0 2px;color:var(--ed-ink);}
+#earnings .ed-stat-tile .ed-sub{font-size:calc(12px * var(--text-scale,1));color:var(--ed-muted);line-height:1.4;}
+#earnings .ed-stat-tile .ed-sub.ed-up{color:var(--ed-good);}
+#earnings .ed-stat-tile .ed-sub.ed-down{color:var(--ed-bad);}
+#earnings .ed-panels{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:14px;}
+#earnings .ed-panel{background:var(--ed-card);border:1px solid var(--ed-border);border-radius:10px;padding:20px 22px;}
+#earnings .ed-panel h3{margin:0 0 12px;font-size:calc(17px * var(--text-scale,1));font-weight:700;display:flex;align-items:center;gap:8px;color:var(--ed-ink);}
+#earnings .ed-dot{width:8px;height:8px;border-radius:50%;background:var(--ed-accent);display:inline-block;}
+#earnings .ed-panel p{font-size:calc(14px * var(--text-scale,1));color:var(--ed-soft);margin:0 0 10px;line-height:1.55;}
+#earnings .ed-panel p:last-child{margin-bottom:0;}
+#earnings .ed-panel strong{color:var(--ed-ink);}
+#earnings footer{margin-top:44px;padding-top:18px;border-top:1px solid var(--ed-border);}
+#earnings footer p{font-size:calc(12px * var(--text-scale,1));color:var(--ed-muted);max-width:90ch;line-height:1.55;}
+@media(max-width:768px){
+  #earnings .ed-mini-stats{margin-left:0;}
+  #earnings .ed-mini-stat{text-align:left;}
+  #earnings .ed-card-meta{flex-direction:column;align-items:flex-start;gap:4px;}
+  #earnings .ed-reaction{text-align:left;}
+  #earnings .ed-block{scroll-margin-top:60px;}
+}
+
 /* SCROLLING TICKER */
 .ticker-bar{background:#1a1a1a;color:#fff;padding:calc(8px + env(safe-area-inset-top)) 0 8px;overflow:hidden;white-space:nowrap;}
 .ticker-track{display:inline-flex;animation:scroll 90s linear infinite;}
@@ -181,20 +253,6 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 .blue-metric .lbl{font-size:calc(13px * var(--text-scale,1));color:#3b82f6;font-weight:600;margin-bottom:6px;}
 .blue-metric .val{font-size:calc(22px * var(--text-scale,1));font-weight:700;color:#1d4ed8;}
 
-/* NEWS */
-.news-item{background:#fff;border:1px solid #e5e5e5;border-radius:8px;padding:14px;margin-bottom:10px;}
-.news-item .headline{font-size:calc(15px * var(--text-scale,1));font-weight:600;margin-bottom:5px;display:block;color:#1a1a1a;text-decoration:none;}
-.news-item .headline:hover{color:#2563eb;text-decoration:underline;}
-.news-item .ticker-tag{display:inline-block;background:#dbeafe;color:#1d4ed8;font-size:calc(13px * var(--text-scale,1));font-weight:700;padding:2px 7px;border-radius:4px;margin-right:6px;}
-.news-item .meta{font-size:calc(13px * var(--text-scale,1));color:#888;}
-.news-item .meta a{color:#888;text-decoration:none;}
-.news-item .meta a:hover{color:#2563eb;text-decoration:underline;}
-.news-item .why{font-size:calc(14px * var(--text-scale,1));color:#555;line-height:1.5;margin:6px 0;}
-.news-item .why-label{font-weight:700;color:#888;font-size:calc(12px * var(--text-scale,1));text-transform:uppercase;letter-spacing:.4px;margin-right:5px;}
-.news-item .news-pct{font-size:calc(15px * var(--text-scale,1));font-weight:700;white-space:nowrap;margin-left:10px;flex-shrink:0;}
-.news-toolbar{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;}
-.news-updated{font-size:calc(13px * var(--text-scale,1));color:#888;margin-bottom:16px;display:flex;align-items:center;gap:6px;}
-.news-updated .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;}
 
 /* REPORT CARDS */
 .report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
@@ -419,13 +477,6 @@ body[data-theme="dark"] .div-cal-month{color:#8b909c;}
 body[data-theme="dark"] .slider-wrap label{color:#e8e9ec;}
 body[data-theme="dark"] .blue-card{background:#111d33;border-color:#1e3a5f;}
 body[data-theme="dark"] .blue-metric{background:#0d1830;border-color:#1e3a5f;}
-body[data-theme="dark"] .news-item{background:#1a1d24;border-color:#262a33;}
-body[data-theme="dark"] .news-item .headline{color:#e8e9ec;}
-body[data-theme="dark"] .news-item .meta{color:#8b909c;}
-body[data-theme="dark"] .news-item .meta a{color:#8b909c;}
-body[data-theme="dark"] .news-updated{color:#8b909c;}
-body[data-theme="dark"] .news-item .why{color:#b7bcc7;}
-body[data-theme="dark"] .news-item .why-label{color:#8b909c;}
 body[data-theme="dark"] .report-card{background:#1a1d24;border-color:#262a33;}
 body[data-theme="dark"] .report-card .title{color:#e8e9ec;}
 body[data-theme="dark"] .report-card .date{color:#8b909c;}
@@ -486,7 +537,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <button class="tab-btn" onclick="switchTab('income',this)">💰 Income</button>
     <button class="tab-btn" onclick="switchTab('research',this)">🔍 Research</button>
     <button class="tab-btn" onclick="switchTab('reports',this)">📊 Reports</button>
-    <button class="tab-btn" onclick="switchTab('news',this)">📰 News</button>
+    <button class="tab-btn" onclick="switchTab('earnings',this)">📈 Earnings</button>
   </div>
   <div class="summary-bar">
     <div class="summary-item"><span class="lbl">Value</span><span class="val" id="sum-total">—</span></div>
@@ -549,7 +600,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <span id="freshness-live">Live quotes (Finnhub): loading…</span>
       <span id="freshness-mf">Mutual funds (Alpha Vantage, daily): loading…</span>
       <span>Morningstar export (holdings/cost basis): Oct 9, 2026</span>
-      <span>News: Oct 2, 2026</span>
+      <span>Earnings dashboard: Oct 10, 2026</span>
     </div>
   </div>
 
@@ -1609,12 +1660,467 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <div class="report-grid" id="report-grid"></div>
   </div>
 
-  <!-- NEWS -->
-  <div id="news" class="tab-pane">
-    <div id="news-list"></div>
-    <div class="section-title">Smart News — Portfolio-Ranked Intelligence</div>
-    <p style="font-size:calc(15px * var(--text-scale,1));color:#888;margin-bottom:12px;">Stories ranked by portfolio weight. Holdings-linked news first, then factor/market context. Each headline links to the original source.</p>
-    <div class="news-updated" id="news-updated-line"><span class="dot"></span>Last refreshed Oct 2, 2026 — Amazon's reported $8B Nvidia-chip financing, JPMorgan and Goldman set to report Oct 13, Meta's best month since 2013, Broadcom on the $60B AI-chip financing report</div>
+
+
+  <!-- EARNINGS (replaces the former News tab). Snapshot content below is delimited so a refresh
+       can swap it surgically: everything between EARNINGS-DASHBOARD:START and :END. -->
+  <div id="earnings" class="tab-pane">
+    <div class="section-title">Earnings Dashboard</div>
+    <div class="ed-toolbar">
+      <button class="pill-btn" onclick="edJump('ed-holdings')">Your Holdings</button>
+      <button class="pill-btn" onclick="edJump('ed-watch')">Companies to Watch</button>
+      <button class="pill-btn" onclick="edJump('ed-market')">State of the Market</button>
+    </div>
+<!-- EARNINGS-DASHBOARD:START (snapshot as of 2026-10-10) -->
+<section class="ed-hero">
+    <div class="ed-eyebrow">Q3 2026 season opens Tue, Oct 13 · as of Saturday, October 10, 2026</div>
+    <div class="ed-title">Season kicks off Tuesday: five of your holdings report by Thursday, Oct 15.</div>
+    <p class="ed-lede">JPMorgan, Goldman Sachs and UnitedHealth report Tuesday, Oct 13, followed by ASML (Oct 14) and TSMC (Oct 15). PepsiCo was the only holding to report this week (Oct 8): a beat on both lines, but a guidance cut. The tape is at record highs after a volatile week, with September CPI due Oct 14, the Fed leaning toward a pause on Oct 27-28 after September's +29K jobs print, and the 10-year yield near 5.25%.</p>
+    <div class="ed-callout">
+      <div class="ed-big">5</div>
+      <div class="ed-desc"><strong>Holdings report Oct 13-15</strong> — JPMorgan, Goldman Sachs, UnitedHealth, ASML and TSMC. All five land in the next seven days.</div>
+      <div class="ed-mini-stats">
+        <div class="ed-mini-stat"><div class="ed-n">5</div><div class="ed-l">Report in next 7 days</div></div>
+        <div class="ed-mini-stat"><div class="ed-n">18</div><div class="ed-l">Report Oct 20 – Nov 5</div></div>
+        <div class="ed-mini-stat"><div class="ed-n">1</div><div class="ed-l">Reported this week (PEP)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ed-block" id="ed-holdings">
+    <div class="ed-block-head"><h2>Your Holdings</h2><span class="ed-count">30 individual equity positions</span></div>
+    <p class="ed-block-sub">Every non-fund, non-ETF ticker in your current portfolio export (allocations are % of total portfolio market value, from the export). Seven are shown with their latest print (PepsiCo is new this week; the others have next-report dates listed); 23 are upcoming with their Q3 setup. Dates marked "~" are estimates, not company-confirmed.</p>
+    <div class="ed-subgroup-label ed-upcoming">Upcoming — 23 (in date order)</div>
+    <div class="ed-cards">
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">JPM</span><span class="ed-name">JPMorgan Chase</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">7.1% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Tue, Oct 13 · ~7:00am ET (company-confirmed), call 8:30am</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$5.82-5.90</b> <span class="ed-vs">· revenue ~$50.4-50.9B</span></div>
+        <ul class="ed-bullets ed-watch"><li>FY26 net interest income guidance (one source cites ~$105.5B total, ~$96.5B ex-Markets; unverified) and deposit trends.</li><li>Markets and investment-banking fees against a strong prior quarter; expense guide.</li><li>Card charge-offs, provisions and loan demand. Kicks off bank earnings season.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">GS</span><span class="ed-name">Goldman Sachs</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">5.7% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Tue, Oct 13 · before the open (per calendars; not company-confirmed)</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$15.4-16.4</b> <span class="ed-vs">(providers disagree)</span> · Revenue <b>~$17.4-17.6B</b></div>
+        <ul class="ed-bullets ed-watch"><li>Q2 was a record (EPS $20.98 vs. $14.47 expected), so the sequential step-down is the focus.</li><li>Softer fixed-income vs. very strong equities trading; M&amp;A and IPO backlog.</li><li>Asset &amp; wealth management; non-comp expenses guided up more than $500M sequentially.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">UNH</span><span class="ed-name">UnitedHealth Group</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">1.1% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Tue, Oct 13 · before the open (company-confirmed), call 8:00am ET</span></div>
+        <div class="ed-figures">Consensus adj. EPS <b>~$4.12</b> <span class="ed-vs">(single aggregator)</span> · options imply ~8% move</div>
+        <ul class="ed-bullets ed-watch"><li>Medical care ratio vs. the 88.1% ±25bp full-year guide (Q2 was 86.7%).</li><li>Whether FY26 adj. EPS guide of $19.50-20.00 is raised.</li><li>Commercial cost trend (running above ~11%) and Medicaid margins.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">ASML</span><span class="ed-name">ASML Holding</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">0.7% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Wed, Oct 14 · before the open (per Nasdaq/MarketScreener; IR page not verified)</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$12.50 / €10.58</b> · Revenue <b>~€11.6B</b> <span class="ed-vs">(Q3 guide €11-12B, secondhand)</span></div>
+        <ul class="ed-bullets ed-watch"><li>ASML no longer reports bookings, so 2027 order commentary carries the weight (Q2 said 2027 low-NA EUV was nearly fully covered).</li><li>China at ~20% of sales under export controls.</li><li>High-NA EUV adoption timing; Q4 and 2027 guide and gross margin.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">TSM</span><span class="ed-name">Taiwan Semiconductor</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">0.7% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Thu, Oct 15 · call 2:00pm ET (confirmed on TSMC IR)</span></div>
+        <div class="ed-figures">Consensus revenue <b>~$45.8B</b> (guide $44.6-45.8B) · GM guide 65-67%, op margin 56-58%</div>
+        <ul class="ed-bullets ed-watch"><li>September revenue (Oct 8): NT$511.86B (~US$16.07B), +54.6% y/y, -0.6% m/m; Q3 total ~NT$1.494T, above the top of guidance.</li><li>Gross margin vs. 2nm ramp dilution of ~3-4 pts.</li><li>Q4 guide and capex plan; CoWoS and 2nm capacity.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">NFLX</span><span class="ed-name">Netflix</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">2.0% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Tue, Oct 20 · 1:01pm PT (company-confirmed)</span></div>
+        <div class="ed-figures">Company guide EPS <b>$0.82</b> on revenue <b>$12.86B</b>, 33.2% op margin <span class="ed-vs">· consensus ~$0.83-0.84, $12.88-13.02B</span></div>
+        <ul class="ed-bullets ed-watch"><li>Whether it beats its own low guide, and the Q4/2027 outlook.</li><li>Ad-tier revenue growth and operating margin vs. content spend.</li><li>Engagement hours as the proxy now that subscribers are not reported.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">PM</span><span class="ed-name">Philip Morris International</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">2.1% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">~Oct 21 · before the open (estimate; one site says Oct 20 confirmed)</span></div>
+        <div class="ed-figures">Company Q3 adj. EPS guide <b>$2.20-2.25</b> <span class="ed-vs">· consensus ~$2.24-2.25, revenue ~$11.2-11.3B</span></div>
+        <ul class="ed-bullets ed-watch"><li>US ZYN growth vs. stepped-up 2H investment.</li><li>IQOS volume and the ILUMA launch.</li><li>Japan volatility ahead of the October excise increase; FX effect on the FY26 guide.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">AXP</span><span class="ed-name">American Express</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">1.8% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Fri, Oct 23 · ~7:00am ET, call 8:30am</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$4.59-4.60</b> · Revenue <b>~$20.1B</b> <span class="ed-vs">· Q2 EPS $4.53 vs. $4.40</span></div>
+        <ul class="ed-bullets ed-watch"><li>Billed business growth and card-fee acceleration from the Platinum refresh.</li><li>Credit provisions and delinquencies.</li><li>Whether the $17.30-17.90 FY26 EPS guide is raised.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">KO</span><span class="ed-name">Coca-Cola</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">1.5% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Tue, Oct 27 · before the open (company-confirmed; Benzinga shows Oct 20)</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$0.88</b> <span class="ed-vs">· revenue $12.4-12.9B depending on source</span></div>
+        <ul class="ed-bullets ed-watch"><li>Organic growth vs. the ~5% guide; price vs. volume.</li><li>FX and emerging-market trends.</li><li>Guide reaffirm/raise with the stock near highs (~+29% YTD per last week).</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">AMT</span><span class="ed-name">American Tower</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">2.3% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Tue, Oct 27 · 7:00am ET, call 8:30am (company-confirmed)</span></div>
+        <div class="ed-figures">AFFO/share consensus <b>~$2.76-2.78</b> · Revenue <b>~$2.76B</b> <span class="ed-vs">· FY26 AFFO guide $11.00-11.17 (raised)</span></div>
+        <ul class="ed-bullets ed-watch"><li>A further guide raise after the Q2 beat-and-raise.</li><li>CoreSite data-center leasing.</li><li>US carrier churn and escalators; international FX and leverage.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">V</span><span class="ed-name">Visa</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">2.2% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Tue, Oct 27 · after the close, call 5pm ET (company-confirmed Oct 8) · fiscal Q4</span></div>
+        <div class="ed-figures">No current consensus found <span class="ed-vs">· year-ago Q4: adj. EPS $2.98, revenue $10.72B</span></div>
+        <ul class="ed-bullets ed-watch"><li>US and cross-border volume growth.</li><li>FY27 outlook.</li><li>Interchange settlement and regulatory news. (No 2026-specific analyst previews found; items are generic.)</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">MSFT</span><span class="ed-name">Microsoft</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">3.0% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Wed, Oct 28 · after the close, call 2:30pm PT (company-confirmed Oct 7) · fiscal Q1 FY27</span></div>
+        <div class="ed-figures">Consensus revenue <b>~$89.7-92.5B</b> <span class="ed-vs">(guide midpoint ~$90.4B)</span> · EPS <b>~$4.82</b> <span class="ed-vs">(one tracker)</span></div>
+        <ul class="ed-bullets ed-watch"><li>Azure growth vs. the ~45% constant-currency guide (43% last quarter).</li><li>OpenAI exposure, after this week's FT report on OpenAI revenue run-rate.</li><li>Capex and margins as depreciation rises.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">GEHC</span><span class="ed-name">GE HealthCare</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">0.2% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Wed, Oct 28 · before the open, call 8:30am ET (company-confirmed Oct 7)</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$1.21</b> · Revenue <b>~$5.35B</b> <span class="ed-vs">(Benzinga only)</span></div>
+        <ul class="ed-bullets ed-watch"><li>Tariff costs (no IEEPA refund assumed) and mitigation.</li><li>China caution.</li><li>FY26 EPS guide of $4.80-5.00 (cut in Q1) and 3-4% organic growth guide.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">META</span><span class="ed-name">Meta Platforms</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">2.7% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Wed, Oct 28 · after the close (estimate; not company-confirmed)</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$6.33-6.75</b> <span class="ed-vs">(wide spread)</span> · Revenue <b>~$63.0-63.3B</b> <span class="ed-vs">(guide $61-64B)</span></div>
+        <ul class="ed-bullets ed-watch"><li>2026 capex (reported $125-145B) and 2027 expense signals; Q2 free cash flow was just $784M.</li><li>Ad growth vs. AI costs; Q2 EPS $6.18 vs. $7.19 and the stock fell ~8%.</li><li>Financing of the AI build-out.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">GOOG</span><span class="ed-name">Alphabet</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">2.9% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Wed, Oct 28 · expected after the close (unconfirmed)</span></div>
+        <div class="ed-figures">No reliable EPS consensus found <span class="ed-vs">· Q3 revenue estimates ~$126.9B</span></div>
+        <ul class="ed-bullets ed-watch"><li>Google Cloud growth (Q2 $24.8B, +82%) and backlog.</li><li>Capex after the Q2 raise to $195-205B; 2027 projections unverified.</li><li>Margin pressure from third-party capacity; search resilience.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">QCOM</span><span class="ed-name">Qualcomm</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">1.2% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Wed, Oct 28 · after the close, fiscal Q4 (estimate)</span></div>
+        <div class="ed-figures">Guide EPS <b>$2.05-2.25</b>, revenue <b>$9.7-10.5B</b> <span class="ed-vs">· consensus ~$2.23 non-GAAP, revenue ~$10.0-10.2B</span></div>
+        <ul class="ed-bullets ed-watch"><li>Handset weakness and Apple modem share loss.</li><li>Data-center AI chip ramp.</li><li>Next-quarter guidance. (Other sources show EPS $1.50, likely GAAP.)</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">GEV</span><span class="ed-name">GE Vernova</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">1.9% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">~Wed, Oct 28 (estimate; company has not confirmed)</span></div>
+        <div class="ed-figures">Consensus not reliable <span class="ed-vs">· FY26 revenue guide $45.5-46.5B; Q2 adj. EPS $2.47 vs. $3.22 est. (miss), orders $24.2B</span></div>
+        <ul class="ed-bullets ed-watch"><li>Orders and backlog (~$176B) and gas-turbine slot reservations (125 GW target).</li><li>Margins after the Q2 EPS miss.</li><li>Whether FY guidance is raised.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">AMZN</span><span class="ed-name">Amazon.com</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">7.6% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">~Thu, Oct 29 · after the close (estimate)</span></div>
+        <div class="ed-figures">Guide sales <b>$197-202B</b>, op income <b>$22.5-26.5B</b> <span class="ed-vs">· revenue consensus ~$202B; EPS consensus not found</span></div>
+        <ul class="ed-bullets ed-watch"><li>AWS growth (Q2 $42.2B, +37%) and backlog.</li><li>2026 capex of ~$220B and free cash flow.</li><li>Op income vs. the guide range; Q4 holiday guide.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">MA</span><span class="ed-name">Mastercard</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">5.8% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Oct 22 or Oct 29 (sources conflict; neither company-confirmed)</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$5.12-5.15</b> <span class="ed-vs">(one source $5.30)</span> · Revenue <b>~$9.63B</b> <span class="ed-vs">· prior quarter $5.04 vs. $4.76</span></div>
+        <ul class="ed-bullets ed-watch"><li>Cross-border volume and travel trends.</li><li>Value-added services growth.</li><li>US consumer spending and stablecoin/regulatory items.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">BMY</span><span class="ed-name">Bristol-Myers Squibb</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">1.2% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Thu, Oct 29 · call 8:00am ET (company-confirmed Sep 18)</span></div>
+        <div class="ed-figures">Consensus not found <span class="ed-vs">· FY26 guide EPS $6.05-6.35, revenue $46.0-47.5B; Q2 EPS $2.04, revenue $12.97B (beat)</span></div>
+        <ul class="ed-bullets ed-watch"><li>Cobenfy ramp.</li><li>Eliquis (Q3 consensus ~$3.6B) and the guided 2027 step-down of $1.5-2B.</li><li>Whether guidance is raised again.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">XOM</span><span class="ed-name">ExxonMobil</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">3.6% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">~Fri, Oct 30 · before the open (estimate)</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$3.51-3.66</b> · Revenue <b>~$97.6-99.8B</b> <span class="ed-vs">· Q2 EPS $3.52</span></div>
+        <ul class="ed-bullets ed-watch"><li>Realizations with WTI near $91 amid the Middle East conflict.</li><li>Refining margins and maintenance timing.</li><li>Permian and Guyana volumes; buybacks. (No 2026-specific previews found.)</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">AAPL</span><span class="ed-name">Apple</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">6.8% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Mon, Nov 2 · ~1:30pm PT (company-confirmed per MacRumors; some sites show stale dates) · fiscal Q4</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$1.98</b> <span class="ed-vs">(one source)</span> · Revenue <b>~$113.2B</b> <span class="ed-vs">(guide +9-11%, $111.7-113.7B)</span></div>
+        <ul class="ed-bullets ed-watch"><li>Gross margin guide of 47-48% (includes a tariff-refund benefit) vs. memory-cost headwind.</li><li>iPhone growth (mid-teens guided) and supply constraints.</li><li>First call under new CEO Ternus.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">SO</span><span class="ed-name">Southern Company</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span><span class="ed-alloc">1.9% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Thu, Nov 5 · by 7:30am ET, call 1:00pm ET (company-confirmed Sep 25)</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$1.65-1.67</b> · Revenue <b>~$8.3-8.6B</b> <span class="ed-vs">· FY26 guide $4.50-4.60</span></div>
+        <ul class="ed-bullets ed-watch"><li>Large-load/data-center contracts and pipeline updates.</li><li>Capex plan updates.</li><li>Weather-normalized sales and Georgia Power regulatory items.</li></ul>
+      </article>
+    </div>
+
+    <div class="ed-subgroup-label ed-reported">Already reported — 7 (most recent quarters)</div>
+    <div class="ed-cards">
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">PEP</span><span class="ed-name">PepsiCo</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-reported">Reported</span><span class="ed-alloc">1.3% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Thu, Oct 8 · before the open, Q3 2026</span><span class="ed-reaction ed-flat">◆ ~+1% premarket (close not found)</span></div>
+        <div class="ed-figures">Core EPS <b>$2.34</b> <span class="ed-vs">vs. ~$2.29-2.30 est. (beat)</span> · Revenue <b>$25.27B</b> <span class="ed-vs">vs. ~$24.9B est. (beat, +5.6%)</span></div>
+        <ul class="ed-bullets"><li>Organic revenue +3.1%, the best since Q4 2023; GAAP EPS $2.23 vs. $1.90.</li><li>Full-year guidance cut and more cost cuts announced; North America recovery slower and Q4 margin pressure flagged. The size of the cut conflicts across sources (1-2% vs. 2.5-3.5% core EPS growth).</li><li>Next report: Q4 in early Feb 2027 (estimate).</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">AVGO</span><span class="ed-name">Broadcom</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-reported">Reported</span><span class="ed-alloc">2.4% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Sep 2 · after the close, fiscal Q3 FY2026</span><span class="ed-reaction ed-flat">◆ unverified; sources conflict</span></div>
+        <div class="ed-figures">Revenue <b>$29.59B</b> <span class="ed-vs">vs. ~$29.36B est. (beat, +86%)</span> · Adj. EPS <b>$3.32</b> <span class="ed-vs">vs. $3.24 est. (beat)</span></div>
+        <ul class="ed-bullets"><li>AI semiconductor revenue $16.7B (+221%); Q4 revenue guide $34.8B vs. ~$35.03B expected. Targets reiterated: $115B AI revenue in FY27, $230B in FY28.</li><li>Reaction conflicts: roughly flat after hours; one source reports -5% to -6% next session.</li><li>Next report: fiscal Q4, early-to-mid Dec (estimate).</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">NVDA</span><span class="ed-name">Nvidia</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-reported">Reported</span><span class="ed-alloc">0.4% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Aug 26 · after the close, fiscal Q2 FY2027</span><span class="ed-reaction ed-flat">◆ unverified; sources conflict</span></div>
+        <div class="ed-figures">Revenue <b>$96.2B</b> <span class="ed-vs">vs. ~$92.2B est. (beat, +106%)</span> · Non-GAAP EPS <b>$2.22</b> <span class="ed-vs">vs. $2.10 est. (beat)</span></div>
+        <ul class="ed-bullets"><li>Data Center $89.0B; Q3 guide $108B ±2% vs. ~$104.2B expected, assuming zero China data-center compute.</li><li>CFO flagged ~70% FY28 growth.</li><li>Reaction ranged from -2% to +4% after hours; no confirmed close. Next report ~mid/late Nov (estimate).</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">CRM</span><span class="ed-name">Salesforce</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-reported">Reported</span><span class="ed-alloc">1.3% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Aug 26 · after the close, fiscal Q2 FY2027</span><span class="ed-reaction ed-up">▲ ~+13% after hours (next-day close unverified)</span></div>
+        <div class="ed-figures">Revenue <b>$11.35B</b> <span class="ed-vs">(+11%, slight beat)</span> · Adj. EPS <b>$5.90</b> <span class="ed-vs">vs. ~$3.27 est.; includes a $2.6B Anthropic-stake gain (~$3.37 ex-gain, still a beat)</span></div>
+        <ul class="ed-bullets"><li>FY27 revenue guide raised to $46.1-46.4B; cRPO $33.5B (+14%). Part of the raise depends on pending deals closing.</li><li>Stock rose ~13% after hours; one source calls the next-day gain over 20%, unconfirmed.</li><li>Next report: late Nov / early Dec (estimate).</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">UBER</span><span class="ed-name">Uber Technologies</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-reported">Reported</span><span class="ed-alloc">0.3% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Aug 5 · before the open, Q2 2026</span><span class="ed-reaction ed-flat">◆ mixed on the print</span></div>
+        <div class="ed-figures">Gross Bookings <b>$58.0B</b> <span class="ed-vs">(+24%)</span> · Non-GAAP EPS <b>$0.81</b> <span class="ed-vs">vs. ~$0.83 est. (slight miss)</span></div>
+        <ul class="ed-bullets"><li>Adj. EBITDA $2.8B (+33%); record free cash flow.</li><li>Q3 EPS guide $0.84-0.88 vs. ~$0.91-0.99 consensus.</li><li>Next report: ~Nov 3 before the open (inferred, unconfirmed); consensus EPS ~$0.91-0.99, revenue ~$14.7-14.8B.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">DIS</span><span class="ed-name">The Walt Disney Co.</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-reported">Reported</span><span class="ed-alloc">1.2% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Aug 5 · before the open, fiscal Q3</span><span class="ed-reaction ed-up">▲ ~+3% on the print</span></div>
+        <div class="ed-figures">Revenue <b>$25.2B</b> <span class="ed-vs">(slight miss, +7%)</span> · Adj. EPS <b>$2.06</b> <span class="ed-vs">vs. $1.86 est. (beat)</span></div>
+        <ul class="ed-bullets"><li>Experiences revenue +10%; segment operating income +21% to $5.6B.</li><li>FY26 adj. EPS growth guide ~12%; buyback of at least $9B.</li><li>Next report: fiscal Q4 ~Nov 11-12 (sources conflict); consensus EPS ~$1.67, revenue ~$25.05B.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">BATRA</span><span class="ed-name">Atlanta Braves Holdings</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-reported">Reported</span><span class="ed-alloc">0.1% of portfolio</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Aug 5 · Q2 2026</span><span class="ed-reaction ed-flat">◆ no clear read</span></div>
+        <div class="ed-figures">Revenue <b>$305M</b> <span class="ed-vs">(-2%)</span> · EPS <b>-$0.19</b> <span class="ed-vs">vs. ~+$0.41 est. (miss)</span></div>
+        <ul class="ed-bullets"><li>Baseball revenue $276M (-4%) on six fewer home games; Mixed-Use Development $29M (+14%).</li><li>Q3 is the Braves' strongest quarter.</li><li>Next report ~Nov 4-5 (unconfirmed); EPS consensus ~$0.74 (single source).</li></ul>
+      </article>
+    </div>
+
+  </section>
+
+  <section class="ed-block" id="ed-watch">
+    <div class="ed-block-head"><h2>Companies to Watch</h2><span class="ed-count">10 market movers outside your portfolio</span></div>
+    <p class="ed-block-sub">Large companies not in your book, chosen for index weight or bellwether roles: AI memory (MU), AI infrastructure financing (ORCL), AI chips (AMD), AI software (PLTR), EV demand (TSLA), bank health (C, BAC), consumer spending (WMT), pharma/GLP-1 (LLY) and the economy-wide proxy (BRK.B). Roster unchanged; no more prominent standalone story displaced a name this week.</p>
+    <div class="ed-subgroup-label ed-reported">Already reported — 2</div>
+    <div class="ed-cards">
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">MU</span><span class="ed-name">Micron Technology · AI-memory/HBM supercycle bellwether</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-reported">Reported</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Wed, Sep 30 · after the close, fiscal Q4 FY2026</span><span class="ed-reaction ed-flat">◆ ~flat at the close; next-day move unconfirmed</span></div>
+        <div class="ed-figures">Revenue <b>$54.23B</b> <span class="ed-vs">vs. ~$51.3B est. (beat)</span> · Adj. EPS <b>$33.42</b> <span class="ed-vs">vs. ~$31.8 est. (beat)</span></div>
+        <ul class="ed-bullets"><li>FQ1 FY27 guide: revenue ~$61.5B, EPS $38.15, well above estimates; gross margin ~87%.</li><li>Management expects an even stronger fiscal 2027 on tight supply.</li><li>Closed $1,065.11 on Sep 30 (flat); after-hours moves of up to +15% were reported but not confirmed. Figures come from secondary sources — verify. Next report ~late Dec.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">ORCL</span><span class="ed-name">Oracle · AI-infrastructure backlog and financing-risk bellwether</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-reported">Reported</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Thu, Sep 10 · after the close, fiscal Q1 FY2027</span><span class="ed-reaction ed-flat">◆ unverified; sources conflict</span></div>
+        <div class="ed-figures">Revenue <b>~$19.3B</b> <span class="ed-vs">(+30%)</span> · Non-GAAP EPS <b>$1.92</b> <span class="ed-vs">vs. $1.74 est. (beat)</span></div>
+        <ul class="ed-bullets"><li>OCI revenue +121% to $7.4B; record RPO of $664B; FY27 guide raised to at least $90B revenue and $8.10 EPS.</li><li>Completed a $20B at-the-market equity sale; financing and free cash flow remain the debate.</li><li>Reaction conflicts (~+7% after hours here vs. ~-9% in another source); next-day close not found. Next report mid-Dec.</li></ul>
+      </article>
+    </div>
+
+    <div class="ed-subgroup-label ed-upcoming">Upcoming — 8</div>
+    <div class="ed-cards">
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">TSLA</span><span class="ed-name">Tesla · EV/autonomy/robotaxi mega-cap</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Wed, Oct 21 · after the close, call 5:30pm ET (company-confirmed via 8-K)</span></div>
+        <div class="ed-figures">Consensus revenue <b>~$27.6-27.7B</b> · EPS <b>$0.19-0.45</b> <span class="ed-vs">(sources differ widely)</span> · Q3 deliveries <b>486,532</b> <span class="ed-vs">vs. ~461,974 est.</span></div>
+        <ul class="ed-bullets ed-watch"><li>Whether the delivery beat translates to margin; Q2 EPS missed ($0.33 vs. $0.50) despite a revenue beat.</li><li>Pricing, incentives and energy storage.</li><li>Robotaxi/FSD, Cybercab and Optimus timelines.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">C</span><span class="ed-name">Citigroup · Turnaround story, capital-markets signal</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Tue, Oct 13 · ~8:00am ET, webcast 11am (company-confirmed)</span></div>
+        <div class="ed-figures">Consensus not found</div>
+        <ul class="ed-bullets ed-watch"><li>Investment banking and markets fees normalizing after a record Q2.</li><li>ROTCE progress toward target; card credit costs.</li><li>Banamex separation and expense discipline.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">BAC</span><span class="ed-name">Bank of America · Rate-sensitive consumer/credit read</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Wed, Oct 14 · before the open (one source; confirm on BAC IR)</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$1.12-1.17</b> · Revenue <b>~$30.8-31.2B</b></div>
+        <ul class="ed-bullets ed-watch"><li>Tough comparison after a record Q2; IB and trading fees expected to normalize.</li><li>NII trajectory and deposit growth.</li><li>Net charge-offs, card credit and reserves.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">AMD</span><span class="ed-name">Advanced Micro Devices · Main merchant AI-GPU challenger to Nvidia</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">~Tue, Nov 3 (aggregator only; not company-confirmed)</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$1.64</b> <span class="ed-vs">(15 analysts)</span> · options imply ~7% move</div>
+        <ul class="ed-bullets ed-watch"><li>MI450/Helios ramp timing and delay rumors; first gigawatt of the OpenAI deal in 2H26.</li><li>MI350 ramp and data-center share.</li><li>Gross margin vs. guide.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">PLTR</span><span class="ed-name">Palantir Technologies · AI-software momentum bellwether</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">~Mon, Nov 2 (Benzinga; not company-confirmed)</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$0.40</b> · Revenue <b>~$2.17B</b> <span class="ed-vs">(guide ~$2.16B; FY26 revenue guide ~$8.15B)</span></div>
+        <ul class="ed-bullets ed-watch"><li>Five straight EPS beats — whether a beat is enough given valuation.</li><li>US commercial and government growth.</li><li>Adj. operating income vs. ~$1.29B guide.</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">LLY</span><span class="ed-name">Eli Lilly · GLP-1/obesity bellwether</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">Thu, Oct 29 · before the open (TipRanks says confirmed)</span></div>
+        <div class="ed-figures">Consensus EPS <b>~$9.81-9.86</b> · Revenue <b>~$22.2-22.3B</b> <span class="ed-vs">· Q2 was a big beat ($8.38 vs. $6.16)</span></div>
+        <ul class="ed-bullets ed-watch"><li>Whether the FY26 EPS guide of $35.50-36.50 is raised.</li><li>Mounjaro/Zepbound volume vs. price erosion.</li><li>Orforglipron launch uptake. (No Q3-specific previews found.)</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">BRK.B</span><span class="ed-name">Berkshire Hathaway · Economy-wide conglomerate proxy; new-CEO capital allocation</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">~early Nov, likely a Saturday (no date found)</span></div>
+        <div class="ed-figures">No Street EPS consensus <span class="ed-vs">· Q2 operating EPS reportedly well above est. (single source)</span></div>
+        <ul class="ed-bullets ed-watch"><li>Buybacks and net equity purchases under CEO Greg Abel.</li><li>Insurance underwriting and BNSF volumes.</li><li>Use of the large cash pile. (Inferred; no 2026-specific previews found.)</li></ul>
+      </article>
+      <article class="ed-card">
+        <div class="ed-card-top">
+          <div class="ed-ticker-block"><span class="ed-ticker">WMT</span><span class="ed-name">Walmart · Consumer/tariff bellwether</span></div>
+          <div class="ed-badges"><span class="ed-pill ed-upcoming">Upcoming</span></div>
+        </div>
+        <div class="ed-card-meta"><span class="ed-date">~Thu, Nov 19 · before the open (TipRanks says confirmed; MarketBeat estimates)</span></div>
+        <div class="ed-figures">Q3 guide EPS <b>$0.62-0.64</b> <span class="ed-vs">vs. $0.68 prior consensus</span> · revenue guide <b>$183.1-184.5B</b></div>
+        <ul class="ed-bullets ed-watch"><li>US comps (slowed to 2.6% from 4.6%) and consumer health.</li><li>Advertising and e-commerce offsetting price investments; tariff-refund pass-through.</li><li>FY27 EPS guide $2.80-2.87; P/E near 40.</li></ul>
+      </article>
+    </div>
+
+  </section>
+
+  <section class="ed-block" id="ed-market">
+    <div class="ed-block-head"><h2>State of the Market</h2><span class="ed-count">macro backdrop &amp; season tone</span></div>
+    <p class="ed-block-sub">The tape all of the above is trading against, as of Friday, October 9, 2026's close. Figures come from web search summaries; items with conflicting sources are noted.</p>
+    <div class="ed-stat-tiles">
+      <div class="ed-stat-tile"><div class="ed-label">S&amp;P 500</div><div class="ed-value">7,811.51</div><div class="ed-sub ed-up">+0.59% Oct 9; +1.2% on the week; ~0.4% below Tuesday's record</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">Nasdaq Composite</div><div class="ed-value">27,366.17</div><div class="ed-sub ed-up">+0.64% Oct 9; ~+0.6% on the week; -1.25% Oct 7 on OpenAI report</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">Dow Jones</div><div class="ed-value">51,655.01</div><div class="ed-sub ed-up">+0.83% Oct 9; +0.9% on the week</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">VIX</div><div class="ed-value">14.84</div><div class="ed-sub">Oct 9 close, down 3.7%</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">Fed funds rate</div><div class="ed-value">3.75-4.00%</div><div class="ed-sub">hiked 25bp Sept 16; Oct 27-28 hike odds ~17-25%</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">10-yr yield</div><div class="ed-value">~5.23-5.25%</div><div class="ed-sub ed-down">near highest since 2002; 2s10s ~+45bp</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">Headline CPI (Aug)</div><div class="ed-value">3.4%</div><div class="ed-sub">y/y; Sept CPI due Wed Oct 14</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">Core PCE (Aug)</div><div class="ed-value">3.0%</div><div class="ed-sub">y/y per one source; another shows 3.4% — verify</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">Sept jobs</div><div class="ed-value">+29K</div><div class="ed-sub ed-down">vs. +84K est.; unemployment 4.2%</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">Q2 GDP (3rd est.)</div><div class="ed-value">2.2%</div><div class="ed-sub ed-up">annualized; carried from last week</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">Q3 est. EPS growth</div><div class="ed-value">29.5%</div><div class="ed-sub ed-up">FactSet, Oct 2; Q4 est. 26.5%</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">Q2 EPS beat rate</div><div class="ed-value">86%</div><div class="ed-sub ed-up">FactSet final, Aug 7; Q2 growth 50.4%</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">S&amp;P fwd P/E</div><div class="ed-value">19.0</div><div class="ed-sub">FactSet, Oct 2; 72 positive vs. 44 negative Q3 guides</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">AAII bullish</div><div class="ed-value">32.7%</div><div class="ed-sub">bears 48.1%, week ending Sept 23 (newer not found)</div></div>
+      <div class="ed-stat-tile"><div class="ed-label">WTI crude</div><div class="ed-value">~$91.5</div><div class="ed-sub ed-down">Oct 8 settle, +3.6% on Middle East escalation</div></div>
+    </div>
+    <div class="ed-panels">
+      <div class="ed-panel">
+        <h3><span class="ed-dot"></span>Earnings scorecard</h3>
+        <p>FactSet's final Q2 2026 update (Aug 7) put blended y/y EPS growth at <strong>50.4%</strong> with <strong>86%</strong> of S&amp;P 500 companies beating, inflated by one-time Alphabet and Amazon gains. Q3 season has not started: only a handful of S&amp;P companies (PepsiCo among them) have reported, so there is no meaningful beat-rate yet.</p>
+        <p>FactSet's Oct 2 Earnings Insight puts Q3 estimated EPS growth at <strong>29.5%</strong> (up from 26.7% on June 30 and 29.1% a week earlier), with per-share estimates <em>rising</em> 1.4% during the quarter, unusual since they normally fall. All eleven sectors are expected to grow, led by Energy, Information Technology, Communication Services and Materials. Guidance is lopsided positive (72 positive vs. 44 negative); Q4 growth is estimated at 26.5% and forward P/E is 19.0. A later FactSet edition (Oct 9) was not found.</p>
+      </div>
+      <div class="ed-panel">
+        <h3><span class="ed-dot"></span>Market tone &amp; sentiment</h3>
+        <p>The S&amp;P 500 closed Friday at <strong>7,811.51</strong> (+0.59%), the Nasdaq at <strong>27,366.17</strong> (+0.64%) and the Dow at <strong>51,655.01</strong> (+0.83%). Weekly gains versus last Friday's closes were roughly +1.2%, +0.6% and +0.9% (computed). The S&amp;P hit its 28th record close of 2026 on Tuesday, its first since August; the Dow is still ~5% below its Aug 5 record. The VIX closed at 14.84.</p>
+        <p>The week was volatile: Wednesday the Nasdaq fell 1.25% (worst day since mid-August) after an FT report that OpenAI's annualized revenue is about $20B below prior signals (~$50B vs. ~$70B), hitting AI-linked names like Microsoft, Oracle and Nvidia, then recovered Thursday-Friday. Consumer discretionary was reported heading for a ninth straight weekly decline. AAII sentiment: the latest reading found (week ending Sept 23) was 32.7% bullish vs. 48.1% bearish; newer data was not found.</p>
+      </div>
+      <div class="ed-panel">
+        <h3><span class="ed-dot"></span>Macro backdrop</h3>
+        <p>The Fed raised rates 25bp to <strong>3.75-4.00%</strong> on Sept 16 (12-0). Minutes released Oct 7 showed all 19 officials backed the hike and most expect another by year-end, but NY Fed's Williams sees "no need for urgency" and weak jobs data (<strong>+29K</strong> in September vs. ~84K expected, unemployment 4.2%) cut October hike odds to roughly 17-25% for the Oct 27-28 FOMC. Kashkari remains hawkish.</p>
+        <p>Inflation is the pressure point: August CPI ran <strong>3.4%</strong> y/y amid the Iran-war oil shock and tariffs (WTI ~$91.5 after a 3.6% jump Thursday on escalation signs). <strong>September CPI is due Wednesday Oct 14</strong>, a key input to the hike debate; Citi flagged core of 0.2% m/m or lower as the threshold. The 10-year yield sits near 5.23-5.25%, around its highest since 2002. Q2 GDP was 2.2% (third estimate).</p>
+      </div>
+      <div class="ed-panel">
+        <h3><span class="ed-dot"></span>Forward outlook</h3>
+        <p>Season starts in earnest next week: JPMorgan, Goldman and UnitedHealth (Tue Oct 13), Citi (Oct 13), BofA and ASML (Oct 14), TSMC (Oct 15), then Netflix (Oct 20) and Tesla (Oct 21) before the mega-cap tech cluster Oct 28-29 and the FOMC Oct 27-28. Strategist targets were not re-sourced this week; last week's edition cited Citi 8,100, Goldman 8,000 and BofA 7,100 (cautious, "too many red flags") — treat as dated.</p>
+        <p>Key risks: more Fed hikes into a stalling labor market (stagflation tilt), oil and Middle East escalation, long-end yields above 5%, AI-capex financing doubts after the OpenAI revenue report, narrow mega-cap leadership, tariffs, and a high Q3 bar after 50% Q2 growth. Supports: rising estimates, broad sector growth and a calm VIX.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p><strong>How this was built:</strong> Section 1 covers all 30 individual stocks in <code>data/portfolio_export.xlsx</code> (ETFs, funds and cash excluded); allocations are each position's share of total export market value. Section 2 reuses last week's 10-name roster. Section 3 draws on FactSet's Oct 2 Earnings Insight, Federal Reserve minutes coverage, Polymarket/CME odds commentary, CNN/Yahoo/Cboe closing data and press market wraps. <strong>Data gaps:</strong> this run had web search only — full-page fetches were blocked — so all figures come from search summaries and many conflict. Notably: stock-price reactions for AVGO, NVDA, CRM, ORCL, MU and PEP are unverified; consensus is missing or single-source for V, AMZN (EPS), BMY, GOOG, GEV, C, BRK.B and others; dates for GS, ASML, PM, MA, GEV, META, GOOG, QCOM, AMZN, XOM, UBER, DIS and BATRA are estimates or conflict; PepsiCo's guidance-cut magnitude conflicts across sources; no newer AAII reading, FactSet edition after Oct 2, or updated strategist targets were found. Q2 GDP and Q2 beat-rate figures are carried from last week. Verify against live quotes and company IR pages before acting on anything here.</p>
+  </footer>
+<!-- EARNINGS-DASHBOARD:END -->
   </div>
 
 </div><!-- /content -->
@@ -1628,7 +2134,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <button class="bottom-nav-btn" onclick="switchTab('income',this)"><span class="icon">💰</span><span class="lbl">Income</span></button>
     <button class="bottom-nav-btn" onclick="switchTab('research',this)"><span class="icon">🔍</span><span class="lbl">Research</span></button>
     <button class="bottom-nav-btn" onclick="switchTab('reports',this)"><span class="icon">📊</span><span class="lbl">Reports</span></button>
-    <button class="bottom-nav-btn" onclick="switchTab('news',this)"><span class="icon">📰</span><span class="lbl">News</span></button>
+    <button class="bottom-nav-btn" onclick="switchTab('earnings',this)"><span class="icon">📈</span><span class="lbl">Earnings</span></button>
   </div>
 </div>
 
@@ -1757,48 +2263,48 @@ sectorETFs.forEach(s=>{ s.pct = null; });
 const MONTH_ABBR = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
 const holdings = [
-  {ticker:'GOOG', name:'Alphabet Inc Class C', qty:145, price:347.89, prev:344.86, cat:'U.S. individual stocks', div:0.24, cb:9285.597, sector:'Communication Services', divMonths:[3, 6, 9, 12]},
-  {ticker:'AMZN', name:'Amazon Inc', qty:520, price:262.48, prev:254.06, cat:'U.S. individual stocks', div:0, cb:7935.2, sector:'Consumer Discretionary', divMonths:[]},
-  {ticker:'AXP', name:'American Express', qty:100, price:308.17, prev:307.15, cat:'U.S. individual stocks', div:0.98, cb:7680, sector:'Financials', divMonths:[2, 5, 8, 11]},
-  {ticker:'AMT', name:'American Tower', qty:231.917, price:182.23, prev:166.73, cat:'U.S. individual stocks', div:4.2, cb:29934.594008, sector:'Real Estate', divMonths:[1, 4, 7, 10]},
-  {ticker:'AAPL', name:'Apple Inc', qty:340, price:336.63, prev:340.42, cat:'U.S. individual stocks', div:0.43, cb:7480, sector:'Information Technology', divMonths:[2, 5, 8, 11]},
-  {ticker:'AVUV', name:'Avantis U.S. Sm Cap Val', qty:259, price:119.62, prev:120.13, cat:'U.S. small & mid cap', div:1.18, cb:32182.0709, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'BMY', name:'Bristol-Myers Squibb', qty:320, price:59.11, prev:59.58, cat:'U.S. individual stocks', div:5.1, cb:17974.4, sector:'Health Care', divMonths:[2, 5, 8, 11]},
-  {ticker:'AVGO', name:'Broadcom Inc', qty:117, price:361.63, prev:360.14, cat:'U.S. individual stocks', div:1.25, cb:43750.395, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
-  {ticker:'KO', name:'Coca-Cola Co', qty:297.187, price:88.06, prev:87.77, cat:'U.S. individual stocks', div:2.33, cb:12492.9688, sector:'Consumer Staples', divMonths:[1, 4, 7, 10]},
-  {ticker:'XOM', name:'ExxonMobil', qty:379.363, price:168.96, prev:168.5, cat:'U.S. individual stocks', div:2.55, cb:22876.575244, sector:'Energy', divMonths:[3, 6, 9, 12]},
+  {ticker:'GOOG', name:'Alphabet Inc Class C', qty:145, price:348.97, prev:347.86, cat:'U.S. individual stocks', div:0.24, cb:9285.597, sector:'Communication Services', divMonths:[3, 6, 9, 12]},
+  {ticker:'AMZN', name:'Amazon Inc', qty:520, price:259.44, prev:262.43, cat:'U.S. individual stocks', div:0, cb:7935.2, sector:'Consumer Discretionary', divMonths:[]},
+  {ticker:'AXP', name:'American Express', qty:100, price:311.52, prev:308.17, cat:'U.S. individual stocks', div:0.98, cb:7680, sector:'Financials', divMonths:[2, 5, 8, 11]},
+  {ticker:'AMT', name:'American Tower', qty:231.917, price:182.51, prev:182.24, cat:'U.S. individual stocks', div:4.2, cb:29934.594008, sector:'Real Estate', divMonths:[1, 4, 7, 10]},
+  {ticker:'AAPL', name:'Apple Inc', qty:340, price:341.06, prev:336.64, cat:'U.S. individual stocks', div:0.43, cb:7480, sector:'Information Technology', divMonths:[2, 5, 8, 11]},
+  {ticker:'AVUV', name:'Avantis U.S. Sm Cap Val', qty:259, price:119.92, prev:119.64, cat:'U.S. small & mid cap', div:1.18, cb:32182.0709, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'BMY', name:'Bristol-Myers Squibb', qty:320, price:57.575, prev:59.12, cat:'U.S. individual stocks', div:5.1, cb:17974.4, sector:'Health Care', divMonths:[2, 5, 8, 11]},
+  {ticker:'AVGO', name:'Broadcom Inc', qty:117, price:354.77, prev:361.54, cat:'U.S. individual stocks', div:1.25, cb:43750.395, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'KO', name:'Coca-Cola Co', qty:297.187, price:89.785, prev:88.05, cat:'U.S. individual stocks', div:2.33, cb:12492.9688, sector:'Consumer Staples', divMonths:[1, 4, 7, 10]},
+  {ticker:'XOM', name:'ExxonMobil', qty:379.363, price:172.14, prev:168.94, cat:'U.S. individual stocks', div:2.55, cb:22876.575244, sector:'Energy', divMonths:[3, 6, 9, 12]},
   {ticker:'FSMDX', name:'Fidelity Mid Cap Index', qty:737.19, price:42.16, prev:41.99, cat:'U.S. small & mid cap', div:1.3, cb:27773.264655, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
   {ticker:'FSSNX', name:'Fidelity Small Cap Index', qty:880.84, price:35.11, prev:35.1, cat:'U.S. small & mid cap', div:1.1, cb:25178.459064, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'GRID', name:'First Trust NASDAQ CEA', qty:61, price:180.935, prev:178.26, cat:'U.S. diversified funds', div:0.7, cb:11269.9086, sector:'Industrials', divMonths:[3, 6, 9, 12]},
-  {ticker:'GEV', name:'GE Vernova', qty:30, price:1004.66, prev:999.35, cat:'U.S. individual stocks', div:0.03, cb:30097.806, sector:'Industrials', divMonths:[3, 6, 9, 12]},
-  {ticker:'IJH', name:'iShares S&P 400 Mid Cap', qty:271.576, price:73.42, prev:73.03, cat:'U.S. small & mid cap', div:1.2, cb:4646.475257, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'JPM', name:'JPMorgan Chase', qty:357.851, price:333.02, prev:331.42, cat:'U.S. individual stocks', div:1.74, cb:20626.53164, sector:'Financials', divMonths:[1, 4, 7, 10]},
-  {ticker:'MA', name:'Mastercard Inc', qty:173.061, price:589.23, prev:573.89, cat:'U.S. individual stocks', div:0.37, cb:12953.771605, sector:'Financials', divMonths:[2, 5, 8, 11]},
-  {ticker:'META', name:'Meta Platforms', qty:63, price:718.6, prev:720.89, cat:'U.S. individual stocks', div:0, cb:20599.803, sector:'Communication Services', divMonths:[]},
-  {ticker:'MSFT', name:'Microsoft Corp', qty:100, price:535.1, prev:522.61, cat:'U.S. individual stocks', div:0.68, cb:32427.44, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
-  {ticker:'NFLX', name:'Netflix Inc', qty:500, price:70.31, prev:71.57, cat:'U.S. individual stocks', div:0, cb:4715, sector:'Communication Services', divMonths:[]},
+  {ticker:'GRID', name:'First Trust NASDAQ CEA', qty:61, price:178.62, prev:180.89, cat:'U.S. diversified funds', div:0.7, cb:11269.9086, sector:'Industrials', divMonths:[3, 6, 9, 12]},
+  {ticker:'GEV', name:'GE Vernova', qty:30, price:996.98, prev:1004.73, cat:'U.S. individual stocks', div:0.03, cb:30097.806, sector:'Industrials', divMonths:[3, 6, 9, 12]},
+  {ticker:'IJH', name:'iShares S&P 400 Mid Cap', qty:271.576, price:73.155, prev:73.43, cat:'U.S. small & mid cap', div:1.2, cb:4646.475257, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'JPM', name:'JPMorgan Chase', qty:357.851, price:334.49, prev:332.99, cat:'U.S. individual stocks', div:1.74, cb:20626.53164, sector:'Financials', divMonths:[1, 4, 7, 10]},
+  {ticker:'MA', name:'Mastercard Inc', qty:173.061, price:595.33, prev:589.14, cat:'U.S. individual stocks', div:0.37, cb:12953.771605, sector:'Financials', divMonths:[2, 5, 8, 11]},
+  {ticker:'META', name:'Meta Platforms', qty:63, price:743.11, prev:718.67, cat:'U.S. individual stocks', div:0, cb:20599.803, sector:'Communication Services', divMonths:[]},
+  {ticker:'MSFT', name:'Microsoft Corp', qty:100, price:541.19, prev:535.07, cat:'U.S. individual stocks', div:0.68, cb:32427.44, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'NFLX', name:'Netflix Inc', qty:500, price:70.63, prev:70.3, cat:'U.S. individual stocks', div:0, cb:4715, sector:'Communication Services', divMonths:[]},
   {ticker:'TLXIX', name:'Nuveen Lifecycle Index', qty:4089.97, price:39.98, prev:40.18, cat:'Target-date / mixed', div:1.5, cb:60695.1548, sector:'Diversified Fund', divMonths:[6, 12]},
-  {ticker:'PEP', name:'PepsiCo Inc', qty:165, price:126.01, prev:128.34, cat:'U.S. individual stocks', div:3.38, cb:22521.345, sector:'Consumer Staples', divMonths:[3, 6, 9, 12]},
-  {ticker:'PM', name:'Philip Morris Intl', qty:181.209, price:201.18, prev:200.5, cat:'U.S. individual stocks', div:4.3, cb:14987.79639, sector:'Consumer Staples', divMonths:[1, 4, 7, 10]},
-  {ticker:'QCOM', name:'Qualcomm Inc', qty:104.415, price:175.56, prev:176.01, cat:'U.S. individual stocks', div:2.0, cb:5809.6506, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
-  {ticker:'CRM', name:'Salesforce Inc', qty:99, price:229.08, prev:227.8, cat:'U.S. individual stocks', div:0, cb:20956.32, sector:'Information Technology', divMonths:[]},
-  {ticker:'ADBE', name:'Adobe Inc', qty:34, price:242.27, prev:241.05, cat:'U.S. individual stocks', div:0, cb:7911.2016, sector:'Information Technology', divMonths:[]},
-  {ticker:'SCHD', name:'Schwab US Div Equity', qty:610, price:33.025, prev:33.15, cat:'U.S. diversified funds', div:3.5, cb:20040.513, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'SO', name:'Southern Company', qty:381.4, price:86.13, prev:86.15, cat:'U.S. individual stocks', div:3.3, cb:3188.504, sector:'Utilities', divMonths:[3, 6, 9, 12]},
-  {ticker:'GS', name:'Goldman Sachs', qty:105, price:895.685, prev:882.59, cat:'U.S. individual stocks', div:1.66, cb:18483.15, sector:'Financials', divMonths:[3, 6, 9, 12]},
-  {ticker:'DIS', name:'Walt Disney Co', qty:196.17, price:108.07, prev:107.02, cat:'U.S. individual stocks', div:0, cb:15770.1063, sector:'Communication Services', divMonths:[]},
-  {ticker:'UNH', name:'UnitedHealth Group', qty:50.22, price:379.28, prev:370.95, cat:'U.S. individual stocks', div:1.37, cb:11924.739, sector:'Health Care', divMonths:[3, 6, 9, 12]},
+  {ticker:'PEP', name:'PepsiCo Inc', qty:165, price:126.7, prev:125.97, cat:'U.S. individual stocks', div:3.38, cb:22521.345, sector:'Consumer Staples', divMonths:[3, 6, 9, 12]},
+  {ticker:'PM', name:'Philip Morris Intl', qty:181.209, price:201.98, prev:201.19, cat:'U.S. individual stocks', div:4.3, cb:14987.79639, sector:'Consumer Staples', divMonths:[1, 4, 7, 10]},
+  {ticker:'QCOM', name:'Qualcomm Inc', qty:104.415, price:174.45, prev:175.5, cat:'U.S. individual stocks', div:2.0, cb:5809.6506, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'CRM', name:'Salesforce Inc', qty:99, price:233.74, prev:229.13, cat:'U.S. individual stocks', div:0, cb:20956.32, sector:'Information Technology', divMonths:[]},
+  {ticker:'ADBE', name:'Adobe Inc', qty:34, price:238.1, prev:242.27, cat:'U.S. individual stocks', div:0, cb:7911.2016, sector:'Information Technology', divMonths:[]},
+  {ticker:'SCHD', name:'Schwab US Div Equity', qty:610, price:33.26, prev:33.04, cat:'U.S. diversified funds', div:3.5, cb:20040.513, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'SO', name:'Southern Company', qty:381.4, price:87.045, prev:86.17, cat:'U.S. individual stocks', div:3.3, cb:3188.504, sector:'Utilities', divMonths:[3, 6, 9, 12]},
+  {ticker:'GS', name:'Goldman Sachs', qty:105, price:893.95, prev:895.32, cat:'U.S. individual stocks', div:1.66, cb:18483.15, sector:'Financials', divMonths:[3, 6, 9, 12]},
+  {ticker:'DIS', name:'Walt Disney Co', qty:196.17, price:108.49, prev:108.05, cat:'U.S. individual stocks', div:0, cb:15770.1063, sector:'Communication Services', divMonths:[]},
+  {ticker:'UNH', name:'UnitedHealth Group', qty:50.22, price:378.18, prev:379.3, cat:'U.S. individual stocks', div:1.37, cb:11924.739, sector:'Health Care', divMonths:[3, 6, 9, 12]},
   {ticker:'VFFSX', name:'Vanguard 500 Index', qty:100, price:380.01, prev:381.79, cat:'U.S. diversified funds', div:1.3, cb:5000, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'VTWO', name:'Vanguard Russell 2000', qty:126, price:112.63, prev:112.1, cat:'U.S. small & mid cap', div:1.3, cb:3528, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'VXUS', name:'Vanguard Total Intl', qty:534, price:84.81, prev:84.1, cat:'International equity', div:2.0, cb:44763.9384, sector:'International / Diversified', divMonths:[3, 6, 9, 12]},
-  {ticker:'V', name:'Visa Inc', qty:100, price:385.505, prev:375.1, cat:'U.S. individual stocks', div:0.68, cb:13650, sector:'Financials', divMonths:[3, 6, 9, 12]},
-  {ticker:'BATRA', name:'Atlanta Braves Holdings', qty:25, price:57.355, prev:57.76, cat:'U.S. individual stocks', div:0, cb:1314, sector:'Communication Services', divMonths:[]},
-  {ticker:'TSM', name:'Taiwan Semiconductor Mfg ADR', qty:33, price:453.275, prev:457.99, cat:'International equity', div:1.0, cb:14078.889, sector:'Information Technology', divMonths:[3, 9]},
-  {ticker:'ASML', name:'ASML Holding N.V.', qty:7, price:1781.44, prev:1769.79, cat:'International equity', div:0.48, cb:12120.7002, sector:'Information Technology', divMonths:[2, 5, 8, 11]},
-  {ticker:'VIS', name:'Vanguard Industrials ETF', qty:6, price:324.175, prev:322.64, cat:'U.S. diversified funds', div:0.86, cb:2033.55, sector:'Industrials', divMonths:[3, 6, 9, 12]},
-  {ticker:'GEHC', name:'GE HealthCare Technologies Inc.', qty:52, price:65.74, prev:64.22, cat:'U.S. individual stocks', div:0.19, cb:3622.84, sector:'Health Care', divMonths:[3, 6, 9, 12]},
-  {ticker:'NVDA', name:'NVIDIA Corp', qty:44, price:229.34, prev:230.48, cat:'U.S. individual stocks', div:0.48, cb:9779.88, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
-  {ticker:'UBER', name:'Uber Technologies Inc', qty:76, price:71.505, prev:70.24, cat:'U.S. individual stocks', div:0, cb:5280.1836, sector:'Industrials', divMonths:[]},
+  {ticker:'VTWO', name:'Vanguard Russell 2000', qty:126, price:112.24, prev:112.66, cat:'U.S. small & mid cap', div:1.3, cb:3528, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
+  {ticker:'VXUS', name:'Vanguard Total Intl', qty:534, price:84.424, prev:84.82, cat:'International equity', div:2.0, cb:44763.9384, sector:'International / Diversified', divMonths:[3, 6, 9, 12]},
+  {ticker:'V', name:'Visa Inc', qty:100, price:389.305, prev:385.45, cat:'U.S. individual stocks', div:0.68, cb:13650, sector:'Financials', divMonths:[3, 6, 9, 12]},
+  {ticker:'BATRA', name:'Atlanta Braves Holdings', qty:25, price:57.52, prev:57.57, cat:'U.S. individual stocks', div:0, cb:1314, sector:'Communication Services', divMonths:[]},
+  {ticker:'TSM', name:'Taiwan Semiconductor Mfg ADR', qty:33, price:444.4901, prev:453.31, cat:'International equity', div:1.0, cb:14078.889, sector:'Information Technology', divMonths:[3, 9]},
+  {ticker:'ASML', name:'ASML Holding N.V.', qty:7, price:1750.26, prev:1780.34, cat:'International equity', div:0.48, cb:12120.7002, sector:'Information Technology', divMonths:[2, 5, 8, 11]},
+  {ticker:'VIS', name:'Vanguard Industrials ETF', qty:6, price:323.54, prev:324.11, cat:'U.S. diversified funds', div:0.86, cb:2033.55, sector:'Industrials', divMonths:[3, 6, 9, 12]},
+  {ticker:'GEHC', name:'GE HealthCare Technologies Inc.', qty:52, price:67.725, prev:65.74, cat:'U.S. individual stocks', div:0.19, cb:3622.84, sector:'Health Care', divMonths:[3, 6, 9, 12]},
+  {ticker:'NVDA', name:'NVIDIA Corp', qty:44, price:226.43, prev:229.28, cat:'U.S. individual stocks', div:0.48, cb:9779.88, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
+  {ticker:'UBER', name:'Uber Technologies Inc', qty:76, price:71.495, prev:71.51, cat:'U.S. individual stocks', div:0, cb:5280.1836, sector:'Industrials', divMonths:[]},
   {ticker:'CASH', name:'Cash & Equivalents', qty:1, price:43000.0, prev:43000.0, cat:'Cash & equivalents', div:5.0, cb:43000.0, sector:'Cash & Equivalents', divMonths:[]},
 
 ];
@@ -2760,125 +3266,6 @@ function wireResearchCrossLinks(){
 }
 wireResearchCrossLinks();
 
-// ---- SMART NEWS FALLBACK (hand-curated headlines, used only if news-feed.json — the
-// GitHub Action-generated live feed — is missing or empty) ----
-const fallbackNewsItems = [
-  {
-    ticker: "AMZN",
-    headline: "Amazon is reportedly weighing moving roughly $8 billion of Nvidia Grace Blackwell chips into a special-purpose vehicle and leasing them back, per Financial Times and Reuters reports — a financing structure that keeps AI capex off the balance sheet. The shares closed up 1.3% at $251.53 ahead of October 6-7 Prime Big Deal Days and the Q3 report expected around Oct 28-29.",
-    why: "Still only a proposal, but it speaks to how the AI-capex bill (about $220B guided for 2026) is being funded; the Q3 print is the next hard data point.",
-    day_pct: 1.33,
-    source: "TradingKey",
-    time: "Oct 2",
-    url: "https://www.tradingkey.com/analysis/stocks/us-stocks/262197540-amazon-amzn-stock-forecast-october-2-2026"
-  },
-  {
-    ticker: "JPM",
-    headline: "JPMorgan reports Q3 results before the open on Tuesday, Oct 13 — analysts expect about $5.84 per share versus $5.07 a year ago, and the bank has beaten EPS estimates in each of the last four quarters. The raised $1.65 quarterly dividend goes ex on Oct 6.",
-    why: "The first big-bank print of the quarter; trading and investment-banking fees holding near Q2 levels is the test for a stock still below its 52-week high.",
-    day_pct: -0.25,
-    source: "inkl",
-    time: "Oct 2",
-    url: "https://www.inkl.com/news/jpmorgan-chases-quarterly-earnings-preview-what-you-need-to-know"
-  },
-  {
-    ticker: "AAPL",
-    headline: "Apple closed up about 1% at $333.79 even as Barron's-cited analysts warned consumer AI agents could erode App Store and services gatekeeping. Fiscal Q3 revenue was $109.4B (+16%), and the next report is Oct 29.",
-    why: "The stock trades roughly 15% above GuruFocus's fair-value estimate, so the agent-disintermediation debate matters more than usual at this multiple.",
-    day_pct: 1.05,
-    source: "GuruFocus",
-    time: "Oct 2",
-    url: "https://www.gurufocus.com/news/9107844/apple-stocks-rises-although-ai-agents-threaten-appstore-gatekeeping"
-  },
-  {
-    ticker: "GS",
-    headline: "Goldman Sachs is the lead bidder for Palmer Square Capital Management, a roughly $37B credit manager built around a ~$27B CLO platform, according to Bloomberg; talks are preliminary and could still fall apart. The shares closed Friday at $902.86 (+0.7%), well off the summer highs.",
-    why: "A deal would add recurring fee revenue to the asset-management franchise, but no price has been disclosed, so return on capital can't be judged yet.",
-    day_pct: 0.69,
-    source: "Bloomberg",
-    time: "Sep 22",
-    url: "https://www.bloomberg.com/news/articles/2026-09-22/goldman-in-talks-to-buy-37-billion-credit-firm-palmer-square"
-  },
-  {
-    ticker: "META",
-    headline: "Meta posted its best month since 2013 in September, up roughly 30% after the Sept 8 launch of its Muse personal AI agent, and is within a few percent of its record close; it gave back some gains in the final days of the month and closed Friday at $728.07.",
-    why: "The multiple has re-rated from about 18x to 23x forward earnings, so the move now needs evidence that Muse adoption converts to revenue.",
-    day_pct: 0.29,
-    source: "Motley Fool",
-    time: "Sep 30",
-    url: "https://www.fool.com/investing/2026/09/30/meta-platforms-is-up-nearly-25-in-september-does-i/"
-  },
-  {
-    ticker: "AVGO",
-    headline: "Broadcom rose 3.3% to $355.14 on reports that Wall Street banks are assembling a financing package of about $60B for AI-chip infrastructure tied to Anthropic, with UBS reiterating Buy and a $470 target.",
-    why: "Financing for customers' chip purchases supports order visibility, but it also adds to the circular-funding questions hanging over the AI-capex complex.",
-    day_pct: 3.35,
-    source: "Invezz",
-    time: "Oct 2",
-    url: "https://invezz.com/pk/news/2026/10/02/why-broadcom-stock-is-gaining-today/"
-  }
-];
-const FALLBACK_NEWS_DATE = '2026-10-02'; // curated headlines are current as of this date
-
-// items: [{ticker, headline, why?, source, url, time, day_pct?}]. `why` and `day_pct` are
-// only present on live-feed items (from news-feed.json); fallback items render without them.
-function renderNews(items){
-  const el = document.getElementById('news-list');
-  el.innerHTML = items.map(n => {
-    const pctHtml = (typeof n.day_pct === 'number')
-      ? `<span class="news-pct ${n.day_pct>=0?'up-color':'dn-color'}">${n.day_pct>=0?'+':''}${n.day_pct.toFixed(2)}%</span>`
-      : '';
-    const whyHtml = n.why ? `<div class="why"><span class="why-label">Why</span>${n.why}</div>` : '';
-    return `<div class="news-item">
-      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px;">
-        <a class="headline" href="${n.url}" target="_blank" rel="noopener" style="flex:1;"><span class="ticker-tag">${n.ticker}</span>${n.headline}</a>
-        ${pctHtml}
-      </div>
-      ${whyHtml}
-      <div class="meta"><a href="${n.url}" target="_blank" rel="noopener">${n.source}</a> &nbsp;•&nbsp; ${n.time}</div>
-    </div>`;
-  }).join('');
-}
-renderNews(fallbackNewsItems);
-
-// ---- LIVE NEWS FEED (news-feed.json, written by the news-feed.yml GitHub Action) ----
-// Same pattern as mutual-fund-quotes.json: a static file the client reads on load. If it's
-// missing, empty, or malformed, the hand-curated fallback above stays on screen untouched.
-async function fetchNewsFeed(){
-  try {
-    const res = await fetch('./news-feed.json', {cache:'no-store'});
-    if(!res.ok) throw new Error('HTTP '+res.status);
-    const data = await res.json();
-    if(!data.movers || !data.movers.length) throw new Error('empty feed');
-
-    const genDate = new Date(data.generated_at);
-    // If the Action-generated feed is older than the curated headlines, keep the curated set.
-    if(!isNaN(genDate) && genDate < new Date(FALLBACK_NEWS_DATE+'T00:00:00')) throw new Error('feed older than curated headlines');
-    const dateStr = isNaN(genDate) ? '' : genDate.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
-
-    const items = data.movers.map(m => ({
-      ticker: m.ticker,
-      headline: m.headline,
-      why: m.why,
-      source: m.source,
-      url: m.url,
-      day_pct: m.day_pct,
-      time: dateStr || 'Recent'
-    }));
-    renderNews(items);
-
-    const updatedEl = document.getElementById('news-updated-line');
-    if(updatedEl){
-      const topTickers = items.slice(0,3).map(i=>i.ticker).join(', ');
-      updatedEl.innerHTML = `<span class="dot"></span>Last refreshed ${dateStr || 'recently'} — auto-generated from today's biggest movers (${topTickers})`;
-    }
-  } catch(e) {
-    console.warn('Live news feed unavailable, showing last-known static headlines:', e);
-    // fallbackNewsItems is already rendered — nothing further to do.
-  }
-}
-fetchNewsFeed();
-
 // ---- YTD vs. S&P 500 REMOVED Oct 2, 2026 (pending accuracy rework). Re-add: see ytd_vs_spy_module.md, step 2 — paste the JS block here. ----
 
 // ---- THEME TOGGLE (session only, no persistence) ----
@@ -2894,6 +3281,12 @@ function toggleTheme(){
     localStorage.setItem('pcc-theme', 'dark');
   }
   if(window.allocChart) updateAllocChartColors();
+}
+
+// ---- EARNINGS TAB: jump pills scroll to a section inside the pane ----
+function edJump(id){
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
 }
 
 // ---- TAB SWITCH ----
