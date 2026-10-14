@@ -1182,7 +1182,48 @@
    "kind": "company",
    "date": "2026-10-09",
    "summary": "New coverage: Buy, conviction 6/10, $46 target (~19% upside from $38.64). Washed-out quality — wide moat at 11.6x forward vs Lilly 39x, ~5% yield, 2026 guidance raised twice (now 0% to -6% CER): the bleeding is slowing while the market prices terminal decline. But Lilly is structurally winning (Zepbound, orforglipron, retatrutide); CagriSema FDA decision expected Q4 2026 is binary; patent cliff + MFN/TrumpRx pricing cap upside. Morningstar 3-star DKK 275; Q3 Nov 4. ADR 1:1 verified. Recommended gate: ≤$34 toward ~1% (not installed)."
+  },
+  {
+   "ticker": "GS",
+   "name": "Goldman Sachs Group, Inc.",
+   "file": "gs-q3-earnings-2026-10-13.html",
+   "rating": "Buy",
+   "target": "$1,050",
+   "kind": "company",
+   "date": "2026-10-13",
+   "summary": "Q3 2026 earnings update: UPGRADED to Buy, conviction 6/10, target raised to $1,050 (~18% upside from $891.91). Genuine franchise beat — EPS $17.01 (+39%) vs $13.09 consensus, revenue $18.68B (+23%, 2nd-highest quarter ever), record $1.654B advisory fees, #1 M&A, equities +72%, ROTE 20.5%, CET1 12.4%. FICC miss is industry-wide, not GS-specific. Stock faded +4.2% to -0.23% on sell-the-beat. Forward: $150B alts fundraising target, elevated Q4 incentive fees. Succession addressed by Solomon."
+  },
+  {
+   "ticker": "UNH",
+   "name": "UnitedHealth Group Incorporated",
+   "file": "unh-q3-earnings-2026-10-13.html",
+   "rating": "Strong Buy",
+   "target": "$475",
+   "kind": "company",
+   "date": "2026-10-13",
+   "summary": "Q3 2026 earnings update: Strong Buy 8/10, $475 target maintained (~26% upside from $377.76). MCR 88.4% vs 89.7% expected (-130 bps beat) is the whole story; adj EPS $4.69 vs $4.14 (+13%); FY2026 guide raised to ≥$20.50 (3rd raise). CFO's 2027 signal: ≥$20.50 is 'a solid run rate,' 13-16% LT growth implies ~$23.16 floor — the $475 target already embeds it. Caveats: $610M reserve development flattered MCR; revenue -0.4% YoY; commercial emerging as squeaky wheel; zero incremental DOJ disclosure. Accumulate-toward-2% gate stands. Cantor OW/$495 maintained."
+  },
+  {
+   "ticker": "JPM",
+   "name": "JPMorgan Chase & Co.",
+   "file": "jpm-q3-earnings-2026-10-13.html",
+   "rating": "Hold",
+   "target": "$360",
+   "kind": "company",
+   "date": "2026-10-13",
+   "summary": "Q3 2026 earnings update: Hold 5/10, $360 target maintained (~9% upside from $331.43). Rare, narrow, noisy miss — $5.57 GAAP ($5.75 ex $658M securities losses) vs $5.93; revenue $50.2B vs $51.23B — but credit benign (NCOs -15% YoY) and NII beat ($27.1B, +13%). Stock round-tripped (-3.8% premarket → +1.35% → close -0.86%) on the raised FY26 NII guide (~$106.2B) and $107B 2027 NII central case. Flags: buyback collapsed (~$1B vs $6.7B); expenses +12% vs revenue +8% with FY26 guide raised to ~$108.6B. ROTCE 20% still beats 17% target. Trim discipline above ~$365 stands."
+  },
+  {
+   "title": "Capital Allocation Ranking — October 13, 2026",
+   "file": "Retirement_Portfolio_Capital_Allocation_Ranking_2026-10-13.html",
+   "kind": "thematic",
+   "sub": "Ranking",
+   "date": "2026-10-13",
+   "ticker": null,
+   "rating": null,
+   "target": null,
+   "summary": "Cam's capital-allocation ranking, October 13, 2026: UBER #1, GEHC #2, TSM #3, VXUS #4, AVUV #5, AVDV #6, ADBE #7, VRTX #8, ASML #9, LOW #10, then PANW #11, NVDA #12, UNH #13, CRM #14, LMT #15. New names on his ranked list: VRTX, PANW, AVDV."
   }
  ],
- "updated": "2026-10-09"
+ "updated": "2026-10-13"
 }
