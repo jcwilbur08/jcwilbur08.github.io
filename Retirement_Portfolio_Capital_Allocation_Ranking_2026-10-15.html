@@ -58,4 +58,106 @@
 <ol class="source-list"><li><strong>Canonical portfolio source:</strong> retirement-portfolio-61.xlsx, designated Oct. 14, 2026 in agent-state/portfolio/manifest.json; SHA-256 9617cbf5f7102b3fc28851348f7d533b06de589e0525b45434e30120a739a74f. Quantities come from the checksum-referenced holdings derivative (agent-state/portfolio/holdings.json, 43 positions including $43,000 cash). Mutual-fund NAVs come from retirement-portfolio-59.xlsx (Oct. 9).</li><li><strong>Prior comparison report:</strong> Retirement_Portfolio_Capital_Allocation_Ranking_2026-10-14.</li><li><strong>House research used:</strong> UBER thesis-registry valuation (Sep. 25: $90.61 probability-weighted, $94.82 base); TSM Q3 2026 post-earnings refresh (Oct. 15: $515 probability-weighted, $540 base, $400&ndash;435 entry band); ASML Q3 2026 post-earnings update (Oct. 14, published: ADD 7/10, $2,088 base); UNH Q3 2026 post-earnings research (Oct. 13: $444 probability-weighted, $460 base); GEHC_Fundamental_Analysis_Oct2026 (hold, accumulate &le;~$63, stop above ~$75); NVDA thesis registry (Oct. 8) and the Aug. 28 entry assessment (in-house $205&ndash;220 operative zone; ~0.5% direct-position guideline); GEV refresh (Sep. 18: ~$935 base, ~$951 scenario-weighted, $850&ndash;875 preferred entry). Workbook fair values (ADBE $344, CRM $270, AVGO $650, QCOM $170) come from the v61 annotations.</li><li><strong>Not incorporated:</strong> the "TSM, NVDA, GRID, ASML &amp; UBER &mdash; Capital Allocation Decision" registered this morning (Oct. 15, validated) was not accessible from this session. Read this ranking alongside it, and if they conflict, that decision record governs on those five names.</li><li><strong>Market prices:</strong> Robinhood real-time quotes, 18:00 UTC (2:00 PM ET) Oct. 15, 2026; prior closes are official Oct. 14 SIP closes. "Since Oct. 13 close" is backed out from the Oct. 14 edition's day changes.</li><li><strong>Earnings data:</strong> Robinhood earnings calendar (EPS estimates and actuals; report dates and timing).</li><li><strong>Macro and market news:</strong> Yahoo Finance live blog, "Hot inflation report drops tech" (Oct. 14&ndash;15): https://finance.yahoo.com/markets/live/stock-market-today-hot-inflation-report-drops-tech-drives-sp-500-nasdaq-down-152206632.html; TheStreet, "Stock Market Today (Oct. 15, 2026)": https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-oct-15-2026; The Motley Fool, "Stock Market Midday, Oct. 15": https://www.fool.com/coverage/stock-market-today/2026/10/15/stock-market-midday-oct-15-markets-mixed-as-ai-sell-off-continues/; TradingKey, TSM post-earnings (Oct. 15): https://www.tradingkey.com/analysis/stocks/us-stocks/262218262-stock-tsm-ai-chip-cpi-fed-skhy-asml-nvda-adr-tradingkey.</li><li><strong>Rates cross-check:</strong> Alpha Vantage daily 10-year constant-maturity series, 5.21% as of Oct. 13, 2026 (latest print). Intraday figures from the news sources above differ from each other and are reported as a range.</li></ol>
 <div class="callout risk"><strong>Research caveat:</strong> This ranking prioritizes the marginal dollar given current research and portfolio composition. It does not replace the Portfolio CIO's authoritative thesis statuses. Prices are intraday and will differ at the close. The live portfolio value carries mutual funds at stale NAVs. Two days of macro-driven trading is not a trend: the FOMC decision and the Oct. 28 cluster of prints (GEHC, GEV, MSFT, GOOG) are where this ranking will be tested.</div></section>
 <footer>Prepared for portfolio research use. Prices reflect Robinhood intraday quotes at 2:00 PM ET on Oct. 15, 2026 and will change after this cutoff. Valuation scenarios are analyst judgments carried forward from their source reports; interpret them with their stated assumptions and thesis-break conditions. This report is validated for review and has not been published to the Portfolio Command Center.</footer>
-</main></article></body></html>
+</main></article>
+<!-- PCC-NARRATE:START -- universal narration widget, injected by scripts/inject_narration.py.
+     Reads the page aloud via the browser's built-in Web Speech API. Idempotent: this script
+     will not inject a second copy into a file that already references speechSynthesis. -->
+<style>
+  #pcc-narrate-bar{
+    position:fixed; bottom:18px; right:18px; z-index:2147483000;
+    display:flex; align-items:center; gap:6px;
+    background:#12395B; color:#fff; border-radius:999px; padding:8px 8px;
+    box-shadow:0 8px 24px rgba(10,22,40,.35);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  #pcc-narrate-bar button{
+    background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.20); color:#fff;
+    border-radius:999px; padding:7px 12px; font-size:12px; font-weight:700; cursor:pointer;
+    display:flex; align-items:center; gap:5px; line-height:1;
+  }
+  #pcc-narrate-bar button:hover{background:rgba(255,255,255,.20);}
+  #pcc-narrate-bar button:disabled{opacity:.4; cursor:default;}
+  #pcc-narrate-bar .pcc-narrate-speed{min-width:40px; justify-content:center;}
+  #pcc-narrate-bar .pcc-narrate-label{font-size:11px; color:#bcd0ea; padding:0 4px 0 6px; white-space:nowrap;}
+  .pcc-narrate-highlight{
+    background:rgba(59,130,246,.18) !important; outline:2px solid rgba(59,130,246,.35);
+    border-radius:6px; transition:background .15s ease;
+  }
+  @media print{ #pcc-narrate-bar{display:none !important;} }
+</style>
+<div id="pcc-narrate-bar" style="display:none">
+  <button type="button" id="pcc-narrate-play" aria-label="Play">&#9654; Listen</button>
+  <button type="button" id="pcc-narrate-stop" disabled aria-label="Stop">&#9632;</button>
+  <button type="button" id="pcc-narrate-speed" class="pcc-narrate-speed" disabled aria-label="Playback speed">1x</button>
+  <span class="pcc-narrate-label" id="pcc-narrate-status"></span>
+</div>
+<script>
+(function(){
+  if (!('speechSynthesis' in window)) return;
+  var SEL = 'h1,h2,h3,h4,h5,p,li';
+  var EXCLUDE_ANCESTOR = 'table';
+  var RATES = [1, 1.25, 1.5, 0.85];
+  var bar = document.getElementById('pcc-narrate-bar');
+  var playBtn = document.getElementById('pcc-narrate-play');
+  var stopBtn = document.getElementById('pcc-narrate-stop');
+  var speedBtn = document.getElementById('pcc-narrate-speed');
+  var statusEl = document.getElementById('pcc-narrate-status');
+  var nodes = [], idx = 0, rateIdx = 0, playing = false;
+
+  function collect(){
+    var all = Array.prototype.slice.call(document.querySelectorAll(SEL));
+    var seen = [];
+    return all.filter(function(el){
+      if (el.closest(EXCLUDE_ANCESTOR)) return false;
+      if (el.closest('#pcc-narrate-bar')) return false;
+      var text = (el.innerText || '').trim();
+      if (!text) return false;
+      var prev = seen[seen.length - 1];
+      if (prev && prev.contains(el)) return false;
+      seen.push(el);
+      return true;
+    });
+  }
+  function clearHighlight(){
+    var h = document.querySelector('.pcc-narrate-highlight');
+    if (h) h.classList.remove('pcc-narrate-highlight');
+  }
+  function setStatus(){ statusEl.textContent = nodes.length ? (idx + 1) + ' / ' + nodes.length : ''; }
+  function speakNext(){
+    if (idx >= nodes.length) { stopAll(); return; }
+    var el = nodes[idx];
+    var text = el.innerText.trim();
+    clearHighlight();
+    el.classList.add('pcc-narrate-highlight');
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setStatus();
+    var u = new SpeechSynthesisUtterance(text);
+    u.rate = RATES[rateIdx];
+    u.onend = function(){ if (playing) { idx++; speakNext(); } };
+    window.speechSynthesis.speak(u);
+  }
+  function play(){
+    if (!nodes.length) nodes = collect();
+    if (!nodes.length) return;
+    playing = true;
+    playBtn.innerHTML = '&#9208; Pause';
+    stopBtn.disabled = false;
+    speedBtn.disabled = false;
+    if (!window.speechSynthesis.speaking) speakNext();
+    else window.speechSynthesis.resume();
+  }
+  function pause(){ playing = false; window.speechSynthesis.pause(); playBtn.innerHTML = '&#9654; Resume'; }
+  function stopAll(){
+    playing = false; window.speechSynthesis.cancel(); idx = 0; clearHighlight();
+    playBtn.innerHTML = '&#9654; Listen'; stopBtn.disabled = true; speedBtn.disabled = true; statusEl.textContent = '';
+  }
+  playBtn.addEventListener('click', function(){ if (playing) pause(); else play(); });
+  stopBtn.addEventListener('click', stopAll);
+  speedBtn.addEventListener('click', function(){ rateIdx = (rateIdx + 1) % RATES.length; speedBtn.textContent = RATES[rateIdx] + 'x'; });
+  window.addEventListener('beforeunload', function(){ window.speechSynthesis.cancel(); });
+  bar.style.display = 'flex';
+})();
+</script>
+<!-- PCC-NARRATE:END -->
+
+</body></html>
