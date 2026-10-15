@@ -1274,7 +1274,27 @@
    "sub": "Ranking",
    "date": "2026-10-14",
    "summary": "Desk next-dollar ranking (Oct 14 closes): #1 ASML — GATE HIT, $1,650 through ≤$1,700 (Buy 6/10, +24%; ~3 sh ≈ $4,950 toward ~1%); #2 UBER SB 8/10 +51.5% (0.32% wt; ~19 sh of ≤$68 tranche 1 open); #3 NVDA SB 8/10 +48.2% ($221 = low end of band); #4 GEHC Buy 7/10 +34.4% (0.20%→0.5%; re-underwrite overdue); #5 ADBE Buy 7/10 +32.9% (0.49%→~1%); #6 AVGO SB 8/10 +54.5% but 2.53% already — hold; #7 UNH SB 8/10 +20.1% (wait for weakness); #8 TSM SB 8/10 +26.7% (no action into tomorrow's print). New initiations: SPCX, HOOD, CEG, LOW, NVO, HD. Financials ~23% — no adds; GS trim menu stands."
+  },
+  {
+   "ticker": "TSM",
+   "name": "Taiwan Semiconductor Manufacturing Company Limited",
+   "file": "tsm-q3-earnings-2026-10-15.html",
+   "rating": "Strong Buy",
+   "target": "$545",
+   "kind": "company",
+   "date": "2026-10-15",
+   "summary": "Q3 2026 earnings update (printed Oct 15): Strong Buy 8/10, $545 maintained (~27% upside from $430). Revenue NT$1,494.24B (+50.9%) beat LSEG NT$1.47T ~1.7% and topped guide by ~$0.9B; net profit NT$763.06B (+68.7%, 6th record) beat ~2.2%; GM 66.4% (near 67% bar), OM 58.7% (above guide). Q4 guide $52.3-54.3B well ahead of Street; FY raised to ~44% (3rd raise); capex utilization-backed. Cleared every preview bar, yet sold off — 3rd 2026 record-beat selloff on macro/contagion, not the print. Correction: preview cited LSEG rev NT$1.46T; actual LSEG was NT$1.47T. 38 sh @ $427.08; no live add gate."
+  },
+  {
+   "ticker": "SPCX",
+   "name": "Space Exploration Technologies Corp (SpaceX)",
+   "file": "spcx-updated-analysis-2026-10-15.html",
+   "rating": "Buy",
+   "target": "$220",
+   "kind": "company",
+   "date": "2026-10-15",
+   "summary": "SPCX updated analysis (Oct 15): Buy 6/10, $220 maintained (~50% upside from $146.44). Thesis intact but riskier: Starship Flight 14 first orbital mission; AI revenue contracted and flowing (Google $920M/mo ~$30B thru Jun-2029, Anthropic up to $84.5B; 90-day cancel clauses); Starlink ~13M subs, Q3 rev est ~$4.8B; GS raised to $230, MS OW $300. Offsets: reported $40B debt raise -> debt >$79B, record CDS; CoreWeave contagion; 1.31B-share unlock post-Q3; -9% in a week on good news. Q3 expected Nov 3-5. ≤$130 gate not installed, $146.44 above it — closer into play."
   }
  ],
- "updated": "2026-10-14"
+ "updated": "2026-10-15"
 }
