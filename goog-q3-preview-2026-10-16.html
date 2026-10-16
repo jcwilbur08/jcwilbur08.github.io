@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>GOOG Q3 Preview — October 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root{
+        --bg:#fcfcfa; --surface:#ffffff; --surface2:#f3f2ec; --ink:#17201b; --ink2:#49534c; --ink3:#7a847c;
+        --line:#e2e0d6; --accent:#0d5c43; --accent-soft:#e3efe9; --amber:#a86e08; --amber-soft:#f7ecd4;
+        --red:#b3372c; --red-soft:#f9e7e4; --green:#1c7a3f; --green-soft:#e4f2e7;
+        --cover-a:#0b2420; --cover-b:#0d5c43; --cover-c:#123f35;
+        --shadow:0 1px 3px rgba(20,30,24,.08),0 8px 28px rgba(20,30,24,.06);
+      }
+      html[data-theme="dark"]{
+        --bg:#0f1412; --surface:#171d1a; --surface2:#1e2622; --ink:#e9ebe6; --ink2:#b3bcb5; --ink3:#7f8a82;
+        --line:#2b352f; --accent:#4cc79b; --accent-soft:#16302a; --amber:#e0a83c; --amber-soft:#33290f;
+        --red:#e07a6c; --red-soft:#331b17; --green:#5cc47e; --green-soft:#16301f;
+        --shadow:0 1px 3px rgba(0,0,0,.4),0 8px 28px rgba(0,0,0,.35);
+      }
+      @media (prefers-color-scheme: dark){
+        html[data-theme="auto"]{
+          --bg:#0f1412; --surface:#171d1a; --surface2:#1e2622; --ink:#e9ebe6; --ink2:#b3bcb5; --ink3:#7f8a82;
+          --line:#2b352f; --accent:#4cc79b; --accent-soft:#16302a; --amber:#e0a83c; --amber-soft:#33290f;
+          --red:#e07a6c; --red-soft:#331b17; --green:#5cc47e; --green-soft:#16301f;
+          --shadow:0 1px 3px rgba(0,0,0,.4),0 8px 28px rgba(0,0,0,.35);
+        }
+      }
+      *{box-sizing:border-box}
+      html{scroll-behavior:smooth}
+      body{margin:0;background:var(--bg);color:var(--ink);font-family:"IBM Plex Sans",system-ui,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+      .mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
+      a{color:var(--accent)}
+      .wrap{max-width:920px;margin:0 auto;padding:0 22px}
+
+      /* ---------- toolbar ---------- */
+      .toolbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+      .toolbar-in{max-width:920px;margin:0 auto;padding:9px 22px;display:flex;align-items:center;gap:10px}
+      .toolbar .t-name{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--ink2)}
+      .toolbar .spacer{flex:1}
+      .tbtn{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;white-space:nowrap;flex:none}
+      .tbtn:hover{border-color:var(--accent);color:var(--accent)}
+      .tbtn svg{width:15px;height:15px;flex:none}
+
+      /* ---------- cover ---------- */
+      .cover{background:linear-gradient(128deg,var(--cover-a) 0%,var(--cover-c) 46%,var(--cover-b) 100%);color:#eef4f0;padding:64px 0 56px;position:relative;overflow:hidden}
+      .cover::after{content:"";position:absolute;right:-140px;top:-140px;width:480px;height:480px;border-radius:50%;border:1.5px solid rgba(255,255,255,.10);box-shadow:0 0 0 46px rgba(255,255,255,.035),0 0 0 110px rgba(255,255,255,.02)}
+      .cover .wrap{position:relative;z-index:1}
+      .cover .series{font-size:12.5px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:#9fd4bd}
+      .cover h1{font-family:"Spectral",Georgia,serif;font-weight:700;font-size:clamp(40px,7vw,64px);line-height:1.04;margin:16px 0 6px;letter-spacing:-.01em}
+      .cover .tickerline{font-family:"IBM Plex Mono",monospace;font-size:clamp(15px,2.6vw,19px);color:#cfe6da;letter-spacing:.06em}
+      .cover .subtitle{font-family:"Spectral",Georgia,serif;font-style:italic;font-size:clamp(18px,3vw,23px);color:#dcebe2;max-width:640px;margin:22px 0 0;line-height:1.45}
+      .cover .dateline{display:flex;flex-wrap:wrap;gap:8px 26px;margin-top:34px;font-size:13.5px;color:#a9c8b8}
+      .cover .dateline b{color:#eef4f0;font-weight:600}
+
+      /* ---------- rating strip ---------- */
+      .strip{background:var(--surface);border-bottom:1px solid var(--line);box-shadow:var(--shadow)}
+      .strip-in{max-width:920px;margin:0 auto;padding:0 22px;display:grid;grid-template-columns:1.35fr 1fr 1fr 1fr 1fr}
+      .cell{padding:18px 18px 16px;border-left:1px solid var(--line)}
+      .cell:first-child{border-left:none;padding-left:0}
+      .cell .lab{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+      .cell .val{font-family:"IBM Plex Mono",monospace;font-size:clamp(19px,3vw,26px);font-weight:600;margin-top:3px;white-space:nowrap}
+      .cell .sub{font-size:12.5px;color:var(--ink2);margin-top:2px}
+      .cell.rating .val{font-family:"Spectral",Georgia,serif;font-size:clamp(24px,3.6vw,32px);color:var(--accent);letter-spacing:.01em}
+      .up{color:var(--green)}
+      .prior{font-size:12.5px;color:var(--ink2)}
+
+      /* ---------- report map ---------- */
+      .map{background:var(--surface2);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin:36px 0 8px}
+      .map h2{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink3);margin:0 0 14px}
+      .map ol{margin:0;padding:0;list-style:none;counter-reset:rm;display:grid;grid-template-columns:1fr 1fr;gap:7px 34px}
+      .map li{counter-increment:rm}
+      .map a{text-decoration:none;color:var(--ink);font-size:15px;display:flex;gap:11px;align-items:baseline;padding:3px 0}
+      .map a::before{content:counter(rm,decimal-leading-zero);font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);font-weight:600}
+      .map a:hover{color:var(--accent);text-decoration:underline}
+
+      /* ---------- sections ---------- */
+      section{padding:38px 0 6px}
+      .kicker{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 7px}
+      h2.sec{font-family:"Spectral",Georgia,serif;font-size:clamp(25px,4vw,33px);font-weight:700;line-height:1.18;margin:0 0 14px;letter-spacing:-.01em}
+      p{margin:0 0 14px}
+      p.lede{font-size:18px;line-height:1.6;color:var(--ink)}
+      strong{font-weight:600}
+      .muted{color:var(--ink2)}
+      ul.tight{margin:0 0 16px;padding-left:20px}
+      ul.tight li{margin-bottom:7px}
+      .divider{border:none;border-top:1px solid var(--line);margin:30px 0 0}
+
+      /* ---------- callouts ---------- */
+      .callout{border-radius:12px;padding:20px 24px;margin:20px 0}
+      .callout .c-lab{font-size:11.5px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin:0 0 8px}
+      .callout p:last-child{margin-bottom:0}
+      .callout.debate{background:var(--amber-soft);border:1px solid color-mix(in srgb,var(--amber) 38%,transparent)}
+      .callout.debate .c-lab{color:var(--amber)}
+      .callout.verdict{background:var(--accent-soft);border:1px solid color-mix(in srgb,var(--accent) 34%,transparent)}
+      .callout.verdict .c-lab{color:var(--accent)}
+      .callout.riskbox{background:var(--red-soft);border:1px solid color-mix(in srgb,var(--red) 32%,transparent)}
+      .callout.riskbox .c-lab{color:var(--red)}
+
+      /* ---------- tables ---------- */
+      .tblwrap{overflow-x:auto;margin:18px 0 22px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+      table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+      caption{text-align:left;font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink3);padding:14px 18px 4px}
+      th,td{padding:9px 18px;text-align:left;vertical-align:top}
+      thead th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2);border-bottom:2px solid var(--line);font-weight:600}
+      tbody tr{border-bottom:1px solid var(--line)}
+      tbody tr:last-child{border-bottom:none}
+      td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-size:13.8px;white-space:nowrap}
+      td:first-child{font-weight:500}
+      .pos{color:var(--green);font-weight:600}
+      .neg{color:var(--red);font-weight:600}
+      .rowhl{background:var(--accent-soft)}
+      .tnote{font-size:13px;color:var(--ink2);margin:-8px 0 20px}
+
+      /* ---------- chart ---------- */
+      .chart{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px 12px;margin:18px 0 22px}
+      .chart h3{margin:0 0 4px;font-size:15px;font-weight:600}
+      .chart .csub{font-size:13px;color:var(--ink2);margin:0 0 10px}
+      .chart svg{width:100%;height:auto;display:block}
+      .chart text{font-family:"IBM Plex Mono",monospace}
+
+      /* ---------- appendix ---------- */
+      .appendix{margin-top:44px;border-top:2px solid var(--line);padding:30px 0 60px}
+      .appendix h2{font-family:"Spectral",Georgia,serif;font-size:22px;margin:0 0 6px}
+      .appendix h3{font-size:12px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--ink3);margin:24px 0 8px}
+      .appendix p,.appendix li{font-size:13.5px;color:var(--ink2);line-height:1.6}
+      .appendix ul{margin:0;padding-left:18px}
+      .appendix li{margin-bottom:4px}
+      .src-cols{columns:2;column-gap:36px}
+      @media (max-width:640px){.src-cols{columns:1}}
+
+      footer{padding:0 0 46px;font-size:12.5px;color:var(--ink3)}
+
+      @media (max-width:760px){
+        .toolbar .t-name{display:none}
+        .strip-in{grid-template-columns:1fr 1fr}
+        .cell{border-left:none;border-top:1px solid var(--line);padding-left:0}
+        .cell:nth-child(-n+2){border-top:none}
+        .cell.rating{grid-column:1/-1}
+        .map ol{grid-template-columns:1fr}
+        body{font-size:15.8px}
+      }
+      @media print{
+        .toolbar{display:none}
+        body{background:#fff;color:#000;font-size:12.5px}
+        .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+        .wrap{max-width:none}
+        section{page-break-inside:avoid}
+        .tblwrap,.chart,.callout{page-break-inside:avoid}
+      }
+    </style>
+  </head>
+  <body>
+
+    <div class="toolbar">
+      <div class="toolbar-in">
+        <span class="t-name">ALPHABET INC. — Q3 2026 PREVIEW</span>
+        <span class="spacer"></span>
+        <button class="tbtn" id="pdfBtn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download PDF
+        </button>
+        <button class="tbtn" id="themeBtn" type="button" aria-label="Toggle dark / light theme">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <span id="themeLbl">Theme</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ================= COVER ================= -->
+    <header class="cover">
+      <div class="wrap">
+        <p class="series">Equity Research · Updated Analysis</p>
+        <h1>Alphabet Inc.</h1>
+        <p class="tickerline">NASDAQ: GOOG &nbsp;·&nbsp; Internet &amp; Cloud Infrastructure</p>
+        <p class="subtitle">The safe haven of the AI buildout goes into its October 28 print with the Street&rsquo;s bar quietly moving to triple-digit Cloud growth — and the stock still priced like a search utility.</p>
+        <div class="dateline">
+          <span><b>Date:</b> October 16, 2026</span>
+          <span><b>Event:</b> Q3 2026 earnings — October 28, after market close (call 4:30 PM ET)</span>
+          <span><b>Reference price:</b> $336.91 (Oct 16 close)</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= RATING STRIP ================= -->
+    <div class="strip" role="region" aria-label="Rating summary">
+      <div class="strip-in">
+        <div class="cell rating">
+          <p class="lab">Rating</p>
+          <p class="val">Buy</p>
+          <p class="sub"><span class="up">&#9650; Upgraded</span> <span class="prior">from Hold (Sep 27)</span></p>
+        </div>
+        <div class="cell">
+          <p class="lab">Conviction</p>
+          <p class="val">6<span style="font-size:.55em;color:var(--ink3)"> / 10</span></p>
+          <p class="sub">Measured — print still ahead</p>
+        </div>
+        <div class="cell">
+          <p class="lab">12-Mo Price Target</p>
+          <p class="val">$430</p>
+          <p class="sub">Was $410 (Sep 27)</p>
+        </div>
+        <div class="cell">
+          <p class="lab">Reference Price</p>
+          <p class="val">$336.91</p>
+          <p class="sub">NASDAQ close, Oct 16</p>
+        </div>
+        <div class="cell">
+          <p class="lab">Implied Upside</p>
+          <p class="val up">+27.6%</p>
+          <p class="sub">Excl. ~0.3% dividend yield</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+
+      <!-- ================= REPORT MAP ================= -->
+      <nav class="map" aria-label="Report map">
+        <h2>Report map</h2>
+        <ol>
+          <li><a href="#thesis">The upgrade: what changed</a></li>
+          <li><a href="#week">The week: relative strength in a sector unwind</a></li>
+          <li><a href="#preview">Q3 preview: the October 28 bar</a></li>
+          <li><a href="#tpu">The second engine: TPU external sales</a></li>
+          <li><a href="#debate">The key debate: capex vs. cash flow</a></li>
+          <li><a href="#waymo">Waymo: funded optionality</a></li>
+          <li><a href="#antitrust">Antitrust: the overhang has eased</a></li>
+          <li><a href="#valuation">Valuation: priced like a utility, growing like a platform</a></li>
+          <li><a href="#street">The Street: targets and positioning</a></li>
+          <li><a href="#catalysts">Catalysts, risks &amp; the gate decision</a></li>
+        </ol>
+      </nav>
+
+      <!-- ================= 1 THESIS ================= -->
+      <section id="thesis">
+        <p class="kicker">Investment thesis</p>
+        <h2 class="sec">The upgrade: what changed</h2>
+        <p class="lede">We upgrade Alphabet to <strong>Buy, conviction 6/10, with a $430 12-month target</strong> (from Hold / $410 on September 27). Three things moved since our last note: the antitrust tail risk was structurally defused, the Cloud/TPU story acquired a second, monetizable engine, and this week&rsquo;s AI-infrastructure selloff left the group&rsquo;s best cash generator 17% below its high while the cash engine itself was untouched.</p>
+        <p>Alphabet is the cycle&rsquo;s cleanest way to own the AI buildout because it <em>sells into</em> it rather than financing it. Second-quarter operating income of $40.77B at a 34% margin is the strongest cash engine in the sector, and it funds a $195–205B capex program that the market currently treats as a liability. Our view: at ~23–24x forward earnings — in line with Microsoft and Amazon, for faster Cloud growth and a backlog of $514B — the market is paying a utility multiple for a platform whose second growth engine (external TPU systems) has barely begun to print revenue.</p>
+        <ul class="tight">
+          <li><strong>Cloud is the debate, and the bar just moved.</strong> The published Q3 consensus (EPS ~$3.02, revenue ~$127.7B) is not the real hurdle. The whisper is Google Cloud growth near or above +100% y/y — JPMorgan raised its Cloud estimate to +100% on October 15 — against +82% in Q2. That is a high bar, and it is the main reason conviction sits at 6 rather than 7 into the print.</li>
+          <li><strong>TPU external sales are the upside surprise vector.</strong> First recognized in Q2 at small dollars, external TPU-system sales ramp through year-end with the significant majority of deal revenue landing in 2027. Sell-side estimates for that ramp diverge wildly — which means any hard disclosure on October 28 is unpriced optionality.</li>
+          <li><strong>The breakup discount is gone.</strong> The September 2 ad-tech remedies ruling rejected a forced AdX sale; there is no Chrome divestiture in any current order on either side of the Atlantic. What remains is fines, behavioral terms, and compliance overhead — a sentiment cap, not a structural discount.</li>
+          <li><strong>The risks are real and named.</strong> Q2 free cash flow was −$5.9B, the 2026 capex guide is $195–205B, and a $40B at-the-market equity program that began in Q3 is a steady technical overhang on the share price. Section 5 lays out both sides.</li>
+        </ul>
+        <div class="callout verdict">
+          <p class="c-lab">Desk view</p>
+          <p>Buy into the print at $336.91 for a $430 target (+27.6%). The upgrade rests on valuation and the defused antitrust overhang, not on a heroic Q3 call — the Cloud whisper bar is genuinely demanding, and a capex guide raised beyond $205B without matching revenue would be a derating event. Conviction 6/10 reflects that asymmetry honestly: the downside case is a guide disappointment, the upside case is a second engine the model doesn&rsquo;t yet carry.</p>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- ================= 2 WEEK ================= -->
+      <section id="week">
+        <p class="kicker">Market context</p>
+        <h2 class="sec">The week: relative strength in a sector unwind</h2>
+        <p>GOOG fell just 2.3% over the five sessions to October 16 — and that was the story. The semiconductor complex unwound violently: the SOXX ETF fell for eight straight sessions, its longest losing streak in 16 years, closing nearly 14% off its October high. CoreWeave lost roughly a quarter of its value in five sessions as its bond yields spiked above 15%; Dell dropped about 20% from its early-October peak after a downgrade questioned enterprise AI demand; Intel, Micron, and Oracle all took double-digit or near-double-digit hits.</p>
+        <p>The drivers were financing questions, not demand questions. An FT report on October 8 pegged OpenAI&rsquo;s revenue run-rate near $50B against a widely reported ~$70B; September CPI printed hot at 3.7% y/y with PPI up 1.3% m/m, leaving markets pricing roughly 92% odds of another Fed hike in 2026; and Broadcom CEO Hock Tan&rsquo;s October 12 &ldquo;casino&rdquo; characterization of AI investing stung the whole complex. TSMC, notably, still printed a 68.7% jump in Q3 profit — end demand is not the issue. The debate is who pays for the buildout, and at what rate of return.</p>
+        <p>Alphabet sits on the right side of that debate. It sells compute into the buildout through Cloud and TPUs, carries the sector&rsquo;s strongest operating cash generation, and drew fresh Street support mid-week — target raises or reiterations from JPMorgan, Cantor Fitzgerald, HSBC, and Evercore ISI all landed during the selloff. Investors are paying for a highly profitable advertising core that generates substantial cash even in volatile tape; October 28 is where that resilience gets tested against a much higher Cloud bar.</p>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- ================= 3 PREVIEW ================= -->
+      <section id="preview">
+        <p class="kicker">Q3 2026 preview · October 28, after market close</p>
+        <h2 class="sec">The October 28 bar: consensus is not the hurdle — Cloud is</h2>
+        <p>Published consensus looks undemanding: EPS of ~$3.02 (+5.2% y/y) on revenue of ~$127.67B (+24.7% y/y). The number that will actually move the stock is Google Cloud&rsquo;s growth rate. Post-Q2, the sell side raised Q3 Cloud revenue estimates by ~11% and Cloud operating-income estimates by ~18%; JPMorgan now models Cloud at +100% y/y and TD Cowen expects it to more than double, against +82% delivered in Q2. Management must also address the 2026 capex guide ($195–205B, with $80.6B spent in H1), any quantification of the 2027 trajectory — flagged by analysts as a significant increase, though the company has not guided it — and the pace of external TPU-system revenue.</p>
+
+        <div class="tblwrap">
+          <table>
+            <caption>Q3 2026 — consensus and segment expectations</caption>
+            <thead>
+              <tr><th>Metric</th><th class="num">Q3 2026E</th><th class="num">Q3 2025A</th><th class="num">Change</th><th>Note</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Revenue</td><td class="num">$127.67B</td><td class="num">$102.35B</td><td class="num pos">+24.7%</td><td>Consensus range ~$126.9–127.5B</td></tr>
+              <tr><td>EPS</td><td class="num">~$3.02</td><td class="num">$2.87</td><td class="num pos">+5.2%</td><td>Excl. hard-to-model equity gains</td></tr>
+              <tr class="rowhl"><td>Google Cloud growth (whisper)</td><td class="num">~+100%</td><td class="num">—</td><td class="num">—</td><td>JPM +100%; TD Cowen &ldquo;more than double&rdquo;; Q2 actual +82%</td></tr>
+              <tr><td>Search &amp; other growth (TD Cowen)</td><td class="num">+14%</td><td class="num">—</td><td class="num">—</td><td>Q2 actual +17% to $63.3B</td></tr>
+              <tr><td>YouTube ads growth (TD Cowen)</td><td class="num">+12%</td><td class="num">—</td><td class="num">—</td><td>Q2 actual +13% to $11.1B</td></tr>
+              <tr><td>Cloud backlog (entering Q3)</td><td class="num">$514B</td><td class="num">—</td><td class="num">—</td><td>Up from $462B in Q1</td></tr>
+              <tr><td>2026 capex guide</td><td class="num">$195–205B</td><td class="num">—</td><td class="num">—</td><td>H1 actual $80.6B; the print to watch</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tnote">Scenario framing from the Street: a capex print inside $195–205B with Cloud growth of 70–80%+ reads as relief; Cloud above 80% with a manageable 2027 capex path opens the high-$300s to $400. A 2026 guide raised beyond $205B, or a large 2027 step-up without matching revenue, is the derating case.</p>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- ================= 4 TPU ================= -->
+      <section id="tpu">
+        <p class="kicker">AI positioning</p>
+        <h2 class="sec">The second engine: TPU external sales</h2>
+        <p>Alphabet&rsquo;s TPU franchise is transitioning from internal advantage to external product. Google Cloud&rsquo;s TPU accelerator business is, by management&rsquo;s account, more than twice the size of the next hyperscaler&rsquo;s, with in-house silicon delivering payback in roughly half the time of a GPU server; network utilization has run above 91% since January and demand exceeds manufacturing capacity. The eighth-generation parts (v8t for training, v8i for inference) launched in April, with the inference part claiming ~80% better performance per dollar than its predecessor. First external TPU-<em>system</em> revenue — full systems delivered into customer data centers — was recognized in Q2.</p>
+        <p>Anthropic is the largest external TPU customer; Meta rents capacity for select inference workloads, and Salesforce, Midjourney, and Replit run production inference on the current generation. The commercial shape matters: management says system sales ramp through the end of 2026 with the significant majority of revenue from existing agreements falling in 2027 — meaning 2026 prints will understate the run-rate being built.</p>
+
+        <div class="chart" aria-label="Sell-side estimates of external TPU system revenue">
+          <h3>External TPU-system revenue — sell-side estimates</h3>
+          <p class="csub">Estimates diverge by an order of magnitude in the out-years; treat the spread itself as the information. Wells Fargo&rsquo;s quarterly figures shown for 2026.</p>
+          <svg viewBox="0 0 840 268" role="img" aria-label="Bar chart of TPU revenue estimates: Wells Fargo 9.2 billion Q3 2026 and 11.5 billion Q4 2026; Evercore 75 billion 2027 and 113 billion 2028; Piper Sandler 51 billion 2027 and 104 billion 2028">
+            <line x1="70" y1="226" x2="820" y2="226" stroke="var(--line)" stroke-width="1.5"/>
+            <!-- WF Q3 9.2 -->
+            <rect x="96" y="208" width="52" height="18" rx="3" fill="var(--accent)" opacity=".45"/>
+            <text x="122" y="199" font-size="12.5" fill="var(--ink)" text-anchor="middle">$9.2B</text>
+            <text x="122" y="244" font-size="11.5" fill="var(--ink2)" text-anchor="middle">WF Q3&rsquo;26</text>
+            <!-- WF Q4 11.5 -->
+            <rect x="188" y="204" width="52" height="22" rx="3" fill="var(--accent)" opacity=".45"/>
+            <text x="214" y="195" font-size="12.5" fill="var(--ink)" text-anchor="middle">$11.5B</text>
+            <text x="214" y="244" font-size="11.5" fill="var(--ink2)" text-anchor="middle">WF Q4&rsquo;26</text>
+            <!-- Piper 2027 51 -->
+            <rect x="300" y="126" width="52" height="100" rx="3" fill="var(--accent)" opacity=".7"/>
+            <text x="326" y="117" font-size="12.5" fill="var(--ink)" text-anchor="middle">$51B</text>
+            <text x="326" y="244" font-size="11.5" fill="var(--ink2)" text-anchor="middle">Piper 2027</text>
+            <!-- Evercore 2027 75 -->
+            <rect x="392" y="79" width="52" height="147" rx="3" fill="var(--accent)"/>
+            <text x="418" y="70" font-size="12.5" fill="var(--ink)" text-anchor="middle">$75B</text>
+            <text x="418" y="244" font-size="11.5" fill="var(--ink2)" text-anchor="middle">Evercore 2027</text>
+            <!-- Piper 2028 104 -->
+            <rect x="504" y="22" width="52" height="204" rx="3" fill="var(--accent)" opacity=".7"/>
+            <text x="530" y="13" font-size="12.5" fill="var(--ink)" text-anchor="middle">$104B</text>
+            <text x="530" y="244" font-size="11.5" fill="var(--ink2)" text-anchor="middle">Piper 2028</text>
+            <!-- Evercore 2028 113 -->
+            <rect x="596" y="4" width="52" height="222" rx="3" fill="var(--accent)"/>
+            <text x="622" y="13" font-size="12.5" fill="var(--ink)" text-anchor="middle" opacity="0">$113B</text>
+            <text x="670" y="16" font-size="12.5" fill="var(--ink)">$113B</text>
+            <text x="622" y="244" font-size="11.5" fill="var(--ink2)" text-anchor="middle">Evercore 2028</text>
+            <text x="742" y="120" font-size="11.5" fill="var(--ink3)" text-anchor="middle">2027–28 figures are</text>
+            <text x="742" y="138" font-size="11.5" fill="var(--ink3)" text-anchor="middle">analyst estimates,</text>
+            <text x="742" y="156" font-size="11.5" fill="var(--ink3)" text-anchor="middle">not company guidance</text>
+          </svg>
+        </div>
+
+        <p>Gemini monetization is running in parallel rather than waiting on hardware: AI Overviews are driving incremental query volume rather than cannibalizing the core — Q2 Search &amp; other grew 17% to $63.3B and total advertising revenue rose 14% to $81.6B — AI Mode passed one billion monthly users after its October global expansion, and roughly 90% of the Fortune 100 now use Gemini Enterprise. The honest caveat: a University study this month found sponsored placements in only ~2% of AI-Overview surfaces, so the monetization density of the new formats is still early. That is headroom, but it is unproven headroom.</p>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- ================= 5 DEBATE ================= -->
+      <section id="debate">
+        <p class="kicker">The key debate</p>
+        <h2 class="sec">Capex vs. cash flow: investment phase or value leak?</h2>
+        <p>This is the argument that will decide the multiple. Alphabet&rsquo;s 2026 capex guide of $195–205B — nearly all of it data centers — now exceeds what the business currently converts to free cash flow: Q2 FCF was <strong>−$5.9B</strong>, a quarterly turn negative that rattled holders who own Alphabet precisely for its cash generation. The buildout is being part-funded with equity: a ~$80B June package comprising a $40B at-the-market program (which began issuing in Q3 — a steady supply overhang), $15B of mandatory convertible preferred, $15B of common stock, and a $10B Berkshire Hathaway private placement.</p>
+        <div class="callout debate">
+          <p class="c-lab">The debate</p>
+          <p><strong>Bears</strong> see a company spending ~$200B a year against unproven AI returns, diluting holders through an ATM program to do it, with management itself flagging a further significant capex increase in 2027. <strong>Bulls</strong> see demand evidence everywhere the bears aren&rsquo;t looking: a $514B Cloud backlog, TPU utilization above 91% with demand exceeding manufacturing capacity, Cloud operating income that tripled in Q2 to $8.8B, and a funding mix anchored by a $10B Berkshire check. Goldman Sachs estimates hyperscaler capex at ~$800B in 2026 rising to ~$1.1T in 2027 — Alphabet is spending in line with the industry it is supplying, from the strongest balance-sheet position in it.</p>
+          <p style="margin-top:10px"><strong>Our read:</strong> the spend is demand-backed today, but the burden of proof resets every quarter. The October 28 print must show Cloud revenue converting backlog at something close to the whisper rate. If it does, the capex reads as capacity sold forward; if Cloud decelerates materially while the guide rises, the bear framing wins and the multiple compresses toward the low-20s on slower earnings — which is roughly where our downside protection sits anyway.</p>
+        </div>
+        <p>One open item we flag plainly: Alphabet&rsquo;s Q3 buyback pace could not be verified from available sources ahead of the print. With the ATM issuing shares in the same quarter, net share-count direction is a genuine unknown going in — and a legitimate question for the call.</p>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- ================= 6 WAYMO ================= -->
+      <section id="waymo">
+        <p class="kicker">Other bets</p>
+        <h2 class="sec">Waymo: funded optionality, not the thesis</h2>
+        <p>Waymo is scaling on schedule and, as of this month, is funded to keep doing so without leaning on the parent. Paid rides exceed 500,000 per week — double the pace of under a year ago — across 15 US cities with a fleet of more than 4,000 vehicles, and management targets one million paid rides per week by the end of 2026. San Antonio, San Diego, and Tampa opened to all riders this week. In October Waymo closed its first debt financing, a $5B term loan led by PIMCO, Blackstone, and Sixth Street, on top of February&rsquo;s $16B equity round at a $126B valuation — roughly 3% of Alphabet&rsquo;s market value.</p>
+        <p>The competitive picture is real but subscale: Tesla operates 300+ purpose-built Cybercabs in Austin with Dallas next, and Amazon&rsquo;s Zoox runs paid rides in Las Vegas; Uber remains the platform-scale counterweight and partner. Alphabet&rsquo;s 2027 test, as framed by its own CEO, is to roughly double ride volume, halve cost per mile, and visibly shrink the Other Bets operating loss (Q2: $382M of revenue against a $1.8B loss). We treat Waymo as option value inside the target, not a driver of it: at ~3% of market cap, it does not need to carry the Buy case, and we note that published rationales behind the Street&rsquo;s $420+ targets center on Cloud, TPU, and Search rather than itemized robotaxi value.</p>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- ================= 7 ANTITRUST ================= -->
+      <section id="antitrust">
+        <p class="kicker">Regulatory</p>
+        <h2 class="sec">Antitrust: the overhang has eased</h2>
+        <p>The single largest non-fundamental change since our September note: structural breakup risk has effectively left the story. On September 2, the ad-tech remedies ruling <strong>rejected a forced sale of AdX</strong>, imposing instead a six-year behavioral term — bid-data sharing with publishers and interoperability requirements — with a single internal compliance monitor; Google will appeal the underlying liability finding, and the DOJ may cross-appeal. In the search case, both sides are now in appeals in the D.C. Circuit, with no Chrome divestiture in force. In Europe, the Commission confirmed on October 14 that it is &ldquo;in dialogue&rdquo; with Google over July&rsquo;s €460M and €430M fines; the €4.67B Android fine became legally final in July. A September 30 US ruling separately closed the publisher-litigation route over AI-search traffic, with the court directing the issue to Congress.</p>
+        <p>What remains is manageable: fines, behavioral constraints, an EU probe into AI Overviews, and a UK publisher opt-out regime. That is a compliance cost and a sentiment cap — not the breakup discount the stock carried for two years. Removing it is one of the three legs of this upgrade.</p>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- ================= 8 VALUATION ================= -->
+      <section id="valuation">
+        <p class="kicker">Valuation</p>
+        <h2 class="sec">Priced like a utility, growing like a platform</h2>
+        <p>Ignore the trailing multiple: GOOG&rsquo;s ~17.4x trailing P/E is depressed by a ~$98B one-time equity-investment gain that inflated Q2 GAAP EPS to $9.11 against a $2.89 consensus. The clean lens is forward earnings, where Alphabet trades at ~23–24x — essentially in line with Microsoft (~23x) and Amazon (~24x), above Meta (~21x), and at a PEG of roughly 1.0. (One data provider&rsquo;s forward figure runs higher, ~25.6x; we carry the discrepancy openly rather than split it.) For that in-line multiple, the buyer gets the fastest-growing hyperscale cloud, the sector&rsquo;s largest disclosed backlog, and a TPU hardware business the consensus does not yet model as a segment.</p>
+
+        <div class="tblwrap">
+          <table>
+            <caption>Valuation — GOOG vs. mega-cap peers</caption>
+            <thead>
+              <tr><th>Company</th><th class="num">Trailing P/E</th><th class="num">Forward P/E</th><th>Note</th></tr>
+            </thead>
+            <tbody>
+              <tr class="rowhl"><td>Alphabet (GOOG)</td><td class="num">~17.4x</td><td class="num">~23–24x</td><td>Trailing flattered by ~$98B Q2 equity gain; PEG ~1.0</td></tr>
+              <tr><td>Microsoft</td><td class="num">~29.7–30.1x</td><td class="num">~22.9–23.2x</td><td>—</td></tr>
+              <tr><td>Amazon</td><td class="num">~20.4–21.1x</td><td class="num">~23.8–24.8x</td><td>—</td></tr>
+              <tr><td>Meta Platforms</td><td class="num">~27.1–27.8x</td><td class="num">~21.0–21.4x</td><td>Cheapest forward multiple in the group</td></tr>
+              <tr><td>NVIDIA</td><td class="num">~27.4–29.0x</td><td class="num">~13.9–14.8x</td><td>Forward depressed by earnings growth rate</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="chart" aria-label="Price versus targets">
+          <h3>Where $336.91 sits: price, desk target, Street range</h3>
+          <p class="csub">Dollars per share. The desk target of $430 requires no multiple expansion — roughly the low-20s on 2027 earnings power, i.e. earnings growth doing the work. The $450–515 bull targets require Cloud/TPU to re-rate the story toward 25–28x forward.</p>
+          <svg viewBox="0 0 840 196" role="img" aria-label="Horizontal bar chart: reference price 336.91 dollars, desk target 430 dollars, street high 515 dollars (Citizens), 52-week high 408.61 dollars">
+            <line x1="150" y1="168" x2="800" y2="168" stroke="var(--line)" stroke-width="1.5"/>
+            <!-- scale: 150 -> 0, 800 -> 560 -->
+            <rect x="150" y="18" width="391" height="24" rx="4" fill="var(--ink3)"/>
+            <text x="140" y="35" font-size="12.5" fill="var(--ink)" text-anchor="end">Price (Oct 16)</text>
+            <text x="551" y="35" font-size="13" fill="var(--ink)">$336.91</text>
+            <rect x="150" y="56" width="478" height="24" rx="4" fill="var(--accent)" opacity=".45"/>
+            <text x="140" y="73" font-size="12.5" fill="var(--ink)" text-anchor="end">52-wk high</text>
+            <text x="638" y="73" font-size="13" fill="var(--ink)">$408.61</text>
+            <rect x="150" y="94" width="500" height="24" rx="4" fill="var(--accent)"/>
+            <text x="140" y="111" font-size="12.5" fill="var(--ink)" text-anchor="end">Desk target</text>
+            <text x="660" y="111" font-size="13" fill="var(--ink)" font-weight="600">$430</text>
+            <rect x="150" y="132" width="599" height="24" rx="4" fill="var(--amber)"/>
+            <text x="140" y="149" font-size="12.5" fill="var(--ink)" text-anchor="end">Street high</text>
+            <text x="759" y="149" font-size="13" fill="var(--ink)">$515</text>
+            <text x="150" y="188" font-size="11" fill="var(--ink3)">$0</text>
+            <text x="475" y="188" font-size="11" fill="var(--ink3)" text-anchor="middle">$280</text>
+            <text x="800" y="188" font-size="11" fill="var(--ink3)" text-anchor="end">$560</text>
+          </svg>
+        </div>
+        <p>Key reference points: market capitalization ~$4.26T; 52-week range $240.51–$408.61 (the stock sits ~17% below the high); FY2026 consensus EPS of ~$20.52; dividend of $0.22 per quarter (~0.3% yield, a ~4.4% payout ratio — the return-of-capital story here is growth, not income).</p>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- ================= 9 STREET ================= -->
+      <section id="street">
+        <p class="kicker">Consensus &amp; positioning</p>
+        <h2 class="sec">The Street: targets cluster at $420–485, consensus Strong Buy</h2>
+        <p>Street aggregates put the average target at roughly $427–431 — almost exactly our $430 — with a Strong Buy consensus skew. The distribution matters more than the mean: the cluster at $420 (Cantor, HSBC, and JPMorgan just under at $425) prices Cloud execution at current multiples; the $450–515 tier (Evercore, TD Cowen, Citizens) prices a partial TPU re-rating. Note what happened during the selloff week: every GOOG action we tracked was a raise or a constructive reiteration. No major house cut into the print.</p>
+
+        <div class="tblwrap">
+          <table>
+            <caption>Recent analyst actions — GOOG</caption>
+            <thead>
+              <tr><th>Firm</th><th>Action</th><th class="num">Target</th><th class="num">vs. $336.91</th><th>Date</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>JPMorgan</td><td>Raised from $420 · Overweight</td><td class="num">$425</td><td class="num pos">+26.1%</td><td>Oct 15, 2026</td></tr>
+              <tr><td>TD Cowen</td><td>Raised from $475 · Buy</td><td class="num">$485</td><td class="num pos">+43.9%</td><td>Oct 8, 2026</td></tr>
+              <tr><td>Evercore ISI</td><td>Outperform · estimates raised on TPU sales</td><td class="num">$450</td><td class="num pos">+33.6%</td><td>~Oct 15, 2026</td></tr>
+              <tr><td>Citizens</td><td>Maintained</td><td class="num">$515</td><td class="num pos">+52.9%</td><td>~Oct 10, 2026</td></tr>
+              <tr><td>Cantor Fitzgerald</td><td>Maintained · Buy</td><td class="num">$420</td><td class="num pos">+24.7%</td><td>Oct 12, 2026</td></tr>
+              <tr><td>HSBC</td><td>Maintained · Buy</td><td class="num">$420</td><td class="num pos">+24.7%</td><td>Oct 12, 2026</td></tr>
+              <tr><td>Wells Fargo</td><td>Raised from $411</td><td class="num">$417</td><td class="num pos">+23.8%</td><td>~Oct 10, 2026</td></tr>
+              <tr><td>Piper Sandler</td><td>Raised from $395 · Overweight</td><td class="num">$400</td><td class="num pos">+18.7%</td><td>~Sep 28, 2026</td></tr>
+              <tr class="rowhl"><td>Aggregate (30 analysts)</td><td>Consensus: Strong Buy</td><td class="num">$426.65 avg</td><td class="num pos">+26.6%</td><td>Oct 12, 2026</td></tr>
+              <tr><td><strong>This desk</strong></td><td><strong>Upgraded to Buy · 6/10</strong></td><td class="num"><strong>$430</strong></td><td class="num pos"><strong>+27.6%</strong></td><td>Oct 16, 2026</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <hr class="divider" />
+
+      <!-- ================= 10 CATALYSTS ================= -->
+      <section id="catalysts">
+        <p class="kicker">Forward path</p>
+        <h2 class="sec">Catalysts, risks &amp; the gate decision</h2>
+        <p><strong>Catalysts.</strong> The October 28 print itself — Cloud growth against the ~+100% whisper, any hard TPU-system revenue disclosure, and backlog progression from $514B. The FOMC decision lands the same day, and the surrounding hyperscaler prints (Meta October 21; Microsoft October 28; Amazon October 29) will set the capex narrative Alphabet reports into. Beyond the quarter: Anthropic&rsquo;s reported mid-November IPO (target valuation reports range from ~$1.5T to ~$2T — flagged as unconfirmed) is a direct TPU-demand read-through, and the Waymo one-million-rides-per-week milestone chase runs into year-end.</p>
+        <p><strong>Risks.</strong> A 2026 capex guide raised beyond $205B — or a large quantified 2027 step-up — without matching revenue; Cloud decelerating against a triple-digit whisper bar; regulatory friction migrating into the AI products themselves (the EU&rsquo;s AI Overviews probe, the UK publisher opt-out); competitive ad pressure from AI-native rivals; the macro tape (3.7% CPI, ~92% priced odds of another 2026 hike) that just demonstrated how fast the complex can derate; and continued ATM share supply capping rallies.</p>
+        <div class="callout riskbox">
+          <p class="c-lab">Gate decision — none installed</p>
+          <p>No GOOG price gate is currently installed, and the desk recommends keeping it that way until after October 28. The print carries a genuinely binary Cloud/capex read; installing a buy gate into it would be trading the event rather than the thesis. Revisit the gate decision on the post-print update: a clean print with Cloud at or near the whisper and capex inside the guide argues for a shallow-pullback gate; a guide raise beyond $205B argues for patience at a lower level.</p>
+        </div>
+      </section>
+
+      <!-- ================= APPENDIX ================= -->
+      <div class="appendix">
+        <h2>Appendix — sources &amp; data notes</h2>
+        <p>All figures as of the October 16, 2026 close unless otherwise dated. Market data (prices, returns, multiples, 52-week ranges) was compiled from web-index financial pages and has not been verified against exchange data or primary company filings; where sources disagreed, the report carries the range rather than a single figure. Forward TPU revenue figures are individual analysts&rsquo; estimates, not company guidance. Items the research process could not verify are listed openly below.</p>
+
+        <h3>Sources</h3>
+        <div class="src-cols">
+          <ul>
+            <li>Finnhub.io — GOOG ticker page (price, multiples, 52-week range)</li>
+            <li>MarketBeat — GOOG earnings estimates; peer comparison pages; Q2 recap; dividend notes</li>
+            <li>Barron&rsquo;s — &ldquo;Alphabet Stock Can Soar 22%, J.P. Morgan Says&rdquo; (Oct 15)</li>
+            <li>Finbold — Wall Street analyst target updates (Oct 12)</li>
+            <li>TradingNews — GOOG range/capex analysis (Oct 16); market wrap (Oct 15)</li>
+            <li>GoMarkets — Q3 earnings preview (Oct 13 data)</li>
+            <li>The Motley Fool — Oct. 28 preview; Cloud backlog; Waymo; funding rationale (Oct 7–14)</li>
+            <li>TradingView — Evercore ISI TPU note (Oct 15); GOOG key-facts digest (Oct 10)</li>
+            <li>The Market Periodical — Citizens / TD Cowen targets (Oct 10)</li>
+            <li>CoinCentral — Piper Sandler TPU estimates (~Sep 28)</li>
+            <li>Ad-hoc-news — JPMorgan target raise (Oct 16)</li>
+            <li>Traders Union — GOOG range-bound analysis (Oct 15)</li>
+            <li>DailyIQ — GOOG stock page (Oct 15–16)</li>
+            <li>AInvest — Q2 recap; Waymo valuation analysis</li>
+            <li>Kapualabs — TPU economics; valuation analysis</li>
+            <li>Tech-Insider — TPU v8t/v8i deep dive (Oct 16); antitrust timeline</li>
+            <li>MarketWatch — TPU v8 launch (Apr 2026)</li>
+            <li>BestMediaInfo — ad revenue / AI Overviews monetization (Jul 22)</li>
+            <li>Digital Information World — WashU AI Overviews study (Oct 5)</li>
+            <li>Digiday — publisher AI contribution pilot (Sep 14)</li>
+            <li>BeInsure — Waymo $5B term loan (~Oct 11)</li>
+            <li>EVWire — Waymo city openings (Oct 15)</li>
+            <li>StockMoguls — Waymo ride volume (Sep 3)</li>
+            <li>MyFinBright — Uber vs. Waymo scale comparison (Oct 15)</li>
+            <li>Reuters — EU Commission dialogue with Google (Oct 14)</li>
+            <li>Corporate International — ad-tech remedies timeline (~Sep 26)</li>
+            <li>TechTimes — publisher litigation ruling (Oct 15)</li>
+            <li>Weex — GOOG pre-earnings analysis (Oct 15); FOMC calendar</li>
+            <li>KuCoin / Barchart — SOXX eight-session decline (Oct 16)</li>
+            <li>SignalPlus — hyperscaler capex estimates (Oct 13)</li>
+          </ul>
+        </div>
+
+        <h3>Open items — not verified</h3>
+        <ul>
+          <li><strong>Q3 buyback pace:</strong> no primary or quantitative source on Alphabet&rsquo;s Q3 repurchase activity was found; net share-count direction against the active ATM program is unknown into the print.</li>
+          <li><strong>2027 capex:</strong> a &ldquo;significant increase&rdquo; is analyst framing; the company has issued no 2027 guidance.</li>
+          <li><strong>Forward P/E:</strong> sources range from ~23.0–23.7x to ~25.6x depending on provider and earnings basis; the report uses ~23–24x and flags the discrepancy rather than resolving it.</li>
+          <li><strong>Anthropic IPO:</strong> mid-November timing is reported; valuation targets conflict (~$1.5T vs ~$2T across sources).</li>
+          <li><strong>Waymo value inside Street targets:</strong> no itemized sum-of-the-parts attribution was found inside specific $420+ targets; published rationales center on Cloud, TPU, and Search.</li>
+        </ul>
+
+        <h3>Rating history (this desk)</h3>
+        <ul>
+          <li>October 16, 2026 — <strong>Buy, conviction 6/10, target $430</strong> (this report).</li>
+          <li>September 27, 2026 — Hold, target $410.</li>
+        </ul>
+      </div>
+
+      <footer>
+        Prepared October 16, 2026. Reference price $336.91 (NASDAQ close, October 16, 2026). This report is an analytical work product for internal portfolio use; figures drawn from the sources listed in the appendix have not been independently audited.
+      </footer>
+
+    </div>
+
+    <script>
+      (function(){
+        var root=document.documentElement;
+        var lbl=document.getElementById('themeLbl');
+        function current(){
+          var t=root.getAttribute('data-theme');
+          if(t==='dark')return 'dark';
+          if(t==='light')return 'light';
+          return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+        }
+        function sync(){ lbl.textContent = current()==='dark' ? 'Light mode' : 'Dark mode'; }
+        sync();
+        document.getElementById('themeBtn').addEventListener('click',function(){
+          root.setAttribute('data-theme', current()==='dark' ? 'light' : 'dark');
+          sync();
+        });
+        document.getElementById('pdfBtn').addEventListener('click',function(){ window.print(); });
+      })();
+    </script>
+  </body>
+</html>

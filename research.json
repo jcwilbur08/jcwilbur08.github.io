@@ -353,7 +353,7 @@
    "sub": "Market Intelligence",
    "target": null,
    "ticker": null,
-   "title": "Weekly Market Intelligence — Week Ended Sep 25, 2026"
+   "title": "Weekly Market Intelligence \u2014 Week Ended Sep 25, 2026"
   },
   {
    "date": "2026-09-29",
@@ -361,7 +361,7 @@
    "kind": "thematic",
    "rating": null,
    "sub": "Thematic",
-   "summary": "2026 research synthesis: hyperscaler capex migrating toward ~$800B (2026) and $1.1–1.2T (2027E per MS/UBS); Goldman frames ~$7.6T cumulative AI infra spend 2026–31; the debate has shifted from ‘is demand real?’ to whether monetization can earn an acceptable return on the capital base.",
+   "summary": "2026 research synthesis: hyperscaler capex migrating toward ~$800B (2026) and $1.1\u20131.2T (2027E per MS/UBS); Goldman frames ~$7.6T cumulative AI infra spend 2026\u201331; the debate has shifted from \u2018is demand real?\u2019 to whether monetization can earn an acceptable return on the capital base.",
    "target": null,
    "ticker": null,
    "title": "AI Capital Spending & Valuation Hurdle"
@@ -400,10 +400,10 @@
    "target": "$340",
    "kind": "company",
    "date": "2026-10-02",
-   "summary": "Cam's update: ADD (staged & gated), conviction 8/10 (was 9/10). 12-mo base $340 (+45.3%); prob-weighted $328 (+40.3%) — matches our Sep-22 $328 target. Core add band $215-235 (top cut from $240); $235-250 conditional on Nov print. Key debate: demand quality — $94B ecosystem stakes, $105B guarantee cap, $279B supply obligations. Build 0.44% toward ~1.0% in three tranches."
+   "summary": "Cam's update: ADD (staged & gated), conviction 8/10 (was 9/10). 12-mo base $340 (+45.3%); prob-weighted $328 (+40.3%) \u2014 matches our Sep-22 $328 target. Core add band $215-235 (top cut from $240); $235-250 conditional on Nov print. Key debate: demand quality \u2014 $94B ecosystem stakes, $105B guarantee cap, $279B supply obligations. Build 0.44% toward ~1.0% in three tranches."
   },
   {
-   "title": "Weekly Market Intelligence — Week Ended October 2, 2026",
+   "title": "Weekly Market Intelligence \u2014 Week Ended October 2, 2026",
    "file": "Weekly_Market_Intelligence_2026-10-02.html",
    "kind": "weekly",
    "sub": "Weekly",
@@ -414,7 +414,7 @@
    "summary": "Weak Sept payrolls (+29K vs ~90K expected) cut near-term hike odds, but 10Y at 5.26% (5.34% intraday, highest since 2002) leaves the discount-rate problem unresolved. Narrow leadership: semis/AI + energy. Regime: late-cycle nominal resilience, high term premium. Week ahead: ISM Services Mon, FOMC minutes Wed, PEP Q3 Thu, UMich sentiment + DAL Fri. Base 55% / bull 25% / bear 20%."
   },
   {
-   "title": "Stocks to Watch — Week of October 5–9, 2026",
+   "title": "Stocks to Watch \u2014 Week of October 5\u20139, 2026",
    "file": "Stocks_to_Watch_2026-10-05.html",
    "kind": "weekly",
    "sub": "Weekly",
@@ -422,10 +422,10 @@
    "ticker": null,
    "rating": null,
    "target": null,
-   "summary": "Week of Oct 5–9 watchlist: PEP (Oct 8 Q3), JPM (curve/credit read), AMT (duration monitor), XOM (oil/inflation hedge), NVDA (AI earnings vs rates), DAL (Oct 9 demand/fuel), DIS (TV restructuring), QCOM (−8.5% week needs causal separation). Event-reaction matrix and conditions-before-action framework."
+   "summary": "Week of Oct 5\u20139 watchlist: PEP (Oct 8 Q3), JPM (curve/credit read), AMT (duration monitor), XOM (oil/inflation hedge), NVDA (AI earnings vs rates), DAL (Oct 9 demand/fuel), DIS (TV restructuring), QCOM (\u22128.5% week needs causal separation). Event-reaction matrix and conditions-before-action framework."
   },
   {
-   "title": "Weekly Market Intelligence — Audio Briefing Script",
+   "title": "Weekly Market Intelligence \u2014 Audio Briefing Script",
    "file": "audio-script.txt",
    "kind": "weekly",
    "sub": "Audio script",
@@ -456,7 +456,7 @@
    "summary": "Initiate ADD, $340 target (~20% upside from $282.85; 22.7x FY2026E $15.00). Best operator in home improvement: Pro >50%, 8 straight positive Pro comp quarters, Q2 comps +1.7% (strongest since Q3 FY22), guidance reaffirmed; -28.9% 1-yr de-rating, 3.3% yield. Housing tape (7.28% mortgages) keeps it ADD not BUY. Recommended gate: ADD at/below $260 toward ~1%."
   },
   {
-   "title": "Healthcare Sector Outlook — October 2026",
+   "title": "Healthcare Sector Outlook \u2014 October 2026",
    "file": "healthcare-sector-outlook-2026-10-03.html",
    "kind": "thematic",
    "sub": "Sector",
@@ -497,7 +497,7 @@
    "summary": "Initiate ADD, $1,300 target (~14% upside from $1,142.85; 27.9x FY2027E $46.65). Best growth asset in healthcare: Q2 rev +48% ($2.3B beat), guide raised ($85-87B rev), Foundayo oral GLP-1 approved Apr 2026, retatrutide 28.3% Ph3 (BLA Q1 2027), supply normalized. But 31.2x forward is full; risks: Novo/Pfizer/Amgen competition, pricing pressure. Recommended gate: ADD at/below $1,000 toward ~1%."
   },
   {
-   "title": "Industrial Sector Outlook — October 2026",
+   "title": "Industrial Sector Outlook \u2014 October 2026",
    "file": "industrials-sector-outlook-2026-10-04.html",
    "kind": "thematic",
    "sub": "Sector",
@@ -505,7 +505,7 @@
    "ticker": null,
    "rating": null,
    "target": null,
-   "summary": "NEUTRAL/selective: XLI +9.6% YTD vs S&P +12.8%, but ~23x forward vs 20x history and 19x S&P — premium expanded while market's compressed. AI data-center power (565 TWh 2026) is real; multiples price the super-cycle. Held: GEV HOLD/$1,100, GRID KEEP ($169 gate live), VIS KEEP, UBER BUY/$105 (gate fired, unexecuted). 12 equities led by value: CMI LMT UNP DAL, plus ETN RTX EMR HON CAT GE DE NSC. 7 ETFs: XLI VIS GRID ITA XAR PPA IYT. Portfolio 3.2% vs ~8-9% benchmark — close selectively via CMI/LMT, not the index at 23x."
+   "summary": "NEUTRAL/selective: XLI +9.6% YTD vs S&P +12.8%, but ~23x forward vs 20x history and 19x S&P \u2014 premium expanded while market's compressed. AI data-center power (565 TWh 2026) is real; multiples price the super-cycle. Held: GEV HOLD/$1,100, GRID KEEP ($169 gate live), VIS KEEP, UBER BUY/$105 (gate fired, unexecuted). 12 equities led by value: CMI LMT UNP DAL, plus ETN RTX EMR HON CAT GE DE NSC. 7 ETFs: XLI VIS GRID ITA XAR PPA IYT. Portfolio 3.2% vs ~8-9% benchmark \u2014 close selectively via CMI/LMT, not the index at 23x."
   },
   {
    "ticker": "ADBE",
@@ -563,7 +563,7 @@
    "summary": "Initiate HOLD, $200 target (~6% upside from $188.75; ~86x FY27E $2.33). Rule of 40 at 155%, revenue +93%, U.S. commercial +149%, $9.2B cash and no debt; but ~149x P/E and ~55x sales with Morningstar $153/3* against a ~$195 street average. Enterprise-AI application layer; surveillance controversy an overhang. Q3 early Nov. Recommended gate: ADD at/below $150 toward ~1%."
   },
   {
-   "title": "Research Universe Ranking — October 2026",
+   "title": "Research Universe Ranking \u2014 October 2026",
    "file": "research-universe-ranking-2026-10-03.html",
    "kind": "thematic",
    "sub": "Ranking",
@@ -580,7 +580,7 @@
    "target": "$545",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Strong Buy, conviction 8/10, $545 target maintained (~15% upside from $472.78; 25x FY2027E ~$21.80). August revenue record NT$514.8B (+53% y/y); UBS raised 2027 capex f'cast to $90B; 2nm reservations up 10-20%. Q3 prints Oct 15. Accumulate gate ≤$460 stands; not actionable at current price."
+   "summary": "Update (new scale): Strong Buy, conviction 8/10, $545 target maintained (~15% upside from $472.78; 25x FY2027E ~$21.80). August revenue record NT$514.8B (+53% y/y); UBS raised 2027 capex f'cast to $90B; 2nm reservations up 10-20%. Q3 prints Oct 15. Accumulate gate \u2264$460 stands; not actionable at current price."
   },
   {
    "ticker": "NVDA",
@@ -607,7 +607,7 @@
    "target": "$105",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Strong Buy, conviction 8/10, $105 target maintained (~54% upside from $68.11). The ≤$68 dashboard gate FIRED Oct 2 (closed $67.88 Oct 1) — recommendation: execute tranche 1 (~25 sh) on the next open; reserve tranches 2-3 for post-Q3-print and sub-$62 washout. Q3 ~Nov 3; AV rollout accelerating (Waymo ~500K rides/wk)."
+   "summary": "Update (new scale): Strong Buy, conviction 8/10, $105 target maintained (~54% upside from $68.11). The \u2264$68 dashboard gate FIRED Oct 2 (closed $67.88 Oct 1) \u2014 recommendation: execute tranche 1 (~25 sh) on the next open; reserve tranches 2-3 for post-Q3-print and sub-$62 washout. Q3 ~Nov 3; AV rollout accelerating (Waymo ~500K rides/wk)."
   },
   {
    "ticker": "GEHC",
@@ -616,7 +616,7 @@
    "target": "$92",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 7/10, $92 base value maintained (~43% upside from $64.29). Re-rating translation of the Oct 2 note — no material news since. ≤$62 accumulate gate live toward 0.5%; break below $58 on fundamental news = reassess. Q3 estimated ~Oct 28 (unconfirmed)."
+   "summary": "Update (new scale): Buy, conviction 7/10, $92 base value maintained (~43% upside from $64.29). Re-rating translation of the Oct 2 note \u2014 no material news since. \u2264$62 accumulate gate live toward 0.5%; break below $58 on fundamental news = reassess. Q3 estimated ~Oct 28 (unconfirmed)."
   },
   {
    "ticker": "ASML",
@@ -625,7 +625,7 @@
    "target": "$2,050",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 6/10, $2,050 target (~10% upside from $1,867.31; 35x FY2027E ~$58.49; = Morningstar FVE). Morningstar 4-star to 3-star is a mechanical valuation move, FVE unchanged. Q3 Oct 14; MATCH Act DUVi-ban risk live. Accumulate gate recommended ≤$1,700 toward ~1% (not installed)."
+   "summary": "Update (new scale): Buy, conviction 6/10, $2,050 target (~10% upside from $1,867.31; 35x FY2027E ~$58.49; = Morningstar FVE). Morningstar 4-star to 3-star is a mechanical valuation move, FVE unchanged. Q3 Oct 14; MATCH Act DUVi-ban risk live. Accumulate gate recommended \u2264$1,700 toward ~1% (not installed)."
   },
   {
    "ticker": "AVGO",
@@ -634,7 +634,7 @@
    "target": "$535",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Strong Buy, conviction 8/10, $535 target maintained (~51% upside from $355.14; ~27x FY2027E ~$19.50). New: up to $60B financing assembled for Anthropic AI-chip purchases (demand-quality now a tracking item); Anthropic IPO mid-Nov a visibility catalyst. FQ4 Dec 9. Analyst call: INSTALL the ≤$340 gate toward ~3% (pending approval)."
+   "summary": "Update (new scale): Strong Buy, conviction 8/10, $535 target maintained (~51% upside from $355.14; ~27x FY2027E ~$19.50). New: up to $60B financing assembled for Anthropic AI-chip purchases (demand-quality now a tracking item); Anthropic IPO mid-Nov a visibility catalyst. FQ4 Dec 9. Analyst call: INSTALL the \u2264$340 gate toward ~3% (pending approval)."
   },
   {
    "ticker": "GEV",
@@ -643,7 +643,7 @@
    "target": "$1,100",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 7/10, $1,100 target maintained (~11% upside from $988.70). +4% on the $0.50 dividend declaration; Evercore reaffirmed Outperform/$1,350. GLJ Sell/$470 margin thesis unaddressed — Q3 Oct 28 must answer it. ≤$875 gate reaffirmed (recommended, not installed)."
+   "summary": "Update (new scale): Buy, conviction 7/10, $1,100 target maintained (~11% upside from $988.70). +4% on the $0.50 dividend declaration; Evercore reaffirmed Outperform/$1,350. GLJ Sell/$470 margin thesis unaddressed \u2014 Q3 Oct 28 must answer it. \u2264$875 gate reaffirmed (recommended, not installed)."
   },
   {
    "ticker": "PEP",
@@ -652,7 +652,7 @@
    "target": "$152",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 6/10, $152 target (~21% upside from $125.89; ~25% total w/ 4.6% yield). Fresh 52-wk low; Q3 Thu Oct 8 BMO (cons ~$2.30 EPS) is binary — the print decides the rating. JPM to Hold; Elliott restructuring accelerating. Do NOT add into the print; accumulate ≤~$120 post-print on maintained guide (gates not installed)."
+   "summary": "Update (new scale): Buy, conviction 6/10, $152 target (~21% upside from $125.89; ~25% total w/ 4.6% yield). Fresh 52-wk low; Q3 Thu Oct 8 BMO (cons ~$2.30 EPS) is binary \u2014 the print decides the rating. JPM to Hold; Elliott restructuring accelerating. Do NOT add into the print; accumulate \u2264~$120 post-print on maintained guide (gates not installed)."
   },
   {
    "ticker": "NFLX",
@@ -661,7 +661,7 @@
    "target": "$88",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 6/10, $88 target maintained (+31% upside from $67.06) — resolves the flagged HOLD-vs-31%-upside tension: the rating was wrong, not the target. Stock -7% to near 52-wk low; 17.5x forward. Q3 Tue Oct 20 AMC; engagement deceleration is the watch item. Hold 500 sh through the print; staged trims on strength above $80/$88."
+   "summary": "Update (new scale): Buy, conviction 6/10, $88 target maintained (+31% upside from $67.06) \u2014 resolves the flagged HOLD-vs-31%-upside tension: the rating was wrong, not the target. Stock -7% to near 52-wk low; 17.5x forward. Q3 Tue Oct 20 AMC; engagement deceleration is the watch item. Hold 500 sh through the print; staged trims on strength above $80/$88."
   },
   {
    "ticker": "HD",
@@ -670,7 +670,7 @@
    "target": "$340",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 7/10, $340 target maintained (~20% upside from $282.85). Best operator; Q3 Nov 17; Bernstein cut to $344. Analyst call: INSTALL the ≤$260 gate toward ~1% (pending approval). Paired with LOW as the sector barbell — sequence LOW first on valuation."
+   "summary": "Update (new scale): Buy, conviction 7/10, $340 target maintained (~20% upside from $282.85). Best operator; Q3 Nov 17; Bernstein cut to $344. Analyst call: INSTALL the \u2264$260 gate toward ~1% (pending approval). Paired with LOW as the sector barbell \u2014 sequence LOW first on valuation."
   },
   {
    "ticker": "LOW",
@@ -679,7 +679,7 @@
    "target": "$225",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 7/10, $225 target (~24% upside from $180.80; ~1% above the 52-wk low). Q2 rev +8.3% but guide cut to low end; 2.8% yield. ≤$165 gate reaffirmed toward ~1% (recommended, not installed)."
+   "summary": "Update (new scale): Buy, conviction 7/10, $225 target (~24% upside from $180.80; ~1% above the 52-wk low). Q2 rev +8.3% but guide cut to low end; 2.8% yield. \u2264$165 gate reaffirmed toward ~1% (recommended, not installed)."
   },
   {
    "ticker": "MA",
@@ -688,7 +688,7 @@
    "target": "$650",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 7/10, $650 target maintained (~18% upside from $552.26). Dividend raised to $0.87/qtr; washed out -8% from Aug high. Not Strong Buy: Morningstar $550 FVE says fairly priced; Q3 ~Oct 29 decides conviction. Recommended ≤~$520 accumulate gate toward 6-6.5% (not installed); no trim (tax-punitive +638% gain)."
+   "summary": "Update (new scale): Buy, conviction 7/10, $650 target maintained (~18% upside from $552.26). Dividend raised to $0.87/qtr; washed out -8% from Aug high. Not Strong Buy: Morningstar $550 FVE says fairly priced; Q3 ~Oct 29 decides conviction. Recommended \u2264~$520 accumulate gate toward 6-6.5% (not installed); no trim (tax-punitive +638% gain)."
   },
   {
    "ticker": "ADBE",
@@ -697,7 +697,7 @@
    "target": "$320",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 7/10, $320 target (~35% upside from $237.69; ~11.5x FY2027E ~$27.70). No material news in 24h. ≤$210 gate reaffirmed toward ~1% (recommended, not installed); MAX Nov 10-12 and FQ4 ~Dec 9 are the tests."
+   "summary": "Update (new scale): Buy, conviction 7/10, $320 target (~35% upside from $237.69; ~11.5x FY2027E ~$27.70). No material news in 24h. \u2264$210 gate reaffirmed toward ~1% (recommended, not installed); MAX Nov 10-12 and FQ4 ~Dec 9 are the tests."
   },
   {
    "ticker": "SO",
@@ -706,7 +706,7 @@
    "target": "$92",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 6/10, $92 target maintained (~10% price upside from $83.72; ~13.5% total w/ 3.6% yield — rating rests on total return, stated honestly). Google-Georgia Power nuclear uprate deal; 10-yr ~5.2% is the overhang. Q3 Nov 5. Accumulate on rate-driven weakness toward ~2.5% (not installed)."
+   "summary": "Update (new scale): Buy, conviction 6/10, $92 target maintained (~10% price upside from $83.72; ~13.5% total w/ 3.6% yield \u2014 rating rests on total return, stated honestly). Google-Georgia Power nuclear uprate deal; 10-yr ~5.2% is the overhang. Q3 Nov 5. Accumulate on rate-driven weakness toward ~2.5% (not installed)."
   },
   {
    "ticker": "AMT",
@@ -715,7 +715,7 @@
    "target": "$225",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 7/10, $225 target maintained (~39% price upside from $162.20; ~43% total w/ 4.4% yield). 2026 is the trough year for tenant billings; 2027 re-acceleration guided. Q3 Oct 27. Recommended ≤~$160 accumulate gate toward ~3% (not installed)."
+   "summary": "Update (new scale): Buy, conviction 7/10, $225 target maintained (~39% price upside from $162.20; ~43% total w/ 4.4% yield). 2026 is the trough year for tenant billings; 2027 re-acceleration guided. Q3 Oct 27. Recommended \u2264~$160 accumulate gate toward ~3% (not installed)."
   },
   {
    "ticker": "AMZN",
@@ -724,7 +724,7 @@
    "target": "$315",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 7/10, $315 target maintained (+25% upside from $251.52). AWS–Synopsys $1B+ silicon deal; Q3 Oct 29 is binary on AWS >35% growth. Recommended <~$225 weakness-add gate toward 8.5% cap (not installed); trim only above ~$300 if weight >9%."
+   "summary": "Update (new scale): Buy, conviction 7/10, $315 target maintained (+25% upside from $251.52). AWS\u2013Synopsys $1B+ silicon deal; Q3 Oct 29 is binary on AWS >35% growth. Recommended <~$225 weakness-add gate toward 8.5% cap (not installed); trim only above ~$300 if weight >9%."
   },
   {
    "ticker": "DIS",
@@ -742,7 +742,7 @@
    "target": "$410",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Strong Buy, conviction 8/10, $410 target maintained (~20% upside from $340.35). Anthropic IPO roadshow (Alphabet ~14% stake); Waymo $16B round at $126B. Q3 Oct 28 is the proving ground on Cloud backlog conversion. Recommended $310–315 weakness-add gate toward 3.5–4% (not installed)."
+   "summary": "Update (new scale): Strong Buy, conviction 8/10, $410 target maintained (~20% upside from $340.35). Anthropic IPO roadshow (Alphabet ~14% stake); Waymo $16B round at $126B. Q3 Oct 28 is the proving ground on Cloud backlog conversion. Recommended $310\u2013315 weakness-add gate toward 3.5\u20134% (not installed)."
   },
   {
    "ticker": "WMT",
@@ -751,7 +751,7 @@
    "target": "$120",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 6/10, $120 target (~15% upside from $104.26). Mizuho cut PT $130→$125; CEO ruled out personalized pricing. Q3 Nov 19. ≤$95 gate reaffirmed toward ~1% (recommended, not installed)."
+   "summary": "Update (new scale): Buy, conviction 6/10, $120 target (~15% upside from $104.26). Mizuho cut PT $130\u2192$125; CEO ruled out personalized pricing. Q3 Nov 19. \u2264$95 gate reaffirmed toward ~1% (recommended, not installed)."
   },
   {
    "ticker": "LLY",
@@ -760,7 +760,7 @@
    "target": "$1,300",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 7/10, $1,300 target maintained (~14% upside from $1,142.85). Foundayo ATTAIN-1 data; JPM raised to $1,500. Q3 ~Oct 29 is the conviction hinge. ≤$1,000 gate reaffirmed toward ~1% (recommended, not installed)."
+   "summary": "Update (new scale): Buy, conviction 7/10, $1,300 target maintained (~14% upside from $1,142.85). Foundayo ATTAIN-1 data; JPM raised to $1,500. Q3 ~Oct 29 is the conviction hinge. \u2264$1,000 gate reaffirmed toward ~1% (recommended, not installed)."
   },
   {
    "ticker": "MSFT",
@@ -769,7 +769,7 @@
    "target": "$590",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 7/10, $590 target maintained (~14% upside from $517.53). Wells Fargo $725; Azure ≥45% at the Oct 27 print decides conviction. Recommended $490–500 weakness-add gate toward ~4% (not installed)."
+   "summary": "Update (new scale): Buy, conviction 7/10, $590 target maintained (~14% upside from $517.53). Wells Fargo $725; Azure \u226545% at the Oct 27 print decides conviction. Recommended $490\u2013500 weakness-add gate toward ~4% (not installed)."
   },
   {
    "ticker": "PM",
@@ -787,7 +787,7 @@
    "target": "$285",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 6/10, $285 target raised from $276 (~21% upside from $234.69). Dreamforce: Agentforce/AIforce push; Fin acquisition closed. Recommended ≤$210 accumulate gate toward 1.5–2% (not installed); Dec 2 print is the hinge."
+   "summary": "Update (new scale): Buy, conviction 6/10, $285 target raised from $276 (~21% upside from $234.69). Dreamforce: Agentforce/AIforce push; Fin acquisition closed. Recommended \u2264$210 accumulate gate toward 1.5\u20132% (not installed); Dec 2 print is the hinge."
   },
   {
    "ticker": "META",
@@ -796,7 +796,7 @@
    "target": "$800",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 6/10, $800 target maintained (~10% upside from $728.08) — higher conviction with insufficient upside. New Mexico jury verdict (43M privacy violations, $35–40B sought) is a new tail risk. Q3 Oct 28. No action; add only below ~$680."
+   "summary": "Update (new scale): Hold, conviction 6/10, $800 target maintained (~10% upside from $728.08) \u2014 higher conviction with insufficient upside. New Mexico jury verdict (43M privacy violations, $35\u201340B sought) is a new tail risk. Q3 Oct 28. No action; add only below ~$680."
   },
   {
    "ticker": "GS",
@@ -805,7 +805,7 @@
    "target": "$1,020",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 5/10, $1,020 target maintained (~13% upside from $902.56; 2.9x Sep-2027 TBVPS). WSJ: Waldron eyed as CEO successor (2027/28). Q3 Oct 13 BMO. Add only on washout ≤~$800 (recommended, not installed); trim only above ~$1,100."
+   "summary": "Update (new scale): Hold, conviction 5/10, $1,020 target maintained (~13% upside from $902.56; 2.9x Sep-2027 TBVPS). WSJ: Waldron eyed as CEO successor (2027/28). Q3 Oct 13 BMO. Add only on washout \u2264~$800 (recommended, not installed); trim only above ~$1,100."
   },
   {
    "ticker": "QCOM",
@@ -814,7 +814,7 @@
    "target": "$215",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 6/10, $215 target (~16% upside from $184.87). AWS $60B data-center deal + Apple patent renewal; auto exit raised to ~$7B. Morningstar 2★→3★ is mechanical. FQ4 ~Nov 4 is the proving ground. Recommended ≤$170 accumulate gate toward ~1.5% (not installed)."
+   "summary": "Update (new scale): Buy, conviction 6/10, $215 target (~16% upside from $184.87). AWS $60B data-center deal + Apple patent renewal; auto exit raised to ~$7B. Morningstar 2\u2605\u21923\u2605 is mechanical. FQ4 ~Nov 4 is the proving ground. Recommended \u2264$170 accumulate gate toward ~1.5% (not installed)."
   },
   {
    "ticker": "BMY",
@@ -823,7 +823,7 @@
    "target": "$68",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 6/10, $68 target maintained (~11% price upside from $61.15; ~15% total w/ 4.1% yield). CAMZYOS pediatric approval + ZENBEXUS Ph3 win; Piper to $82. Q3 Oct 29. Accumulate ≤~$55 toward ~1.5% (not installed); halve on 2027 pipeline failure."
+   "summary": "Update (new scale): Buy, conviction 6/10, $68 target maintained (~11% price upside from $61.15; ~15% total w/ 4.1% yield). CAMZYOS pediatric approval + ZENBEXUS Ph3 win; Piper to $82. Q3 Oct 29. Accumulate \u2264~$55 toward ~1.5% (not installed); halve on 2027 pipeline failure."
   },
   {
    "ticker": "KO",
@@ -832,7 +832,7 @@
    "target": "$94",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 5/10, $94 target maintained (~10% upside from $85.65 — just under the Buy floor). Elite operator at a full 26x; Morningstar $75/2★. Q3 Oct 27. Accumulate ≤~$74 toward ~2% (recommended, not installed); no trim (tax-punitive)."
+   "summary": "Update (new scale): Hold, conviction 5/10, $94 target maintained (~10% upside from $85.65 \u2014 just under the Buy floor). Elite operator at a full 26x; Morningstar $75/2\u2605. Q3 Oct 27. Accumulate \u2264~$74 toward ~2% (recommended, not installed); no trim (tax-punitive)."
   },
   {
    "ticker": "BATRA",
@@ -841,7 +841,7 @@
    "target": "$60",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 5/10, $60 target (revised from $63 on share count; ~4% upside from $57.62). Braves won NL wild-card series; Dec 1 MLB lockout now base case — the real buying opportunity is a lockout dislocation, not playoff momentum. Add only in low $50s (not installed)."
+   "summary": "Update (new scale): Hold, conviction 5/10, $60 target (revised from $63 on share count; ~4% upside from $57.62). Braves won NL wild-card series; Dec 1 MLB lockout now base case \u2014 the real buying opportunity is a lockout dislocation, not playoff momentum. Add only in low $50s (not installed)."
   },
   {
    "ticker": "JPM",
@@ -850,7 +850,7 @@
    "target": "$360",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 5/10, $360 target maintained (~8% price upside from $332.38). IB/ Markets pre-warned mid-to-high teens; Q3 Oct 13 8:30 AM ET. No trim gate per Cam's direction — re-underwrite triggers only: washout toward ~$300 (upgrade candidate) or credit/NII deterioration."
+   "summary": "Update (new scale): Hold, conviction 5/10, $360 target maintained (~8% price upside from $332.38). IB/ Markets pre-warned mid-to-high teens; Q3 Oct 13 8:30 AM ET. No trim gate per Cam's direction \u2014 re-underwrite triggers only: washout toward ~$300 (upgrade candidate) or credit/NII deterioration."
   },
   {
    "ticker": "V",
@@ -859,7 +859,7 @@
    "target": "$405",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 6/10, $405 target raised from $385 (~12% upside from $360.66; 27x FY2027E). 160+ stablecoin card programs disclosed; FQ4 Oct 27 AMC. Accumulate ≤~$330 toward ~2.5% post-print (recommended, not installed); no trim (tax-punitive)."
+   "summary": "Update (new scale): Buy, conviction 6/10, $405 target raised from $385 (~12% upside from $360.66; 27x FY2027E). 160+ stablecoin card programs disclosed; FQ4 Oct 27 AMC. Accumulate \u2264~$330 toward ~2.5% post-print (recommended, not installed); no trim (tax-punitive)."
   },
   {
    "ticker": "JNJ",
@@ -868,7 +868,7 @@
    "target": "$275",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 6/10, $275 target maintained (~7% upside from $256.03). ICOTYDE 2-yr data strong; BofA/JPM raised to $278/$285 (Neutral). Q3 Oct 13. ≤$230 gate reaffirmed toward ~1% (recommended, not installed); don't add into the print."
+   "summary": "Update (new scale): Hold, conviction 6/10, $275 target maintained (~7% upside from $256.03). ICOTYDE 2-yr data strong; BofA/JPM raised to $278/$285 (Neutral). Q3 Oct 13. \u2264$230 gate reaffirmed toward ~1% (recommended, not installed); don't add into the print."
   },
   {
    "ticker": "KHC",
@@ -877,7 +877,7 @@
    "target": "$24",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 5/10, $24 target maintained (~8% price upside from $22.19; ~15% total w/ 7.2% yield). Street consensus Reduce; Berkshire 13F mid-Nov is the binary watch. ≤$20 gate reaffirmed toward ~1% (recommended, not installed). Q3 ~Oct 28."
+   "summary": "Update (new scale): Hold, conviction 5/10, $24 target maintained (~8% price upside from $22.19; ~15% total w/ 7.2% yield). Street consensus Reduce; Berkshire 13F mid-Nov is the binary watch. \u2264$20 gate reaffirmed toward ~1% (recommended, not installed). Q3 ~Oct 28."
   },
   {
    "ticker": "DELL",
@@ -886,7 +886,7 @@
    "target": "$600",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 6/10, $600 target maintained (~7% upside from $562.52). $95B AI backlog intact; +3.75% Friday. ≤$500 gate reaffirmed toward ~1% (recommended, not installed); break below $465 on fundamentals = reassess. Q3 ~Nov 24."
+   "summary": "Update (new scale): Hold, conviction 6/10, $600 target maintained (~7% upside from $562.52). $95B AI backlog intact; +3.75% Friday. \u2264$500 gate reaffirmed toward ~1% (recommended, not installed); break below $465 on fundamentals = reassess. Q3 ~Nov 24."
   },
   {
    "ticker": "PLTR",
@@ -895,7 +895,7 @@
    "target": "$200",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 5/10, $200 target maintained (~6% upside from $188.75). Armada sovereign-AI partnership (Oct 1); Q3 confirmed Nov 2. ≤$150 gate reaffirmed toward ~1% (recommended, not installed)."
+   "summary": "Update (new scale): Hold, conviction 5/10, $200 target maintained (~6% upside from $188.75). Armada sovereign-AI partnership (Oct 1); Q3 confirmed Nov 2. \u2264$150 gate reaffirmed toward ~1% (recommended, not installed)."
   },
   {
    "ticker": "AAPL",
@@ -922,124 +922,124 @@
    "target": "$365",
    "kind": "company",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 7/10, $365 target RESET from $425 (math correction: prior target sat at the bull case; ~21% upside from $302.76). YTD -18.2%. Q3 Oct 23. Accumulate ≤~$285 toward ~2% post-print (recommended, not installed); no trim (tax-punitive)."
+   "summary": "Update (new scale): Buy, conviction 7/10, $365 target RESET from $425 (math correction: prior target sat at the bull case; ~21% upside from $302.76). YTD -18.2%. Q3 Oct 23. Accumulate \u2264~$285 toward ~2% post-print (recommended, not installed); no trim (tax-punitive)."
   },
   {
    "ticker": "TLXIX",
    "file": "tlxix-fund-overview-2026-10-04.html",
    "rating": "Hold",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; target-date vehicle with no upside leg by design. 5-star, 0.10% net ER, $40.07 NAV, ~$164K (9.7%, largest fund position; portfolio's only bond exposure). No add/no trim; reduce only above ~12%."
+   "summary": "Update (new scale): Hold, conviction 6/10 \u2014 legacy KEEP translated; target-date vehicle with no upside leg by design. 5-star, 0.10% net ER, $40.07 NAV, ~$164K (9.7%, largest fund position; portfolio's only bond exposure). No add/no trim; reduce only above ~12%."
   },
   {
    "ticker": "VXUS",
    "file": "vxus-fund-overview-2026-10-04.html",
    "rating": "Hold",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; index vehicle priced at its index by construction. 0.05% ER, $85.43, ~$46K (2.7%). Accumulate below ~$78 toward ~3.5% on sustained ex-US pullback (recommended, not installed); no trim."
+   "summary": "Update (new scale): Hold, conviction 6/10 \u2014 legacy KEEP translated; index vehicle priced at its index by construction. 0.05% ER, $85.43, ~$46K (2.7%). Accumulate below ~$78 toward ~3.5% on sustained ex-US pullback (recommended, not installed); no trim."
   },
   {
    "ticker": "VFFSX",
    "file": "vffsx-fund-overview-2026-10-04.html",
    "rating": "Reduce",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Reduce, conviction 3/10 — legacy TRIM translated directly; desk's first Reduce. Flawless fund but redundant third layer of S&P 500 beta (~$37.8K, 2.2%). Consolidate; redeploy via TSM/NVDA gates. $5,000 recorded basis almost certainly misrecorded — verify before any sale."
+   "summary": "Update (new scale): Reduce, conviction 3/10 \u2014 legacy TRIM translated directly; desk's first Reduce. Flawless fund but redundant third layer of S&P 500 beta (~$37.8K, 2.2%). Consolidate; redeploy via TSM/NVDA gates. $5,000 recorded basis almost certainly misrecorded \u2014 verify before any sale."
   },
   {
    "ticker": "AVUV",
    "file": "avuv-fund-overview-2026-10-04.html",
    "rating": "Hold",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; high-conviction index-style Hold on 5-yr top-decile factor record. 0.25% ER, $120.03, ~$31K (1.8%). Keep FSSNX; fold VTWO into it in its own account (noted, cross-account unavailable)."
+   "summary": "Update (new scale): Hold, conviction 6/10 \u2014 legacy KEEP translated; high-conviction index-style Hold on 5-yr top-decile factor record. 0.25% ER, $120.03, ~$31K (1.8%). Keep FSSNX; fold VTWO into it in its own account (noted, cross-account unavailable)."
   },
   {
    "ticker": "FSSNX",
    "file": "fssnx-fund-overview-2026-10-04.html",
    "rating": "Hold",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 7/10 — canonical 'higher conviction with insufficient upside' case: cheapest/tightest small-cap tracker, expected upside ~0 by design. 0.025% ER, $35.60 NAV, ~$31K (1.86%). FSSNX + AVUV barbell stands; VTWO keeps its own account."
+   "summary": "Update (new scale): Hold, conviction 7/10 \u2014 canonical 'higher conviction with insufficient upside' case: cheapest/tightest small-cap tracker, expected upside ~0 by design. 0.025% ER, $35.60 NAV, ~$31K (1.86%). FSSNX + AVUV barbell stands; VTWO keeps its own account."
   },
   {
    "ticker": "FSMDX",
    "file": "fsmdx-fund-overview-2026-10-04.html",
    "rating": "Hold",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; best-built mid-cap index vehicle (4★, 0.025% ER, 0.05% tracking error), expected excess return ~0% by construction. Hold as mid-cap core; IJH cross-account overlap not actionable."
+   "summary": "Update (new scale): Hold, conviction 6/10 \u2014 legacy KEEP translated; best-built mid-cap index vehicle (4\u2605, 0.025% ER, 0.05% tracking error), expected excess return ~0% by construction. Hold as mid-cap core; IJH cross-account overlap not actionable."
   },
   {
    "ticker": "SCHD",
    "file": "schd-fund-overview-2026-10-04.html",
    "rating": "Hold",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; best-in-class dividend vehicle (0.06% ER, ~3.2% yield) but yield ~200bp below the 10-yr Treasury; distribution deceleration watch. Hold as dividend-sleeve anchor."
+   "summary": "Update (new scale): Hold, conviction 6/10 \u2014 legacy KEEP translated; best-in-class dividend vehicle (0.06% ER, ~3.2% yield) but yield ~200bp below the 10-yr Treasury; distribution deceleration watch. Hold as dividend-sleeve anchor."
   },
   {
    "ticker": "IJH",
    "file": "ijh-fund-overview-2026-10-04.html",
    "rating": "Hold",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; profitability screen is the structural edge, 0.05% ER, surgical tracking, +329% on his cost. Hold as mid-cap vehicle in its account; FSMDX keeps its own."
+   "summary": "Update (new scale): Hold, conviction 6/10 \u2014 legacy KEEP translated; profitability screen is the structural edge, 0.05% ER, surgical tracking, +329% on his cost. Hold as mid-cap vehicle in its account; FSMDX keeps its own."
   },
   {
    "ticker": "VTWO",
    "file": "vtwo-fund-overview-2026-10-04.html",
    "rating": "Hold",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 6/10 — legacy KEEP translated; best-in-class Russell 2000 tracker (0.06% ER, ~$8.60/yr fee drag). Duplication vs FSSNX stands only on different retirement accounts; each account keeps its own vehicle."
+   "summary": "Update (new scale): Hold, conviction 6/10 \u2014 legacy KEEP translated; best-in-class Russell 2000 tracker (0.06% ER, ~$8.60/yr fee drag). Duplication vs FSSNX stands only on different retirement accounts; each account keeps its own vehicle."
   },
   {
    "ticker": "GRID",
    "file": "grid-fund-overview-2026-10-04.html",
    "rating": "Buy",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 6/10 — legacy KEEP→Buy on ~12–15% forward outlook vs its electrification role. EO 14420 demand-shoring tailwind; 0.56% ER, $182.91. Installed ≤$169 accumulate gate reaffirmed (~8% above gate; no action)."
+   "summary": "Update (new scale): Buy, conviction 6/10 \u2014 legacy KEEP\u2192Buy on ~12\u201315% forward outlook vs its electrification role. EO 14420 demand-shoring tailwind; 0.56% ER, $182.91. Installed \u2264$169 accumulate gate reaffirmed (~8% above gate; no action)."
   },
   {
    "ticker": "VIS",
    "file": "vis-fund-overview-2026-10-04.html",
    "rating": "Hold",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Hold, conviction 5/10 — legacy KEEP translated; build path closed by the desk's own Oct 4 industrials outlook (index at ~23× forward; new dollars go to GRID/GEV/single names, not the index). Hold the 16-share anchor; revisit build toward ~1% only on a washout toward $280–300."
+   "summary": "Update (new scale): Hold, conviction 5/10 \u2014 legacy KEEP translated; build path closed by the desk's own Oct 4 industrials outlook (index at ~23\u00d7 forward; new dollars go to GRID/GEV/single names, not the index). Hold the 16-share anchor; revisit build toward ~1% only on a washout toward $280\u2013300."
   },
   {
    "ticker": "SOXQ",
    "file": "soxq-fund-overview-2026-10-04.html",
    "rating": "Reduce",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Reduce, conviction 3/10 — vehicle still fine (0.19% ER, 5★, Zacks Rank 1) but the 0.17% position duplicates his Strong-Buy NVDA/TSM. Analyst call: liquidate the ~$2,895 and redeploy into the standing NVDA staged-add band ($215–235) / TSM ≤$460 gate (advisory, Cam decides)."
+   "summary": "Update (new scale): Reduce, conviction 3/10 \u2014 vehicle still fine (0.19% ER, 5\u2605, Zacks Rank 1) but the 0.17% position duplicates his Strong-Buy NVDA/TSM. Analyst call: liquidate the ~$2,895 and redeploy into the standing NVDA staged-add band ($215\u2013235) / TSM \u2264$460 gate (advisory, Cam decides)."
   },
   {
    "ticker": "VHT",
    "file": "vht-fund-overview-2026-10-04.html",
    "rating": "Buy",
-   "target": "—",
+   "target": "\u2014",
    "kind": "fund",
    "date": "2026-10-04",
-   "summary": "Update (new scale): Buy, conviction 6/10 — reaffirms the Oct 3 BUY; nothing fundamental changed in 24 hrs. $311.90 ref price, 0.09% ER, ~$19B AUM, Zacks Rank 1; expected ~10–12% 12-mo total return (estimate). Initiate toward 5–8% of NAV as the core healthcare holding (recommended, not installed)."
+   "summary": "Update (new scale): Buy, conviction 6/10 \u2014 reaffirms the Oct 3 BUY; nothing fundamental changed in 24 hrs. $311.90 ref price, 0.09% ER, ~$19B AUM, Zacks Rank 1; expected ~10\u201312% 12-mo total return (estimate). Initiate toward 5\u20138% of NAV as the core healthcare holding (recommended, not installed)."
   },
   {
    "ticker": "ORCL",
@@ -1049,7 +1049,7 @@
    "kind": "company",
    "date": "2026-10-05",
    "name": "Oracle Corporation",
-   "summary": "New coverage: Buy, conviction 7/10, $200 target (~41% upside from $142.30). OCI +121% YoY, $664B RPO (8.6x revenue), 16.7x FY2027E — but financing overhang unresolved ($156B+ debt, Oct 28 analyst day must frame FY2028 FCF inflection). Recommended gate: ≤$130 toward ~1% (not installed)."
+   "summary": "New coverage: Buy, conviction 7/10, $200 target (~41% upside from $142.30). OCI +121% YoY, $664B RPO (8.6x revenue), 16.7x FY2027E \u2014 but financing overhang unresolved ($156B+ debt, Oct 28 analyst day must frame FY2028 FCF inflection). Recommended gate: \u2264$130 toward ~1% (not installed)."
   },
   {
    "ticker": "CLX",
@@ -1072,7 +1072,7 @@
    "summary": "New coverage: Buy, conviction 6/10, $220 target (~38% upside from $158.96). IPO June 12, 2026 at $135 (largest ever); Starlink $4.29B Q2 +66% with 12M subs; AI segment +247% to $2.56B with first positive adj. EBITDA; Q2 FCF -$25B. Beta 5.1. Recommended gate: <=$130 toward ~1% (not installed). Supersedes the private-company pass."
   },
   {
-   "title": "Next-Dollar Capital Allocation Ranking — October 2026",
+   "title": "Next-Dollar Capital Allocation Ranking \u2014 October 2026",
    "file": "report_20261006-152729.html",
    "kind": "thematic",
    "sub": "Ranking",
@@ -1080,30 +1080,30 @@
    "ticker": null,
    "rating": null,
    "target": null,
-   "summary": "Cam's own capital-allocation ranking (34 stocks, $1.687M book, $43K cash): ADBE #1 (Strong Add starter, $314 anchor, ~32% gap, $235–245 gate), AMT #2, UBER #3, AVGO #4, GOOG #5, UNH #6, PEP #7, NVDA #8, CRM #9, ORCL #10. Hard-gate overlays: NFLX Trim, BMY blocked on pipeline review, TSM above add bands, PLTR valuation-gated."
+   "summary": "Cam's own capital-allocation ranking (34 stocks, $1.687M book, $43K cash): ADBE #1 (Strong Add starter, $314 anchor, ~32% gap, $235\u2013245 gate), AMT #2, UBER #3, AVGO #4, GOOG #5, UNH #6, PEP #7, NVDA #8, CRM #9, ORCL #10. Hard-gate overlays: NFLX Trim, BMY blocked on pipeline review, TSM above add bands, PLTR valuation-gated."
   },
   {
-   "title": "TSMC (TSM) — September 2026 Monthly Revenue Update",
+   "title": "TSMC (TSM) \u2014 September 2026 Monthly Revenue Update",
    "file": "report_20261008-190428.html",
    "kind": "company",
    "date": "2026-10-08",
    "ticker": "TSM",
    "rating": "Strong Buy",
    "target": "$545",
-   "summary": "Cam's TSM September revenue update (Oct 8): Sep revenue NT$511.86B, +54.6% YoY; 3Q26 revenue ~NT$1.494T (+51% YoY), +2.3% vs the LSEG NT$1.46T consensus cited by Reuters — beating the NT$445–483B September threshold for the dollar guidance range. Positive fundamental update, valuation discipline retained; Oct 15 earnings is the decisive next checkpoint (gross margins, N2 ramp, FY2026 capex, Q4 demand). Research only — not published to PCC."
+   "summary": "Cam's TSM September revenue update (Oct 8): Sep revenue NT$511.86B, +54.6% YoY; 3Q26 revenue ~NT$1.494T (+51% YoY), +2.3% vs the LSEG NT$1.46T consensus cited by Reuters \u2014 beating the NT$445\u2013483B September threshold for the dollar guidance range. Positive fundamental update, valuation discipline retained; Oct 15 earnings is the decisive next checkpoint (gross margins, N2 ramp, FY2026 capex, Q4 demand). Research only \u2014 not published to PCC."
   },
   {
-   "title": "ASML Holding N.V. (ASML) — Fundamental Analysis Update",
+   "title": "ASML Holding N.V. (ASML) \u2014 Fundamental Analysis Update",
    "file": "asml-fundamental-analysis-2026-10-08.html",
    "kind": "company",
    "date": "2026-10-08",
    "ticker": "ASML",
    "rating": "Buy",
    "target": "$2,050",
-   "summary": "Full fundamental update (Oct 8): Buy 6/10 maintained, $2,050 target (35x FY2027E $58.49) — ~16% upside from $1,769.86, widened from ~10% on the pullback. Q2 beat (&euro;9.33B, 54.0% GM); FY2026 guide raised twice to &euro;43–45B. Q3 prints Oct 14 (guide &euro;11–12B, 55–57% GM; street ~$13.1B/~$12.07 high in range). Fresh demand: TSMC Sept +54.6% YoY beat, Samsung record Q3 on AI memory. 2027 EUV capacity virtually all booked; High-NA in HVM at Intel. MATCH Act not enacted (BofA full-ban scenario: 14–15% revenue at risk). &euro;442.5M buyback in the Sept 28–Oct 2 week. Recommended: ≤$1,700 ADD gate toward ~1% (not installed); no chase into the print."
+   "summary": "Full fundamental update (Oct 8): Buy 6/10 maintained, $2,050 target (35x FY2027E $58.49) \u2014 ~16% upside from $1,769.86, widened from ~10% on the pullback. Q2 beat (&euro;9.33B, 54.0% GM); FY2026 guide raised twice to &euro;43\u201345B. Q3 prints Oct 14 (guide &euro;11\u201312B, 55\u201357% GM; street ~$13.1B/~$12.07 high in range). Fresh demand: TSMC Sept +54.6% YoY beat, Samsung record Q3 on AI memory. 2027 EUV capacity virtually all booked; High-NA in HVM at Intel. MATCH Act not enacted (BofA full-ban scenario: 14\u201315% revenue at risk). &euro;442.5M buyback in the Sept 28\u2013Oct 2 week. Recommended: \u2264$1,700 ADD gate toward ~1% (not installed); no chase into the print."
   },
   {
-   "title": "Capital Allocation Ranking — Six Names — October 2026",
+   "title": "Capital Allocation Ranking \u2014 Six Names \u2014 October 2026",
    "file": "capital-allocation-ranking-2026-10-08.html",
    "kind": "thematic",
    "sub": "Ranking",
@@ -1111,7 +1111,7 @@
    "ticker": null,
    "rating": null,
    "target": null,
-   "summary": "Desk capital-allocation ranking of six names (Oct 8, live prices): NVDA #1 (Strong Buy 8/10, +42% upside, inside $215–$235 band, no print), UBER #2 (Strong Buy 8/10, +49% upside, ~19 sh of fired tranche open), ADBE #3 (Buy 7/10, +33%, record FQ3 print behind it but $241 above the $235 gate), UNH #4 (Strong Buy 8/10, +28%, reports Oct 13 — wait), TSM #5 (Strong Buy 8/10, +19%, reports Oct 15 — wait), ASML #6 (Buy 6/10, +16%, reports Oct 14 — wait). Frame: earnings-week triage — three of six report within seven days."
+   "summary": "Desk capital-allocation ranking of six names (Oct 8, live prices): NVDA #1 (Strong Buy 8/10, +42% upside, inside $215\u2013$235 band, no print), UBER #2 (Strong Buy 8/10, +49% upside, ~19 sh of fired tranche open), ADBE #3 (Buy 7/10, +33%, record FQ3 print behind it but $241 above the $235 gate), UNH #4 (Strong Buy 8/10, +28%, reports Oct 13 \u2014 wait), TSM #5 (Strong Buy 8/10, +19%, reports Oct 15 \u2014 wait), ASML #6 (Buy 6/10, +16%, reports Oct 14 \u2014 wait). Frame: earnings-week triage \u2014 three of six report within seven days."
   },
   {
    "ticker": "HOOD",
@@ -1121,7 +1121,7 @@
    "target": "$130",
    "kind": "company",
    "date": "2026-10-09",
-   "summary": "New coverage: Buy, conviction 6/10, $130 target (~19% upside from $109.02). Best-in-class 42% net margin / 22.4% ROE, record $21.7B quarterly net deposits (~28% annualized), 28.4M funded customers, $369B platform assets; Q2 proved the model grows (+32% revenue) with crypto -38%. But 47.5x trailing P/E and 20-22x sales (richest in peer set), Morningstar $50 fair value (Very High uncertainty), multi-state prediction-market crackdown, beta 2.47; Q3 prints Oct 27 AMC. Recommended gate: ≤$98 toward ~1% (not installed)."
+   "summary": "New coverage: Buy, conviction 6/10, $130 target (~19% upside from $109.02). Best-in-class 42% net margin / 22.4% ROE, record $21.7B quarterly net deposits (~28% annualized), 28.4M funded customers, $369B platform assets; Q2 proved the model grows (+32% revenue) with crypto -38%. But 47.5x trailing P/E and 20-22x sales (richest in peer set), Morningstar $50 fair value (Very High uncertainty), multi-state prediction-market crackdown, beta 2.47; Q3 prints Oct 27 AMC. Recommended gate: \u2264$98 toward ~1% (not installed)."
   },
   {
    "ticker": "SIEGY",
@@ -1131,7 +1131,7 @@
    "target": "$166",
    "kind": "company",
    "date": "2026-10-09",
-   "summary": "New coverage: Buy, conviction 6/10, $166 target (~12% upside from $148.52). €300 ordinary-share equivalent = 24x FY2027E EPS ~€12.49. Wide-moat quality: record €132bn backlog, FY26 EPS guidance raised twice to €11.20–11.50, Smart Infrastructure at all-time-high 18.3% margins on data-center/electrification, €6bn buyback running. But Morningstar 2-star overvalued (FVE ~€241 vs €275), Q3 beat sold off 4–5%, Evercore downgraded Oct 2; Q4 prints Nov 12. ADR ratio 2:1 derived, not primary-confirmed. Recommended gate: ≤$135 toward ~1% (not installed)."
+   "summary": "New coverage: Buy, conviction 6/10, $166 target (~12% upside from $148.52). \u20ac300 ordinary-share equivalent = 24x FY2027E EPS ~\u20ac12.49. Wide-moat quality: record \u20ac132bn backlog, FY26 EPS guidance raised twice to \u20ac11.20\u201311.50, Smart Infrastructure at all-time-high 18.3% margins on data-center/electrification, \u20ac6bn buyback running. But Morningstar 2-star overvalued (FVE ~\u20ac241 vs \u20ac275), Q3 beat sold off 4\u20135%, Evercore downgraded Oct 2; Q4 prints Nov 12. ADR ratio 2:1 derived, not primary-confirmed. Recommended gate: \u2264$135 toward ~1% (not installed)."
   },
   {
    "ticker": "KMB",
@@ -1141,7 +1141,7 @@
    "target": "$115",
    "kind": "company",
    "date": "2026-10-09",
-   "summary": "New coverage: Hold, conviction 5/10, $115 target (~18% upside from $97.59). 13.3x forward P/E (cheapest in 10 yrs) and 5.25% yield with 54 straight annual raises — but the standalone earnings base disappears when the $48.7B Kenvue deal closes in Q4 2026 (EU decision Oct 13); the investor underwrites a merger integration ($2.1B synergies = ~15% of Kenvue cost base, inherited Tylenol/talc litigation, S&P Negative). August guidance cut (organic ~flat, China diaper scare); Q3 prints Oct 27. Recommended gate: ≤$90 toward ~1% (not installed)."
+   "summary": "New coverage: Hold, conviction 5/10, $115 target (~18% upside from $97.59). 13.3x forward P/E (cheapest in 10 yrs) and 5.25% yield with 54 straight annual raises \u2014 but the standalone earnings base disappears when the $48.7B Kenvue deal closes in Q4 2026 (EU decision Oct 13); the investor underwrites a merger integration ($2.1B synergies = ~15% of Kenvue cost base, inherited Tylenol/talc litigation, S&P Negative). August guidance cut (organic ~flat, China diaper scare); Q3 prints Oct 27. Recommended gate: \u2264$90 toward ~1% (not installed)."
   },
   {
    "ticker": "CTAS",
@@ -1151,7 +1151,7 @@
    "target": "$216",
    "kind": "company",
    "date": "2026-10-09",
-   "summary": "New coverage: Hold, conviction 6/10, $216 target (~7% upside from $202.41). Elite wide-moat compounder — record 51.5% gross / 23.6% op margins in Q1 FY2027, raised FY2027 guidance, 42 straight annual dividend raises, 42.6% ROE — but ~37x forward and 1.01x Morningstar's $200 FV means the price reflects it; stock fell 3.4% on a beat-and-raise. Swing factor: ~$5.5B UniFirst deal (FTC second request, close targeted by year-end). Recommended gate: ≤$180 toward ~1% (not installed)."
+   "summary": "New coverage: Hold, conviction 6/10, $216 target (~7% upside from $202.41). Elite wide-moat compounder \u2014 record 51.5% gross / 23.6% op margins in Q1 FY2027, raised FY2027 guidance, 42 straight annual dividend raises, 42.6% ROE \u2014 but ~37x forward and 1.01x Morningstar's $200 FV means the price reflects it; stock fell 3.4% on a beat-and-raise. Swing factor: ~$5.5B UniFirst deal (FTC second request, close targeted by year-end). Recommended gate: \u2264$180 toward ~1% (not installed)."
   },
   {
    "ticker": "COST",
@@ -1161,7 +1161,7 @@
    "target": "$1,050",
    "kind": "company",
    "date": "2026-10-09",
-   "summary": "New coverage: Hold, conviction 5/10, $1,050 target (~11% upside from $946.92). The best retailer on earth — 92.3% US/Canada renewal, 84.1M members, digital +19.5%, Q4 FY2026 beat — but Morningstar is 1-star at $650 FV (46% below the price) and ~44-46x trailing sits on the 5-yr average premium with zero discount; documented sell-offs even on beats. Speculated ~$20 special dividend (late 2026) is a kicker, not a thesis. Recommended gate: ≤$850 toward ~1% (not installed)."
+   "summary": "New coverage: Hold, conviction 5/10, $1,050 target (~11% upside from $946.92). The best retailer on earth \u2014 92.3% US/Canada renewal, 84.1M members, digital +19.5%, Q4 FY2026 beat \u2014 but Morningstar is 1-star at $650 FV (46% below the price) and ~44-46x trailing sits on the 5-yr average premium with zero discount; documented sell-offs even on beats. Speculated ~$20 special dividend (late 2026) is a kicker, not a thesis. Recommended gate: \u2264$850 toward ~1% (not installed)."
   },
   {
    "ticker": "CEG",
@@ -1171,7 +1171,7 @@
    "target": "$345",
    "kind": "company",
    "date": "2026-10-09",
-   "summary": "New coverage: Buy, conviction 6/10, $345 target (~16% upside from $298.07). The AI-power thesis is contracted — Google 3.59 GW pair (Oct 6) and Amazon 20-yr Calvert Cliffs PPA on 15-20 yr terms; Calpine closed Jan 2026 (~55 GW); FY26 adj EPS guide raised to $11.50-12.50. But +12% on the Google news already; ~24x forward is a premium to Vistra/Talen; Q2 margin compression; FERC/PJM and utility-bill politics are the binding risks; ~3.0x leverage. Goldman's $305 Neutral is the discipline anchor. Recommended gate: ≤$260 toward ~1% (not installed)."
+   "summary": "New coverage: Buy, conviction 6/10, $345 target (~16% upside from $298.07). The AI-power thesis is contracted \u2014 Google 3.59 GW pair (Oct 6) and Amazon 20-yr Calvert Cliffs PPA on 15-20 yr terms; Calpine closed Jan 2026 (~55 GW); FY26 adj EPS guide raised to $11.50-12.50. But +12% on the Google news already; ~24x forward is a premium to Vistra/Talen; Q2 margin compression; FERC/PJM and utility-bill politics are the binding risks; ~3.0x leverage. Goldman's $305 Neutral is the discipline anchor. Recommended gate: \u2264$260 toward ~1% (not installed)."
   },
   {
    "ticker": "NVO",
@@ -1181,7 +1181,7 @@
    "target": "$46",
    "kind": "company",
    "date": "2026-10-09",
-   "summary": "New coverage: Buy, conviction 6/10, $46 target (~19% upside from $38.64). Washed-out quality — wide moat at 11.6x forward vs Lilly 39x, ~5% yield, 2026 guidance raised twice (now 0% to -6% CER): the bleeding is slowing while the market prices terminal decline. But Lilly is structurally winning (Zepbound, orforglipron, retatrutide); CagriSema FDA decision expected Q4 2026 is binary; patent cliff + MFN/TrumpRx pricing cap upside. Morningstar 3-star DKK 275; Q3 Nov 4. ADR 1:1 verified. Recommended gate: ≤$34 toward ~1% (not installed)."
+   "summary": "New coverage: Buy, conviction 6/10, $46 target (~19% upside from $38.64). Washed-out quality \u2014 wide moat at 11.6x forward vs Lilly 39x, ~5% yield, 2026 guidance raised twice (now 0% to -6% CER): the bleeding is slowing while the market prices terminal decline. But Lilly is structurally winning (Zepbound, orforglipron, retatrutide); CagriSema FDA decision expected Q4 2026 is binary; patent cliff + MFN/TrumpRx pricing cap upside. Morningstar 3-star DKK 275; Q3 Nov 4. ADR 1:1 verified. Recommended gate: \u2264$34 toward ~1% (not installed)."
   },
   {
    "ticker": "GS",
@@ -1191,7 +1191,7 @@
    "target": "$1,050",
    "kind": "company",
    "date": "2026-10-13",
-   "summary": "Q3 2026 earnings update: UPGRADED to Buy, conviction 6/10, target raised to $1,050 (~18% upside from $891.91). Genuine franchise beat — EPS $17.01 (+39%) vs $13.09 consensus, revenue $18.68B (+23%, 2nd-highest quarter ever), record $1.654B advisory fees, #1 M&A, equities +72%, ROTE 20.5%, CET1 12.4%. FICC miss is industry-wide, not GS-specific. Stock faded +4.2% to -0.23% on sell-the-beat. Forward: $150B alts fundraising target, elevated Q4 incentive fees. Succession addressed by Solomon."
+   "summary": "Q3 2026 earnings update: UPGRADED to Buy, conviction 6/10, target raised to $1,050 (~18% upside from $891.91). Genuine franchise beat \u2014 EPS $17.01 (+39%) vs $13.09 consensus, revenue $18.68B (+23%, 2nd-highest quarter ever), record $1.654B advisory fees, #1 M&A, equities +72%, ROTE 20.5%, CET1 12.4%. FICC miss is industry-wide, not GS-specific. Stock faded +4.2% to -0.23% on sell-the-beat. Forward: $150B alts fundraising target, elevated Q4 incentive fees. Succession addressed by Solomon."
   },
   {
    "ticker": "UNH",
@@ -1201,7 +1201,7 @@
    "target": "$475",
    "kind": "company",
    "date": "2026-10-13",
-   "summary": "Q3 2026 earnings update: Strong Buy 8/10, $475 target maintained (~26% upside from $377.76). MCR 88.4% vs 89.7% expected (-130 bps beat) is the whole story; adj EPS $4.69 vs $4.14 (+13%); FY2026 guide raised to ≥$20.50 (3rd raise). CFO's 2027 signal: ≥$20.50 is 'a solid run rate,' 13-16% LT growth implies ~$23.16 floor — the $475 target already embeds it. Caveats: $610M reserve development flattered MCR; revenue -0.4% YoY; commercial emerging as squeaky wheel; zero incremental DOJ disclosure. Accumulate-toward-2% gate stands. Cantor OW/$495 maintained."
+   "summary": "Q3 2026 earnings update: Strong Buy 8/10, $475 target maintained (~26% upside from $377.76). MCR 88.4% vs 89.7% expected (-130 bps beat) is the whole story; adj EPS $4.69 vs $4.14 (+13%); FY2026 guide raised to \u2265$20.50 (3rd raise). CFO's 2027 signal: \u2265$20.50 is 'a solid run rate,' 13-16% LT growth implies ~$23.16 floor \u2014 the $475 target already embeds it. Caveats: $610M reserve development flattered MCR; revenue -0.4% YoY; commercial emerging as squeaky wheel; zero incremental DOJ disclosure. Accumulate-toward-2% gate stands. Cantor OW/$495 maintained."
   },
   {
    "ticker": "JPM",
@@ -1211,10 +1211,10 @@
    "target": "$360",
    "kind": "company",
    "date": "2026-10-13",
-   "summary": "Q3 2026 earnings update: Hold 5/10, $360 target maintained (~9% upside from $331.43). Rare, narrow, noisy miss — $5.57 GAAP ($5.75 ex $658M securities losses) vs $5.93; revenue $50.2B vs $51.23B — but credit benign (NCOs -15% YoY) and NII beat ($27.1B, +13%). Stock round-tripped (-3.8% premarket → +1.35% → close -0.86%) on the raised FY26 NII guide (~$106.2B) and $107B 2027 NII central case. Flags: buyback collapsed (~$1B vs $6.7B); expenses +12% vs revenue +8% with FY26 guide raised to ~$108.6B. ROTCE 20% still beats 17% target. Trim discipline above ~$365 stands."
+   "summary": "Q3 2026 earnings update: Hold 5/10, $360 target maintained (~9% upside from $331.43). Rare, narrow, noisy miss \u2014 $5.57 GAAP ($5.75 ex $658M securities losses) vs $5.93; revenue $50.2B vs $51.23B \u2014 but credit benign (NCOs -15% YoY) and NII beat ($27.1B, +13%). Stock round-tripped (-3.8% premarket \u2192 +1.35% \u2192 close -0.86%) on the raised FY26 NII guide (~$106.2B) and $107B 2027 NII central case. Flags: buyback collapsed (~$1B vs $6.7B); expenses +12% vs revenue +8% with FY26 guide raised to ~$108.6B. ROTCE 20% still beats 17% target. Trim discipline above ~$365 stands."
   },
   {
-   "title": "Capital Allocation Ranking — October 13, 2026",
+   "title": "Capital Allocation Ranking \u2014 October 13, 2026",
    "file": "Retirement_Portfolio_Capital_Allocation_Ranking_2026-10-13.html",
    "kind": "thematic",
    "sub": "Ranking",
@@ -1232,7 +1232,7 @@
    "target": "$2,050",
    "kind": "company",
    "date": "2026-10-14",
-   "summary": "Q3 2026 earnings update (in dollars; EURUSD 1.121429): Buy 6/10, $2,050 target maintained (~19% upside from $1,720 intraday ref). Sales $13.08B within $12.34-13.46B guide but -0.5% vs LSEG $13.14B; gross margin 57.5% beat 55-57% guide; net income $5.56B beat LSEG ~21% but $0.57B is a Mistral AI revaluation gain (ex-gain ~$5.09B). FY2026 raised to $49.34-50.46B at ~56% (low-end only); Q4 $15.92-17.05B at ~57%. 2027: no numeric guidance; supply 'will not fully meet' demand; CMD June 10, 2027. Buyback ~$4.60B in Q3; cash $14.28B. Bookings NOT graded (discontinued after Q4 2025). Gate ≤$1,700 watch mode — $1,720 above it, not triggered."
+   "summary": "Q3 2026 earnings update (in dollars; EURUSD 1.121429): Buy 6/10, $2,050 target maintained (~19% upside from $1,720 intraday ref). Sales $13.08B within $12.34-13.46B guide but -0.5% vs LSEG $13.14B; gross margin 57.5% beat 55-57% guide; net income $5.56B beat LSEG ~21% but $0.57B is a Mistral AI revaluation gain (ex-gain ~$5.09B). FY2026 raised to $49.34-50.46B at ~56% (low-end only); Q4 $15.92-17.05B at ~57%. 2027: no numeric guidance; supply 'will not fully meet' demand; CMD June 10, 2027. Buyback ~$4.60B in Q3; cash $14.28B. Bookings NOT graded (discontinued after Q4 2025). Gate \u2264$1,700 watch mode \u2014 $1,720 above it, not triggered."
   },
   {
    "ticker": "NVDA",
@@ -1242,7 +1242,7 @@
    "target": "$328",
    "kind": "company",
    "date": "2026-10-14",
-   "summary": "Updated analysis Oct 14, 2026: Strong Buy 8/10, $328 prob-weighted target maintained (~48% upside from $222.31; $340 base case). The ~7% pullback improved the entry — price at the low end of the $215-235 staged band, at the $222.27 cost basis. Forward ~19x NTM is a decade low vs ~32x avg while FY2028 EPS was raised $12.7→$15.5-15.7 (42 up, 0 down). Rubin in full production and ramping; TSMC +51% Q3 and fully-booked CoWoS confirm supply-constrained demand; supply commitments $119B→$279B. Offsets: Broadcom-Anthropic $60B custom-silicon threat; China zero in guide; high bar into ~Nov 18 print. Gate ≤$220 not touched; band actionable."
+   "summary": "Updated analysis Oct 14, 2026: Strong Buy 8/10, $328 prob-weighted target maintained (~48% upside from $222.31; $340 base case). The ~7% pullback improved the entry \u2014 price at the low end of the $215-235 staged band, at the $222.27 cost basis. Forward ~19x NTM is a decade low vs ~32x avg while FY2028 EPS was raised $12.7\u2192$15.5-15.7 (42 up, 0 down). Rubin in full production and ramping; TSMC +51% Q3 and fully-booked CoWoS confirm supply-constrained demand; supply commitments $119B\u2192$279B. Offsets: Broadcom-Anthropic $60B custom-silicon threat; China zero in guide; high bar into ~Nov 18 print. Gate \u2264$220 not touched; band actionable."
   },
   {
    "ticker": "TSM",
@@ -1252,7 +1252,7 @@
    "target": "$545",
    "kind": "company",
    "date": "2026-10-14",
-   "summary": "Q3 2026 pre-earnings preview (prints Oct 15): Strong Buy 8/10, $545 maintained (~26% upside from $432.51). Revenue already locked at record ~NT$1.494T (+50.9%, +2.3% above LSEG NT$1.46T). LSEG SmartEstimate (via Reuters, Oct 12): Q3 net profit NT$746.3B (+65% YoY), 6th straight record; no margin consensus — benchmark to 65-67% GM guide. Stock ~11% off Oct 5 record; ~20x fwd / ~16x 2027E. Tomorrow needs: GM at/near 67%, Q4 +10-15% seq with GM ≥66%, FY raised to low-to-mid 40s, capex utilization-backed; watch any 2027 capex number (BofA to $83B). 2026 record beats sold on capex intensity — a beat alone is not enough. ≤$460 gate fired+executed; no live add gate; hold 33 sh into the print."
+   "summary": "Q3 2026 pre-earnings preview (prints Oct 15): Strong Buy 8/10, $545 maintained (~26% upside from $432.51). Revenue already locked at record ~NT$1.494T (+50.9%, +2.3% above LSEG NT$1.46T). LSEG SmartEstimate (via Reuters, Oct 12): Q3 net profit NT$746.3B (+65% YoY), 6th straight record; no margin consensus \u2014 benchmark to 65-67% GM guide. Stock ~11% off Oct 5 record; ~20x fwd / ~16x 2027E. Tomorrow needs: GM at/near 67%, Q4 +10-15% seq with GM \u226566%, FY raised to low-to-mid 40s, capex utilization-backed; watch any 2027 capex number (BofA to $83B). 2026 record beats sold on capex intensity \u2014 a beat alone is not enough. \u2264$460 gate fired+executed; no live add gate; hold 33 sh into the print."
   },
   {
    "ticker": "ADBE",
@@ -1262,18 +1262,18 @@
    "target": "$320",
    "kind": "company",
    "date": "2026-10-14",
-   "summary": "Updated analysis Oct 14, 2026: Buy 7/10, $320 target maintained (~35% upside from $237.92; ~11.5x FY2027E $27.70). Two downgrades since Oct 8 — Wells Fargo double-downgrade to UW/$225 and HSBC to Hold/$267 — both on the net-new ARR deceleration (~38-40% down YoY) the desk already flagged; sentiment catching up, not new fundamentals. Street consensus Hold/$272.31 is ~15% below the desk. Keeps 7: decade-low multiple (~9.7x FY26, ~8.6x FY27 vs ~25x software); AI-first ARR +150% past $650M; FQ3 beat with record $2.52B OCF; $24.55B buyback remaining (~1/4 of mkt cap). Other side: ArtCraft headline risk, Canva ProSuite, PERM suspension, insider selling; Dec 9 FQ4 is the proving ground. ≤$235 gate installed, $237.92 above it — not triggered."
+   "summary": "Updated analysis Oct 14, 2026: Buy 7/10, $320 target maintained (~35% upside from $237.92; ~11.5x FY2027E $27.70). Two downgrades since Oct 8 \u2014 Wells Fargo double-downgrade to UW/$225 and HSBC to Hold/$267 \u2014 both on the net-new ARR deceleration (~38-40% down YoY) the desk already flagged; sentiment catching up, not new fundamentals. Street consensus Hold/$272.31 is ~15% below the desk. Keeps 7: decade-low multiple (~9.7x FY26, ~8.6x FY27 vs ~25x software); AI-first ARR +150% past $650M; FQ3 beat with record $2.52B OCF; $24.55B buyback remaining (~1/4 of mkt cap). Other side: ArtCraft headline risk, Canva ProSuite, PERM suspension, insider selling; Dec 9 FQ4 is the proving ground. \u2264$235 gate installed, $237.92 above it \u2014 not triggered."
   },
   {
    "ticker": null,
-   "name": "Capital Allocation Ranking — October 14, 2026",
+   "name": "Capital Allocation Ranking \u2014 October 14, 2026",
    "file": "capital-allocation-ranking-2026-10-14.html",
    "rating": null,
    "target": null,
    "kind": "thematic",
    "sub": "Ranking",
    "date": "2026-10-14",
-   "summary": "Desk next-dollar ranking (Oct 14 closes): #1 ASML — GATE HIT, $1,650 through ≤$1,700 (Buy 6/10, +24%; ~3 sh ≈ $4,950 toward ~1%); #2 UBER SB 8/10 +51.5% (0.32% wt; ~19 sh of ≤$68 tranche 1 open); #3 NVDA SB 8/10 +48.2% ($221 = low end of band); #4 GEHC Buy 7/10 +34.4% (0.20%→0.5%; re-underwrite overdue); #5 ADBE Buy 7/10 +32.9% (0.49%→~1%); #6 AVGO SB 8/10 +54.5% but 2.53% already — hold; #7 UNH SB 8/10 +20.1% (wait for weakness); #8 TSM SB 8/10 +26.7% (no action into tomorrow's print). New initiations: SPCX, HOOD, CEG, LOW, NVO, HD. Financials ~23% — no adds; GS trim menu stands."
+   "summary": "Desk next-dollar ranking (Oct 14 closes): #1 ASML \u2014 GATE HIT, $1,650 through \u2264$1,700 (Buy 6/10, +24%; ~3 sh \u2248 $4,950 toward ~1%); #2 UBER SB 8/10 +51.5% (0.32% wt; ~19 sh of \u2264$68 tranche 1 open); #3 NVDA SB 8/10 +48.2% ($221 = low end of band); #4 GEHC Buy 7/10 +34.4% (0.20%\u21920.5%; re-underwrite overdue); #5 ADBE Buy 7/10 +32.9% (0.49%\u2192~1%); #6 AVGO SB 8/10 +54.5% but 2.53% already \u2014 hold; #7 UNH SB 8/10 +20.1% (wait for weakness); #8 TSM SB 8/10 +26.7% (no action into tomorrow's print). New initiations: SPCX, HOOD, CEG, LOW, NVO, HD. Financials ~23% \u2014 no adds; GS trim menu stands."
   },
   {
    "ticker": "TSM",
@@ -1283,7 +1283,7 @@
    "target": "$545",
    "kind": "company",
    "date": "2026-10-15",
-   "summary": "Q3 2026 earnings update (printed Oct 15): Strong Buy 8/10, $545 maintained (~27% upside from $430). Revenue NT$1,494.24B (+50.9%) beat LSEG NT$1.47T ~1.7% and topped guide by ~$0.9B; net profit NT$763.06B (+68.7%, 6th record) beat ~2.2%; GM 66.4% (near 67% bar), OM 58.7% (above guide). Q4 guide $52.3-54.3B well ahead of Street; FY raised to ~44% (3rd raise); capex utilization-backed. Cleared every preview bar, yet sold off — 3rd 2026 record-beat selloff on macro/contagion, not the print. Correction: preview cited LSEG rev NT$1.46T; actual LSEG was NT$1.47T. 38 sh @ $427.08; no live add gate."
+   "summary": "Q3 2026 earnings update (printed Oct 15): Strong Buy 8/10, $545 maintained (~27% upside from $430). Revenue NT$1,494.24B (+50.9%) beat LSEG NT$1.47T ~1.7% and topped guide by ~$0.9B; net profit NT$763.06B (+68.7%, 6th record) beat ~2.2%; GM 66.4% (near 67% bar), OM 58.7% (above guide). Q4 guide $52.3-54.3B well ahead of Street; FY raised to ~44% (3rd raise); capex utilization-backed. Cleared every preview bar, yet sold off \u2014 3rd 2026 record-beat selloff on macro/contagion, not the print. Correction: preview cited LSEG rev NT$1.46T; actual LSEG was NT$1.47T. 38 sh @ $427.08; no live add gate."
   },
   {
    "ticker": "SPCX",
@@ -1293,10 +1293,10 @@
    "target": "$220",
    "kind": "company",
    "date": "2026-10-15",
-   "summary": "SPCX updated analysis (Oct 15): Buy 6/10, $220 maintained (~50% upside from $146.44). Thesis intact but riskier: Starship Flight 14 first orbital mission; AI revenue contracted and flowing (Google $920M/mo ~$30B thru Jun-2029, Anthropic up to $84.5B; 90-day cancel clauses); Starlink ~13M subs, Q3 rev est ~$4.8B; GS raised to $230, MS OW $300. Offsets: reported $40B debt raise -> debt >$79B, record CDS; CoreWeave contagion; 1.31B-share unlock post-Q3; -9% in a week on good news. Q3 expected Nov 3-5. ≤$130 gate not installed, $146.44 above it — closer into play."
+   "summary": "SPCX updated analysis (Oct 15): Buy 6/10, $220 maintained (~50% upside from $146.44). Thesis intact but riskier: Starship Flight 14 first orbital mission; AI revenue contracted and flowing (Google $920M/mo ~$30B thru Jun-2029, Anthropic up to $84.5B; 90-day cancel clauses); Starlink ~13M subs, Q3 rev est ~$4.8B; GS raised to $230, MS OW $300. Offsets: reported $40B debt raise -> debt >$79B, record CDS; CoreWeave contagion; 1.31B-share unlock post-Q3; -9% in a week on good news. Q3 expected Nov 3-5. \u2264$130 gate not installed, $146.44 above it \u2014 closer into play."
   },
   {
-   "title": "Capital Allocation Ranking — October 15, 2026",
+   "title": "Capital Allocation Ranking \u2014 October 15, 2026",
    "file": "Retirement_Portfolio_Capital_Allocation_Ranking_2026-10-15.html",
    "kind": "thematic",
    "sub": "Ranking",
@@ -1304,7 +1304,48 @@
    "ticker": null,
    "rating": null,
    "target": null,
-   "summary": "Cam's capital-allocation ranking, Oct 15, 2026 (intraday refresh vs export-61 baseline, $1.734M live): UBER #1, TSM #2 (up 1, inside entry band post-earnings), VXUS #3, AVUV #4, AVDV #5, ASML #6 (up 2, ahead of ADBE — beat-and-raise, ~27% upside to house $2,088), ADBE #7, PANW #8, NVDA #9 (sizing now the binding gate: 0.67% vs ~0.5% guideline), CRM #10, LOW #11, VRTX #12, UNH #13, AVGO #14. GEHC corrected #2→#19 per the house re-underwrite (hold starter, no adds into Oct 28 print, accumulate ≤~$63). Macro frame: hot CPI/PPI pushed late-Oct FOMC hike odds to ~coin flip; ASML/TSM beat and traded lower. Flags the $43K cash line as unreconciled vs ~$4,200 of Oct-14 buys."
+   "summary": "Cam's capital-allocation ranking, Oct 15, 2026 (intraday refresh vs export-61 baseline, $1.734M live): UBER #1, TSM #2 (up 1, inside entry band post-earnings), VXUS #3, AVUV #4, AVDV #5, ASML #6 (up 2, ahead of ADBE \u2014 beat-and-raise, ~27% upside to house $2,088), ADBE #7, PANW #8, NVDA #9 (sizing now the binding gate: 0.67% vs ~0.5% guideline), CRM #10, LOW #11, VRTX #12, UNH #13, AVGO #14. GEHC corrected #2\u2192#19 per the house re-underwrite (hold starter, no adds into Oct 28 print, accumulate \u2264~$63). Macro frame: hot CPI/PPI pushed late-Oct FOMC hike odds to ~coin flip; ASML/TSM beat and traded lower. Flags the $43K cash line as unreconciled vs ~$4,200 of Oct-14 buys."
+  },
+  {
+   "ticker": "DELL",
+   "name": "Dell Technologies Inc.",
+   "file": "dell-updated-analysis-2026-10-16.html",
+   "rating": "Buy",
+   "target": "$580",
+   "kind": "company",
+   "date": "2026-10-16",
+   "summary": "DELL updated analysis (Oct 16): UPGRADED to Buy 6/10, $580 target (was Hold 6/10, $600) \u2014 +28.4% upside from $451.71 close. -21% in five sessions on Barclays' Oct-14 downgrade to Equal Weight ($574 target; thesis: enterprise revenue = memory-cost inflation, no 'meaningful AI inflection' yet), MS's same call Oct 12, hot CPI/PPI reviving hike bets, and a sector-wide AI unwind. Fundamentals intact: FQ2 record ($46.97B +58%, AI orders $60.9B, backlog $95B), FY27 guide raised ($192B / $25.50). Real flag: FCF -47% to $986M on a ~$20B working-capital build while $4.3B was returned. 17.3x FY27E ($26.09) vs 22x at highs. Nov 24 bar is above guide ($50.63B/$6.63 vs $49.0B/$6.50). Recommended \u2264$450 add gate toward ~1% (not installed)."
+  },
+  {
+   "ticker": "GOOG",
+   "name": "Alphabet Inc.",
+   "file": "goog-q3-preview-2026-10-16.html",
+   "rating": "Buy",
+   "target": "$430",
+   "kind": "company",
+   "date": "2026-10-16",
+   "summary": "GOOG Q3 preview (Oct 16): UPGRADED to Buy 6/10, $430 target (was Hold, $410) \u2014 +27.6% upside from $336.91. Held up far better than AI peers this week (-2.3% vs -21% DELL): profitable ads engine + JPM raise to $425. Q3 Oct 28 AMC: consensus ~$3.02 EPS / ~$127.67B rev (+24.7%); whisper bar is Cloud near +100% (JPM). TPU external sales ramping (majority of revenue in 2027; Evercore est $75B 2027); Waymo >500K rides/wk toward 1M, $5B term loan Oct; antitrust eased (no AdX/Chrome breakup). 2026 capex $195-205B, Q2 FCF -$5.9B. Forward ~23-24x in line with MSFT/AMZN. No gate installed; revisit after the print."
+  },
+  {
+   "ticker": "AVGO",
+   "name": "Broadcom Inc.",
+   "file": "avgo-updated-analysis-2026-10-16.html",
+   "rating": "Strong Buy",
+   "target": "$535",
+   "kind": "company",
+   "date": "2026-10-16",
+   "summary": "AVGO updated analysis (Oct 16): Strong Buy 8/10, $535 maintained \u2014 +62.8% upside from $328.75 (34% below $495 high). -8.7% on the week was sector derisking, no company news. AI framework intact: ~$58B FY26 \u2192 ~$115B FY27 \u2192 ~$230B FY28 (supply locked in); Anthropic 1GW TPUs in 2026 \u2192 5GW/10GW, largest XPU customer next year; OpenAI Jalape\u00f1o shipping, 1.3GW next year; six XPU customers. FQ3: $29.59B +86%, AI chips +221%, FCF $13.7B; FQ4 guide $34.8B (+93%). ~18x FY27E, <12x FY28. FQ4 Dec 9. The recommended \u2264$340 add gate toward ~3% is NOW LIVE ($328.75 below it) \u2014 desk recommends installing."
+  },
+  {
+   "title": "Complete Portfolio Investment Thesis Review \u2014 October 16, 2026",
+   "file": "portfolio-investment-thesis-review-2026-10-16.html",
+   "kind": "thematic",
+   "sub": "Thesis Review",
+   "date": "2026-10-16",
+   "ticker": null,
+   "rating": null,
+   "target": null,
+   "summary": "Cam's complete portfolio investment thesis review, Oct 16, 2026 (export-63 baseline, $1.728M): evidence-led refresh across all 42 securities \u2014 strengths, emerging weaknesses, forward checkpoints, and explicit falsification rules for each thesis. Analyst posture: retain the strategic long-term growth allocation; prioritize valuation discipline, cross-holding correlation, and falsification tests before incremental concentrated adds. Research conclusion, not a CIO decision."
   }
  ],
  "updated": "2026-10-15"
