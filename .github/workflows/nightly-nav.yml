@@ -3,11 +3,16 @@ name: Nightly mutual fund NAVs
 # Refreshes nav.json (VFFSX, TLXIX, FSSNX, FSMDX) after fund NAVs post.
 # The dashboard reads nav.json same-origin at each load — no CORS issues,
 # no API key needed. Upload this file to .github/workflows/ in the repo.
+#
+# If you previously had update-mutual-funds.yml in .github/workflows/,
+# delete it — it wrote an unused mutual-fund-quotes.json the dashboard
+# never read.
 
 on:
   schedule:
-    # 2:00 AM UTC = 10:00 PM ET (EDT) / 9:00 PM ET (EST), after NAVs post
-    - cron: '0 2 * * *'
+    # 2:00 AM UTC = 10:00 PM ET (EDT) / 9:00 PM ET (EST), after NAVs post.
+    # Weeknights only; weekends/holidays are no-ops (nothing to update).
+    - cron: '0 2 * * 1-5'
   workflow_dispatch:  # allow manual runs from the Actions tab
 
 permissions:
@@ -45,10 +50,16 @@ jobs:
               if len(pts) < 2:
                   raise RuntimeError(t + ": not enough NAV history")
               (d1, c1), (d0, c0) = pts[-1], pts[-2]
-              out["funds"][t] = {"nav": round(c1, 4), "prev": round(c0, 4), "date": d1}
-          with open("nav.json", "w") as f:
-              json.dump(out, f, indent=1)
-          print(json.dumps(out, indent=1))
+              out["funds"][t] = {"nav": round(c1, 2), "prev": round(c0, 2), "date": d1}
+              print(t, "nav=", round(c1, 2), "prev=", round(c0, 2), "date=", d1)
+          # Only write when all four funds came back clean — never overwrite
+          # a good nav.json with partial data.
+          if len(out["funds"]) == len(FUNDS):
+              with open("nav.json", "w") as f:
+                  json.dump(out, f, indent=1)
+              print("Wrote nav.json")
+          else:
+              raise RuntimeError("Partial fetch — leaving nav.json untouched.")
           EOF
 
       - name: Commit updated nav.json
