@@ -1,0 +1,384 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <title>Adobe Updated Analysis — October 14, 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      color-scheme:light dark;
+      --paper:#f2f5f6;--surface:#fff;--ink:#12242a;--muted:#50666c;--faint:#788b90;--line:#d9e3e5;
+      --navy:#0a2533;--blue:#164a67;--teal:#0b7c78;--aqua:#7de1d3;--lime:#b8e768;--gold:#e7b458;--red:#b84b53;
+      --soft-teal:#e7f5f2;--soft-blue:#e8f1f5;--soft-gold:#fbf2df;--soft-red:#faecee;--shadow:0 18px 52px rgba(13,42,50,.10)
+    }
+    :root[data-theme="dark"]{color-scheme:dark;--paper:#081317;--surface:#102126;--ink:#eef7f5;--muted:#b8c9ca;--faint:#8fa1a4;--line:#294045;--navy:#061b27;--blue:#123a50;--teal:#16a19a;--soft-teal:#102f2f;--soft-blue:#102b38;--soft-gold:#362c1c;--soft-red:#381f24;--shadow:0 18px 52px rgba(0,0,0,.28)}
+    :root[data-theme="light"]{color-scheme:light}
+    @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#081317;--surface:#102126;--ink:#eef7f5;--muted:#b8c9ca;--faint:#8fa1a4;--line:#294045;--navy:#061b27;--blue:#123a50;--teal:#16a19a;--soft-teal:#102f2f;--soft-blue:#102b38;--soft-gold:#362c1c;--soft-red:#381f24;--shadow:0 18px 52px rgba(0,0,0,.28)}}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;font-size:16px;line-height:1.62}a{color:inherit}.report{width:min(1120px,100%);margin:0 auto;background:var(--surface);box-shadow:var(--shadow)}
+    .cover{min-height:720px;padding:72px 76px 56px;display:flex;flex-direction:column;justify-content:space-between;color:#f7fffd;position:relative;overflow:hidden;background:linear-gradient(138deg,#071f2c 0%,#0b4861 44%,#0b7b77 100%)}
+    .cover:after{content:"";position:absolute;width:560px;height:560px;right:-220px;bottom:-270px;border:1px solid rgba(255,255,255,.18);border-radius:50%;box-shadow:0 0 0 68px rgba(255,255,255,.05),0 0 0 138px rgba(255,255,255,.035)}
+    .cover-top,.cover-main,.cover-foot{position:relative;z-index:1}.cover-top{display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:.84rem;font-weight:700;letter-spacing:.06em}.cover-top .type{padding:8px 12px;border:1px solid rgba(255,255,255,.42);border-radius:999px}.cover-main{max-width:840px;margin:70px 0}.company{font-size:clamp(3.2rem,8vw,7.2rem);font-weight:700;line-height:.88;letter-spacing:-.065em;margin:0 0 28px}.cover h1{font-family:"Libre Baskerville",serif;font-size:clamp(2rem,4.5vw,4.2rem);line-height:1.08;letter-spacing:-.04em;margin:0 0 26px;max-width:790px}.dek{font-size:clamp(1rem,1.6vw,1.22rem);max-width:750px;color:#d8f2ee;margin:0}.cover-foot{display:flex;justify-content:space-between;gap:36px;align-items:end;border-top:1px solid rgba(255,255,255,.22);padding-top:22px}.cover-meta strong{display:block;font-size:1.1rem}.cover-meta span{display:block;color:#c9e7e3;font-size:.86rem}.cover-monogram{font-family:"Libre Baskerville",serif;font-size:2.3rem;font-weight:700;letter-spacing:-.06em}
+    .rating-strip{display:grid;grid-template-columns:1.25fr repeat(4,1fr);background:#071c25;color:#fff}.rating-cell{padding:22px 24px;border-right:1px solid rgba(255,255,255,.12)}.rating-cell:last-child{border:0}.rating-cell span{display:block;color:#95bfc3;font-size:.69rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:5px}.rating-cell strong{font-size:1.15rem;letter-spacing:-.02em}.rating-cell.primary{background:var(--lime);color:#10231d}.rating-cell.primary span{color:#31513e}.rating-cell.primary strong{font-size:1.5rem}
+    .toolbar{display:flex;justify-content:flex-end;gap:10px;padding:14px 76px;background:var(--surface);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:5}.control{display:inline-flex;align-items:center;gap:9px;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px 14px;border-radius:8px;font:700 .82rem "DM Sans",sans-serif;cursor:pointer}.control.primary{background:var(--ink);color:var(--surface);border-color:var(--ink)}.control svg{width:16px;height:16px}.control:focus-visible{outline:3px solid var(--aqua);outline-offset:2px}.status{align-self:center;color:var(--muted);font-size:.78rem;min-width:0}
+    .page{padding:62px 76px}.page+.page{border-top:1px solid var(--line)}.section-kicker{display:flex;align-items:center;gap:12px;color:var(--teal);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}.section-kicker:before{content:"";width:36px;height:3px;background:var(--teal)}h2{font-family:"Libre Baskerville",serif;font-size:clamp(2rem,4vw,3.25rem);line-height:1.15;letter-spacing:-.035em;margin:0 0 24px;color:var(--ink)}h3{font-size:1.12rem;line-height:1.3;margin:30px 0 10px;letter-spacing:-.01em}p{margin:0 0 16px}.lead{font-family:"Libre Baskerville",serif;font-size:1.24rem;line-height:1.65;color:var(--ink);max-width:900px}.muted{color:var(--muted)}
+    .toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;counter-reset:toc}.toc a{counter-increment:toc;display:flex;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:600}.toc a:before{content:counter(toc,decimal-leading-zero);color:var(--teal);font-size:.75rem;font-weight:800;letter-spacing:.08em}.toc a span{margin-left:auto;color:var(--faint);font-size:.8rem}
+    .thesis-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start;margin-top:34px}.callout{padding:26px 28px;background:var(--soft-teal);border-radius:4px}.callout.gold{background:var(--soft-gold)}.callout.red{background:var(--soft-red)}.callout h3{margin:0 0 10px}.callout p:last-child{margin:0}.verdict{background:var(--navy);color:#ecf8f5;padding:30px}.verdict h3{margin:0 0 10px;color:#8fe0d4}.verdict p{color:#d2e5e5}.verdict p:last-child{margin:0}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:30px 0}.metric{background:var(--soft-blue);padding:20px 18px;min-height:126px}.metric .label{display:block;color:var(--muted);font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}.metric strong{display:block;font-family:"Libre Baskerville",serif;font-size:1.75rem;line-height:1.1}.metric small{display:block;color:var(--muted);margin-top:7px;line-height:1.35}
+    .two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}.three-col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.pillar{padding:22px 0;border-top:3px solid var(--ink)}.pillar h3{margin:0 0 8px}.pillar p{color:var(--muted);margin:0}.data-table{width:100%;border-collapse:collapse;margin:24px 0 8px}.data-table th{text-align:left;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;padding:10px 12px;border-bottom:2px solid var(--ink)}.data-table td{padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}.data-table td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700}.data-table .accent{color:var(--teal)}
+    .scale{margin:30px 0;padding:24px;background:var(--soft-blue)}.scale-head{display:flex;justify-content:space-between;gap:18px;align-items:end;margin-bottom:18px}.scale-head h3{margin:0}.scale-head p{margin:0;color:var(--muted);font-size:.83rem}.scale-track{height:18px;background:var(--line);position:relative;margin:38px 12px 46px}.scale-fill{position:absolute;inset:0 auto 0 0;width:34.5%;background:var(--teal)}.scale-dot{position:absolute;top:50%;width:18px;height:18px;border-radius:50%;transform:translate(-50%,-50%);background:var(--ink);border:4px solid var(--surface);box-shadow:0 0 0 2px var(--ink)}.scale-dot.price{left:0}.scale-dot.street{left:23.9%;background:var(--gold);box-shadow:0 0 0 2px var(--gold)}.scale-dot.target{left:34.5%;background:var(--lime);box-shadow:0 0 0 2px var(--lime)}.scale-label{position:absolute;top:30px;transform:translateX(-50%);font-size:.75rem;font-weight:800;white-space:nowrap}.scale-label.price{left:0;transform:none}.scale-label.street{left:23.9%}.scale-label.target{left:34.5%}
+    .watchlist{list-style:none;padding:0;margin:24px 0 0}.watchlist li{display:grid;grid-template-columns:42px 1fr;gap:16px;padding:17px 0;border-bottom:1px solid var(--line)}.watchlist .n{width:32px;height:32px;display:grid;place-items:center;background:var(--ink);color:var(--surface);font-weight:800;font-size:.78rem}.watchlist strong{display:block}.watchlist span{color:var(--muted)}.risk{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:24px 0;border-top:1px solid var(--line)}.risk .level{font-weight:800;color:var(--red);text-transform:uppercase;letter-spacing:.08em;font-size:.75rem}.risk h3{margin:0 0 8px}.risk p{margin:0;color:var(--muted)}
+    .catalyst-timeline{display:grid;grid-template-columns:150px 1fr;gap:0 26px;margin-top:28px}.catalyst-timeline .date,.catalyst-timeline .event{padding:18px 0;border-top:1px solid var(--line)}.catalyst-timeline .date{font-weight:800;color:var(--teal)}.catalyst-timeline .event strong{display:block}.catalyst-timeline .event span{color:var(--muted)}
+    .appendix{background:color-mix(in srgb,var(--paper) 75%,var(--surface));font-size:.84rem}.source-list{list-style:none;padding:0;margin:22px 0 0;counter-reset:sources}.source-list li{counter-increment:sources;display:grid;grid-template-columns:36px 1fr;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.source-list li:before{content:counter(sources,decimal-leading-zero);color:var(--teal);font-weight:800}.source-list strong{display:block}.source-list span{color:var(--muted)}.note{padding:18px 20px;background:var(--soft-gold);font-size:.9rem;color:var(--ink);margin-top:26px}.disclosure{font-size:.78rem;color:var(--muted);margin-top:32px}
+    @media(max-width:760px){.report{box-shadow:none}.cover{min-height:650px;padding:44px 24px 36px}.cover-top{align-items:flex-start}.cover-main{margin:52px 0}.cover-foot{align-items:flex-start;flex-direction:column}.rating-strip{grid-template-columns:repeat(2,1fr)}.rating-cell{border-bottom:1px solid rgba(255,255,255,.12)}.rating-cell.primary{grid-column:1/-1}.toolbar{position:static;padding:12px 18px;flex-wrap:wrap}.control{flex:1;justify-content:center}.status{width:100%;text-align:center}.page{padding:48px 22px}.toc,.thesis-grid,.two-col,.three-col,.metrics{grid-template-columns:1fr}.metrics{gap:8px}.metric{min-height:auto}.risk{grid-template-columns:1fr;gap:6px}.catalyst-timeline{grid-template-columns:92px 1fr;gap:0 14px}.scale{padding:18px 12px}.scale-head{display:block}.scale-track{margin-left:8px;margin-right:8px}.data-table,.data-table tbody,.data-table tr,.data-table td{display:block}.data-table thead{display:none}.data-table tr{padding:12px 0;border-bottom:1px solid var(--line)}.data-table td{display:flex;justify-content:space-between;gap:22px;padding:5px 0;border:0;text-align:left}.data-table td:before{content:attr(data-label);color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700}.data-table td.num{text-align:right}}
+    @media print{body{background:#fff}.report{width:100%;box-shadow:none}.cover{min-height:100vh;page-break-after:always}.toolbar{display:none}.page{padding:48px 54px;page-break-inside:auto}.page+.page{page-break-before:always}.appendix{background:#fff}.callout,.verdict,.metric,.scale{break-inside:avoid}.rating-strip{page-break-after:always}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<main class="report" id="report">
+  <section class="cover">
+    <div class="cover-top"><span class="type">UPDATED EQUITY ANALYSIS</span><span>October 14, 2026</span></div>
+    <div class="cover-main">
+      <div class="company">ADBE</div>
+      <h1>The multiple is broken. The business is not—yet.</h1>
+      <p class="dek">Two downgrades turned Adobe’s known net-new ARR problem into this week’s headline. The desk keeps Buy, 7/10, and a $320 target—but owns the distance from consensus and the December proof point.</p>
+    </div>
+    <div class="cover-foot">
+      <div class="cover-meta"><strong>Adobe Inc.</strong><span>NASDAQ: ADBE · Creative software &amp; digital experience</span></div>
+      <div class="cover-monogram">ADBE</div>
+    </div>
+  </section>
+
+  <section class="rating-strip" aria-label="Investment rating summary">
+    <div class="rating-cell primary"><span>Rating</span><strong>BUY · 7/10</strong></div>
+    <div class="rating-cell"><span>Reference price</span><strong>$237.92</strong></div>
+    <div class="rating-cell"><span>12-month target</span><strong>$320</strong></div>
+    <div class="rating-cell"><span>Price upside</span><strong>34.5%</strong></div>
+    <div class="rating-cell"><span>Position</span><strong>34 sh · $232.68</strong></div>
+  </section>
+
+  <div class="toolbar" aria-label="Report controls">
+    <span class="status" id="status" role="status" aria-live="polite"></span>
+    <button class="control" id="themeToggle" type="button" aria-pressed="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
+      <span>Toggle theme</span>
+    </button>
+    <button class="control primary" id="pdfDownload" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 19h14"/></svg>
+      <span>Download PDF</span>
+    </button>
+  </div>
+
+  <section class="page" id="map">
+    <div class="section-kicker">Report map</div>
+    <h2>The argument, the proof, and the line in the sand.</h2>
+    <nav class="toc" aria-label="Report sections">
+      <a href="#view">Desk view <span>Maintained</span></a>
+      <a href="#changed">What changed <span>Two downgrades</span></a>
+      <a href="#fundamentals">Fundamentals <span>Unchanged</span></a>
+      <a href="#valuation">Valuation <span>Target math</span></a>
+      <a href="#competition">Competitive tape <span>Watch, don’t overreact</span></a>
+      <a href="#capital">Capital return <span>Buyback</span></a>
+      <a href="#catalysts">Catalysts <span>Nov–Dec</span></a>
+      <a href="#risks">Risks &amp; signals <span>Decision rules</span></a>
+      <a href="#sources">Sources <span>Appendix</span></a>
+    </nav>
+  </section>
+
+  <section class="page" id="view">
+    <div class="section-kicker">01 · Desk view</div>
+    <h2>Sentiment caught up to the concern. The call does not change.</h2>
+    <p class="lead">Wells Fargo and HSBC did not reveal a new operating break. They turned the same FQ3 net-new ARR deceleration already embedded in the October 3 initiation into a fresh sell-side event. At $237.92, Adobe is priced as if that slowdown is structural. The desk still sees a proving quarter, not a failed franchise.</p>
+    <div class="metrics">
+      <div class="metric"><span class="label">FY2027 P/E</span><strong>8.6×</strong><small>$27.70 consensus non-GAAP EPS</small></div>
+      <div class="metric"><span class="label">AI-first ARR</span><strong>&gt;$650M</strong><small>+150% year over year</small></div>
+      <div class="metric"><span class="label">FQ3 revenue</span><strong>$6.76B</strong><small>Record · +13% year over year</small></div>
+      <div class="metric"><span class="label">Buyback remaining</span><strong>$24.55B</strong><small>Roughly one quarter of market cap</small></div>
+    </div>
+    <div class="thesis-grid">
+      <div class="callout">
+        <h3>Why conviction stays 7/10</h3>
+        <p>The valuation is at a decade low, FQ3 still produced record revenue and operating cash flow, AI-first ARR is scaling quickly from a small base, and the repurchase authorization can retire meaningful equity at depressed prices.</p>
+      </div>
+      <div class="verdict">
+        <h3>Action</h3>
+        <p><strong>Maintain Buy and the $320 target.</strong> The installed ADD gate is <strong>≤$235</strong> toward roughly 1% of portfolio value.</p>
+        <p>At <strong>$237.92</strong>, the stock is above the gate. <strong>Not triggered. No gate action.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="changed">
+    <div class="section-kicker">02 · What changed</div>
+    <h2>Two downgrades, one known problem, and a lower share price.</h2>
+    <p>Adobe drifted from roughly $241 on October 8 to $237.92 intraday on October 14; the October 13 close was $236.28. The one-month return through October 13 was −6.3%, and the one-year return was −30.4%. The operating company issued no new guidance in the interval.</p>
+    <table class="data-table" aria-label="Sell-side changes since October 8">
+      <thead><tr><th>Date</th><th>Firm</th><th>Action</th><th>Core argument</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Date">Oct 12</td><td data-label="Firm"><strong>Wells Fargo</strong></td><td data-label="Action">Double downgrade to Underweight; $270 → $225</td><td data-label="Core argument">Organic net-new ARR fell more than 40% in FQ3; roughly 2× Q4 net-new ARR is needed to reach about 10.2% FY ARR growth. Prior rating is reported inconsistently; the two-notch cut is consistent.</td></tr>
+        <tr><td data-label="Date">Oct 13</td><td data-label="Firm"><strong>HSBC</strong></td><td data-label="Action">Buy → Hold; $310 → $267</td><td data-label="Core argument">ArtCraft and free open-source tools could pressure amateur-user retention; legal and security quality remain open questions.</td></tr>
+      </tbody>
+    </table>
+    <div class="two-col" style="margin-top:30px">
+      <div class="callout gold">
+        <h3>The desk is the outlier</h3>
+        <p>Street consensus is Hold with a $272.31 average target. The desk’s $320 is about 17.5% above that average and implies about 34.5% upside from the reference price. This is not a consensus call.</p>
+      </div>
+      <div class="callout red">
+        <h3>The bear test is measurable</h3>
+        <p>Digital Media net-new ARR declined roughly 38–40% year over year in FQ3. December 9 must show the Q4 acceleration needed to preserve the full-year ARR framework; narrative alone will not clear that bar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="fundamentals">
+    <div class="section-kicker">03 · Fundamentals</div>
+    <h2>The quarter was strong. The ARR composition was not.</h2>
+    <p class="lead">FQ3 was a real beat: record revenue, double-digit ARR growth, record quarterly operating cash flow, and EPS above consensus. The downgrade cycle is about the quality and timing of incremental ARR—not whether Adobe grew.</p>
+    <table class="data-table" aria-label="Adobe third-quarter operating scorecard">
+      <thead><tr><th>Metric</th><th>FQ3 FY2026</th><th>Read-through</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Metric">Revenue</td><td data-label="FQ3 FY2026" class="num">$6.76B · +13%</td><td data-label="Read-through">Record quarter</td></tr>
+        <tr><td data-label="Metric">Non-GAAP EPS</td><td data-label="FQ3 FY2026" class="num">$6.13</td><td data-label="Read-through">Above roughly $6.08–6.09 consensus</td></tr>
+        <tr><td data-label="Metric">Total ARR</td><td data-label="FQ3 FY2026" class="num">$27.50B · +11.2%</td><td data-label="Read-through">Healthy installed-base growth; net-new cadence is the concern</td></tr>
+        <tr><td data-label="Metric">Operating cash flow</td><td data-label="FQ3 FY2026" class="num">$2.52B</td><td data-label="Read-through">Q3 record</td></tr>
+        <tr><td data-label="Metric">Subscription revenue</td><td data-label="FQ3 FY2026" class="num">$6.56B · +14%</td><td data-label="Read-through">Core model remains intact</td></tr>
+        <tr><td data-label="Metric">AI-first ending ARR</td><td data-label="FQ3 FY2026" class="num">&gt;$650M · +150%</td><td data-label="Read-through">Fast growth, but only about 2.4% of total ARR</td></tr>
+      </tbody>
+    </table>
+    <h3>Guidance is unchanged</h3>
+    <table class="data-table" aria-label="Adobe guidance and consensus">
+      <thead><tr><th>Period</th><th>Revenue</th><th>Non-GAAP EPS</th><th>Assessment</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Period">FY2026 guide</td><td data-label="Revenue" class="num">$26.576–26.626B</td><td data-label="Non-GAAP EPS" class="num">$24.45–24.50</td><td data-label="Assessment">No change since Sept 10</td></tr>
+        <tr><td data-label="Period">FQ4 guide</td><td data-label="Revenue" class="num">$6.80–6.85B</td><td data-label="Non-GAAP EPS" class="num">$6.30–6.35</td><td data-label="Assessment">Nearly identical to consensus</td></tr>
+        <tr><td data-label="Period">FQ4 consensus</td><td data-label="Revenue" class="num">$6.84B</td><td data-label="Non-GAAP EPS" class="num">$6.32</td><td data-label="Assessment">The debate is ARR quality, not headline EPS</td></tr>
+      </tbody>
+    </table>
+    <div class="three-col" style="margin-top:30px">
+      <div class="pillar"><h3>Freemium funnel</h3><p>Creative freemium MAU exceeded 100M, up 70% year over year. That can delay near-term monetization while enlarging the top of funnel.</p></div>
+      <div class="pillar"><h3>Enterprise signal</h3><p>AEM plus agentic web apps, GenStudio, and Experience Platform plus apps each grew ending ARR more than 20% year over year.</p></div>
+      <div class="pillar"><h3>AI monetization</h3><p>Firefly ending ARR grew 40% sequentially. Paid plans begin at $9.99 per month, while partner models broaden credit use.</p></div>
+    </div>
+  </section>
+
+  <section class="page" id="valuation">
+    <div class="section-kicker">04 · Valuation</div>
+    <h2>The target needs modest multiple repair—not a return to exuberance.</h2>
+    <p>The $320 twelve-month target equals roughly <strong>11.5× FY2027 consensus non-GAAP EPS of $27.70</strong>. That is above the current 8.6× FY2027 multiple, but still below the broader software group’s roughly 25× forward multiple. The desk is underwriting execution plus partial normalization, not a full rerating.</p>
+    <div class="scale" aria-label="Price to target bridge">
+      <div class="scale-head"><h3>Reference price → target</h3><p>Proportional to the $82.08 upside span</p></div>
+      <div class="scale-track">
+        <span class="scale-fill"></span>
+        <span class="scale-dot price" aria-hidden="true"></span><span class="scale-label price">$237.92 price</span>
+        <span class="scale-dot street" aria-hidden="true"></span><span class="scale-label street">$272.31 Street</span>
+        <span class="scale-dot target" aria-hidden="true"></span><span class="scale-label target">$320 desk</span>
+      </div>
+    </div>
+    <table class="data-table" aria-label="Valuation framework">
+      <thead><tr><th>Measure</th><th>Value</th><th>Interpretation</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Measure">FY2026 consensus EPS</td><td data-label="Value" class="num">$24.47</td><td data-label="Interpretation">Current multiple ≈9.7×</td></tr>
+        <tr><td data-label="Measure">FY2027 consensus EPS</td><td data-label="Value" class="num">$27.70</td><td data-label="Interpretation">Current multiple ≈8.6×</td></tr>
+        <tr><td data-label="Measure">Forward 12-month P/E</td><td data-label="Value" class="num">9.6×</td><td data-label="Interpretation">Versus software group 25.2× and S&amp;P 500 19.6×</td></tr>
+        <tr><td data-label="Measure">Street average target</td><td data-label="Value" class="num">$272.31</td><td data-label="Interpretation">Hold consensus; +14.5% from $237.92</td></tr>
+        <tr><td data-label="Measure">Desk target</td><td data-label="Value" class="num accent">$320</td><td data-label="Interpretation">≈11.5× FY2027E EPS; +34.5%</td></tr>
+      </tbody>
+    </table>
+    <div class="note"><strong>Comparison caveat:</strong> software peer figures in the research mix forward and trailing metrics. They establish that Adobe is unusually discounted, but they are not a clean apples-to-apples valuation table.</div>
+  </section>
+
+  <section class="page" id="competition">
+    <div class="section-kicker">05 · Competitive tape</div>
+    <h2>Real pressure, uneven evidence.</h2>
+    <div class="two-col">
+      <div>
+        <h3>ArtCraft: real code, premature parity</h3>
+        <p>Seven free open-source creative apps drew roughly 24,000 GitHub stars in their first week. The developer initially promised “100% feature parity” in one month, then moved the timetable to “months, not years.” Hands-on testing shows material gaps. The project is a genuine headline risk; commercial impact on Adobe is unverified.</p>
+      </div>
+      <div>
+        <h3>Canva: clearer go-to-market threat</h3>
+        <p>Canva launched ProSuite on October 11, bundling Affinity and Leonardo AI as a professional alternative to Creative Cloud. Pricing and plan structure were not fully verified in the research, so the desk treats positioning as confirmed but economics as open.</p>
+      </div>
+    </div>
+    <ul class="watchlist">
+      <li><span class="n">01</span><div><strong>DOL PERM suspension</strong><span>The October 8 action stops new and pending PERM processing for Adobe and seven other companies. H-1B is unaffected; duration and Adobe-specific financial impact remain unclear.</span></div></li>
+      <li><span class="n">02</span><div><strong>Insider selling</strong><span>Aggregators report $50.8M sold versus $1.9M bought over 12 months and about $31.45M sold in FQ3. Much may be routine 10b5-1 activity, but that was not verified.</span></div></li>
+      <li><span class="n">03</span><div><strong>OpenAI Sora retreat</strong><span>The consumer video product was shut down and the API removed, reducing one direct threat. It does not remove broader model commoditization risk.</span></div></li>
+      <li><span class="n">04</span><div><strong>Figma execution</strong><span>Figma’s quarter showed $370.1M revenue, +48% year over year, 136% net dollar retention, and a raised FY2026 revenue guide of $1.463–1.467B.</span></div></li>
+    </ul>
+  </section>
+
+  <section class="page" id="capital">
+    <div class="section-kicker">06 · Capital return</div>
+    <h2>At this price, buybacks can become an operating advantage.</h2>
+    <p class="lead">Adobe spent $2.232B in FQ3 to repurchase roughly 9.5M shares at an average near $235. The authorization has $24.55B left—enough to matter against a roughly $94B market capitalization.</p>
+    <div class="metrics">
+      <div class="metric"><span class="label">FQ3 repurchase</span><strong>$2.232B</strong><small>≈9.5M shares at ≈$235</small></div>
+      <div class="metric"><span class="label">Nine-month repurchase</span><strong>$6.82B</strong><small>26.1M shares at ≈$261</small></div>
+      <div class="metric"><span class="label">Cash + ST investments</span><strong>$5.64B</strong><small>Versus roughly $6.4B debt</small></div>
+      <div class="metric"><span class="label">Authorization left</span><strong>$24.55B</strong><small>Program runs through Apr 30, 2030</small></div>
+    </div>
+    <div class="callout gold"><h3>Not free money</h3><p>Nine-month repurchases absorbed about 90% of operating cash flow. Stock-based compensation consumes part of the benefit, and the balance sheet is not net cash. The program is powerful only if the business value is intact and repurchases continue below intrinsic value.</p></div>
+  </section>
+
+  <section class="page" id="catalysts">
+    <div class="section-kicker">07 · Catalysts</div>
+    <h2>Three dates compress the debate into one month.</h2>
+    <div class="catalyst-timeline">
+      <div class="date">Nov 10–12</div><div class="event"><strong>Adobe MAX 2026 · Miami</strong><span>Product announcements, agentic workflows, Firefly capabilities, and evidence that AI expands rather than erodes the creative stack.</span></div>
+      <div class="date">Dec 1</div><div class="event"><strong>CEO transition</strong><span>Anil Chakravarthy becomes President &amp; CEO; Shantanu Narayen moves to Executive Chair. No new transition detail emerged after October 8.</span></div>
+      <div class="date">Dec 9</div><div class="event"><strong>FQ4 &amp; FY2026 earnings · 2:00 p.m. PT</strong><span>The decisive proof point: can Adobe deliver the Q4 net-new ARR acceleration implied by its full-year framework?</span></div>
+    </div>
+    <div class="thesis-grid">
+      <div class="callout"><h3>What clears the bar</h3><p>FQ4 revenue and EPS at least within guide; visible acceleration in net-new ARR; AI-first ARR scaling faster than the core; and credible FY2027 framing through the leadership transition.</p></div>
+      <div class="callout red"><h3>What breaks the call</h3><p>Another large net-new ARR shortfall, reliance on acquisition contribution to hold growth, or proof that free alternatives are displacing paid professional workflows—not merely attracting hobbyists.</p></div>
+    </div>
+  </section>
+
+  <section class="page" id="risks">
+    <div class="section-kicker">08 · Risks &amp; signals</div>
+    <h2>The thesis is cheap for a reason.</h2>
+    <div class="risk"><div class="level">High · demand quality</div><div><h3>Net-new ARR fails to reaccelerate</h3><p>The largest near-term risk. A weak Q4 would validate Wells Fargo’s critique and make the full-year ARR target appear acquisition-assisted or low quality.</p></div></div>
+    <div class="risk"><div class="level">High · disruption</div><div><h3>AI compresses seat value</h3><p>Open-source, Canva, Figma, and model-native workflows can lower switching costs or shift value away from Adobe’s applications.</p></div></div>
+    <div class="risk"><div class="level">Medium · execution</div><div><h3>Leadership turnover clusters</h3><p>The CEO, CFO, and creative-product leadership transitions concentrate execution risk while strategy is under maximum scrutiny.</p></div></div>
+    <div class="risk"><div class="level">Medium · regulation</div><div><h3>PERM suspension disrupts talent plans</h3><p>The action is open-ended. Scope, duration, and direct financial effect remain unknown.</p></div></div>
+    <div class="risk"><div class="level">Medium · capital</div><div><h3>Buybacks mask dilution rather than create value</h3><p>Repurchases only compound value if free cash flow stays durable and stock-based compensation does not absorb the share count reduction.</p></div></div>
+    <div class="verdict" style="margin-top:34px"><h3>Portfolio rule</h3><p>Hold the existing <strong>34 shares at $232.68 average cost</strong>. The <strong>≤$235 ADD gate toward roughly 1%</strong> remains installed. At the $237.92 reference price, it is <strong>not triggered</strong>. No action.</p></div>
+  </section>
+
+  <section class="page appendix" id="sources">
+    <div class="section-kicker">09 · Sources</div>
+    <h2>Sources appendix</h2>
+    <ul class="source-list">
+      <li><div><strong>Research Data · October 14, 2026</strong><span>ADBE $237.92 intraday quote; $235.90–241.25 range; October 13 close; return windows; 52-week range; market capitalization.</span></div></li>
+      <li><div><strong>Zacks Detailed Estimates · read October 13–14, 2026</strong><span>FY2026 and FY2027 non-GAAP EPS; FY2027 revenue; FQ4 EPS and revenue consensus.</span></div></li>
+      <li><div><strong>StockAnalysis / S&amp;P Global · read October 14, 2026</strong><span>39-analyst Hold consensus; $272.31 average, $260.50 median, $195–373 range; rating mix.</span></div></li>
+      <li><div><strong>Stocktwits via The Fly · October 12, 2026; MarketBeat</strong><span>Wells Fargo double downgrade, $225 target, organic net-new ARR critique, Semrush contribution; prior-rating discrepancy.</span></div></li>
+      <li><div><strong>TIKR, Barchart, EuropeSays, StockTargetAdvisor · October 13, 2026</strong><span>HSBC downgrade to Hold, $267 target, ArtCraft thesis, Stephen Bersey attribution.</span></div></li>
+      <li><div><strong>Adobe September 10 release; SiliconANGLE; Ad Hoc News</strong><span>FQ3 revenue, EPS, ARR, subscription revenue, operating cash flow, segment results, FY2026 and FQ4 guidance.</span></div></li>
+      <li><div><strong>MarketBeat Q3 call highlights · September 10, 2026</strong><span>Experience Cloud growth signals; segment guidance; buyback context.</span></div></li>
+      <li><div><strong>RivalSense · updated October 2026; SiliconANGLE · September 10, 2026</strong><span>AI-first ARR, Firefly ARR, creative freemium MAU, total MAU. RivalSense is a secondary intelligence source.</span></div></li>
+      <li><div><strong>TubeFilter · October 2, 2026</strong><span>Firefly audio generation, AI Assistant, paid tier entry point. Adobe partnership with TubeFilter noted.</span></div></li>
+      <li><div><strong>PetaPixel · October 7, 2026; WebProNews; BigGo; Cybernews</strong><span>ArtCraft launch, license and platform details, GitHub interest, parity walk-back, hands-on feature gaps.</span></div></li>
+      <li><div><strong>Toolwise · October 11, 2026</strong><span>Canva ProSuite positioning. Secondary-source status and unconfirmed pricing retained as caveats.</span></div></li>
+      <li><div><strong>Cestrian Capital Research · October 11, 2026; Motley Fool · October 13, 2026</strong><span>Figma revenue growth, margins, retention, guidance, and stock context.</span></div></li>
+      <li><div><strong>LiveMint · October 9, 2026; South Shore Press · October 10, 2026; American Kahani</strong><span>DOL PERM suspension scope, affected companies, investigation language, H-1B distinction.</span></div></li>
+      <li><div><strong>EuropeSays / GuruFocus · October 13, 2026; The Stock Observer · October 8, 2026</strong><span>Aggregator-reported insider sales and purchases; routine-plan status unverified.</span></div></li>
+      <li><div><strong>MarketWatch / FactSet · September 2026</strong><span>Adobe forward 12-month P/E versus software group and S&amp;P 500.</span></div></li>
+      <li><div><strong>TradeStie · updated October 14, 2026; Observer News Online · March 2026</strong><span>Historical multiple context and decade-low characterization.</span></div></li>
+      <li><div><strong>Motley Fool · October 4 and September 25, 2026; BTW Media</strong><span>Repurchase activity, authorization, operating cash flow relationship, cash, debt, and debt repayment.</span></div></li>
+      <li><div><strong>Adobe IR calendar; Zacks</strong><span>December 9 FQ4 earnings date and time.</span></div></li>
+      <li><div><strong>Adobe MAX materials; Digital Digest; FreeYork</strong><span>November 10–12 MAX dates, location, session count, themes, and prior-event product context.</span></div></li>
+      <li><div><strong>Adobe Form 8-K context; Insider Finance; SightsInPlus; StockMoguls</strong><span>CEO transition date and roles; CFO and creative-leadership changes.</span></div></li>
+    </ul>
+    <p class="disclosure">Desk update dated October 14, 2026. Reference price is intraday, not an official close. Figures are in U.S. dollars unless stated otherwise. This report is investment analysis, not tax or legal advice.</p>
+  </section>
+</main>
+<script>
+(function(){
+  var root=document.documentElement;
+  var button=document.getElementById('themeToggle');
+  var status=document.getElementById('status');
+  button.addEventListener('click',function(){
+    var current=root.getAttribute('data-theme');
+    var next=current==='dark'?'light':current==='light'?'dark':(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'light':'dark');
+    root.setAttribute('data-theme',next);
+    button.setAttribute('aria-pressed',next==='dark'?'true':'false');
+    status.textContent=next.charAt(0).toUpperCase()+next.slice(1)+' theme';
+    window.setTimeout(function(){status.textContent='';},1800);
+  });
+
+  function ascii(s){return s.replace(/[\u2018\u2019]/g,"'").replace(/[\u201c\u201d]/g,'"').replace(/[\u2013\u2014]/g,'-').replace(/\u2026/g,'...').replace(/\u2264/g,'<=').replace(/\u2265/g,'>=').replace(/\u00d7/g,'x').replace(/[^\x20-\x7E\n]/g,'');}
+  function wrap(text,width){
+    var out=[];
+    text.split('\n').forEach(function(par){
+      if(!par.trim()){out.push('');return;}
+      var words=par.trim().split(/\s+/),line='';
+      words.forEach(function(word){var test=line?line+' '+word:word;if(test.length>width&&line){out.push(line);line=word;}else{line=test;}});
+      if(line)out.push(line);
+    });
+    return out;
+  }
+  function makePdf(){
+    var source=`ADOBE INC. (NASDAQ: ADBE) - UPDATED EQUITY ANALYSIS
+October 14, 2026
+
+RATING: BUY | CONVICTION: 7/10 | 12-MONTH TARGET: $320 | MAINTAINED
+Reference price: $237.92 intraday | Implied upside: 34.5%
+Position: 34 shares at $232.68 average cost
+
+DESK VIEW
+Two downgrades turned Adobe's known net-new ARR problem into this week's headline. Wells Fargo moved to Underweight with a $225 target; HSBC moved to Hold with a $267 target. The desk views this as sentiment catching up to a known FQ3 issue rather than a new fundamental break. Buy, 7/10, and the $320 target are maintained.
+
+GATE STATE
+The ADBE <=$235 ADD gate toward roughly 1% is installed. At $237.92 the stock is above the gate. The gate has not triggered. No gate action.
+
+WHY CONVICTION STAYS 7/10
+Adobe trades at about 9.7x FY2026 and 8.6x FY2027 consensus non-GAAP EPS, near a decade-low multiple. AI-first ARR exceeded $650M, up 150% year over year; creative freemium MAU exceeded 100M, up 70%. FQ3 revenue was a record $6.76B, up 13%; non-GAAP EPS was $6.13; total ARR was $27.50B, up 11.2%; operating cash flow was a Q3 record $2.52B. The remaining buyback authorization is $24.55B.
+
+WHAT CHANGED
+Adobe moved from roughly $241 on Oct 8 to $237.92 intraday Oct 14. Wells Fargo estimated organic net-new ARR declined more than 40% in FQ3 and Adobe needs roughly twice the Q4 net-new ARR to hit about 10.2% FY ARR growth. HSBC cited ArtCraft and amateur-user churn. Street consensus is Hold with a $272.31 average target, about 17.5% below the desk target.
+
+FUNDAMENTALS
+FY2026 guidance remains revenue of $26.576-$26.626B and non-GAAP EPS of $24.45-$24.50. FQ4 guidance is revenue of $6.80-$6.85B and non-GAAP EPS of $6.30-$6.35. Consensus is $6.84B and $6.32. The Dec 9 print must show net-new ARR reacceleration.
+
+VALUATION
+The $320 target equals roughly 11.5x FY2027 consensus non-GAAP EPS of $27.70. Current FY2027 P/E is about 8.6x. The target assumes partial multiple repair, not a return to the software group's roughly 25x forward multiple.
+
+COMPETITION AND OTHER RISKS
+ArtCraft is real but early: seven open-source apps drew about 24,000 GitHub stars, while the developer walked back one-month parity and tests show material gaps. Canva ProSuite launched Oct 11 as a professional alternative, but pricing was not fully verified. The DOL PERM suspension is an open-ended hiring and compliance overhang. Insider-sale figures come from aggregators and may reflect routine plans.
+
+CAPITAL
+FQ3 repurchases were $2.232B for about 9.5M shares at roughly $235. Nine-month repurchases were $6.82B for 26.1M shares. Cash and short-term investments were $5.64B versus roughly $6.4B of debt. The $24.55B authorization runs through Apr 30, 2030.
+
+CATALYSTS
+Nov 10-12: Adobe MAX 2026 in Miami.
+Dec 1: Anil Chakravarthy becomes President and CEO; Shantanu Narayen becomes Executive Chair.
+Dec 9: FQ4 and FY2026 earnings at 2:00 p.m. PT. This is the proving ground for the net-new ARR critique.
+
+SOURCES
+Research Data (Oct 14); Zacks Detailed Estimates; StockAnalysis/S&P Global; Stocktwits via The Fly and MarketBeat; TIKR, Barchart, EuropeSays, StockTargetAdvisor; Adobe Sept 10 release; SiliconANGLE; MarketBeat Q3 call highlights; RivalSense; TubeFilter; PetaPixel, WebProNews, BigGo, Cybernews; Toolwise; Cestrian Capital Research; Motley Fool; LiveMint; South Shore Press; American Kahani; MarketWatch/FactSet; TradeStie; Observer News Online; BTW Media; Adobe IR calendar; Adobe MAX materials; Digital Digest; FreeYork; Adobe Form 8-K context.
+
+Reference price is intraday, not an official close. Figures are in U.S. dollars unless stated otherwise.`;
+    var lines=wrap(ascii(source),92),perPage=48,pages=[];
+    for(var i=0;i<lines.length;i+=perPage)pages.push(lines.slice(i,i+perPage));
+    var objects=[];
+    objects[1]='<< /Type /Catalog /Pages 2 0 R >>';
+    var kids=[];
+    for(var p=0;p<pages.length;p++)kids.push((4+p*2)+' 0 R');
+    objects[2]='<< /Type /Pages /Kids ['+kids.join(' ')+'] /Count '+pages.length+' >>';
+    objects[3]='<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>';
+    pages.forEach(function(page,p){
+      var pageObj=4+p*2,contentObj=pageObj+1;
+      objects[pageObj]='<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R >> >> /Contents '+contentObj+' 0 R >>';
+      var commands='BT\n/F1 10 Tf\n54 744 Td\n13 TL\n';
+      page.forEach(function(line){var safe=line.replace(/\\/g,'\\\\').replace(/\(/g,'\\(').replace(/\)/g,'\\)');commands+='('+safe+') Tj\nT*\n';});
+      commands+='ET';
+      objects[contentObj]='<< /Length '+commands.length+' >>\nstream\n'+commands+'\nendstream';
+    });
+    var pdf='%PDF-1.4\n',offsets=[0];
+    for(var n=1;n<objects.length;n++){offsets[n]=pdf.length;pdf+=n+' 0 obj\n'+objects[n]+'\nendobj\n';}
+    var xref=pdf.length;
+    pdf+='xref\n0 '+objects.length+'\n0000000000 65535 f \n';
+    for(var j=1;j<objects.length;j++)pdf+=String(offsets[j]).padStart(10,'0')+' 00000 n \n';
+    pdf+='trailer\n<< /Size '+objects.length+' /Root 1 0 R >>\nstartxref\n'+xref+'\n%%EOF';
+    return new Blob([new TextEncoder().encode(pdf)],{type:'application/pdf'});
+  }
+  document.getElementById('pdfDownload').addEventListener('click',function(){
+    try{
+      var blob=makePdf(),url=URL.createObjectURL(blob),a=document.createElement('a');
+      a.href=url;a.download='adbe-updated-analysis-2026-10-14.pdf';document.body.appendChild(a);a.click();a.remove();
+      window.setTimeout(function(){URL.revokeObjectURL(url);},1500);
+      status.textContent='PDF downloaded';window.setTimeout(function(){status.textContent='';},2200);
+    }catch(e){status.textContent='PDF download failed';}
+  });
+})();
+</script>
+</body>
+</html>
