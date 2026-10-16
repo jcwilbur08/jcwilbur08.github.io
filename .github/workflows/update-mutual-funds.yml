@@ -1,16 +1,21 @@
 name: Update Mutual Fund Quotes
 
-# Runs once per weekday after US market close, plus supports a manual trigger from
-# the Actions tab (useful for testing without waiting for the schedule).
+# Mutual fund NAVs are struck at 4pm ET but Alpha Vantage does not publish them until
+# overnight. Running in the evening therefore always returned the PRIOR trading day's NAV.
+# This runs in the morning instead (11:23 UTC = 7:23am EDT / 6:23am EST), Tuesday-Saturday,
+# which picks up Monday-Friday's closing NAVs. GitHub often starts scheduled runs 1-3 hours
+# late; that is fine for a morning run. The odd minute avoids the congested top-of-hour slot.
 on:
   schedule:
-    - cron: '0 23 * * 1-5'   # 23:00 UTC — approximately 6-7pm ET depending on daylight
-                              # saving time (cron runs on fixed UTC, so the ET time drifts
-                              # by an hour across DST changes; fine for a once-daily refresh)
+    - cron: '23 11 * * 2-6'
   workflow_dispatch: {}
 
 permissions:
   contents: write
+
+concurrency:
+  group: update-mutual-funds
+  cancel-in-progress: false
 
 jobs:
   update-quotes:
@@ -19,49 +24,82 @@ jobs:
       - name: Check out repo
         uses: actions/checkout@v4
 
-      - name: Fetch mutual fund quotes from Alpha Vantage
+      - name: Fetch mutual fund NAVs from Alpha Vantage
         env:
           ALPHA_VANTAGE_KEY: ${{ secrets.ALPHA_VANTAGE_KEY }}
         run: |
           python3 - << 'PYEOF'
-          import json, os, time, urllib.request
+          import json, os, sys, time, urllib.request
 
-          tickers = ["FSMDX", "FSSNX", "TLXIX", "VFFSX"]
-          api_key = os.environ["ALPHA_VANTAGE_KEY"]
-          result = {}
+          TICKERS = ["FSMDX", "FSSNX", "TLXIX", "VFFSX"]
+          OUT = "mutual-fund-quotes.json"
+          KEY = os.environ["ALPHA_VANTAGE_KEY"]
 
-          for t in tickers:
-              url = (
-                  "https://www.alphavantage.co/query"
-                  f"?function=GLOBAL_QUOTE&symbol={t}&apikey={api_key}"
-              )
-              try:
-                  with urllib.request.urlopen(url, timeout=30) as resp:
-                      data = json.load(resp)
-                  quote = data.get("Global Quote", {})
-                  price = quote.get("05. price")
-                  prev = quote.get("08. previous close")
-                  if price and prev:
-                      result[t] = {"price": float(price), "prev": float(prev)}
-                      print(f"{t}: price={price} prev={prev}")
-                  else:
-                      print(f"{t}: no quote data returned — {data}")
-              except Exception as e:
-                  print(f"{t}: request failed — {e}")
-              time.sleep(15)  # stay comfortably under the free tier's 5-calls/minute cap
+          try:
+              with open(OUT) as f:
+                  existing = json.load(f)
+          except Exception:
+              existing = {}
+          prior_asof = {t: existing.get(t, {}).get("asOf") for t in TICKERS}
 
-          if result:
-              with open("mutual-fund-quotes.json", "w") as f:
-                  json.dump(result, f, indent=2)
-              print("Wrote mutual-fund-quotes.json:", result)
-          else:
-              print("No quotes fetched successfully — leaving existing file untouched.")
+          def fetch(t):
+              url = ("https://www.alphavantage.co/query"
+                     f"?function=GLOBAL_QUOTE&symbol={t}&apikey={KEY}")
+              with urllib.request.urlopen(url, timeout=30) as resp:
+                  data = json.load(resp)
+              q = data.get("Global Quote") or {}
+              price = q.get("05. price")
+              prev = q.get("08. previous close")
+              day = q.get("07. latest trading day")
+              if not (price and prev and day):
+                  raise ValueError("no usable quote: " + str(data)[:200])
+              return {"price": float(price), "prev": float(prev), "asOf": day}
+
+          failed = []
+          for i, t in enumerate(TICKERS):
+              q = None
+              for attempt in (1, 2):
+                  try:
+                      q = fetch(t)
+                      break
+                  except Exception as e:
+                      print(f"{t}: attempt {attempt} failed - {e}")
+                      time.sleep(20)
+              if q is None:
+                  failed.append(t)
+                  continue
+              old_day = existing.get(t, {}).get("asOf")
+              if old_day and q["asOf"] < old_day:
+                  print(f"{t}: ignoring older quote {q['asOf']} (already have {old_day})")
+              else:
+                  existing[t] = q
+                  print(f"{t}: NAV {q['price']} (prev {q['prev']}) as of {q['asOf']}")
+              if i < len(TICKERS) - 1:
+                  time.sleep(15)  # stay under the free tier's per-minute burst limit
+
+          if any(existing.get(t) for t in TICKERS):
+              with open(OUT, "w") as f:
+                  json.dump(existing, f, indent=2)
+
+          new_asof = {t: existing.get(t, {}).get("asOf") for t in TICKERS}
+          if not failed and new_asof == prior_asof:
+              print("::warning::NAV dates did not advance. Either the data provider has not "
+                    "published yet or the market was closed. The dashboard will keep showing "
+                    "the NAV date shown in the file.")
+
+          if failed:
+              print("::error::No usable NAV after retries for: " + ", ".join(failed))
+              sys.exit(1)
           PYEOF
 
       - name: Commit updated quotes (only if something changed)
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add mutual-fund-quotes.json
-          git diff --staged --quiet || git commit -m "Auto-update mutual fund quotes"
-          git push
+          if ! git diff --staged --quiet; then
+            git commit -m "Auto-update mutual fund quotes"
+            git pull --rebase origin main
+            git push
+          fi
