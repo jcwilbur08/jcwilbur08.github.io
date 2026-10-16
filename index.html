@@ -3348,7 +3348,7 @@ async function fetchLiveQuotes(){
   sectorFetchAttempted = true;
   if(sectorOk === 0) console.warn('Sector Performance: 0 of', sectorETFs.length, 'sector ETF quotes loaded from Finnhub.');
 
-  let mfOk = false;
+  let mfOk = false; let mfAsOf = '';
   try {
     const mfRes = await fetch('./mutual-fund-quotes.json', {cache:'no-store'});
     if(mfRes.ok){
@@ -3357,6 +3357,7 @@ async function fetchLiveQuotes(){
         if(mutualFundQuoteTickers.includes(h.ticker) && mfData[h.ticker] && mfData[h.ticker].price > 0){
           h.price = mfData[h.ticker].price;
           if(mfData[h.ticker].prev > 0) h.prev = mfData[h.ticker].prev;
+          if(mfData[h.ticker].asOf && mfData[h.ticker].asOf > mfAsOf) mfAsOf = mfData[h.ticker].asOf;
           mfOk = true;
         }
       });
@@ -3402,7 +3403,7 @@ async function fetchLiveQuotes(){
 
   const freshMfEl = document.getElementById('freshness-mf');
   if(freshMfEl) freshMfEl.textContent = mfOk
-    ? `Mutual funds (Alpha Vantage, daily): ${dateStr}`
+    ? `Mutual funds (NAV as of ${mfAsOf ? new Date(mfAsOf+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'}) : dateStr})`
     : 'Mutual funds (Alpha Vantage, daily): not yet refreshed — showing last-known NAV';
 }
 fetchLiveQuotes();
