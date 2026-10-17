@@ -1794,7 +1794,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <div class="thesis-body">
           UNH is navigating a genuinely difficult stretch: an active DOJ criminal and civil investigation into Medicare Advantage billing practices, a deliberate multi-million-member exit from unprofitable MA/Medicaid markets driving the company's first revenue decline in a decade, and real leadership turbulence (CEO Hemsley returned in 2025 after Witty's resignation). Against that, the stock has been repriced to ~13x forward earnings with Berkshire Hathaway building a stake — a valuation that could be compelling if the integrated model survives the DOJ outcome intact, or a value trap if it doesn't. Not adding until there's more clarity on the investigation and margin trajectory.
         </div>
-        <div class="thesis-conviction">Source: FY2025 10-K, Q1 2026 earnings release, DOJ disclosure filings; Oct 8 report: capital-allocation-ranking-2026-10-08.html (full report, this firm)</div>
+        <div class="thesis-conviction">Source: FY2025 10-K, Q1 2026 earnings release, DOJ disclosure filings; Oct 8 report: capital-allocation-ranking-2026-10-08.html (full report, this firm); Oct 17 report: UNH_Q3_2026_Refresh_Re_underwrite_2026-10-17.html (Q3 refresh — ADD, conviction 7/10, base value $465)</div>
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Q3 adjusted EPS $4.69; guidance and cost control offer turnaround evidence.</p><p><strong>Weakening:</strong> Medical care ratio 88.4%, regulatory scrutiny and Optum integration/quality pressures.</p><p><strong>Next checkpoint:</strong> Q4 MCR, 2027 pricing, cash conversion, Medicare margin, reserves and Optum utilization.</p><p><strong>Draft thesis-break test:</strong> MCR remains near 90% despite pricing actions and earnings guidance is cut repeatedly, or serious compliance impairment.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
@@ -3154,6 +3154,7 @@ renderResearchSummary();
 
 // ---- REPORT LIBRARY (real files, linked into /reports on this repo) ----
 const reports = [
+  {date:'2026-10-17', title:'UnitedHealth Group (UNH) — Q3 2026 Refresh / Re-underwrite', type:'research', file:'UNH_Q3_2026_Refresh_Re_underwrite_2026-10-17.html', pdf:'UNH_Q3_2026_Refresh_Re_underwrite_2026-10-17.pdf', ticker:'UNH', assetType:'equity', key:'UNH'},
   {date:'2026-10-16', title:'Adobe Inc. (ADBE) — Fundamental Analysis & Five-Year Outlook', type:'research', file:'ADBE_Fundamental_Analysis_2026-10-16.html', pdf:'ADBE_Fundamental_Analysis_2026-10-16.pdf', ticker:'ADBE', assetType:'equity', key:'ADBE'},
   {date:'2026-10-16', title:'Complete Portfolio — Investment Thesis Review', type:'portfolio', file:'Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html', key:'doc-complete-portfolio-investment-thesis'},
   {date:'2026-10-13', title:'Retirement Portfolio — Capital Allocation Ranking', type:'portfolio', file:'Retirement_Portfolio_Capital_Allocation_Ranking_2026-10-13.pdf', key:'universe-ranking'},
@@ -3215,7 +3216,7 @@ const reports = [
   {date:'2026-09-12', title:'Retirement Portfolio — Research Universe Ranking (Refresh)', type:'portfolio', file:'Retirement_Portfolio_Research_Universe_Ranking_2026-09-12.html', key:'universe-ranking'},
   {date:'2026-09-12', title:'Dogs of the Dow — 2026 Analyst Review & Opportunity Ranking', type:'portfolio', file:'Dogs_of_the_Dow_2026-09-12.html', key:'dogs-of-dow'},
   {date:'2026-09-12', title:'Wall Street High-Conviction Stock Picks', type:'portfolio', file:'Wall_Street_High_Conviction_Stock_Picks_2026-09-12.html', key:'wall-street-picks'},
-  {date:'2026-09-07', title:'UnitedHealth Group (UNH) — Equity Research Report', type:'research', file:'UNH_Equity_Research_Report_2026-09-07.html', ticker:'UNH', assetType:'equity', key:'UNH'},
+  {date:'2026-09-07', title:'UnitedHealth Group (UNH) — Equity Research Report', type:'research', file:'archive/UNH_Equity_Research_Report_2026-09-07.html', ticker:'UNH', assetType:'equity', key:'UNH', archived:true},
   {date:'2026-09-09', title:'NVIDIA (NVDA) Fundamental Analysis Refresh — Post-Earnings Update & Five-Year Outlook', type:'research', file:'archive/NVDA_Fundamental_Analysis_Refresh_Sep2026.html', ticker:'NVDA', assetType:'equity', key:'NVDA', archived:true},
   {date:'2026-09-06', title:'Retirement Portfolio — Research Universe Ranking (88 Names)', type:'research', file:'archive/Retirement_Portfolio_Research_Universe_Ranking_2026-09-06.html', key:'universe-ranking', archived:true},
   {date:'2026-09-06', title:'Southern Company (SO) — Equity Research Report', type:'research', file:'SO_Equity_Research_Report_2026-09-06.html', ticker:'SO', assetType:'equity', key:'SO'},
