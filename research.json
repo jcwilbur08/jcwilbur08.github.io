@@ -3,7 +3,7 @@
   {
    "ticker": "NFLX",
    "name": "Netflix Inc.",
-   "file": "report-inbox/research/nflx-fundamental-analysis-2026-10-17/report.html",
+   "file": "NFLX_Fundamental_Analysis_2026-10-17.html",
    "rating": "Buy",
    "target": "$80",
    "kind": "company",
@@ -13,7 +13,7 @@
   {
    "ticker": "ADBE",
    "name": "Adobe Inc.",
-   "file": "report-inbox/research/adbe-fundamental-analysis-2026-10-17/report.html",
+   "file": "ADBE_Fundamental_Analysis_2026-10-17.html",
    "rating": "Buy",
    "target": "$325",
    "kind": "company",
