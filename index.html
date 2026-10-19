@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Portfolio Command Center</title>
-
+ 
 <!-- PWA: manifest + icons -->
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="icons/favicon.ico?v=1" sizes="any">
@@ -12,7 +12,7 @@
 <link rel="icon" href="icons/favicon-16.png?v=1" sizes="16x16" type="image/png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=2">
 <meta name="theme-color" content="#1a1a1a">
-
+ 
 <!-- iOS "Add to Home Screen" standalone-app behavior -->
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -20,7 +20,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:#f5f5f5;color:#1a1a1a;font-size:calc(16px * var(--text-scale,1));}
-
+ 
 /* EARNINGS (replaces News tab) — all selectors scoped to #earnings / ed-* */
 #earnings{--ed-ink:#1a1a1a;--ed-soft:#555;--ed-muted:#888;--ed-card:#fff;--ed-border:#e5e5e5;--ed-accent:#2563eb;--ed-accent-soft:#dbeafe;--ed-good:#16a34a;--ed-good-soft:#dcfce7;--ed-bad:#dc2626;--ed-warn:#b45309;--ed-warn-soft:#fef3c7;font-variant-numeric:tabular-nums;}
 body[data-theme="dark"] #earnings{--ed-ink:#e8e9ec;--ed-soft:#b7bcc7;--ed-muted:#8b909c;--ed-card:#1a1d24;--ed-border:#262a33;--ed-accent:#5b8def;--ed-accent-soft:#111d33;--ed-good:#4ade80;--ed-good-soft:rgba(74,222,128,.14);--ed-bad:#f87171;--ed-warn:#fbbf24;--ed-warn-soft:rgba(251,191,36,.14);}
@@ -92,7 +92,7 @@ body[data-theme="dark"] #earnings{--ed-ink:#e8e9ec;--ed-soft:#b7bcc7;--ed-muted:
   #earnings .ed-reaction{text-align:left;}
   #earnings .ed-block{scroll-margin-top:60px;}
 }
-
+ 
 /* SCROLLING TICKER */
 .ticker-bar{background:#1a1a1a;color:#fff;padding:calc(8px + env(safe-area-inset-top)) 0 8px;overflow:hidden;white-space:nowrap;}
 .ticker-track{display:inline-flex;animation:scroll 90s linear infinite;}
@@ -103,22 +103,22 @@ body[data-theme="dark"] #earnings{--ed-ink:#e8e9ec;--ed-soft:#b7bcc7;--ed-muted:
 .ticker-item .up{color:#22c55e;font-size:calc(14px * var(--text-scale,1));}
 .ticker-item .dn{color:#ef4444;font-size:calc(14px * var(--text-scale,1));}
 @keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-50%);}}
-
+ 
 /* HEADER */
 .header{background:#fff;border-bottom:1px solid #e5e5e5;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;}
 .header h1{font-size:calc(24px * var(--text-scale,1));font-weight:700;color:#1a1a1a;}
 .header p{font-size:calc(14px * var(--text-scale,1));color:#888;margin-top:2px;}
 .avatar{width:42px;height:42px;border-radius:50%;background:#2563eb;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;font-size:16px;}
-
+ 
 /* STICKY GROUP (tabs + summary bar travel together) */
 .sticky-group{position:sticky;top:0;z-index:20;}
-
+ 
 /* TABS */
 .tabs{background:#fff;border-bottom:1px solid #e5e5e5;display:flex;overflow-x:auto;}
 .tab-btn{flex:1;min-width:90px;padding:14px 12px;border:none;background:transparent;color:#888;font-size:calc(15px * var(--text-scale,1));font-weight:600;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:all .2s;}
 .tab-btn:hover{color:#1a1a1a;background:#f9f9f9;}
 .tab-btn.active{color:#2563eb;border-bottom-color:#2563eb;}
-
+ 
 /* SUMMARY BAR (sticky, visible across all tabs) */
 .summary-bar{background:#1a1a1a;border-bottom:1px solid #000;display:flex;align-items:center;gap:0;overflow-x:auto;padding:0 20px;}
 .summary-item{display:flex;align-items:center;gap:8px;padding:9px 20px;border-right:1px solid #333;white-space:nowrap;}
@@ -127,15 +127,15 @@ body[data-theme="dark"] #earnings{--ed-ink:#e8e9ec;--ed-soft:#b7bcc7;--ed-muted:
 .summary-item .val{font-size:calc(15px * var(--text-scale,1));font-weight:700;color:#fff;}
 .summary-item .val.up-color{color:#4ade80!important;}
 .summary-item .val.dn-color{color:#f87171!important;}
-
+ 
 /* CONTENT */
 .content{max-width:1100px;margin:0 auto;padding:24px 20px;}
 .tab-pane{display:none;}
 .tab-pane.active{display:block;}
-
+ 
 /* SECTION HEADER */
 .section-title{font-size:calc(20px * var(--text-scale,1));font-weight:700;margin-bottom:20px;color:#1a1a1a;}
-
+ 
 /* METRIC CARDS */
 .metrics-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:24px;}
 .metric{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:18px;text-align:center;}
@@ -144,11 +144,11 @@ body[data-theme="dark"] #earnings{--ed-ink:#e8e9ec;--ed-soft:#b7bcc7;--ed-muted:
 .metric .sub{font-size:calc(13px * var(--text-scale,1));color:#888;margin-top:4px;}
 .up-color{color:#16a34a!important;}
 .dn-color{color:#dc2626!important;}
-
+ 
 /* CARDS */
 .card{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:20px;margin-bottom:16px;}
 .card h3{font-size:calc(17px * var(--text-scale,1));font-weight:700;margin-bottom:16px;color:#1a1a1a;}
-
+ 
 /* TABLE ROWS */
 .trow{display:flex;align-items:center;padding:11px 0;border-bottom:1px solid #f0f0f0;font-size:calc(15px * var(--text-scale,1));gap:8px;}
 .trow:last-child{border-bottom:none;}
@@ -158,7 +158,7 @@ body[data-theme="dark"] #earnings{--ed-ink:#e8e9ec;--ed-soft:#b7bcc7;--ed-muted:
 .trow .chg{width:72px;text-align:right;font-size:calc(14px * var(--text-scale,1));font-weight:600;}
 .trow .mv{width:90px;text-align:right;font-weight:600;}
 .trow .wt{width:50px;text-align:right;color:#888;font-size:calc(14px * var(--text-scale,1));}
-
+ 
 /* HOLDINGS TABLE - sortable + expandable */
 .holdings-toolbar{display:flex;gap:10px;align-items:center;margin-bottom:14px;flex-wrap:wrap;}
 .search-input{flex:1;min-width:180px;padding:9px 14px;border:1px solid #ddd;border-radius:8px;font-size:calc(15px * var(--text-scale,1));color:#1a1a1a;background:#fafafa;}
@@ -191,14 +191,14 @@ body[data-theme="dark"] #earnings{--ed-ink:#e8e9ec;--ed-soft:#b7bcc7;--ed-muted:
 .hdetail-item .val.price-highlight{color:#2563eb;}
 .price-detail-item{display:none;}
 .no-results{padding:24px 0;text-align:center;color:#888;font-size:calc(15px * var(--text-scale,1));}
-
+ 
 /* BADGE */
 .badge{display:inline-block;padding:3px 9px;border-radius:20px;font-size:calc(13px * var(--text-scale,1));font-weight:700;letter-spacing:.3px;}
 .badge-hold{background:#dbeafe;color:#1d4ed8;}
 .badge-build{background:#dcfce7;color:#15803d;}
 .badge-watch{background:#fef9c3;color:#854d0e;}
 .badge-review{background:#fee2e2;color:#b91c1c;}
-
+ 
 /* THESIS CARD */
 .thesis-card{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:18px;margin-bottom:12px;}
 .thesis-header{display:flex;align-items:center;gap:12px;margin-bottom:10px;}
@@ -207,7 +207,7 @@ body[data-theme="dark"] #earnings{--ed-ink:#e8e9ec;--ed-soft:#b7bcc7;--ed-muted:
 .thesis-meta{display:flex;gap:16px;font-size:calc(14px * var(--text-scale,1));color:#888;margin-bottom:10px;}
 .thesis-body{font-size:calc(15px * var(--text-scale,1));color:#333;line-height:1.6;background:#f8f9fa;border-radius:8px;padding:12px;}
 .thesis-conviction{font-size:calc(14px * var(--text-scale,1));color:#555;margin-top:8px;}
-
+ 
 .thesis-core{font-size:calc(14px * var(--text-scale,1));color:#555;margin-bottom:10px;line-height:1.5;}
 .thesis-latest{font-size:calc(15px * var(--text-scale,1));color:#222;line-height:1.6;}
 .thesis-latest-label{display:inline-block;font-size:calc(11px * var(--text-scale,1));font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#1d4ed8;background:#dbeafe;padding:2px 8px;border-radius:12px;margin-right:6px;vertical-align:1px;}
@@ -224,10 +224,10 @@ body[data-theme="dark"] #earnings{--ed-ink:#e8e9ec;--ed-soft:#b7bcc7;--ed-muted:
 .report-ticker-badge:active{opacity:.7;}
 .report-pdf-chip{display:inline-block;background:transparent;color:#1a1a1a;border:1px solid #1a1a1a;font-size:calc(12px * var(--text-scale,1));font-weight:700;padding:1px 7px;border-radius:4px;margin:0 0 6px 6px;cursor:pointer;}
 .report-pdf-chip:active{opacity:.7;}
-
+ 
 /* SLIDER */
 .slider-wrap{margin-bottom:18px;background:#f8f9fa;padding:14px;border-radius:8px;}
-
+ 
 /* INCOME STACK (Pension / Dividends / Withdrawals bar + legend) */
 .income-stack-bar{display:flex;height:36px;border-radius:18px;overflow:hidden;background:#f0f0f0;}
 .income-stack-seg{height:100%;transition:width .3s;}
@@ -240,7 +240,7 @@ body[data-theme="dark"] #earnings{--ed-ink:#e8e9ec;--ed-soft:#b7bcc7;--ed-muted:
 .income-stack-dot.pension{background:#2563eb;}
 .income-stack-dot.dividends{background:#16a34a;}
 .income-stack-dot.withdrawals{background:#eab308;}
-
+ 
 /* MONTHLY DIVIDEND CALENDAR */
 .uneven-pill{display:inline-block;background:#dbeafe;color:#1d4ed8;font-size:calc(13px * var(--text-scale,1));font-weight:700;padding:4px 12px;border-radius:20px;margin-bottom:16px;}
 .div-calendar{display:grid;grid-template-columns:repeat(6,1fr);gap:10px 6px;align-items:end;}
@@ -253,7 +253,7 @@ body[data-theme="dark"] #earnings{--ed-ink:#e8e9ec;--ed-soft:#b7bcc7;--ed-muted:
 input[type=range]{width:100%;height:5px;border-radius:3px;background:#ddd;outline:none;-webkit-appearance:none;appearance:none;}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:#2563eb;cursor:pointer;}
 input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radius:6px;font-size:calc(15px * var(--text-scale,1));color:#1a1a1a;background:#fff;}
-
+ 
 /* BLUE HIGHLIGHT CARD */
 .blue-card{background:#eff6ff;border:1px solid #bfdbfe;border-radius:10px;padding:20px;margin-bottom:16px;}
 .blue-card h3{color:#1d4ed8;font-size:calc(16px * var(--text-scale,1));font-weight:700;margin-bottom:14px;}
@@ -261,8 +261,8 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 .blue-metric{background:#fff;border:1px solid #bfdbfe;border-radius:8px;padding:14px;}
 .blue-metric .lbl{font-size:calc(13px * var(--text-scale,1));color:#3b82f6;font-weight:600;margin-bottom:6px;}
 .blue-metric .val{font-size:calc(22px * var(--text-scale,1));font-weight:700;color:#1d4ed8;}
-
-
+ 
+ 
 /* REPORT CARDS */
 .report-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
 .report-card{background:#fff;border:1px solid #e5e5e5;border-radius:10px;padding:16px;display:block;text-decoration:none;transition:box-shadow .15s,transform .15s;}
@@ -278,14 +278,14 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 .type-market{background:#ccfbf1;color:#0f766e;}
 .archived-badge{display:inline-block;margin:8px 0 0 6px;font-size:calc(13px * var(--text-scale,1));font-weight:700;padding:2px 8px;border-radius:4px;background:#e5e7eb;color:#4b5563;}
 .report-card .superseded{margin-top:8px;font-size:calc(13px * var(--text-scale,1));color:#888;line-height:1.35;}
-
+ 
 /* ALLOCATION BAR */
 .alloc-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
 .alloc-label{font-size:calc(14px * var(--text-scale,1));color:#555;width:180px;flex-shrink:0;}
 .alloc-bar-wrap{flex:1;background:#f0f0f0;border-radius:4px;height:8px;}
 .alloc-bar{height:8px;border-radius:4px;background:#2563eb;}
 .alloc-pct{font-size:calc(14px * var(--text-scale,1));font-weight:700;width:40px;text-align:right;}
-
+ 
 /* SECTOR PERFORMANCE (diverging bar, centered at 0%) */
 .sector-perf-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #f0f0f0;}
 .sector-perf-row:last-child{border-bottom:none;}
@@ -294,7 +294,7 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 .sector-perf-center{position:absolute;left:50%;top:-3px;bottom:-3px;width:1px;background:#ccc;}
 .sector-perf-fill{position:absolute;top:0;height:8px;border-radius:4px;min-width:2px;}
 .sector-perf-val{width:64px;text-align:right;font-size:calc(15px * var(--text-scale,1));font-weight:700;flex-shrink:0;}
-
+ 
 /* CASH BADGE */
 .on-track{color:#15803d;font-weight:700;}
 .quality-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f0f0f0;font-size:calc(15px * var(--text-scale,1));}
@@ -303,14 +303,14 @@ input[type=number]{width:100%;padding:8px 12px;border:1px solid #ddd;border-radi
 .status-ok{color:#15803d;font-size:calc(14px * var(--text-scale,1));font-weight:700;}
 .status-warn{color:#d97706;font-size:calc(14px * var(--text-scale,1));font-weight:700;}
 .status-build{color:#2563eb;font-size:calc(14px * var(--text-scale,1));font-weight:700;}
-
+ 
 .pill-btn{padding:7px 18px;border-radius:20px;border:1px solid #ddd;background:#fff;font-size:calc(15px * var(--text-scale,1));font-weight:600;cursor:pointer;color:#555;}
 .pill-btn:hover{background:#f0f4ff;border-color:#2563eb;color:#2563eb;}
 .pill-btn.active{background:#2563eb;color:#fff;border-color:#2563eb;}
-
+ 
 /* REPORTS TOOLBAR */
 .reports-toolbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px;}
-
+ 
 /* THEME TOGGLE */
 .theme-toggle{width:38px;height:38px;border-radius:50%;border:1px solid #e5e5e5;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;margin-right:12px;transition:background .15s;}
 .theme-toggle:hover{background:#f0f4ff;}
@@ -343,12 +343,12 @@ body[data-privacy="on"] #income-stack-total,
 body[data-privacy="on"] #contrib-val,
 body[data-privacy="on"] #pension-slider-val
 {filter:blur(7px);user-select:none;}
-
+ 
 /* CORE / BUILD BADGE TAGS (holdings table) */
 .tag{display:inline-block;font-size:calc(11px * var(--text-scale,1));font-weight:700;letter-spacing:.3px;padding:2px 6px;border-radius:4px;margin-left:6px;flex-shrink:0;cursor:help;}
 .tag-core{background:#fef3c7;color:#92400e;}
 .tag-build{background:#dcfce7;color:#15803d;}
-
+ 
 /* BUILD TARGET PROGRESS BARS */
 .target-row{margin-bottom:18px;}
 .target-row:last-child{margin-bottom:0;}
@@ -365,18 +365,18 @@ body[data-privacy="on"] #pension-slider-val
 .target-foot .status-label.status-red{color:#dc2626;font-weight:700;}
 .target-foot .status-label.status-amber{color:#d97706;font-weight:700;}
 .target-foot .status-label.status-green{color:#16a34a;font-weight:700;}
-
+ 
 /* $ / % DISPLAY TOGGLE */
 .unit-toggle{display:flex;border:1px solid #ddd;border-radius:8px;overflow:hidden;}
 .unit-toggle button{padding:9px 14px;border:none;background:#fafafa;font-size:calc(15px * var(--text-scale,1));font-weight:700;color:#888;cursor:pointer;}
 .unit-toggle button.active{background:#2563eb;color:#fff;}
-
+ 
 /* DATA FRESHNESS FOOTER (compact, bottom of Today tab) */
 .data-freshness-footer{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:calc(12px * var(--text-scale,1));color:#aaa;line-height:1.5;padding:14px 4px 4px;border-top:1px solid #eee;margin-top:4px;}
 .data-freshness-footer span:not(:last-child)::after{content:'•';margin-left:14px;color:#ccc;}
 .updated-item{margin-left:auto;display:flex;align-items:center;gap:6px;}
 .updated-item .dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0;}
-
+ 
 /* BOTTOM NAV (mobile app-style) */
 .bottom-nav{display:none;position:fixed;left:0;right:0;bottom:0;z-index:30;background:#fff;border-top:1px solid #e5e5e5;padding-bottom:env(safe-area-inset-bottom);}
 .bottom-nav-inner{display:flex;}
@@ -384,7 +384,7 @@ body[data-privacy="on"] #pension-slider-val
 .bottom-nav-btn .icon{font-size:21px;line-height:1;}
 .bottom-nav-btn .lbl{font-size:calc(11.5px * var(--text-scale,1));font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%;}
 .bottom-nav-btn.active{color:#2563eb;}
-
+ 
 /* COLLAPSIBLE CARDS (mobile: collapsed by default, tap to expand; desktop: always open) */
 .card-collapsible{padding:0;}
 .card-header{display:flex;align-items:center;justify-content:space-between;padding:20px;cursor:default;}
@@ -393,7 +393,7 @@ body[data-privacy="on"] #pension-slider-val
 .chevron{display:none;width:8px;height:8px;border-right:2px solid #999;border-bottom:2px solid #999;transform:rotate(-45deg);transition:transform .2s;flex-shrink:0;margin-left:10px;}
 .card-collapsible.open .chevron{transform:rotate(45deg);}
 .card-body-inner{padding:0 20px 20px;}
-
+ 
 @media(max-width:768px){
   .metrics-row{grid-template-columns:repeat(2,1fr);}
   .metric{padding:14px 10px;}
@@ -436,7 +436,7 @@ body[data-privacy="on"] #pension-slider-val
   .hhead .wt-col{width:30px!important;}
   .hrow .wt{width:30px;font-size:calc(13px * var(--text-scale,1));white-space:nowrap;}
 }
-
+ 
 /* ============ DARK MODE ============ */
 body[data-theme="dark"]{background:#0f1115;color:#e8e9ec;}
 body[data-theme="dark"] .header{background:#161920;border-bottom-color:#262a33;}
@@ -473,7 +473,7 @@ body[data-theme="dark"] .thesis-name{color:#b7bcc7;}
 body[data-theme="dark"] .thesis-meta{color:#8b909c;}
 body[data-theme="dark"] .thesis-body{background:#20242e;color:#d1d4da;}
 body[data-theme="dark"] .thesis-conviction{color:#8b909c;}
-
+ 
 body[data-theme="dark"] .thesis-core{color:#b7bcc7;}
 body[data-theme="dark"] .thesis-latest{color:#e8e9ec;}
 body[data-theme="dark"] .thesis-latest-label{background:#111d33;color:#5b8def;}
@@ -524,17 +524,17 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
 </style>
 </head>
 <body>
-
+ 
 <!-- SCROLLING TICKER -->
 <div class="ticker-bar">
   <div class="ticker-track" id="tickerTrack"></div>
 </div>
-
+ 
 <!-- HEADER -->
 <div class="header">
   <div>
     <h1>Portfolio Command Center</h1>
-    <p>James Wilbur &nbsp;•&nbsp; Private &nbsp;•&nbsp; Holdings as of Oct 16, 2026</p>
+    <p>James Wilbur &nbsp;•&nbsp; Private &nbsp;•&nbsp; Holdings as of Oct 16, 2026 &nbsp;•&nbsp; Prices as of Oct 19, 2026 (Robinhood, 12:18 PM ET)</p>
   </div>
   <div style="display:flex;align-items:center;flex-wrap:wrap;row-gap:8px;">
     <button class="text-toggle" id="textSizeDec" onclick="decreaseTextSize()" title="Decrease text size">A−</button>
@@ -544,7 +544,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <div class="avatar">JW</div>
   </div>
 </div>
-
+ 
 <!-- STICKY TABS + SUMMARY BAR -->
 <div class="sticky-group">
   <div class="tabs">
@@ -564,13 +564,13 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <div class="summary-item updated-item"><span class="dot"></span><span class="lbl">Updated</span><span class="val" id="sum-updated" style="font-weight:600;font-size:calc(14px * var(--text-scale,1));">—</span></div>
   </div>
 </div>
-
+ 
 <div class="content">
-
+ 
   <!-- TODAY -->
   <div id="today" class="tab-pane active">
     <div class="section-title">Daily Command Center</div>
-
+ 
     <div class="metrics-row">
       <div class="metric">
         <div class="lbl">Portfolio Value</div>
@@ -593,7 +593,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <div class="sub on-track" id="cash-sub">2.6% — On Track (2–4%)</div>
       </div>
     </div>
-
+ 
     <div class="card">
       <h3>Dollar Drivers — Top Contributors</h3>
       <div style="font-size:calc(13px * var(--text-scale,1));font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Contributors</div>
@@ -601,7 +601,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <div style="font-size:calc(13px * var(--text-scale,1));font-weight:700;color:#888;text-transform:uppercase;letter-spacing:.5px;margin:18px 0 8px;">Detractors</div>
       <div id="detractors-list"></div>
     </div>
-
+ 
     <div class="card">
       <h3>Sector Performance</h3>
       <div id="sector-perf-list">
@@ -609,9 +609,9 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       </div>
       <p style="font-size:calc(13px * var(--text-scale,1));color:#888;margin-top:12px;">SPDR Select Sector ETFs, day % change vs. prior close. Live via Finnhub.</p>
     </div>
-
+ 
     <!-- YTD vs. S&P 500 card REMOVED Oct 2, 2026 (pending accuracy rework). Re-add: see ytd_vs_spy_module.md, step 1 — paste the card HTML here. -->
-
+ 
     <div class="data-freshness-footer">
       <span>Prices <span id="header-live-status">loading…</span></span>
       <span id="freshness-live">Live quotes (Finnhub): loading…</span>
@@ -620,11 +620,11 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <span>Earnings dashboard: Oct 10, 2026</span>
     </div>
   </div>
-
+ 
   <!-- PORTFOLIO -->
   <div id="portfolio" class="tab-pane">
     <div class="section-title">Holdings — Live Quotes via Robinhood</div>
-
+ 
     <div class="metrics-row" style="grid-template-columns:repeat(auto-fit,minmax(150px,1fr));">
       <div class="metric">
         <div class="lbl">Total Value</div>
@@ -648,7 +648,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <div class="sub" id="port-unrealized-pct">—</div>
       </div>
     </div>
-
+ 
     <!-- Allocation bars + donut -->
     <div class="card card-collapsible" id="card-alloc">
       <div class="card-header" onclick="toggleCollapsibleCard('card-alloc')">
@@ -668,7 +668,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
     </div>
-
+ 
     <!-- Sector / industry breakdown -->
     <div class="card card-collapsible" id="card-sector">
       <div class="card-header" onclick="toggleCollapsibleCard('card-sector')">
@@ -685,7 +685,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
     </div>
-
+ 
     <!-- Build target progress -->
     <div class="card card-collapsible" id="card-build">
       <div class="card-header" onclick="toggleCollapsibleCard('card-build')">
@@ -701,7 +701,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
     </div>
-
+ 
     <!-- Holdings table -->
     <div class="card" id="holdings-table-card">
       <h3>All Holdings</h3>
@@ -732,11 +732,11 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <div id="holdings-list"></div>
     </div>
   </div>
-
+ 
   <!-- RETIREMENT -->
   <div id="retirement" class="tab-pane">
     <div class="section-title">Retirement Planning — 11-Year Horizon</div>
-
+ 
     <div class="card">
       <h3>Projected Outcomes</h3>
       <div class="metrics-row" style="margin-bottom:0;">
@@ -758,7 +758,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
       </div>
     </div>
-
+ 
     <div class="card">
       <h3>Adjust Assumptions</h3>
       <div class="slider-wrap">
@@ -783,11 +783,11 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       </div>
     </div>
   </div>
-
+ 
   <!-- INCOME -->
   <div id="income" class="tab-pane">
     <div class="section-title">Income Intelligence</div>
-
+ 
     <div class="metrics-row">
       <div class="metric">
         <div class="lbl">Current Annual Dividend</div>
@@ -809,7 +809,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <div class="sub">Top 5 contributors</div>
       </div>
     </div>
-
+ 
     <div class="card">
       <h3>Retirement Income Stack</h3>
       <p style="font-size:calc(13px * var(--text-scale,1));color:#888;margin:-8px 0 14px;">Expected annual income at retirement (uses the years/return/withdrawal assumptions from the Retirement tab). Dividends assume reinvestment until retirement — projected as future portfolio value × today's yield, not just today's dividend grown on its own.</p>
@@ -817,14 +817,14 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <div class="income-stack-bar" id="income-stack-bar"></div>
       <div class="income-stack-legend" id="income-stack-legend"></div>
     </div>
-
+ 
     <div class="card">
       <h3>Monthly Dividend Calendar</h3>
       <p style="font-size:calc(13px * var(--text-scale,1));color:#888;margin:-8px 0 6px;" id="div-calendar-sublabel">Today's actual schedule — adjust Growth/Projection Period below to project forward</p>
       <div class="uneven-pill">Uneven by design</div>
       <div class="div-calendar" id="div-calendar"></div>
     </div>
-
+ 
     <div class="card">
       <h3>Dividend Assumptions</h3>
       <div class="slider-wrap">
@@ -836,29 +836,29 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <input type="range" id="div-years" min="1" max="20" value="11" oninput="calendarUsesProjection=true; calcDividends()">
       </div>
     </div>
-
+ 
     <div class="card">
       <h3>Income by Category</h3>
       <div id="income-by-cat-list"></div>
     </div>
-
+ 
     <div class="card">
       <h3>Top Dividend Contributors</h3>
       <div id="top-div-list"></div>
     </div>
   </div>
-
+ 
   <!-- RESEARCH -->
   <div id="research" class="tab-pane">
     <div class="section-title">Research Center — Living Investment Record</div>
-
+ 
     <div class="metrics-row">
       <div class="metric"><div class="lbl">Active Theses</div><div class="val" id="research-total-count">41</div></div>
       <div class="metric"><div class="lbl">Core Forever Holds</div><div class="val" id="research-core-count">5</div></div>
       <div class="metric"><div class="lbl">Build Positions</div><div class="val" id="research-build-count">2</div></div>
       <div class="metric"><div class="lbl">Under Review</div><div class="val" id="research-review-count">4</div></div>
     </div>
-
+ 
     <!-- Filter pills -->
     <div style="display:flex;gap:8px;margin-bottom:10px;flex-wrap:wrap;align-items:center;">
       <button class="pill-btn active" onclick="filterThesis('all',this)">All</button>
@@ -879,37 +879,37 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       <input type="text" class="search-input" id="research-search" placeholder="Search by ticker, name, or keyword…" oninput="applyThesisFilter()">
       <span class="search-count" id="research-count" style="display:block;margin-top:6px;"></span>
     </div>
-
+ 
     <div id="thesis-list">
 <div class="thesis-card" data-status="UNRATED" data-type="fund"><div class="thesis-header"><div class="thesis-ticker">FSMDX</div><span style="background:#e5e7eb;color:#374151;padding:3px 8px;border-radius:16px">UNRATED</span><div class="thesis-name">Fidelity Mid Cap Index Fund</div></div><div class="thesis-meta"><span>Portfolio snapshot: 1.81% · $31,264</span></div><div class="thesis-body">New portfolio review evidence. No standalone security rating or CIO status has been assigned.</div>
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Broad low-cost mid-cap exposure diversifies away from mega-cap concentration.</p><p><strong>Weakening:</strong> Interest-rate and credit stress generally hits mid-caps disproportionately.</p><p><strong>Next checkpoint:</strong> Rebalance: sector weights, quality leverage and index fee/overlap.</p><p><strong>Draft thesis-break test:</strong> Tracking failure or a persistent undesired factor concentration relative to plan.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
 <div class="thesis-card" data-status="UNRATED" data-type="fund"><div class="thesis-header"><div class="thesis-ticker">FSSNX</div><span style="background:#e5e7eb;color:#374151;padding:3px 8px;border-radius:16px">UNRATED</span><div class="thesis-name">Fidelity Small Cap Index Fund</div></div><div class="thesis-meta"><span>Portfolio snapshot: 1.77% · $30,627</span></div><div class="thesis-body">New portfolio review evidence. No standalone security rating or CIO status has been assigned.</div>
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Low-cost small-cap beta can participate in broader economic recovery.</p><p><strong>Weakening:</strong> Higher rates and refinancing burdens can depress index margins.</p><p><strong>Next checkpoint:</strong> Track aggregate constituent leverage, earnings revisions and rate sensitivity.</p><p><strong>Draft thesis-break test:</strong> Index mandate/tracking failure; reassess sizing if small-cap risk dominates aggregate plan.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
 <div class="thesis-card" data-status="UNRATED" data-type="fund"><div class="thesis-header"><div class="thesis-ticker">IJH</div><span style="background:#e5e7eb;color:#374151;padding:3px 8px;border-radius:16px">UNRATED</span><div class="thesis-name">iShares Core S&amp;P Mid-Cap ETF</div></div><div class="thesis-meta"><span>Portfolio snapshot: 1.14% · $19,630</span></div><div class="thesis-body">New portfolio review evidence. No standalone security rating or CIO status has been assigned.</div>
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Diversified mid-cap operating company exposure bridges large and small cap.</p><p><strong>Weakening:</strong> Slower domestic demand and financing costs can drag mid-cap earnings.</p><p><strong>Next checkpoint:</strong> Reconstitution, sector and overlap review versus FSMDX.</p><p><strong>Draft thesis-break test:</strong> Tracking/mandate failure or economically redundant allocation reducing useful diversification.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
 <div class="thesis-card" data-status="UNRATED" data-type="fund"><div class="thesis-header"><div class="thesis-ticker">SCHD</div><span style="background:#e5e7eb;color:#374151;padding:3px 8px;border-radius:16px">UNRATED</span><div class="thesis-name">Schwab U.S. Dividend Equity ETF™</div></div><div class="thesis-meta"><span>Portfolio snapshot: 1.21% · $20,929</span></div><div class="thesis-body">New portfolio review evidence. No standalone security rating or CIO status has been assigned.</div>
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Dividend-quality and profitability screens add income and balance some mega-cap valuation risk.</p><p><strong>Weakening:</strong> Sector/style concentration and overlap with direct dividend holdings.</p><p><strong>Next checkpoint:</strong> Quarterly sector and top-holdings audit; dividend growth versus inflation.</p><p><strong>Draft thesis-break test:</strong> Systematic deterioration in dividend coverage or strategy/expense/tracking deviation.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
 <div class="thesis-card" data-status="UNRATED" data-type="fund"><div class="thesis-header"><div class="thesis-ticker">TLXIX</div><span style="background:#e5e7eb;color:#374151;padding:3px 8px;border-radius:16px">UNRATED</span><div class="thesis-name">Nuveen Lifecycle Index 2045 Fund R6 Class</div></div><div class="thesis-meta"><span>Portfolio snapshot: 9.44% · $163,149</span></div><div class="thesis-body">New portfolio review evidence. No standalone security rating or CIO status has been assigned.</div>
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Broad multi-asset retirement exposure and automatic global diversification.</p><p><strong>Weakening:</strong> The 2045 glidepath may not match the actual retirement horizon or complement direct holdings efficiently.</p><p><strong>Next checkpoint:</strong> Inspect latest underlying allocation, equity/bond mix and target-date glidepath at annual rebalance.</p><p><strong>Draft thesis-break test:</strong> Break if glidepath or fees demonstrably conflict with the household risk budget and cannot be corrected through allocation.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
 <div class="thesis-card" data-status="UNRATED" data-type="fund"><div class="thesis-header"><div class="thesis-ticker">VFFSX</div><span style="background:#e5e7eb;color:#374151;padding:3px 8px;border-radius:16px">UNRATED</span><div class="thesis-name">Vanguard 500 Index Institutional Select Shares</div></div><div class="thesis-meta"><span>Portfolio snapshot: 2.19% · $37,905</span></div><div class="thesis-body">New portfolio review evidence. No standalone security rating or CIO status has been assigned.</div>
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Low-cost broad US large-cap beta is a portfolio liquidity and compounder anchor.</p><p><strong>Weakening:</strong> Look-through overlap with AAPL, AMZN, MSFT, GOOG, META, NVDA and financial direct positions.</p><p><strong>Next checkpoint:</strong> Quarterly index concentration and top-10 overlap audit.</p><p><strong>Draft thesis-break test:</strong> Fund tracking or mandate failure; otherwise reconsider weight on portfolio-level crowding, not company news.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
 <div class="thesis-card" data-status="UNRATED" data-type="fund"><div class="thesis-header"><div class="thesis-ticker">VTWO</div><span style="background:#e5e7eb;color:#374151;padding:3px 8px;border-radius:16px">UNRATED</span><div class="thesis-name">Vanguard Russell 2000 Index Fund ETF Shares</div></div><div class="thesis-meta"><span>Portfolio snapshot: 0.80% · $13,766</span></div><div class="thesis-body">New portfolio review evidence. No standalone security rating or CIO status has been assigned.</div>
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Russell 2000 breadth provides broad small-cap participation and non-mega-cap exposure.</p><p><strong>Weakening:</strong> Unprofitable constituent mix, heavy rate sensitivity and overlap with FSSNX/AVUV.</p><p><strong>Next checkpoint:</strong> Review earnings breadth, profitability and overlap against other small-cap sleeves.</p><p><strong>Draft thesis-break test:</strong> Mandate/tracking failure or redundant risk preventing target factor diversification.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
-
+ 
+ 
       <div class="thesis-card" data-status="BUILD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">AVGO</div>
@@ -927,7 +927,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
           <div class="portfolio-review-checkpoint" data-review-date="2026-10-18"><details><summary style="font-weight:700;cursor:pointer">Research refresh — Oct. 18, 2026</summary><p><strong>Working:</strong> Custom XPU/networking demand, software recurring cash flow and Q3 FCF conversion.</p><p><strong>Weakening:</strong> AI financing/customer concentration, competition and valuation sensitivity.</p><p><strong>Next checkpoint:</strong> Next print: AI revenue, cash conversion, customer orders, VMware retention and funding conditions.</p><p><strong>Draft thesis-break test:</strong> Two-quarter AI revenue/guidance decline, cancelled or financing-dependent customer orders, worsening software retention, or FCF quality deterioration.</p><p><small>Source: AVGO Fundamental Analysis &amp; Investment Thesis Refresh, Oct. 18, 2026; retirement-portfolio-63.xlsx.</small></p><a href="AVGO_Fundamental_Analysis_2026-10-18.html" target="_blank" rel="noopener">Full AVGO report ↗</a></details></div>
         </div>
       </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">META</div>
@@ -948,7 +948,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Large ad engine, engagement and potential Muse product gains support AI monetization.</p><p><strong>Weakening:</strong> Aggressive AI capex, uncertain Muse paid conversion and FCF compression raise the evidence bar.</p><p><strong>Next checkpoint:</strong> Q3 earnings: ad pricing, engagement, Muse retention/paid conversion, capex and FCF.</p><p><strong>Draft thesis-break test:</strong> AI spending growth persistently outruns incremental operating profit without credible unit-economic payback across several quarters.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">AMZN</div>
@@ -969,7 +969,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> AWS, advertising and retail/logistics scale offer multiple durable cash generators.</p><p><strong>Weakening:</strong> AI infrastructure spending and retail labor/fulfillment costs can dilute free cash flow.</p><p><strong>Next checkpoint:</strong> Next earnings: AWS growth, operating margin, net capital spending, and trailing free cash flow.</p><p><strong>Draft thesis-break test:</strong> Two consecutive quarters of falling AWS growth AND deteriorating consolidated free-cash-flow conversion without reinvestment justification.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">JPM</div>
@@ -987,7 +987,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Scaled deposit franchise, well-funded balance sheet, strong underwriting and ~20% Q3 ROTCE.</p><p><strong>Weakening:</strong> Q3 EPS missed expectations; expense growth and loan losses could overwhelm NII strength at a premium valuation.</p><p><strong>Next checkpoint:</strong> Track 2027 net interest income, credit-loss provisioning, ROTCE and capital returns in Q4 call.</p><p><strong>Draft thesis-break test:</strong> Sustained ROTCE below ~15%, reserve under-building or material deposit franchise erosion across 2+ quarters.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">MA</div>
@@ -1005,7 +1005,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> High-margin global payments network, cross-border spending and structural cash displacement.</p><p><strong>Weakening:</strong> Premium multiple, regulatory pressure and displacement from account-to-account rails.</p><p><strong>Next checkpoint:</strong> Next results: switched volumes, cross-border growth, operating margins and regulation.</p><p><strong>Draft thesis-break test:</strong> Multi-quarter significant share loss or sustained low-single-digit transaction growth with margin compression.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">AAPL</div>
@@ -1026,7 +1026,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Installed base, services, buybacks and ecosystem retention support durable cash generation.</p><p><strong>Weakening:</strong> Portfolio weight is high versus hardware growth and the workbook price exceeds its fair-value annotation.</p><p><strong>Next checkpoint:</strong> Upcoming fiscal results: iPhone mix, services gross margin, China demand, AI-device upgrades.</p><p><strong>Draft thesis-break test:</strong> Persistent hardware revenue contraction plus services deceleration and deterioration in net cash generation.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">GS</div>
@@ -1045,7 +1045,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Q3 EPS $17.01 and 18.7% annualized ROE demonstrate franchise operating leverage.</p><p><strong>Weakening:</strong> Trading and deal flow are cyclical; higher expenses and premium-to-book valuation reduce cushion.</p><p><strong>Next checkpoint:</strong> Q4 fees, equities trading normalization, efficiency ratio, ROTCE and share repurchases.</p><p><strong>Draft thesis-break test:</strong> Through-cycle ROE persistently below ~11%-12% or material funding/risk-control failure.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">GOOG</div>
@@ -1066,7 +1066,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Search distribution, YouTube and cloud profitability provide substantial cash engines.</p><p><strong>Weakening:</strong> AI answer substitution could pressure search pricing; rising compute capex may absorb surplus cash.</p><p><strong>Next checkpoint:</strong> Next earnings: Search revenue/queries, AI user monetization, Cloud margin and capex.</p><p><strong>Draft thesis-break test:</strong> Two or more quarters of structural Search ad monetization decline with no compensating cloud profit growth.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">AXP</div>
@@ -1083,7 +1083,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Affluent customer mix, fee revenues and closed-loop economics can sustain premium returns.</p><p><strong>Weakening:</strong> Consumer credit normalization, rewards cost inflation and cyclical loan exposures.</p><p><strong>Next checkpoint:</strong> Next results: billed business, net write-offs, reserve builds, fee growth and expenses.</p><p><strong>Draft thesis-break test:</strong> Persistent charge-off losses above modeled cycle norms with sustained weaker premium customer spending.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">AMT</div>
@@ -1102,7 +1102,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Contracted carrier leases, escalators and tower scarcity support recurring cash flow.</p><p><strong>Weakening:</strong> Elevated real yields, financing costs and carrier capex discipline challenge AFFO/share growth.</p><p><strong>Next checkpoint:</strong> AFFO/share, leasing escalators, churn, refinancing rates and any SpaceX tenancy evidence.</p><p><strong>Draft thesis-break test:</strong> AFFO/share declines structurally for 2 years with leverage rising and tenant economics weakening.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">KO</div>
@@ -1120,7 +1120,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Global brand, distribution and stable cash distributions provide defensive resilience.</p><p><strong>Weakening:</strong> High share price relative to workbook fair-value field, weak volume growth and packaging costs.</p><p><strong>Next checkpoint:</strong> Next earnings: concentrate price/mix vs unit case volume and FCF/dividend coverage.</p><p><strong>Draft thesis-break test:</strong> Global volume contraction over multiple quarters with declining organic profit and weakened dividend coverage.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">XOM</div>
@@ -1139,7 +1139,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Diversified upstream/downstream, Guyana/Permian assets and cash distributions hedge oil shock.</p><p><strong>Weakening:</strong> Commodity-linked earnings and headline valuations can overstate sustainable midcycle returns.</p><p><strong>Next checkpoint:</strong> Quarterly production cost per barrel, capex, breakeven oil, cash return coverage.</p><p><strong>Draft thesis-break test:</strong> Dividend and maintenance capex cease to be covered at a reasonable midcycle oil price.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">MSFT</div>
@@ -1159,7 +1159,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Enterprise software durability, cloud ecosystem and AI monetization options.</p><p><strong>Weakening:</strong> AI data-center capital intensity, depreciation and custom-chip economics threaten incremental ROIC.</p><p><strong>Next checkpoint:</strong> Next results: Azure growth, Copilot monetization, cloud gross margin and FCF after capex.</p><p><strong>Draft thesis-break test:</strong> Prolonged Azure slowing alongside margin compression and no payback from rising AI spend.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">PEP</div>
@@ -1179,7 +1179,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Weakening research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Durable beverage/snack franchises, global distribution and a material dividend yield.</p><p><strong>Weakening:</strong> October 8 guidance cut; North America volume and input-cost headwinds impair earnings quality.</p><p><strong>Next checkpoint:</strong> Next two earnings releases: North America volumes, core EPS guidance, operating margin and price elasticity.</p><p><strong>Draft thesis-break test:</strong> Further FY earnings downgrades plus another year of declining North America volumes or materially weaker dividend coverage.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">PM</div>
@@ -1200,7 +1200,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> IQOS and ZYN underpin the smoke-free transition with pricing and margin potential.</p><p><strong>Weakening:</strong> Regulation, excise taxes and category competition; workbook fair-value premium.</p><p><strong>Next checkpoint:</strong> October 21 Q3: smoke-free volumes, gross margin, regulation, earnings and dividend coverage.</p><p><strong>Draft thesis-break test:</strong> Two consecutive years of smoke-free profit contribution stagnation plus deteriorating cash coverage of dividend.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">SO</div>
@@ -1221,7 +1221,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Regulated utility rate base, durable regulated demand and dividend income.</p><p><strong>Weakening:</strong> Capital intensity, storm costs, rate-case execution and interest-rate sensitivity.</p><p><strong>Next checkpoint:</strong> Next regulatory filings: allowed ROE, power demand, capex funding and dividend coverage.</p><p><strong>Draft thesis-break test:</strong> Repeated material adverse rate decisions or funded capex shortfall that threatens dividend safety.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">DIS</div>
@@ -1239,7 +1239,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Parks, IP and direct-to-consumer profitability may offset linear-TV erosion.</p><p><strong>Weakening:</strong> Broadcast/cable runoff, content cost volatility and TV restructuring execution.</p><p><strong>Next checkpoint:</strong> Next results: streaming profitability, parks per-capita spending and linear-TV decline.</p><p><strong>Draft thesis-break test:</strong> Combined parks and streaming segment profits cannot offset faster linear-TV losses for several quarters.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="HOLD" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">V</div>
@@ -1256,7 +1256,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Scale, global acceptance and high operating margins underpin durable payment tolls.</p><p><strong>Weakening:</strong> Premium entry multiple, regulation and real-time payment alternatives.</p><p><strong>Next checkpoint:</strong> Cross-border volume, payment transactions, client incentives and value-added services growth.</p><p><strong>Draft thesis-break test:</strong> Meaningful multi-year global share loss or regulatory reset permanently reducing network take rates.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="BUILD" data-type="etf">
         <div class="thesis-header">
           <div class="thesis-ticker">AVUV</div>
@@ -1277,7 +1277,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Systematic profitable small-value tilt diversifies expensive large-cap growth.</p><p><strong>Weakening:</strong> Higher financing costs and recession risk punish cyclicals and smaller borrowers.</p><p><strong>Next checkpoint:</strong> Quarterly profitability/valuation factor drift, sector exposures and performance vs small-cap benchmark.</p><p><strong>Draft thesis-break test:</strong> Strategy materially abandons profitable-value screens or persistent tracking/implementation failure.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="BUILD" data-type="etf">
         <div class="thesis-header">
           <div class="thesis-ticker">VXUS</div>
@@ -1297,7 +1297,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Diversifies US-dominant asset and currency exposure via broad non-US equities.</p><p><strong>Weakening:</strong> Geopolitical and currency risk; market-cap weighting can concentrate in slow-growth sectors.</p><p><strong>Next checkpoint:</strong> Annual region/country, top-10 and currency allocation; relative performance versus US index.</p><p><strong>Draft thesis-break test:</strong> Break the allocation case if mandate overlap, structural implementation cost or risk changes eliminate diversification benefit.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">GEV</div>
@@ -1318,7 +1318,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Grid equipment, electrification backlog and gas turbines benefit from power demand.</p><p><strong>Weakening:</strong> Capacity execution, warranty risk, large backlog assumptions and premium growth expectations.</p><p><strong>Next checkpoint:</strong> Q3/Q4 orders, price/cost margins, backlog conversion, service cash flow.</p><p><strong>Draft thesis-break test:</strong> Multi-quarter order cancellation or sustained gross-margin deterioration despite healthy backlog.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">CRM</div>
@@ -1336,7 +1336,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Large enterprise installed base, recurring subscriptions and margin discipline support cash generation.</p><p><strong>Weakening:</strong> Seat growth pressure, AI seat economics and uncertain Agentforce conversion.</p><p><strong>Next checkpoint:</strong> Next earnings: remaining performance obligations, net retention, Agentforce ARR and FCF.</p><p><strong>Draft thesis-break test:</strong> Two consecutive years of slowing recurring revenue with subpar retention and no AI monetization offset.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="etf">
         <div class="thesis-header">
           <div class="thesis-ticker">GRID</div>
@@ -1357,7 +1357,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Electric grid upgrades, interconnection and power demand support multi-year spending.</p><p><strong>Weakening:</strong> Underlying thematic holdings can trade at premium valuations and depend on capex execution.</p><p><strong>Next checkpoint:</strong> ETF holdings/valuation refresh and utility/grid contractor backlogs.</p><p><strong>Draft thesis-break test:</strong> Broad multi-year real grid capex contraction accompanied by persistent earnings downgrade across top holdings.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">ADBE</div>
@@ -1378,7 +1378,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Record Q3 FY2026 results, growing AI-first recurring revenue and deep creative workflows.</p><p><strong>Weakening:</strong> Generative alternatives, seat/price mix and uncertain incremental revenue conversion.</p><p><strong>Next checkpoint:</strong> Next results: net new ARR, AI-first ARR, customer retention, billings and operating FCF.</p><p><strong>Draft thesis-break test:</strong> Two quarters of recurring ARR deceleration with material retention losses and sustained margin decline.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="etf">
         <div class="thesis-header">
           <div class="thesis-ticker">SOXQ</div>
@@ -1397,7 +1397,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
         
       </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="etf">
         <div class="thesis-header">
           <div class="thesis-ticker">VGT</div>
@@ -1414,7 +1414,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
         <div class="thesis-conviction">Source: VGT_ETF_Research_Report_2026-08-23.html (full report, this firm); Vanguard, State Street, Fidelity, iShares fund data (Aug 2026)</div>
       </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">BATRA</div>
@@ -1435,7 +1435,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Watch research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Limited-size optionality tied to franchise assets and sports/real estate monetization.</p><p><strong>Weakening:</strong> Illiquidity, control/valuation complexity and little pure operating visibility.</p><p><strong>Next checkpoint:</strong> Annual audited financials, stadium/project economics, debt and transaction disclosures.</p><p><strong>Draft thesis-break test:</strong> Governance/value-leakage event or inability to service obligations without dilution.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="etf">
         <div class="thesis-header">
           <div class="thesis-ticker">VIS</div>
@@ -1456,7 +1456,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Diversified industrials beta participates in grid, manufacturing and automation cycles.</p><p><strong>Weakening:</strong> Concentrated industrial mega-caps and valuation sensitivity to rates.</p><p><strong>Next checkpoint:</strong> ETF holdings/overlap versus GEV/GRID and industrial order trends.</p><p><strong>Draft thesis-break test:</strong> Persistent structural industrial earnings contraction or mandate/tracking failure.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">LOW</div>
@@ -1473,7 +1473,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
         <div class="thesis-conviction">Source: LOW_Research_and_Thesis_Pro_2026-08-08.html (full report, this firm); Lowe's Q1 FY2026 earnings release (5/20/26)</div>
       </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">HD</div>
@@ -1490,7 +1490,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
         <div class="thesis-conviction">Source: HD_Comprehensive_Investment_Analysis_2026-08-08.html (full report, this firm); Home Depot Q1 FY2026 results (5/19/26); Home Depot Q2 FY2026 results (8/18/26)</div>
       </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">CAT</div>
@@ -1507,7 +1507,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
         <div class="thesis-conviction">Source: CAT_Research_and_Thesis_Pro_2026-08-08.html (full report, this firm); Caterpillar Q2 2026 earnings release (8/4/26)</div>
       </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">ASML</div>
@@ -1528,7 +1528,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Q3 €11.7B sales and raised FY2026 €44B-€45B revenue guide support EUV choke-point thesis.</p><p><strong>Weakening:</strong> High expectations, China controls and capacity ramp are key risks.</p><p><strong>Next checkpoint:</strong> FY2027 bookings, lithography gross margin ~56%, High-NA productivity and supplier throughput.</p><p><strong>Draft thesis-break test:</strong> Material 2027 EUV order cancellations and structural gross margin under ~52% or durable High-NA adoption failure.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">TSM</div>
@@ -1549,7 +1549,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Q3 $46.72B sales and 66.4% gross margin confirm advanced-node demand; 2nm ramp continues.</p><p><strong>Weakening:</strong> Geopolitical concentration, $60B-$64B 2026 capex and execution risk on overseas fabs.</p><p><strong>Next checkpoint:</strong> Q4 $52.3B-$54.3B revenue guidance and 65%-67% gross margin; 2nm yield/capacity.</p><p><strong>Draft thesis-break test:</strong> Advanced-node share loss, two successive quarters of margins falling well below guided levels, or substantial supply disruption.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">JNJ</div>
@@ -1566,7 +1566,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
         <div class="thesis-conviction">Source: JNJ_Comprehensive_Investment_Analysis_2026-08-08.html (full report, this firm); J&amp;J Q2 2026 earnings release (7/15/26)</div>
       </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">GEHC</div>
@@ -1587,7 +1587,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Large installed base, imaging and service opportunities support slow compounding with upgrades.</p><p><strong>Weakening:</strong> Hospital procurement cycles, China competition and tariffs affect conversion.</p><p><strong>Next checkpoint:</strong> Next print: organic orders, backlog-to-revenue, EBIT margin and FCF conversion.</p><p><strong>Draft thesis-break test:</strong> Organic revenue contraction across 2+ quarters and failure to restore margins or cash generation.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">NVDA</div>
@@ -1608,7 +1608,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Compute stack ecosystem and accelerated AI demand retain strong structural runway.</p><p><strong>Weakening:</strong> Rapid product cycles, competing custom silicon, concentrated customers and capex cycle reflexivity.</p><p><strong>Next checkpoint:</strong> Next guidance: data-center growth, gross margins, networking mix, supply lead times and customer concentration.</p><p><strong>Draft thesis-break test:</strong> Sustained data-center sales contraction combined with structural gross-margin erosion or major ecosystem displacement.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">UBER</div>
@@ -1629,7 +1629,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Working research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Q2 trips +18% and gross bookings +22% constant currency prove marketplace scale.</p><p><strong>Weakening:</strong> Autonomy monetization and partner terms uncertain; insurance costs and competition persist.</p><p><strong>Next checkpoint:</strong> Q3 bookings, rides frequency, segment take rate, non-GAAP operating income, autonomy economics.</p><p><strong>Draft thesis-break test:</strong> Sustained trip growth below high single digits and negative incremental margins across 2+ quarters.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">PLTR</div>
@@ -1646,7 +1646,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
         <div class="thesis-conviction">Source: PLTR_Research_Thesis_Pro_2026-08-03.html (full report, this firm); Palantir Q2 2026 earnings call transcript (8/3/26)</div>
       </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">COST</div>
@@ -1663,7 +1663,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
         <div class="thesis-conviction">Source: COST_Research_and_Thesis_Pro_2026-08-09.html (full report, this firm); Costco Q3 FY2026 results (5/28/26)</div>
       </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">PG</div>
@@ -1680,7 +1680,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
         <div class="thesis-conviction">Source: PG_Research_and_Thesis_Pro_2026-08-09.html (full report, this firm); P&amp;G FY2026 Q4 earnings release (7/29/26)</div>
       </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">CLX</div>
@@ -1697,7 +1697,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
         <div class="thesis-conviction">Source: CLX_Comprehensive_Investment_Analysis_2026-08-09.html (full report, this firm); Clorox Q4 FY2026 results via Reuters/WSJ (8/3/26)</div>
       </div>
-
+ 
       <div class="thesis-card" data-status="WATCH" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">SIEGY</div>
@@ -1714,7 +1714,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         </div>
         <div class="thesis-conviction">Source: SIEGY_Comprehensive_Investment_Analysis_2026-08-15.html (full report, this firm); Siemens Q3 FY2026 earnings release, Reuters (8/6/26)</div>
       </div>
-
+ 
       <div class="thesis-card" data-status="REVIEW" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">QCOM</div>
@@ -1735,7 +1735,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Licensing royalties, smartphone silicon, auto/IoT diversification and cash distributions.</p><p><strong>Weakening:</strong> Customer concentration, Apple modem migration and slow auto revenue scale.</p><p><strong>Next checkpoint:</strong> Next print: handset units, QCT margin, licensing renewals, automotive bookings and cash conversion.</p><p><strong>Draft thesis-break test:</strong> Sustained royalty deterioration plus failure of auto/IoT to replace lost modem economics.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="REVIEW" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">NFLX</div>
@@ -1755,7 +1755,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Global scale, advertising and paid-sharing gains offer operating leverage.</p><p><strong>Weakening:</strong> Engagement concern, weaker near-term growth and high content spending.</p><p><strong>Next checkpoint:</strong> October 20 Q3: revenue growth, ads monetization, operating margin, engagement and FCF.</p><p><strong>Draft thesis-break test:</strong> Persistent revenue growth below high single digits and engagement erosion without sustainable FCF/margin offset.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="REVIEW" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">BMY</div>
@@ -1774,7 +1774,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Cash flows and late-stage assets offer recovery despite patent expirations.</p><p><strong>Weakening:</strong> Drug LOE/patent cliffs and uncertainty around three development assets.</p><p><strong>Next checkpoint:</strong> Clinical milestone calendar for milvexian and key launches; 2027-29 replacement-sales bridge.</p><p><strong>Draft thesis-break test:</strong> Pivotal clinical failures or materially insufficient new-product sales to offset LOE cash-flow decline.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
       <div class="thesis-card" data-status="REVIEW" data-type="equity">
         <div class="thesis-header">
           <div class="thesis-ticker">UNH</div>
@@ -1793,15 +1793,15 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       
 <div class="portfolio-review-checkpoint" data-review-date="2026-10-16"><details><summary style="font-weight:700;cursor:pointer">Portfolio review — Oct. 16, 2026 (Research checkpoint, not CIO status)</summary><p><strong>Working:</strong> Q3 adjusted EPS $4.69; guidance and cost control offer turnaround evidence.</p><p><strong>Weakening:</strong> Medical care ratio 88.4%, regulatory scrutiny and Optum integration/quality pressures.</p><p><strong>Next checkpoint:</strong> Q4 MCR, 2027 pricing, cash conversion, Medicare margin, reserves and Optum utilization.</p><p><strong>Draft thesis-break test:</strong> MCR remains near 90% despite pricing actions and earnings guidance is cut repeatedly, or serious compliance impairment.</p><p><small>Source: retirement-portfolio-63.xlsx and the approved portfolio-wide report. Existing conviction, rating, target and status are unchanged.</small></p><a href="Complete_Portfolio_Investment_Thesis_Review_2026-10-16.html" target="_blank" rel="noopener">Full portfolio report ↗</a></details></div>
 </div>
-
+ 
     </div>
   </div>
-
+ 
   <!-- REPORTS -->
   <div id="reports" class="tab-pane">
     <div class="section-title" id="reports-title">Report Library</div>
     <p style="font-size:calc(15px * var(--text-scale,1));color:#888;margin-bottom:16px;">Every card links to the actual report file. Opens in a new tab. Only the latest version of each report is shown here — earlier versions are in the <strong>Archived</strong> filter.</p>
-
+ 
     <div class="reports-toolbar">
       <button class="pill-btn active" onclick="filterReports('all',this)">All</button>
       <button class="pill-btn" onclick="filterReports('research',this)">Research</button>
@@ -1818,12 +1818,12 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <button onclick="filterReportsAssetType('fund',this)">ETFs/Funds</button>
       </div>
     </div>
-
+ 
     <div class="report-grid" id="report-grid"></div>
   </div>
-
-
-
+ 
+ 
+ 
   <!-- EARNINGS (replaces the former News tab). Snapshot content below is delimited so a refresh
        can swap it surgically: everything between EARNINGS-DASHBOARD:START and :END. -->
   <div id="earnings" class="tab-pane">
@@ -1848,7 +1848,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       </div>
     </div>
   </section>
-
+ 
   <section class="ed-block" id="ed-holdings">
     <div class="ed-block-head"><h2>Your Holdings</h2><span class="ed-count">30 individual equity positions</span></div>
     <p class="ed-block-sub">Every non-fund, non-ETF ticker in your current portfolio export (allocations are % of total portfolio market value, from the export). Seven are shown with their latest print (PepsiCo is new this week; the others have next-report dates listed); 23 are upcoming with their Q3 setup. Dates marked "~" are estimates, not company-confirmed.</p>
@@ -2062,7 +2062,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <ul class="ed-bullets ed-watch"><li>Large-load/data-center contracts and pipeline updates.</li><li>Capex plan updates.</li><li>Weather-normalized sales and Georgia Power regulatory items.</li></ul>
       </article>
     </div>
-
+ 
     <div class="ed-subgroup-label ed-reported">Already reported — 7 (most recent quarters)</div>
     <div class="ed-cards">
       <article class="ed-card">
@@ -2129,9 +2129,9 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <ul class="ed-bullets"><li>Baseball revenue $276M (-4%) on six fewer home games; Mixed-Use Development $29M (+14%).</li><li>Q3 is the Braves' strongest quarter.</li><li>Next report ~Nov 4-5 (unconfirmed); EPS consensus ~$0.74 (single source).</li></ul>
       </article>
     </div>
-
+ 
   </section>
-
+ 
   <section class="ed-block" id="ed-watch">
     <div class="ed-block-head"><h2>Companies to Watch</h2><span class="ed-count">10 market movers outside your portfolio</span></div>
     <p class="ed-block-sub">Large companies not in your book, chosen for index weight or bellwether roles: AI memory (MU), AI infrastructure financing (ORCL), AI chips (AMD), AI software (PLTR), EV demand (TSLA), bank health (C, BAC), consumer spending (WMT), pharma/GLP-1 (LLY) and the economy-wide proxy (BRK.B). Roster unchanged; no more prominent standalone story displaced a name this week.</p>
@@ -2156,7 +2156,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <ul class="ed-bullets"><li>OCI revenue +121% to $7.4B; record RPO of $664B; FY27 guide raised to at least $90B revenue and $8.10 EPS.</li><li>Completed a $20B at-the-market equity sale; financing and free cash flow remain the debate.</li><li>Reaction conflicts (~+7% after hours here vs. ~-9% in another source); next-day close not found. Next report mid-Dec.</li></ul>
       </article>
     </div>
-
+ 
     <div class="ed-subgroup-label ed-upcoming">Upcoming — 8</div>
     <div class="ed-cards">
       <article class="ed-card">
@@ -2232,9 +2232,9 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
         <ul class="ed-bullets ed-watch"><li>US comps (slowed to 2.6% from 4.6%) and consumer health.</li><li>Advertising and e-commerce offsetting price investments; tariff-refund pass-through.</li><li>FY27 EPS guide $2.80-2.87; P/E near 40.</li></ul>
       </article>
     </div>
-
+ 
   </section>
-
+ 
   <section class="ed-block" id="ed-market">
     <div class="ed-block-head"><h2>State of the Market</h2><span class="ed-count">macro backdrop &amp; season tone</span></div>
     <p class="ed-block-sub">The tape all of the above is trading against, as of Friday, October 9, 2026's close. Figures come from web search summaries; items with conflicting sources are noted.</p>
@@ -2278,15 +2278,15 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
       </div>
     </div>
   </section>
-
+ 
   <footer>
     <p><strong>How this was built:</strong> Section 1 covers all 30 individual stocks in <code>data/portfolio_export.xlsx</code> (ETFs, funds and cash excluded); allocations are each position's share of total export market value. Section 2 reuses last week's 10-name roster. Section 3 draws on FactSet's Oct 2 Earnings Insight, Federal Reserve minutes coverage, Polymarket/CME odds commentary, CNN/Yahoo/Cboe closing data and press market wraps. <strong>Data gaps:</strong> this run had web search only — full-page fetches were blocked — so all figures come from search summaries and many conflict. Notably: stock-price reactions for AVGO, NVDA, CRM, ORCL, MU and PEP are unverified; consensus is missing or single-source for V, AMZN (EPS), BMY, GOOG, GEV, C, BRK.B and others; dates for GS, ASML, PM, MA, GEV, META, GOOG, QCOM, AMZN, XOM, UBER, DIS and BATRA are estimates or conflict; PepsiCo's guidance-cut magnitude conflicts across sources; no newer AAII reading, FactSet edition after Oct 2, or updated strategist targets were found. Q2 GDP and Q2 beat-rate figures are carried from last week. Verify against live quotes and company IR pages before acting on anything here.</p>
   </footer>
 <!-- EARNINGS-DASHBOARD:END -->
   </div>
-
+ 
 </div><!-- /content -->
-
+ 
 <!-- BOTTOM NAV (mobile app-style) -->
 <div class="bottom-nav">
   <div class="bottom-nav-inner">
@@ -2299,7 +2299,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     <button class="bottom-nav-btn" onclick="switchTab('earnings',this)"><span class="icon">📈</span><span class="lbl">Earnings</span></button>
   </div>
 </div>
-
+ 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 <script>
 // ---- RESTORE SAVED PREFERENCES (runs first, before any rendering, to avoid a flash
@@ -2312,7 +2312,7 @@ body[data-theme="dark"] .data-freshness-footer span:not(:last-child)::after{colo
     if(btn) btn.textContent = '☀️';
   }
 })();
-
+ 
 // ---- RESTORE SAVED PRIVACY MODE (blurs all dollar figures — for showing the app
 // to other people without revealing portfolio value) — pure CSS, applied before
 // first render so there's no flash of visible numbers. ----
@@ -2336,7 +2336,7 @@ function togglePrivacy(){
     localStorage.setItem('pcc-privacy', 'on');
   }
 }
-
+ 
 // ---- TEXT SIZE CONTROL (A-/A+ in the header) — scales all readable text via the
 // --text-scale CSS variable every font-size in the sheet is defined against. Fixed
 // UI chrome (avatar, theme/privacy toggle, bottom-nav icons) is exempt on purpose,
@@ -2363,7 +2363,7 @@ function decreaseTextSize(){ applyTextScale(getCurrentTextScale() - TEXT_SCALE_S
 (function restoreTextScale(){
   applyTextScale(getCurrentTextScale());
 })();
-
+ 
 // ---- RESTORE SAVED SLIDER ASSUMPTIONS (Retirement + Income tabs) ----
 // Sets each slider's value directly from localStorage, before any calc function first
 // runs, so the very first render already reflects what was saved last time.
@@ -2391,7 +2391,7 @@ function saveAssumptions(){
   });
   localStorage.setItem('pcc-assumptions', JSON.stringify(data));
 }
-
+ 
 // ---- LIVE PRICE CONFIG ----
 // Finnhub: free-tier quote API, called directly from the browser every time the page
 // opens (60 calls/min on the free tier — plenty for ~30 tickers in one go, no daily cap).
@@ -2419,58 +2419,58 @@ const sectorETFs = [
   {key:'XLB', name:'Materials'},
 ];
 sectorETFs.forEach(s=>{ s.pct = null; });
-
+ 
 // === PORTFOLIO DATA — Morningstar export (holdings/qty/cost-basis/sector) with the last
 // known prices baked in as both the initial paint and the fallback if a live fetch fails.
 const MONTH_ABBR = ['','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-
+ 
 const holdings = [
-  {ticker:'GOOG', name:'Alphabet Inc Class C', qty:145, price:337.33, prev:344.91, cat:'U.S. individual stocks', div:0.24, cb:9285.597, sector:'Communication Services', divMonths:[3, 6, 9, 12]},
-  {ticker:'AMZN', name:'Amazon Inc', qty:520, price:248.98, prev:254.76, cat:'U.S. individual stocks', div:0, cb:7935.2, sector:'Consumer Discretionary', divMonths:[]},
-  {ticker:'AXP', name:'American Express', qty:100, price:312.8, prev:313.87, cat:'U.S. individual stocks', div:0.98, cb:7680, sector:'Financials', divMonths:[2, 5, 8, 11]},
-  {ticker:'AMT', name:'American Tower', qty:231.917, price:185.09, prev:181.36, cat:'U.S. individual stocks', div:4.2, cb:29934.594, sector:'Real Estate', divMonths:[1, 4, 7, 10]},
-  {ticker:'AAPL', name:'Apple Inc', qty:340, price:342.465, prev:342, cat:'U.S. individual stocks', div:0.43, cb:7480, sector:'Information Technology', divMonths:[2, 5, 8, 11]},
-  {ticker:'AVUV', name:'Avantis U.S. Sm Cap Val', qty:259, price:119.8499, prev:120.44, cat:'U.S. small & mid cap', div:1.18, cb:32182.0709, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'BMY', name:'Bristol-Myers Squibb', qty:320, price:60.56, prev:60.57, cat:'U.S. individual stocks', div:5.1, cb:17974.4, sector:'Health Care', divMonths:[2, 5, 8, 11]},
-  {ticker:'AVGO', name:'Broadcom Inc', qty:117, price:331.425, prev:344.33, cat:'U.S. individual stocks', div:1.25, cb:43750.395, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
-  {ticker:'KO', name:'Coca-Cola Co', qty:297.187, price:93.04, prev:92, cat:'U.S. individual stocks', div:2.33, cb:12492.9688, sector:'Consumer Staples', divMonths:[1, 4, 7, 10]},
-  {ticker:'XOM', name:'ExxonMobil', qty:379.363, price:177.99, prev:174.68, cat:'U.S. individual stocks', div:2.55, cb:22876.5752, sector:'Energy', divMonths:[3, 6, 9, 12]},
-  {ticker:'FSMDX', name:'Fidelity Mid Cap Index', qty:737.19, price:42.41, prev:41.89, cat:'U.S. small & mid cap', div:1.3, cb:27773.2647, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'FSSNX', name:'Fidelity Small Cap Index', qty:880.84, price:34.77, prev:34.3, cat:'U.S. small & mid cap', div:1.1, cb:25178.4591, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'GRID', name:'First Trust NASDAQ CEA', qty:61, price:170.005, prev:172.11, cat:'U.S. diversified funds', div:0.7, cb:11269.9086, sector:'Industrials', divMonths:[3, 6, 9, 12]},
-  {ticker:'GEV', name:'GE Vernova', qty:30, price:926.06, prev:926.44, cat:'U.S. individual stocks', div:0.03, cb:30097.806, sector:'Industrials', divMonths:[3, 6, 9, 12]},
-  {ticker:'IJH', name:'iShares S&P 400 Mid Cap', qty:271.576, price:72.22, prev:73.03, cat:'U.S. small & mid cap', div:1.2, cb:4646.4753, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'JPM', name:'JPMorgan Chase', qty:357.851, price:338.045, prev:335.53, cat:'U.S. individual stocks', div:1.74, cb:20626.5316, sector:'Financials', divMonths:[1, 4, 7, 10]},
-  {ticker:'MA', name:'Mastercard Inc', qty:173.061, price:614.43, prev:616.32, cat:'U.S. individual stocks', div:0.37, cb:12953.7716, sector:'Financials', divMonths:[2, 5, 8, 11]},
-  {ticker:'META', name:'Meta Platforms', qty:63, price:706.83, prev:736.72, cat:'U.S. individual stocks', div:0, cb:20599.803, sector:'Communication Services', divMonths:[]},
-  {ticker:'MSFT', name:'Microsoft Corp', qty:100, price:526.63, prev:539.44, cat:'U.S. individual stocks', div:0.68, cb:32427.44, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
-  {ticker:'NFLX', name:'Netflix Inc', qty:500, price:70.25, prev:72.61, cat:'U.S. individual stocks', div:0, cb:4715, sector:'Communication Services', divMonths:[]},
-  {ticker:'TLXIX', name:'Nuveen Lifecycle Index', qty:4089.97, price:39.89, prev:39.72, cat:'Target-date / mixed', div:1.5, cb:60695.1548, sector:'Diversified Fund', divMonths:[6, 12]},
-  {ticker:'PEP', name:'PepsiCo Inc', qty:165, price:130.94, prev:128.38, cat:'U.S. individual stocks', div:3.38, cb:22521.345, sector:'Consumer Staples', divMonths:[3, 6, 9, 12]},
-  {ticker:'PM', name:'Philip Morris Intl', qty:181.209, price:204.84, prev:199.9, cat:'U.S. individual stocks', div:4.3, cb:14987.7964, sector:'Consumer Staples', divMonths:[1, 4, 7, 10]},
-  {ticker:'QCOM', name:'Qualcomm Inc', qty:104.415, price:172.865, prev:178.4, cat:'U.S. individual stocks', div:2.0, cb:5809.6506, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
-  {ticker:'CRM', name:'Salesforce Inc', qty:99, price:239.805, prev:246.74, cat:'U.S. individual stocks', div:0, cb:20956.32, sector:'Information Technology', divMonths:[]},
-  {ticker:'ADBE', name:'Adobe Inc', qty:35, price:244.5, prev:251.67, cat:'U.S. individual stocks', div:0, cb:8155.9485, sector:'Information Technology', divMonths:[]},
-  {ticker:'SCHD', name:'Schwab US Div Equity', qty:610, price:34.285, prev:34.1, cat:'U.S. diversified funds', div:3.5, cb:20040.513, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'SO', name:'Southern Company', qty:381.4, price:90.7626, prev:89.18, cat:'U.S. individual stocks', div:3.3, cb:3188.504, sector:'Utilities', divMonths:[3, 6, 9, 12]},
-  {ticker:'GS', name:'Goldman Sachs', qty:105, price:879.895, prev:891.28, cat:'U.S. individual stocks', div:1.66, cb:18483.15, sector:'Financials', divMonths:[3, 6, 9, 12]},
-  {ticker:'DIS', name:'Walt Disney Co', qty:196.17, price:110.24, prev:110.68, cat:'U.S. individual stocks', div:0, cb:15770.1063, sector:'Communication Services', divMonths:[]},
-  {ticker:'UNH', name:'UnitedHealth Group', qty:50.22, price:402.15, prev:406.67, cat:'U.S. individual stocks', div:1.37, cb:11924.739, sector:'Health Care', divMonths:[3, 6, 9, 12]},
-  {ticker:'VFFSX', name:'Vanguard 500 Index', qty:100, price:379.05, prev:377.79, cat:'U.S. diversified funds', div:1.3, cb:5000, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'VTWO', name:'Vanguard Russell 2000', qty:126, price:109.14, prev:111.09, cat:'U.S. small & mid cap', div:1.3, cb:3528, sector:'Diversified Fund', divMonths:[3, 6, 9, 12]},
-  {ticker:'VXUS', name:'Vanguard Total Intl', qty:534, price:83.39, prev:83.84, cat:'International equity', div:2.0, cb:44763.9384, sector:'International / Diversified', divMonths:[3, 6, 9, 12]},
-  {ticker:'V', name:'Visa Inc', qty:100, price:401.11, prev:399.75, cat:'U.S. individual stocks', div:0.68, cb:13650, sector:'Financials', divMonths:[3, 6, 9, 12]},
-  {ticker:'BATRA', name:'Atlanta Braves Holdings', qty:25, price:54.01, prev:54.66, cat:'U.S. individual stocks', div:0, cb:1314, sector:'Communication Services', divMonths:[]},
-  {ticker:'TSM', name:'Taiwan Semiconductor Mfg ADR', qty:41, price:412.185, prev:422.25, cat:'International equity', div:1.0, cb:17479.5915, sector:'Information Technology', divMonths:[3, 9]},
-  {ticker:'ASML', name:'ASML Holding N.V.', qty:7, price:1655.08, prev:1657.44, cat:'International equity', div:0.48, cb:12120.7002, sector:'Information Technology', divMonths:[2, 5, 8, 11]},
-  {ticker:'VIS', name:'Vanguard Industrials ETF', qty:6, price:319.86, prev:321.23, cat:'U.S. diversified funds', div:0.86, cb:2033.55, sector:'Industrials', divMonths:[3, 6, 9, 12]},
-  {ticker:'GEHC', name:'GE HealthCare Technologies Inc.', qty:52, price:69.7599, prev:70.35, cat:'U.S. individual stocks', div:0.19, cb:3622.84, sector:'Health Care', divMonths:[3, 6, 9, 12]},
-  {ticker:'NVDA', name:'NVIDIA Corp', qty:58, price:215.085, prev:217.23, cat:'U.S. individual stocks', div:0.48, cb:12861.1404, sector:'Information Technology', divMonths:[3, 6, 9, 12]},
-  {ticker:'UBER', name:'Uber Technologies Inc', qty:77, price:69.95, prev:71.27, cat:'U.S. individual stocks', div:0, cb:5348.1813, sector:'Industrials', divMonths:[]},
+  {ticker:"GOOG", name:"Alphabet Inc Class C", qty:145, price:341.15, prev:336.91, cat:"U.S. individual stocks", div:0.24, cb:9285.597, sector:"Communication Services", divMonths:[3, 6, 9, 12]},
+  {ticker:"AMZN", name:"Amazon Inc", qty:520, price:263.3, prev:250.0, cat:"U.S. individual stocks", div:0, cb:7935.2, sector:"Consumer Discretionary", divMonths:[]},
+  {ticker:"AXP", name:"American Express", qty:100, price:314.0, prev:313.59, cat:"U.S. individual stocks", div:0.98, cb:7680, sector:"Financials", divMonths:[2, 5, 8, 11]},
+  {ticker:"AMT", name:"American Tower", qty:231.917, price:182.75, prev:185.27, cat:"U.S. individual stocks", div:4.2, cb:29934.594, sector:"Real Estate", divMonths:[1, 4, 7, 10]},
+  {ticker:"AAPL", name:"Apple Inc", qty:340, price:341.36, prev:343.46, cat:"U.S. individual stocks", div:0.43, cb:7480, sector:"Information Technology", divMonths:[2, 5, 8, 11]},
+  {ticker:"AVUV", name:"Avantis U.S. Sm Cap Val", qty:259, price:119.91, prev:120.08, cat:"U.S. small & mid cap", div:1.18, cb:32182.0709, sector:"Diversified Fund", divMonths:[3, 6, 9, 12]},
+  {ticker:"BMY", name:"Bristol-Myers Squibb", qty:320, price:58.66, prev:59.75, cat:"U.S. individual stocks", div:5.1, cb:17974.4, sector:"Health Care", divMonths:[2, 5, 8, 11]},
+  {ticker:"AVGO", name:"Broadcom Inc", qty:117, price:338.81, prev:328.75, cat:"U.S. individual stocks", div:1.25, cb:43750.395, sector:"Information Technology", divMonths:[3, 6, 9, 12]},
+  {ticker:"KO", name:"Coca-Cola Co", qty:297.187, price:93.61, prev:93.9, cat:"U.S. individual stocks", div:2.33, cb:12492.9688, sector:"Consumer Staples", divMonths:[1, 4, 7, 10]},
+  {ticker:"XOM", name:"ExxonMobil", qty:379.363, price:177.61, prev:178.98, cat:"U.S. individual stocks", div:2.55, cb:22876.5752, sector:"Energy", divMonths:[3, 6, 9, 12]},
+  {ticker:"FSMDX", name:"Fidelity Mid Cap Index", qty:737.19, price:42.41, prev:41.89, cat:"U.S. small & mid cap", div:1.3, cb:27773.2647, sector:"Diversified Fund", divMonths:[3, 6, 9, 12]},
+  {ticker:"FSSNX", name:"Fidelity Small Cap Index", qty:880.84, price:34.77, prev:34.3, cat:"U.S. small & mid cap", div:1.1, cb:25178.4591, sector:"Diversified Fund", divMonths:[3, 6, 9, 12]},
+  {ticker:"GRID", name:"First Trust NASDAQ CEA", qty:61, price:169.605, prev:169.84, cat:"U.S. diversified funds", div:0.7, cb:11269.9086, sector:"Industrials", divMonths:[3, 6, 9, 12]},
+  {ticker:"GEV", name:"GE Vernova", qty:30, price:922.685, prev:921.2, cat:"U.S. individual stocks", div:0.03, cb:30097.806, sector:"Industrials", divMonths:[3, 6, 9, 12]},
+  {ticker:"IJH", name:"iShares S&P 400 Mid Cap", qty:271.576, price:72.485, prev:72.35, cat:"U.S. small & mid cap", div:1.2, cb:4646.4753, sector:"Diversified Fund", divMonths:[3, 6, 9, 12]},
+  {ticker:"JPM", name:"JPMorgan Chase", qty:357.851, price:336.315, prev:339.72, cat:"U.S. individual stocks", div:1.74, cb:20626.5316, sector:"Financials", divMonths:[1, 4, 7, 10]},
+  {ticker:"MA", name:"Mastercard Inc", qty:173.061, price:613.56, prev:617.42, cat:"U.S. individual stocks", div:0.37, cb:12953.7716, sector:"Financials", divMonths:[2, 5, 8, 11]},
+  {ticker:"META", name:"Meta Platforms", qty:63, price:702.82, prev:709.325, cat:"U.S. individual stocks", div:0, cb:20599.803, sector:"Communication Services", divMonths:[]},
+  {ticker:"MSFT", name:"Microsoft Corp", qty:100, price:534.03, prev:529.05, cat:"U.S. individual stocks", div:0.68, cb:32427.44, sector:"Information Technology", divMonths:[3, 6, 9, 12]},
+  {ticker:"NFLX", name:"Netflix Inc", qty:500, price:69.6965, prev:70.53, cat:"U.S. individual stocks", div:0, cb:4715, sector:"Communication Services", divMonths:[]},
+  {ticker:"TLXIX", name:"Nuveen Lifecycle Index", qty:4089.97, price:39.89, prev:39.72, cat:"Target-date / mixed", div:1.5, cb:60695.1548, sector:"Diversified Fund", divMonths:[6, 12]},
+  {ticker:"PEP", name:"PepsiCo Inc", qty:165, price:132.365, prev:131.49, cat:"U.S. individual stocks", div:3.38, cb:22521.345, sector:"Consumer Staples", divMonths:[3, 6, 9, 12]},
+  {ticker:"PM", name:"Philip Morris Intl", qty:181.209, price:201.89, prev:205.2, cat:"U.S. individual stocks", div:4.3, cb:14987.7964, sector:"Consumer Staples", divMonths:[1, 4, 7, 10]},
+  {ticker:"QCOM", name:"Qualcomm Inc", qty:104.415, price:174.24, prev:172.11, cat:"U.S. individual stocks", div:2.0, cb:5809.6506, sector:"Information Technology", divMonths:[3, 6, 9, 12]},
+  {ticker:"CRM", name:"Salesforce Inc", qty:99, price:239.615, prev:240.7, cat:"U.S. individual stocks", div:0, cb:20956.32, sector:"Information Technology", divMonths:[]},
+  {ticker:"ADBE", name:"Adobe Inc", qty:35, price:245.085, prev:245.2, cat:"U.S. individual stocks", div:0, cb:8155.9485, sector:"Information Technology", divMonths:[]},
+  {ticker:"SCHD", name:"Schwab US Div Equity", qty:610, price:34.17, prev:34.35, cat:"U.S. diversified funds", div:3.5, cb:20040.513, sector:"Diversified Fund", divMonths:[3, 6, 9, 12]},
+  {ticker:"SO", name:"Southern Company", qty:381.4, price:89.665, prev:91.18, cat:"U.S. individual stocks", div:3.3, cb:3188.504, sector:"Utilities", divMonths:[3, 6, 9, 12]},
+  {ticker:"GS", name:"Goldman Sachs", qty:105, price:882.25, prev:881.26, cat:"U.S. individual stocks", div:1.66, cb:18483.15, sector:"Financials", divMonths:[3, 6, 9, 12]},
+  {ticker:"DIS", name:"Walt Disney Co", qty:196.17, price:109.775, prev:110.59, cat:"U.S. individual stocks", div:0, cb:15770.1063, sector:"Communication Services", divMonths:[]},
+  {ticker:"UNH", name:"UnitedHealth Group", qty:50.22, price:401.755, prev:401.43, cat:"U.S. individual stocks", div:1.37, cb:11924.739, sector:"Health Care", divMonths:[3, 6, 9, 12]},
+  {ticker:"VFFSX", name:"Vanguard 500 Index", qty:100, price:379.05, prev:377.79, cat:"U.S. diversified funds", div:1.3, cb:5000, sector:"Diversified Fund", divMonths:[3, 6, 9, 12]},
+  {ticker:"VTWO", name:"Vanguard Russell 2000", qty:126, price:109.83, prev:109.25, cat:"U.S. small & mid cap", div:1.3, cb:3528, sector:"Diversified Fund", divMonths:[3, 6, 9, 12]},
+  {ticker:"VXUS", name:"Vanguard Total Intl", qty:534, price:83.535, prev:83.43, cat:"International equity", div:2.0, cb:44763.9384, sector:"International / Diversified", divMonths:[3, 6, 9, 12]},
+  {ticker:"V", name:"Visa Inc", qty:100, price:401.92, prev:402.61, cat:"U.S. individual stocks", div:0.68, cb:13650, sector:"Financials", divMonths:[3, 6, 9, 12]},
+  {ticker:"BATRA", name:"Atlanta Braves Holdings", qty:25, price:54.68, prev:54.0, cat:"U.S. individual stocks", div:0, cb:1314, sector:"Communication Services", divMonths:[]},
+  {ticker:"TSM", name:"Taiwan Semiconductor Mfg ADR", qty:41, price:424.8, prev:412.61, cat:"International equity", div:1.0, cb:17479.5915, sector:"Information Technology", divMonths:[3, 9]},
+  {ticker:"ASML", name:"ASML Holding N.V.", qty:7, price:1675.625, prev:1641.52, cat:"International equity", div:0.48, cb:12120.7002, sector:"Information Technology", divMonths:[2, 5, 8, 11]},
+  {ticker:"VIS", name:"Vanguard Industrials ETF", qty:6, price:319.8001, prev:320.51, cat:"U.S. diversified funds", div:0.86, cb:2033.55, sector:"Industrials", divMonths:[3, 6, 9, 12]},
+  {ticker:"GEHC", name:"GE HealthCare Technologies Inc.", qty:52, price:69.445, prev:69.57, cat:"U.S. individual stocks", div:0.19, cb:3622.84, sector:"Health Care", divMonths:[3, 6, 9, 12]},
+  {ticker:"NVDA", name:"NVIDIA Corp", qty:58, price:219.12, prev:214.13, cat:"U.S. individual stocks", div:0.48, cb:12861.1404, sector:"Information Technology", divMonths:[3, 6, 9, 12]},
+  {ticker:"UBER", name:"Uber Technologies Inc", qty:77, price:70.38, prev:70.35, cat:"U.S. individual stocks", div:0, cb:5348.1813, sector:"Industrials", divMonths:[]},
   {ticker:'CASH', name:'Cash & Equivalents', qty:1, price:43000.0, prev:43000.0, cat:'Cash & equivalents', div:5.0, cb:43000.0, sector:'Cash & Equivalents', divMonths:[]},
-
+ 
 ];
-
+ 
 // ---- PER-HOLDING + AGGREGATE CALCULATIONS (re-run after every price refresh) ----
 function recomputeHoldingFields(h){
   h.mv = h.qty * h.price;
@@ -2480,10 +2480,10 @@ function recomputeHoldingFields(h){
   h.gainLoss = h.mv - h.cb;
   h.gainLossPct = h.cb > 0 ? (h.gainLoss / h.cb) * 100 : 0;
 }
-
+ 
 let totalMV, totalDayChange, advancers, decliners, cashPct, top5, top5pct,
     totalCostBasis, totalUnrealized, totalAnnualDiv, portfolioYield, gainers, losers;
-
+ 
 function recomputeAggregates(){
   holdings.forEach(recomputeHoldingFields);
   totalMV = holdings.reduce((s,h) => s + h.mv, 0);
@@ -2502,7 +2502,7 @@ function recomputeAggregates(){
   losers = holdings.filter(h=>h.ticker!=='CASH' && h.dayDollar<0).sort((a,b)=>a.dayDollar-b.dayDollar).slice(0,5);
 }
 recomputeAggregates();
-
+ 
 // ---- BUILD TARGET PROGRESS ----
 const buildTargets = [
   {ticker:'AVUV', name:'Avantis U.S. Small Cap Value ETF', low:8, high:10},
@@ -2538,7 +2538,7 @@ function renderBuildTargets(){
     </div>`;
   }).join('');
 }
-
+ 
 // ---- CORE METRICS (Today tab, Dollar Drivers, sticky Summary bar, Portfolio tab) ----
 // Wrapped in one function so it can be re-run every time live prices come back.
 function renderDriverRow(h){
@@ -2551,7 +2551,7 @@ function renderDriverRow(h){
     <div class="mv ${up?'up-color':'dn-color'}">${fmtDollar(h.dayDollar)}</div>
   </div>`;
 }
-
+ 
 function renderCoreMetrics(){
   document.getElementById('total-val').textContent = '$'+fmt(totalMV,0);
   const dayEl = document.getElementById('day-change');
@@ -2562,10 +2562,10 @@ function renderCoreMetrics(){
   document.getElementById('cash-sub').textContent = cashPct.toFixed(1)+'% — On Track (2–4%)';
   document.getElementById('sum-cash-pct').textContent = cashPct.toFixed(1)+'%';
   renderBuildTargets();
-
+ 
   document.getElementById('contributors-list').innerHTML = gainers.length ? gainers.map(renderDriverRow).join('') : '<div class="no-results">No advancers today.</div>';
   document.getElementById('detractors-list').innerHTML = losers.length ? losers.map(renderDriverRow).join('') : '<div class="no-results">No decliners today.</div>';
-
+ 
   document.getElementById('sum-total').textContent = '$'+fmt(totalMV,0);
   const sumDayEl = document.getElementById('sum-day');
   sumDayEl.textContent = fmtDollar(totalDayChange);
@@ -2573,13 +2573,13 @@ function renderCoreMetrics(){
   const sumDayPctEl = document.getElementById('sum-day-pct');
   sumDayPctEl.textContent = Math.abs((totalDayChange/totalMV)*100).toFixed(2)+'%';
   sumDayPctEl.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
-
+ 
   document.getElementById('port-total').textContent = '$'+fmt(totalMV,0);
   document.getElementById('port-positions').textContent = holdings.filter(h=>h.ticker!=='CASH').length;
   const portDay = document.getElementById('port-day');
   portDay.textContent = fmtDollar(totalDayChange);
   portDay.className = 'val '+(totalDayChange>=0?'up-color':'dn-color');
-
+ 
   document.getElementById('port-cost-basis').textContent = '$'+fmt(totalCostBasis,0);
   const portUnrealEl = document.getElementById('port-unrealized');
   portUnrealEl.textContent = fmtDollar(totalUnrealized);
@@ -2587,7 +2587,7 @@ function renderCoreMetrics(){
   document.getElementById('port-unrealized-pct').textContent = Math.abs(totalUnrealized/totalCostBasis*100).toFixed(1)+'% since cost';
 }
 renderCoreMetrics();
-
+ 
 // ---- ALLOCATION BARS (dynamic, matches donut) ----
 const allocCategoryOrder = ['U.S. individual stocks','Target-date / mixed','U.S. small & mid cap','U.S. diversified funds','International equity','Cash & equivalents'];
 const allocColors = {
@@ -2613,7 +2613,7 @@ function renderAllocBars(){
   document.getElementById('card-alloc-meta').textContent = allocCategoryOrder.length + ' categories — tap to filter holdings';
 }
 renderAllocBars();
-
+ 
 // ---- SECTOR / INDUSTRY BREAKDOWN ----
 const sectorColors = {
   'Information Technology':'#2563eb','Financials':'#16a34a','Communication Services':'#7c3aed',
@@ -2637,7 +2637,7 @@ function renderSectorBars(){
   document.getElementById('card-sector-meta').textContent = rows.length + ' sectors — tap to filter holdings';
 }
 renderSectorBars();
-
+ 
 // ---- SECTOR PERFORMANCE (Today tab — market-wide sector day % change via SPDR ETFs) ----
 // sectorFetchAttempted distinguishes "still loading" from "fetch actually failed" — without
 // it, the card would flash straight to an "unavailable" message before the first Finnhub
@@ -2671,7 +2671,7 @@ function renderSectorPerformance(){
   }).join('');
 }
 renderSectorPerformance();
-
+ 
 // ---- ALLOCATION / SECTOR BARS AS CLICKABLE FILTERS ----
 // Clicking a row filters the "All Holdings" table below by that category or sector.
 // Clicking the same one again clears it (toggle). Category and sector filters are
@@ -2722,19 +2722,19 @@ function renderActiveFilters(){
     el.innerHTML = '';
   }
 }
-
+ 
 // ---- COLLAPSIBLE CARDS (mobile only — CSS media query makes this a no-op on desktop) ----
 function toggleCollapsibleCard(id){
   document.getElementById(id).classList.toggle('open');
 }
-
+ 
 // ---- HOLDINGS TABLE: sortable, filterable, expandable ----
 let holdSort = {key:'mv', dir:'desc'};
 let expandedTickers = new Set();
 let unitMode = localStorage.getItem('pcc-unit-mode') || 'pct';
 const coreForeverHolds = new Set(['AMZN','JPM','GS','AAPL','MA']);
 const buildPositions = new Set(['AVUV','VXUS']);
-
+ 
 function setUnitMode(mode, btn){
   unitMode = mode;
   localStorage.setItem('pcc-unit-mode', mode);
@@ -2742,7 +2742,7 @@ function setUnitMode(mode, btn){
   btn.classList.add('active');
   renderHoldings();
 }
-
+ 
 // Reflect a restored $/% preference in the toggle button itself (the HTML defaults
 // to "%" active; if "$" was saved last time, swap which button shows active here).
 (function applyRestoredUnitModeUI(){
@@ -2752,7 +2752,7 @@ function setUnitMode(mode, btn){
   buttons.forEach(b=>b.classList.remove('active'));
   (unitMode === 'dollar' ? buttons[1] : buttons[0])?.classList.add('active');
 })();
-
+ 
 // Populate category dropdown (one-time only — must not run again on refresh, or it
 // would duplicate the <option> elements)
 function populateCategoryFilter(){
@@ -2767,7 +2767,7 @@ function populateCategoryFilter(){
   });
 }
 populateCategoryFilter();
-
+ 
 function setSort(key){
   if(holdSort.key === key){
     holdSort.dir = holdSort.dir === 'desc' ? 'asc' : 'desc';
@@ -2777,7 +2777,7 @@ function setSort(key){
   }
   renderHoldings();
 }
-
+ 
 function toggleRow(ticker){
   if(expandedTickers.has(ticker)) expandedTickers.delete(ticker);
   else expandedTickers.add(ticker);
@@ -2791,7 +2791,7 @@ function renderHoldings(){
     (sectorFilter==='all' || h.sector === sectorFilter) &&
     (!q || h.ticker.toLowerCase().includes(q) || h.name.toLowerCase().includes(q) || h.cat.toLowerCase().includes(q))
   );
-
+ 
   const key = holdSort.key, dir = holdSort.dir === 'asc' ? 1 : -1;
   rows = [...rows].sort((a,b)=>{
     let av = a[key], bv = b[key];
@@ -2800,7 +2800,7 @@ function renderHoldings(){
     if(av > bv) return 1*dir;
     return 0;
   });
-
+ 
   // update sort header arrow states
   document.querySelectorAll('.hhead .hcol').forEach(el=>el.classList.remove('sorted'));
   const activeHead = [...document.querySelectorAll('.hhead .hcol')].find(el=>{
@@ -2811,16 +2811,16 @@ function renderHoldings(){
     activeHead.classList.add('sorted');
     activeHead.querySelector('.arrow').textContent = dir===1 ? '▲' : '▼';
   }
-
+ 
   const listEl = document.getElementById('holdings-list');
   document.getElementById('holdings-count').textContent = (q || cat!=='all' || sectorFilter!=='all') ? `${rows.length} of ${holdings.length} positions` : '';
   renderActiveFilters();
-
+ 
   if(rows.length === 0){
     listEl.innerHTML = '<div class="no-results">No holdings match your filter.</div>';
     return;
   }
-
+ 
   listEl.innerHTML = rows.map(h=>{
     const up = h.dayPct >= 0;
     const isExpanded = expandedTickers.has(h.ticker);
@@ -2860,8 +2860,8 @@ function renderHoldings(){
   }).join('');
 }
 renderHoldings();
-
-
+ 
+ 
 // ---- ALLOCATION DONUT CHART ----
 // Wrapped so it can be called again after a live price refresh: creates the chart once,
 // then just updates its data on subsequent calls (never recreates the Chart instance).
@@ -2869,16 +2869,16 @@ renderHoldings();
 // ad-blocker, corporate firewall) this must NOT take down the rest of the dashboard.
 function renderAllocChart(){
   const allocByCategory = allocCategoryOrder.map(cat => holdings.filter(h=>h.cat===cat).reduce((s,h)=>s+h.mv,0));
-
+ 
   if(window.allocChart){
     window.allocChart.data.datasets[0].data = allocByCategory;
     window.allocChart.update();
     return;
   }
-
+ 
   try {
     if (typeof Chart === 'undefined') throw new Error('Chart.js failed to load from CDN');
-
+ 
     const centerTextPlugin = {
       id: 'centerText',
       beforeDraw(chart){
@@ -2896,7 +2896,7 @@ function renderAllocChart(){
         ctx.restore();
       }
     };
-
+ 
     window.allocChart = new Chart(document.getElementById('allocDonut'), {
       type: 'doughnut',
       data: {
@@ -2931,14 +2931,14 @@ function renderAllocChart(){
   }
 }
 renderAllocChart();
-
+ 
 function updateAllocChartColors(){
   if(!window.allocChart) return;
   const isDark = document.body.getAttribute('data-theme') === 'dark';
   window.allocChart.data.datasets[0].borderColor = isDark ? '#1a1d24' : '#fff';
   window.allocChart.update();
 }
-
+ 
 // ---- TICKER BAR ----
 function renderTickerBar(){
   const tickers = [...holdings].filter(h=>h.ticker!=='CASH').sort((a,b)=>b.mv-a.mv);
@@ -2955,7 +2955,7 @@ function renderTickerBar(){
   track.innerHTML = tickerHtml + tickerHtml;
 }
 renderTickerBar();
-
+ 
 // ---- RETIREMENT ----
 function calcRetirement(){
   const pv = totalMV;
@@ -2980,7 +2980,7 @@ function calcRetirement(){
   saveAssumptions();
 }
 calcRetirement();
-
+ 
 // ---- INCOME (fully dynamic from holdings' dividend yields) ----
 function calcDividends(){
   const growth = +document.getElementById('div-growth').value / 100;
@@ -2993,7 +2993,7 @@ function calcDividends(){
   renderIncomeStackAndCalendar();
   saveAssumptions();
 }
-
+ 
 // ---- RETIREMENT INCOME STACK + MONTHLY DIVIDEND CALENDAR ----
 // Decomposes projected retirement income into three sources: Pension (from the
 // Retirement tab slider), Dividends (natural portfolio yield — no shares need to be
@@ -3008,19 +3008,19 @@ function renderIncomeStackAndCalendar(){
   const contrib = +document.getElementById('ret-contrib').value;
   const pension = +document.getElementById('ret-pension').value;
   const divGrowth = +document.getElementById('div-growth').value / 100;
-
+ 
   const fv = totalMV * Math.pow(1+r, years) + contrib * (Math.pow(1+r,years)-1)/r;
   const totalPortfolioIncome = fv * wd;
   const projectedDividends = fv * (portfolioYield / 100);
   const withdrawals = Math.max(0, totalPortfolioIncome - projectedDividends);
   const grandTotal = pension + projectedDividends + withdrawals;
-
+ 
   document.getElementById('income-stack-total').textContent = '$'+Math.round(grandTotal).toLocaleString()+' total';
-
+ 
   const pensionPct = grandTotal > 0 ? (pension/grandTotal*100) : 0;
   const divPct = grandTotal > 0 ? (projectedDividends/grandTotal*100) : 0;
   const wdPct = grandTotal > 0 ? (withdrawals/grandTotal*100) : 0;
-
+ 
   document.getElementById('income-stack-bar').innerHTML = `
     <div class="income-stack-seg pension" style="width:${pensionPct}%"></div>
     <div class="income-stack-seg dividends" style="width:${divPct}%"></div>
@@ -3031,7 +3031,7 @@ function renderIncomeStackAndCalendar(){
     <div class="income-stack-legend-item"><span class="income-stack-dot dividends"></span>Dividends <span class="money">$${fmt(projectedDividends/1000,1)}K</span></div>
     <div class="income-stack-legend-item"><span class="income-stack-dot withdrawals"></span>Planned withdrawals <span class="money">$${fmt(withdrawals/1000,1)}K</span></div>
   `;
-
+ 
   let calSubLabel;
   let calScaleFactor;
   if(calendarUsesProjection){
@@ -3043,7 +3043,7 @@ function renderIncomeStackAndCalendar(){
     calSubLabel = "Today's actual schedule — adjust Growth/Projection Period below to project forward";
   }
   document.getElementById('div-calendar-sublabel').textContent = calSubLabel;
-
+ 
   const monthTotals = new Array(13).fill(0); // index 1-12 used
   holdings.forEach(h=>{
     if(!h.divMonths || h.divMonths.length === 0) return;
@@ -3064,7 +3064,7 @@ function renderIncomeStackAndCalendar(){
   }
   calEl.innerHTML = calHtml;
 }
-
+ 
 function renderIncomeMetrics(){
   document.getElementById('inc-annual-div').textContent = '$'+Math.round(totalAnnualDiv).toLocaleString();
   document.getElementById('inc-annual-div-mo').textContent = '$'+Math.round(totalAnnualDiv/12).toLocaleString()+'/month';
@@ -3072,7 +3072,7 @@ function renderIncomeMetrics(){
   calcDividends();
 }
 renderIncomeMetrics();
-
+ 
 // Income by category
 const incomeByCatOrder = ['U.S. individual stocks','Target-date / mixed','U.S. small & mid cap','International equity','U.S. diversified funds','Cash & equivalents'];
 const incomeByCatLabel = {
@@ -3087,7 +3087,7 @@ function renderIncomeByCategory(){
   el.innerHTML = rows.map(r=>`<div class="trow"><div class="sym">${incomeByCatLabel[r.cat]}</div><div class="name">${r.cat}</div><div class="mv">$${fmt(r.div,0)}</div></div>`).join('');
 }
 renderIncomeByCategory();
-
+ 
 // Top dividend contributors (individual holdings, ranked by annual $ dividend)
 function renderTopDivContributors(){
   const el = document.getElementById('top-div-list');
@@ -3128,7 +3128,7 @@ function applyThesisFilter(){
   const countEl = document.getElementById('research-count');
   countEl.textContent = (q || thesisStatusFilter!=='all' || thesisTypeFilter!=='all') ? `${shown} of ${cards.length} theses` : '';
 }
-
+ 
 // Compute research summary tiles from the actual cards in the DOM (never goes stale)
 function renderResearchSummary(){
   const cards = document.querySelectorAll('.thesis-card');
@@ -3146,7 +3146,7 @@ function renderResearchSummary(){
   document.getElementById('research-review-count').textContent = review;
 }
 renderResearchSummary();
-
+ 
 // ---- REPORT LIBRARY (real files, linked into /reports on this repo) ----
 const reports = [
   {date:'2026-10-18', title:'AI Pullback Gate Review — Updated Add / Hold / Trim Gates for Every Holding', type:'portfolio', file:'AI_Pullback_Gate_Review_2026-10-18.html', pdf:'AI_Pullback_Gate_Review_2026-10-18.pdf', key:'ai-pullback-gate-review'},
@@ -3286,7 +3286,7 @@ const reports = [
   {date:'2026-07', title:'AVUV vs VTWO vs IJR — ETF Comparison', type:'research', file:'AVUV_VTWO_IJR_ETF_Comparison.html', assetType:'fund', key:'cmp-avuv-vtwo-ijr'},
   {date:'2026', title:'Healthcare Sector Investment Report', type:'research', file:'Healthcare_Sector_Investment_Report_2026.html', key:'sector-healthcare'},
 ];
-
+ 
 // ---- ARCHIVE RULES ----
 // Every report carries a `key` (its supersession group): one key per company/fund ("NVDA"), or per
 // recurring series ("daily-close", "weekly-review", "weekly-market-intel", "stocks-to-watch",
@@ -3303,7 +3303,7 @@ function applyArchiveRules(){
   });
 }
 applyArchiveRules();
-
+ 
 function fmtReportDate(d){
   const parts = d.split('-');
   const months = ['','January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -3311,7 +3311,7 @@ function fmtReportDate(d){
   if(parts.length===2) return months[+parts[1]]+' '+parts[0];
   return parts[0];
 }
-
+ 
 const typeLabel = {daily:'Daily', weekly:'Weekly', research:'Research', portfolio:'Portfolio', market:'Market'};
 const grid = document.getElementById('report-grid');
 function updateReportsTitle(){
@@ -3321,10 +3321,10 @@ function updateReportsTitle(){
     + (archivedCount ? ` · ${archivedCount} archived` : '');
 }
 updateReportsTitle();
-
+ 
 let reportsTypeFilter = 'all';
 let reportsAssetTypeFilter = 'all';
-
+ 
 function renderReports(){
   const q = (document.getElementById('reports-search').value || '').trim().toLowerCase();
   const filtered = reports.filter(r=>{
@@ -3359,12 +3359,12 @@ function renderReports(){
   });
 }
 renderReports();
-
+ 
 function openReportPdf(path, evt){
   if(evt){ evt.preventDefault(); evt.stopPropagation(); }
   window.open(path, '_blank', 'noopener');
 }
-
+ 
 function filterReports(type, btn){
   reportsTypeFilter = type;
   btn.parentElement.querySelectorAll('.pill-btn').forEach(b=>b.classList.remove('active'));
@@ -3384,14 +3384,14 @@ function filterReports(type, btn){
   }
   renderReports();
 }
-
+ 
 function filterReportsAssetType(assetType, btn){
   reportsAssetTypeFilter = assetType;
   btn.parentElement.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderReports();
 }
-
+ 
 // ---- CROSS-LINKING: tapping a ticker in Holdings, Research, or Reports jumps to its
 // related view (and pre-filters it) in the other two tabs, instead of three manual searches. ----
 function resetThesisFilters(){
@@ -3464,9 +3464,9 @@ function wireResearchCrossLinks(){
   });
 }
 wireResearchCrossLinks();
-
+ 
 // ---- YTD vs. S&P 500 REMOVED Oct 2, 2026 (pending accuracy rework). Re-add: see ytd_vs_spy_module.md, step 2 — paste the JS block here. ----
-
+ 
 // ---- THEME TOGGLE (session only, no persistence) ----
 function toggleTheme(){
   const isDark = document.body.getAttribute('data-theme') === 'dark';
@@ -3481,13 +3481,13 @@ function toggleTheme(){
   }
   if(window.allocChart) updateAllocChartColors();
 }
-
+ 
 // ---- EARNINGS TAB: jump pills scroll to a section inside the pane ----
 function edJump(id){
   const el = document.getElementById(id);
   if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
 }
-
+ 
 // ---- TAB SWITCH ----
 function switchTab(id, btn){
   document.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
@@ -3496,17 +3496,17 @@ function switchTab(id, btn){
   // activate this control plus its counterpart in the other nav (top tabs <-> bottom nav)
   document.querySelectorAll(`[onclick*="switchTab('${id}'"]`).forEach(b=>b.classList.add('active'));
 }
-
+ 
 // ---- HELPERS ----
 function fmt(n, dec){ return n.toLocaleString('en-US',{minimumFractionDigits:dec,maximumFractionDigits:dec}); }
 function fmtDollar(n){ return '$'+Math.abs(n).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:0}); }
-
+ 
 // ---- LIVE PRICE REFRESH ("upon opening") ----
 async function fetchLiveQuotes(){
   const liveTickers = holdings.filter(h => h.ticker!=='CASH' && !mutualFundQuoteTickers.includes(h.ticker));
   let liveOk = 0;
   let liveErr = ''; // first failure reason (e.g. 'HTTP 401'), shown in the status line
-
+ 
   await Promise.allSettled(liveTickers.map(h =>
     fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(h.ticker)}&token=${FINNHUB_API_KEY}`)
       .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP '+r.status)))
@@ -3519,7 +3519,7 @@ async function fetchLiveQuotes(){
       })
       .catch(err => { if(!liveErr) liveErr = (err && err.message) || 'network error'; /* keep this ticker's existing fallback price — no crash, no gap */ })
   ));
-
+ 
   let sectorOk = 0;
   await Promise.allSettled(sectorETFs.map(s =>
     fetch(`https://finnhub.io/api/v1/quote?symbol=${encodeURIComponent(s.key)}&token=${FINNHUB_API_KEY}`)
@@ -3536,7 +3536,7 @@ async function fetchLiveQuotes(){
   ));
   sectorFetchAttempted = true;
   if(sectorOk === 0) console.warn('Sector Performance: 0 of', sectorETFs.length, 'sector ETF quotes loaded from Finnhub.');
-
+ 
   let mfOk = false; let mfAsOf = '';
   try {
     const mfRes = await fetch('./mutual-fund-quotes.json', {cache:'no-store'});
@@ -3552,7 +3552,7 @@ async function fetchLiveQuotes(){
       });
     }
   } catch(e) { /* file not present yet or fetch failed — keep fallback values */ }
-
+ 
   recomputeAggregates();
   renderCoreMetrics();
   renderAllocBars();
@@ -3565,38 +3565,38 @@ async function fetchLiveQuotes(){
   renderIncomeMetrics();
   renderIncomeByCategory();
   renderTopDivContributors();
-
+ 
   const now = new Date();
   const timeStr = now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
   const dateStr = now.toLocaleDateString('en-US',{month:'short',day:'numeric'});
-
+ 
   const liveErrHint = !liveErr ? '' :
     (/HTTP 40[13]/.test(liveErr) ? liveErr+' — Finnhub rejected the key, check it'
     : /HTTP 429/.test(liveErr) ? liveErr+' — rate limit (60 calls/min), wait a minute and reload'
     : liveErr);
   const liveStatusText = liveOk > 0
     ? `live as of ${timeStr}`
-    : (FINNHUB_API_KEY === 'YOUR_FINNHUB_API_KEY_HERE'
+    : (FINNHUB_API_KEY === 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0'
         ? 'showing last-known values (add your Finnhub key to go live)'
         : 'showing last-known values (live fetch unavailable'+(liveErrHint?': '+liveErrHint:'')+')');
   const headerStatusEl = document.getElementById('header-live-status');
   if(headerStatusEl) headerStatusEl.textContent = liveStatusText;
-
+ 
   const sumUpdatedEl = document.getElementById('sum-updated');
   if(sumUpdatedEl) sumUpdatedEl.textContent = liveOk > 0 ? `Live • ${timeStr}` : 'Last known';
-
+ 
   const freshLiveEl = document.getElementById('freshness-live');
   if(freshLiveEl) freshLiveEl.textContent = liveOk > 0
     ? `Live quotes (Finnhub): ${dateStr}, ${timeStr}`
     : 'Live quotes (Finnhub): unavailable'+(liveErrHint?' ('+liveErrHint+')':'')+' — showing last-known prices';
-
+ 
   const freshMfEl = document.getElementById('freshness-mf');
   if(freshMfEl) freshMfEl.textContent = mfOk
     ? `Mutual funds (NAV as of ${mfAsOf ? new Date(mfAsOf+'T12:00:00').toLocaleDateString('en-US',{month:'short',day:'numeric'}) : dateStr})`
     : 'Mutual funds (Alpha Vantage, daily): not yet refreshed — showing last-known NAV';
 }
 fetchLiveQuotes();
-
+ 
 </script>
 </body>
 </html>
