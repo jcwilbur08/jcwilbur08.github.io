@@ -123,4 +123,106 @@ ul.compact{margin:7px 0 11px;padding-left:20px}ul.compact li{margin:4px 0}
 <p>The Q3 SEC filing and contemporaneous post-call coverage were available at preparation. <b>The complete official call transcript/Q&amp;A was not yet independently reviewed</b>; call-only remarks are therefore attributed to named media reports, while financial statements and operating metrics use the SEC exhibit. The capex and Q1 2027 targets are management plans, not realized results. Source prices and analyst estimates are time sensitive.</p>
 <ol class="source-list"><li><strong>S1</strong> <a href='https://www.sec.gov/Archives/edgar/data/1181412/000162828026066482/spaceexplorationtechnologi.htm'>SpaceX Q3 earnings release / SEC Exhibit 99.1</a></li><li><strong>S2</strong> <a href='https://ir.spacex.com/events/event-details/2026/Q3-2026-Earnings/default.aspx'>SpaceX Q3 2026 investor relations call</a></li><li><strong>S3</strong> <a href='https://www.reuters.com/business/media-telecom/spacex-quarterly-revenue-jumps-beats-estimates-ai-business-surges-2026-10-20/'>Reuters, October 20 earnings coverage</a></li><li><strong>S4</strong> <a href='https://www.barrons.com/livecoverage/spacex-earnings-stock-price/card/spacex-outlines-massive-spending-surge-FZwkD9cKmq0u06ioyot2'>Barron&#x27;s, October 20 call capex reporting</a></li><li><strong>S5</strong> <a href='https://www.marketwatch.com/livecoverage/spacex-earnings-stock-results-musk-spcx/card/spacex-eyes-a-potential-tenfold-expansion-in-data-center-capacity-by-the-end-of-2027-F7MocX0d61z2Jg6m6Y46'>MarketWatch, October 20 compute buildout</a></li><li><strong>S6</strong> <a href='https://www.marketwatch.com/livecoverage/spacex-earnings-stock-results-musk-spcx/card/spacex-just-gave-a-big-forecast-for-the-start-of-next-year-E0RmJzW2e1bFcLk4cOff'>MarketWatch, October 20 Q1 2027 revenue outlook</a></li><li><strong>S7</strong> <a href='https://www.marketwatch.com/livecoverage/spacex-earnings-stock-results-musk-spcx/card/spacex-cfo-highlights-promising-pricing-trends-in-ai-3i1X2G43Jd9ckHZlbhM7'>MarketWatch, October 20 cloud pricing / payback</a></li><li><strong>S8</strong> <a href='https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/spaceexplorationtechnologi.htm'>SpaceX prior Terafab disclosure</a></li><li><strong>S9</strong> <a href='https://www.marketwatch.com/story/tsmc-ceo-sees-no-sign-of-a-slowdown-as-chip-foundry-reports-record-profit-17a065d3'>TSMC October 2026 earnings commentary</a></li></ol>
 <div class="footer">Prepared 20 October 2026 • Research-only, not published to either Portfolio Command Center • Canonical workbook manifest SHA-256 verified • No alteration to Portfolio CIO thesis status. Monetary values USD unless noted. Equity investments carry risk.</div>
+
+<!-- PCC-NARRATE:START -- universal narration widget, injected by scripts/inject_narration.py.
+     Reads the page aloud via the browser's built-in Web Speech API. Idempotent: this script
+     will not inject a second copy into a file that already references speechSynthesis. -->
+<style>
+  #pcc-narrate-bar{
+    position:fixed; bottom:18px; right:18px; z-index:2147483000;
+    display:flex; align-items:center; gap:6px;
+    background:#12395B; color:#fff; border-radius:999px; padding:8px 8px;
+    box-shadow:0 8px 24px rgba(10,22,40,.35);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  #pcc-narrate-bar button{
+    background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.20); color:#fff;
+    border-radius:999px; padding:7px 12px; font-size:12px; font-weight:700; cursor:pointer;
+    display:flex; align-items:center; gap:5px; line-height:1;
+  }
+  #pcc-narrate-bar button:hover{background:rgba(255,255,255,.20);}
+  #pcc-narrate-bar button:disabled{opacity:.4; cursor:default;}
+  #pcc-narrate-bar .pcc-narrate-speed{min-width:40px; justify-content:center;}
+  #pcc-narrate-bar .pcc-narrate-label{font-size:11px; color:#bcd0ea; padding:0 4px 0 6px; white-space:nowrap;}
+  .pcc-narrate-highlight{
+    background:rgba(59,130,246,.18) !important; outline:2px solid rgba(59,130,246,.35);
+    border-radius:6px; transition:background .15s ease;
+  }
+  @media print{ #pcc-narrate-bar{display:none !important;} }
+</style>
+<div id="pcc-narrate-bar" style="display:none">
+  <button type="button" id="pcc-narrate-play" aria-label="Play">&#9654; Listen</button>
+  <button type="button" id="pcc-narrate-stop" disabled aria-label="Stop">&#9632;</button>
+  <button type="button" id="pcc-narrate-speed" class="pcc-narrate-speed" disabled aria-label="Playback speed">1x</button>
+  <span class="pcc-narrate-label" id="pcc-narrate-status"></span>
+</div>
+<script>
+(function(){
+  if (!('speechSynthesis' in window)) return;
+  var SEL = 'h1,h2,h3,h4,h5,p,li';
+  var EXCLUDE_ANCESTOR = 'table';
+  var RATES = [1, 1.25, 1.5, 0.85];
+  var bar = document.getElementById('pcc-narrate-bar');
+  var playBtn = document.getElementById('pcc-narrate-play');
+  var stopBtn = document.getElementById('pcc-narrate-stop');
+  var speedBtn = document.getElementById('pcc-narrate-speed');
+  var statusEl = document.getElementById('pcc-narrate-status');
+  var nodes = [], idx = 0, rateIdx = 0, playing = false;
+
+  function collect(){
+    var all = Array.prototype.slice.call(document.querySelectorAll(SEL));
+    var seen = [];
+    return all.filter(function(el){
+      if (el.closest(EXCLUDE_ANCESTOR)) return false;
+      if (el.closest('#pcc-narrate-bar')) return false;
+      var text = (el.innerText || '').trim();
+      if (!text) return false;
+      var prev = seen[seen.length - 1];
+      if (prev && prev.contains(el)) return false;
+      seen.push(el);
+      return true;
+    });
+  }
+  function clearHighlight(){
+    var h = document.querySelector('.pcc-narrate-highlight');
+    if (h) h.classList.remove('pcc-narrate-highlight');
+  }
+  function setStatus(){ statusEl.textContent = nodes.length ? (idx + 1) + ' / ' + nodes.length : ''; }
+  function speakNext(){
+    if (idx >= nodes.length) { stopAll(); return; }
+    var el = nodes[idx];
+    var text = el.innerText.trim();
+    clearHighlight();
+    el.classList.add('pcc-narrate-highlight');
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setStatus();
+    var u = new SpeechSynthesisUtterance(text);
+    u.rate = RATES[rateIdx];
+    u.onend = function(){ if (playing) { idx++; speakNext(); } };
+    window.speechSynthesis.speak(u);
+  }
+  function play(){
+    if (!nodes.length) nodes = collect();
+    if (!nodes.length) return;
+    playing = true;
+    playBtn.innerHTML = '&#9208; Pause';
+    stopBtn.disabled = false;
+    speedBtn.disabled = false;
+    if (!window.speechSynthesis.speaking) speakNext();
+    else window.speechSynthesis.resume();
+  }
+  function pause(){ playing = false; window.speechSynthesis.pause(); playBtn.innerHTML = '&#9654; Resume'; }
+  function stopAll(){
+    playing = false; window.speechSynthesis.cancel(); idx = 0; clearHighlight();
+    playBtn.innerHTML = '&#9654; Listen'; stopBtn.disabled = true; speedBtn.disabled = true; statusEl.textContent = '';
+  }
+  playBtn.addEventListener('click', function(){ if (playing) pause(); else play(); });
+  stopBtn.addEventListener('click', stopAll);
+  speedBtn.addEventListener('click', function(){ rateIdx = (rateIdx + 1) % RATES.length; speedBtn.textContent = RATES[rateIdx] + 'x'; });
+  window.addEventListener('beforeunload', function(){ window.speechSynthesis.cancel(); });
+  bar.style.display = 'flex';
+})();
+</script>
+<!-- PCC-NARRATE:END -->
+
 </body></html>
