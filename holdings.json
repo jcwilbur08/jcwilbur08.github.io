@@ -1,5 +1,5 @@
 {
- "asOf": "2026-10-16",
+ "asOf": "2026-10-21",
  "cash": 43000,
  "source": "retirement-portfolio-62.xlsx",
  "holdings": [
@@ -12,12 +12,12 @@
    "costBasis": 60695.1548,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 39.89,
+   "fallbackPrice": 39.96,
    "finnhub": false,
    "dps": 0.88627,
    "divSched": null,
    "divFreq": "Annually",
-   "lastPrice": 39.89
+   "lastPrice": 39.96
   },
   {
    "ticker": "AMZN",
@@ -28,12 +28,12 @@
    "costBasis": 7935.2,
    "fairValue": 300,
    "fwdYield": 0,
-   "fallbackPrice": 249.23,
+   "fallbackPrice": 262.37,
    "finnhub": true,
    "dps": 0,
    "divSched": null,
    "divFreq": null,
-   "lastPrice": 249.23
+   "lastPrice": 262.37
   },
   {
    "ticker": "JPM",
@@ -43,13 +43,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 20626.53164,
    "fairValue": 330,
-   "fwdYield": 1.967,
-   "fallbackPrice": 338.14,
+   "fwdYield": 1.9686,
+   "fallbackPrice": 335.19,
    "finnhub": true,
    "dps": 6.15,
    "divSched": "Jan, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 338.14
+   "lastPrice": 335.19
   },
   {
    "ticker": "AAPL",
@@ -59,13 +59,13 @@
    "stars": "\u2605\u2605",
    "costBasis": 7480,
    "fairValue": 290,
-   "fwdYield": 0.3158,
-   "fallbackPrice": 342.835,
+   "fwdYield": 0.3181,
+   "fallbackPrice": 343.99,
    "finnhub": true,
    "dps": 1.06,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 342.835
+   "lastPrice": 343.99
   },
   {
    "ticker": "MA",
@@ -75,13 +75,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 12953.7716049,
    "fairValue": 550,
-   "fwdYield": 0.5646,
-   "fallbackPrice": 614.59,
+   "fwdYield": 0.5609000000000001,
+   "fallbackPrice": 622.62,
    "finnhub": true,
    "dps": 3.48,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 614.59
+   "lastPrice": 622.62
   },
   {
    "ticker": "GS",
@@ -91,13 +91,13 @@
    "stars": "\u2605\u2605",
    "costBasis": 18483.15,
    "fairValue": 730,
-   "fwdYield": 2.244,
-   "fallbackPrice": 879.94,
+   "fwdYield": 2.2603999999999997,
+   "fallbackPrice": 904.72,
    "finnhub": true,
    "dps": 18,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 879.94
+   "lastPrice": 904.72
   },
   {
    "ticker": "XOM",
@@ -107,13 +107,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 22876.575243799998,
    "fairValue": 162,
-   "fwdYield": 2.3586,
-   "fallbackPrice": 178.01,
+   "fwdYield": 2.3164000000000002,
+   "fallbackPrice": 178.09,
    "finnhub": true,
    "dps": 4.12,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 178.01
+   "lastPrice": 178.09
   },
   {
    "ticker": "MSFT",
@@ -123,13 +123,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 32427.440000000002,
    "fairValue": 600,
-   "fwdYield": 0.7267,
-   "fallbackPrice": 527.24,
+   "fwdYield": 0.737,
+   "fallbackPrice": 532.95,
    "finnhub": true,
    "dps": 3.64,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 527.24
+   "lastPrice": 532.95
   },
   {
    "ticker": "GOOG",
@@ -139,13 +139,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 9285.597,
    "fairValue": 433,
-   "fwdYield": 0.2551,
-   "fallbackPrice": 337.93,
+   "fwdYield": 0.2616,
+   "fallbackPrice": 330.95,
    "finnhub": true,
    "dps": 0.86,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 337.93
+   "lastPrice": 330.95
   },
   {
    "ticker": "VXUS",
@@ -156,12 +156,12 @@
    "costBasis": 44763.9384,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 83.44,
+   "fallbackPrice": 84,
    "finnhub": true,
    "dps": 2.188402,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 83.44
+   "lastPrice": 84
   },
   {
    "ticker": "META",
@@ -171,13 +171,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 20599.803,
    "fairValue": 850,
-   "fwdYield": 0.28500000000000003,
-   "fallbackPrice": 707.14,
+   "fwdYield": 0.3025,
+   "fallbackPrice": 697.52,
    "finnhub": true,
    "dps": 2.1,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 707.14
+   "lastPrice": 697.52
   },
   {
    "ticker": "AMT",
@@ -187,13 +187,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 29934.5940082,
    "fairValue": 225,
-   "fwdYield": 3.9479,
-   "fallbackPrice": 185.065,
+   "fwdYield": 3.9006,
+   "fallbackPrice": 177.64,
    "finnhub": true,
    "dps": 7.07,
    "divSched": "Feb, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 185.065
+   "lastPrice": 177.64
   },
   {
    "ticker": "V",
@@ -203,13 +203,13 @@
    "stars": "\u2605\u2605",
    "costBasis": 13650,
    "fairValue": 330,
-   "fwdYield": 0.6704,
-   "fallbackPrice": 401.34,
+   "fwdYield": 0.6592,
+   "fallbackPrice": 407.85,
    "finnhub": true,
    "dps": 2.68,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 401.34
+   "lastPrice": 407.85
   },
   {
    "ticker": "AVGO",
@@ -219,13 +219,13 @@
    "stars": "\u2605\u2605\u2605\u2605\u2605",
    "costBasis": 43750.395,
    "fairValue": 650,
-   "fwdYield": 0.7551,
-   "fallbackPrice": 332.03,
+   "fwdYield": 0.7776,
+   "fallbackPrice": 337.8,
    "finnhub": true,
    "dps": 2.6,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 332.03
+   "lastPrice": 337.8
   },
   {
    "ticker": "VFFSX",
@@ -236,12 +236,12 @@
    "costBasis": 5000,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 379.05,
+   "fallbackPrice": 379.7,
    "finnhub": false,
    "dps": 3.9731,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 379.05
+   "lastPrice": 379.7
   },
   {
    "ticker": "PM",
@@ -252,12 +252,28 @@
    "costBasis": 14987.79639,
    "fairValue": 185,
    "fwdYield": 3.2016000000000004,
-   "fallbackPrice": 204.59,
+   "fallbackPrice": 197.46,
    "finnhub": true,
    "dps": 6.01,
    "divSched": "Jan, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 204.59
+   "lastPrice": 197.46
+  },
+  {
+   "ticker": "SO",
+   "name": "Southern Co",
+   "qty": 381.4,
+   "sector": "Utilities",
+   "stars": "\u2605\u2605\u2605",
+   "costBasis": 3188.5039999999995,
+   "fairValue": 83,
+   "fwdYield": 3.3513,
+   "fallbackPrice": 90.39,
+   "finnhub": true,
+   "dps": 3,
+   "divSched": "Mar, Jun, Sep, Dec",
+   "divFreq": "Quarterly",
+   "lastPrice": 90.39
   },
   {
    "ticker": "NFLX",
@@ -268,28 +284,12 @@
    "costBasis": 4715,
    "fairValue": 80,
    "fwdYield": 0,
-   "fallbackPrice": 70.325,
+   "fallbackPrice": 65.04,
    "finnhub": true,
    "dps": 0,
    "divSched": null,
    "divFreq": null,
-   "lastPrice": 70.325
-  },
-  {
-   "ticker": "SO",
-   "name": "Southern Co",
-   "qty": 381.4,
-   "sector": "Utilities",
-   "stars": "\u2605\u2605\u2605",
-   "costBasis": 3188.5039999999995,
-   "fairValue": 83,
-   "fwdYield": 3.4088,
-   "fallbackPrice": 90.7,
-   "finnhub": true,
-   "dps": 3,
-   "divSched": "Mar, Jun, Sep, Dec",
-   "divFreq": "Quarterly",
-   "lastPrice": 90.7
+   "lastPrice": 65.04
   },
   {
    "ticker": "AXP",
@@ -299,13 +299,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 7680,
    "fairValue": 341,
-   "fwdYield": 1.2106999999999999,
-   "fallbackPrice": 312.7,
+   "fwdYield": 1.1937,
+   "fallbackPrice": 323.61,
    "finnhub": true,
    "dps": 3.67,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 312.7
+   "lastPrice": 323.61
   },
   {
    "ticker": "FSMDX",
@@ -316,12 +316,12 @@
    "costBasis": 27773.264655000003,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 42.41,
+   "fallbackPrice": 42.66,
    "finnhub": false,
    "dps": 0.322,
    "divSched": null,
    "divFreq": "Semi-Annually",
-   "lastPrice": 42.41
+   "lastPrice": 42.66
   },
   {
    "ticker": "AVUV",
@@ -332,12 +332,12 @@
    "costBasis": 32182.0709,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 119.93,
+   "fallbackPrice": 120.92,
    "finnhub": true,
    "dps": 1.5612,
    "divSched": null,
    "divFreq": "Irregular",
-   "lastPrice": 119.93
+   "lastPrice": 120.92
   },
   {
    "ticker": "FSSNX",
@@ -348,12 +348,12 @@
    "costBasis": 25178.459064,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 34.77,
+   "fallbackPrice": 34.95,
    "finnhub": false,
    "dps": 0.388,
    "divSched": null,
    "divFreq": "Semi-Annually",
-   "lastPrice": 34.77
+   "lastPrice": 34.95
   },
   {
    "ticker": "GEV",
@@ -363,13 +363,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 30097.806,
    "fairValue": 1050,
-   "fwdYield": 0.21589999999999998,
-   "fallbackPrice": 927.9,
+   "fwdYield": 0.22460000000000002,
+   "fallbackPrice": 925.92,
    "finnhub": true,
    "dps": 1.75,
    "divSched": "Feb, Apr, Jul, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 927.9
+   "lastPrice": 925.92
   },
   {
    "ticker": "KO",
@@ -379,13 +379,13 @@
    "stars": "\u2605\u2605",
    "costBasis": 12492.9687938,
    "fairValue": 75,
-   "fwdYield": 2.3043,
-   "fallbackPrice": 93.01,
+   "fwdYield": 2.2676000000000003,
+   "fallbackPrice": 92.68,
    "finnhub": true,
    "dps": 2.1,
    "divSched": "Apr, Jul, Oct, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 93.01
+   "lastPrice": 92.68
   },
   {
    "ticker": "CRM",
@@ -395,29 +395,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 20956.32,
    "fairValue": 270,
-   "fwdYield": 0.7132999999999999,
-   "fallbackPrice": 239.88,
+   "fwdYield": 0.726,
+   "fallbackPrice": 241.78,
    "finnhub": true,
    "dps": 1.736,
    "divSched": "Jan, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 239.88
-  },
-  {
-   "ticker": "DIS",
-   "name": "The Walt Disney Co",
-   "qty": 196.17,
-   "sector": "Comms",
-   "stars": "\u2605\u2605\u2605\u2605",
-   "costBasis": 15770.1063,
-   "fairValue": 125,
-   "fwdYield": 1.3553000000000002,
-   "fallbackPrice": 110.4,
-   "finnhub": true,
-   "dps": 1.5,
-   "divSched": "Jan, Jul",
-   "divFreq": "Semi-Annually",
-   "lastPrice": 110.4
+   "lastPrice": 241.78
   },
   {
    "ticker": "PEP",
@@ -427,13 +411,29 @@
    "stars": "\u2605\u2605\u2605\u2605\u2605",
    "costBasis": 22521.344999999998,
    "fairValue": 169,
-   "fwdYield": 4.6113,
-   "fallbackPrice": 130.97,
+   "fwdYield": 4.4173,
+   "fallbackPrice": 134.7,
    "finnhub": true,
    "dps": 5.805,
    "divSched": "Jan, Mar, Jun, Sep",
    "divFreq": "Quarterly",
-   "lastPrice": 130.97
+   "lastPrice": 134.7
+  },
+  {
+   "ticker": "DIS",
+   "name": "The Walt Disney Co",
+   "qty": 196.17,
+   "sector": "Comms",
+   "stars": "\u2605\u2605\u2605\u2605",
+   "costBasis": 15770.1063,
+   "fairValue": 125,
+   "fwdYield": 1.3432,
+   "fallbackPrice": 111.83,
+   "finnhub": true,
+   "dps": 1.5,
+   "divSched": "Jan, Jul",
+   "divFreq": "Semi-Annually",
+   "lastPrice": 111.83
   },
   {
    "ticker": "SCHD",
@@ -444,12 +444,12 @@
    "costBasis": 20040.513,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 34.31,
+   "fallbackPrice": 34.66,
    "finnhub": true,
    "dps": 1.048,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 34.31
+   "lastPrice": 34.66
   },
   {
    "ticker": "UNH",
@@ -459,13 +459,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 11924.739,
    "fairValue": 475,
-   "fwdYield": 2.2819,
-   "fallbackPrice": 402.27,
+   "fwdYield": 2.2134,
+   "fallbackPrice": 417,
    "finnhub": true,
    "dps": 9.06,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 402.27
+   "lastPrice": 417
   },
   {
    "ticker": "IJH",
@@ -476,12 +476,12 @@
    "costBasis": 4646.4752568,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 72.28,
+   "fallbackPrice": 73.39,
    "finnhub": true,
    "dps": 0.888367,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 72.28
+   "lastPrice": 73.39
   },
   {
    "ticker": "BMY",
@@ -491,13 +491,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 17974.4,
    "fairValue": 70,
-   "fwdYield": 4.160500000000001,
-   "fallbackPrice": 60.58,
+   "fwdYield": 4.0856,
+   "fallbackPrice": 61.12,
    "finnhub": true,
    "dps": 2.52,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 60.58
+   "lastPrice": 61.12
   },
   {
    "ticker": "QCOM",
@@ -507,13 +507,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 5809.650600000001,
    "fairValue": 170,
-   "fwdYield": 2.0628,
-   "fallbackPrice": 173.425,
+   "fwdYield": 2.0944000000000003,
+   "fallbackPrice": 177.96,
    "finnhub": true,
    "dps": 3.62,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 173.425
+   "lastPrice": 177.96
   },
   {
    "ticker": "TSM",
@@ -523,13 +523,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 17479.5915,
    "fairValue": 534,
-   "fwdYield": 0.8928,
-   "fallbackPrice": 413.16,
+   "fwdYield": 0.8869,
+   "fallbackPrice": 431.89,
    "finnhub": true,
    "dps": 3.769968,
    "divSched": "Jan, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 413.16
+   "lastPrice": 431.89
   },
   {
    "ticker": "VTWO",
@@ -540,12 +540,28 @@
    "costBasis": 3528,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 109.25,
+   "fallbackPrice": 111.67,
    "finnhub": true,
    "dps": 1.3091,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 109.25
+   "lastPrice": 111.67
+  },
+  {
+   "ticker": "ASML",
+   "name": "ASML Holding NV ADR",
+   "qty": 8,
+   "sector": "Technology",
+   "stars": "\u2605\u2605\u2605",
+   "costBasis": 13787.7,
+   "fairValue": 2050,
+   "fwdYield": 0.5566,
+   "fallbackPrice": 1676.69,
+   "finnhub": true,
+   "dps": 9.07663,
+   "divSched": "Feb, May, Aug, Nov",
+   "divFreq": "Quarterly",
+   "lastPrice": 1676.69
   },
   {
    "ticker": "NVDA",
@@ -555,29 +571,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 12861.1404,
    "fairValue": 310,
-   "fwdYield": 0.46030000000000004,
-   "fallbackPrice": 215.35,
+   "fwdYield": 0.462,
+   "fallbackPrice": 221.97,
    "finnhub": true,
    "dps": 0.52,
    "divSched": "Apr, Jun, Oct, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 215.35
-  },
-  {
-   "ticker": "ASML",
-   "name": "ASML Holding NV ADR",
-   "qty": 7,
-   "sector": "Technology",
-   "stars": "\u2605\u2605\u2605",
-   "costBasis": 12120.700200000001,
-   "fairValue": 2050,
-   "fwdYield": 0.5476,
-   "fallbackPrice": 1657.52,
-   "finnhub": true,
-   "dps": 9.07663,
-   "divSched": "Feb, May, Aug, Nov",
-   "divFreq": "Quarterly",
-   "lastPrice": 1657.52
+   "lastPrice": 221.97
   },
   {
    "ticker": "GRID",
@@ -588,12 +588,12 @@
    "costBasis": 11269.9086,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 170.14,
+   "fallbackPrice": 170.5,
    "finnhub": true,
    "dps": 1.4296,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 170.14
+   "lastPrice": 170.5
   },
   {
    "ticker": "ADBE",
@@ -604,28 +604,28 @@
    "costBasis": 8155.9484999999995,
    "fairValue": 344,
    "fwdYield": 0,
-   "fallbackPrice": 244.78,
+   "fallbackPrice": 255.06,
    "finnhub": true,
    "dps": 0,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 244.78
+   "lastPrice": 255.06
   },
   {
    "ticker": "UBER",
    "name": "Uber Technologies Inc",
-   "qty": 77,
+   "qty": 87,
    "sector": "Industrials",
    "stars": "\u2605\u2605\u2605",
-   "costBasis": 5348.1813,
+   "costBasis": 6025.176300000001,
    "fairValue": 76,
    "fwdYield": 0,
-   "fallbackPrice": 70.03,
+   "fallbackPrice": 67.62,
    "finnhub": true,
    "dps": 0,
    "divSched": null,
    "divFreq": null,
-   "lastPrice": 70.03
+   "lastPrice": 67.62
   },
   {
    "ticker": "GEHC",
@@ -635,13 +635,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 3622.84,
    "fairValue": 88,
-   "fwdYield": 0.2274,
-   "fallbackPrice": 69.88,
+   "fwdYield": 0.2278,
+   "fallbackPrice": 69.01,
    "finnhub": true,
    "dps": 0.14,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 69.88
+   "lastPrice": 69.01
   },
   {
    "ticker": "VIS",
@@ -652,12 +652,12 @@
    "costBasis": 2033.5500000000002,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 320.55,
+   "fallbackPrice": 321.89,
    "finnhub": true,
    "dps": 3.0941,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 320.55
+   "lastPrice": 321.89
   },
   {
    "ticker": "BATRA",
@@ -666,14 +666,14 @@
    "sector": "Comms",
    "stars": "\u2605\u2605\u2605",
    "costBasis": 1314,
-   "fairValue": 54.219131,
+   "fairValue": 51.308674,
    "fwdYield": 0,
-   "fallbackPrice": 54.065,
+   "fallbackPrice": 55.12,
    "finnhub": true,
    "dps": 0,
    "divSched": null,
    "divFreq": null,
-   "lastPrice": 54.065
+   "lastPrice": 55.12
   }
  ]
 }

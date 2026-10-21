@@ -1357,6 +1357,37 @@
    "rating": null,
    "target": null,
    "summary": "Cam's gate review after the AI pullback (Oct 18, 2026; prices as of Fri Oct 16 close): re-marks every position, separates what the tape repriced from what the fundamentals changed, and resets the add, hold and trim gates for the next two weeks of earnings. Drivers: Tan's 'casino' comments, Gartner's $3.5T impairment warning, debt-funded buildout worry; 10Y eased to ~5.10% and Oct FOMC hike odds fell to ~17% by Friday."
+  },
+  {
+   "title": "Capital Allocation Ranking \u2014 October 20, 2026",
+   "file": "capital-allocation-ranking-2026-10-20.html",
+   "kind": "thematic",
+   "sub": "Ranking",
+   "date": "2026-10-20",
+   "ticker": null,
+   "rating": null,
+   "target": null,
+   "summary": "Desk capital allocation ranking (Oct 20, 2026; live prices, export-63 baseline; book $1.735M, cash $43K): AVGO #1 (SB 8/10, +59.8%, through the \u2264$340 gate), UBER #2 (complete tranche 1), NVDA #3 (staged build toward ~1%), TSM #4, GOOG #5 (half now, half after Oct 28), ASML #6 (through fired gate), ADBE #7, VXUS #8, AVUV #9, GEV #10, AMT #11, QCOM #12, UNH #13 (accumulate toward 2%), GEHC #14 (no adds into Oct 28 print), AMZN #15. NFLX frozen ahead of tonight's print. Ladder deploys ~$35K of cash, ~$8K reserve held for the Oct 28 cluster."
+  },
+  {
+   "ticker": "NFLX",
+   "name": "Netflix, Inc.",
+   "file": "nflx-q3-earnings-2026-10-20.html",
+   "rating": "Buy",
+   "target": "$80",
+   "kind": "company",
+   "date": "2026-10-20",
+   "summary": "NFLX Q3 2026 earnings update (Oct 20): Buy 6/10 maintained, target trimmed to $80 (from $88). The quarter beat (rev $12,874M +11.8% in line, EPS $0.87 vs $0.82 cons, margin 34.6% vs 33.2% guide, FCF $2,884M, record $4.8B buyback) but Q4 guide missed on every line (EPS $0.67 vs $0.73) and FY26 ad revenue was cut to ~$2.7B from ~$3B on slower ad-product rollout \u2014 stock fell ~5-7% after hours toward ~$64-66, a new 52-wk low. FY26 rev $51.1B, margin held 31.5%, FCF cut to ~$12.0B. Engagement disclosure now annual; ~6% layoffs and content-leadership reset; Sarandos conceded US execution needs work. Stance: hold the 500 shares, no add into the washout."
+  },
+  {
+   "ticker": "META",
+   "name": "Meta Platforms, Inc.",
+   "file": "meta-q3-earnings-2026-10-21.html",
+   "rating": "Buy",
+   "target": "$850",
+   "kind": "company",
+   "date": "2026-10-21",
+   "summary": "META Q3 2026 post-earnings report (Oct 21): UPGRADED to Buy 6/10, $850 target (was Hold, $800) \u2014 +21.9% upside from $697.52 close; stock +3-5% after hours. Revenue $64.601B +26% beat; GAAP EPS $3.83/margin 20% distorted by a $9.89B charge (52-state AG teen mental-health settlement, up to ~$18.59B over a decade); ex-charge EPS $7.40, OI $22.88B. Q4 guide $73-76B beat; FY26 capex $135-145B; Q3 FCF -$2.12B, zero buybacks; RL losses $18-19B in 2026 gliding to ~$15B in 2027. THE 'SPLIT': not a conventional split \u2014 a new non-voting Class C issued as a 1:1 stock dividend (1 C per A and per B), priced by Meta as economically a 2-for-1; charter effective Jan 19, 2027, record/payment dates and C ticker not yet set; purpose is a financing currency that preserves Zuckerberg's voting control (his C is 80% stapled). Call story: Muse AI (>10M users, shopping-led monetization guided to exceed FoA revenue per user over time). Position: hold the 63 shares (become 63 A + 63 C)."
   }
  ],
  "updated": "2026-10-15"

@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>NFLX Q3 Earnings Update — October 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,600;6..72,700&family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#faf7f4; --surface:#ffffff; --surface-2:#f3ede8; --ink:#1c1512; --ink-2:#4c423c;
+    --muted:#7d6f66; --line:#e3d9d2; --accent:#b00610; --accent-2:#e50914;
+    --good:#1e7a46; --bad:#b00610; --warn:#a05a00;
+    --callout-bg:#fdf1ec; --callout-line:#e8b7ac;
+    --strip-bg:#1c1512; --strip-ink:#f7f1ec; --strip-muted:#b8a89e;
+    --shadow:0 1px 2px rgba(28,21,18,.06),0 8px 24px rgba(28,21,18,.06);
+  }
+  @media (prefers-color-scheme: dark){
+    :root[data-theme="auto"]{
+      --bg:#121010; --surface:#1b1818; --surface-2:#241f1f; --ink:#f2ebe6; --ink-2:#cfc2b9;
+      --muted:#9c8c81; --line:#37302d; --accent:#ff5a52; --accent-2:#e50914;
+      --good:#4cc38a; --bad:#ff7a72; --warn:#e8a34d;
+      --callout-bg:#2a1a17; --callout-line:#5c352e;
+      --strip-bg:#000000; --strip-ink:#f7f1ec; --strip-muted:#a89a90;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#121010; --surface:#1b1818; --surface-2:#241f1f; --ink:#f2ebe6; --ink-2:#cfc2b9;
+    --muted:#9c8c81; --line:#37302d; --accent:#ff5a52; --accent-2:#e50914;
+    --good:#4cc38a; --bad:#ff7a72; --warn:#e8a34d;
+    --callout-bg:#2a1a17; --callout-line:#5c352e;
+    --strip-bg:#000000; --strip-ink:#f7f1ec; --strip-muted:#a89a90;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+  }
+  :root[data-theme="light"]{
+    --bg:#faf7f4; --surface:#ffffff; --surface-2:#f3ede8; --ink:#1c1512; --ink-2:#4c423c;
+    --muted:#7d6f66; --line:#e3d9d2; --accent:#b00610; --accent-2:#e50914;
+    --good:#1e7a46; --bad:#b00610; --warn:#a05a00;
+    --callout-bg:#fdf1ec; --callout-line:#e8b7ac;
+    --strip-bg:#1c1512; --strip-ink:#f7f1ec; --strip-muted:#b8a89e;
+    --shadow:0 1px 2px rgba(28,21,18,.06),0 8px 24px rgba(28,21,18,.06);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 72px}
+
+  /* ---------- utility toolbar ---------- */
+  .toolbar{position:sticky;top:0;z-index:20;display:flex;justify-content:flex-end;gap:8px;padding:10px 20px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px)}
+  .toolbar button{font:600 12.5px "Archivo",sans-serif;letter-spacing:.04em;color:var(--ink);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:7px 14px;cursor:pointer;box-shadow:var(--shadow)}
+  .toolbar button:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* ---------- cover ---------- */
+  .cover{border-radius:0 0 22px 22px;padding:64px 44px 52px;color:#f7f1ec;background:
+    radial-gradient(120% 160% at 88% -20%,rgba(229,9,20,.55) 0%,rgba(229,9,20,0) 55%),
+    linear-gradient(140deg,#0a0909 0%,#1d0d0e 46%,#57040a 82%,#8f060e 100%);
+    margin:0 -20px;position:relative;overflow:hidden}
+  .cover::after{content:"";position:absolute;inset:auto -10% -55% 30%;height:70%;background:radial-gradient(60% 100% at 50% 100%,rgba(229,9,20,.35),transparent 70%);pointer-events:none}
+  .cover .series{font:600 12px "IBM Plex Mono",monospace;letter-spacing:.22em;text-transform:uppercase;color:#e8b7ac}
+  .cover h1{font-family:"Newsreader",serif;font-weight:700;font-size:clamp(44px,8vw,76px);line-height:1.02;margin:18px 0 6px;letter-spacing:-.01em}
+  .cover .tickerline{font:500 17px "IBM Plex Mono",monospace;color:#e9ded7;letter-spacing:.06em}
+  .cover .subtitle{font-family:"Newsreader",serif;font-size:clamp(21px,3.4vw,28px);font-weight:500;color:#f3e6df;margin:26px 0 0;max-width:34ch;line-height:1.3}
+  .cover .meta{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:34px;font:500 13px "IBM Plex Mono",monospace;color:#cdb9ae;letter-spacing:.05em}
+  .cover .meta b{color:#fff;font-weight:600}
+
+  /* ---------- rating strip ---------- */
+  .strip{display:grid;grid-template-columns:repeat(5,1fr);background:var(--strip-bg);color:var(--strip-ink);border-radius:14px;margin:26px 0 8px;overflow:hidden;box-shadow:var(--shadow)}
+  .strip .cell{padding:18px 18px 16px;border-left:1px solid rgba(255,255,255,.09)}
+  .strip .cell:first-child{border-left:none}
+  .strip .lab{font:600 10.5px "Archivo",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--strip-muted)}
+  .strip .val{font-family:"Newsreader",serif;font-size:27px;font-weight:700;margin-top:5px;line-height:1.1}
+  .strip .sub{font-size:12.5px;color:var(--strip-muted);margin-top:3px}
+  .strip .val.buy{color:#ff6d66}
+  .strip .val.up{color:#4cc38a}
+
+  /* ---------- verdict ---------- */
+  .verdict{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin:22px 0 6px;box-shadow:var(--shadow)}
+  .verdict h2{font-family:"Newsreader",serif;font-size:24px;margin:0 0 10px;font-weight:700}
+  .verdict p{margin:0 0 12px;color:var(--ink-2)}
+  .verdict p:last-child{margin-bottom:0}
+  .verdict strong{color:var(--ink)}
+
+  /* ---------- report map ---------- */
+  .map{background:var(--surface-2);border:1px solid var(--line);border-radius:14px;padding:22px 26px;margin:26px 0 10px}
+  .map h2{font:700 12px "Archivo",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 14px}
+  .map ol{margin:0;padding:0;list-style:none;counter-reset:map}
+  .map li{counter-increment:map;border-top:1px solid var(--line)}
+  .map li:first-child{border-top:none}
+  .map a{display:flex;gap:14px;align-items:baseline;padding:10px 2px;color:var(--ink);text-decoration:none;font-weight:600;font-size:15.5px}
+  .map a::before{content:counter(map,decimal-leading-zero);font:600 12px "IBM Plex Mono",monospace;color:var(--accent)}
+  .map a:hover{color:var(--accent)}
+  .map a span{margin-left:auto;font:400 12.5px "Archivo",sans-serif;color:var(--muted);text-align:right}
+
+  /* ---------- sections ---------- */
+  section{margin-top:52px;scroll-margin-top:70px}
+  .kicker{font:700 11.5px "Archivo",sans-serif;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+  section h2{font-family:"Newsreader",serif;font-size:clamp(27px,4.6vw,36px);font-weight:700;line-height:1.15;margin:0 0 16px;letter-spacing:-.01em}
+  section p{color:var(--ink-2);margin:0 0 14px}
+  section p strong, section li strong{color:var(--ink)}
+  section ul{color:var(--ink-2);margin:0 0 14px;padding-left:20px}
+  section li{margin-bottom:7px}
+  .lede{font-size:18px;color:var(--ink)}
+
+  /* ---------- callouts ---------- */
+  .callout{background:var(--callout-bg);border:1px solid var(--callout-line);border-radius:12px;padding:20px 22px;margin:22px 0}
+  .callout .tag{font:700 11px "Archivo",sans-serif;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
+  .callout h3{font-family:"Newsreader",serif;font-size:20px;margin:0 0 8px;font-weight:700}
+  .callout p{color:var(--ink-2);margin:0 0 8px;font-size:15.5px}
+  .callout p:last-child{margin-bottom:0}
+  .callout.neutral{background:var(--surface-2);border-color:var(--line)}
+  .callout.neutral .tag{color:var(--muted)}
+
+  /* ---------- tables ---------- */
+  .tblwrap{overflow:hidden;border:1px solid var(--line);border-radius:12px;margin:20px 0;background:var(--surface);box-shadow:var(--shadow)}
+  table{width:100%;border-collapse:collapse;font-size:14.5px}
+  caption{text-align:left;font:700 12px "Archivo",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:14px 16px 4px}
+  th{font:600 11.5px "Archivo",sans-serif;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);text-align:right;padding:10px 14px;border-bottom:1px solid var(--line)}
+  th:first-child{text-align:left}
+  td{padding:10px 14px;border-bottom:1px solid var(--line);text-align:right;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+  td:first-child{text-align:left;font-weight:600;color:var(--ink)}
+  tr:last-child td{border-bottom:none}
+  tbody tr:hover{background:var(--surface-2)}
+  .beat{color:var(--good);font-weight:700}
+  .miss{color:var(--bad);font-weight:700}
+  .flat{color:var(--muted);font-weight:600}
+  .tnote{font-size:13px;color:var(--muted);margin:-8px 0 18px}
+
+  /* ---------- chart ---------- */
+  .chartcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 22px 12px;margin:20px 0;box-shadow:var(--shadow)}
+  .chartcard h3{font:700 12px "Archivo",sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0 0 6px}
+  .chartcard .big{font-family:"Newsreader",serif;font-size:22px;font-weight:700;margin:0 0 8px}
+  svg text{font-family:"IBM Plex Mono",monospace}
+
+  /* ---------- appendix ---------- */
+  .appendix{margin-top:64px;border-top:2px solid var(--line);padding-top:26px}
+  .appendix h2{font-family:"Newsreader",serif;font-size:24px;margin:0 0 6px}
+  .appendix p{color:var(--muted);font-size:14px;margin:0 0 16px}
+  .appendix ol{margin:0;padding-left:22px;color:var(--ink-2);font-size:14px}
+  .appendix li{margin-bottom:10px}
+  .appendix a{color:var(--accent);word-break:break-all}
+  .disclaimer{margin-top:30px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+
+  @media (max-width:680px){
+    .strip{grid-template-columns:repeat(2,1fr)}
+    .strip .cell{border-left:none;border-top:1px solid rgba(255,255,255,.09)}
+    .strip .cell:nth-child(-n+2){border-top:none}
+    .strip .cell:last-child{grid-column:1/-1}
+    .cover{padding:48px 26px 42px}
+    table{table-layout:fixed;font-size:12px}
+    th,td{padding:8px 6px;font-size:12px;overflow-wrap:break-word}
+    th:first-child,td:first-child{width:27%}
+    caption{padding:12px 10px 4px}
+    .map a span{display:none}
+  }
+  @media print{
+    .toolbar{display:none}
+    body{background:#fff}
+    .wrap{max-width:none}
+    section{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button id="themeBtn" type="button" aria-label="Toggle dark or light theme">◐ Theme</button>
+  <button id="pdfBtn" type="button">⤓ Download PDF</button>
+</div>
+
+<div class="wrap">
+
+  <!-- ============ COVER ============ -->
+  <header class="cover">
+    <div class="series">Equity Research · Earnings Update</div>
+    <h1>Netflix, Inc.</h1>
+    <div class="tickerline">NASDAQ: NFLX &nbsp;·&nbsp; Streaming Entertainment</div>
+    <p class="subtitle">Q3 2026: the quarter beat, the guide didn't — and the ad engine slipped a year behind its own promise.</p>
+    <div class="meta">
+      <span>Date <b>October 20, 2026</b></span>
+      <span>Event <b>Q3 2026 results, reported after the close</b></span>
+      <span>Desk view <b>Post-print update</b></span>
+    </div>
+  </header>
+
+  <!-- ============ RATING STRIP ============ -->
+  <div class="strip" role="group" aria-label="Rating summary">
+    <div class="cell"><div class="lab">Rating</div><div class="val buy">Buy</div><div class="sub">Maintained</div></div>
+    <div class="cell"><div class="lab">Conviction</div><div class="val">6<span style="font-size:16px;color:var(--strip-muted)"> / 10</span></div><div class="sub">Unchanged</div></div>
+    <div class="cell"><div class="lab">12-mo price target</div><div class="val">$80</div><div class="sub">Trimmed from $88</div></div>
+    <div class="cell"><div class="lab">Reference price</div><div class="val">$68.69</div><div class="sub">NASDAQ close, Oct 20, 2026</div></div>
+    <div class="cell"><div class="lab">Implied upside</div><div class="val up">+16.5%</div><div class="sub">To target, ex-dividend (none paid)</div></div>
+  </div>
+
+  <!-- ============ VERDICT ============ -->
+  <div class="verdict">
+    <h2>The desk call</h2>
+    <p><strong>Buy maintained, conviction held at 6/10, target trimmed to $80 from $88.</strong> Netflix delivered the quarter it promised — EPS of $0.87 against a $0.82 guide and consensus, operating margin 140bp ahead of guidance — and then guided the next one below the Street on every line, while cutting its full-year advertising expectation from roughly $3B to roughly $2.7B. The after-hours market priced the guide, not the quarter: the stock fell roughly 5–7% from the $68.69 close toward the mid-$60s, through a fresh 52-week low.</p>
+    <p><strong>Position stance: hold the 500 shares. No add into the after-hours washout; trim staging now sits well above the market.</strong> The trimmed target still clears the Buy bar on the new rating scale (6/10 conviction with 10%+ implied upside), but the two engines that were supposed to re-accelerate growth — engagement hours and advertising — both decelerated in the same print. That is a thesis to re-underwrite at the Q4 report, not to average into tonight.</p>
+  </div>
+
+  <!-- ============ REPORT MAP ============ -->
+  <nav class="map" aria-label="Report map">
+    <h2>Report map</h2>
+    <ol>
+      <li><a href="#print">The print — a profit beat the market ignored <span>Q3 vs consensus &amp; guidance</span></a></li>
+      <li><a href="#guidance">Guidance — Q4 misses, the year gets narrower <span>Q4 &amp; FY2026 outlook</span></a></li>
+      <li><a href="#advertising">Advertising — the $3B promise becomes $2.7B <span>The headline negative</span></a></li>
+      <li><a href="#engagement">Engagement &amp; content — the conceded debate <span>View hours, India, the reset</span></a></li>
+      <li><a href="#capital">Capital &amp; balance sheet — a record buyback <span>Cash, debt, the Warner footnote</span></a></li>
+      <li><a href="#street">The Street — cuts came before the print <span>Targets &amp; open questions</span></a></li>
+      <li><a href="#valuation">Valuation &amp; the desk call <span>Why $80, why still a Buy</span></a></li>
+      <li><a href="#risks">Risks &amp; what would change the call <span>Falsification tests</span></a></li>
+      <li><a href="#appendix">Appendix — sources <span>Sources only</span></a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ 1. THE PRINT ============ -->
+  <section id="print">
+    <p class="kicker">Section 01 · Results</p>
+    <h2>The print — a profit beat the market ignored</h2>
+    <p class="lede">On the lines Netflix guided, Q3 was a clean beat. On the line the Street cared about most — what comes next — it was a miss. Both things are true, and the tape chose the second.</p>
+    <p>Revenue of <strong>$12,874M (+11.8% year over year, +11% currency-neutral)</strong> landed essentially on top of both the company's $12,860M guidance and the $12.87B consensus. The profit lines ran ahead: operating income of <strong>$4,459M</strong> beat guidance by $191M, operating margin of <strong>34.6%</strong> beat the 33.2% guide by 140bp, and diluted EPS of <strong>$0.87</strong> beat the $0.82 consensus and guidance by five cents. Free cash flow was <strong>$2,884M</strong>, up from $2,660M a year ago, and the diluted share count has shrunk to 4,195M from 4,340M on the buyback.</p>
+
+    <div class="callout">
+      <div class="tag">Callout · Beat vs guide</div>
+      <h3>The margin beat is timing, not run-rate</h3>
+      <p>Management attributed the 140bp margin beat "primarily to the timing of expenses" alongside the slight revenue upside. Read it as borrowed, not earned: expenses deferred out of Q3 land in Q4, which is one reason the Q4 margin guide of 26.0% looks so much softer than Q3's 34.6% print. The honest Q3 run-rate sits between the two numbers — and annualising the $0.87 EPS without that adjustment overstates the earnings power the guide actually supports.</p>
+    </div>
+
+    <div class="tblwrap">
+      <table>
+        <caption>Q3 2026 — reported vs consensus vs company guidance</caption>
+        <thead><tr><th>Line</th><th>Reported</th><th>Consensus</th><th>Guidance</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td>Revenue</td><td>$12,874M</td><td>$12.87B</td><td>$12,860M</td><td class="flat">In line</td></tr>
+          <tr><td>Revenue growth (YoY)</td><td>+11.8%</td><td>—</td><td>+11.7%</td><td class="flat">In line</td></tr>
+          <tr><td>Operating income</td><td>$4,459M</td><td>—</td><td>$4,268M</td><td class="beat">Beat +$191M</td></tr>
+          <tr><td>Operating margin</td><td>34.6%</td><td>—</td><td>33.2%</td><td class="beat">Beat +140bp</td></tr>
+          <tr><td>Net income</td><td>$3,664M</td><td>—</td><td>$3,452M</td><td class="beat">Beat +$212M</td></tr>
+          <tr><td>Diluted EPS</td><td>$0.87</td><td>$0.82</td><td>$0.82</td><td class="beat">Beat +$0.05</td></tr>
+          <tr><td>Operating cash flow</td><td>$3,162M</td><td>—</td><td>—</td><td class="flat">—</td></tr>
+          <tr><td>Free cash flow</td><td>$2,884M</td><td>—</td><td>—</td><td class="flat">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote">All per-share figures are post-split (10-for-1 forward split effected November 14, 2025). Consensus operating income was not published in the coverage available at the time of writing. Revenue growth was the slowest in nearly three years — the deceleration, not the level, is the bear case in one line.</p>
+
+    <p>Growth was broad but unspectacular by region: UCAN revenue of $5,628M rose 11%, EMEA $4,107M rose 11%, LATAM $1,603M rose 17% and APAC $1,537M rose 12%. Retention was described as healthy in every region, with churn improved year over year globally and in the US, and better than forecast — a genuinely useful data point given the 2026 price increases in the US, Mexico and Spain landed without the churn response bears predicted. No membership or subscriber count was disclosed; Netflix stopped reporting subscriber numbers in the first half of 2025.</p>
+
+    <div class="chartcard">
+      <h3>After-hours reaction · Oct 20, 2026</h3>
+      <p class="big">A guide-down selloff, deepening through the evening</p>
+      <svg viewBox="0 0 640 190" width="100%" role="img" aria-label="NFLX price: closed at 68.69 dollars, fell to 65.35 after hours, then to 63.99 later in the evening">
+        <line x1="50" y1="30" x2="610" y2="30" stroke="var(--line)" stroke-dasharray="3 4"/>
+        <line x1="50" y1="80" x2="610" y2="80" stroke="var(--line)" stroke-dasharray="3 4"/>
+        <line x1="50" y1="130" x2="610" y2="130" stroke="var(--line)" stroke-dasharray="3 4"/>
+        <polyline points="90,42 300,96 520,146" fill="none" stroke="var(--accent-2)" stroke-width="2.5"/>
+        <circle cx="90" cy="42" r="5" fill="var(--accent-2)"/>
+        <circle cx="300" cy="96" r="5" fill="var(--accent-2)"/>
+        <circle cx="520" cy="146" r="5" fill="var(--accent-2)"/>
+        <text x="90" y="26" text-anchor="middle" font-size="13" fill="var(--ink)" font-weight="600">$68.69</text>
+        <text x="90" y="66" text-anchor="middle" font-size="11" fill="var(--muted)">Close · 4:00pm ET</text>
+        <text x="300" y="80" text-anchor="middle" font-size="13" fill="var(--ink)" font-weight="600">$65.35 · −4%+</text>
+        <text x="300" y="120" text-anchor="middle" font-size="11" fill="var(--muted)">After hours · ~4:47pm ET</text>
+        <text x="520" y="130" text-anchor="middle" font-size="13" fill="var(--ink)" font-weight="600">$63.99 · ~−7%</text>
+        <text x="520" y="170" text-anchor="middle" font-size="11" fill="var(--muted)">Later evening · new 52-wk low</text>
+      </svg>
+      <p class="tnote" style="margin:4px 0 10px">Snapshots as reported through the evening of Oct 20; the after-hours session had not ended when the latest figure was published. Options had implied a ±9.5% move into the print.</p>
+    </div>
+
+    <p>The stock came into the print already de-rated: down 1.66% on the day to $68.69 on 64.0M shares, down 26.7% year to date and roughly 40% over the past year. That context matters for the desk call — much of the disappointment was in the price before a single number printed, which is precisely why the response is a target trim rather than a downgrade.</p>
+  </section>
+
+  <!-- ============ 2. GUIDANCE ============ -->
+  <section id="guidance">
+    <p class="kicker">Section 02 · Outlook</p>
+    <h2>Guidance — Q4 misses, the year gets narrower</h2>
+    <p class="lede">The Q4 guide missed consensus on every comparable line. The full-year guide survived — barely — only because subscription revenue outperformed enough to cover the advertising shortfall.</p>
+    <p>For Q4 2026, Netflix guided revenue of <strong>$13,442M (+11.5%)</strong> against roughly $13.52B modelled, operating income of <strong>$3,500M</strong> for a <strong>26.0% margin</strong>, net income of <strong>$2,787M</strong> against roughly $3.07B expected, and EPS of <strong>$0.67</strong> against $0.73. The Q4 margin includes an approximately <strong>120bp drag from the recently announced headcount reductions</strong> — severance and restructuring costs for the roughly 6% workforce cut — which management frames as funding continued aggressive investment in high-impact areas.</p>
+
+    <div class="tblwrap">
+      <table>
+        <caption>Guidance — Q4 2026 and full-year 2026</caption>
+        <thead><tr><th>Item</th><th>Guide</th><th>Street / prior</th><th>Verdict</th></tr></thead>
+        <tbody>
+          <tr><td>Q4 revenue</td><td>$13,442M (+11.5%)</td><td>~$13.52B</td><td class="miss">Miss</td></tr>
+          <tr><td>Q4 operating income</td><td>$3,500M</td><td>—</td><td class="flat">—</td></tr>
+          <tr><td>Q4 operating margin</td><td>26.0%</td><td>—</td><td class="flat">Incl. ~120bp cut drag</td></tr>
+          <tr><td>Q4 net income</td><td>$2,787M</td><td>~$3.07B</td><td class="miss">Miss</td></tr>
+          <tr><td>Q4 diluted EPS</td><td>$0.67</td><td>$0.73</td><td class="miss">Miss −$0.06</td></tr>
+          <tr><td>FY26 revenue</td><td>$51.1B (+13%)</td><td>$51.0–51.4B range</td><td class="flat">0.2% below midpoint</td></tr>
+          <tr><td>FY26 operating margin</td><td>31.5%</td><td>31.5%</td><td class="flat">Held</td></tr>
+          <tr><td>FY26 free cash flow</td><td>~$12.0B</td><td>~$12.5B</td><td class="miss">Cut −$0.5B</td></tr>
+          <tr><td>FY26 ad revenue</td><td>~$2.7B</td><td>~$3.0B</td><td class="miss">Cut −~$0.3B</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>Two of the full-year changes deserve separating. The <strong>FCF cut to roughly $12.0B from $12.5B is mechanical</strong> — attributed primarily to a real-estate transaction expected to close in Q4 — and says little about the operating business; the cash content spend-to-amortisation ratio is still expected near 1.1x. The <strong>revenue pin at $51.1B</strong>, by contrast, is a composition story: subscriptions ran ahead of plan and advertising ran behind it, and the two roughly cancelled. A guide held together by the mature business covering for the growth business is not the same quality of "held" as the headline suggests.</p>
+    <p><strong>No 2027 guidance was given</strong> — no revenue, margin or FCF outlook for next year. The only dated 2027 items are operational: the ad tier launches in 15 new countries during 2027 (first tranche in March: nine EMEA markets plus Colombia, Peru and New Zealand), and the engagement report moves to annual publication each Q1 from 2027. For a stock whose debate is entirely about 2027 growth re-acceleration, the absence of any 2027 frame is itself information.</p>
+  </section>
+
+  <!-- ============ 3. ADVERTISING ============ -->
+  <section id="advertising">
+    <p class="kicker">Section 03 · The growth engine</p>
+    <h2>Advertising — the $3B promise becomes $2.7B</h2>
+    <p class="lede">This is the line that sold the stock. Advertising was the second growth engine — guided in Q2 to roughly double in 2026 to about $3B — and it will land nearer $2.7B.</p>
+
+    <div class="callout">
+      <div class="tag">Callout · The advertising slip</div>
+      <h3>A rollout problem, management says — not a demand problem</h3>
+      <p>The cut was attributed to "some ad product capabilities" rolling out "slightly slower than expected" — an execution and product-timing explanation, not an advertiser-demand one. The distinction matters for the target: a demand shortfall would argue for a multiple cut; a rollout slip argues for a one-year deferral of the ad ramp. We have taken the deferral, not the de-rating — but the burden of proof now sits with the March 2027 expansion tranche, and a second slip would change this read.</p>
+    </div>
+
+    <p>The build underneath the headline number is real, if slower than promised. In Q3 the Netflix Ads Suite extended programmatic access through globally available connected-TV marketplace deals, added partnerships with MercadoLibre in Latin America and AdForm in EMEA, and expanded in-DSP measurement across reach, frequency and attribution. The 15-country ad-tier expansion in 2027 materially widens the inventory base. What was <strong>not</strong> disclosed is equally notable: no Q3-only advertising revenue figure, and no updated ad-tier subscriber or monthly-active scale number anywhere in the release. The desk is being asked to underwrite an advertising trajectory whose two most useful calibration points — quarterly ad revenue and tier scale — remain undisclosed.</p>
+    <p>Subscription revenue outperforming is the offset, and it is a genuine one: pricing power plus membership growth carried the year. But mix matters to the multiple. Subscription growth at 11–12% is a mature, utility-like stream; the premium in this stock was always payment in advance for advertising becoming a second, faster stream. At ~$2.7B against a ~$51.1B revenue base, advertising is roughly 5% of the business — strategically central, arithmetically still small.</p>
+  </section>
+
+  <!-- ============ 4. ENGAGEMENT ============ -->
+  <section id="engagement">
+    <p class="kicker">Section 04 · Engagement &amp; content</p>
+    <h2>Engagement — the debate management itself opened</h2>
+    <p class="lede">Unusually, the shareholder letter raises the bears' favourite topic before the bears can: "We know there's some investor concern about our view hours growth."</p>
+    <p>The concern is specific. View hours grew just <strong>+2% year over year in the first half of 2026</strong> (more than 97B hours), barely ahead of 2025's +1.5%, against World Cup and Winter Olympics competition. No global Q3 view-hours total was disclosed, and the What We Watched report now moves to annual publication from 2027 — which removes the datapoint quarterly, whatever the stated rationale of keeping focus on revenue and operating profit. Management's defence is coherence rather than growth: response to the 2026 price increases is consistent with prior adjustments, churn improved and beat forecast, and engagement quality and variety "remain healthy."</p>
+    <p><strong>India is the proof point the letter leads with</strong> — view hours up <strong>24% year over year</strong>, hours per member up low-to-mid single digits, the largest quarter ever for paid net additions in the market, and revenue up roughly 18% currency-neutral, powered by local originals including a first daily reality series that became the most-viewed title in India ever. The international engine plainly still works: non-English programming is now more than a third of all viewing, up from under 10% a decade ago, and Q3's biggest titles were led by <em>The Last House</em> at 91M views in its first 91 days.</p>
+    <p>The problem market is the home one. On the earnings call, Sarandos conceded: <strong>"We do need better execution in the U.S."</strong> Third-party estimates pointing to monthly US subscriber losses through 2026 were disputed by the company as unrepresentative — the estimates exclude wholesale bundles — but the direction of management's own language is not in dispute: a week before the print, Sarandos said publicly that "overall, we're not growing as fast as I want us to." The Q4 slate is the first test of the response: the biggest quarterly live slate to date (three NFL games including a Thanksgiving Eve game and a Christmas Day doubleheader, plus Fury vs. Joshua), the <em>Emily in Paris</em> series finale, <em>The Diplomat</em> S4, and the Fincher-directed, Tarantino-written <em>Cliff Booth</em> film.</p>
+
+    <div class="callout neutral">
+      <div class="tag">The reset behind the slate</div>
+      <h3>New content leadership, ~1,000 jobs cut — days before the print</h3>
+      <p>Roughly 6% of staff — about 1,000 jobs — were cut in the week before earnings, the deepest reduction since 2022, with the cost landing in Q4 guidance. The chief content officer and the film chief both departed; a former Disney/Fox executive, Peter Rice, takes over content. Bulls will call it decisive; bears will note that companies rarely restructure their creative leadership mid-flight when the slate is working. Either way, 2027's content output is now a new team's output, and that cuts both ways for visibility.</p>
+    </div>
+  </section>
+
+  <!-- ============ 5. CAPITAL ============ -->
+  <section id="capital">
+    <p class="kicker">Section 05 · Capital &amp; balance sheet</p>
+    <h2>Capital — a record buyback against a softer guide</h2>
+    <p class="lede">Whatever the debate about growth, the capital machine is not debatable: Q3 was the largest repurchase quarter in the company's history.</p>
+    <p>Netflix repurchased <strong>63.9M shares for $4.8B in Q3</strong>, topping Q2's $4.7B, with <strong>$22.3B of authorisation remaining</strong> after April's additional $25B approval. Cash and equivalents stood at <strong>$8,194M</strong> at September 30; gross debt was <strong>$15.3B</strong> (net debt roughly $7.1B), up about $1B in the quarter because a $1B bond was issued to pre-fund a $1B Q4 maturity — refinancing hygiene, not new leverage appetite. Capital allocation language was unchanged: reinvest organically and through selective M&amp;A, keep the balance sheet healthy, return the excess. Acquisitions were zero in Q3.</p>
+    <p>The buyback pace matters to the per-share math: at the after-hours price near $64, the remaining authorisation retires shares roughly 7% cheaper than the $68.69 close and far below where the year's repurchases were executed. A shrinking share count against flat-to-modest earnings growth is how EPS keeps compounding even in a deceleration year — the quiet support under the $80 target.</p>
+
+    <div class="callout neutral">
+      <div class="tag">Reading the 2026 accounts · Warner footnote</div>
+      <h3>Strip the $2.8B breakup fee before annualising anything</h3>
+      <p>The Warner Bros. Discovery contest ended in February 2026: Netflix declined to top the rival ~$111B bid, and the $2.8B breakup fee paid to Netflix sits in Q1 2026 other income ($2,852M that quarter), flattering nine-month net income of $12,348M and any trailing EPS built from it. There is no live Warner overhang — the deal is dead, the fee is banked, and the Q3 letter does not mention it. Any 2026 EPS annualisation that does not strip the fee out of Q1 materially overstates underlying earnings power. The residual issue is competitive, not financial: the Warner library now sits with a rival.</p>
+    </div>
+  </section>
+
+  <!-- ============ 6. STREET ============ -->
+  <section id="street">
+    <p class="kicker">Section 06 · Analyst reaction</p>
+    <h2>The Street — the cuts came before the print</h2>
+    <p class="lede">Sentiment had already turned. The notable target cuts landed in the days before the report, not after it — the Street de-rated Netflix into the print and the print did not argue back.</p>
+
+    <div class="tblwrap">
+      <table>
+        <caption>Street ratings &amp; price targets around the print</caption>
+        <thead><tr><th>Firm</th><th>Rating</th><th>Target</th><th>Timing</th></tr></thead>
+        <tbody>
+          <tr><td>BMO Capital</td><td>Outperform (held)</td><td>$125 · from $135</td><td>Pre-print, Oct 19</td></tr>
+          <tr><td>Wedbush</td><td>Outperform (held)</td><td>$90 · from $105</td><td>Pre-print, by Oct 20</td></tr>
+          <tr><td>HSBC</td><td>Downgraded</td><td>Not captured</td><td>Pre-print, ~Oct 5</td></tr>
+          <tr><td>Consensus average</td><td>—</td><td>~$88–93</td><td>Mid-Oct snapshots</td></tr>
+          <tr><td>Post-print changes</td><td colspan="2">None published as of the evening of Oct 20</td><td>See open questions</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="tnote">Pre-print targets are carried as reported in preview coverage; the BMO and Wedbush figures were not re-verified against the firms' own notes in this run. Even after their cuts, both firms' targets sit far above the after-hours price — the Street's disagreement with the tape is about timing, not direction.</p>
+
+    <p>The immediate published reaction framed the print the same way the market traded it: a beat that didn't matter against a guide that did. Buy-side comment on the record pointed to the same list the desk would write — soft engagement trends, decelerating revenue growth, a slower margin-expansion outlook, and the content-leadership changes. The bull read is equally concrete: margin expansion held for the full year at 31.5%, subscription revenue outperformed, churn beat forecast after price rises, India demonstrates the model can still accelerate, and a record buyback with $22.3B still authorised is retiring stock at de-rated prices.</p>
+
+    <div class="callout">
+      <div class="tag">Open questions · Read before acting on the Street table</div>
+      <h3>What is not yet known as of Tuesday evening, Oct 20</h3>
+      <p><strong>No formal post-print rating or price-target changes had been published as of the evening of October 20, 2026.</strong> Sell-side responses to the print would normally appear late tonight or pre-market on October 21 — after this report's window. Treat every target in the table above as a pre-print number. Also undisclosed and unverifiable tonight: any Q3-only advertising revenue figure, any updated ad-tier scale metric, paid-sharing and plan-mix detail, and a consensus operating-income figure for Q3 or Q4. Where this report is silent on a number, the number was not disclosed — it has not been estimated.</p>
+    </div>
+  </section>
+
+  <!-- ============ 7. VALUATION ============ -->
+  <section id="valuation">
+    <p class="kicker">Section 07 · Valuation &amp; the desk call</p>
+    <h2>Why the target goes to $80 — and why the rating survives</h2>
+    <p class="lede">The trim is arithmetic honesty: the ad ramp moves a year right, Q4 comes in below the modelled path, and the target follows the guide down. The Buy survives because the stock had already paid for most of this disappointment before the print.</p>
+    <p>Start from what the $88 target assumed: advertising roughly doubling toward $3B in 2026 on the way to a materially larger 2027, and low-teens revenue growth sustained. Tonight's print defers the first and dents the second — Q4 guided to +11.5% against +11.8% in Q3 and a full-year revenue pin 0.2% below the prior midpoint. Rolling the ad trajectory out a year and marking Q4 to guide takes fair value to <strong>$80</strong>, still <strong>+16.5%</strong> above the $68.69 reference close — and roughly +25% above the after-hours level near $64, if that is where the stock opens.</p>
+    <p>What holds the call up: a 31.5% full-year operating margin guide that did not move; operating income still guided to grow more than 20% in 2026; roughly $12B of free cash flow even after the real-estate-driven cut; a record buyback retiring stock into the de-rating; and a core subscription business that absorbed 2026 price increases with churn better than forecast. What caps conviction at 6 rather than 7: both growth engines decelerated simultaneously, US execution is conceded to be lagging, view-hours disclosure is being reduced just as it becomes the central debate, and there is no 2027 guidance to underwrite against. On the desk's conviction-anchored scale, 6/10 with 10%+ upside is a Buy — a measured one.</p>
+    <ul>
+      <li><strong>Position:</strong> hold the 500 shares through the print aftermath. The pre-print stance — hold through Q3 — is unchanged in direction; the position was sized for exactly this volatility.</li>
+      <li><strong>No add into the washout.</strong> An after-hours guide-down in a stock with an open engagement debate is not a staged-entry trigger; the desk wants the October 21 analyst resets and at least one regular session of price discovery first.</li>
+      <li><strong>Trim staging sits well above the market.</strong> With the target at $80, any trim discipline belongs in the high-$70s to $80 zone on a recovery, not anywhere near the mid-$60s.</li>
+      <li><strong>Next checkpoint:</strong> Q4 results in January — ad revenue trajectory language, any 2027 frame, and the first slate under the new content leadership.</li>
+    </ul>
+  </section>
+
+  <!-- ============ 8. RISKS ============ -->
+  <section id="risks">
+    <p class="kicker">Section 08 · Risks</p>
+    <h2>What would change the call</h2>
+    <ul>
+      <li><strong>A second advertising slip.</strong> The $2.7B read rests on the rollout-timing explanation. If the March 2027 expansion tranche slips, or 2027 ad commentary guides flat, the deferral thesis fails and the target — and likely the rating — comes down.</li>
+      <li><strong>View hours go negative.</strong> The first annual engagement report (Q1 2027) is now a binary event. Hours growth at or below zero, against a growing member base, would confirm the saturation bear case.</li>
+      <li><strong>US deterioration becomes measurable.</strong> Management has conceded execution, not yet outcomes. Evidence that US churn or net additions are worsening — rather than merely flat — breaks the "healthy engagement" defence.</li>
+      <li><strong>Reset execution risk.</strong> A new content chief and ~1,000 departures can disrupt a slate pipeline for quarters. Weak Q4 content performance — the biggest live slate to date is the first test — would compound the guide-down.</li>
+      <li><strong>Competitive structure.</strong> The Warner library now sits with a stronger combined rival; if that shows up in engagement share rather than just headlines, the international growth offset gets harder.</li>
+      <li><strong>To the upside:</strong> a clean Q4 ad re-acceleration signal, 2027 guidance at the January print above the deferred path, or buyback execution at de-rated prices compounding EPS faster than modelled — any of these argues the trim was too cautious.</li>
+    </ul>
+  </section>
+
+  <!-- ============ APPENDIX ============ -->
+  <div class="appendix" id="appendix">
+    <p class="kicker">Appendix</p>
+    <h2>Sources</h2>
+    <p>All figures in this report are drawn from the sources below. Company-reported figures are from the Q3 2026 shareholder letter; consensus, reaction and pre-print analyst items are as published by the outlets listed on October 20, 2026, except where a source is dated otherwise.</p>
+    <ol>
+      <li>Netflix, Inc. — Q3 2026 Shareholder Letter, October 20, 2026. <a href="https://s22.q4cdn.com/959853165/files/doc_financials/2026/q3/FINAL-Q3-26-Shareholder-Letter.pdf">https://s22.q4cdn.com/959853165/files/doc_financials/2026/q3/FINAL-Q3-26-Shareholder-Letter.pdf</a></li>
+      <li>Netflix, Inc. — Q2 2026 Shareholder Letter (prior guidance baseline), July 16, 2026. <a href="https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf">https://s22.q4cdn.com/959853165/files/doc_financials/2026/q2/FINAL-Q2-26-Shareholder-Letter.pdf</a></li>
+      <li>Netflix Investor Relations — company profile and October 20, 2026 closing price data. <a href="https://ir.netflix.net/ir-overview/profile/default.aspx">https://ir.netflix.net/ir-overview/profile/default.aspx</a></li>
+      <li>Investor's Business Daily — "Netflix Stock Falls On Mixed Q3 Results, Q4 Guide Down," updated October 20, 2026. <a href="https://www.investors.com/news/technology/netflix-stock-nflx-q3-2026-earnings-report/">https://www.investors.com/news/technology/netflix-stock-nflx-q3-2026-earnings-report/</a></li>
+      <li>AFP / Bloomberg via Yahoo Finance — "Netflix shares drop on slowing engagement, revenue growth," October 20, 2026. <a href="https://finance.yahoo.com/media-advertising/articles/netflix-shares-drop-slowing-engagement-224135488.html">https://finance.yahoo.com/media-advertising/articles/netflix-shares-drop-slowing-engagement-224135488.html</a></li>
+      <li>The Hollywood Reporter — "Netflix Beats Q3 Earnings Estimates But Braces Wall Street for 2026 Ad Sales Whiff," October 20, 2026. <a href="https://www.hollywoodreporter.com/business/business-news/netflix-q3-2026-earnings-ad-sales-stock-decline-continues-1236735383/">https://www.hollywoodreporter.com/business/business-news/netflix-q3-2026-earnings-ad-sales-stock-decline-continues-1236735383/</a></li>
+      <li>Deadline — "Netflix Stock Falls Despite Solid Q3 Results On Lowered Advertising Guidance, Disappointing Revenue Outlook," October 20, 2026. <a href="https://deadline.com/2026/10/netflix-q3-2026-earnings-layoffs-streaming-1237168825/">https://deadline.com/2026/10/netflix-q3-2026-earnings-layoffs-streaming-1237168825/</a></li>
+      <li>Reuters — "Netflix issues weak fourth-quarter forecast as company seeks to kick-start growth," October 20, 2026. <a href="https://www.reuters.com/business/media-telecom/netflix-issues-weak-fourth-quarter-forecast-company-seeks-kick-start-growth-2026-10-20/">https://www.reuters.com/business/media-telecom/netflix-issues-weak-fourth-quarter-forecast-company-seeks-kick-start-growth-2026-10-20/</a></li>
+      <li>Variety — "Netflix Says Paramount Has Paid $2.8 Billion Breakup Fee for Warner Bros. Discovery Deal," February 27, 2026. <a href="https://variety.com/2026/tv/news/paramount-paid-netflix-2-8-billion-breakup-fee-warner-bros-1236674986/">https://variety.com/2026/tv/news/paramount-paid-netflix-2-8-billion-breakup-fee-warner-bros-1236674986/</a></li>
+      <li>CNBC — "Netflix posts third-quarter earnings beat, but shares fall on advertising and revenue guidance," October 20, 2026 (headline and consensus figures as published). <a href="https://www.cnbc.com/2026/10/20/netflix-nflx-earnings-q3-2026.html">https://www.cnbc.com/2026/10/20/netflix-nflx-earnings-q3-2026.html</a></li>
+    </ol>
+    <p class="disclaimer">Prepared for internal portfolio use. This report is an analytical summary of publicly reported results and published commentary as of the evening of October 20, 2026; it is not investment advice to any other party. Figures marked as consensus, targets or third-party estimates are as reported by the sources above and carry the caveats noted in the body of this report.</p>
+  </div>
+
+</div>
+
+<script>
+  (function(){
+    var root=document.documentElement;
+    var btn=document.getElementById('themeBtn');
+    function effective(){
+      var t=root.getAttribute('data-theme');
+      if(t==='dark'||t==='light')return t;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    }
+    btn.addEventListener('click',function(){
+      root.setAttribute('data-theme',effective()==='dark'?'light':'dark');
+    });
+    document.getElementById('pdfBtn').addEventListener('click',function(){window.print();});
+  })();
+</script>
+</body>
+</html>

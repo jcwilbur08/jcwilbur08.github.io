@@ -1,0 +1,615 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="data:," />
+    <title>Meta Platforms (META) — Q3 2026 Post-Earnings Report — October 21, 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600;6..72,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <style>
+      :root, :root[data-theme="light"] {
+        --paper:#f4f7f8; --surface:#ffffff; --surface2:#eef4f4;
+        --ink:#12242a; --muted:#4c6167; --faint:#7b8d92;
+        --line:#d9e2e4; --line2:#c3d2d4;
+        --navy:#0b2634; --teal:#0d8e86; --teal-deep:#087f7a; --gold:#b9822e;
+        --soft-teal:#e8f6f3; --soft-gold:#fbf3e3; --soft-red:#fbeeee;
+        --red:#a83a41; --green:#1e7a4c;
+        --cover-a:#061b27; --cover-b:#0c4a6e; --cover-c:#0d8e86;
+        --shadow:0 14px 40px rgba(13,42,50,.10);
+        color-scheme: light;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) {
+          --paper:#091418; --surface:#102126; --surface2:#14282e;
+          --ink:#eef7f5; --muted:#b6c8c9; --faint:#8ea1a3;
+          --line:#2a3f44; --line2:#3a545a;
+          --navy:#0b2634; --teal:#72e7d4; --teal-deep:#3ec9bc; --gold:#e7b458;
+          --soft-teal:#112f2f; --soft-gold:#342b1c; --soft-red:#382226;
+          --red:#e08a90; --green:#7fd6a4;
+          --cover-a:#04141d; --cover-b:#0a3f5e; --cover-c:#0d8e86;
+          --shadow:0 14px 40px rgba(0,0,0,.35);
+          color-scheme: dark;
+        }
+      }
+      :root[data-theme="dark"] {
+        --paper:#091418; --surface:#102126; --surface2:#14282e;
+        --ink:#eef7f5; --muted:#b6c8c9; --faint:#8ea1a3;
+        --line:#2a3f44; --line2:#3a545a;
+        --navy:#0b2634; --teal:#72e7d4; --teal-deep:#3ec9bc; --gold:#e7b458;
+        --soft-teal:#112f2f; --soft-gold:#342b1c; --soft-red:#382226;
+        --red:#e08a90; --green:#7fd6a4;
+        --cover-a:#04141d; --cover-b:#0a3f5e; --cover-c:#0d8e86;
+        --shadow:0 14px 40px rgba(0,0,0,.35);
+        color-scheme: dark;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0; background: var(--paper); color: var(--ink);
+        font-family: "IBM Plex Sans", -apple-system, "Segoe UI", sans-serif;
+        font-size: 16.5px; line-height: 1.62;
+        -webkit-font-smoothing: antialiased;
+      }
+      .wrap { max-width: 920px; margin: 0 auto; padding: 0 22px 90px; }
+      h1, h2, h3 { font-family: "Newsreader", Georgia, serif; font-weight: 600; line-height: 1.16; }
+      .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+      a { color: var(--teal-deep); }
+
+      /* ---------- toolbar ---------- */
+      .toolbar {
+        position: sticky; top: 0; z-index: 20;
+        display: flex; justify-content: flex-end; gap: 10px;
+        padding: 12px 0 10px; background: var(--paper);
+      }
+      .tbtn {
+        font: 600 13px "IBM Plex Sans", sans-serif; letter-spacing: .02em;
+        color: var(--ink); background: var(--surface);
+        border: 1px solid var(--line2); border-radius: 8px;
+        padding: 8px 14px; cursor: pointer;
+      }
+      .tbtn:hover { border-color: var(--teal); color: var(--teal-deep); }
+
+      /* ---------- cover ---------- */
+      .cover {
+        background: linear-gradient(128deg, var(--cover-a) 0%, var(--cover-b) 58%, var(--cover-c) 135%);
+        color: #eef7f5; border-radius: 14px;
+        padding: 46px 44px 40px; margin-top: 6px;
+        box-shadow: var(--shadow);
+      }
+      .cover .desk { font: 600 12.5px "IBM Plex Sans", sans-serif; letter-spacing: .22em; text-transform: uppercase; color: #9fd8cf; }
+      .cover h1 { font-size: clamp(34px, 6vw, 54px); margin: 14px 0 4px; color: #ffffff; }
+      .cover .tickerline { font: 500 17px "IBM Plex Mono", monospace; color: #cfe9e4; }
+      .cover .headline { font-family: "Newsreader", Georgia, serif; font-size: clamp(21px, 3.4vw, 27px); font-weight: 500; font-style: italic; color: #ffffff; margin: 22px 0 6px; max-width: 640px; line-height: 1.3; }
+      .cover .sub { color: #c4dcd9; max-width: 640px; margin: 0; font-size: 15.5px; }
+      .cover .dateline { margin-top: 26px; padding-top: 16px; border-top: 1px solid rgba(255,255,255,.22); display: flex; flex-wrap: wrap; gap: 8px 34px; font-size: 13.5px; color: #b9d4d0; }
+      .cover .dateline b { color: #ffffff; font-weight: 600; }
+
+      /* ---------- rating strip ---------- */
+      .strip {
+        display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px;
+        background: var(--line); border: 1px solid var(--line); border-radius: 12px;
+        overflow: hidden; margin-top: 18px; box-shadow: var(--shadow);
+      }
+      .strip .cell { background: var(--surface); padding: 16px 16px 14px; }
+      .strip .lab { font: 600 11px "IBM Plex Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
+      .strip .val { font-family: "Newsreader", Georgia, serif; font-size: 27px; font-weight: 700; margin-top: 3px; line-height: 1.1; }
+      .strip .val small { font-size: 14px; font-weight: 500; color: var(--muted); }
+      .strip .note { font-size: 12.5px; color: var(--muted); margin-top: 3px; line-height: 1.4; }
+      .strip .up { color: var(--green); }
+      .posbar {
+        margin-top: 12px; background: var(--surface); border: 1px solid var(--line);
+        border-radius: 12px; padding: 13px 18px; font-size: 14.5px; color: var(--muted);
+      }
+      .posbar b { color: var(--ink); }
+
+      /* ---------- report map ---------- */
+      .map { margin-top: 40px; }
+      .map h2 { font-size: 24px; margin: 0 0 6px; }
+      .map ol { list-style: none; margin: 10px 0 0; padding: 0; counter-reset: m; }
+      .map li { border-top: 1px solid var(--line); }
+      .map li:last-child { border-bottom: 1px solid var(--line); }
+      .map a {
+        display: flex; align-items: baseline; gap: 14px; padding: 10px 4px;
+        text-decoration: none; color: var(--ink); font-weight: 500;
+      }
+      .map a:hover { color: var(--teal-deep); }
+      .map .n { font: 600 13px "IBM Plex Mono", monospace; color: var(--teal-deep); min-width: 24px; }
+      .map .d { margin-left: auto; font-size: 13px; color: var(--faint); font-weight: 400; text-align: right; }
+
+      /* ---------- sections ---------- */
+      section { margin-top: 56px; }
+      .kicker { font: 600 12px "IBM Plex Sans", sans-serif; letter-spacing: .2em; text-transform: uppercase; color: var(--teal-deep); margin: 0 0 8px; }
+      section h2 { font-size: clamp(25px, 4vw, 32px); margin: 0 0 14px; }
+      section p { margin: 0 0 14px; }
+      section p.lede { font-size: 18px; line-height: 1.6; }
+      strong { font-weight: 600; }
+      .pos { color: var(--green); font-weight: 600; }
+      .neg { color: var(--red); font-weight: 600; }
+
+      .statgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 20px 0 6px; }
+      .stat { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 15px; }
+      .stat .v { font-family: "Newsreader", Georgia, serif; font-size: 24px; font-weight: 700; line-height: 1.1; }
+      .stat .l { font-size: 12.5px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+      .callout { border-radius: 12px; padding: 20px 22px; margin: 22px 0; }
+      .callout h3 { margin: 0 0 8px; font-size: 19px; }
+      .callout p:last-child { margin-bottom: 0; }
+      .callout.warn { background: var(--soft-gold); border: 1px solid var(--gold); }
+      .callout.teal { background: var(--soft-teal); border: 1px solid var(--teal); }
+      .callout.red { background: var(--soft-red); border: 1px solid var(--red); }
+      .callout .tag { font: 700 11px "IBM Plex Sans", sans-serif; letter-spacing: .16em; text-transform: uppercase; display: block; margin-bottom: 8px; }
+      .callout.warn .tag { color: var(--gold); }
+      .callout.teal .tag { color: var(--teal-deep); }
+      .callout.red .tag { color: var(--red); }
+
+      blockquote {
+        margin: 18px 0; padding: 4px 0 4px 20px; border-left: 3px solid var(--teal);
+        font-family: "Newsreader", Georgia, serif; font-size: 19px; font-style: italic; line-height: 1.45;
+      }
+      blockquote .who { display: block; margin-top: 8px; font-family: "IBM Plex Sans", sans-serif; font-style: normal; font-size: 13px; font-weight: 600; letter-spacing: .05em; color: var(--muted); }
+
+      /* tables */
+      .tblwrap { margin: 18px 0 8px; }
+      table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; font-size: 14.5px; }
+      caption { text-align: left; font: 600 12px "IBM Plex Sans", sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); padding: 0 0 8px; }
+      th, td { padding: 10px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+      thead th { border-top: none; background: var(--surface2); font-size: 12.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); text-align: left; }
+      td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+      td:first-child { font-weight: 500; }
+      tr.total td { font-weight: 700; background: var(--surface2); }
+      .tblnote { font-size: 13px; color: var(--muted); margin-top: 8px; }
+
+      /* timeline */
+      .timeline { list-style: none; margin: 20px 0 4px; padding: 0; }
+      .timeline li { position: relative; padding: 0 0 20px 118px; }
+      .timeline li::before { content: ""; position: absolute; left: 96px; top: 6px; bottom: -2px; width: 2px; background: var(--line2); }
+      .timeline li:last-child::before { display: none; }
+      .timeline li::after { content: ""; position: absolute; left: 90px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--teal); border: 2px solid var(--paper); }
+      .timeline .when { position: absolute; left: 0; top: 0; width: 82px; font: 600 12.5px "IBM Plex Mono", monospace; color: var(--teal-deep); text-align: right; line-height: 1.45; }
+      .timeline .what b { display: block; font-size: 15.5px; }
+      .timeline .what span { font-size: 14px; color: var(--muted); }
+
+      .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 18px 0; }
+      .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; }
+      .panel h3 { margin: 0 0 8px; font-size: 17.5px; }
+      .panel ul, section ul.plain { margin: 0; padding-left: 18px; }
+      .panel li, section ul.plain li { margin-bottom: 7px; font-size: 15px; }
+      section ul.plain { margin-bottom: 14px; }
+
+      figure.chart { margin: 22px 0; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 18px 10px; }
+      figure.chart figcaption { font: 600 12px "IBM Plex Sans", sans-serif; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); padding-bottom: 10px; }
+      figure.chart svg { width: 100%; height: auto; display: block; }
+      .axislab { font: 500 11.5px "IBM Plex Sans", sans-serif; fill: var(--muted); }
+      .barval { font: 600 13px "IBM Plex Mono", monospace; fill: var(--ink); }
+
+      .appendix { margin-top: 64px; border-top: 2px solid var(--line2); padding-top: 26px; }
+      .appendix h2 { font-size: 24px; }
+      .appendix ol { padding-left: 20px; }
+      .appendix li { font-size: 13.5px; color: var(--muted); margin-bottom: 9px; overflow-wrap: anywhere; }
+      .appendix li b { color: var(--ink); }
+      .foot { margin-top: 34px; font-size: 12.5px; color: var(--faint); line-height: 1.55; }
+
+      @media (max-width: 760px) {
+        .strip { grid-template-columns: repeat(2, 1fr); }
+        .strip .cell:last-child { grid-column: span 2; }
+        .statgrid { grid-template-columns: repeat(2, 1fr); }
+        .cols { grid-template-columns: 1fr; }
+        .cover { padding: 34px 24px 30px; }
+        .map .d { display: none; }
+        .timeline li { padding-left: 26px; }
+        .timeline .when { position: static; width: auto; text-align: left; margin-bottom: 2px; }
+        .timeline li::before { left: 6px; }
+        .timeline li::after { left: 0; }
+        /* stack tables */
+        table, thead, tbody, tr, th, td { display: block; }
+        thead { display: none; }
+        tr { border-top: 1px solid var(--line); padding: 8px 0; }
+        tr:first-child { border-top: none; }
+        td { border-top: none; padding: 4px 14px; text-align: left !important; white-space: normal; }
+        td.num { text-align: left; }
+        td::before { content: attr(data-label); display: block; font: 600 10.5px "IBM Plex Sans", sans-serif; letter-spacing: .1em; text-transform: uppercase; color: var(--faint); }
+        td:first-child::before { display: none; }
+        td:first-child { font-size: 15.5px; }
+      }
+      @media print {
+        .toolbar { display: none; }
+        body { background: #ffffff; font-size: 12.5pt; }
+        .wrap { max-width: none; padding: 0; }
+        .cover { box-shadow: none; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .strip, .stat, .panel, figure.chart { box-shadow: none; }
+        section { margin-top: 34px; page-break-inside: avoid; }
+        a { color: inherit; text-decoration: none; }
+        html { scroll-behavior: auto; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="toolbar">
+        <button class="tbtn" id="themeBtn" type="button" aria-label="Toggle dark and light theme">☾ Dark mode</button>
+        <button class="tbtn" id="pdfBtn" type="button">⤓ Download PDF</button>
+      </div>
+
+      <!-- ================= COVER ================= -->
+      <header class="cover">
+        <div class="desk">Equity Research · Post-Earnings Report</div>
+        <h1>Meta Platforms, Inc.</h1>
+        <div class="tickerline">NASDAQ: META · Communication Services · Internet Content &amp; Information</div>
+        <p class="headline">A clean revenue beat, a legal charge that broke the headline numbers — and a “split” that is really a new share class.</p>
+        <p class="sub">Q3 2026 results, the earnings call, and a full mechanical walk-through of the Class C stock dividend: what it is, what it is not, and what it means for holders of the Class A shares.</p>
+        <div class="dateline">
+          <span><b>Report date</b> · Wednesday, October 21, 2026</span>
+          <span><b>Results</b> · Reported after the close, October 21, 2026</span>
+          <span><b>Quarter</b> · Q3 2026, ended September 30, 2026</span>
+        </div>
+      </header>
+
+      <!-- ================= RATING STRIP ================= -->
+      <div class="strip" role="group" aria-label="Desk rating summary">
+        <div class="cell">
+          <div class="lab">Rating</div>
+          <div class="val">Buy</div>
+          <div class="note">Upgraded from Hold (Sep 27)</div>
+        </div>
+        <div class="cell">
+          <div class="lab">Conviction</div>
+          <div class="val">6<small> / 10</small></div>
+          <div class="note">Measured — capex &amp; legal overhangs cap it</div>
+        </div>
+        <div class="cell">
+          <div class="lab">12-Mo Price Target</div>
+          <div class="val">$850</div>
+          <div class="note">Raised from $800</div>
+        </div>
+        <div class="cell">
+          <div class="lab">Reference Price</div>
+          <div class="val">$697.52</div>
+          <div class="note">NASDAQ close, Oct 21, 2026 (+0.47%)</div>
+        </div>
+        <div class="cell">
+          <div class="lab">Implied Upside</div>
+          <div class="val up">+21.9%</div>
+          <div class="note">Stock rose ~3–5% after hours, to ~$723</div>
+        </div>
+      </div>
+      <div class="posbar"><b>Portfolio stance:</b> Hold the 63 shares (≈ $43,944 at the Oct 21 close). No trim as the price approaches the $850 target — the target was raised, not reached, and the position is a hold-and-compound holding at this size.</div>
+
+      <!-- ================= REPORT MAP ================= -->
+      <nav class="map" aria-label="Report map">
+        <h2>Report map</h2>
+        <ol>
+          <li><a href="#glance"><span class="n">01</span> The quarter at a glance <span class="d">The verdict in one page</span></a></li>
+          <li><a href="#print"><span class="n">02</span> The print: Q3 results vs the bar <span class="d">Reported vs ex-charge, segments, cash flow</span></a></li>
+          <li><a href="#split"><span class="n">03</span> The “split” that isn’t: the Class C dividend <span class="d">Mechanics, timeline, stapling, your 63 shares</span></a></li>
+          <li><a href="#call"><span class="n">04</span> Earnings call highlights <span class="d">Muse, Zuckerberg and Li, in their words</span></a></li>
+          <li><a href="#guidance"><span class="n">05</span> Guidance: what management put on the table <span class="d">Q4, capex, Reality Labs glidepath</span></a></li>
+          <li><a href="#valuation"><span class="n">06</span> Valuation and the street <span class="d">Multiples, targets, bull vs bear</span></a></li>
+          <li><a href="#stance"><span class="n">07</span> Portfolio stance <span class="d">What we do with the position</span></a></li>
+          <li><a href="#risks"><span class="n">08</span> Risks and open items <span class="d">Legal, cash flow, and what is not yet known</span></a></li>
+          <li><a href="#sources"><span class="n">09</span> Appendix: sources <span class="d">All references, in one place</span></a></li>
+        </ol>
+      </nav>
+
+      <!-- ================= 01 GLANCE ================= -->
+      <section id="glance">
+        <p class="kicker">Section 01 · The verdict</p>
+        <h2>A strong quarter wearing a disguise.</h2>
+        <p class="lede">Meta beat on the lines that describe the business — revenue, advertising pricing, and forward guidance — and missed on the lines a single legal charge was allowed to touch. Strip the $9.89 billion settlement charge out, and this was a clean beat with a raised guide. That is why the stock rose after hours despite a GAAP earnings-per-share figure that some data providers scored as a 30% miss.</p>
+        <p>The upgrade to <strong>Buy</strong> rests on three legs. First, the core ad engine compounded at +26% with pricing power — average price per ad rose 14% — before any Muse revenue exists. Second, management gave the enormous AI capital program a named, scaling consumer product: Muse already has more than 10 million users, and the call laid out an explicit path to monetize it sooner than Meta's usual playbook. Third, Reality Labs losses finally carry a quantified, declining glidepath — $18–19 billion in 2026, roughly $15 billion in 2027 — instead of an open-ended commitment.</p>
+        <p>Conviction is held at <strong>6/10</strong>, deliberately. Free cash flow was negative in the quarter, 2026 capex guidance moved up again to $135–145 billion with no 2027 figure offered, the legal docket added a separate $25 billion judgment the same day, and the new Class C structure — whatever its financing merits — entrenches founder control permanently. The target of $850 offers +21.9% from the close; that is a Buy on this desk's scale, not a Strong Buy.</p>
+        <div class="statgrid">
+          <div class="stat"><div class="v">$64.6B</div><div class="l">Q3 revenue, +26% YoY — a ~2% beat vs ~$63.3B consensus</div></div>
+          <div class="stat"><div class="v">$7.40</div><div class="l">Diluted EPS excluding the legal charge (GAAP: $3.83)</div></div>
+          <div class="stat"><div class="v">−$2.12B</div><div class="l">Q3 free cash flow — capex consumed all $32.8B of operating cash flow</div></div>
+          <div class="stat"><div class="v">3.64B</div><div class="l">Family daily active people in September, +3% YoY</div></div>
+          <div class="stat"><div class="v">$73–76B</div><div class="l">Q4 2026 revenue guidance — midpoint above ~$73.6B consensus</div></div>
+          <div class="stat"><div class="v">1 : 1</div><div class="l">Class C shares to be issued per Class A and Class B share held</div></div>
+          <div class="stat"><div class="v">&gt;10M</div><div class="l">Muse users; ~25% of those who set it up use it daily</div></div>
+          <div class="stat"><div class="v">66,775</div><div class="l">Headcount at Sep 30, 2026 — down 15% year over year</div></div>
+        </div>
+      </section>
+
+      <!-- ================= 02 THE PRINT ================= -->
+      <section id="print">
+        <p class="kicker">Section 02 · Q3 2026 results</p>
+        <h2>The print: read it ex-charge or read it wrong.</h2>
+        <p>Revenue of <strong>$64.601 billion, up 26%</strong> year over year (also +26% in constant currency), beat the ~$63.3 billion consensus by roughly 2%. Net income rose 264% to $9.860 billion — a flattering comparison, since the year-ago quarter's $2.709 billion was itself depressed by a one-time tax provision. The honest tension in the quarter sits lower down: operating income fell 37% and the operating margin halved to 20%, entirely because of the legal charge detailed in the callout below; excluding it, operating income of $22.88 billion was <em>above</em> the prior year's $20.535 billion.</p>
+
+        <div class="callout warn">
+          <span class="tag">Callout · The legal-charge distortion</span>
+          <h3>One line item explains the “miss.”</h3>
+          <p>In August 2026 Meta agreed with <strong>52 state attorneys general</strong> to resolve the teen mental-health and social-media litigation, for total payments of up to <strong>~$18.59 billion</strong> spread over roughly a decade, plus non-monetary remedies that include restricting certain features for users under 16. Q3 absorbed a <strong>$9.89 billion</strong> charge for it, which is why the general &amp; administrative line jumped to $14.857 billion from $3.512 billion a year ago. Reported EPS of $3.83 and the 24% tax rate are artifacts of that charge; ex-charge, EPS is $7.40 and the tax rate 17%.</p>
+          <p>It also explains why “beat or miss” headlines conflicted on the night: consensus providers had modeled the quarter differently — published EPS expectations ranged from $3.56 to $5.70 depending on whether and how the already-announced charge was treated. Against every published set, the ex-charge $7.40 is a beat. Judge the quarter on the ex-charge column.</p>
+        </div>
+
+        <div class="tblwrap">
+          <table>
+            <caption>Q3 2026 — reported vs consensus, and ex-charge</caption>
+            <thead>
+              <tr><th>Line</th><th class="num">Reported</th><th class="num">Ex-charge</th><th class="num">Consensus</th><th>Verdict</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Revenue</td><td class="num" data-label="Reported">$64.601B</td><td class="num" data-label="Ex-charge">—</td><td class="num" data-label="Consensus">~$63.3B</td><td data-label="Verdict"><span class="pos">Beat ~2%</span> (+26% YoY)</td></tr>
+              <tr><td>Diluted EPS</td><td class="num" data-label="Reported">$3.83</td><td class="num" data-label="Ex-charge">$7.40</td><td class="num" data-label="Consensus">$3.56–$5.70*</td><td data-label="Verdict"><span class="pos">Beat ex-charge</span> vs every set</td></tr>
+              <tr><td>Operating income</td><td class="num" data-label="Reported">$12.988B</td><td class="num" data-label="Ex-charge">$22.88B</td><td class="num" data-label="Consensus">—</td><td data-label="Verdict">−37% reported; above prior year ex-charge</td></tr>
+              <tr><td>Operating margin</td><td class="num" data-label="Reported">20%</td><td class="num" data-label="Ex-charge">~35%</td><td class="num" data-label="Consensus">—</td><td data-label="Verdict">Halved from 40% by the charge</td></tr>
+              <tr><td>Effective tax rate</td><td class="num" data-label="Reported">24%</td><td class="num" data-label="Ex-charge">17%</td><td class="num" data-label="Consensus">—</td><td data-label="Verdict">Charge-driven</td></tr>
+              <tr><td>Net income</td><td class="num" data-label="Reported">$9.860B</td><td class="num" data-label="Ex-charge">—</td><td class="num" data-label="Consensus">—</td><td data-label="Verdict">+264% vs a tax-depressed year-ago quarter</td></tr>
+              <tr><td>Capital expenditures</td><td class="num" data-label="Reported">$34.91B</td><td class="num" data-label="Ex-charge">—</td><td class="num" data-label="Consensus">—</td><td data-label="Verdict">Incl. finance-lease principal</td></tr>
+              <tr><td>Operating cash flow</td><td class="num" data-label="Reported">$32.786B</td><td class="num" data-label="Ex-charge">—</td><td class="num" data-label="Consensus">—</td><td data-label="Verdict">Up from $29.999B a year ago</td></tr>
+              <tr><td>Free cash flow</td><td class="num" data-label="Reported">−$2.120B</td><td class="num" data-label="Ex-charge">—</td><td class="num" data-label="Consensus">—</td><td data-label="Verdict"><span class="neg">Negative</span> — vs +$10.625B in Q3 2025</td></tr>
+              <tr><td>Cash + marketable securities</td><td class="num" data-label="Reported">$82.45B</td><td class="num" data-label="Ex-charge">—</td><td class="num" data-label="Consensus">—</td><td data-label="Verdict">At Sep 30, 2026</td></tr>
+              <tr><td>Buybacks / dividends paid</td><td class="num" data-label="Reported">$0 / $1.36B</td><td class="num" data-label="Ex-charge">—</td><td class="num" data-label="Consensus">—</td><td data-label="Verdict">Zero Class A repurchases in Q3 and in 9M 2026</td></tr>
+              <tr><td>Headcount</td><td class="num" data-label="Reported">66,775</td><td class="num" data-label="Ex-charge">—</td><td class="num" data-label="Consensus">—</td><td data-label="Verdict">−15% YoY</td></tr>
+            </tbody>
+          </table>
+          <p class="tblnote">* Published EPS consensus sets disagreed materially on the night (see callout). Revenue consensus was consistent at ~$63.3–63.4B. Ex-charge figures are company-calculated adjustments for the $9.89B legal charge.</p>
+        </div>
+
+        <p><strong>Segments.</strong> Advertising remains the whole story: $63.061 billion of the $64.158 billion Family of Apps total, with impressions up 10% and average price per ad up 14% — growth that was price-led as well as volume-led. Family of Apps operating income of $17.117 billion absorbed the legal charge and still funded everything else. Reality Labs lost $4.129 billion on just $443 million of revenue (down 6% year over year) — a slightly smaller loss than the year-ago $4.432 billion, on slightly less revenue.</p>
+
+        <div class="tblwrap">
+          <table>
+            <caption>Segment detail — Q3 2026</caption>
+            <thead>
+              <tr><th>Segment</th><th class="num">Revenue</th><th class="num">Q3 2025 rev.</th><th class="num">Operating income (loss)</th><th class="num">Q3 2025 op. inc.</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Advertising</td><td class="num" data-label="Revenue">$63.061B</td><td class="num" data-label="Q3 2025 rev.">$50.082B</td><td class="num" data-label="Operating income">—</td><td class="num" data-label="Q3 2025 op. inc.">—</td></tr>
+              <tr><td>Other (Family of Apps)</td><td class="num" data-label="Revenue">$1.097B</td><td class="num" data-label="Q3 2025 rev.">$0.690B</td><td class="num" data-label="Operating income">—</td><td class="num" data-label="Q3 2025 op. inc.">—</td></tr>
+              <tr class="total"><td>Family of Apps</td><td class="num" data-label="Revenue">$64.158B</td><td class="num" data-label="Q3 2025 rev.">$50.772B</td><td class="num" data-label="Operating income">$17.117B</td><td class="num" data-label="Q3 2025 op. inc.">$24.967B</td></tr>
+              <tr><td>Reality Labs</td><td class="num" data-label="Revenue">$443M</td><td class="num" data-label="Q3 2025 rev.">$470M</td><td class="num" data-label="Operating income">−$4.129B</td><td class="num" data-label="Q3 2025 op. inc.">−$4.432B</td></tr>
+              <tr class="total"><td>Total company</td><td class="num" data-label="Revenue">$64.601B</td><td class="num" data-label="Q3 2025 rev.">$51.242B</td><td class="num" data-label="Operating income">$12.988B</td><td class="num" data-label="Q3 2025 op. inc.">$20.535B</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <figure class="chart">
+          <figcaption>Free cash flow — the capex bill now exceeds the cash machine's quarterly output</figcaption>
+          <svg viewBox="0 0 640 210" role="img" aria-label="Bar chart of Meta free cash flow: plus 10.63 billion dollars in Q3 2025, plus 0.78 billion in Q2 2026, minus 2.12 billion in Q3 2026">
+            <line x1="70" y1="118" x2="610" y2="118" stroke="var(--line2)" stroke-width="1.5" />
+            <rect x="120" y="20" width="90" height="98" rx="4" fill="var(--teal)" />
+            <text class="barval" x="165" y="12" text-anchor="middle">+$10.63B</text>
+            <rect x="290" y="111" width="90" height="7" rx="3" fill="var(--teal)" opacity="0.65" />
+            <text class="barval" x="335" y="103" text-anchor="middle">+$0.78B</text>
+            <rect x="460" y="118" width="90" height="20" rx="4" fill="var(--red)" />
+            <text class="barval" x="505" y="156" text-anchor="middle">−$2.12B</text>
+            <text class="axislab" x="165" y="182" text-anchor="middle">Q3 2025</text>
+            <text class="axislab" x="335" y="182" text-anchor="middle">Q2 2026</text>
+            <text class="axislab" x="505" y="182" text-anchor="middle">Q3 2026</text>
+          </svg>
+        </figure>
+        <p><strong>Cash flow is the bear's best exhibit.</strong> Meta generated $32.786 billion of operating cash flow and still printed negative free cash flow, because $34.91 billion of capex (property and equipment purchases of $33.942 billion plus finance-lease principal) consumed more than all of it. A year ago the same quarter produced +$10.625 billion of free cash flow. The balance sheet is not the constraint — $82.45 billion of cash and marketable securities — but the direction of travel is: capital returns are currently dividend-only, with zero buybacks executed in Q3 or across the first nine months of 2026.</p>
+        <p><strong>Market reaction.</strong> META closed the regular session at $697.52, up 0.47%, then rose in steps through the evening — roughly +3% to $723 in early after-hours reporting, with later snapshots above +5%. The read-through from the coverage was consistent: investors looked through the disclosed one-off charge, credited the Q4 guidance beat, and paid up for the first concrete Muse monetization story attached to the capex program.</p>
+      </section>
+
+      <!-- ================= 03 THE SPLIT ================= -->
+      <section id="split">
+        <p class="kicker">Section 03 · The share-structure change</p>
+        <h2>The “split” that isn’t: a new Class C, paid as a stock dividend.</h2>
+        <p class="lede">Headlines called it a 2-for-1 stock split. It is not one — not in the conventional sense of the same share class dividing into more of itself. What Meta actually did is more consequential and more permanent: it created an entirely new, publicly listed, <strong>non-voting Class C common stock</strong>, and declared a one-time <strong>stock dividend of one Class C share for every Class A share and every Class B share</strong> held. Meta's own language is careful — after the dividend is paid, the company expects the Class A price to <em>“reflect the effect of a two-for-one stock split.”</em> The price effect resembles a split. The instrument does not.</p>
+
+        <div class="callout teal">
+          <span class="tag">Explainer · Class C in sixty seconds</span>
+          <h3>Same economics, no vote, new currency.</h3>
+          <p>Every holder ends up with a <strong>pair</strong>: the voting share they already own, plus one new non-voting Class C share representing an equal slice of the same underlying economics. Aggregate shares outstanding roughly double (about 2.55 billion existing shares spawn an equal number of Class C). <strong>Voting power does not change at all</strong> — Class C carries no vote, Class A keeps its one vote, Class B keeps its super-voting rights. The dividend itself <strong>raises no cash</strong> and changes no one's proportional claim on the company.</p>
+          <p>What it creates is a <em>currency</em>. From January, Meta can pay employees, fund acquisitions, and raise capital by issuing Class C — raising money for the AI build-out without issuing a single new voting share and therefore <strong>without diluting Mark Zuckerberg's voting control by one basis point</strong>. That, not retail accessibility, is the stated purpose: capital raising, employee compensation, potential acquisitions, and other general corporate purposes, at “the scale of investment required to compete… amidst the AI transformation.”</p>
+        </div>
+
+        <h3 style="font-size:20px; margin:24px 0 4px;">How it unfolds — the mechanics timeline</h3>
+        <ol class="timeline">
+          <li><span class="when">OCT 19<br />2026</span><div class="what"><b>Board approves the recapitalization</b><span>On the unanimous recommendation of a special committee of independent directors, the board approved the amended and restated charter creating non-voting Class C stock (par value $0.000006) and declared the one-time 1-for-1 Class C stock dividend, contingent on the charter taking effect.</span></div></li>
+          <li><span class="when">OCT 20<br />2026</span><div class="what"><b>Shareholder approval by written consent</b><span>The charter was approved by written consent — in practice, through Zuckerberg's voting control, with no public vote. Meta and Zuckerberg signed the Founder Alignment Agreement governing his Class C shares.</span></div></li>
+          <li><span class="when">OCT 21<br />2026</span><div class="what"><b>Announced with Q3 results</b><span>The Class C establishment was announced in the Q3 press release and detailed in the Form 8-K filed the same day. Class A continues to trade on Nasdaq as META; Meta intends to qualify Class C for Nasdaq listing on issuance.</span></div></li>
+          <li><span class="when">TBD</span><div class="what"><b>Record date — not yet set</b><span>The board will set the record date by later action. Anyone holding Class A or Class B on that date receives the dividend. The Class C ticker symbol has also not yet been announced.</span></div></li>
+          <li><span class="when">JAN 19<br />2027</span><div class="what"><b>Restated charter becomes effective</b><span>The Class C class legally comes into existence on this date.</span></div></li>
+          <li><span class="when">BY ~JAN 26<br />2027</span><div class="what"><b>Payment / distribution</b><span>Under the Founder Alignment Agreement, the dividend is paid no later than five business days after effectiveness — approximately January 26, 2027. From payment, expect the Class A price, on its own, to trade at roughly half its pre-dividend level if Class C trades near parity — Meta's stated “effect of a two-for-one stock split.” Whether Class C trades at a discount or premium to Class A is a market outcome Meta does not predict.</span></div></li>
+        </ol>
+
+        <h3 style="font-size:20px; margin:24px 0 10px;">The founder terms: stapling, and the repeat-dividend ratchet</h3>
+        <p>Two features deserve more attention than they will get in split headlines.</p>
+        <p><strong>Stapling.</strong> Of the Class C shares Zuckerberg's holder group receives, only 20% are freely saleable. The other <strong>80% are “stapled”</strong>: a stapled share generally cannot be sold unless the group also sells a matching voting share (or converts Class B to Class A) alongside it. Stapled shares are released at <strong>2.5% of the original grant per quarter — full release takes 32 qualifying quarters, eight years</strong> — and only in quarters where Zuckerberg remains full-time on the executive team or as executive chair. He also committed, while that condition holds, to remain resident in California or Meta's headquarters jurisdiction for eight years. The design intent is alignment: his new liquidity is metered out only while he stays and leads.</p>
+        <p><strong>The ratchet.</strong> The board has pre-agreed to declare <em>another</em> 1-for-1 Class C dividend — on all then-outstanding A, B <em>and C</em> shares — each time two conditions are met together: Class C's 30-day average price reaches a successive doubling (2×, then 4×, then 8×…) of the Class A price on September 10, 2026, <strong>$580.60</strong>, and compound annual shareholder return from that date is at least 10%. One dividend per doubling, and none after Zuckerberg's death. In plain terms: if the stock performs, this “split” repeats — automatically, by formula, in non-voting stock. Two further parity protections were written in: if Meta buys back Class A, the board must use best efforts to repurchase at least an equal number of Class C shares contemporaneously; and the founder group may not take better per-share consideration than other holders of the same class in a merger or tender offer.</p>
+
+        <div class="cols">
+          <div class="panel">
+            <h3>What changes for you</h3>
+            <ul>
+              <li><strong>63 Class A shares → 63 Class A + 63 Class C</strong> on the payment date. Nothing to elect, nothing to file.</li>
+              <li><strong>Economics unchanged at issuance.</strong> The pair represents the same claim the 63 shares did before.</li>
+              <li><strong>Price optics change.</strong> Class A alone should trade near half its pre-dividend price; judge the position on the pair's combined value, not the Class A quote.</li>
+              <li><strong>Cost basis will be allocated</strong> across the two lines by relative market value at distribution — mechanics to confirm with the broker statement when it lands.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>What does not change</h3>
+            <ul>
+              <li><strong>Voting power</strong> — unchanged for every shareholder, by design.</li>
+              <li><strong>Ownership proportion</strong> of the company's economics at issuance.</li>
+              <li><strong>Cash</strong> — a stock dividend raises none; future Class C <em>issuance</em> is what would fund spending, and it would dilute economics (not votes).</li>
+              <li><strong>The desk target basis</strong> — the $850 target is stated on today's single Class A line and will need mechanical restatement across the pair in January.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p><strong>The honest caveats.</strong> Three things are genuinely unknown tonight and are flagged again in Section 08: the record date, the Class C ticker, and how index providers will treat a second non-voting line — no index treatment had been announced in any source available at report time, and any claim that Class C “joins the S&amp;P 500” is unverified. Also unverified: whether Class C trades at par with Class A. Non-voting lines frequently trade at a discount; if Class C opens at one, the pair's combined value — not either quote alone — is the number that matters.</p>
+      </section>
+
+      <!-- ================= 04 CALL ================= -->
+      <section id="call">
+        <p class="kicker">Section 04 · Earnings call highlights</p>
+        <h2>Muse was the call — everything else was supporting cast.</h2>
+        <p>Management used the call to convert an abstract capex debate into a product story. Muse, Meta's AI agent, launched alongside the company's first frontier model, Muse Wonder, out of Meta Superintelligence Labs — and the prepared remarks led with it:</p>
+        <blockquote>“We hit major milestones this quarter toward delivering personal superintelligence for everyone — including launching Muse and Muse Wonder, our first frontier model. Our investments are paying off, the core business is strong, and we're seeing velocity across the board.”<span class="who">Mark Zuckerberg · Prepared remarks</span></blockquote>
+        <p><strong>The traction numbers.</strong> Muse has <strong>more than 10 million users</strong>; roughly <strong>25% of people who set it up use it daily</strong>; shopping is a top activity, and <strong>over a quarter of engaged shopping users average purchases above $200</strong>. Zuckerberg cited an integration partner's reaction as evidence of unusual engagement:</p>
+        <blockquote>“Plaid told us that they hadn't seen activity like they're seeing with their connector on any other service before.”<span class="who">Mark Zuckerberg · On Muse's agentic shopping activity</span></blockquote>
+        <p><strong>The economics, stated unusually early.</strong> Meta normally lets products scale for years before discussing money. This time the monetization architecture — a percentage of commerce transacted on the platform, plus paid tiers for power users and advanced models — and the profitability claim came in the product's first quarter. The capacity and cost claims are the load-bearing ones for the capex debate:</p>
+        <blockquote>“On the compute side, we are building out the capacity to serve more than a billion people over the next few years… In the near term, Muse is very compute-intensive to run, but we expect to improve its cost efficiency by more than 10x in the next year, which will enable it to be profitable once the revenue lines are at scale.”<span class="who">Mark Zuckerberg · Q3 2026 call</span></blockquote>
+        <p>Zuckerberg went further: he expects Muse eventually to generate <strong>more revenue per user than the Family of Apps does today</strong> — a figure he put at <strong>“several hundreds of dollars annually”</strong> — and described Muse at scale, across billions of users, as <strong>“highly profitable.”</strong> He also sketched the next phase: a “Muse network” in which users' agents transact and coordinate with each other and with businesses' agents, rather than customers navigating websites — and tied Muse directly to the smart-glasses strategy. Treat the per-user revenue ambition as a multi-year aspiration, not a forecast; but note that management chose to stake it publicly in quarter one.</p>
+        <p><strong>The CFO's framing.</strong> Susan Li's prepared commentary anchored the AI spend in returns the core business is already booking:</p>
+        <blockquote>“Our AI investments are already delivering substantial incremental advertising revenue through stronger engagement, better recommendations, and more efficient monetization… While these investments will take longer to generate returns than those in our core business, the breadth of monetization opportunities and internal efficiencies gives us confidence in their long-term potential.”<span class="who">Susan Li, CFO · Outlook commentary</span></blockquote>
+        <p>Li also pointed to work on more efficient AI models — the supply-side counterpart to Zuckerberg's 10× cost-efficiency claim — and, on the Class C structure, noted it could serve employee compensation, consistent with the stated purposes. On regulation, the company's language stayed measured: continued monitoring of legal and regulatory matters, scrutiny on youth-related issues in several markets, and a number of youth-related trials scheduled in the coming months in the U.S. Specific call commentary on WhatsApp monetization, Threads, and Advantage+ metrics could not be verified from the reporting available on the night — the full transcript had not yet been posted — and this report does not fill those gaps.</p>
+        <p>The night's framing, in one headline: <strong>“Meta Gains on Muse Outlook, Flags Computing Crunch.”</strong> Both halves matter. The market is now funding the build-out against a named product with users and a revenue model — and management is simultaneously warning that compute, not demand, is the binding constraint.</p>
+      </section>
+
+      <!-- ================= 05 GUIDANCE ================= -->
+      <section id="guidance">
+        <p class="kicker">Section 05 · Guidance</p>
+        <h2>A guidance beat up top, a guidance raise at the bottom line of spending.</h2>
+        <p>Q4 revenue guidance of <strong>$73–76 billion</strong> brackets consensus with the midpoint, $74.5 billion, above the ~$73.6 billion street figure — the single most important number in the after-hours move. Below that, every spending line moved the wrong way for the bears and was explained the same way: FY2026 expenses were raised <em>solely</em> to absorb the legal charge, capex guidance narrowed to the top half of its range, and the one number the street most wanted — 2027 capex — was not given.</p>
+        <div class="tblwrap">
+          <table>
+            <caption>Guidance — as issued October 21, 2026</caption>
+            <thead>
+              <tr><th>Item</th><th>Guidance</th><th>Context</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Q4 2026 revenue</td><td data-label="Guidance"><strong>$73–76B</strong> (assumes ~1% FX headwind)</td><td data-label="Context">Midpoint $74.5B vs ~$73.6B consensus — beat at midpoint; implies ~+24% YoY</td></tr>
+              <tr><td>FY2026 total expenses</td><td data-label="Guidance"><strong>$175–179B</strong> (raised)</td><td data-label="Context">Raised specifically to incorporate the $9.9B Q3 legal charge</td></tr>
+              <tr><td>FY2026 operating income</td><td data-label="Guidance">Above 2025, ex-charge</td><td data-label="Context">“We continue to expect 2026 operating income to be above 2025 operating income,” excluding the charge</td></tr>
+              <tr><td>FY2026 capex</td><td data-label="Guidance"><strong>$135–145B</strong> (narrowed from $130–145B)</td><td data-label="Context">Incl. finance-lease principal; street expectation ~$139.8B sits inside the range</td></tr>
+              <tr><td>Reality Labs — FY2026 losses</td><td data-label="Guidance"><strong>$18–19B</strong></td><td data-label="Context">Down from ~$19.1B in 2025</td></tr>
+              <tr><td>Reality Labs — 2027 losses</td><td data-label="Guidance"><strong>~$15B</strong></td><td data-label="Context">Narrowing as investment is reallocated toward AI</td></tr>
+              <tr><td>Q4 2026 tax rate</td><td data-label="Guidance">15–17%</td><td data-label="Context">Absent changes to the tax landscape; Q3 printed 24% reported / 17% ex-charge</td></tr>
+              <tr><td>2027 capex</td><td data-label="Guidance"><strong>No figure given</strong></td><td data-label="Context">Budget still in development; company expects to “continue investing aggressively” — any specific 2027 number in circulation is not company guidance</td></tr>
+              <tr><td>2027 revenue</td><td data-label="Guidance">No full-year outlook</td><td data-label="Context">Qualitative only: positioned to “sustain strong overall revenue growth throughout 2027”</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>The Reality Labs glidepath is the quiet structural positive in this release. A segment that has consumed roughly $19 billion a year now has a two-step, on-the-record path down — $18–19 billion in 2026, ~$15 billion in 2027 — with the savings explicitly reallocated to AI rather than returned. Whether that reads as discipline or as moving the same spending to a different line depends on one's view of Muse's returns; either way, the open-ended era for this segment's losses has a stated end.</p>
+      </section>
+
+      <!-- ================= 06 VALUATION ================= -->
+      <section id="valuation">
+        <p class="kicker">Section 06 · Valuation and the street</p>
+        <h2>Twenty-three times for 26% growth — the argument is about 2027, not the multiple.</h2>
+        <p>At the $697.52 close (market value ~$1.78 trillion), META traded at <strong>23.0× FY2026 consensus EPS of $30.35</strong> and <strong>20.6× FY2027 consensus EPS of $33.80</strong> (FY2028: $39.29, 17.8×). Those are pre-print consensus compilations and will revise — both for the print itself and for how providers treat the legal charge in their EPS bases — but they frame the debate correctly: the stock is not expensive against its own growth rate; it is expensive against the risk that $135–145 billion a year of capex earns an inadequate return. Tonight, Muse is management's answer to that risk, and the market provisionally accepted it.</p>
+        <p><strong>Where the street stood into the print.</strong> No post-print rating or target changes had been published as of the evening of October 21 — the call had only just ended — so the honest street record is the pre-print week, which was uniformly constructive: five of the six major actions below <em>raised</em> targets into the number, to a range of $820–$920. This desk's $850 target sits inside that range, below JPMorgan's $920 high.</p>
+        <div class="tblwrap">
+          <table>
+            <caption>Street ratings and targets — all pre-print (Oct 14–19, 2026); no post-print changes published as of Oct 21 evening</caption>
+            <thead>
+              <tr><th>Firm</th><th>Analyst</th><th>Rating</th><th class="num">Target</th><th>Action</th><th>Date</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>JPMorgan</td><td data-label="Analyst">Doug Anmuth</td><td data-label="Rating">Overweight</td><td class="num" data-label="Target">$920</td><td data-label="Action">Maintained</td><td data-label="Date">Oct 15</td></tr>
+              <tr><td>Citigroup</td><td data-label="Analyst">Ronald Josey</td><td data-label="Rating">Buy</td><td class="num" data-label="Target">$895</td><td data-label="Action">Raised from $800</td><td data-label="Date">Oct 15</td></tr>
+              <tr><td>UBS</td><td data-label="Analyst">Stephen Ju</td><td data-label="Rating">Buy</td><td class="num" data-label="Target">$884</td><td data-label="Action">Raised from $715</td><td data-label="Date">Oct 14</td></tr>
+              <tr><td>Goldman Sachs</td><td data-label="Analyst">Eric Sheridan</td><td data-label="Rating">Buy</td><td class="num" data-label="Target">$860</td><td data-label="Action">Maintained</td><td data-label="Date">Oct 14</td></tr>
+              <tr><td>Guggenheim</td><td data-label="Analyst">Michael Morris</td><td data-label="Rating">Buy</td><td class="num" data-label="Target">$850</td><td data-label="Action">Raised from $700</td><td data-label="Date">Oct 14</td></tr>
+              <tr><td>Morgan Stanley</td><td data-label="Analyst">Brian Nowak</td><td data-label="Rating">Overweight</td><td class="num" data-label="Target">$820</td><td data-label="Action">Raised from $775</td><td data-label="Date">Oct 19</td></tr>
+            </tbody>
+          </table>
+          <p class="tblnote">All targets are per-share figures on the current single listed Class A line, set before the Class C dividend; if restated after the January 2027 distribution, they will mechanically need to reflect the two-line structure. No restated targets exist yet.</p>
+        </div>
+        <div class="cols">
+          <div class="panel">
+            <h3>The bull read</h3>
+            <ul>
+              <li>Revenue and Q4 guidance beat; the ad engine compounds at +26% with pricing power <em>before</em> Muse revenue.</li>
+              <li>Muse gives the capex a named product: &gt;10M users, daily-use retention, $200+ average purchases among engaged shoppers, a take-rate model, and a &gt;10× cost-efficiency roadmap.</li>
+              <li>Reality Labs losses have a declining, quantified glidepath for the first time.</li>
+              <li>Class C funds the AI build-out without a control fight; stapling ties the founder's liquidity to staying and performing.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>The bear read</h3>
+            <ul>
+              <li>Free cash flow is negative; capex consumed all $32.8B of operating cash flow, and 2027 spending is guided only as “aggressive.”</li>
+              <li>The AG settlement is ~$18.6B of real cash over a decade; youth trials continue; a separate $25B judgment landed the same day (Section 08).</li>
+              <li>Headcount is already down 15% — the easy efficiency offsets are spent.</li>
+              <li>Class C entrenches founder control and creates a permanent non-voting issuance currency: future sales dilute economics, and a governance discount is a live argument.</li>
+              <li>Pattern caution: META fell ~10% after Q2 and ~6% after Q1 on exactly these capex/EPS debates. Tonight the market chose the bull read; the debate is deferred, not settled.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= 07 STANCE ================= -->
+      <section id="stance">
+        <p class="kicker">Section 07 · Portfolio stance</p>
+        <h2>Hold the 63 shares. The upgrade is to the thesis, not to the trade size.</h2>
+        <p>The position — <strong>63 Class A shares, ≈ $43,944 at the October 21 close</strong> — is a hold at this size. The quarter strengthened the thesis (core compounding intact, Muse optionality now tangible, Reality Labs drag quantified and shrinking) without changing the two facts that argue against adding here: free cash flow is negative at the peak of the capex cycle, and the stock just re-rated ~3–5% after hours toward the low end of the street's target range.</p>
+        <ul class="plain">
+          <li><strong>Action:</strong> Hold. No add, no trim.</li>
+          <li><strong>Target discipline:</strong> No trim as the price approaches the $850 target. The target was raised from $800 on the strength of this print; proximity to it is not, by itself, a sell signal for a position of this size.</li>
+          <li><strong>January housekeeping:</strong> On the Class C payment date the holding becomes 63 Class A + 63 Class C. Judge the position thereafter on the pair's combined value. The $850 target, stated on today's single line, will be restated mechanically across the pair when the record and payment dates are set.</li>
+          <li><strong>What would change the call:</strong> a 2027 capex figure materially above the 2026 range without a matching Muse revenue disclosure; two consecutive quarters of negative free cash flow beyond Q3; or adverse development in the New Mexico judgment on appeal. Conversely, post-print street targets clustering above $900 with Muse monetization detail on the Q4 call would support revisiting conviction toward 7/10.</li>
+        </ul>
+      </section>
+
+      <!-- ================= 08 RISKS ================= -->
+      <section id="risks">
+        <p class="kicker">Section 08 · Risks and open items</p>
+        <h2>What could break this call — and what simply isn't known yet.</h2>
+        <div class="callout red">
+          <span class="tag">Risk · A second legal bomb, same day</span>
+          <h3>The $25 billion New Mexico judgment is separate from the settlement in the numbers.</h3>
+          <p>Hours before the results, a New Mexico judge ordered Meta to pay <strong>$25 billion in penalties</strong> over Cambridge Analytica, following a jury finding of more than 43 million violations; the theoretical maximum exposure had been roughly $220 billion. Meta plans to appeal. This is <em>not</em> part of the $18.59 billion attorneys-general settlement charged in Q3, and no provision for it is reflected in the figures in this report. It is the largest single contingent item on the name, and the appeal path — not the headline number — is what to watch.</p>
+        </div>
+        <ul class="plain">
+          <li><strong>Capex without an anchor.</strong> FY2026 capex guidance rose to $135–145B and no 2027 figure was offered. The entire Buy case assumes Muse's &gt;10× cost-efficiency claim and early monetization arrive roughly on schedule; slippage re-opens the ROI debate that cost the stock ~10% after Q2.</li>
+          <li><strong>Negative free cash flow.</strong> One quarter is a capex-timing story; a pattern is a thesis problem. Q4's print will show whether buybacks resume or stay at zero.</li>
+          <li><strong>Regulatory tail beyond the settlement.</strong> The AG settlement carries product remedies (including restrictions on features for under-16 users) and is partly contingent on other platforms' cooperation; further U.S. youth trials are scheduled in the coming months. No EU-specific Q3 disclosure was made, and none is assumed here.</li>
+          <li><strong>Governance.</strong> Class C makes founder control structurally permanent and creates a standing non-voting issuance currency. Future Class C sales dilute existing holders' economics. The stapling and leadership conditions mitigate the founder-alignment question; they do not answer the governance-discount question.</li>
+          <li><strong>Class C market unknowns.</strong> Whether Class C trades at par, a discount, or a premium to Class A — and how index providers treat the new line — will only be known in January. The position's value after payment is the pair's combined value, whichever way the spread opens.</li>
+        </ul>
+        <h3 style="font-size:20px; margin:22px 0 10px;">Open items — stated plainly</h3>
+        <ul class="plain">
+          <li><strong>No post-print analyst rating or target changes</strong> had been published as of the evening of October 21, 2026. The street table in Section 06 is pre-print (Oct 14–19) and is labeled as such; any “post-print” target quoted tonight is ahead of the published record.</li>
+          <li><strong>Class C record date and payment date are not yet set.</strong> Payment is bounded by the Founder Alignment Agreement to within five business days of the January 19, 2027 charter effectiveness (~January 26, 2027).</li>
+          <li><strong>Class C ticker symbol has not been announced.</strong></li>
+          <li><strong>The full earnings-call transcript had not been posted</strong> at report time; call highlights in Section 04 rest on live reporting of the call, and specific commentary on WhatsApp, Threads, and Advantage+ metrics could not be verified and is not asserted.</li>
+          <li><strong>After-hours pricing</strong> is reported as evening snapshots (+3% to more than +5%); no final after-hours close was available at report time.</li>
+        </ul>
+      </section>
+
+      <!-- ================= APPENDIX ================= -->
+      <section class="appendix" id="sources">
+        <p class="kicker">Appendix</p>
+        <h2>Sources</h2>
+        <p style="font-size:14px; color:var(--muted);">All sources were read on October 21, 2026. Primary documents — the earnings release and the SEC filing — anchor every reported figure, guidance item, and Class C mechanic in this report.</p>
+        <ol>
+          <li><b>Meta Platforms — “Meta Reports Third Quarter 2026 Results” (Q3 2026 earnings press release, Oct 21, 2026).</b> All reported financials, segment data, engagement and advertising metrics, CFO outlook and guidance, the Class C announcement, and the CEO's prepared statement. https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx — also via PR Newswire: https://www.prnewswire.com/news-releases/meta-reports-third-quarter-2026-results-302915964.html</li>
+          <li><b>SEC Form 8-K, Meta Platforms, Inc. (filed Oct 21, 2026; earliest event Oct 19, 2026), incl. Exhibit 10.1 (Founder Alignment Agreement) and Exhibit 99.1.</b> Recapitalization approvals, written consent, January 19, 2027 charter effectiveness, stapling terms, additional-dividend mechanics, buyback and takeover parity, payment timing. https://www.sec.gov/Archives/edgar/data/1326801/000162828026066700/meta-20261019.htm</li>
+          <li><b>Meta Investor Relations.</b> Earnings date confirmation (announced Oct 12, 2026) and call scheduling (Oct 21, 2026, 1:30 p.m. PT). https://investor.atmeta.com/home/default.aspx</li>
+          <li><b>TechCrunch — Sarah Perez, Oct 21, 2026.</b> Muse call detail and direct Zuckerberg quotations (users, daily use, commerce values, Plaid, capacity, cost efficiency, per-user revenue). https://techcrunch.com/2026/10/21/meta-says-muse-has-over-10m-users-with-shopping-a-top-activity/</li>
+          <li><b>Bloomberg — Meta Q3 earnings live blog, Oct 21, 2026.</b> Headline framing (“Meta Gains on Muse Outlook, Flags Computing Crunch”), Muse monetization timing, CFO commentary on model efficiency. https://www.bloomberg.com/news/live-blog/2026-10-21/meta-third-quarter-earnings-live-updates</li>
+          <li><b>Fortune — Amanda Gerut, Oct 21, 2026.</b> Consensus figures (Visible Alpha), after-hours reaction, settlement structure, New Mexico judgment detail, capex context. https://fortune.com/2026/10/21/meta-q3-earnings-mark-zuckerberg-capex-muse/</li>
+          <li><b>Forbes — Antonio Pequeño IV, Oct 21, 2026.</b> Stock-split framing, after-hours move to $723, Muse call summary, New Mexico judgment. https://www.forbes.com/sites/antoniopequenoiv/2026/10/21/meta-posts-64-billion-in-revenue-and-announces-stock-split-in-q3-earnings/</li>
+          <li><b>StockStory via Yahoo Finance — Radek Strnad, Oct 21, 2026.</b> Revenue and EPS consensus sets, margin and free-cash-flow comparisons, Q4 consensus, closing price $697.52 (+0.47%). https://finance.yahoo.com/markets/stocks/articles/meta-nasdaq-meta-q3-2026-200556055.html</li>
+          <li><b>Business Insider — Henry Chandonnet, Oct 21, 2026.</b> Capex detail and FY2026 capex consensus, after-hours reaction, prior-quarter reaction pattern, Muse monetization formulation. https://www.businessinsider.com/meta-capex-narrows-ai-agent-wars-quarter-3-earnings-2026-10</li>
+          <li><b>Deadline — Dade Hayes, Oct 21, 2026.</b> Stock-split framing, settlement remedies and attorneys-general detail, CFO regulatory remarks, Class C employee-compensation use. https://deadline.com/2026/10/meta-q3-2026-earnings-muse-ai-stock-split-1237170051/</li>
+          <li><b>Benzinga — Avi Kapoor, Oct 21, 2026 (pre-print), and Benzinga analyst-ratings records, Oct 14–19, 2026.</b> Pre-print consensus, Oct 20 close, and the street ratings/targets table (JPMorgan, Citigroup, UBS, Goldman Sachs, Guggenheim). https://www.benzinga.com/analyst-stock-ratings/price-target/26/10/62488771/meta-gears-up-for-q3-print-here-are-the-recent-forecast-changes-from-wall-streets-most-accurate-analysts</li>
+          <li><b>TipRanks / Markets Insider (ad-hoc news), Oct 19, 2026.</b> Morgan Stanley target raise (Brian Nowak, $775 → $820, Overweight maintained), via search index.</li>
+          <li><b>TGMCharts (FMP consensus compilation), as of the Oct 21, 2026 close.</b> Forward valuation: FY2026 consensus EPS $30.35 (23.0×), FY2027 $33.80 (20.6×), FY2028 $39.29; market capitalization ~$1.78 trillion. https://tgmcharts.com/stocks/META/forward-pe-ratio</li>
+          <li><b>CNBC — Meta Q3 2026 earnings live updates, Oct 21, 2026 (via search index).</b> CFO remarks on generative-AI advertising personalization. https://www.cnbc.com/2026/10/21/meta-earnings-q3-2026-live-updates.html</li>
+        </ol>
+        <p class="foot">Methodology note: “Ex-charge” figures are Meta's company-calculated adjustments excluding the $9.89 billion Q3 2026 legal charge recognized for the attorneys-general settlement. Consensus figures are provider-compiled and differ by source, as noted where it matters (notably EPS). Analyst targets in Section 06 are pre-print and stated on the pre-dividend Class A line. This report is an internal research document prepared for portfolio decision-making; it is not investment advice to any other party.</p>
+      </section>
+    </div>
+
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById('themeBtn');
+        function effectiveDark() {
+          var t = root.getAttribute('data-theme');
+          if (t === 'dark') return true;
+          if (t === 'light') return false;
+          return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        }
+        function sync() { btn.textContent = effectiveDark() ? '☀ Light mode' : '☾ Dark mode'; }
+        btn.addEventListener('click', function () {
+          root.setAttribute('data-theme', effectiveDark() ? 'light' : 'dark');
+          sync();
+        });
+        sync();
+        document.getElementById('pdfBtn').addEventListener('click', function () { window.print(); });
+      })();
+    </script>
+  </body>
+</html>
