@@ -338,7 +338,7 @@ function setSub(t){document.querySelectorAll('.footsub').forEach(function(el){el
 function addSub(t){document.querySelectorAll('.footsub').forEach(function(el){el.textContent+=t;});}
 async function loadHoldings(){
   let r;
-  try { r = await fetch('holdings.json'); }
+  try { r = await fetch('holdings.json?_=' + Date.now(), { cache: 'no-store' }); }
   catch(e){ throw new Error('fetch-failed'); }
   if(!r.ok) throw new Error('http-'+r.status);
   const d = await r.json();
