@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Amazon.com — Q3 2026 Earnings Report — October 29, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light dark;
+  --paper:#eef2f2; --surface:#ffffff; --ink:#12242a; --muted:#52676d; --faint:#7b8d92;
+  --line:#d9e2e4; --navy:#0b2634; --blue:#0c4a6e; --teal:#087f7a; --aqua:#72e7d4;
+  --lime:#b9e769; --gold:#e7b458; --red:#b23a42; --soft-teal:#e8f6f3; --soft-blue:#e9f2f7;
+  --soft-gold:#fbf3e3; --soft-red:#fbeeee; --shadow:0 18px 50px rgba(13,42,50,.10);
+  --cover1:#071f2c; --cover2:#0b4560; --cover3:#087c78;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#091418; --surface:#102126; --ink:#eef7f5; --muted:#b6c8c9; --faint:#8ea1a3;
+    --line:#2a3f44; --navy:#061b27; --blue:#0a3f5e; --teal:#0d8e86;
+    --soft-teal:#112f2f; --soft-blue:#102b38; --soft-gold:#342b1c; --soft-red:#3a2224;
+    --shadow:0 18px 50px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#091418; --surface:#102126; --ink:#eef7f5; --muted:#b6c8c9; --faint:#8ea1a3;
+  --line:#2a3f44; --navy:#061b27; --blue:#0a3f5e; --teal:#0d8e86;
+  --soft-teal:#112f2f; --soft-blue:#102b38; --soft-gold:#342b1c; --soft-red:#3a2224;
+  --shadow:0 18px 50px rgba(0,0,0,.28);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;font-size:16px;line-height:1.62}
+a{color:inherit}
+.report{width:min(1120px,100%);margin:0 auto;background:var(--surface);box-shadow:var(--shadow)}
+.cover{min-height:660px;padding:64px 76px 52px;display:flex;flex-direction:column;justify-content:space-between;color:#f7fffd;position:relative;overflow:hidden;background:linear-gradient(138deg,var(--cover1) 0%,var(--cover2) 44%,var(--cover3) 100%)}
+.cover:after{content:"";position:absolute;width:560px;height:560px;right:-220px;bottom:-270px;border:1px solid rgba(255,255,255,.18);border-radius:50%;box-shadow:0 0 0 68px rgba(255,255,255,.05),0 0 0 138px rgba(255,255,255,.035)}
+.cover-top,.cover-main,.cover-foot{position:relative;z-index:1}
+.cover-top{display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:.84rem;font-weight:700;letter-spacing:.06em;flex-wrap:wrap}
+.cover-top .type{padding:8px 12px;border:1px solid rgba(255,255,255,.42);border-radius:999px}
+.cover-main{max-width:840px;margin:56px 0}
+.company{font-size:clamp(3rem,8vw,6.6rem);font-weight:700;line-height:.9;letter-spacing:-.05em;margin:0 0 22px}
+.cover h1{font-family:"Libre Baskerville",serif;font-size:clamp(1.9rem,4.4vw,3.9rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 24px;max-width:780px;font-weight:400}
+.dek{font-size:clamp(1rem,1.6vw,1.2rem);max-width:720px;color:#d8f2ee;margin:0}
+.cover-foot{display:flex;justify-content:space-between;gap:36px;align-items:end;border-top:1px solid rgba(255,255,255,.22);padding-top:22px;flex-wrap:wrap}
+.cover-meta strong{display:block;font-size:1.05rem}.cover-meta span{display:block;color:#c9e7e3;font-size:.86rem}
+.cover-ticker{font-family:"Libre Baskerville",serif;font-size:2rem;font-weight:700;letter-spacing:-.04em}
+.rating-strip{display:grid;grid-template-columns:1.25fr repeat(4,1fr);background:#071c25;color:#fff}
+.rating-cell{padding:22px 24px;border-right:1px solid rgba(255,255,255,.12)}
+.rating-cell:last-child{border-right:0}
+.rating-cell span{display:block;color:#95bfc3;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:5px}
+.rating-cell strong{font-size:1.16rem;letter-spacing:-.02em}
+.rating-cell em{display:block;font-style:normal;color:#c9e7e3;font-size:.82rem;margin-top:3px}
+.rating-cell.primary{background:var(--lime);color:#10231d}
+.rating-cell.primary span{color:#31513e}
+.rating-cell.primary strong{font-size:1.5rem}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 76px;background:var(--surface);border-bottom:1px solid var(--line);flex-wrap:wrap;position:sticky;top:0;z-index:20}
+.toolbar .note{font-size:.82rem;color:var(--muted)}
+.toolbar .actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;background:var(--ink);color:var(--surface);padding:10px 15px;border-radius:8px;font-size:.84rem;font-weight:700;border:1px solid var(--ink);cursor:pointer;font-family:inherit}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btn svg{width:15px;height:15px;flex:none}
+.page{padding:58px 76px}
+.page + .page{border-top:1px solid var(--line)}
+.kicker{display:flex;align-items:center;gap:12px;color:var(--teal);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.kicker:before{content:"";width:36px;height:3px;background:var(--teal);flex:none}
+h2{font-family:"Libre Baskerville",serif;font-size:clamp(1.85rem,3.8vw,3rem);line-height:1.14;letter-spacing:-.03em;margin:0 0 22px;font-weight:400}
+h3{font-size:1.12rem;line-height:1.3;margin:30px 0 10px;letter-spacing:-.01em}
+p{margin:0 0 16px}
+.lead{font-family:"Libre Baskerville",serif;font-size:1.22rem;line-height:1.62;max-width:860px}
+.muted{color:var(--muted)}
+.small{font-size:.88rem}
+.toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;counter-reset:toc}
+.toc a{counter-increment:toc;display:flex;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:600}
+.toc a:before{content:counter(toc,decimal-leading-zero);color:var(--teal);font-size:.75rem;font-weight:800;letter-spacing:.08em}
+.toc a span{margin-left:auto;color:var(--faint);font-size:.8rem;white-space:nowrap}
+.callout{padding:26px 28px;background:var(--soft-teal);border-radius:6px;margin:26px 0}
+.callout.warn{background:var(--soft-gold)}
+.callout.alert{background:var(--soft-red)}
+.callout h3{margin:0 0 10px}
+.callout p:last-child{margin:0}
+.callout .label{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:8px}
+.callout.warn .label{color:#8a6414}
+.callout.alert .label{color:var(--red)}
+.verdict{background:var(--navy);color:#ecf8f5;padding:30px;border-radius:6px;margin:26px 0}
+.verdict h3{margin:0 0 10px;color:#8fe0d4}
+.verdict p{color:#d2e5e5}
+.verdict p:last-child{margin:0}
+.grid2{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start}
+.grid2b{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+table{width:100%;border-collapse:collapse;margin:20px 0 8px;font-size:.94rem}
+caption{text-align:left;font-weight:700;font-size:1rem;padding:0 0 10px}
+th,td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+th{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr.total td{font-weight:700;border-top:2px solid var(--ink)}
+.pill{display:inline-block;padding:3px 9px;border-radius:999px;font-size:.74rem;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+.pill.beat{background:#dcefe6;color:#14532d}
+.pill.miss{background:#fbe3e3;color:#7f1d1d}
+.pill.flat{background:#eef1f2;color:#44575c}
+:root[data-theme="dark"] .pill.beat{background:#14352a;color:#a7e8c8}
+:root[data-theme="dark"] .pill.miss{background:#3a2224;color:#f3b6b6}
+:root[data-theme="dark"] .pill.flat{background:#22383e;color:#c4d4d6}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]) .pill.beat{background:#14352a;color:#a7e8c8}
+  :root:not([data-theme="light"]) .pill.miss{background:#3a2224;color:#f3b6b6}
+  :root:not([data-theme="light"]) .pill.flat{background:#22383e;color:#c4d4d6}
+}
+blockquote{margin:26px 0;padding:6px 0 6px 26px;border-left:3px solid var(--teal);font-family:"Libre Baskerville",serif;font-size:1.14rem;line-height:1.6}
+blockquote cite{display:block;font-family:"DM Sans",sans-serif;font-size:.84rem;color:var(--muted);font-style:normal;margin-top:10px}
+ul{margin:0 0 16px;padding-left:22px}
+li{margin-bottom:8px}
+li::marker{color:var(--teal)}
+.price-path{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:24px 0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.price-path div{padding:18px 16px;border-right:1px solid var(--line)}
+.price-path div:last-child{border-right:0}
+.price-path span{display:block;font-size:.7rem;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);font-weight:700;margin-bottom:4px}
+.price-path strong{font-size:1.3rem;letter-spacing:-.02em}
+.price-path em{display:block;font-style:normal;font-size:.84rem;color:var(--muted)}
+.footnote{font-size:.88rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;margin-top:20px}
+.appendix{font-size:.92rem}
+.appendix ol{padding-left:22px}
+.appendix li{margin-bottom:12px;word-break:break-word}
+.appendix a{color:var(--blue);text-decoration:underline;overflow-wrap:anywhere}
+.appendix .src-name{font-weight:700}
+.footer-note{padding:26px 76px 40px;color:var(--faint);font-size:.84rem;border-top:1px solid var(--line)}
+@media (max-width:860px){
+  .cover,.page{padding-left:26px;padding-right:26px}
+  .toolbar{padding:12px 26px;position:static}
+  .print-note{margin:0 26px}
+  .rating-strip{grid-template-columns:1fr 1fr}
+  .rating-cell{border-bottom:1px solid rgba(255,255,255,.12)}
+  .toc{grid-template-columns:1fr}
+  .grid2,.grid2b{grid-template-columns:1fr}
+  .price-path{grid-template-columns:1fr 1fr}
+  .price-path div:nth-child(2){border-right:0}
+  .price-path div:nth-child(1),.price-path div:nth-child(2){border-bottom:1px solid var(--line)}
+  .footer-note{padding-left:26px;padding-right:26px}
+}
+@media (max-width:600px){
+  table,thead,tbody,tr,th,td{display:block;width:100%}
+  thead{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+  tr{border:1px solid var(--line);border-radius:6px;margin-bottom:14px;padding:6px 0}
+  td{border-bottom:0;padding:7px 14px}
+  td.num{text-align:left;white-space:normal}
+  td[data-label]:before{content:attr(data-label);display:block;font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;margin-bottom:2px}
+  td[data-label=""]::before{display:none}
+  .rating-strip{grid-template-columns:1fr}
+  .rating-cell{border-right:0}
+  .cover{min-height:0;padding-top:48px}
+  blockquote{font-size:1.02rem}
+}
+@media print{
+  body{background:#fff}
+  .toolbar,.print-note{display:none !important}
+  .report{box-shadow:none;width:100%}
+  .page{padding:36px 0;break-inside:avoid-page}
+  a{text-decoration:none}
+  .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<div class="report">
+
+  <!-- COVER -->
+  <header class="cover">
+    <div class="cover-top">
+      <span>EQUITY RESEARCH &nbsp;·&nbsp; POST-EARNINGS UPDATE</span>
+      <span class="type">Q3 2026 &nbsp;·&nbsp; QUARTER ENDED SEPTEMBER 30, 2026</span>
+    </div>
+    <div class="cover-main">
+      <p class="company">Amazon.com</p>
+      <h1>AWS answered the question. The bill for answering it is the debate now.</h1>
+      <p class="dek">Cloud growth of 39.3% — the fastest in nearly five years, with a $578 billion backlog and growth above 40% projected for both 2027 and 2028 — arrived alongside a headline earnings miss, an advertising shortfall, and a cash outflow that deepened sharply. The print rewards the demand thesis and reprices the cost of serving it.</p>
+    </div>
+    <div class="cover-foot">
+      <div class="cover-meta">
+        <strong>Thursday, October 29, 2026</strong>
+        <span>Reported after the close · Conference call 5:00 p.m. ET · All figures in U.S. dollars</span>
+      </div>
+      <div class="cover-ticker">AMZN</div>
+    </div>
+  </header>
+
+  <!-- RATING STRIP -->
+  <div class="rating-strip" role="region" aria-label="Desk rating">
+    <div class="rating-cell primary"><span>Rating</span><strong>Buy — Maintained</strong><em>Unchanged from October 4, 2026</em></div>
+    <div class="rating-cell"><span>Conviction</span><strong>7 / 10</strong><em>Not raised on this print</em></div>
+    <div class="rating-cell"><span>12-month price target</span><strong>$315</strong><em>Maintained</em></div>
+    <div class="rating-cell"><span>Reference price</span><strong>$243.79</strong><em>NASDAQ close, Thu Oct 29, 2026</em></div>
+    <div class="rating-cell"><span>Implied upside</span><strong>+29.2%</strong><em>Target vs. reference price</em></div>
+  </div>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <span class="note">All figures USD. Actuals from the primary earnings release; consensus from a single named source, identified in the appendix.</span>
+    <div class="actions">
+      <span class="note">To save as PDF, print from your browser or device and choose Save as PDF — the page is laid out to print cleanly.</span>
+      <button class="btn ghost" id="themeToggle" type="button" aria-pressed="false">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <span id="themeLabel">Dark theme</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- REPORT MAP -->
+  <section class="page" id="map">
+    <p class="kicker">Contents</p>
+    <h2>Report map</h2>
+    <nav class="toc" aria-label="Report contents">
+      <a href="#verdict">The verdict <span>Hold the position</span></a>
+      <a href="#correction">Correction <span>Read this first</span></a>
+      <a href="#print">The print <span>Miss on top, beat inside</span></a>
+      <a href="#aws">AWS and AI <span>Capacity, not demand</span></a>
+      <a href="#segments">Segments, advertising and cash <span>Where the money went</span></a>
+      <a href="#guidance">Guidance <span>A straddle, not a raise</span></a>
+      <a href="#call">The earnings call <span>In management&rsquo;s words</span></a>
+      <a href="#street">The Street <span>No post-print verdict yet</span></a>
+      <a href="#valuation">Valuation, risks and what changes our mind <span>What the price assumes</span></a>
+      <a href="#unverified">What could not be verified <span>Open questions</span></a>
+      <a href="#appendix">Appendix — Sources <span>Sources only</span></a>
+    </nav>
+  </section>
+
+  <!-- 1 VERDICT -->
+  <section class="page" id="verdict">
+    <p class="kicker">Desk decision — hold the position</p>
+    <h2>The verdict</h2>
+    <p class="lead">Buy is maintained at 7/10 conviction with the $315 twelve-month target unchanged. One print does not settle this name in either direction: the AWS demand evidence supports the rating, and the cash-flow and capital-spending evidence argues against higher conviction until the 2027 spending number is quantified.</p>
+    <p>The question going into the print was narrow and answerable: would AWS growth exceed 35%? It did, by a wide margin, and management then raised the bar itself, projecting growth above 40% in both 2027 and 2028. That is the single most important fact in the quarter. It is also why the stock&rsquo;s reaction deserves care rather than dismissal. The market did not sell a cloud disappointment. It sold the cost of a cloud acceleration — $77,259 million of gross property-and-equipment purchases in one quarter, a trailing-twelve-month free cash outflow of $42,357 million, long-term debt nearly tripling during 2026, and a fourth-quarter guide whose midpoints sit below what analysts expected on both sales and operating income.</p>
+    <div class="verdict">
+      <h3>Portfolio stance</h3>
+      <p><strong>Hold the position. Do not pay up on the AWS headline, and do not add into the after-hours washout on the cash headline either.</strong> The print does not support raising the target: the $315 target was already a stretch before the print, it sits 29.2% above Thursday&rsquo;s close, and nothing in the quarter improved its arithmetic. Equally, nothing in the quarter broke the demand thesis that underpins it. The next decision point is the quantification of 2027 capital spending and delivery against the fourth-quarter guide — not Friday&rsquo;s tape.</p>
+    </div>
+    <div class="callout">
+      <span class="label">The AWS verdict</span>
+      <h3>Answered — decisively, and then some</h3>
+      <p>AWS net sales reached $45,984 million, up 39.3% year on year (39% excluding foreign exchange), beating the single-source consensus of $45,680 million by $304 million. It was the sixth straight quarter of acceleration and the fastest growth in nearly five years. Annualised, the quarter is a $184 billion run rate. Contracted backlog reached $578 billion, more than double a year earlier, against $496 billion at June 30, 2026. Management&rsquo;s projection — growth above 40% in both 2027 and 2028 — moves the debate from whether demand exists to whether Amazon can build fast enough, and at what return. On the evidence of this quarter, demand is not the constraint. Capacity is.</p>
+    </div>
+    <p>Three things to carry into the next quarter. First, watch the 2027 capital-spending number when it is given: &ldquo;meaningfully more&rdquo; than about $220 billion is a direction, not a budget, and the market will not fund an open-ended build without one. Second, watch fourth-quarter advertising: the high-teens growth guided for the quarter has to arrive after an 11% third quarter, or the softness stops looking like timing. Third, watch operating cash flow against depreciation and memory costs. AWS margins improved on the artificial-intelligence side faster than management expected, by its own account — but the cash statement, not the margin line, is where this investment cycle will be judged.</p>
+  </section>
+
+  <!-- 2 CORRECTION -->
+  <section class="page" id="correction">
+    <p class="kicker">Read this first</p>
+    <h2>Correction</h2>
+    <div class="callout alert">
+      <span class="label">Correction — reference prices</span>
+      <h3>The Wednesday close was $254.60, not around $325</h3>
+      <p>The research brief prepared for this report wrongly stated that Amazon closed around $325 on Wednesday, October 28, 2026. <strong>The verified close that day was $254.60.</strong> That figure is confirmed across the market sources read for this report, and no source verified a $325 close.</p>
+      <p>The error matters because it inverted the meaning of the target. The $315 twelve-month target, set on October 4, 2026 — when the stock traded near $251.52 — was therefore already <strong>above</strong> the pre-print price, not below it. It was a stretch target before the print, sitting about 23.7% above the $254.60 Wednesday close, and the print did not improve its arithmetic: at Thursday&rsquo;s close of $243.79, the target implies 29.2% upside.</p>
+      <p>Thursday&rsquo;s session closed at <strong>$243.79, down $10.81 or 4.25%</strong> from $254.60. After-hours quotes on Thursday evening spanned roughly <strong>$226 to $232</strong>, at different times on a falling tape, and <strong>no single verified after-hours closing price exists</strong>. This report states the range and does not quote one after-hours figure as the close.</p>
+    </div>
+    <div class="price-path" aria-label="Price path around the print">
+      <div><span>Oct 4, 2026</span><strong>~$251.52</strong><em>Near the price when the $315 target was set</em></div>
+      <div><span>Wed Oct 28 close</span><strong>$254.60</strong><em>Verified close into the print</em></div>
+      <div><span>Thu Oct 29 close</span><strong>$243.79</strong><em>−4.25% on the day</em></div>
+      <div><span>Thu after hours</span><strong>~$226–$232</strong><em>Range across timestamps; no verified close</em></div>
+    </div>
+    <p class="small muted">Day range on Thursday was $241.24 to $249.14. The stock entered the print up 5.6% for the year. Premarket on Thursday it traded near $252.01.</p>
+  </section>
+
+  <!-- 3 THE PRINT -->
+  <section class="page" id="print">
+    <p class="kicker">Headline miss, operating beat</p>
+    <h2>The print</h2>
+    <p class="lead">Amazon missed on the two lines the market watches first — sales and earnings per share — and beat where it counts operationally. Operating income of $28,076 million was the highest ever, at a 13.9% margin, and above the top of the company&rsquo;s own third-quarter guidance range.</p>
+    <p>Total net sales of $201,944 million rose 12% year on year (13% excluding foreign exchange, which reduced sales by about $0.9 billion) and missed the single-source consensus of $202,250 million by $306 million, or 0.2%. GAAP diluted earnings per share of $1.89 missed consensus of $1.97 by $0.08. Net income fell to $20,685 million from $21,187 million a year earlier — but that comparison is distorted. The prior-year quarter included $9.5 billion of pre-tax gains on the Anthropic investment. The earnings miss was not an operating failure: it was driven by the swing in non-operating items, from $10,748 million of income a year ago to $1,207 million of expense this quarter, including interest expense that more than tripled to $1,691 million from $538 million.</p>
+    <table>
+      <caption>Q3 2026 reported results vs. the single named consensus source</caption>
+      <thead><tr><th scope="col">Line (USD)</th><th scope="col" class="num">Q3 2026 actual</th><th scope="col" class="num">Consensus</th><th scope="col">Verdict</th><th scope="col" class="num">Q3 2025</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Line">Total net sales</td><td class="num" data-label="Actual">$201,944m</td><td class="num" data-label="Consensus">$202,250m</td><td data-label="Verdict"><span class="pill miss">Miss −$306m (−0.2%)</span></td><td class="num" data-label="Q3 2025">$180,169m</td></tr>
+        <tr><td data-label="Line">Diluted EPS (GAAP)</td><td class="num" data-label="Actual">$1.89</td><td class="num" data-label="Consensus">$1.97</td><td data-label="Verdict"><span class="pill miss">Miss −$0.08</span></td><td class="num" data-label="Q3 2025">$1.95</td></tr>
+        <tr><td data-label="Line">Net income</td><td class="num" data-label="Actual">$20,685m</td><td class="num" data-label="Consensus">—</td><td data-label="Verdict"><span class="pill flat">Down YoY; prior year held $9.5bn Anthropic gains</span></td><td class="num" data-label="Q3 2025">$21,187m</td></tr>
+        <tr><td data-label="Line">Operating income (13.9% margin)</td><td class="num" data-label="Actual">$28,076m</td><td class="num" data-label="Consensus">Not in consensus set found</td><td data-label="Verdict"><span class="pill beat">Beat — above $26.5bn guide top</span></td><td class="num" data-label="Q3 2025">$17,422m (9.7%)</td></tr>
+        <tr><td data-label="Line">AWS net sales (+39.3%)</td><td class="num" data-label="Actual">$45,984m</td><td class="num" data-label="Consensus">$45,680m</td><td data-label="Verdict"><span class="pill beat">Beat +$304m (+0.7%)</span></td><td class="num" data-label="Q3 2025">$33,006m</td></tr>
+        <tr><td data-label="Line">Advertising services (+11%)</td><td class="num" data-label="Actual">$19,637m</td><td class="num" data-label="Consensus">$20,910m</td><td data-label="Verdict"><span class="pill miss">Miss −$1,273m (−6.1%)</span></td><td class="num" data-label="Q3 2025">$17,703m</td></tr>
+        <tr><td data-label="Line">Online stores (+2%)</td><td class="num" data-label="Actual">$68,470m</td><td class="num" data-label="Consensus">$69,600m</td><td data-label="Verdict"><span class="pill miss">Miss −$1,130m</span></td><td class="num" data-label="Q3 2025">$67,407m</td></tr>
+        <tr><td data-label="Line">Third-party seller services (+9%)</td><td class="num" data-label="Actual">$46,492m</td><td class="num" data-label="Consensus">Not verified</td><td data-label="Verdict"><span class="pill flat">No verdict</span></td><td class="num" data-label="Q3 2025">$42,486m</td></tr>
+        <tr><td data-label="Line">Subscription services (+11%)</td><td class="num" data-label="Actual">$14,006m</td><td class="num" data-label="Consensus">—</td><td data-label="Verdict"><span class="pill flat">No verdict on single-source basis</span></td><td class="num" data-label="Q3 2025">$12,574m</td></tr>
+        <tr><td data-label="Line">Physical stores (+2%)</td><td class="num" data-label="Actual">$5,710m</td><td class="num" data-label="Consensus">Not verified</td><td data-label="Verdict"><span class="pill flat">No verdict</span></td><td class="num" data-label="Q3 2025">$5,578m</td></tr>
+      </tbody>
+    </table>
+    <p class="footnote">Consensus in this table is from one source only, for every line where a figure from that source was found. Where the source carried no figure, or a figure came from a different provider, this report says so rather than mixing providers into one beat/miss table. The source is identified in the appendix. Growth rates are year on year; advertising and online-stores growth exclude foreign-exchange effects as noted in the text (advertising 12% and online stores 2% excluding foreign exchange).</p>
+    <h3>Read the operating beat with the prior-year comparison in mind</h3>
+    <p>Operating income rose 61% year on year, but the comparison flatters the result. The prior-year quarter carried roughly $2.5 billion of settlement expense and roughly $1.8 billion of severance in the comparison context, and other operating expense fell to $134 million from $2,875 million. On analyst arithmetic that strips those items out, underlying operating-income growth was closer to 29%. That is still a strong quarter — it is simply not a 61% quarter. The distinction matters because the market&rsquo;s question is not whether this quarter was profitable; it is whether profitability can keep pace with a build of this size. A 29% underlying rate, against capital spending growing far faster, is the honest starting point for that debate.</p>
+    <p>Prime Day timing explains part, not all, of the retail softness. Excluding the shift in Prime Day timing, third-quarter sales growth would have been about 400 basis points higher. Online stores grew only 2%, and paid units grew 12% — the consumer was buying, but the revenue line did not show it in the quarter&rsquo;s calendar. That is a timing explanation with a limit: it covers the quarter, it does not cover the advertising miss, and it will be tested directly by the fourth-quarter guide.</p>
+  </section>
+
+  <!-- 4 AWS -->
+  <section class="page" id="aws">
+    <p class="kicker">The 35% question, answered</p>
+    <h2>AWS and AI</h2>
+    <p class="lead">AWS grew 39.3% — the sixth straight quarter of acceleration, the fastest in nearly five years, and comfortably above the 35% threshold the desk set before the print. The second quarter had grown 37% to $42,232 million. The acceleration continued into a period when Amazon was lapping a year in which it had added a great deal of capacity.</p>
+    <p>The backlog is the forward statement. At $578 billion, contracted backlog more than doubled year on year and grew at a triple-digit rate, up from $496 billion at June 30, 2026, and described by management as well diversified. Backlog of that size, growing that fast, is what turns a strong quarter into a multi-year claim — and it is what management leaned on when projecting growth above 40% in both 2027 and 2028, and when describing a business that could become a trillion-dollar revenue business within five to ten years, alongside the stores business.</p>
+    <div class="callout">
+      <span class="label">Capacity, not demand</span>
+      <h3>The constraint is the build</h3>
+      <p>Before the print, on October 23, the chief executive said AWS capacity was sold out for 2026, largely sold out for 2027, with a substantial portion of 2028 committed. On the earnings call he returned to the same point: Amazon is installing an artificial-intelligence accelerator about every 14 seconds, and customers are taking up capacity almost as fast as it is installed. Core compute and storage revenue grew at their fastest rates in several years. Management&rsquo;s position is that even the planned 2026 build — about $220 billion of cash capital expenditure — would still not have been enough capacity to meet all the demand it sees, and that the same dynamic would hold in 2027. An investor should read that as both reassurance and warning: demand is verified, but the company is now in a race between construction, component supply — memory costs are explicitly called out — and depreciation.</p>
+    </div>
+    <h3>What the release shows on AI, and what it does not</h3>
+    <p>The release records concrete AI traction without attaching a revenue figure to it. Bedrock token volume rose about 17 times year on year, and spending by Fortune 500 companies on Bedrock rose about seven times. AgentCore serves tens of thousands of customers, with twice as many agents deployed in the third quarter as in the prior three quarters combined. Lambda passed a $1 billion annualised run rate. Bedrock added new model families, and TorchNeuron was presented as letting existing PyTorch code run on Trainium without rewriting. What the release and the call reporting do <em>not</em> establish is a third-quarter AI revenue run rate. The figure of more than $25 billion, growing at triple digits, belongs to the second quarter and must not be carried forward as a third-quarter number. Likewise, no third-quarter call statement on Trainium revenue or on Anthropic specifically was verified from a transcript source read for this report, and none is asserted here. The Anthropic context that is verified is pre-print: Anthropic&rsquo;s filing showed at least $110 billion of Amazon Web Services spend commitments into the 2030s, and Amazon&rsquo;s Anthropic stake was valued at about $190 billion at June 30, 2026.</p>
+    <p>On margins, management&rsquo;s claim is striking and should be held to evidence over the next two quarters: operating margins on the artificial-intelligence side are improving rapidly, well ahead of where they were on the core offering at a similar stage of evolution, even with heightened component costs such as memory and significant depreciation from the capital expenditure being invested. AWS operating margin was 38.7% in the quarter, up from 34.6% a year ago but down from 39.4% in the second quarter. The direction over a year is favourable; the direction over a quarter is a reminder that the build carries costs before it carries revenue.</p>
+  </section>
+
+  <!-- 5 SEGMENTS & CASH -->
+  <section class="page" id="segments">
+    <p class="kicker">Where the money went</p>
+    <h2>Segments, advertising and cash</h2>
+    <p class="lead">The retail segments were profitable and improving — North America operating income nearly doubled. Advertising was the soft spot, and cash was the problem. The company spent, borrowed, and burned through the quarter at a pace the income statement does not capture.</p>
+    <table>
+      <caption>Segment detail — Q3 2026 (primary release)</caption>
+      <thead><tr><th scope="col">Segment</th><th scope="col" class="num">Net sales</th><th scope="col" class="num">YoY</th><th scope="col" class="num">Operating income</th><th scope="col" class="num">Margin</th><th scope="col" class="num">Q3 2025 margin</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Segment">North America</td><td class="num" data-label="Net sales">$112,852m</td><td class="num" data-label="YoY">+6%</td><td class="num" data-label="Operating income">$8,723m</td><td class="num" data-label="Margin">7.7%</td><td class="num" data-label="Q3 2025 margin">4.5%</td></tr>
+        <tr><td data-label="Segment">International</td><td class="num" data-label="Net sales">$43,108m</td><td class="num" data-label="YoY">+5% (+8% ex-FX)</td><td class="num" data-label="Operating income">$1,580m</td><td class="num" data-label="Margin">3.7%</td><td class="num" data-label="Q3 2025 margin">2.9%</td></tr>
+        <tr><td data-label="Segment">Amazon Web Services</td><td class="num" data-label="Net sales">$45,984m</td><td class="num" data-label="YoY">+39.3% (+39% ex-FX)</td><td class="num" data-label="Operating income">$17,773m</td><td class="num" data-label="Margin">38.7%</td><td class="num" data-label="Q3 2025 margin">34.6%</td></tr>
+        <tr class="total"><td data-label="Segment">Total</td><td class="num" data-label="Net sales">$201,944m</td><td class="num" data-label="YoY">+12%</td><td class="num" data-label="Operating income">$28,076m</td><td class="num" data-label="Margin">13.9%</td><td class="num" data-label="Q3 2025 margin">9.7%</td></tr>
+      </tbody>
+    </table>
+    <p>North America is the quiet strength in the quarter: $8,723 million of operating income against $4,789 million a year earlier, at a 7.7% margin. International operating income rose to $1,580 million from $1,199 million. Neither segment is the story of the quarter, and both are moving the right way — which is precisely why the market&rsquo;s attention went elsewhere, to advertising and to cash.</p>
+    <h3>Advertising: the soft spot, with a timing explanation</h3>
+    <p>Advertising services revenue of $19,637 million grew 11% (12% excluding foreign exchange), down from 26% in the second quarter, and missed the single-source consensus of $20,910 million by $1,273 million. Amazon attributed the slowdown to Prime Day timing and a couple of other timing factors, and guided fourth-quarter advertising growth to the high teens. That guidance is now a testable claim: high-teens growth in the fourth quarter, against an 11% third quarter, requires the timing explanation to be right and complete. If it is, the miss is a calendar artefact. If fourth-quarter advertising lands in the low teens again, the explanation fails and the advertising franchise — one of the highest-margin revenue streams in the company — needs a different account.</p>
+    <p>Prime Video, reported on the call, has a revenue run rate in the tens of billions, is profitable in its own right, and its advertising tier reaches more than 315 million monthly active users globally, more than 130 million in the United States. The release also records the launch of an advertising agent and full-funnel campaign tools. None of that offsets a $1.27 billion consensus miss in the quarter; it frames why the fourth-quarter advertising guide matters more than usual.</p>
+    <h3>Cash: the market&rsquo;s problem, stated plainly</h3>
+    <p>Operating cash flow over the trailing twelve months was $168,300 million, up 29% from $130,691 million. Free cash flow over the same period was an <strong>outflow of $42,357 million</strong>, against an inflow of $14,788 million a year earlier — a swing of about $57 billion. In the quarter itself, gross purchases of property and equipment were $77,259 million; net of $1,381 million of proceeds, net purchases were $75,878 million. Trailing-twelve-month net purchases were $210,657 million, up 82% year on year. The two figures — $77.3 billion gross, $75.9 billion net — are both used in secondary reporting; they are not the same number, and this report keeps them distinct.</p>
+    <p>The balance sheet funded the gap with debt. Long-term debt stood at $173,125 million at September 30, 2026, against $65,648 million at December 31, 2025. Interest expense in the quarter tripled year on year. The 2026 cash capital-expenditure expectation was held at about $220 billion, and management said spending would be &ldquo;meaningfully more&rdquo; in 2027, with no numeric figure verified. The inference — labelled as such — is that trailing free cash flow stays deeply negative through the build unless AWS monetisation outruns depreciation and memory costs. That is not a forecast in this report; it is the arithmetic consequence of the numbers management has given, and it is the reason conviction was not raised.</p>
+    <div class="grid2b">
+      <div>
+        <h3>The consumer, on the release&rsquo;s evidence</h3>
+        <p>No direct third-quarter call statement on consumer health was verified, so this report does not attribute one. The release&rsquo;s operating evidence is: paid units up 12%; grocery, fresh and essentials growing about three times faster than the rest of the store and accounting for about half of units; more than 1.5 billion items delivered same-day or overnight, the fastest third-quarter speeds ever; and the rapid-delivery format now in more than 450 towns and cities, with items ordered ten times higher year on year. Selection from notable brands rose more than 20% year on year. The consumer in this quarter bought more units, faster — the revenue softness was a calendar and mix story, not a units story.</p>
+      </div>
+      <div>
+        <h3>Headcount and newer businesses</h3>
+        <p>Employees numbered 1,638,000, up 4% year on year from 1,578,000, excluding contractors and temporary staff. The release records plans to hire more than 300,000 seasonal, part-time and full-time operations employees in the United States for the holiday season, alongside more than $1.5 billion of investment raising the minimum starting pay for full-time United States operations employees to $20 per hour, plus a grocery discount and a lifetime banking benefit. No third-quarter call statement on headcount or efficiency was verified. Beyond the headline segments, the release records paid robotaxi rides in Las Vegas with testing in San Diego and Houston and operations in 12 United States cities; pharmacy three-hour delivery in more than 350 cities with customers up 60% year on year; and shopping-assistant interactions up 570% year on year. The satellite service, now named Amazon Leo, remains on track to begin initial service later this year, with a strategic agreement under which a major United States telecom provider will be the first to offer Leo connectivity to enterprise and public-sector customers. No third-quarter call statement on the satellite service, launch count, or cost capitalisation was verified.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 GUIDANCE -->
+  <section class="page" id="guidance">
+    <p class="kicker">A straddle, not a raise</p>
+    <h2>Guidance</h2>
+    <p class="lead">Fourth-quarter guidance straddled expectations: the ranges reach above consensus at the top and below it at the bottom, and both midpoints sit below what analysts expected. That is a guide that neither confirms the AWS acceleration nor dispels the cost concern — it leaves both open into the holiday quarter.</p>
+    <table>
+      <caption>Q4 2026 guidance (primary release, as of October 29, 2026)</caption>
+      <thead><tr><th scope="col">Measure</th><th scope="col" class="num">Q4 2026 guide</th><th scope="col" class="num">Midpoint</th><th scope="col" class="num">Q4 2025 actual</th><th scope="col">Vs. expectations (providers labelled)</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Measure">Net sales</td><td class="num" data-label="Guide">$240.0–247.0bn</td><td class="num" data-label="Midpoint">$243.5bn (+12–16% YoY)</td><td class="num" data-label="Q4 2025">$213,386m</td><td data-label="Vs expectations">Midpoint ~$0.66bn below FactSet ($244.16bn) and ~$1.01bn below LSEG ($244.51bn) — midpoint miss, range straddle</td></tr>
+        <tr><td data-label="Measure">Operating income</td><td class="num" data-label="Guide">$28.5–33.5bn</td><td class="num" data-label="Midpoint">$31.0bn</td><td class="num" data-label="Q4 2025">$25.0bn ($24,977m)</td><td data-label="Vs expectations">Midpoint ~$2.2bn below the $33.2bn analysts had anticipated</td></tr>
+        <tr><td data-label="Measure">Advertising growth</td><td class="num" data-label="Guide">High teens YoY</td><td class="num" data-label="Midpoint">—</td><td class="num" data-label="Q4 2025">—</td><td data-label="Vs expectations">A recovery from Q3&rsquo;s 11%; testable in the quarter</td></tr>
+        <tr><td data-label="Measure">2026 cash capital expenditure</td><td class="num" data-label="Guide">~$220bn</td><td class="num" data-label="Midpoint">—</td><td class="num" data-label="Q4 2025">—</td><td data-label="Vs expectations">Expectation held; 2027 to be &ldquo;meaningfully more&rdquo; — no numeric figure verified</td></tr>
+      </tbody>
+    </table>
+    <p>The sales guide anticipates about 60 basis points of unfavourable foreign-exchange impact. The guidance assumes no impact from energy-derivative remeasurements and no additional acquisitions, restructurings, or legal settlements. No full-year sales or earnings-per-share guidance is given, consistent with Amazon&rsquo;s practice, and no numeric full-year commentary beyond the capital-expenditure expectation was given. No segment-level fourth-quarter guidance was given beyond advertising and the AWS growth projection for 2027 and 2028.</p>
+    <p>Why the straddle matters: a guide whose midpoint misses on both lines, after a quarter in which operating income beat the company&rsquo;s own guide, reads as management choosing not to chase the AWS headline with a fourth-quarter promise. That is prudent if the constraint is capacity — a company that cannot build fast enough should not promise revenue it cannot serve. It is also the reason the after-hours reaction, which took the stock well below the regular-session close, cannot be dismissed as an overreaction to a single missed line. The guide told the market the holiday quarter will be good, not exceptional, while the spending to serve 2027 and 2028 accelerates. The desk&rsquo;s view is that the guide is honest rather than alarming — but honesty about a straddle is still a straddle, and the target is not raised on it.</p>
+  </section>
+
+  <!-- 7 CALL -->
+  <section class="page" id="call">
+    <p class="kicker">In management&rsquo;s words</p>
+    <h2>The earnings call</h2>
+    <p class="lead">No full transcript of the third-quarter call was located by Thursday evening Eastern time, and no direct third-quarter remark from the chief financial officer was verified. What follows is drawn from the primary release and from attributed reporting of the call, with the attribution stated in the text. Where a statement comes from before the print, it is labelled as pre-print.</p>
+    <blockquote>
+      &ldquo;In AWS, our plan is working. Despite lapping a comparable year-over-year period where we added a lot of capacity, AWS grew 39.3% year over year, accelerating for the sixth straight quarter, our fastest growth in nearly five years. Backlog is $578 billion, growing triple digits year over year and well diversified. We are installing an AI accelerator about every 14 seconds, and almost as fast as we install capacity, customers are gobbling it up. Our core compute and storage revenue grew at their fastest rates in several years. Our operating margins have long been strong on our core offering, but rapidly improving on the AI side too, well ahead of where they were on core at a similar time of evolution, even with heightened component costs like memory, and significant depreciation from the CapEx we&rsquo;re investing. We continue to accelerate our capex payback and have even more conviction than we already had that the investment we&rsquo;re making in AWS will yield a much larger revenue and free cash flow generating business than we would have imagined a couple years ago with strong return on invested capital.&rdquo;
+      <cite>— Andy Jassy, chief executive, on the Q3 2026 earnings call, as reported in call coverage</cite>
+    </blockquote>
+    <p>Three sentences in that passage carry the investment case, and each deserves a separate check. &ldquo;Accelerating for the sixth straight quarter&rdquo; is verified by the reported growth rate and the prior-quarter comparison. &ldquo;Backlog is $578 billion&rdquo; is the release&rsquo;s forward claim and the largest single number in the quarter after the spending figures. &ldquo;We continue to accelerate our capex payback&rdquo; is the claim the cash statement has not yet shown: payback accelerating is a statement about the future shape of returns, made in a quarter in which free cash flow was deeply negative. The desk takes the first two as established and the third as a promise to be verified against the 2027 spending number and the delivery of the backlog.</p>
+    <blockquote>
+      &ldquo;There has never been a trillion dollar revenue business, and we may have two of them in the next 5–10 years.&rdquo;
+      <cite>— Andy Jassy, in the primary earnings release, clarified on the call as referring to AWS and the stores business</cite>
+    </blockquote>
+    <p>On the call, the projection behind that sentence was put numerically: AWS revenue growth above 40% in both 2027 and 2028, and a business that could be a trillion-dollar revenue business in five to ten years. A projection of that kind, from a chief executive on an earnings call, is a commitment device: it gives the market a number to hold management to, and it raises the cost of the capacity build failing to convert. It is also, on its face, extraordinary — sustained growth above 40% on a $184 billion run rate implies AWS revenue roughly doubling in under two years. The backlog supports the direction; the capacity constraint is the reason the number is a projection rather than a certainty.</p>
+    <h3>Capacity, in the chief executive&rsquo;s own framing</h3>
+    <p>Before the print, speaking on October 23, Jassy said AWS capacity was sold out for 2026, largely sold out for 2027, with a substantial portion of 2028 committed. That pre-print framing is the context for the call&rsquo;s accelerator remark and for the capital-spending guide. The company&rsquo;s position, stated before the print and repeated in substance on the call, is that even at about $220 billion of 2026 spending it would still not have enough capacity to meet all the demand it sees in 2026, and that the dynamic would also hold in 2027. Read together, the statements describe a company choosing to overbuild rather than under-serve — and asking shareholders to fund the choice before the returns arrive.</p>
+    <h3>What was not said on the call — or not verified</h3>
+    <p>For the record, and because the absence matters to how much weight this report can place on the call: no third-quarter call statement on tariffs was verified, and no tariff cost figure for Amazon in the quarter is asserted. No direct call statement on consumer health was verified beyond the operating evidence in the release. No call statement on headcount or efficiency, on robotics or automation, or on the satellite service beyond the release was verified. No separate call framing of fourth-quarter guidance beyond the release guidance and the AWS growth projection was verified. And no direct remark from the chief financial officer in the third quarter was verified — he is named in this report only in his role, and no quotation is attributed to him. A reader who wants the call to have settled those questions should know it did not, on the evidence available by Thursday evening.</p>
+    <h3>Advertising and Prime Video, as reported from the call</h3>
+    <p>On advertising, the release&rsquo;s guidance language — timing anomalies primarily related to Prime Day, and a couple of other timing factors — is the verified account of the slowdown, and the high-teens fourth-quarter expectation is the verified guide. Reporting of the call adds that Jassy described Prime Video as having a revenue run rate in the tens of billions and as profitable in its own right, with its advertising tier above 315 million monthly active users globally. Those are call-reported figures, attributed as such, and they sit alongside — not instead of — the $1,273 million consensus miss in the advertising line itself.</p>
+  </section>
+
+  <!-- 8 STREET -->
+  <section class="page" id="street">
+    <p class="kicker">No post-print verdict yet</p>
+    <h2>The Street</h2>
+    <p class="lead">No rating or price-target change published in response to the print was found in the sources read by Thursday evening Eastern time. That absence is itself a finding, and this report states it plainly rather than quoting pre-print targets as though they were post-print reactions.</p>
+    <table>
+      <caption>Street ratings and targets — pre-print actions only, except where labelled post-print commentary</caption>
+      <thead><tr><th scope="col">Firm / analyst</th><th scope="col">Date</th><th scope="col">Action</th><th scope="col">Rating / target (USD)</th><th scope="col">Timing</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Firm">Mizuho — Lloyd Walmsley</td><td data-label="Date">Oct 29, 2026</td><td data-label="Action">Reiterated</td><td data-label="Rating / target">Outperform / $330</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Firm">Evercore — Mark Mahaney</td><td data-label="Date">Oct 29, 2026</td><td data-label="Action">Reiterated</td><td data-label="Rating / target">Outperform / $355; Q3 operating-income estimate $26.2bn; Q4 revenue $244.2bn / operating income $33.1bn</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Firm">BNP Paribas — Nick Jones</td><td data-label="Date">Oct 2026</td><td data-label="Action">Outperform maintained</td><td data-label="Rating / target">Outperform / $355; view that investors wanted AWS growth of 43–45%</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Firm">Bank of America</td><td data-label="Date">Pre-print</td><td data-label="Action">Forecast</td><td data-label="Rating / target">AWS growth 40%, margin 39% forecast; Q4 guide $239–246bn expected (target not stated in source read)</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Firm">TipRanks consensus</td><td data-label="Date">Oct 29, 2026</td><td data-label="Action">—</td><td data-label="Rating / target">42 Buy / 2 Hold, Strong Buy; mean target $331.54</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Firm">Yahoo Finance mean</td><td data-label="Date">Oct 29, 2026</td><td data-label="Action">—</td><td data-label="Rating / target">Mean target $332.41</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Firm">Jefferies — Brent Thill</td><td data-label="Date">Oct 29, 2026</td><td data-label="Action">Post-print commentary; no new target found</td><td data-label="Rating / target">Results &ldquo;fell short of hopes&rdquo;; earnings &ldquo;not terrible&rdquo; and stock &ldquo;cheap&rdquo;, but &ldquo;not what anyone had hoped for&rdquo;; property-and-equipment spending exceeded expectations</td><td data-label="Timing">Post-print commentary</td></tr>
+      </tbody>
+    </table>
+    <p>Two pre-print expectations are worth holding against the print, because they show what the market was primed for. One firm&rsquo;s view was that investors wanted AWS growth of 43% to 45% — a bar the actual 39.3% did not clear, even though it cleared the desk&rsquo;s 35% question and the single-source consensus. Another had forecast AWS growth of 40% at a 39% margin; the growth landed just below that and the margin at 38.7%. The print beat the consensus that this report locked for its table, and fell short of the whisper that some investors carried into it. Both statements are true, and the after-hours tape suggests the second weighed more heavily on the night.</p>
+    <p>Post-print commentary without a target change was also recorded: one strategist observed that AWS acceleration makes the artificial-intelligence investment easier to justify, but does not make the cost disappear, and that free cash flow remains under significant pressure. That is the most concise summary of the evening&rsquo;s reaction available, and it aligns with the desk&rsquo;s own read: demand verified, cost repriced, verdict deferred until the spending number is quantified. Post-print notes dated October 30 had not been published or indexed in the sources read; they should be re-checked on Friday before any revision to the rating or target is considered.</p>
+    <div class="callout warn">
+      <span class="label">Do not misread this table</span>
+      <h3>Pre-print targets are not post-print reactions</h3>
+      <p>The $330 and $355 targets above were reiterated before the print, on the basis of expectations the print then partly missed. They must not be presented as endorsements of the quarter, and the pre-print mean target of about $331.54 must not be presented as a post-print consensus. No post-print mean target was verified. Any revision to the street view will arrive with Friday&rsquo;s notes, and this report will need updating when it does.</p>
+    </div>
+  </section>
+
+  <!-- 9 VALUATION -->
+  <section class="page" id="valuation">
+    <p class="kicker">What the price already assumes</p>
+    <h2>Valuation, risks and what changes our mind</h2>
+    <p class="lead">Valuation on this name is not settled to a single number, and this report will not pretend otherwise. The multiples depend on the provider, the earnings vintage, and whether Anthropic gains are in the denominator. Each multiple below is presented with its provider, never as one settled figure.</p>
+    <table>
+      <caption>Valuation multiples — provider stated with every figure; do not average across providers</caption>
+      <thead><tr><th scope="col">Provider / basis</th><th scope="col" class="num">Forward P/E</th><th scope="col" class="num">EV / EBITDA</th><th scope="col">Notes</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Provider">StockAnalysis, at $243.79 close</td><td class="num" data-label="Forward P/E">27.38x</td><td class="num" data-label="EV/EBITDA">16.33x</td><td data-label="Notes">Trailing P/E 19.60x, flattered by Anthropic marks; EV $2.76tn; EV/sales 3.56x on the same page</td></tr>
+        <tr><td data-label="Provider">Forbes mirror</td><td class="num" data-label="Forward P/E">27.38x</td><td class="num" data-label="EV/EBITDA">15.41x (TTM)</td><td data-label="Notes">EV about $2.75tn on a market-cap basis at $254.60</td></tr>
+        <tr><td data-label="Provider">GuruFocus</td><td class="num" data-label="Forward P/E">—</td><td class="num" data-label="EV/EBITDA">11.39x</td><td data-label="Notes">On trailing EBITDA to June 2026 ($253,997m) and EV $2,893,517m at $254.60 — a different EBITDA vintage and definition</td></tr>
+        <tr><td data-label="Provider">MarketBeat</td><td class="num" data-label="Forward P/E">22.97–23.17x</td><td class="num" data-label="EV/EBITDA">—</td><td data-label="Notes">Different consensus vintage; trailing EPS $12.37–12.44 across sources, distorted by Anthropic gains</td></tr>
+        <tr><td data-label="Provider">Bank of America, pre-print</td><td class="num" data-label="Forward P/E">23x (2027)</td><td class="num" data-label="EV/EBITDA">—</td><td data-label="Notes">Down from 29x at end-2025, on a pre-print basis</td></tr>
+      </tbody>
+    </table>
+    <p class="footnote">The range across sources read for forward price-to-earnings is roughly 23x to 27.4x, depending on earnings vintage. Market capitalisation figures likewise differ by vintage and share count: $2.63 trillion at $243.79 on one provider&rsquo;s page, $2.70 trillion at the same price on another, and $2.75 trillion at $254.60 on a third. None of these is &ldquo;the&rdquo; multiple or &ldquo;the&rdquo; market capitalisation without its provider and date.</p>
+    <p>Against the 52-week range of $196.00 to $287.20, Thursday&rsquo;s close of $243.79 sits 15.1% below the high; at the after-hours level of about $229.13 it would sit 20.2% below, and at the pre-print close of $254.60 it sat 11.3% below. Against the pre-print street mean of about $331.54, the Thursday close implies about 36% upside and the pre-print close about 30% — figures that describe the street&rsquo;s pre-print optimism, not a post-print consensus. The desk&rsquo;s $315 target sits below that mean and below the $330 and $355 pre-print targets, which is consistent with a maintained rather than raised view: the desk target asks for less than the street&rsquo;s pre-print average, and still asks for 29.2% from Thursday&rsquo;s close.</p>
+    <h3>Risks, in order of weight</h3>
+    <ul>
+      <li><strong>The build outruns the return.</strong> Capital spending of about $220 billion in 2026, &ldquo;meaningfully more&rdquo; in 2027, against a $42,357 million trailing free-cash outflow and debt nearly tripling in nine months. If AWS monetisation, depreciation, and memory costs move against the company, the backlog converts slowly and the balance sheet carries the interim.</li>
+      <li><strong>Capacity does not convert.</strong> Sold-out capacity is only valuable if it is installed on time, at the guided cost, and filled with paying workloads. Component costs, power, and construction timelines are the practical constraints behind the &ldquo;every 14 seconds&rdquo; claim.</li>
+      <li><strong>Advertising softness is not timing.</strong> If fourth-quarter advertising growth does not reach the high teens, a high-margin franchise is decelerating for reasons beyond Prime Day, and the retail profit engine weakens just as the cloud build peaks.</li>
+      <li><strong>The guide is the ceiling, not the floor.</strong> Both fourth-quarter midpoints sit below expectations. A holiday quarter that lands at the bottom of the guided ranges would put the $315 target&rsquo;s arithmetic under strain well before any 2027 revision.</li>
+      <li><strong>Anthropic distortion cuts both ways.</strong> Trailing earnings flattered by investment gains make trailing multiples unreliable, and the absence of those gains in the current quarter is part of why earnings per share missed. Any valuation that leans on trailing earnings without adjusting for them will misstate both cheapness and expensiveness.</li>
+      <li><strong>Concentration of the thesis.</strong> The entire case now rests on one segment growing above 40% for two years. A single-segment thesis with a balance-sheet-funded build is a higher-conviction claim than a diversified one, and the 7/10 rating reflects that concentration rather than hiding it.</li>
+    </ul>
+    <h3>What would change our mind</h3>
+    <p><strong>To raise conviction or the target:</strong> a quantified 2027 capital-spending figure that the backlog and cash generation can plausibly fund; fourth-quarter advertising growth in the high teens as guided; and a post-print street revision that engages with the AWS projection rather than merely repricing the cash outflow. <strong>To cut conviction or the target:</strong> a 2027 spending figure without a funding path; fourth-quarter advertising growth in the low teens; a fourth-quarter operating-income outcome at the bottom of the guided range; or evidence that capacity installation is slipping against the sold-out demand. <strong>Falsification is specific:</strong> if AWS growth decelerates from 39.3% while spending accelerates, the capacity-constraint account fails and the build becomes the thesis&rsquo;s liability rather than its evidence. Until one of those conditions is met, Buy at 7/10 and $315 stands — maintained, not endorsed more strongly, and not abandoned on one evening&rsquo;s tape.</p>
+  </section>
+
+  <!-- 10 UNVERIFIED -->
+  <section class="page" id="unverified">
+    <p class="kicker">Open questions, stated plainly</p>
+    <h2>What could not be verified</h2>
+    <p class="lead">A research report earns trust by stating what it does not know. The following were not verified in the sources read by Thursday evening Eastern time, and no figure or statement in this report depends on them.</p>
+    <ul>
+      <li><strong>A third-quarter AI revenue run rate.</strong> The figure of more than $25 billion, growing at triple digits, is from the second quarter. No third-quarter update was found. It is not carried forward in this report as a third-quarter number.</li>
+      <li><strong>The full earnings-call transcript.</strong> Call quotations in this report come from attributed reporting of the call and from the primary release. No complete transcript was located.</li>
+      <li><strong>Any third-quarter remark from the chief financial officer.</strong> No direct quotation is asserted, and none should be attributed on the basis of this report.</li>
+      <li><strong>Third-quarter call statements on tariffs, consumer health, headcount and efficiency, robotics and automation, or the satellite service beyond the release.</strong> The release&rsquo;s guidance risk language lists tariff and trade policies among factors that may affect results; no tariff cost figure for the quarter is asserted.</li>
+      <li><strong>A numeric 2027 capital-expenditure figure.</strong> &ldquo;Meaningfully more&rdquo; than about $220 billion is the verified guidance language. No number is given in this report.</li>
+      <li><strong>Consensus operating-income and capital-expenditure figures from the single named consensus source.</strong> No such figures from that source were found; labelled secondary estimates were used where a comparison was needed, and the table says so.</li>
+      <li><strong>Any post-print rating or price-target change, and any single verified after-hours closing price.</strong> Neither was found by Thursday evening. The after-hours range is stated as a range, and the street table is labelled pre-print.</li>
+      <li><strong>One settled forward price-to-earnings or enterprise-value-to-EBITDA multiple.</strong> Provider and vintage conflicts are presented in full in the valuation section rather than averaged away.</li>
+      <li><strong>The exact release timestamp.</strong> The release text states the call time; a secondary summary of the filing put acceptance at 20:05 GMT (16:05 ET). The exact timestamp is not asserted.</li>
+      <li><strong>Segment-level fourth-quarter guidance beyond advertising, and consensus for the International segment under the single named source.</strong> Neither was verified.</li>
+    </ul>
+    <p class="footnote">The correction in the second section of this report — the verified Wednesday close of $254.60 against the brief&rsquo;s incorrect figure of around $325 — is the one error in the preparatory material that was found and corrected. It is recorded there, prominently, rather than silently absorbed into the text.</p>
+  </section>
+
+  <!-- APPENDIX -->
+  <section class="page appendix" id="appendix">
+    <p class="kicker">Appendix</p>
+    <h2>Sources only</h2>
+    <p class="muted">This appendix is the sole location of source identification for this report. Actuals are taken from the primary earnings release only. Consensus for the results table is from a single named source: Bloomberg consensus as reported by Yahoo Finance ahead of the print. Guidance comparisons that use other providers are labelled with those providers in the guidance section. All figures are in U.S. dollars. No other source was used for a figure in the body of this report.</p>
+    <ol>
+      <li><span class="src-name">Primary earnings release — BusinessWire, &ldquo;Amazon.com Announces Third Quarter Results,&rdquo; October 29, 2026 (full financial statements).</span> <a href="https://www.businesswire.com/news/home/20261028373648/en/Amazon.com-Announces-Third-Quarter-Results">https://www.businesswire.com/news/home/20261028373648/en/Amazon.com-Announces-Third-Quarter-Results</a></li>
+      <li><span class="src-name">About Amazon summary, &ldquo;Amazon Q3 2026 earnings report: Read the release,&rdquo; October 29, 2026.</span> <a href="https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report">https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report</a></li>
+      <li><span class="src-name">Bloomberg consensus via Yahoo Finance preview (single named consensus source for the results table): earnings per share $1.97, revenue $202.25 billion, AWS $45.68 billion, advertising $20.91 billion, online stores $69.6 billion.</span> <a href="https://upside.pandobit.com/en/news/2026/10/amazon-amzn-reports-q3-everything-you-need-to-know-ahead-of-earnings-768326/">https://upside.pandobit.com/en/news/2026/10/amazon-amzn-reports-q3-everything-you-need-to-know-ahead-of-earnings-768326/</a></li>
+      <li><span class="src-name">GeekWire, &ldquo;AWS growth hits 39%, its fastest in nearly five years, as Amazon misses on earnings,&rdquo; October 29, 2026.</span> <a href="https://www.geekwire.com/2026/aws-growth-hits-39-its-fastest-in-nearly-five-years-as-amazon-misses-on-earnings/">https://www.geekwire.com/2026/aws-growth-hits-39-its-fastest-in-nearly-five-years-as-amazon-misses-on-earnings/</a></li>
+      <li><span class="src-name">GeekWire earnings preview, &ldquo;Amazon earnings preview: AWS is booked up and Wall Street wants to know what comes next.&rdquo;</span> <a href="https://www.geekwire.com/2026/amazon-earnings-preview-aws-is-booked-up-and-wall-street-wants-to-know-what-comes-next/">https://www.geekwire.com/2026/amazon-earnings-preview-aws-is-booked-up-and-wall-street-wants-to-know-what-comes-next/</a></li>
+      <li><span class="src-name">TipRanks / The Fly call excerpt, &ldquo;Amazon.com says AWS business accelerating for 6th straight quarter.&rdquo;</span> <a href="https://www.tipranks.com/news/the-fly/amazon-com-says-aws-business-accelerating-for-6th-straight-quarter-thefly-news">https://www.tipranks.com/news/the-fly/amazon-com-says-aws-business-accelerating-for-6th-straight-quarter-thefly-news</a></li>
+      <li><span class="src-name">TipRanks preview, &ldquo;Amazon stock forecast: What options traders and financial analysts expect ahead of Q3 earnings today,&rdquo; October 29, 2026 (pre-print Mizuho and Evercore reiterations; TipRanks consensus and mean target).</span> <a href="https://www.tipranks.com/news/amazon-stock-forecast-what-options-traders-and-financial-analysts-expect-ahead-of-q3-earnings-today">https://www.tipranks.com/news/amazon-stock-forecast-what-options-traders-and-financial-analysts-expect-ahead-of-q3-earnings-today</a></li>
+      <li><span class="src-name">Barron&rsquo;s, Amazon earnings and stock price coverage, October 29, 2026 (after-hours price; operating-income expectation of $33.2 billion; year-to-date gain entering the print).</span> <a href="https://www.barrons.com/articles/amazon-earnings-stock-price-c373f755">https://www.barrons.com/articles/amazon-earnings-stock-price-c373f755</a></li>
+      <li><span class="src-name">Barchart, &ldquo;Amazon&rsquo;s 3Q results miss analysts&rsquo; estimates but post solid sales gains in cloud computing unit&rdquo; (FactSet fourth-quarter sales consensus $244.16 billion).</span> <a href="https://www.barchart.com/story/news/8538865/amazon-s-3q-results-miss-analysts-estimates-but-posts-solid-sales-gains-in-cloud-computing-unit">https://www.barchart.com/story/news/8538865/amazon-s-3q-results-miss-analysts-estimates-but-posts-solid-sales-gains-in-cloud-computing-unit</a></li>
+      <li><span class="src-name">The Motley Fool, &ldquo;Stock Market Today: Oct. 29 — Amazon falls on Q3 earnings report and capex concerns,&rdquo; October 29, 2026 (regular-session close and day range; LSEG fourth-quarter sales consensus).</span> <a href="https://www.fool.com/coverage/stock-market-today/2026/10/29/stock-market-today-oct-29-amazon-falls-on-q3-earnings-report-and-capex-concerns/">https://www.fool.com/coverage/stock-market-today/2026/10/29/stock-market-today-oct-29-amazon-falls-on-q3-earnings-report-and-capex-concerns/</a></li>
+      <li><span class="src-name">TheWrap, Amazon Q3 2026 earnings coverage, October 29, 2026 (Prime Video remarks as reported from the call).</span> <a href="https://www.thewrap.com/industry-news/business/amazon-earnings-q3-2026/">https://www.thewrap.com/industry-news/business/amazon-earnings-q3-2026/</a></li>
+      <li><span class="src-name">StockAnalysis, Amazon statistics page (forward price-to-earnings 27.38x, enterprise value to EBITDA 16.33x, market capitalisation, after-hours quote at 4:40 p.m. ET).</span> <a href="https://stockanalysis.com/stocks/amzn/statistics/">https://stockanalysis.com/stocks/amzn/statistics/</a></li>
+      <li><span class="src-name">FinanceFeeds, Amazon stock prediction coverage (Wednesday close $254.60; after-hours quote at 4:31 p.m. ET; Yahoo Finance mean target).</span> <a href="https://financefeeds.com/amazon-stock-prediction-254-60-bull-336-10-bear-227-58/">https://financefeeds.com/amazon-stock-prediction-254-60-bull-336-10-bear-227-58/</a></li>
+      <li><span class="src-name">XTB market analysis, &ldquo;Amazon: record-breaking operating margin outshined by capex growth&rdquo; (prior-year settlement and severance comparison context; underlying operating-income arithmetic; unnamed-provider segment figures, labelled as such in the body).</span> <a href="https://www.xtb.com/int/market-analysis/news-and-research/amazon-record-breaking-operating-margin-outshined-by-capex-growth">https://www.xtb.com/int/market-analysis/news-and-research/amazon-record-breaking-operating-margin-outshined-by-capex-growth</a></li>
+      <li><span class="src-name">MarketWatch live coverage of Amazon earnings, October 29, 2026 ($578 billion contracted backlog).</span> <a href="https://www.marketwatch.com/livecoverage/amazon-earnings-stock-results-amzn-q3/card/amazon-s-cloud-backlog-balloons-to-578-billion-xMrJvfgzlcYLHCXs4Csf">https://www.marketwatch.com/livecoverage/amazon-earnings-stock-results-amzn-q3/card/amazon-s-cloud-backlog-balloons-to-578-billion-xMrJvfgzlcYLHCXs4Csf</a></li>
+      <li><span class="src-name">Binance Square summary of Jefferies analyst Brent Thill on Bloomberg TV, October 29, 2026 (post-print commentary; no new target found).</span> <a href="https://www.binance.com/en/square/post/10-29-2026-stocks-jefferies-brent-thill-says-amazon-earnings-fell-short-of-hopes-382632134141075">https://www.binance.com/en/square/post/10-29-2026-stocks-jefferies-brent-thill-says-amazon-earnings-fell-short-of-hopes-382632134141075</a></li>
+    </ol>
+    <p class="footnote">Sources were read on October 29, 2026, evening Eastern time. Post-print analyst notes dated October 30, 2026 had not been published or indexed in the sources read, and should be re-checked before any revision to the rating or target. The desk rating, conviction score, price target, reference price, and portfolio stance in this report are desk decisions, not source quotations. This report covers Amazon.com only.</p>
+  </section>
+
+  <div class="footer-note">Amazon.com, Inc. (NASDAQ: AMZN) — Q3 2026 post-earnings report, October 29, 2026. Quarter ended September 30, 2026. All figures in U.S. dollars. This report is a research snapshot fixed at the time of writing; prices and analyst views after Thursday evening, October 29, 2026 are not reflected.</div>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var label=document.getElementById('themeLabel');
+  var btn=document.getElementById('themeToggle');
+  function apply(theme){
+    root.setAttribute('data-theme',theme);
+    if(label) label.textContent = theme==='dark' ? 'Light theme' : 'Dark theme';
+    if(btn) btn.setAttribute('aria-pressed', theme==='dark' ? 'true' : 'false');
+  }
+  var initial = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+  apply(initial);
+  if(btn) btn.addEventListener('click',function(){
+    apply(root.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+  });
+})();
+</script>
+</body>
+</html>

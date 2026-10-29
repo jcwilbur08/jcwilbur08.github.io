@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="en" data-theme="auto">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Alphabet Q3 2026 — Post-Earnings Update · Buy 6/10, $430</title>
+<meta name="description" content="Alphabet Q3 2026 post-earnings update: revenue $127.577B, Cloud +103%, GAAP EPS $2.12 after an $8.664B equity-securities loss. Buy maintained, conviction 6/10, target $430." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme:light dark;
+  --paper:#eef3f3; --surface:#ffffff; --ink:#12242a; --muted:#4f666d; --faint:#7b8d92;
+  --line:#d9e2e4; --navy:#0b2634; --blue:#0c4a6e; --teal:#087f7a; --aqua:#72e7d4;
+  --gold:#b97f14; --gold-soft:#fbf3e3; --red:#a83a41; --red-soft:#fbeeee;
+  --soft-teal:#e8f6f3; --soft-blue:#e9f2f7; --soft-gold:#fbf3e3;
+  --shadow:0 18px 50px rgba(13,42,50,.10);
+  --bar1:#0c4a6e; --bar2:#087f7a; --bar3:#9fb8bd;
+}
+html[data-theme="dark"]{
+  --paper:#091418; --surface:#102126; --ink:#eef7f5; --muted:#b6c8c9; --faint:#8ea1a3;
+  --line:#2a3f44; --navy:#061b27; --blue:#0a3f5e; --teal:#0d8e86;
+  --gold:#e7b458; --gold-soft:#2e2513; --red:#e58a8f; --red-soft:#3a1d1f;
+  --soft-teal:#112f2f; --soft-blue:#102b38; --soft-gold:#2e2513;
+  --shadow:0 18px 50px rgba(0,0,0,.28); --bar1:#3f8fb5; --bar2:#2fb3a8; --bar3:#5d767c;
+}
+@media (prefers-color-scheme: dark){
+  html[data-theme="auto"]{
+    --paper:#091418; --surface:#102126; --ink:#eef7f5; --muted:#b6c8c9; --faint:#8ea1a3;
+    --line:#2a3f44; --navy:#061b27; --blue:#0a3f5e; --teal:#0d8e86;
+    --gold:#e7b458; --gold-soft:#2e2513; --red:#e58a8f; --red-soft:#3a1d1f;
+    --soft-teal:#112f2f; --soft-blue:#102b38; --soft-gold:#2e2513;
+    --shadow:0 18px 50px rgba(0,0,0,.28); --bar1:#3f8fb5; --bar2:#2fb3a8; --bar3:#5d767c;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;font-size:16px;line-height:1.62}
+a{color:inherit}
+.report{width:min(1120px,100%);margin:0 auto;background:var(--surface);box-shadow:var(--shadow)}
+/* Cover */
+.cover{min-height:660px;padding:64px 76px 52px;display:flex;flex-direction:column;justify-content:space-between;color:#f7fffd;position:relative;overflow:hidden;background:linear-gradient(138deg,#071c25 0%,#0b2634 42%,#0c4a6e 78%,#087f7a 130%)}
+.cover:after{content:"";position:absolute;width:560px;height:560px;right:-220px;bottom:-280px;border:1px solid rgba(255,255,255,.18);border-radius:50%;box-shadow:0 0 0 68px rgba(255,255,255,.05),0 0 0 140px rgba(255,255,255,.03)}
+.cover-top,.cover-main,.cover-foot{position:relative;z-index:1}
+.cover-top{display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:.84rem;font-weight:700;letter-spacing:.06em;flex-wrap:wrap}
+.cover-top .type{padding:8px 12px;border:1px solid rgba(255,255,255,.42);border-radius:999px}
+.cover-main{max-width:840px;margin:64px 0}
+.company{font-size:clamp(3rem,8vw,6.4rem);font-weight:700;line-height:.9;letter-spacing:-.06em;margin:0 0 26px}
+.cover h1{font-family:"Libre Baskerville",serif;font-size:clamp(1.9rem,4.4vw,3.9rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 24px;max-width:780px}
+.dek{font-size:clamp(1rem,1.6vw,1.2rem);max-width:720px;color:#d8f2ee;margin:0}
+.cover-foot{display:flex;justify-content:space-between;gap:36px;align-items:end;border-top:1px solid rgba(255,255,255,.22);padding-top:22px;flex-wrap:wrap}
+.cover-meta strong{display:block;font-size:1.08rem}.cover-meta span{display:block;color:#c9e7e3;font-size:.86rem}
+.cover-stat{text-align:right}.cover-stat strong{display:block;font-family:"Libre Baskerville",serif;font-size:1.6rem}.cover-stat span{color:#c9e7e3;font-size:.84rem}
+/* Rating strip */
+.rating-strip{display:grid;grid-template-columns:1.25fr repeat(4,1fr);background:#071c25;color:#fff}
+.rating-cell{padding:22px 24px;border-right:1px solid rgba(255,255,255,.12);min-width:0}
+.rating-cell:last-child{border:0}
+.rating-cell span{display:block;color:#95bfc3;font-size:.68rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:5px}
+.rating-cell strong{font-size:1.12rem;line-height:1.25}
+.rating-cell small{display:block;color:#b9d6d3;font-size:.8rem;margin-top:4px}
+/* Toolbar */
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 76px;background:var(--surface);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.toolbar .note{font-size:.82rem;color:var(--muted)}
+.toolbar .actions{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;text-decoration:none;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 14px;border-radius:8px;font:inherit;font-size:.85rem;font-weight:700}
+.btn.primary{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+.btn svg{width:15px;height:15px;flex:none}
+#pdfStatus{font-size:.82rem;color:var(--muted)}
+/* Pages / sections */
+.page{padding:60px 76px}
+.page + .page{border-top:1px solid var(--line)}
+.section-kicker{display:flex;align-items:center;gap:12px;color:var(--teal);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+.section-kicker:before{content:"";width:26px;height:3px;background:var(--teal);flex:none}
+h2{font-family:"Libre Baskerville",serif;font-size:clamp(1.85rem,3.8vw,3rem);line-height:1.15;letter-spacing:-.03em;margin:0 0 22px}
+h3{font-size:1.12rem;line-height:1.3;margin:30px 0 10px;letter-spacing:-.01em}
+p{margin:0 0 16px}
+.lead{font-family:"Libre Baskerville",serif;font-size:1.22rem;line-height:1.65;max-width:880px}
+.muted{color:var(--muted)}
+.small{font-size:.87rem}
+.strong{font-weight:700}
+/* Correction notice */
+.correction{border:2px solid var(--gold);background:var(--gold-soft);padding:26px 28px;margin:0}
+.correction h2{font-size:1.5rem;margin-bottom:8px}
+.correction ol{margin:14px 0 0;padding-left:22px}
+.correction li{margin:0 0 12px}
+.correction li:last-child{margin-bottom:0}
+.correction .old{color:var(--muted)}
+.correction .locked{font-weight:700}
+/* Callouts / grids */
+.callout{padding:26px 28px;background:var(--soft-teal);border-radius:4px}
+.callout.gold{background:var(--soft-gold)}
+.callout.blue{background:var(--soft-blue)}
+.callout.red{background:var(--red-soft)}
+.callout h3{margin:0 0 10px}
+.callout p:last-child,.callout ul:last-child{margin-bottom:0}
+.callout ul{margin:0 0 16px;padding-left:20px}
+.callout li{margin-bottom:8px}
+.verdict{background:var(--navy);color:#ecf8f5;padding:30px;border-radius:4px}
+.verdict h3{margin:0 0 10px;color:#8fe0d4}
+.verdict p{color:#d2e5e5}.verdict p:last-child{margin:0}
+.thesis-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:start;margin-top:32px}
+.two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.three-col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.pillar{padding:20px 0;border-top:3px solid var(--ink)}
+.pillar h3{margin:0 0 8px}.pillar p{color:var(--muted);margin:0}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:30px 0}
+.metric{background:var(--soft-blue);padding:20px 18px;min-height:126px}
+.metric .label{display:block;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:6px}
+.metric strong{display:block;font-size:1.45rem;line-height:1.15;letter-spacing:-.02em}
+.metric small{display:block;color:var(--muted);margin-top:6px;font-size:.83rem;line-height:1.45}
+/* TOC */
+.toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;counter-reset:toc}
+.toc a{counter-increment:toc;display:flex;align-items:baseline;gap:14px;padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:600}
+.toc a:before{content:counter(toc,decimal-leading-zero);color:var(--teal);font-weight:800;font-size:.85rem}
+.toc a span{margin-left:auto;color:var(--faint);font-size:.85rem;font-weight:400;flex:none}
+/* Tables */
+.data-table{width:100%;border-collapse:collapse;margin:24px 0 8px;font-size:.95rem}
+.data-table th{text-align:left;color:var(--muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;padding:10px 12px;border-bottom:2px solid var(--line);font-weight:700}
+.data-table td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+.data-table td.num,.data-table th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.data-table tr.total td{font-weight:700;background:var(--soft-blue)}
+.data-table td.accent{font-weight:700;color:var(--teal)}
+.data-table td.neg{color:var(--red);font-weight:600}
+.table-note{font-size:.84rem;color:var(--muted);margin:8px 0 0}
+/* Charts */
+.chart{margin:28px 0;padding:26px;background:var(--soft-blue);border-radius:4px}
+.chart-title{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.chart-title h3{margin:0}.chart-title p{margin:0;color:var(--muted);font-size:.86rem}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.chart .disclosure{font-size:.84rem;color:var(--muted);margin:14px 0 0}
+/* Lists */
+.watchlist{list-style:none;padding:0;margin:22px 0 0}
+.watchlist li{display:grid;grid-template-columns:42px 1fr;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.watchlist .n{width:32px;height:32px;border-radius:50%;background:var(--soft-teal);color:var(--teal);font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.watchlist strong{display:block}
+.watchlist p{margin:4px 0 0;color:var(--muted)}
+.risk{display:grid;grid-template-columns:170px 1fr;gap:28px;padding:22px 0;border-top:1px solid var(--line)}
+.risk .level{font-weight:800;text-transform:uppercase;letter-spacing:.06em;font-size:.82rem}
+.risk .level.high{color:var(--red)}.risk .level.med{color:var(--gold)}.risk .level.low{color:var(--teal)}
+.risk h3{margin:0 0 6px}.risk p{margin:0;color:var(--muted)}
+.catalyst-timeline{display:grid;grid-template-columns:170px 1fr;gap:0 26px;margin-top:24px}
+.catalyst-timeline .date,.catalyst-timeline .event{padding:18px 0;border-top:1px solid var(--line)}
+.catalyst-timeline .date{font-weight:700}
+.catalyst-timeline .event p{margin:0;color:var(--muted)}
+.catalyst-timeline .event strong{color:var(--ink)}
+.basis-key{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}
+.basis-key div{background:var(--soft-blue);padding:16px 18px;font-size:.88rem}
+.basis-key strong{display:block;margin-bottom:4px}
+.appendix{background:var(--paper);font-size:.86rem}
+.appendix h2{font-size:1.7rem}
+.source-list{list-style:none;padding:0;margin:20px 0 0;counter-reset:sources}
+.source-list li{counter-increment:sources;display:grid;grid-template-columns:34px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid var(--line)}
+.source-list li:before{content:counter(sources);color:var(--teal);font-weight:800}
+.source-list a{word-break:break-word}
+.appendix h3{margin-top:34px}
+.footnote{border-top:1px solid var(--line);margin-top:36px;padding-top:18px;color:var(--muted);font-size:.84rem}
+.skip{display:none}
+@media(max-width:860px){
+  .rating-strip{grid-template-columns:1fr 1fr}
+  .rating-cell{border-bottom:1px solid rgba(255,255,255,.12)}
+  .thesis-grid,.two-col,.three-col,.basis-key{grid-template-columns:1fr}
+  .metrics{grid-template-columns:1fr 1fr}
+  .toc{grid-template-columns:1fr}
+  .risk{grid-template-columns:1fr;gap:6px}
+  .catalyst-timeline{grid-template-columns:1fr;gap:0}
+  .catalyst-timeline .date{padding-bottom:0;border-top:1px solid var(--line)}
+  .catalyst-timeline .event{padding-top:6px}
+}
+@media(max-width:760px){
+  .report{box-shadow:none}
+  .cover{min-height:600px;padding:44px 24px 36px}
+  .cover-main{margin:48px 0}
+  .cover-foot{align-items:flex-start;flex-direction:column;gap:14px}
+  .cover-stat{text-align:left}
+  .toolbar,.page{padding-left:24px;padding-right:24px}
+  .page{padding-top:44px;padding-bottom:44px}
+  .metrics{grid-template-columns:1fr 1fr}
+  .data-table thead{display:none}
+  .data-table,.data-table tbody,.data-table tr,.data-table td{display:block;width:100%}
+  .data-table tr{border-top:2px solid var(--line);padding:8px 0}
+  .data-table td{border-bottom:0;padding:5px 0}
+  .data-table td:before{content:attr(data-label);display:block;color:var(--muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;font-weight:700;margin-bottom:2px}
+  .data-table td.num{text-align:left;white-space:normal}
+  .data-table tr.total td:first-child:before{display:none}
+}
+@media print{
+  body{background:#fff}
+  .report{width:100%;box-shadow:none}
+  .cover{min-height:100vh;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .toolbar{display:none}
+  .page{padding:44px 52px;page-break-inside:auto}
+  a{text-decoration:none}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main class="report" id="main">
+
+  <!-- COVER -->
+  <section class="cover" aria-label="Report cover">
+    <div class="cover-top"><span class="type">POST-EARNINGS UPDATE</span><span>October 28, 2026 · After the close</span></div>
+    <div class="cover-main">
+      <div class="company">Alphabet</div>
+      <h1>Cloud doubled. The market sold the cash burn.</h1>
+      <p class="dek">Q3 revenue rose 25% and Google Cloud more than doubled to $30.7 billion on a $561 billion backlog. GAAP earnings fell anyway — not on operations, but on an $8.7 billion non-operating mark on equity securities — while a $51.4 billion capex quarter pushed free cash flow negative for a second straight quarter. The operating thesis held. The funding of it is now the argument.</p>
+    </div>
+    <div class="cover-foot">
+      <div class="cover-meta"><strong>Alphabet Inc. — Class A</strong><span>NASDAQ: GOOGL · Quarter ended September 30, 2026</span></div>
+      <div class="cover-stat"><strong>$324.89</strong><span>Regular-session close, Oct 28 · +1.34%</span></div>
+    </div>
+  </section>
+
+  <!-- RATING STRIP -->
+  <section class="rating-strip" aria-label="Investment rating summary">
+    <div class="rating-cell"><span>Rating · Conviction</span><strong>Buy · 6/10</strong><small>Maintained</small></div>
+    <div class="rating-cell"><span>Reference price</span><strong>$324.89</strong><small>GOOGL, Oct 28 close</small></div>
+    <div class="rating-cell"><span>12-month target</span><strong>$430</strong><small>Maintained from Oct 16 upgrade</small></div>
+    <div class="rating-cell"><span>Upside to target</span><strong>+32.3%</strong><small>Calculated from reference price</small></div>
+    <div class="rating-cell"><span>Position</span><strong>145 shares · ~2.7%</strong><small>Class C holding; priced on GOOGL Class A</small></div>
+  </section>
+
+  <!-- TOOLBAR -->
+  <div class="toolbar">
+    <span class="note">Research time: evening of Oct 28, 2026 (EDT). The Oct 29 session had not occurred.</span>
+    <div class="actions">
+      <button class="btn" id="themeToggle" type="button" aria-pressed="false">Dark / light</button>
+      <button class="btn primary" id="pdfBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M4 21h16"/></svg>
+        Download PDF
+      </button>
+    </div>
+    <span id="pdfStatus" role="status" aria-live="polite"></span>
+  </div>
+
+  <!-- CORRECTION NOTICE -->
+  <section class="page" id="corrections" aria-label="Correction notice">
+    <div class="correction">
+      <div class="section-kicker">Read this first · Correction notice</div>
+      <h2>Four bars from the pre-print coverage are superseded.</h2>
+      <p class="small muted" style="margin-bottom:0">Each item below gives the figure as it was quoted before the print, then the locked figure used throughout this report. Where the earlier figure was wrong, this report does not use it again.</p>
+      <ol>
+        <li><span class="old">Quoted before the print: revenue consensus of about $127.67 billion, which made $127.577 billion look in line.</span><br><span class="locked">Locked: LSEG consensus $128.22 billion. Revenue MISSED by $0.64 billion.</span></li>
+        <li><span class="old">Quoted before the print: a Cloud bar of about $29 billion.</span><br><span class="locked">Locked: LSEG consensus $29.57 billion. Cloud BEAT by $1.14 billion.</span></li>
+        <li><span class="old">Conflicting pre-print coverage put the 2026 capex guide at either $175–185 billion or $195–205 billion, and some headlines said it was raised on this call.</span><br><span class="locked">Resolved: the guide entering the print was $195–205 billion — raised at the Q2 call from $180–190 billion; $175–185 billion was the stale February guide. On the Q3 call it was left UNCHANGED. Any headline saying it was raised on this call is wrong.</span></li>
+        <li><span class="old">EPS bar of $3.02.</span><br><span class="locked">Confirmed: LSEG $3.02. Reported GAAP EPS of $2.12 missed it, and $2.67 excluding the equity-securities loss (calculated) still missed it.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- REPORT MAP -->
+  <section class="page" id="toc">
+    <div class="section-kicker">Contents</div>
+    <h2>Report map</h2>
+    <nav class="toc" aria-label="Report sections">
+      <a href="#summary">Executive summary &amp; thesis <span>01</span></a>
+      <a href="#kpi">KPI snapshot <span>02</span></a>
+      <a href="#segments">Segment detail <span>03</span></a>
+      <a href="#equity-loss">The equity-securities loss <span>04</span></a>
+      <a href="#capex">Capex, cash flow &amp; capital return <span>05</span></a>
+      <a href="#cloud">Cloud, backlog &amp; TPUs <span>06</span></a>
+      <a href="#search">Search &amp; AI Mode <span>07</span></a>
+      <a href="#youtube-waymo">YouTube &amp; Waymo <span>08</span></a>
+      <a href="#antitrust">Antitrust status <span>09</span></a>
+      <a href="#valuation">Valuation &amp; the $430 target <span>10</span></a>
+      <a href="#risks">Risks <span>11</span></a>
+      <a href="#catalysts">Catalysts &amp; what would change the rating <span>12</span></a>
+      <a href="#open-questions">Open questions <span>13</span></a>
+      <a href="#sources">Source appendix <span>14</span></a>
+    </nav>
+    <div class="basis-key" aria-label="How figures are labelled">
+      <div><strong>Reported</strong>Printed in Alphabet&rsquo;s earnings release, or stated by management on the call.</div>
+      <div><strong>Calculated</strong>Arithmetic from reported figures. Alphabet did not print the number.</div>
+      <div><strong>Consensus / estimate / opinion</strong>Consensus is LSEG only, unless a second provider is named. Estimates are analysts&rsquo; figures. Opinion is desk or press interpretation, labelled as such.</div>
+    </div>
+    <p class="small muted">No inline reference tags appear in the body of this report. Every source is listed, with its publication and link, in the source appendix at the end. Figures that could not be verified, or that rest on a single source, are flagged in the text where they appear and collected under Open questions.</p>
+  </section>
+
+  <!-- 01 SUMMARY -->
+  <section class="page" id="summary">
+    <div class="section-kicker">01 · Executive summary &amp; thesis</div>
+    <h2>The print confirmed the operating thesis. The selloff was about funding, marks, and an unquantified 2027.</h2>
+    <p class="lead">Alphabet&rsquo;s third quarter was two stories at once. Operations accelerated: total revenue grew 25% — a thirteenth straight quarter of double-digit growth — operating income rose 30%, and Cloud more than doubled while expanding its margin to 36.2%. The earnings line went the other way because other income swung by $21.0 billion (calculated) on a mark-to-market loss, and the cash line went negative because Alphabet spent $51.4 billion building the capacity behind the Cloud backlog. After-hours trading, in thin snapshots through the evening, priced the second story first.</p>
+    <p>Against the single consensus provider used for every bar in this report, LSEG, the scoreboard is split: revenue and GAAP EPS missed; Cloud beat. Revenue of $127.577 billion (reported) came in $0.64 billion below the LSEG $128.22 billion consensus. GAAP diluted EPS of $2.12 (reported) missed the LSEG $3.02 consensus by $0.90 — and even $2.67 excluding the equity-securities loss (calculated) would have missed. Cloud revenue of $30.709 billion (reported) beat the LSEG $29.57 billion consensus by $1.14 billion, growing 103%. The number of estimates behind the LSEG figures was not available in any source consulted; that gap is stated plainly rather than filled.</p>
+    <div class="thesis-grid">
+      <div>
+        <div class="three-col">
+          <div class="pillar"><h3>Demand is not the constraint</h3><p>Cloud backlog reached $561 billion (reported on the call), up from about $514 billion at the end of Q2. Management&rsquo;s constraint is supply: demand for AI compute is outpacing the capacity coming online.</p></div>
+          <div class="pillar"><h3>Search held, monetization lagged</h3><p>Search grew 12% with query growth at its highest in five years. Revenue growth decelerated from 17% in Q2, and management attributed the step-down mainly to currency, then to advertiser and mix effects, and to lower monetization in AI Mode.</p></div>
+          <div class="pillar"><h3>The bill arrived in cash</h3><p>Capex of $51.355 billion and a second straight negative free-cash-flow quarter, funded in part by $12.4 billion of share issuance and $28.7 billion of notes, with zero buybacks. That is the discipline question for 2027.</p></div>
+        </div>
+        <p style="margin-top:22px">The desk&rsquo;s view, in one sentence: <strong>this was a Cloud-demand print wearing a cash-burn tape reaction</strong> — the backlog, the margin expansion, and Search resilience argue the franchise is strengthening, while the negative free cash flow, the paused buyback, and an unquantified 2027 capex path argue against paying up for that strength before the Q4 call quantifies it.</p>
+      </div>
+      <aside class="verdict">
+        <h3>Desk verdict — maintain Buy, 6/10</h3>
+        <p><strong>Maintain Buy, conviction 6/10, 12-month target $430.</strong> The print confirmed the operating thesis, so the rating and target stand. Conviction stays at 6, not higher, for three stated reasons: free cash flow was negative for a second straight quarter; the quarter had zero buybacks alongside $12.4 billion of ATM share issuance; and 2027 capex is unquantified beyond management&rsquo;s words that it will &ldquo;increase significantly.&rdquo;</p>
+        <p>No gate is installed and no new gate is recommended in this report. Revisit after the Q4 call, when 2027 capex is quantified. The position on record is 145 Class C shares at about 2.7% weight; this report prices GOOGL Class A only and does not use the single-source Class C close.</p>
+      </aside>
+    </div>
+    <div class="metrics">
+      <div class="metric"><span class="label">Total revenue</span><strong>$127.58B</strong><small>Reported · +25% year over year; missed LSEG $128.22B</small></div>
+      <div class="metric"><span class="label">Google Cloud</span><strong>$30.71B</strong><small>Reported · +103%; beat LSEG $29.57B by $1.14B</small></div>
+      <div class="metric"><span class="label">GAAP diluted EPS</span><strong>$2.12</strong><small>Reported · −26% year over year (calculated); missed LSEG $3.02</small></div>
+      <div class="metric"><span class="label">Free cash flow</span><strong>−$9.07B</strong><small>Reported · second straight negative quarter</small></div>
+    </div>
+    <div class="callout">
+      <h3>What the after-hours move did — and did not — establish</h3>
+      <p>GOOGL closed the regular session at $324.89, up $4.31 (+1.34%) on the day, after trading between $322.66 and $326.41 on about 46.8 million shares. After the close, timestamped snapshots in thin trading showed roughly $294.49 at about 5:08 p.m. ET (−9.36%) and $293.45 at 5:30 p.m. ET (−9.68%), with an after-hours range of $292.00–$327.56 at that snapshot. Press accounts later in the evening described falls of &ldquo;about 8%&rdquo; to &ldquo;more than 10%&rdquo; at different times — the spread is the snapshot time, not disagreement about direction.</p>
+      <p><strong>Treat every after-hours print as a snapshot, never a close.</strong> The session runs to 8:00 p.m. ET, no final after-hours close was established in this research, and the October 29 session had not occurred at research time. Do not annualise, average, or trade off a single after-hours print.</p>
+    </div>
+  </section>
+
+  <!-- 02 KPI -->
+  <section class="page" id="kpi">
+    <div class="section-kicker">02 · KPI snapshot</div>
+    <h2>The quarter in one table.</h2>
+    <p>All reported figures are from Alphabet&rsquo;s Q3 2026 earnings release unless noted as call statements. Consensus is LSEG throughout. Variances and growth rates not printed by Alphabet are calculated and labelled as such.</p>
+    <table class="data-table">
+      <thead><tr><th>Measure</th><th class="num">Q3 2026</th><th class="num">Q3 2025</th><th class="num">LSEG consensus</th><th>Basis / read</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Measure">Total revenues</td><td class="num" data-label="Q3 2026">$127,577m</td><td class="num" data-label="Q3 2025">$102,346m</td><td class="num" data-label="LSEG consensus">$128,220m</td><td data-label="Basis / read">Reported · +25% reported and constant currency · <span class="neg">Miss by $0.64B</span></td></tr>
+        <tr><td data-label="Measure">GAAP diluted EPS (common)</td><td class="num" data-label="Q3 2026">$2.12</td><td class="num" data-label="Q3 2025">$2.87</td><td class="num" data-label="LSEG consensus">$3.02</td><td data-label="Basis / read">Reported · −26% (calculated) · <span class="neg">Miss by $0.90</span></td></tr>
+        <tr><td data-label="Measure">EPS excluding equity-securities loss</td><td class="num" data-label="Q3 2026">$2.67</td><td class="num" data-label="Q3 2025">—</td><td class="num" data-label="LSEG consensus">$3.02</td><td data-label="Basis / read">Calculated ($2.12 + $0.55) · still a miss · Alphabet presented no adjusted EPS</td></tr>
+        <tr><td data-label="Measure">Net income available to common</td><td class="num" data-label="Q3 2026">$26,170m</td><td class="num" data-label="Q3 2025">$34,979m</td><td class="num" data-label="LSEG consensus">—</td><td data-label="Basis / read">Reported · −25% (calculated); net income before $298m preferred dividends was $26,468m</td></tr>
+        <tr><td data-label="Measure">Operating income</td><td class="num" data-label="Q3 2026">$40,576m</td><td class="num" data-label="Q3 2025">$31,228m</td><td class="num" data-label="LSEG consensus">—</td><td data-label="Basis / read">Reported · +30% · margin 31.8% (release rounds to 32%)</td></tr>
+        <tr><td data-label="Measure">Google Cloud revenue</td><td class="num accent" data-label="Q3 2026">$30,709m</td><td class="num" data-label="Q3 2025">$15,157m</td><td class="num" data-label="LSEG consensus">$29,570m</td><td data-label="Basis / read">Reported · +103% · <strong>Beat by $1.14B</strong></td></tr>
+        <tr><td data-label="Measure">Capital expenditures</td><td class="num" data-label="Q3 2026">$51,355m</td><td class="num" data-label="Q3 2025">$23,953m</td><td class="num" data-label="LSEG consensus">—</td><td data-label="Basis / read">Reported · +114% (calculated)</td></tr>
+        <tr><td data-label="Measure">Free cash flow (non-GAAP)</td><td class="num neg" data-label="Q3 2026">−$9,065m</td><td class="num" data-label="Q3 2025">—</td><td class="num" data-label="LSEG consensus">−$36m</td><td data-label="Basis / read">Reported · LSEG FCF figure via Reuters; see FactSet split below — do not mix providers</td></tr>
+        <tr><td data-label="Measure">Operating cash flow</td><td class="num" data-label="Q3 2026">$42,290m</td><td class="num" data-label="Q3 2025">$48,414m</td><td class="num" data-label="LSEG consensus">—</td><td data-label="Basis / read">Reported · hit by TPU inventory build and a $5.2B EC fine payment</td></tr>
+        <tr><td data-label="Measure">Effective tax rate</td><td class="num" data-label="Q3 2026">18.2%</td><td class="num" data-label="Q3 2025">20.5%</td><td class="num" data-label="LSEG consensus">—</td><td data-label="Basis / read">Calculated from tax provision and pre-tax income; not stated by Alphabet</td></tr>
+        <tr><td data-label="Measure">Cash + marketable securities</td><td class="num" data-label="Q3 2026">$265,098m</td><td class="num" data-label="Q3 2025">—</td><td class="num" data-label="LSEG consensus">—</td><td data-label="Basis / read">Reported, Sept 30 · $126,843m at Dec 31, 2025</td></tr>
+        <tr><td data-label="Measure">Headcount</td><td class="num" data-label="Q3 2026">204,757</td><td class="num" data-label="Q3 2025">190,167</td><td class="num" data-label="LSEG consensus">—</td><td data-label="Basis / read">Reported</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">Comparability caveat, stated by the press coverage itself: it was &ldquo;not immediately clear&rdquo; that the $2.12 GAAP figure was comparable to the $3.02 LSEG consensus. That is why this report shows both $2.12 and $2.67 (calculated) against the same bar, and labels the $2.67 figure as arithmetic, not as an Alphabet-adjusted EPS.</p>
+    <div class="callout blue">
+      <h3>Second-provider figures — shown separately, never averaged with LSEG</h3>
+      <p>FactSet estimates, as carried in secondary coverage, were: Cloud revenue $28.8 billion; operating income $43.19 billion (reported $40.58 billion); capex $55.09–55.2 billion (reported $51.36 billion); free cash flow −$2.27 billion. The FactSet FCF expectation and the LSEG FCF figure of −$36 million differ sharply by provider. <strong>Do not mix or average them.</strong> Other unattributed aggregator figures (revenue $127.83–127.97 billion, EPS $3.00–3.03) are not used as consensus anywhere in this report. Zacks consensus ($2.94 EPS, $111.21 billion ex-TAC revenue) is on a different basis and is excluded from the LSEG set.</p>
+    </div>
+  </section>
+
+  <!-- 03 SEGMENTS -->
+  <section class="page" id="segments">
+    <div class="section-kicker">03 · Segment detail</div>
+    <h2>Cloud did the accelerating. Services did the earning.</h2>
+    <p class="lead">Google Services grew 11% to $96.302 billion at a 40.7% operating margin. Google Cloud grew 103% to $30.709 billion at a 36.2% operating margin, more than tripling its operating income. The two engines are now pulling in the same direction at very different speeds — and Cloud, at 24% of revenue, is no longer a side business.</p>
+    <table class="data-table">
+      <thead><tr><th>Revenue by segment</th><th class="num">Q3 2025</th><th class="num">Q3 2026</th><th class="num">Year over year</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Segment">Google Search &amp; other</td><td class="num" data-label="Q3 2025">$56,567m</td><td class="num" data-label="Q3 2026">$63,350m</td><td class="num" data-label="YoY">+12% reported</td></tr>
+        <tr><td data-label="Segment">YouTube ads</td><td class="num" data-label="Q3 2025">$10,261m</td><td class="num" data-label="Q3 2026">$11,207m</td><td class="num" data-label="YoY">+9% (+9.2% calculated)</td></tr>
+        <tr><td data-label="Segment">Google Network</td><td class="num" data-label="Q3 2025">$7,354m</td><td class="num" data-label="Q3 2026">$7,455m</td><td class="num" data-label="YoY">+1% (+1.4% calculated; CFO: &ldquo;up 1%&rdquo;)</td></tr>
+        <tr class="total"><td data-label="Segment">Total Google advertising</td><td class="num" data-label="Q3 2025">$74,182m</td><td class="num" data-label="Q3 2026">$82,012m</td><td class="num" data-label="YoY">+11% (+10.6% calculated)</td></tr>
+        <tr><td data-label="Segment">Google subscriptions, platforms &amp; devices</td><td class="num" data-label="Q3 2025">$12,870m</td><td class="num" data-label="Q3 2026">$14,290m</td><td class="num" data-label="YoY">+11% (+11.0% calculated)</td></tr>
+        <tr class="total"><td data-label="Segment">Google Services total</td><td class="num" data-label="Q3 2025">$87,052m</td><td class="num" data-label="Q3 2026">$96,302m</td><td class="num" data-label="YoY">+11% reported</td></tr>
+        <tr><td data-label="Segment">Google Cloud</td><td class="num" data-label="Q3 2025">$15,157m</td><td class="num accent" data-label="Q3 2026">$30,709m</td><td class="num" data-label="YoY">+103% reported — &ldquo;record growth&rdquo;</td></tr>
+        <tr><td data-label="Segment">Other Bets</td><td class="num" data-label="Q3 2025">$344m</td><td class="num" data-label="Q3 2026">$372m</td><td class="num" data-label="YoY">+8% (calculated)</td></tr>
+        <tr><td data-label="Segment">Hedging gains (losses)</td><td class="num" data-label="Q3 2025">−$207m</td><td class="num" data-label="Q3 2026">$194m</td><td class="num" data-label="YoY">—</td></tr>
+        <tr class="total"><td data-label="Segment">Total revenues</td><td class="num" data-label="Q3 2025">$102,346m</td><td class="num" data-label="Q3 2026">$127,577m</td><td class="num" data-label="YoY">+25% reported</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">All figures in this table are reported in the earnings release. &ldquo;Google subscriptions, platforms &amp; devices&rdquo; is the release label for the line described in the research brief as Google Other.</p>
+    <div class="chart" role="img" aria-label="Bar chart: Q3 2025 versus Q3 2026 revenue by segment. Cloud rose from 15.2 to 30.7 billion dollars; Search from 56.6 to 63.4 billion; subscriptions, platforms and devices from 12.9 to 14.3 billion; YouTube ads from 10.3 to 11.2 billion; Network from 7.4 to 7.5 billion.">
+      <div class="chart-title"><h3>Where the growth came from</h3><p>Revenue, $ billions · reported</p></div>
+      <svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="presentation">
+        <g font-family="DM Sans, sans-serif" font-size="12" fill="currentColor">
+          <text x="0" y="22">Search &amp; other</text>
+          <rect x="172" y="8" width="355" height="14" fill="#9fb8bd"/><rect x="172" y="26" width="397" height="14" fill="#0c4a6e"/>
+          <text x="578" y="20">56.6</text><text x="578" y="38" font-weight="700">63.4</text>
+          <text x="0" y="72">YouTube ads</text>
+          <rect x="172" y="58" width="64" height="14" fill="#9fb8bd"/><rect x="172" y="76" width="70" height="14" fill="#0c4a6e"/>
+          <text x="248" y="70">10.3</text><text x="248" y="88" font-weight="700">11.2</text>
+          <text x="0" y="122">Network</text>
+          <rect x="172" y="108" width="46" height="14" fill="#9fb8bd"/><rect x="172" y="126" width="47" height="14" fill="#0c4a6e"/>
+          <text x="224" y="120">7.4</text><text x="224" y="138" font-weight="700">7.5</text>
+          <text x="0" y="172">Subscriptions</text>
+          <rect x="172" y="158" width="81" height="14" fill="#9fb8bd"/><rect x="172" y="176" width="90" height="14" fill="#0c4a6e"/>
+          <text x="268" y="170">12.9</text><text x="268" y="188" font-weight="700">14.3</text>
+          <text x="0" y="222">Google Cloud</text>
+          <rect x="172" y="208" width="95" height="14" fill="#9fb8bd"/><rect x="172" y="226" width="193" height="14" fill="#087f7a"/>
+          <text x="274" y="220">15.2</text><text x="372" y="238" font-weight="700">30.7</text>
+          <text x="0" y="272">Other Bets</text>
+          <rect x="172" y="258" width="4" height="14" fill="#9fb8bd"/><rect x="172" y="276" width="4" height="14" fill="#0c4a6e"/>
+          <text x="184" y="270">0.3</text><text x="184" y="288" font-weight="700">0.4</text>
+        </g>
+        <g font-family="DM Sans, sans-serif" font-size="11" fill="#7b8d92"><text x="172" y="298"></text></g>
+      </svg>
+      <p class="disclosure">Upper bar in each pair: Q3 2025. Lower bar: Q3 2026. Cloud is the only segment whose bar roughly doubles; Network is essentially flat. Values rounded to one decimal from the reported millions in the table above.</p>
+    </div>
+    <h3>Operating income by segment</h3>
+    <table class="data-table">
+      <thead><tr><th>Segment</th><th class="num">Q3 2026 operating income</th><th class="num">Q3 2025</th><th>Margin / note</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Segment">Google Services</td><td class="num" data-label="Q3 2026">$39,157m</td><td class="num" data-label="Q3 2025">$33,527m</td><td data-label="Margin">40.7% margin, stated by the CFO on the call</td></tr>
+        <tr><td data-label="Segment">Google Cloud</td><td class="num accent" data-label="Q3 2026">$11,121m</td><td class="num" data-label="Q3 2025">$3,594m</td><td data-label="Margin">36.2% margin (23.7% a year earlier, stated by the CFO) — more than tripled</td></tr>
+        <tr><td data-label="Segment">Other Bets</td><td class="num neg" data-label="Q3 2026">−$2,047m</td><td class="num" data-label="Q3 2025">−$1,426m</td><td data-label="Margin">Loss widened as Waymo expands, per the release framing</td></tr>
+        <tr><td data-label="Segment">Alphabet-level activities</td><td class="num neg" data-label="Q3 2026">−$7,655m</td><td class="num" data-label="Q3 2025">−$4,467m</td><td data-label="Margin">Primarily shared AI research and development, per the release</td></tr>
+      </tbody>
+    </table>
+    <p>Total traffic acquisition costs were $16,366 million, versus $14,876 million a year earlier — up 10%, per the call. Alphabet-level operating income of $40,576 million is the sum of those four lines; the widening Alphabet-level loss is the cost of the shared AI research that sits behind both Services and Cloud, and it is the main reason Cloud&rsquo;s 36.2% margin does not flow straight through to the group margin of 31.8%.</p>
+    <div class="callout">
+      <h3>Desk read — Services is the ballast, Cloud is the re-rating engine</h3>
+      <p>Opinion: a 40.7% Services margin on 11% growth is what lets Alphabet fund a doubling Cloud business without the group margin collapsing — group margin actually widened by about 1.3 points (calculated). The risk to that read is not this quarter&rsquo;s Cloud margin, which expanded sharply, but next year&rsquo;s: management warned that third-party bridging capacity ramping in Q4 brings near-term Cloud margin headwinds, and that depreciation and data-centre operating costs, including energy, &ldquo;will continue to weigh on the P&amp;L.&rdquo; Watch the Cloud margin, not just Cloud revenue, from Q4 onward.</p>
+    </div>
+  </section>
+
+  <!-- 04 EQUITY LOSS -->
+  <section class="page" id="equity-loss">
+    <div class="section-kicker">04 · The equity-securities loss</div>
+    <h2>A $0.55 earnings hit that the release never attributes.</h2>
+    <p class="lead">The single largest reason GAAP EPS fell 26% while operating income rose 30% sits below the operating line. Other income swung from a $12,759 million gain a year ago to an $8,221 million expense — a $20,980 million swing (calculated) — driven by a net loss on equity securities of $8,664 million, against a $10,734 million gain in Q3 2025.</p>
+    <table class="data-table">
+      <thead><tr><th>Other income / equity securities</th><th class="num">Q3 2026</th><th class="num">Q3 2025</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Line">Net gain (loss) on equity securities</td><td class="num neg" data-label="Q3 2026">−$8,664m</td><td class="num" data-label="Q3 2025">+$10,734m</td></tr>
+        <tr><td data-label="Line">Other income (expense), net</td><td class="num neg" data-label="Q3 2026">−$8,221m</td><td class="num" data-label="Q3 2025">+$12,759m</td></tr>
+        <tr><td data-label="Line">Effect on income-tax provision (release footnote)</td><td class="num" data-label="Q3 2026">−$1,900m</td><td class="num" data-label="Q3 2025">—</td></tr>
+        <tr><td data-label="Line">Effect on net income (release footnote)</td><td class="num neg" data-label="Q3 2026">−$6,700m</td><td class="num" data-label="Q3 2025">—</td></tr>
+        <tr><td data-label="Line">Effect on diluted EPS (release footnote)</td><td class="num neg" data-label="Q3 2026">−$0.55</td><td class="num" data-label="Q3 2025">—</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">All figures in this table are reported in the earnings release. The release states the loss &ldquo;includes all gains and losses, unrealized and realized.&rdquo; The $2.67 ex-loss EPS shown elsewhere in this report is $2.12 plus $0.55 — arithmetic, not a figure Alphabet presented.</p>
+    <div class="callout gold">
+      <h3>Attribution — flagged plainly: single transcript source, not in the release</h3>
+      <p><strong>The earnings release itself does not name any holding.</strong> The attribution came only on the call, where CFO Anat Ashkenazi said other income and expense was −$8.2 billion &ldquo;due primarily to unrealized loss from our investment in SpaceX from a decline in its stock price in the third quarter.&rdquo; That wording rests on one transcription of the call. No size for the SpaceX component was disclosed, no other holding was named, and no SpaceX valuation was disclosed on the call. No analyst question on the call followed up on the loss.</p>
+      <p><strong>Do not state the SpaceX attribution as release-confirmed, and do not put a number on it.</strong> This report carries it exactly as flagged here: a CFO call remark, via a single transcript source.</p>
+    </div>
+    <h3>Context: the first half ran the other way</h3>
+    <p>The release cash-flow statement shows a year-to-date 2026 &ldquo;loss (gain) on debt and equity securities, net&rdquo; of −$126,755 million — that is, a gain of that size — reflecting very large first-half gains. Secondary coverage puts the first-half split at +$36.9 billion in Q1 and +$99.0 billion in Q2, sourced to the earlier 10-Qs. <strong>That split is secondary-source only and was not re-verified against the 10-Qs in this research</strong>; the year-to-date gain figure itself is from the release. The honest through-line is volatility, not direction: the same equity-securities line that flattered the first half took $0.55 off Q3 EPS. Anyone modelling Alphabet earnings on a single quarter&rsquo;s other-income line will be wrong in both directions.</p>
+  </section>
+
+  <!-- 05 CAPEX -->
+  <section class="page" id="capex">
+    <div class="section-kicker">05 · Capex, cash flow &amp; capital return</div>
+    <h2>$51.4 billion in one quarter — and the guide did not move.</h2>
+    <p class="lead">Capex more than doubled year over year, operating cash flow fell despite 30% operating-income growth, and free cash flow was negative for a second consecutive quarter. Management left the full-year guide unchanged, which arithmetically requires a Q4 spend larger than Q3&rsquo;s. The funding mix changed at the same time: no buybacks, heavy issuance.</p>
+    <table class="data-table">
+      <thead><tr><th>Cash flow &amp; spend</th><th class="num">Q3 2026</th><th class="num">Comparison</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Line">Capital expenditures (purchases of property &amp; equipment)</td><td class="num" data-label="Q3 2026">$51,355m</td><td data-label="Comparison">$23,953m in Q3 2025 · +114% (calculated)</td></tr>
+        <tr><td data-label="Line">Capex, trailing twelve months</td><td class="num" data-label="Q3 2026">$159,804m</td><td data-label="Comparison">Release reconciliation, Q4 2025–Q3 2026</td></tr>
+        <tr><td data-label="Line">Operating cash flow</td><td class="num" data-label="Q3 2026">$42,290m</td><td data-label="Comparison">$48,414m in Q3 2025 · TTM $179,551m</td></tr>
+        <tr><td data-label="Line">Free cash flow (non-GAAP: operating cash flow less capex)</td><td class="num neg" data-label="Q3 2026">−$9,065m</td><td data-label="Comparison">+$24,551m Q4 2025 · +$10,116m Q1 2026 · −$5,855m Q2 2026 · TTM $19,747m</td></tr>
+        <tr><td data-label="Line">Implied Q4 capex to land the $195–205B guide</td><td class="num" data-label="Q3 2026">$63.0–73.0B</td><td data-label="Comparison">Calculated: guide less $131,953m spent in Jan–Sep · arithmetic, not guidance</td></tr>
+      </tbody>
+    </table>
+    <div class="chart" role="img" aria-label="Bar chart of free cash flow by quarter: plus 24.6 billion dollars in Q4 2025, plus 10.1 billion in Q1 2026, minus 5.9 billion in Q2 2026, minus 9.1 billion in Q3 2026.">
+      <div class="chart-title"><h3>Free cash flow turned in Q2 — and stayed negative</h3><p>$ billions · reported, non-GAAP definition</p></div>
+      <svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="presentation">
+        <g font-family="DM Sans, sans-serif" font-size="12" fill="currentColor">
+          <line x1="40" y1="120" x2="700" y2="120" stroke="#9fb8bd" stroke-width="1"/>
+          <rect x="90" y="20" width="90" height="100" fill="#087f7a"/><text x="90" y="14" font-weight="700">+$24.6B</text><text x="90" y="140">Q4 2025</text>
+          <rect x="260" y="79" width="90" height="41" fill="#087f7a"/><text x="260" y="73" font-weight="700">+$10.1B</text><text x="260" y="140">Q1 2026</text>
+          <rect x="430" y="120" width="90" height="24" fill="#a83a41"/><text x="430" y="160" font-weight="700">−$5.9B</text><text x="430" y="176">Q2 2026</text>
+          <rect x="590" y="120" width="90" height="37" fill="#a83a41"/><text x="590" y="173" font-weight="700">−$9.1B</text><text x="590" y="189">Q3 2026</text>
+        </g>
+      </svg>
+      <p class="disclosure">Free cash flow here is Alphabet&rsquo;s non-GAAP definition: operating cash flow less capital expenditures. Trailing-twelve-month free cash flow remained positive at $19,747 million (reported) — the quarterly turn, not the trailing figure, is the new information.</p>
+    </div>
+    <h3>Why operating cash flow fell while operating income rose 30%</h3>
+    <p>The CFO gave two reasons on the call, and both matter for how the 2027 story is read. First, a TPU-system inventory build: inventory rose to $13,308 million at September 30, from $2,439 million at December 31, 2025 (reported), and the CFO linked the build directly to TPU systems. TPU inventory is only procured after contracts are signed, per management — so the build is contracted demand pulled forward into working capital, not speculation, but it still consumes cash before revenue arrives. Second, a $5.2 billion cash payment for a 2018 European Commission fine, paid after the conclusion of the appeal (reported on the call). That is a one-off; the TPU inventory cycle is not.</p>
+    <p>Capex mix in the quarter was about 65% servers and networking (assets with roughly six-year lives) and 35% data centres (seven to forty years), per the CFO. The mix matters because it sets the depreciation tail: management warned on the call that depreciation and data-centre operating costs, including energy, &ldquo;will continue to weigh on the P&amp;L.&rdquo;</p>
+    <h3>The guide — resolved, and what it implies</h3>
+    <p>Full-year 2026 capex guidance of $195–205 billion was left unchanged on the Q3 call — the CFO&rsquo;s words were that the range &ldquo;remain[s] unchanged.&rdquo; The path to that range was: $175–185 billion in February 2026 (Q4 2025 call), $180–190 billion in April (Q1 call, +$5 billion at the midpoint), then $195–205 billion in July (Q2 call, +$15 billion at the midpoint) on faster capacity delivery. The $175–185 billion figure in some pre-print coverage was therefore the February guide, stale by two raises.</p>
+    <p>The arithmetic consequence is stated as arithmetic only: with $131,953 million spent in January–September (calculated from the release figures as cited in the research), landing inside $195–205 billion requires $63.0–73.0 billion of Q4 capex — materially above Q3&rsquo;s $51.4 billion. Management did not guide Q4 capex. For 2027, management gave no number and no range: capex is expected to &ldquo;increase significantly in 2027,&rdquo; with further details on the Q4 call — the same language used at Q2. Figures above $300 billion for 2027 in coverage, including a FactSet analyst projection above $310 billion, are analyst estimates, not Alphabet guidance, and this report does not attribute them to the company.</p>
+    <h3>Capital return flipped: zero buybacks, $12.4 billion of issuance</h3>
+    <table class="data-table">
+      <thead><tr><th>Capital return &amp; funding</th><th class="num">Q3 2026</th><th class="num">Q3 2025 / year-ago</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Line">Share repurchases in the quarter</td><td class="num" data-label="Q3 2026">$0</td><td class="num" data-label="Comparison">$11,504m in Q3 2025; $0 in Jan–Sep 2026 vs $39,810m Jan–Sep 2025</td></tr>
+        <tr><td data-label="Line">Shares issued via ATM programme</td><td class="num" data-label="Q3 2026">$12,371m</td><td data-label="Comparison">12m Class A ($4.3B net) + 24m Class C ($8.1B net); $42,870m year-to-date; $27.6B remaining under the ATM at Sept 30</td></tr>
+        <tr><td data-label="Line">Senior unsecured notes issued, net</td><td class="num" data-label="Q3 2026">$28,700m</td><td data-label="Comparison">$28,996m gross proceeds line; $85,222m year-to-date</td></tr>
+        <tr><td data-label="Line">Mandatory convertible preferred, net proceeds YTD</td><td class="num" data-label="Q3 2026">$19,063m</td><td class="num" data-label="Comparison">Year-to-date figure, reported</td></tr>
+        <tr><td data-label="Line">Dividends paid in the quarter</td><td class="num" data-label="Q3 2026">$2,936m</td><td data-label="Comparison">Common dividend $0.22/share declared, payable Dec 14, 2026 (record Dec 7); preferred $15.63/share declared, payable Nov 15, 2026</td></tr>
+        <tr><td data-label="Line">Cash, cash equivalents &amp; marketable securities</td><td class="num" data-label="Q3 2026">$265,098m</td><td data-label="Comparison">$126,843m at Dec 31, 2025; includes $90.4B marketable equity securities (CFO, call)</td></tr>
+        <tr><td data-label="Line">Long-term debt</td><td class="num" data-label="Q3 2026">$125,102m</td><td data-label="Comparison">$46,547m at Dec 31, 2025 · total assets $1,003,312m</td></tr>
+      </tbody>
+    </table>
+    <div class="callout red">
+      <h3>Desk read — the funding mix is the conviction cap</h3>
+      <p>Opinion: Alphabet did not run out of money — cash and securities more than doubled since year-end, to $265.1 billion, and trailing free cash flow is still positive. What changed is the direction of the equity count: a company that repurchased $39.8 billion of stock in the first nine months of 2025 repurchased none in the same period of 2026 and instead issued $42.9 billion of shares. That is a rational way to fund a $561 billion backlog at speed, and it is also dilution while the buyback is paused. Until the Q4 call quantifies 2027 capex and management says when buybacks resume, the desk will not raise conviction above 6/10 on operating strength alone.</p>
+    </div>
+  </section>
+
+  <!-- 06 CLOUD -->
+  <section class="page" id="cloud">
+    <div class="section-kicker">06 · Cloud, backlog &amp; TPUs</div>
+    <h2>A $561 billion backlog, and a second growth engine being built in public.</h2>
+    <p class="lead">Cloud revenue more than doubled, Cloud operating income more than tripled, and the backlog grew again. The new information on the call was not the growth rate — it was the shape of what comes next: TPU system sales to outside customers, scaling in Q4 and ramping &ldquo;meaningfully&rdquo; in 2027, sold as full systems into customers&rsquo; own data centres as well as Google Cloud.</p>
+    <div class="two-col">
+      <div class="callout">
+        <h3>Backlog (reported on the call)</h3>
+        <p><strong>$561 billion</strong>, up from about $514 billion at the end of Q2. The majority relates to typical GCP contracts. <strong>Just over 55%</strong> is expected to be recognised as revenue over the next 24 months. TPU system sales first appear in backlog when agreements are signed; inventory is then built ahead of revenue — the sequence behind the inventory build described in the capex section.</p>
+      </div>
+      <div class="callout blue">
+        <h3>Capacity — the binding constraint</h3>
+        <p>Demand for AI compute is substantially outpacing supply, in management&rsquo;s framing on the call: &ldquo;huge demand&rdquo; and work &ldquo;to bring more capacity online.&rdquo; Third-party &ldquo;bridging capacity&rdquo; came online only at the very end of Q3, so it had limited Q3 margin impact; usage ramps in Q4, with <strong>near-term Cloud margin headwinds</strong> expected. Prioritisation runs through a long-range planning and return-on-invested-capital framework, per management.</p>
+      </div>
+    </div>
+    <h3>TPU external sales: customers, partners, and what was not disclosed</h3>
+    <p>Google Cloud CEO Thomas Kurian described TPU systems as a full system — hardware, compute, storage, networking and software — not just a chip. Nearly 100 customers use TPUs today, and there are more than 100 significant TPU customers starting in Google Cloud. Named on the call: <strong>Anthropic</strong> (directly and via Broadcom), <strong>Apple</strong> (described as a public reference customer, scaling pre-training on the latest TPUs), new frontier-model firms <strong>Mirendil</strong> and <strong>Physical Intelligence</strong>, capital-markets firms <strong>Citadel Securities</strong> and <strong>Jump Trading</strong>, <strong>Caltech</strong>, and public-sector customers <strong>Cassava</strong> and <strong>Cirrascale</strong>. New partnerships to deliver TPU systems were announced with <strong>Crux AI</strong> and <strong>Oracle</strong>, &ldquo;with more in the works.&rdquo; TorchTPU, built with Meta, lets PyTorch workloads port to TPUs. The current generation: TPU 8t for training, up to 2.7 times better training performance, and 8i, up to 80% better inference price-performance, versus the prior generation (both per Kurian).</p>
+    <p>Cloud revenue growth excluding TPU system sales was described as &ldquo;incredibly strong&rdquo; and &ldquo;very strong&rdquo; — <strong>no ex-TPU growth rate was disclosed</strong>, so this report does not estimate one. GCP accounted for &ldquo;the vast majority&rdquo; of Q3 Cloud revenue (Kurian). The CFO described TPU sales as a &ldquo;meaningful contributor&rdquo; and said to expect them &ldquo;to continue to scale in Q4, followed by a meaningful revenue ramp in 2027.&rdquo; Management <strong>declined to break out TPU or product margins</strong>. On a question citing a $35 billion-per-gigawatt figure from Barclays, the CFO gave no revenue-recognition percentage. Kurian&rsquo;s economic argument for selling systems into third-party and customer data centres is that it broadens the addressable market and &ldquo;offsets the need… to pre-build facilities.&rdquo;</p>
+    <div class="callout gold">
+      <h3>Flag — future purchase commitments are transcript-only</h3>
+      <p>On the call, the CFO cited <strong>$924 billion in pre-commencement leases</strong> and <strong>$152 billion of other obligations</strong> at quarter-end, described as maximum contractual obligations with variable pricing and volume flexibility that could lower actual spend. <strong>These figures are transcript-only and unverified against the Q3 10-Q, which was not filed at research time.</strong> They are carried here with that flag, not as release-confirmed balance-sheet figures, and they should not be quoted without it.</p>
+    </div>
+    <h3>Outside the call: Oracle and Crux</h3>
+    <p>On October 27, 2026, at Oracle AI World, Oracle said OCI would offer Google TPU 8t/8i starting in calendar 2027 on a phased multi-year ramp, as the first hyperscale cloud outside Google to offer TPUs. No revenue, pricing, or regions were disclosed in the coverage consulted. Kurian confirmed the Oracle partnership on the Q3 call. Separately, secondary trade-press summaries describe Crux AI, a Google–Blackstone joint venture, as a TPU-based neocloud with a reported $5 billion Blackstone equity commitment, targeting 500 MW online in 2027 and scaling toward 2 GW. <strong>Flag the Crux financing and capacity figures as a single-source chain via trade-press summaries, not primary-verified announcements.</strong> Earlier 2026 TPU demand signals in secondary summaries — Anthropic up to 1 million TPUs with Google and Broadcom, a reported Meta multi-billion-dollar TPU rental deal, and Apple TPU use — are likewise reported, not primary-verified here.</p>
+    <p class="small muted">Desk read, opinion: the TPU story is the most consequential new disclosure in the quarter after the backlog itself. If external TPU sales ramp as described in 2027, Alphabet gains a second, capital-light-ish growth engine alongside GCP consumption — but with undisclosed margins, an inventory cycle attached, and 2027 capex unquantified, the desk treats it as an option on 2027 execution, not as 2026 earnings quality.</p>
+  </section>
+
+  <!-- 07 SEARCH -->
+  <section class="page" id="search">
+    <div class="section-kicker">07 · Search &amp; AI Mode</div>
+    <h2>Queries are growing faster than monetization. Management says that is a sequence, not a break.</h2>
+    <p class="lead">Search &amp; other revenue grew 12% to $63.35 billion, down from 17% in Q2. Query growth was the highest in five years, including commercial queries, according to the release and CEO Sundar Pichai. The deceleration, in management&rsquo;s own ranking, was driven first by foreign exchange, then by advertiser and vertical dynamics, and then by lower monetization as AI Mode query mix grew. The question for the next two quarters is whether monetization catches the query mix — management&rsquo;s answer is that it is already starting to.</p>
+    <h3>Why Search decelerated — management&rsquo;s drivers, in order</h3>
+    <ul class="watchlist">
+      <li><span class="n">1</span><div><strong>Foreign exchange — the single largest driver.</strong><p>Per Chief Business Officer Philipp Schindler and the CFO on the call. The CFO added that Q4 faces a slightly larger FX headwind, primarily in Search and YouTube ads.</p></div></li>
+      <li><span class="n">2</span><div><strong>Vertical dynamics.</strong><p>APAC retail advertisers were hit by the EU elimination of the de minimis exemption; media and entertainment spend normalised after a FIFA World Cup-heavy Q2.</p></div></li>
+      <li><span class="n">3</span><div><strong>Lower monetization in AI Mode as its query mix grew.</strong><p>AI Mode queries are longer and more exploratory. Monetization per query is lower today; management&rsquo;s monetization work is described below.</p></div></li>
+      <li><span class="n">4</span><div><strong>Tough comparisons into Q4.</strong><p>The CFO said Q4 faces continued lapping of the Search acceleration that began in Q3 2025 — &ldquo;about 3 points of growth versus Q3… a couple of points&rdquo; in Q4. Expect the reported Search growth rate to carry that headwind even if underlying demand holds.</p></div></li>
+    </ul>
+    <h3>AI Mode and AI Overviews: usage, then monetization</h3>
+    <p>Pichai and Schindler described building &ldquo;one seamless experience across AI Overviews, AI Mode, and traditional Search,&rdquo; with the priority stated as the best Search user experience first, followed by monetization — the mobile-shift analogy management used. Usage markers stated on the call: AI Mode queries average <strong>three times longer</strong> than traditional queries; <strong>one in five</strong> AI Mode searches globally use voice, images, or documents; and there are <strong>more than 50 billion visual searches per month</strong>.</p>
+    <p>On monetization, Schindler&rsquo;s key Q&amp;A point was that the <strong>majority of AI Mode queries are incremental</strong>, creating more monetization opportunities rather than cannibalising existing ones, and that user research shows comfort with ads in the experience. <strong>Click-through rates are already similar between sponsored and organic product list items within AI Mode</strong>, per Schindler. Management said it is &ldquo;now scaling high-quality ads within AI Overviews and AI Mode to more users and queries… taking our monetization footprint global for the first time,&rdquo; including expansion of ads in AI Mode into international markets alongside multi-turn ads in AI Mode in the United States.</p>
+    <h3>Agentic commerce</h3>
+    <p>The Universal Commerce Protocol enables direct checkout for &ldquo;hundreds of thousands of brands,&rdquo; with Chewy, Nike, and Tapestry named; the Agent Payments Protocol and Universal Cart also launched. Management views agentic commerce as additive and expansionary for monetization, with advertising models designed into agentic flows, and is sequencing enterprise Gemini agents first (security and governance bar) before consumer rollout to Gemini app users later this year. No revenue figure for agentic commerce was disclosed.</p>
+    <div class="callout">
+      <h3>Gemini — wording flag</h3>
+      <p>Pichai and the release describe the Gemini app at <strong>1 billion users</strong>, called &ldquo;the fastest-growing product in Google&rsquo;s history.&rdquo; The Google Blog infographic labels the same figure <strong>&ldquo;1B+ monthly active users.&rdquo;</strong> The release and call wording quoted in the research is &ldquo;one billion users&rdquo; without the monthly-active qualifier in the quoted remarks. <strong>This report carries the figure as &ldquo;1 billion users (infographic: monthly active users)&rdquo; and flags the wording difference rather than resolving it.</strong> Supporting reported metrics: first-party model APIs running at about <strong>32 billion tokens per minute, +40% quarter over quarter and more than four times year over year</strong>; Gemini 4 Argon launched about two weeks before the call, with Carbon announced on October 28; and the Genie 4 world model announced October 27.</p>
+    </div>
+  </section>
+
+  <!-- 08 YOUTUBE & WAYMO -->
+  <section class="page" id="youtube-waymo">
+    <div class="section-kicker">08 · YouTube &amp; Waymo</div>
+    <h2>YouTube&rsquo;s living room keeps compounding. Waymo&rsquo;s call disclosure was deliberately thin.</h2>
+    <h3>YouTube</h3>
+    <p>YouTube advertising revenue was $11,207 million, up 9% (reported). Brand advertising drove the largest contribution, with strength in the living room, per the CFO. Schindler said the living room is now <strong>more than one-third of total YouTube ads revenue</strong>, and Pichai said YouTube is the number-one streaming platform in the United States by living-room watch time. More than 20 million videos are uploaded per day. Demand Gen adoption by smaller businesses was cited, with Wayfair at 2.3 times return on ad spend versus traditional video reach (per Schindler); Creator Partnerships now cover more than 3 million creators, and more than 1.3 million channels are in YouTube Shopping, with <strong>Amazon joining YouTube Shopping</strong> so US creators can tag Amazon products.</p>
+    <p>Subscriptions are growing faster than advertising, led by YouTube Music Premium: <strong>more than 150 million YouTube Music &amp; Premium subscribers globally, including trials</strong> (reported). No YouTube operating profit is disclosed — YouTube sits inside Google Services. The desk&rsquo;s read, opinion: subscriptions growing faster than ads, inside a 40.7%-margin Services segment, is the quiet compounder in this report — but without a disclosed YouTube margin, its contribution to group profit cannot be sized, and this report does not try.</p>
+    <h3>Waymo — on call facts only</h3>
+    <p>On the Q3 call, Pichai said only this: Waymo has driven <strong>more than 300 million fully autonomous miles</strong> and <strong>operates in 15 major US cities</strong>, having recently opened to the public in <strong>San Antonio, San Diego, and Tampa</strong>, with planned expansions into <strong>Canada, Germany, Singapore, and Spain</strong>. Other Bets revenue was $372 million and its operating loss was $2,047 million (reported), &ldquo;as we continue to expand Waymo&rsquo;s business,&rdquo; in the release&rsquo;s framing. <strong>No weekly ride figure, no financing or valuation, and no external-raise discussion appeared on the Q3 call.</strong></p>
+    <div class="callout gold">
+      <h3>Secondary-reported Waymo figures — not call facts, not primary-confirmed</h3>
+      <p>The following figures circulate widely in secondary coverage and are <strong>not</strong> stated as facts in this report: more than 500,000 paid rides per week (repeated across secondary coverage in September–October 2026, described as published since March 2026, with a target of 1 million per week by end of 2026 — no primary Waymo or Alphabet disclosure of the current weekly figure was located in this research); a $16 billion equity raise in February 2026 at a $126 billion post-money valuation, led by Dragoneer, DST, and Sequoia with Alphabet participation; and a $5 billion first debt financing, upsized from a target above $3 billion, priced at benchmark plus 5.25 percentage points, with Goldman Sachs as sole lead bookrunner, said to have closed around October 8, 2026. <strong>All three are Bloomberg-sourced or secondary-reported only. Verify against a Waymo or Alphabet primary announcement before citing any of them as confirmed.</strong> Earlier 2026 ride figures in coverage (250,000; 400,000) reflect earlier vintages, and city-count discrepancies (14 versus 15) reflect launch-date vintages — this report uses the call&rsquo;s &ldquo;15.&rdquo;</p>
+    </div>
+  </section>
+
+  <!-- 09 ANTITRUST -->
+  <section class="page" id="antitrust">
+    <div class="section-kicker">09 · Antitrust status</div>
+    <h2>Two cases, two remedy tracks — and no structural break-up ordered in either.</h2>
+    <p class="lead">Neither remedies decision forced the divestiture the government sought. The overhang is now behavioural obligations, compliance machinery, and appeals — a slow tax on operations and on optionality, rather than the binary break-up risk that framed the cases a year ago. The desk does not treat antitrust as the reason to own or avoid Alphabet at 6/10 conviction; it treats it as a standing constraint on how Search distribution and ad-tech integration can evolve.</p>
+    <div class="two-col">
+      <div class="callout">
+        <h3>Search case — U.S. v. Google (D.D.C., Judge Mehta)</h3>
+        <p>Liability in August 2024: illegal monopoly in general search and search text advertising. <strong>Remedies ruling, September 2, 2025: no forced divestiture of Chrome or Android; no ban on default-placement payments</strong> to partners such as Apple — but <strong>exclusive</strong> distribution deals are prohibited. Google must <strong>share specified search data</strong> (index and user-interaction data, not proprietary ads data) with &ldquo;qualified competitors&rdquo; at marginal cost, and offer search-results and text-ad syndication. Google has appealed liability and remedies to the D.C. Circuit; implementation is continuing.</p>
+      </div>
+      <div class="callout blue">
+        <h3>Ad-tech case — E.D. Va. (Judge Brinkema)</h3>
+        <p>Liability on April 17, 2025: monopoly in the open-web publisher ad server and ad exchange, with unlawful tying of DFP and AdX. <strong>Remedies decision, September 2, 2026: declined to order divestiture of AdX</strong>, which the DOJ had sought. Instead, <strong>behavioural remedies for six years</strong> with a compliance monitor and technical committee: integrate DFP/AdX with Prebid, publisher data access and export, separate DFP/AdX contracts, Google Ads bidding via AdX/Prebid (no direct DFP bidding), and a ban on first-look/last-look and unified pricing rules favouring Google tools.</p>
+      </div>
+    </div>
+    <h3>Where the ad-tech case stands now</h3>
+    <p>On <strong>October 2, 2026</strong>, the DOJ and Google filed <strong>competing proposed final judgments of about 41 pages each</strong>. Disputes remain on timing (the DOJ seeks Prebid integration in six months; Google seeks twelve), global scope (Google seeks up to 24 months phased outside the US), monitor powers, and data-access triggers. Judge Brinkema had not yet signed a binding order at last check in this research; a 60-day effectiveness clock runs from entry of an order, and Google is expected to appeal. <strong>Flag:</strong> one secondary summary&rsquo;s line that &ldquo;the remedies trial concluded May 2025&rdquo; appears to conflate the search and ad-tech timelines — the September 2025 remedies trial was in the search case and the ad-tech remedies decision was September 2026. Verify trial dates against the docket before citing them.</p>
+    <p class="small muted">No new antitrust development was disclosed on the Q3 earnings call itself. The status above is context from the dockets and legal coverage, as at research time.</p>
+  </section>
+
+  <!-- 10 VALUATION -->
+  <section class="page" id="valuation">
+    <div class="section-kicker">10 · Valuation &amp; the $430 target</div>
+    <h2>$430 is maintained, not re-derived — and that distinction is the point.</h2>
+    <p class="lead">The desk&rsquo;s 12-month target of $430 was set on October 16, 2026, when the rating was upgraded to Buy 6/10 from Hold with the target raised from $410. This print did not change it. What follows is what $430 means arithmetically, what it rests on, and — stated plainly — what this research does not contain.</p>
+    <table class="data-table">
+      <thead><tr><th>Target arithmetic</th><th class="num">Value</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Item">Reference close (GOOGL, Oct 28 regular session)</td><td class="num" data-label="Value">$324.89</td><td data-label="Basis">Reported quote · +$4.31 (+1.34%) vs $320.58 prior close</td></tr>
+        <tr><td data-label="Item">12-month target</td><td class="num" data-label="Value">$430</td><td data-label="Basis">Desk target, maintained · set Oct 16, 2026 (from $410)</td></tr>
+        <tr><td data-label="Item">Upside to target</td><td class="num accent" data-label="Value">+32.3%</td><td data-label="Basis">Calculated from the $324.89 reference price</td></tr>
+        <tr><td data-label="Item">After-hours snapshot (for scale only)</td><td class="num" data-label="Value">~$293–294</td><td data-label="Basis">Timestamped snapshots, thin trading · not a close, not a reference price</td></tr>
+      </tbody>
+    </table>
+    <p><strong>What the target rests on (desk opinion).</strong> Three legs, in the order the desk weights them: (1) Cloud demand durability — a $561 billion backlog, just over 55% of it expected as revenue within 24 months, with GCP the vast majority of current Cloud revenue and TPU system sales as a 2027 ramp; (2) Search resilience — 12% growth with five-year-high query growth and AI Mode queries mostly incremental, with monetization scaling into AI Overviews and AI Mode from a low base; (3) margin and cash discipline returning once the capacity build normalises — group operating margin widened this quarter, but that leg is the unproven one, because depreciation, energy, bridging-capacity costs, and an unquantified 2027 capex path all push the other way. The target assumes the first two legs hold and the third stops deteriorating; it does not assume buybacks resume or that 2027 capex comes in light.</p>
+    <div class="callout">
+      <h3>What this research does not contain — stated plainly</h3>
+      <p><strong>No post-print analyst notes were found.</strong> As of about 7:25 p.m. ET on October 28 — roughly three hours after the release and ninety minutes after the call ended — searches found no post-print research notes, rating changes, or new price targets from JPMorgan, Morgan Stanley, BofA, Goldman Sachs, Evercore ISI, Bernstein, or Jefferies. That is a timing gap, not evidence that no notes exist. <strong>The pre-print targets below are context only and must not be presented as post-print reactions. Re-pull analyst notes on October 29.</strong> No new multiple, discounted-cash-flow, or sum-of-the-parts derivation for $430 was published in the research underlying this report, and none is invented here. One press account&rsquo;s shorthand that Alphabet trades at about 16 times earnings is opinion in that account&rsquo;s framing, not a desk calculation, and is not used as target methodology.</p>
+    </div>
+    <h3>Pre-print targets and ratings — context only, not post-print reaction</h3>
+    <table class="data-table">
+      <thead><tr><th>Firm / analyst</th><th>Action &amp; date</th><th class="num">Target</th><th>Rating</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Firm">JPMorgan / Doug Anmuth</td><td data-label="Action">Raised Oct 15, 2026</td><td class="num" data-label="Target">$425 (from $420)</td><td data-label="Rating">Overweight</td></tr>
+        <tr><td data-label="Firm">BMO Capital / Brian Pitz</td><td data-label="Action">Raised Oct 20, 2026</td><td class="num" data-label="Target">$480 (from $465)</td><td data-label="Rating">Outperform</td></tr>
+        <tr><td data-label="Firm">Citizens JMP / Andrew Boone</td><td data-label="Action">Cut Oct 22, 2026</td><td class="num" data-label="Target">$450 (from $515)</td><td data-label="Rating">Market Outperform (Buy) — cited AI-agent competition in Search + execution risk</td></tr>
+        <tr><td data-label="Firm">KeyBanc / Justin Patterson</td><td data-label="Action">Cut Oct 19, 2026</td><td class="num" data-label="Target">$410 (from $435)</td><td data-label="Rating">Overweight</td></tr>
+        <tr><td data-label="Firm">Wells Fargo</td><td data-label="Action">Oct 6, 2026</td><td class="num" data-label="Target">$417</td><td data-label="Rating">Overweight</td></tr>
+        <tr><td data-label="Firm">Evercore ISI</td><td data-label="Action">Reaffirmed Sept 16, 2026</td><td class="num" data-label="Target">$450</td><td data-label="Rating">Outperform</td></tr>
+        <tr><td data-label="Firm">Bernstein</td><td data-label="Action">Cut Jul 23, 2026 (post-Q2)</td><td class="num" data-label="Target">$385 (from $390)</td><td data-label="Rating">Market Perform</td></tr>
+        <tr><td data-label="Firm">Goldman Sachs / BofA</td><td data-label="Action">No dated pre-print target found</td><td class="num" data-label="Target">—</td><td data-label="Rating">An undated aggregator list showed Goldman $400 and BofA $430 — single-source, undated, do not rely on</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">All figures in this table are analyst estimates, pre-print. A MarketBeat consensus figure of $425.04 (&ldquo;Buy&rdquo;) appears in aggregator pages whose analyst count moves with the page (44–56 depending on count date); it is not a post-print consensus and is not used as one.</p>
+    <p class="small muted">Position context: the holding on record is 145 Class C shares at about 2.7% weight. Nothing in this report recommends adding at the reference price, and no gate is installed. The $430 target is a 12-month desk target on the operating thesis above; it is not a prediction for the October 29 session, which had not occurred at research time.</p>
+  </section>
+
+  <!-- 11 RISKS -->
+  <section class="page" id="risks">
+    <div class="section-kicker">11 · Risks</div>
+    <h2>What can break the $430 case, ranked by proximity.</h2>
+    <div class="risk">
+      <div class="level high">High · Near-term</div>
+      <div><h3>Capex and free cash flow stay negative longer than the backlog justifies</h3><p>Two straight negative quarters, a $63–73 billion implied Q4 (calculated), and 2027 &ldquo;significantly&rdquo; higher with no number. If the Q4 call quantifies 2027 above the FactSet analyst projection of more than $310 billion — itself an estimate, not guidance — or if TPU inventory keeps building faster than TPU revenue, the funding argument overwhelms the demand argument. Watch: Q4 capex, Q4 free cash flow, and any buyback resumption language.</p></div>
+    </div>
+    <div class="risk">
+      <div class="level high">High · Near-term</div>
+      <div><h3>Search monetization does not catch query growth</h3><p>AI Mode queries are mostly incremental and click-through rates on sponsored product lists already match organic ones — but monetization per query is lower today, FX is a slightly larger Q4 headwind, and Q4 laps the acceleration that began in Q3 2025. If Search growth decelerates again in Q4 without a monetization offset, the &ldquo;sequence, not a break&rdquo; thesis fails its first test. Watch: Q4 Search growth, AI Mode ad scaling disclosures, and the FX line.</p></div>
+    </div>
+    <div class="risk">
+      <div class="level med">Medium</div>
+      <div><h3>Cloud margin compresses as bridging capacity ramps</h3><p>Cloud margin expanded to 36.2% this quarter, but third-party capacity ramping in Q4 is an explicit near-term headwind, and depreciation plus energy costs &ldquo;will continue to weigh on the P&amp;L.&rdquo; TPU margins are undisclosed. A Cloud revenue beat with a margin miss next quarter would change the quality of the growth. Watch: Q4 Cloud operating margin and any TPU margin disclosure.</p></div>
+    </div>
+    <div class="risk">
+      <div class="level med">Medium</div>
+      <div><h3>Equity-securities volatility keeps moving GAAP EPS</h3><p>The line added very large gains in the first half and took $0.55 off Q3 EPS. With $90.4 billion of marketable equity securities on the balance sheet, GAAP EPS will keep swinging on marks that have nothing to do with Search or Cloud operations. The risk is analytical, not operational: consensus comparability breaks, and tape reactions over-weight a non-operating line — as this quarter&rsquo;s after-hours move arguably did. Watch: other-income disclosure each quarter, and whether any holding is named in the 10-Q.</p></div>
+    </div>
+    <div class="risk">
+      <div class="level med">Medium</div>
+      <div><h3>Capital return stays paused while issuance continues</h3><p>Zero buybacks against $42.9 billion of ATM issuance year-to-date and a $27.6 billion ATM balance remaining. If issuance continues into 2027 without buyback resumption, per-share compounding slows even if the business compounds. Watch: quarterly repurchase and ATM lines in the cash-flow statement.</p></div>
+    </div>
+    <div class="risk">
+      <div class="level med">Medium</div>
+      <div><h3>AI-agent competition in Search</h3><p>Cited by Citizens JMP and KeyBanc in their pre-print target cuts (opinion, pre-print): agents that answer rather than link could erode the query funnel that Search monetizes. Management&rsquo;s counter is that AI Mode queries are incremental and agentic flows will carry advertising models. Neither claim is yet proven in revenue. Watch: query-growth and AI Mode disclosures, and any agent-related Search share data.</p></div>
+    </div>
+    <div class="risk">
+      <div class="level low">Lower · Structural</div>
+      <div><h3>Antitrust remedies constrain distribution and ad-tech integration</h3><p>No break-up was ordered, but six years of behavioural remedies in ad tech, data-sharing obligations in search, and a bar on exclusive distribution deals limit how Alphabet can defend both funnels. The October 2 competing judgments leave timing and scope unresolved, and appeals are expected. Watch: the signed ad-tech final judgment, the 60-day effectiveness clock, and D.C. Circuit appeal progress.</p></div>
+    </div>
+    <div class="risk">
+      <div class="level low">Lower · Structural</div>
+      <div><h3>TPU execution and concentration</h3><p>External TPU sales depend on a small number of named frontier and capital-markets customers, on delivery through partners (Oracle, Crux AI), and on a supply chain that is already the binding constraint. A slipped ramp, a lost anchor customer, or a margin disclosure that disappoints would dent the second-engine thesis before it earns anything. Watch: 2027 TPU revenue commentary on the Q4 call and any new customer announcements.</p></div>
+    </div>
+  </section>
+
+  <!-- 12 CATALYSTS -->
+  <section class="page" id="catalysts">
+    <div class="section-kicker">12 · Catalysts &amp; decision rules</div>
+    <h2>The next information arrives in a known order. Wait for it.</h2>
+    <p>No new gate is recommended in this report. The desk&rsquo;s decision rule is sequential: first the street&rsquo;s post-print notes, then the October 29 tape, then the Q4 call&rsquo;s 2027 capex quantification. Acting before the second step — on an after-hours snapshot — is the error this report is built to prevent.</p>
+    <div class="catalyst-timeline">
+      <div class="date">Oct 29, 2026</div>
+      <div class="event"><strong>Post-print analyst notes + first full session.</strong><p>Re-pull JPMorgan, Morgan Stanley, BofA, Goldman Sachs, Evercore ISI, Bernstein, and Jefferies. None had been found as of about 7:25 p.m. ET on Oct 28. The Oct 29 open and close will show whether the after-hours snapshot held, faded, or deepened — none of which was knowable at research time.</p></div>
+      <div class="date">Q3 10-Q filing</div>
+      <div class="event"><strong>Segment detail, RPO definition, commitments, tax drivers.</strong><p>Not filed at research time. The $924 billion / $152 billion commitments figures, the RPO definition behind the $561 billion backlog, and the tax-rate drivers beyond the release footnote all await verification against it.</p></div>
+      <div class="date">Q4 earnings call</div>
+      <div class="event"><strong>2027 capex quantification — the gating disclosure.</strong><p>Management committed to &ldquo;further details on our Q4 call.&rdquo; Until a number or range exists, 2027 capex above $300 billion remains analyst estimation. This is the revisit point for the rating, conviction, target, and any gate. Date not stated on the Q3 call; do not assume one.</p></div>
+      <div class="date">Q4 2026 print</div>
+      <div class="event"><strong>Search lapping + FX, Cloud margin, TPU scale, cash flow.</strong><p>Four tests in one print: does Search growth hold through the Q3 2025 lapping and larger FX headwind; does Cloud margin absorb bridging capacity; do TPU sales scale as guided; and does free cash flow turn with a $63–73 billion implied capex quarter (calculated) behind it?</p></div>
+      <div class="date">2027</div>
+      <div class="event"><strong>TPU revenue ramp; Waymo expansion; antitrust clocks.</strong><p>TPU system sales are guided to a &ldquo;meaningful revenue ramp in 2027.&rdquo; Waymo&rsquo;s planned Canada, Germany, Singapore, and Spain expansions, the ad-tech 60-day effectiveness clock once a final judgment is entered, and the search appeal all run on 2027 timelines. None is a Q4 catalyst; all are target-relevant.</p></div>
+    </div>
+    <h3>What would change the rating</h3>
+    <div class="two-col" style="margin-top:18px">
+      <div class="callout">
+        <h3>Upgrade path — conviction above 6, or target above $430</h3>
+        <ul>
+          <li>2027 capex quantified at a level the operating cash flow trajectory can fund without extending the buyback pause or the ATM programme.</li>
+          <li>Free cash flow turns positive while Cloud growth and Cloud margin both hold — proving the build is converting, not just accumulating.</li>
+          <li>Search monetization demonstrably catching AI Mode query growth: ad scaling disclosures plus a Search growth rate that stabilises through the Q4 lapping.</li>
+          <li>TPU margins or TPU revenue disclosed at a scale that makes the second engine countable rather than narrative.</li>
+        </ul>
+      </div>
+      <div class="callout red">
+        <h3>Downgrade path — conviction below 6, or target cut</h3>
+        <ul>
+          <li>2027 capex quantified materially above analyst projections, with no offsetting buyback or cash-flow commitment.</li>
+          <li>Q4 Search decelerates further with no monetization offset, or Cloud margin compresses sharply on bridging capacity.</li>
+          <li>Free cash flow negative for a third and fourth quarter while issuance continues and buybacks stay at zero.</li>
+          <li>Backlog growth stalls, or the RPO definition in the 10-Q materially qualifies the $561 billion headline.</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small muted" style="margin-top:22px">These are desk decision rules, stated as opinion and conditional on future disclosures. They are not price triggers: no gate is installed, and this report recommends no entry, add, or trim at any price level pending the Q4 call.</p>
+  </section>
+
+  <!-- 13 OPEN QUESTIONS -->
+  <section class="page" id="open-questions">
+    <div class="section-kicker">13 · Open questions</div>
+    <h2>Marked plainly. Not filled.</h2>
+    <p>Each item below is something this report could not establish from the sources consulted at research time. They are left open deliberately; filling any of them with an estimate would misstate the evidence.</p>
+    <ul class="watchlist">
+      <li><span class="n">1</span><div><strong>Post-print analyst notes.</strong><p>None found from JPMorgan, Morgan Stanley, BofA, Goldman Sachs, Evercore ISI, Bernstein, or Jefferies as of about 7:25 p.m. ET, Oct 28, 2026. Re-pull on Oct 29. Pre-print targets in the valuation section are not substitutes.</p></div></li>
+      <li><span class="n">2</span><div><strong>October 29 trading.</strong><p>The session had not occurred at research time. No open, close, or &ldquo;following session&rdquo; reaction is available in this report, and after-hours snapshots are not a substitute for it.</p></div></li>
+      <li><span class="n">3</span><div><strong>LSEG estimate count.</strong><p>The number of estimates behind the $128.22 billion revenue, $3.02 EPS, and $29.57 billion Cloud consensus figures was not found. The Cloud consensus vintage also remains unresolved: $29.57 billion (LSEG, post-print) versus $28.7 billion (pre-print, unattributed) versus $28.8 billion (FactSet).</p></div></li>
+      <li><span class="n">4</span><div><strong>SpaceX loss size and other holdings.</strong><p>Not disclosed. The SpaceX attribution is a CFO call remark via a single transcription; no size, no other holding, and no valuation was disclosed. The Q3 10-Q may or may not add detail.</p></div></li>
+      <li><span class="n">5</span><div><strong>Q3 10-Q.</strong><p>Not filed or located at research time. Segment detail, RPO definition, commitments, and tax-rate drivers beyond the release are unverified against it — including the $924 billion / $152 billion transcript-only commitments.</p></div></li>
+      <li><span class="n">6</span><div><strong>Waymo weekly rides, financing, and valuation.</strong><p>Secondary-reported only (see the flagged box in the Waymo section). No primary Waymo or Alphabet confirmation was located; nothing on financing or rides was said on the Q3 call.</p></div></li>
+      <li><span class="n">7</span><div><strong>Gemini &ldquo;1 billion users&rdquo; versus &ldquo;monthly active users.&rdquo;</strong><p>The release/call wording and the blog infographic wording differ. Carried with the flag in the Search section; not resolved here.</p></div></li>
+      <li><span class="n">8</span><div><strong>GOOG Class C close.</strong><p>A single source reported a Class C close. This report prices GOOGL Class A only and does not use that figure.</p></div></li>
+    </ul>
+  </section>
+
+  <!-- APPENDIX -->
+  <section class="page appendix" id="sources">
+    <div class="section-kicker">Appendix · Sources only</div>
+    <h2>Source appendix</h2>
+    <p>Every load-bearing figure in this report comes from one of the sources below. No inline reference tags appear in the body, per the standing format rule; this appendix is the only place references live. Research was conducted on the evening of October 28, 2026 (EDT). Where a page was read via search-index text rather than a live render, that is noted. The Reuters live page was CAPTCHA-blocked in the research browser and the challenge was not solved; Reuters figures are carried from index text and syndicated versions, as noted.</p>
+    <h3>Primary — Alphabet</h3>
+    <ol class="source-list">
+      <li><div>Alphabet Q3 2026 earnings release, Form 8-K Exhibit 99.1, Oct 28, 2026 (index) — <a href="https://s206.q4cdn.com/479360582/files/doc_news/2026/Oct/28/attachments/2026q3-alphabet-earnings-release.pdf">s206.q4cdn.com — 2026q3-alphabet-earnings-release.pdf</a></div></li>
+      <li><div>Alphabet Q3 2026 earnings call transcript, MarketBeat transcription (index; transcription, not an Alphabet-posted transcript — relied on for call remarks, flagged where single-source) — <a href="https://www.marketbeat.com/earnings/reports/2026-10-28-alphabet-inc-stock/">marketbeat.com — Alphabet earnings report, Oct 28, 2026</a></div></li>
+      <li><div>Google Blog, Sundar Pichai Q3 2026 earnings remarks (primary; infographic labels Gemini &ldquo;1B+ monthly active users&rdquo;) — <a href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q3-2026/">blog.google — Alphabet earnings Q3 2026</a></div></li>
+    </ol>
+    <h3>Consensus, market reaction &amp; release summaries</h3>
+    <ol class="source-list">
+      <li><div>Reuters, &ldquo;Alphabet&rsquo;s Google Cloud unit beats quarterly revenue estimates on steady AI demand,&rdquo; Oct 28, 2026 (index; live page CAPTCHA-blocked) — <a href="https://www.reuters.com/business/alphabets-google-cloud-unit-beats-quarterly-revenue-estimates-steady-ai-demand-2026-10-28/">reuters.com — Cloud beats estimates</a></div></li>
+      <li><div>Reuters syndicated, revenue miss and cash burn / LSEG figures (index) — <a href="https://wabx.net/2026/10/28/alphabets-heavy-cloud-spending-drives-bigger-than-expected-cash-burn/">wabx.net — syndicated Reuters</a> and <a href="https://kwsn.com/2026/10/28/alphabets-heavy-cloud-spending-drives-bigger-than-expected-cash-burn/">kwsn.com — syndicated Reuters</a></div></li>
+      <li><div>Reuters pre-print LSEG expectations, via Longbridge (index) — <a href="https://longbridge.com/en/news/303425236">longbridge.com — pre-print LSEG expectations</a> and via Invezz (index) — <a href="https://invezz.com/nz/news/2026/10/28/what-to-expect-from-alphabets-earnings-after-market-close-today/">invezz.com — what to expect from Alphabet&rsquo;s earnings</a></div></li>
+      <li><div>TalkMarkets, LSEG Cloud $29.57B / FactSet $28.8B (index) — <a href="https://talkmarkets.com/article/alphabet-stock-sinks-8-after-earnings-heres-why">talkmarkets.com — Alphabet stock sinks 8% after earnings</a></div></li>
+      <li><div>Securities.io release summary (index) — <a href="https://www.securities.io/alphabet-q3-revenue-rises-25-as-google-cloud-revenue-jumps-103/">securities.io — Alphabet Q3 revenue rises 25%</a></div></li>
+      <li><div>Unite.AI release summary (index) — <a href="https://www.unite.ai/alphabet-posts-25-revenue-growth-as-google-cloud-jumps-103/">unite.ai — Alphabet posts 25% revenue growth</a></div></li>
+      <li><div>Motley Fool, regular-session close and after-hours move (index) — <a href="https://www.fool.com/investing/2026/10/28/google-cloud-revenue-just-grew-103-so-why-is-the-stock-falling/">fool.com — Google Cloud revenue just grew 103%</a></div></li>
+      <li><div>Optionistics quote, Oct 28 GOOGL close (index) — <a href="https://www.optionistics.com/quotes/stock-quotes/GOOGL">optionistics.com — GOOGL quote</a></div></li>
+      <li><div>Public.com after-hours table, 5:30 p.m. snapshot (index) — <a href="https://Public.com/stocks/googl/after-hours">Public.com — GOOGL after-hours</a></div></li>
+      <li><div>SourceFirstNews, CNBC after-hours and estimates table (index) — <a href="https://sourcefirstnews.com/alphabet-q3-2026-earnings-free-cash-flow-google-cloud">sourcefirstnews.com — Alphabet Q3 2026 earnings</a></div></li>
+      <li><div>Shacknews, GOOG (Class C) close — single source, not used in this report — <a href="https://www.shacknews.com/article/151183/google-q3-2026-earnings-results">shacknews.com — Google Q3 2026 earnings results</a></div></li>
+    </ol>
+    <h3>Capex-guide history</h3>
+    <ol class="source-list">
+      <li><div>PrimeXBT, Alphabet earnings / capex-guide history (index) — <a href="https://primexbt.com/for-traders/alphabet-earnings-date/">primexbt.com — Alphabet earnings date</a></div></li>
+      <li><div>ValueAddVC, $205B AI capex guidance / Q2 raise (index) — <a href="https://valueaddvc.com/blog/alphabet-205b-ai-capex-guidance-2026-what-googles-q2-earnings-raise-actually-buys">valueaddvc.com — Alphabet $205B capex guidance</a></div></li>
+      <li><div>CryptoBriefing, Alphabet reaffirms capex guidance (index) — <a href="https://cryptobriefing.com/alphabet-reaffirms-capex-guidance-ai-spending/">cryptobriefing.com — Alphabet reaffirms capex guidance</a></div></li>
+      <li><div>AI Weekly headline on the Q3 call — flagged in the research as inaccurate on the guide-raise point; not relied on — <a href="https://aiweekly.co/alerts/alphabet-posts-1276b-q3-with-google-cloud-up-103-to-307b-as-2027-capex-set-to">aiweekly.co — Alphabet Q3 alert</a></div></li>
+    </ol>
+    <h3>Equity-securities context</h3>
+    <ol class="source-list">
+      <li><div>FourWeekMBA, H1 equity-securities gains split — secondary-source only, not re-verified to the 10-Qs (index) — <a href="https://fourweekmba.com/ai-googles-8-7b-stake-loss-follows-136b-gain-in-two-quarters/">fourweekmba.com — Google&rsquo;s $8.7B stake loss</a></div></li>
+    </ol>
+    <h3>Pre-print analyst actions</h3>
+    <ol class="source-list">
+      <li><div>Longbridge, Citizens / BMO / KeyBanc / JPMorgan pre-print actions, Oct 2026 (index) — <a href="https://longbridge.com/en/news/303224011">longbridge.com — analyst actions</a></div></li>
+      <li><div>TipRanks / CoinCentral, Citizens cut ahead of Q3 (index) — <a href="https://www.tipranks.com/news/citizens-cuts-alphabet-stock-googl-price-target-ahead-of-q3-earnings-but-stays-bullish-heres-why">tipranks.com — Citizens cuts Alphabet price target</a></div></li>
+      <li><div>Markets Daily / Bernstein note (index) — <a href="https://www.themarketsdaily.com/2026/10/28/erste-group-bank-decreases-earnings-estimates-for-alphabet.html">themarketsdaily.com — Bernstein estimates</a></div></li>
+      <li><div>American Banking News, Alphabet analyst actions (index) — <a href="https://www.americanbankingnews.com/2026/10/25/alphabet-nasdaqgoogl-shares-down-1-2-after-analyst-downgrade.html">americanbankingnews.com — Alphabet shares after analyst downgrade</a></div></li>
+    </ol>
+    <h3>Antitrust</h3>
+    <ol class="source-list">
+      <li><div>Hughes Hubbard, search remedies ruling (index) — <a href="https://www.hugheshubbard.com/news-insights/insights/court-issues-remedies-ruling-in-united-states-v-google-search-case">hugheshubbard.com — search remedies ruling</a></div></li>
+      <li><div>Best Lawyers, Google antitrust cases summary (index) — <a href="https://www.bestlawyers.com/article/google-antitrust-cases-big-tech-winning-streak/8519">bestlawyers.com — Google antitrust cases</a></div></li>
+      <li><div>Goodwin, antitrust / competition technology Q3 2026 update (index) — <a href="https://www.goodwinlaw.com/en/insights/publications/2026/10/insights-technology-antc-antitrust-competition-technology-3q-2026">goodwinlaw.com — Q3 2026 antitrust update</a></div></li>
+      <li><div>PPC Land, DOJ / Google proposed final judgments (index) — <a href="https://ppc.land/doj-seeks-6-months-google-12-to-open-its-ad-exchange-to-rivals/">ppc.land — DOJ seeks 6 months, Google 12</a></div></li>
+      <li><div>Marketing Newsroom, proposed final judgments (index) — <a href="https://marketingnewsroom.com/performance/programmatic/google-doj-ad-tech-proposed-final-judgments/">marketingnewsroom.com — Google–DOJ proposed final judgments</a></div></li>
+    </ol>
+    <h3>TPU, Oracle, Crux AI, Waymo</h3>
+    <ol class="source-list">
+      <li><div>CryptoBriefing, Oracle Cloud to offer Google TPUs (index) — <a href="https://cryptobriefing.com/oracle-cloud-google-tpus-first-time/">cryptobriefing.com — Oracle Cloud Google TPUs</a></div></li>
+      <li><div>Okay News, Oracle / Google TPU 2027 (index) — <a href="https://www.okaynews.com/oracle-google-tpu-ai-chips-cloud-2027/">okaynews.com — Oracle Google TPU</a></div></li>
+      <li><div>Tech Insider, Crux AI / Google / Blackstone (index; single-source chain) — <a href="https://tech-insider.org/crux-ai-google-blackstone-alan-duong-2026/">tech-insider.org — Crux AI</a></div></li>
+      <li><div>Business Model Analyst, Waymo SWOT / weekly rides (index; secondary) — <a href="https://businessmodelanalyst.com/waymo-swot-analysis/">businessmodelanalyst.com — Waymo SWOT</a></div></li>
+      <li><div>Stock Moguls, Waymo 500,000 rides a week (index; secondary, Sept 3, 2026) — <a href="https://www.stockmoguls.com/2026/09/03/waymo-now-runs-500000-rides-a-week-a-48-billion-industry-is-taking-shape/">stockmoguls.com — Waymo 500,000 rides a week</a></div></li>
+      <li><div>Private Equity Wire, Waymo $5B debt raise (index; Bloomberg-sourced) — <a href="https://www.privateequitywire.co.uk/waymo-expands-private-debt-raise-to-5bn-to-fund-robotaxi-growth/">privateequitywire.co.uk — Waymo debt raise</a></div></li>
+      <li><div>CryptoBriefing, Waymo upsized debt deal (index; Bloomberg-sourced) — <a href="https://cryptobriefing.com/waymo-upsizes-first-debt-deal-5-billion/">cryptobriefing.com — Waymo debt deal</a></div></li>
+    </ol>
+    <div class="footnote">
+      <p><strong>Desk record.</strong> Rating, conviction, target, position context (145 Class C shares, about 2.7% weight), and the gate decision (no gate installed; no new gate recommended; revisit after the Q4 call) are desk decisions supplied with this brief, not research findings. The October 16, 2026 upgrade to Buy 6/10 with the target raised to $430 from $410 is the prior desk line this report maintains. Reference close GOOGL $324.89 is the October 28, 2026 regular-session close. Finance price-history data returned no parseable result in the underlying research, so no price-history figures are quoted from it. All dollars are USD. This report is a snapshot fixed at research time on the evening of October 28, 2026; the October 29 session, the Q3 10-Q, and post-print analyst notes postdate it.</p>
+    </div>
+  </section>
+
+</main>
+<script>
+(function(){
+  var root=document.documentElement;
+  var toggle=document.getElementById('themeToggle');
+  var mq=window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function current(){
+    var t=root.getAttribute('data-theme');
+    if(t==='dark') return 'dark';
+    if(t==='light') return 'light';
+    return (mq && mq.matches) ? 'dark' : 'light';
+  }
+  function paint(){
+    var c=current();
+    toggle.textContent = c==='dark' ? 'Light mode' : 'Dark mode';
+    toggle.setAttribute('aria-pressed', c==='dark' ? 'true' : 'false');
+  }
+  toggle.addEventListener('click', function(){
+    root.setAttribute('data-theme', current()==='dark' ? 'light' : 'dark');
+    paint();
+  });
+  if(mq && mq.addEventListener){ mq.addEventListener('change', function(){ if(root.getAttribute('data-theme')==='auto') paint(); }); }
+  paint();
+
+  var btn=document.getElementById('pdfBtn');
+  var status=document.getElementById('pdfStatus');
+  function loadLib(src){
+    return new Promise(function(resolve,reject){
+      var s=document.createElement('script');
+      s.src=src; s.onload=resolve; s.onerror=reject;
+      document.head.appendChild(s);
+    });
+  }
+  btn.addEventListener('click', function(){
+    status.textContent='Preparing PDF…';
+    btn.disabled=true;
+    var done=function(msg){ status.textContent=msg; btn.disabled=false; };
+    var fallback=function(){
+      done('PDF library could not be loaded in this view — please try again, or use your browser\u2019s Print / Save as PDF.');
+    };
+    if(window.html2pdf){
+      try{ runPdf(); }catch(e){ fallback(); }
+      return;
+    }
+    loadLib('https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js').then(function(){
+      try{ runPdf(); }catch(e){ fallback(); }
+    }, fallback);
+    function runPdf(){
+      var el=document.querySelector('.report');
+      var opt={margin:[10,10,12,10],filename:'Alphabet-Q3-2026-Post-Earnings-Update.pdf',image:{type:'jpeg',quality:0.96},html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff'},jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},pagebreak:{mode:['css','legacy']}};
+      window.html2pdf().set(opt).from(el).save().then(function(){ done('PDF downloaded.'); }, function(){ fallback(); });
+    }
+  });
+})();
+</script>
+</body>
+</html>
