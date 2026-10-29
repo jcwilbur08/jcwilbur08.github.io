@@ -2,7 +2,8 @@
   "ignored": {
     "batra-research-thesis-pro-2026-08-05": "Already in the library as BATRA_Fundamental_Analysis_2026-08-05.pdf (same report, PDF rather than HTML, so the content hash cannot match).",
     "googl-research-thesis-pro-2026-08-01": "Damaged upstream: the split gzip/base64 HTML is corrupt at offset 98816 and only reassembles into a truncated document. No PDF fallback exists. Remove this entry once the source report is regenerated.",
-    "meta-equity-analysis-2026-07-29": "Already in the library as META_Fundamental_Analysis_2026-07.pdf (same report, PDF rather than HTML, so the content hash cannot match)."
+    "meta-equity-analysis-2026-07-29": "Already in the library as META_Fundamental_Analysis_2026-07.pdf (same report, PDF rather than HTML, so the content hash cannot match).",
+    "amzn-post-earnings-2026-10-29": "Already published directly to Claude PCC as Amazon_AMZN_Q3_2026_Post_Earnings_2026-10-29.html and .pdf on October 29, with active report row, dated AMZN research overlay and archived July report. Prevent nightly auto-sync from duplicating the injected HTML."
   },
   "managed": {
     "daily-close": {
