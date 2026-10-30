@@ -1468,6 +1468,27 @@
    "kind": "company",
    "date": "2026-10-29",
    "summary": "CAT Q3 2026 post-earnings (Oct 29): Buy 6/10 MAINTAINED, $850 target maintained \u2014 +31.3% from $647.39 (Oct 29 close). Thin beat: revenue $20,682m (+17.3%) MISSED FactSet $20,760m by $78m; adj EPS $7.20 BEAT FactSet $7.06 by $0.14 (beat narrowed from ~31% in Q2 to ~2%). Backlog RECORD $78.1bn (+$6.0bn QoQ, +95.7% YoY; 58% <12 mo). P&E $8,784m beat FactSet $8,220m (power-gen $3,421m +30%); CI $7,983m missed $8,120m. Tariffs Q3 ~$600m excl. IEEPA ($128m recovered); FY ~$2.2bn. Guidance MAINTAINED (mid-to-high-teens sales growth; margin near bottom of range). ENTRY VERDICT: \u2264$670 VALIDATED and HELD \u2014 Thu close $647.39 inside the $640-650 second tranche (REACHED); invalidation triggers did NOT fire; $606 floor intact. Only post-print action: Oppenheimer maintained Outperform $1,009. Corrections: mixed-provider consensus range superseded by locked FactSet; Oct 26 close $692.13 could not be re-verified (verified: Wed $713.38, Thu $647.39). No gate installed."
+  },
+  {
+   "ticker": "PLTR",
+   "name": "Palantir Technologies Inc.",
+   "file": "pltr-full-update-2026-10-30.html",
+   "rating": "Hold",
+   "target": "$200",
+   "kind": "company",
+   "date": "2026-10-30",
+   "summary": "PLTR full update (Oct 30): Hold 5/10 MAINTAINED, $200 target maintained \u2014 +8.6% from $184.11 (Oct 30 close). Q3 prints Mon Nov 2 AMC (webcast 5:00pm ET). SETUP TRAP: MarketBeat consensus $2.18bn revenue sits ABOVE management's $2.164bn guide top \u2014 a guide-top print reads as a miss; implied move \u00b111.7-12.4%. Q2 (Aug 3): rev $1.935bn +93%, US commercial +149%, US govt +90%; GAAP op margin 47%, adj 62%; Rule of 40 155%; RDV $13.1bn +83%; customers 1,049. Oct tape: Oct 29 $196.42, Oct 30 $184.11 (-6.27%), below 50-day MA, -13.5% vs $212.94 high; no company news behind the selloffs. Valuation: 96.8x fwd P/E, 43.5x fwd sales, 162.7x EV/EBITDA, 0.76% FCF yield; $9.2bn net cash. No new contract dollars disclosed Oct 5-30; insider sales small/10b5-1 ($876.7m 12-mo, zero buys); ARK trimmed. Street $80-$265; bull cluster $230-265; RBC $90, Jefferies $80. ENTRY (recommended only, NO gate installed): starter $161-166 armed AFTER the print; deep tranche \u2264$150 retained; anchor ~$136; reclaim $186-187. Not held."
+  },
+  {
+   "ticker": null,
+   "name": "Capital Allocation Ranking \u2014 October 30, 2026",
+   "file": "capital-allocation-ranking-2026-10-30.html",
+   "rating": null,
+   "target": null,
+   "kind": "thematic",
+   "sub": "Ranking",
+   "date": "2026-10-30",
+   "summary": "Capital allocation ranking (Oct 30, 2026; export-66 baseline; Finnhub Oct 30 closes): 50 individual equities \u2014 32 held, 18 researched-not-held. Book $1,724,760 incl $43K cash convention. Tier 1 deploy: AVGO SB 8/10 $535 (+64.1%, $326.08, entry $320-340), UBER SB 8/10 $105 (+60.9%, $65.25, \u2264$68), NVDA SB 8/10 $328 (+60.3%, $204.64, $200-220 band), CAT Buy 6/10 $850 (+36.5%, $622.75, $620-650), HOOD Buy 6/10 $130 (+53.0%, $84.99, $80-90), GEV Buy 7/10 $1,200 (+39.9%, $857.87, $840-875), DELL Buy 6/10 $580 (+36.7%, $424.30, $419-424 zone per Cam's ruling), META, CRM, AMT, TSM, SPCX. Friday selloff was Intel-contagion (Intel Q4 guide miss), not company news; QCOM -11.1% was sector, FQ4 Nov 4. BMY rating under review (split print) \u2014 no new money. ORCL coverage only. Corrections: KHC Nov 4, CEG Nov 9, LOW Nov 18, LLY reported Oct 29 (above target, no entry). Gates: DELL $419-424 zone, ADBE \u2264$235, GEHC \u2264$62, UNH accumulate\u21922%, UBER \u2264$68 live; AVGO \u2264$340/CAT \u2264$670/PLTR ladder recommended, not installed. AMZN corrected to $240.35 close (+31.1%), 7.25% weight."
   }
  ],
  "updated": "2026-10-28"

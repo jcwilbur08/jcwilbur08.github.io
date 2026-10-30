@@ -58,7 +58,13 @@ td{padding:7px 8px;border-bottom:1px solid #1b3049;color:#dbe4ec}
 .num{text-align:right;white-space:nowrap}
 .donutwrap{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
 .legend{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;flex:1;min-width:240px}
-.leg{display:flex;align-items:center;gap:8px;font-size:12px;color:#bcd0dd}
+.leg{display:flex;align-items:center;gap:8px;font-size:12px;color:#bcd0dd;cursor:pointer;border-radius:6px;padding:2px 6px;margin:-2px -6px}
+.leg:hover{background:rgba(99,179,237,.12)}
+.leg.sel{background:rgba(99,179,237,.20);box-shadow:inset 0 0 0 1px rgba(99,179,237,.5)}
+.posclear{display:inline-block;margin-left:8px;border:1px solid #3b4a5a;background:#16283a;color:#bcd0dd;border-radius:10px;font-size:11px;line-height:1;padding:3px 8px;cursor:pointer;vertical-align:middle}
+.posclear:hover{border-color:#63b3ed;color:#fff}
+.tick{cursor:pointer}
+.tick:hover{color:#63b3ed;text-decoration:underline}
 .leg b{margin-left:auto;color:#fff;font-weight:600}
 .sw{width:12px;height:12px;border-radius:3px;display:inline-block}
 .mrow{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #1b3049;font-size:13px}
@@ -92,7 +98,18 @@ th.sortable:hover{color:#fff}
 .fbtn{background:#0e1c2e;border:1px solid #24405c;color:#bcd0dd;border-radius:999px;padding:6px 16px;font-size:13px;cursor:pointer}
 .fbtn:hover{border-color:#2b6cb0;color:#fff}
 .fbtn.on{background:#2b6cb0;border-color:#2b6cb0;color:#fff;font-weight:700}
+.rfbtn{background:#0e1c2e;border:1px solid #24405c;color:#8fa3b8;border-radius:999px;padding:6px 16px;font-size:13px;cursor:pointer}
+.rfbtn:hover{border-color:#2b6cb0;color:#fff}
+.rfbtn.on[data-r="STRONG BUY"]{background:#0c3f24;border-color:#0c3f24;color:#6ee7a0;font-weight:700}
+.rfbtn.on[data-r="BUY"]{background:#123f2a;border-color:#123f2a;color:#48bb78;font-weight:700}
+.rfbtn.on[data-r="HOLD"]{background:#4a3a12;border-color:#4a3a12;color:#f6ad55;font-weight:700}
+.rfbtn.on[data-r="REDUCE"]{background:#4a2413;border-color:#4a2413;color:#fb923c;font-weight:700}
+.rfbtn.on[data-r="SELL"]{background:#4a1a1a;border-color:#4a1a1a;color:#f56565;font-weight:700}
 .fbtn.sm{padding:3px 12px;font-size:11px}
+.archbar{display:flex;align-items:center;gap:8px;margin:10px 0 0;flex-wrap:wrap}
+.archlab{font-size:12px;color:#8fa3b8;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.repcard.archived{opacity:.72}
+.archnote{color:#c98f2d;font-size:12px;margin-top:4px}
 .tsctl{display:none;align-items:center;gap:6px;margin-left:auto}
 .tslab{font-size:11px;color:#8fa3b8;text-transform:uppercase;letter-spacing:.06em}
 .empty{border:1px dashed #24405c;border-radius:10px;padding:22px;color:#8fa3b8;font-size:13px;text-align:center}
@@ -102,7 +119,7 @@ th.sortable:hover{color:#fff}
 .repcard .rt{font:700 16px Georgia,serif;color:#fff;margin:6px 0}
 .repcard b{color:#fff}
 .pill{display:inline-block;border-radius:999px;padding:2px 12px;font-size:11px;font-weight:700;margin-left:8px}
-.pill.buy{background:#123f2a;color:#48bb78}.pill.hold{background:#4a3a12;color:#f6ad55}.pill.sell{background:#4a1a1a;color:#f56565}.pill.neutral{background:#1b3049;color:#bcd0dd}
+.pill.buy{background:#123f2a;color:#48bb78}.pill.hold{background:#4a3a12;color:#f6ad55}.pill.sell{background:#4a1a1a;color:#f56565}.pill.neutral{background:#1b3049;color:#bcd0dd}.pill.sbuy{background:#0c3f24;color:#6ee7a0}.pill.reduce{background:#4a2413;color:#fb923c}
 .repcard .rm{color:#8fa3b8;font-size:12px;margin-top:8px}
 .scrollx{overflow-x:auto}
 @media(max-width:860px){.kpis{grid-template-columns:1fr 1fr}.grid{grid-template-columns:1fr}body{font-size:16.5px}h1{font-size:29px}.eyebrow{font-size:12.5px}.sub{font-size:14.5px}.card h2{font-size:20px}.card h3{font-size:14px}.kpi b{font-size:26px}.kpi span{font-size:12px}.kpi small{font-size:12.5px}.grow{font-size:16px}.gmeta{font-size:13.5px}.pill{font-size:12.5px}.tag{font-size:12px}.note{font-size:13.5px}.statusbar{font-size:15px}.hrow{font-size:14px}table{font-size:14px}th{font-size:12.5px}.leg{font-size:13.5px}.mrow{font-size:15px}.mrow>*{min-width:0}.act{font-size:15px}.act .d{font-size:13.5px}.act>*{min-width:0}.plan li{font-size:15px}.tab{font-size:15px;padding:10px 26px}.fbtn{font-size:15px}.fbtn.sm{font-size:13px}.reqq{font-size:15px;flex-wrap:wrap}.reqgrid label,.reqlab{font-size:12.5px}select,textarea,input[type=text]{font-size:16px}.briefbox{font-size:14.5px}.repcard .rt{font-size:18px}.repcard .rm{font-size:13.5px}.mstat span{font-size:11.5px}.mstat b{font-size:18px}.empty{font-size:15px}.tsctl{display:inline-flex}.repgrid{grid-template-columns:1fr}.mgrid{grid-template-columns:1fr}.page{padding:18px 14px 50px}.donutwrap{flex-direction:column;align-items:center}.donutwrap svg{width:100%;max-width:230px;height:auto}.legend{min-width:0;width:100%}th,td{padding-left:5px;padding-right:5px}
@@ -113,6 +130,65 @@ body.tx3{font-size:18.5px}body.tx3 h1{font-size:31.5px}body.tx3 .eyebrow{font-si
 body.tx4{font-size:21px}body.tx4 h1{font-size:36px}body.tx4 .eyebrow{font-size:14px}body.tx4 .sub{font-size:16.5px}body.tx4 .card h2{font-size:25px}body.tx4 .card h3{font-size:16px}body.tx4 .kpi b{font-size:34px}body.tx4 .kpi span{font-size:14.5px}body.tx4 .kpi small{font-size:14px}body.tx4 .grow{font-size:20px}body.tx4 .gmeta{font-size:16px}body.tx4 .pill{font-size:14.5px}body.tx4 .tag{font-size:13.5px}body.tx4 .note{font-size:16px}body.tx4 .statusbar{font-size:17px}body.tx4 .hrow{font-size:17px}body.tx4 table{font-size:16.5px}body.tx4 th{font-size:14px}body.tx4 .leg{font-size:15px}body.tx4 .mrow{font-size:18px}body.tx4 .act{font-size:17.5px}body.tx4 .act .d{font-size:15.5px}body.tx4 .plan li{font-size:17px}body.tx4 .tab{font-size:17px}body.tx4 .fbtn{font-size:17px}body.tx4 .reqq{font-size:17px}body.tx4 .briefbox{font-size:16.5px}body.tx4 .repcard .rt{font-size:21px}body.tx4 .repcard .rm{font-size:15.5px}body.tx4 .mstat span{font-size:13px}body.tx4 .mstat b{font-size:21px}body.tx4 .empty{font-size:17px}
 body.tx5{font-size:23px}body.tx5 h1{font-size:39.5px}body.tx5 .eyebrow{font-size:15.5px}body.tx5 .sub{font-size:18px}body.tx5 .card h2{font-size:27.5px}body.tx5 .card h3{font-size:17.5px}body.tx5 .kpi b{font-size:37px}body.tx5 .kpi span{font-size:16px}body.tx5 .kpi small{font-size:15.5px}body.tx5 .grow{font-size:22px}body.tx5 .gmeta{font-size:17.5px}body.tx5 .pill{font-size:16px}body.tx5 .tag{font-size:15px}body.tx5 .note{font-size:17.5px}body.tx5 .statusbar{font-size:18.5px}body.tx5 .hrow{font-size:18.5px}body.tx5 table{font-size:18px}body.tx5 th{font-size:15.5px}body.tx5 .leg{font-size:16.5px}body.tx5 .mrow{font-size:19.5px}body.tx5 .act{font-size:19px}body.tx5 .act .d{font-size:17px}body.tx5 .plan li{font-size:18.5px}body.tx5 .tab{font-size:18.5px}body.tx5 .fbtn{font-size:18.5px}body.tx5 .reqq{font-size:18.5px}body.tx5 .briefbox{font-size:18px}body.tx5 .repcard .rt{font-size:23px}body.tx5 .repcard .rm{font-size:17px}body.tx5 .mstat span{font-size:14px}body.tx5 .mstat b{font-size:23px}body.tx5 .empty{font-size:18.5px}
 body.tx6{font-size:25px}body.tx6 h1{font-size:43px}body.tx6 .eyebrow{font-size:16.5px}body.tx6 .sub{font-size:19.5px}body.tx6 .card h2{font-size:30px}body.tx6 .card h3{font-size:19px}body.tx6 .kpi b{font-size:40.5px}body.tx6 .kpi span{font-size:17.5px}body.tx6 .kpi small{font-size:16.5px}body.tx6 .grow{font-size:24px}body.tx6 .gmeta{font-size:19px}body.tx6 .pill{font-size:17.5px}body.tx6 .tag{font-size:16px}body.tx6 .note{font-size:19px}body.tx6 .statusbar{font-size:20px}body.tx6 .hrow{font-size:20px}body.tx6 table{font-size:19.5px}body.tx6 th{font-size:16.5px}body.tx6 .leg{font-size:18px}body.tx6 .mrow{font-size:21.5px}body.tx6 .act{font-size:21px}body.tx6 .act .d{font-size:18.5px}body.tx6 .plan li{font-size:20px}body.tx6 .tab{font-size:20px}body.tx6 .fbtn{font-size:20px}body.tx6 .reqq{font-size:20px}body.tx6 .briefbox{font-size:19.5px}body.tx6 .repcard .rt{font-size:25px}body.tx6 .repcard .rm{font-size:18.5px}body.tx6 .mstat span{font-size:15.5px}body.tx6 .mstat b{font-size:25px}body.tx6 .empty{font-size:20px}
+
+</style>
+<style id="themeLight" disabled>/* Light theme (mockup) — enabled by the toggle */
+body{background:#eef2f6;color:#162132}
+h1{color:#12304a}
+.eyebrow,.sub,.note,.gmeta,.tslab,.archlab,.repcard .rm,.act .d,.kpi span,.kpi small,th,.mstat span{color:#64748b}
+.card{background:#fff;border-color:#d9e1ea}
+.card h2{color:#12304a}
+.card h3,.leg,.ht,.plan li{color:#3f5d78}
+.kpi{background:#fff;border-color:#d9e1ea}
+.kpi b{color:#12304a}
+td{color:#162132;border-color:#e5ebf0}
+th{border-color:#d9e1ea}
+#holdingsTable tbody tr:hover td{background:#eef4f9}
+.grow,.mrow,.act,.reqq{border-color:#e5ebf0}
+.tab{background:#fff;border-color:#c7d3df;color:#3f5d78}
+.tab.active{background:#2b6cb0;border-color:#2b6cb0;color:#fff}
+.fbtn{background:#fff;border-color:#c7d3df;color:#3f5d78}
+.fbtn.on{background:#2b6cb0;border-color:#2b6cb0;color:#fff}
+.pill.hit{background:#dcf5e9;color:#0c6748}
+.pill.near{background:#fff5d9;color:#9a6500}
+.pill.watch{background:#edf3f8;color:#3f5d78}
+.pill.buy{background:#dcf5e9;color:#0c6748}
+.pill.hold{background:#fff5d9;color:#9a6500}
+.pill.sell{background:#fdeeee;color:#a63a3a}
+.pill.neutral{background:#edf3f8;color:#3f5d78}
+.pill.sbuy{background:#d3f2e3;color:#0a5c3f}
+.pill.reduce{background:#ffe9d6;color:#b3541e}
+.tag{background:#edf3f8;border-color:#c7d3df;color:#3f5d78}
+select,textarea,input[type=text]{background:#fff;border-color:#c7d3df;color:#162132}
+.briefbox{background:#f4f7fa;color:#162132}
+.statusbar{background:#fff;border-color:#d9e1ea;color:#3f5d78}
+.repcard{background:#fff;border-color:#d9e1ea}
+.repcard .rt,.repcard b,.leg b,.hv{color:#12304a}
+.modal{background:#fff;border-color:#c7d3df}
+.modal h2{color:#12304a}
+.mstat{background:#f4f7fa}
+.mstat b{color:#12304a}
+.mclose{color:#3f5d78;border-color:#c7d3df}
+.gbar,.hbar{background:#e5ebf0}
+.banner{background:#fdeeee;border-color:#f56565;color:#7a2b2b}
+.banner b{color:#a63a3a}
+.empty{border-color:#c7d3df;color:#64748b}
+.up{color:#147d58}
+.down{color:#c0392b}
+.act .b{color:#147d58}
+.leg:hover{background:#e8f0f8}
+.leg.sel{background:#dbe9f7;box-shadow:inset 0 0 0 1px #2b6cb0}
+.posclear{border-color:#c7d3df;background:#fff;color:#3f5d78}
+.posclear:hover{border-color:#2b6cb0;color:#12304a}
+
+.tick:hover{color:#2b6cb0}
+
+.rfbtn{background:#fff;border-color:#c7d3df;color:#8fa3b8}
+.rfbtn.on[data-r="STRONG BUY"]{background:#d3f2e3;border-color:#d3f2e3;color:#0a5c3f}
+.rfbtn.on[data-r="BUY"]{background:#dcf5e9;border-color:#dcf5e9;color:#0c6748}
+.rfbtn.on[data-r="HOLD"]{background:#fff5d9;border-color:#fff5d9;color:#9a6500}
+.rfbtn.on[data-r="REDUCE"]{background:#ffe9d6;border-color:#ffe9d6;color:#b3541e}
+.rfbtn.on[data-r="SELL"]{background:#fdeeee;border-color:#fdeeee;color:#a63a3a}
 </style>
 </head>
 <body>
@@ -122,6 +198,7 @@ body.tx6{font-size:25px}body.tx6 h1{font-size:43px}body.tx6 .eyebrow{font-size:1
 <div class="eyebrow">CIO Dashboard · Retirement Portfolio · Live</div>
 <h1>Portfolio Command Center</h1>
 </div>
+<div><button class="fbtn sm" id="themeToggle" aria-label="Toggle light and dark theme">☀️ Light</button></div>
 </header>
 <div class="statusbar"><span class="dot" id="liveDot"></span><span id="statusText">Starting…</span><span class="tsctl" id="tsCtl"><span class="tslab">Text <b id="tsPos"></b></span><button class="fbtn sm" id="tsDown" aria-label="Smaller text">A−</button><button class="fbtn sm" id="tsUp" aria-label="Larger text">A+</button></span><button class="fbtn sm" id="qRefresh">Refresh quotes</button></div>
 <div class="banner" id="keyBanner" style="display:none"><b>Finnhub API key needed.</b> Paste your key into <span style="font-family:monospace">FINNHUB_KEY</span> at the top of this file's script. Your current key is hard-coded in your public repo's index.html — it is visible to the internet, so <b>rotate it in your Finnhub dashboard first</b>, then paste the new key here. Until then, workbook prices are shown.</div>
@@ -136,7 +213,7 @@ body.tx6{font-size:25px}body.tx6 h1{font-size:43px}body.tx6 .eyebrow{font-size:1
 <div class="grid"><div>
 <div class="card"><h2>Sector allocation</h2><div class="donutwrap" id="sectorBody"></div><div class="note" id="sectorNote"></div></div>
 </div><div>
-<div class="card"><h2>Top 15 positions</h2><div id="top15Body"></div><div class="note" id="top15Note"></div></div>
+<div class="card"><h2><span id="posTitle">Top 15 positions</span> <button class="posclear" id="posClear" style="display:none" aria-label="Clear sector filter">✕</button></h2><div id="top15Body"></div><div class="note" id="top15Note"></div></div>
 </div></div>
 <div class="card"><h2>Performance vs S&amp;P 500</h2><div id="perfBody"></div></div>
 <div class="grid"><div>
@@ -165,6 +242,20 @@ body.tx6{font-size:25px}body.tx6 h1{font-size:43px}body.tx6 .eyebrow{font-size:1
 </div></div>
 <div class="grid"><div>
 <div class="card"><h2>Recent activity</h2>
+<div class="act"><div class="d">Oct 8</div><div><span class="b">BUY</span> 2 <span class="tick" data-t="TSM">TSM</span> @ ~$458.00 <span class="tag">fired ≤$460 gate executed · now 28 sh</span></div></div>
+<div class="act"><div class="d">Oct 8</div><div><span class="b">BUY</span> 4 <span class="tick" data-t="NVDA">NVDA</span> @ ~$232.98 <span class="tag">back inside $215–235 band · now 42 sh</span></div></div>
+<div class="act"><div class="d">Oct 8</div><div><span class="b">BUY</span> 3 <span class="tick" data-t="ADBE">ADBE</span> @ ~$232.33 <span class="tag">≤$235 gate firing · now 34 sh</span></div></div>
+<div class="act"><div class="d">Oct 8</div><div><span class="b">GATE</span> ASML ≤$1,700 installed <span class="tag">7 live gates</span></div></div>
+<div class="act"><div class="d">Oct 8</div><div><span class="b">REPORT</span> ASML fundamental update (Buy 6/10, $2,050) · six-name capital allocation ranking <span class="tag">new house report style</span></div></div>
+<div class="act"><div class="d">Oct 8</div><div><span class="b">BASELINE</span> Morningstar export 58-2 adopted <span class="tag">ADBE 34 sh · NVDA 42 sh · TSM 28 sh · $1.705M total</span></div></div>
+<div class="act"><div class="d">Oct 7</div><div><span class="b">BUY</span> 3 <span class="tick" data-t="ADBE">ADBE</span> @ ~$231.90 · 1 <span class="tick" data-t="GRID">GRID</span> @ $179.60 <span class="tag">now 31 / 61 sh</span></div></div>
+<div class="act"><div class="d">Oct 7</div><div><span class="b">BASELINE</span> Morningstar export 58 adopted <span class="tag">ADBE 31 sh · GRID 61 sh</span></div></div>
+<div class="act"><div class="d">Oct 6</div><div><span class="b">SELL</span> 28 <span class="tick" data-t="SOXQ">SOXQ</span> @ ~$104.90 <span class="tag">liquidated per Reduce 3/10 call · proceeds toward NVDA</span></div></div>
+<div class="act"><div class="d">Oct 6</div><div><span class="b">BUY</span> 16 <span class="tick" data-t="ADBE">ADBE</span> @ $230.00 <span class="tag">starter per next-dollar ranking · now 16 sh</span></div></div>
+<div class="act"><div class="d">Oct 6</div><div><span class="b">BUY</span> 5 <span class="tick" data-t="UBER">UBER</span> @ ~$68.12 <span class="tag">fired-gate tranche 1 (partial) · now 75 sh</span></div></div>
+<div class="act"><div class="d">Oct 6</div><div><span class="b">BUY</span> 1 <span class="tick" data-t="NVDA">NVDA</span> @ ~$235.00 <span class="tag">inside $215–235 band · now 34 sh</span></div></div>
+<div class="act"><div class="d">Oct 6</div><div><span class="b">GATE</span> ADBE ≤$235 installed · GRID ≤$169 removed <span class="tag">6 live gates</span></div></div>
+<div class="act"><div class="d">Oct 6</div><div><span class="b">BASELINE</span> Morningstar export 55 adopted <span class="tag">SOXQ→ADBE · NVDA 34 sh · UBER 75 sh · $1.706M total</span></div></div>
 <div class="act"><div class="d">Sep 25</div><div><span class="b">BASELINE</span> Morningstar export 52 adopted <span class="tag">TSM 22→24 sh · GEHC 51→52 sh</span></div></div>
 <div class="act"><div class="d">Sep 23</div><div><span class="b">BUY</span> 43 UBER @ $68.75 <span class="tag" id="uberTag">now 70 sh</span></div></div>
 <div class="act"><div class="d">Sep 23</div><div><span class="b">BUY</span> 2 ASML @ $1,700.00 <span class="tag">hit $1,700 discipline · now 7 sh</span></div></div>
@@ -212,8 +303,10 @@ body.tx6{font-size:25px}body.tx6 h1{font-size:43px}body.tx6 .eyebrow{font-size:1
 </div>
 <div class="card"><h2>Analyst report library</h2>
 <div class="fbar" id="resFilters">
-<button class="fbtn on" data-f="all">All</button><button class="fbtn" data-f="company">Company Reports</button><button class="fbtn" data-f="fund">Fund Overviews</button><button class="fbtn" data-f="thematic">Thematic &amp; Ranking</button><button class="fbtn" data-f="weekly">Weekly Reports</button><button class="fbtn" data-f="market">Market Research</button>
+<button class="fbtn on" data-f="all">All</button><button class="fbtn" data-f="held">Held</button><button class="fbtn" data-f="watch">Watchlist</button><button class="fbtn" data-f="company">Company Reports</button><button class="fbtn" data-f="fund">Fund Overviews</button><button class="fbtn" data-f="thematic">Thematic &amp; Ranking</button><button class="fbtn" data-f="weekly">Weekly Reports</button><button class="fbtn" data-f="market">Market Research</button>
 </div>
+<div class="fbar" id="resRatings"><span class="archlab">Rating:</span><button class="rfbtn on" data-r="STRONG BUY">Strong Buy</button><button class="rfbtn on" data-r="BUY">Buy</button><button class="rfbtn on" data-r="HOLD">Hold</button><button class="rfbtn on" data-r="REDUCE">Reduce</button><button class="rfbtn on" data-r="SELL">Sell</button></div>
+<div class="fbar archbar" id="resArch"><span class="archlab">Showing:</span><button class="fbtn sm on" data-a="current">Current</button><button class="fbtn sm" data-a="archived">Archive</button></div>
 <div class="srchwrap"><input type="text" id="resSearch" placeholder="Search ticker or keywords…" autocomplete="off" autocapitalize="off" spellcheck="false"></div>
 <div id="researchLib"></div>
 <div class="note">Reports open in a new tab. Set REPORT_BASE at the top of this file's script if your report files live at a URL.</div></div>
@@ -255,7 +348,7 @@ const FINNHUB_KEY = 'dargdr9r01qn6lvf8tggdargdr9r01qn6lvf8th0';
   document.getElementById('tsUp').addEventListener('click',function(){apply(cur+1);});
 })();
 
-const BUILD = 'rev40'; // bump on every revision — visible in the header so we know what's live
+const BUILD = 'rev46'; // bump on every revision — visible in the header so we know what's live
 // Prefix for analyst-report links, e.g. 'https://you.github.io/reports/'.
 // '' = same directory as this file.
 const REPORT_BASE = '';
@@ -263,7 +356,7 @@ const REPORT_BASE = '';
 /* ---------------- research + gates manifests (research.json / gates.json) ---------------- */
 let MANIFEST = null, GATES = null;
 // Embedded fallbacks so the page still works if the JSON files are missing.
-const RESEARCH_FALLBACK = {"reports":[{"date":"2026-09-26","file":"tsm-fundamental-analysis-2026-09-26.html","kind":"company","rating":"BUY","target":"$545","ticker":"TSM","summary":"Update: BUY maintained, target raised to $545 (~21% upside) on higher FY2027E consensus (~$21.8); August revenue record NT$514.8B (+53% y/y); Q3 tracking with room to spare; 2nm ramp steepening; price below the $460 add line."},{"date":"2026-09-26","file":"uber-update-note-2026-09-26.html","kind":"company","rating":"BUY","target":"$105","ticker":"UBER"},{"date":"2026-09-25","file":"unh-fundamental-analysis-2026-09-25.html","kind":"company","rating":"BUY","target":"$475","ticker":"UNH"},{"date":"Sep 2026","file":"asml-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$1,950","ticker":"ASML"},{"date":"2026-09-22","file":"crm-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$276","ticker":"CRM"},{"date":"2026-09-23","file":"nflx-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$88","ticker":"NFLX"},{"date":"2026-09-22","file":"qcom-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$205","ticker":"QCOM"},{"ticker":"AXP","file":"axp-fundamental-analysis-2026-09-26.html","rating":"Constructive","target":null,"kind":"company","date":"2026-09-26"},{"ticker":"JPM","file":"jpm-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$360","kind":"company","date":"2026-09-27"},{"ticker":"AMZN","file":"amzn-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$315","kind":"company","date":"2026-09-27"},{"ticker":"META","file":"meta-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$800","kind":"company","date":"2026-09-27"},{"ticker":"AAPL","file":"aapl-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$350","kind":"company","date":"2026-09-27"},{"ticker":"MSFT","file":"msft-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$590","kind":"company","date":"2026-09-27"},{"ticker":"GOOG","file":"goog-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$410","kind":"company","date":"2026-09-27"},{"ticker":"DIS","file":"dis-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$125","kind":"company","date":"2026-09-27"},{"ticker":"MA","file":"ma-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$650","kind":"company","date":"2026-09-27"},{"ticker":"V","file":"v-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$385","kind":"company","date":"2026-09-27"},{"ticker":"GS","file":"gs-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$1,020","kind":"company","date":"2026-09-27"},{"ticker":"BATRA","file":"batra-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$63","kind":"company","date":"2026-09-27"},{"ticker":"XOM","file":"xom-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$168","kind":"company","date":"2026-09-27"},{"ticker":"SO","file":"so-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$92","kind":"company","date":"2026-09-27"},{"ticker":"KO","file":"ko-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$94","kind":"company","date":"2026-09-27"},{"ticker":"PEP","file":"pep-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$152","kind":"company","date":"2026-09-27"},{"ticker":"PM","file":"pm-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$210","kind":"company","date":"2026-09-27"},{"ticker":"BMY","file":"bmy-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$68","kind":"company","date":"2026-09-27"},{"ticker":"AMT","file":"amt-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$225","kind":"company","date":"2026-09-27"},{"ticker":"TLXIX","file":"tlxix-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"VXUS","file":"vxus-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"VFFSX","file":"vffsx-fund-overview-2026-09-27.html","rating":"TRIM","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"AVUV","file":"avuv-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"FSSNX","file":"fssnx-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"FSMDX","file":"fsmdx-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"SCHD","file":"schd-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"IJH","file":"ijh-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"VTWO","file":"vtwo-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"GRID","file":"grid-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"VIS","file":"vis-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"SOXQ","file":"soxq-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"date":"2026-09-24","file":"ai-stack-investments-2026-09-24.html","kind":"thematic","rating":null,"sub":"Thematic","target":null,"ticker":null,"title":"AI Stack Investments"},{"date":"2026-09-22","file":"capital-allocation-ranking-2026-09-22.html","kind":"thematic","rating":null,"sub":"Ranking","target":null,"ticker":null,"title":"Capital Allocation Ranking"},{"date":"2026-09-23","file":"portfolio-ranking-report-2026-09-23.html","kind":"thematic","rating":null,"sub":"Ranking","target":null,"ticker":null,"title":"Portfolio Ranking Report"},{"date":"2026-09-23","file":"grid-vis-sector-report-2026-09-23.html","kind":"thematic","rating":null,"sub":"Sector","target":null,"ticker":null,"title":"GRID Industrial Sector"},{"date":"2026-09-25","file":"weekly-market-intelligence-2026-09-25.html","kind":"market","rating":null,"sub":"Market Intelligence","target":null,"ticker":null,"title":"Weekly Market Intelligence \u2014 Week Ended Sep 25, 2026"},{"date":"2026-09-29","file":"ai-capital-spending-valuation-hurdle-2026-09-29.html","kind":"thematic","rating":null,"sub":"Thematic","summary":"2026 research synthesis: hyperscaler capex migrating toward ~$800B (2026) and $1.1\u20131.2T (2027E per MS/UBS); Goldman frames ~$7.6T cumulative AI infra spend 2026\u201331; the debate has shifted from \u2018is demand real?\u2019 to whether monetization can earn an acceptable return on the capital base.","target":null,"ticker":null,"title":"AI Capital Spending & Valuation Hurdle"},{"ticker":"GEV","file":"gev-fundamental-analysis-2026-09-30.html","rating":"HOLD","target":"$1,100","kind":"company","date":"2026-09-30","summary":"Update: HOLD maintained, $1,100 target maintained. Stock flat at ~$949.50 since Sep 22; Q3 confirmed Oct 28. New: Crusoe data-center turbine order, BWRX-300 NRC permit, Egypt services deal, $0.50 dividend. GLJ Sell/$470 margin-vintage thesis is the key debate; valuation ~61x FY26E prices perfection. Add gate: $875 (Sep 14 low)."},{"ticker":"AVGO","file":"avgo-fundamental-analysis-2026-09-30.html","rating":"BUY","target":"$535","kind":"company","date":"2026-09-30","summary":"Update: BUY maintained, target raised $505 -> $535 (~52% upside). FY27 AI outlook reaffirmed at $115B; FQ3 beat (AI rev +221%); stock -3.5% to $351.19, 29% off high. New risk: China SASAC switch review. Morningstar $650/5*. Add gate: $340 toward ~3% weight."},{"ticker":"GEHC","file":"gehc-fundamental-analysis-2026-10-02.html","rating":"ADD","target":"$92","kind":"company","date":"2026-10-02","summary":"Update: ADD (was BUY/$84), $92 base value maintained (~43% upside). Q2 beat, guidance reaffirmed, record $23.9B backlog; stock -13% to $64.29 on sentiment. Dividend raised 14%. PCS -$26M loss, interim CFO, China down, litigation overhang keep conviction at 7/10. Add gate: $62 toward ~0.5% weight."},{"ticker":"NVDA","file":"NVDA_Update_Add_Ranges_Gates_20261002.html","rating":"ADD","target":"$340","kind":"company","date":"2026-10-02","summary":"Cam's update: ADD (staged & gated), conviction 8/10 (was 9/10). 12-mo base $340 (+45.3%); prob-weighted $328 (+40.3%) \u2014 matches our Sep-22 $328 target. Core add band $215-235 (top cut from $240); $235-250 conditional on Nov print. Key debate: demand quality \u2014 $94B ecosystem stakes, $105B guarantee cap, $279B supply obligations. Build 0.44% toward ~1.0% in three tranches."},{"title":"Weekly Market Intelligence \u2014 Week Ended October 2, 2026","file":"Weekly_Market_Intelligence_2026-10-02.html","kind":"weekly","sub":"Weekly","date":"2026-10-02","ticker":null,"rating":null,"target":null,"summary":"Weak Sept payrolls (+29K vs ~90K expected) cut near-term hike odds, but 10Y at 5.26% (5.34% intraday, highest since 2002) leaves the discount-rate problem unresolved. Narrow leadership: semis/AI + energy. Regime: late-cycle nominal resilience, high term premium. Week ahead: ISM Services Mon, FOMC minutes Wed, PEP Q3 Thu, UMich sentiment + DAL Fri. Base 55% / bull 25% / bear 20%."},{"title":"Stocks to Watch \u2014 Week of October 5\u20139, 2026","file":"Stocks_to_Watch_2026-10-05.html","kind":"weekly","sub":"Weekly","date":"2026-10-05","ticker":null,"rating":null,"target":null,"summary":"Week of Oct 5\u20139 watchlist: PEP (Oct 8 Q3), JPM (curve/credit read), AMT (duration monitor), XOM (oil/inflation hedge), NVDA (AI earnings vs rates), DAL (Oct 9 demand/fuel), DIS (TV restructuring), QCOM (\u22128.5% week needs causal separation). Event-reaction matrix and conditions-before-action framework."},{"title":"Weekly Market Intelligence \u2014 Audio Briefing Script","file":"audio-script.txt","kind":"weekly","sub":"Audio script","date":"2026-10-02","ticker":null,"rating":null,"target":null,"summary":"Narration script for the Weekly Market Intelligence audio briefing, week ended Oct 2, 2026."},{"ticker":"LOW","file":"low-fundamental-analysis-2026-10-03.html","rating":"BUY","target":"$225","kind":"company","date":"2026-10-03","sub":null,"summary":"Initiate BUY, $225 target (~24% upside from $180.80; 17.3x FY2027E $13.03). At a 52-wk low (-26.5% 1-yr), ~15-16x forward, 6.9% FCF yield, 2.8% Aristocrat yield; Morningstar FVE $255 (~41% upside). Q2: rev $25.96B +8.3%, comps +0.2%, adj EPS $4.40 beat; guidance cut to low end. Pro >30% via FBM/ADG. Recommended gate: ADD at/below $165 toward ~1%."},{"ticker":"HD","file":"hd-fundamental-analysis-2026-10-03.html","rating":"ADD","target":"$340","kind":"company","date":"2026-10-03","sub":null,"summary":"Initiate ADD, $340 target (~20% upside from $282.85; 22.7x FY2026E $15.00). Best operator in home improvement: Pro >50%, 8 straight positive Pro comp quarters, Q2 comps +1.7% (strongest since Q3 FY22), guidance reaffirmed; -28.9% 1-yr de-rating, 3.3% yield. Housing tape (7.28% mortgages) keeps it ADD not BUY. Recommended gate: ADD at/below $260 toward ~1%."},{"title":"Healthcare Sector Outlook \u2014 October 2026","file":"healthcare-sector-outlook-2026-10-03.html","kind":"thematic","sub":"Sector","date":"2026-10-03","ticker":null,"rating":null,"target":null,"summary":"Selective OVERWEIGHT: ~18-19x forward vs 20.5x history and 0.8x S&P (historic low), with double-digit earnings growth expected from Q4'26. Held names checked: BMY HOLD/$68, UNH constructive (accumulate gate stands), GEHC ADD/$92 ($62 gate live). 12 recommended equities (LLY JNJ ABBV PFE AMGN VRTX GILD BSX ISRG ABT ELV HCA) and 7 ETFs (XLV VHT IBB XBI IHI IXJ RYH). Portfolio only ~2.5% in healthcare vs ~11-13% benchmark."}],"updated":"2026-09-29"};
+const RESEARCH_FALLBACK = {"reports":[{"date":"2026-09-26","file":"tsm-fundamental-analysis-2026-09-26.html","kind":"company","rating":"BUY","target":"$545","ticker":"TSM","summary":"Update: BUY maintained, target raised to $545 (~21% upside) on higher FY2027E consensus (~$21.8); August revenue record NT$514.8B (+53% y/y); Q3 tracking with room to spare; 2nm ramp steepening; price below the $460 add line."},{"date":"2026-09-26","file":"uber-update-note-2026-09-26.html","kind":"company","rating":"BUY","target":"$105","ticker":"UBER"},{"date":"2026-09-25","file":"unh-fundamental-analysis-2026-09-25.html","kind":"company","rating":"BUY","target":"$475","ticker":"UNH"},{"date":"Sep 2026","file":"asml-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$1,950","ticker":"ASML"},{"date":"2026-09-22","file":"crm-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$276","ticker":"CRM"},{"date":"2026-09-23","file":"nflx-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$88","ticker":"NFLX"},{"date":"2026-09-22","file":"qcom-fundamental-analysis.html","kind":"company","rating":"HOLD","target":"$205","ticker":"QCOM"},{"ticker":"AXP","file":"axp-fundamental-analysis-2026-09-26.html","rating":"Constructive","target":null,"kind":"company","date":"2026-09-26"},{"ticker":"JPM","file":"jpm-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$360","kind":"company","date":"2026-09-27"},{"ticker":"AMZN","file":"amzn-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$315","kind":"company","date":"2026-09-27"},{"ticker":"META","file":"meta-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$800","kind":"company","date":"2026-09-27"},{"ticker":"AAPL","file":"aapl-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$350","kind":"company","date":"2026-09-27"},{"ticker":"MSFT","file":"msft-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$590","kind":"company","date":"2026-09-27"},{"ticker":"GOOG","file":"goog-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$410","kind":"company","date":"2026-09-27"},{"ticker":"DIS","file":"dis-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$125","kind":"company","date":"2026-09-27"},{"ticker":"MA","file":"ma-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$650","kind":"company","date":"2026-09-27"},{"ticker":"V","file":"v-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$385","kind":"company","date":"2026-09-27"},{"ticker":"GS","file":"gs-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$1,020","kind":"company","date":"2026-09-27"},{"ticker":"BATRA","file":"batra-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$63","kind":"company","date":"2026-09-27"},{"ticker":"XOM","file":"xom-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$168","kind":"company","date":"2026-09-27"},{"ticker":"SO","file":"so-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$92","kind":"company","date":"2026-09-27"},{"ticker":"KO","file":"ko-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$94","kind":"company","date":"2026-09-27"},{"ticker":"PEP","file":"pep-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$152","kind":"company","date":"2026-09-27"},{"ticker":"PM","file":"pm-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$210","kind":"company","date":"2026-09-27"},{"ticker":"BMY","file":"bmy-fundamental-analysis-2026-09-27.html","rating":"HOLD","target":"$68","kind":"company","date":"2026-09-27"},{"ticker":"AMT","file":"amt-fundamental-analysis-2026-09-27.html","rating":"BUY","target":"$225","kind":"company","date":"2026-09-27"},{"ticker":"TLXIX","file":"tlxix-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"VXUS","file":"vxus-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"VFFSX","file":"vffsx-fund-overview-2026-09-27.html","rating":"TRIM","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"AVUV","file":"avuv-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"FSSNX","file":"fssnx-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"FSMDX","file":"fsmdx-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"SCHD","file":"schd-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"IJH","file":"ijh-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"VTWO","file":"vtwo-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"GRID","file":"grid-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"VIS","file":"vis-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"ticker":"SOXQ","file":"soxq-fund-overview-2026-09-27.html","rating":"KEEP","target":null,"kind":"fund","date":"2026-09-27"},{"date":"2026-09-24","file":"ai-stack-investments-2026-09-24.html","kind":"thematic","rating":null,"sub":"Thematic","target":null,"ticker":null,"title":"AI Stack Investments"},{"date":"2026-09-22","file":"capital-allocation-ranking-2026-09-22.html","kind":"thematic","rating":null,"sub":"Ranking","target":null,"ticker":null,"title":"Capital Allocation Ranking"},{"date":"2026-09-23","file":"portfolio-ranking-report-2026-09-23.html","kind":"thematic","rating":null,"sub":"Ranking","target":null,"ticker":null,"title":"Portfolio Ranking Report"},{"date":"2026-09-23","file":"grid-vis-sector-report-2026-09-23.html","kind":"thematic","rating":null,"sub":"Sector","target":null,"ticker":null,"title":"GRID Industrial Sector"},{"date":"2026-09-25","file":"weekly-market-intelligence-2026-09-25.html","kind":"market","rating":null,"sub":"Market Intelligence","target":null,"ticker":null,"title":"Weekly Market Intelligence \u2014 Week Ended Sep 25, 2026"},{"date":"2026-09-29","file":"ai-capital-spending-valuation-hurdle-2026-09-29.html","kind":"thematic","rating":null,"sub":"Thematic","summary":"2026 research synthesis: hyperscaler capex migrating toward ~$800B (2026) and $1.1\u20131.2T (2027E per MS/UBS); Goldman frames ~$7.6T cumulative AI infra spend 2026\u201331; the debate has shifted from \u2018is demand real?\u2019 to whether monetization can earn an acceptable return on the capital base.","target":null,"ticker":null,"title":"AI Capital Spending & Valuation Hurdle"},{"ticker":"GEV","file":"gev-fundamental-analysis-2026-09-30.html","rating":"HOLD","target":"$1,100","kind":"company","date":"2026-09-30","summary":"Update: HOLD maintained, $1,100 target maintained. Stock flat at ~$949.50 since Sep 22; Q3 confirmed Oct 28. New: Crusoe data-center turbine order, BWRX-300 NRC permit, Egypt services deal, $0.50 dividend. GLJ Sell/$470 margin-vintage thesis is the key debate; valuation ~61x FY26E prices perfection. Add gate: $875 (Sep 14 low)."},{"ticker":"AVGO","file":"avgo-fundamental-analysis-2026-09-30.html","rating":"BUY","target":"$535","kind":"company","date":"2026-09-30","summary":"Update: BUY maintained, target raised $505 -> $535 (~52% upside). FY27 AI outlook reaffirmed at $115B; FQ3 beat (AI rev +221%); stock -3.5% to $351.19, 29% off high. New risk: China SASAC switch review. Morningstar $650/5*. Add gate: $340 toward ~3% weight."},{"ticker":"GEHC","file":"gehc-fundamental-analysis-2026-10-02.html","rating":"ADD","target":"$92","kind":"company","date":"2026-10-02","summary":"Update: ADD (was BUY/$84), $92 base value maintained (~43% upside). Q2 beat, guidance reaffirmed, record $23.9B backlog; stock -13% to $64.29 on sentiment. Dividend raised 14%. PCS -$26M loss, interim CFO, China down, litigation overhang keep conviction at 7/10. Add gate: $62 toward ~0.5% weight."},{"ticker":"NVDA","file":"NVDA_Update_Add_Ranges_Gates_20261002.html","rating":"ADD","target":"$340","kind":"company","date":"2026-10-02","summary":"Cam's update: ADD (staged & gated), conviction 8/10 (was 9/10). 12-mo base $340 (+45.3%); prob-weighted $328 (+40.3%) \u2014 matches our Sep-22 $328 target. Core add band $215-235 (top cut from $240); $235-250 conditional on Nov print. Key debate: demand quality \u2014 $94B ecosystem stakes, $105B guarantee cap, $279B supply obligations. Build 0.44% toward ~1.0% in three tranches."},{"title":"Weekly Market Intelligence \u2014 Week Ended October 2, 2026","file":"Weekly_Market_Intelligence_2026-10-02.html","kind":"weekly","sub":"Weekly","date":"2026-10-02","ticker":null,"rating":null,"target":null,"summary":"Weak Sept payrolls (+29K vs ~90K expected) cut near-term hike odds, but 10Y at 5.26% (5.34% intraday, highest since 2002) leaves the discount-rate problem unresolved. Narrow leadership: semis/AI + energy. Regime: late-cycle nominal resilience, high term premium. Week ahead: ISM Services Mon, FOMC minutes Wed, PEP Q3 Thu, UMich sentiment + DAL Fri. Base 55% / bull 25% / bear 20%."},{"title":"Stocks to Watch \u2014 Week of October 5\u20139, 2026","file":"Stocks_to_Watch_2026-10-05.html","kind":"weekly","sub":"Weekly","date":"2026-10-05","ticker":null,"rating":null,"target":null,"summary":"Week of Oct 5\u20139 watchlist: PEP (Oct 8 Q3), JPM (curve/credit read), AMT (duration monitor), XOM (oil/inflation hedge), NVDA (AI earnings vs rates), DAL (Oct 9 demand/fuel), DIS (TV restructuring), QCOM (\u22128.5% week needs causal separation). Event-reaction matrix and conditions-before-action framework."},{"title":"Weekly Market Intelligence \u2014 Audio Briefing Script","file":"audio-script.txt","kind":"weekly","sub":"Audio script","date":"2026-10-02","ticker":null,"rating":null,"target":null,"summary":"Narration script for the Weekly Market Intelligence audio briefing, week ended Oct 2, 2026."},{"ticker":"LOW","file":"low-fundamental-analysis-2026-10-03.html","rating":"BUY","target":"$225","kind":"company","date":"2026-10-03","sub":null,"summary":"Initiate BUY, $225 target (~24% upside from $180.80; 17.3x FY2027E $13.03). At a 52-wk low (-26.5% 1-yr), ~15-16x forward, 6.9% FCF yield, 2.8% Aristocrat yield; Morningstar FVE $255 (~41% upside). Q2: rev $25.96B +8.3%, comps +0.2%, adj EPS $4.40 beat; guidance cut to low end. Pro >30% via FBM/ADG. Recommended gate: ADD at/below $165 toward ~1%."},{"ticker":"HD","file":"hd-fundamental-analysis-2026-10-03.html","rating":"ADD","target":"$340","kind":"company","date":"2026-10-03","sub":null,"summary":"Initiate ADD, $340 target (~20% upside from $282.85; 22.7x FY2026E $15.00). Best operator in home improvement: Pro >50%, 8 straight positive Pro comp quarters, Q2 comps +1.7% (strongest since Q3 FY22), guidance reaffirmed; -28.9% 1-yr de-rating, 3.3% yield. Housing tape (7.28% mortgages) keeps it ADD not BUY. Recommended gate: ADD at/below $260 toward ~1%."},{"title":"Healthcare Sector Outlook \u2014 October 2026","file":"healthcare-sector-outlook-2026-10-03.html","kind":"thematic","sub":"Sector","date":"2026-10-03","ticker":null,"rating":null,"target":null,"summary":"Selective OVERWEIGHT: ~18-19x forward vs 20.5x history and 0.8x S&P (historic low), with double-digit earnings growth expected from Q4'26. Held names checked: BMY HOLD/$68, UNH constructive (accumulate gate stands), GEHC ADD/$92 ($62 gate live). 12 recommended equities (LLY JNJ ABBV PFE AMGN VRTX GILD BSX ISRG ABT ELV HCA) and 7 ETFs (XLV VHT IBB XBI IHI IXJ RYH). Portfolio only ~2.5% in healthcare vs ~11-13% benchmark."},{"ticker":"JNJ","file":"jnj-fundamental-analysis-2026-10-03.html","rating":"HOLD","target":"$275","kind":"company","date":"2026-10-03","sub":null,"summary":"Initiate HOLD, $275 target (~7% upside from $256.03; 21.4x FY2027E $12.83). Dividend King (64 straight raises), 0.8x leverage, Darzalex +18.9%/Tremfya +72.5%/Spravato +40%; but ~23x forward on the July-29-cut guide is full. Overhangs: $5.5-7B talc framework (95% acceptance needed), Stelara -55% cliff, 2027 -$1.36/sh deal drag. Q3 Oct 13. Recommended gate: ADD at/below $230 toward ~1%."},{"ticker":"VHT","file":"vht-fund-overview-2026-10-03.html","rating":"BUY","target":null,"kind":"fund","date":"2026-10-03","sub":null,"summary":"Initiate BUY as core healthcare holding toward 5-8% of NAV. 414 holdings, 0.09% ER, ~$20B AUM, 10-yr 10.6% ann., ~1.5% yield growing ~20%. Broader and less concentrated than XLV (top-10 51.5% vs 61.6%) at the same cost. 4-star Morningstar, Bronze medalist. Top: LLY 12.8%, JNJ 8.7%, ABBV 6.3%."},{"ticker":"LLY","file":"lly-fundamental-analysis-2026-10-03.html","rating":"ADD","target":"$1,300","kind":"company","date":"2026-10-03","sub":null,"summary":"Initiate ADD, $1,300 target (~14% upside from $1,142.85; 27.9x FY2027E $46.65). Best growth asset in healthcare: Q2 rev +48% ($2.3B beat), guide raised ($85-87B rev), Foundayo oral GLP-1 approved Apr 2026, retatrutide 28.3% Ph3 (BLA Q1 2027), supply normalized. But 31.2x forward is full; risks: Novo/Pfizer/Amgen competition, pricing pressure. Recommended gate: ADD at/below $1,000 toward ~1%."},{"title":"Industrial Sector Outlook \u2014 October 2026","file":"industrials-sector-outlook-2026-10-04.html","kind":"thematic","sub":"Sector","date":"2026-10-04","ticker":null,"rating":null,"target":null,"summary":"NEUTRAL/selective: XLI +9.6% YTD vs S&P +12.8%, but ~23x forward vs 20x history and 19x S&P \u2014 premium expanded while market's compressed. AI data-center power (565 TWh 2026) is real; multiples price the super-cycle. Held: GEV HOLD/$1,100, GRID KEEP ($169 gate live), VIS KEEP, UBER BUY/$105 (gate fired, unexecuted). 12 equities led by value: CMI LMT UNP DAL, plus ETN RTX EMR HON CAT GE DE NSC. 7 ETFs: XLI VIS GRID ITA XAR PPA IYT. Portfolio 3.2% vs ~8-9% benchmark \u2014 close selectively via CMI/LMT, not the index at 23x."},{"ticker":"ADBE","name":"Adobe Inc.","file":"adbe-fundamental-analysis-2026-10-03.html","rating":"ADD","target":"$320","kind":"company","date":"2026-10-03","sub":null,"summary":"Initiate ADD, $320 target (~35% upside from $237.69; ~11.5x FY2027E $27.70). -32% YTD at ~9.7x FY26 non-GAAP guide with ~11% FCF yield; FQ3 beat-and-raise (rev +13%, EPS +15%), but net new ARR -36-37% y/y and RPO +8% (first single-digit print since early FY2023) as pricing actions were postponed for the freemium pivot. AI-first ARR >$650M (+150%+). $25B buyback authorized, no dividend. CEO transition Dec 1; no permanent CFO. Morningstar $344/4*. Catalysts: MAX Nov 10-12, FQ4 ~Dec 9. Recommended gate: ADD at/below $210 toward ~1%."},{"ticker":"KHC","name":"The Kraft Heinz Company","file":"khc-fundamental-analysis-2026-10-03.html","rating":"HOLD","target":"$24","kind":"company","date":"2026-10-03","sub":null,"summary":"Initiate HOLD, $24 target (~8% upside from $22.19; ~11.5x FY2027E $2.09). ~11x forward, ~13-14% FCF yield, 7.2% dividend flat since the 2019 cut. New CEO Cahillane paused the split and redirected ~$300M into a $700M reinvestment program; share-loss pace halved, but volumes remain negative and Berkshire's 27.5% stake is registered for sale (untouched through Q2). Q3 ~Oct 28; Investor Day Nov 12. Recommended gate: ADD at/below $20 toward ~1%."},{"ticker":"WMT","name":"Walmart Inc.","file":"wmt-fundamental-analysis-2026-10-03.html","rating":"ADD","target":"$120","kind":"company","date":"2026-10-03","sub":null,"summary":"Initiate ADD, $120 target (~15% upside from $104.26; ~35x NTM). Ads +38%, membership fees +17%, e-commerce ~24% of sales and profitable; but the first U.S. comps miss in ~5 years (+2.6% vs ~3.8% expected) and ~$2.9B of tariff refunds flattered OI. FY27 EPS guide below Street. Dividend King (53rd raise), net debt/EBITDA ~1.3x. Q3 Nov 19. Recommended gate: ADD at/below $95 toward ~1%."},{"ticker":"DELL","name":"Dell Technologies Inc.","file":"dell-fundamental-analysis-2026-10-03.html","rating":"HOLD","target":"$600","kind":"company","date":"2026-10-03","sub":null,"summary":"Initiate HOLD, $600 target (~7% upside from $562.52; ~23x FY27E $26.09). Q2 record revenue +58%, AI orders $60.9B, backlog $95B, 15.0% ISG margin defused the dilution debate; but +347% YTD at ~21.6x forward prices the AI cycle. Downstream of NVDA/AVGO/TSM. Q3 ~Nov 24. Recommended gate: ADD at/below $500 toward ~1%."},{"ticker":"PLTR","name":"Palantir Technologies Inc.","file":"pltr-fundamental-analysis-2026-10-03.html","rating":"HOLD","target":"$200","kind":"company","date":"2026-10-03","sub":null,"summary":"Initiate HOLD, $200 target (~6% upside from $188.75; ~86x FY27E $2.33). Rule of 40 at 155%, revenue +93%, U.S. commercial +149%, $9.2B cash and no debt; but ~149x P/E and ~55x sales with Morningstar $153/3* against a ~$195 street average. Enterprise-AI application layer; surveillance controversy an overhang. Q3 early Nov. Recommended gate: ADD at/below $150 toward ~1%."},{"title":"Research Universe Ranking \u2014 October 2026","file":"research-universe-ranking-2026-10-03.html","kind":"thematic","sub":"Ranking","date":"2026-10-03","ticker":null,"rating":null,"target":null,"summary":"Full-coverage ranking: 52 securities (39 equities + 13 funds/ETFs) by conviction-weighted expected return. Tier 1 (highest conviction): NVDA ADD/$340 (8/10), AVGO BUY/$535, UNH BUY/$475, GEHC ADD/$92. Tier 2 (17 names) led by UBER +54%, ADBE +35%, AMT +39%, LOW +24%. Tier 3 (18 holds). Funds: VHT BUY as the structural healthcare close; 11 KEEPs; VFFSX TRIM (basis caveat). Implied upside vs Oct 2 reference prices; 6 live gates + 11 recommended-not-installed."}],"updated":"2026-10-04"};
 const GATES_FALLBACK = {"gates":[{"ticker":"TSM","type":"price","action":"ADD","level":460,"dir":"at_or_below","note":"Add thesis valid at or below $460 \u00b7 12-mo target $545"},{"ticker":"NVDA","type":"price","action":"ADD","level":220,"dir":"at_or_below","note":"Retain $220 buy gate \u00b7 12-mo target $328"},{"ticker":"GRID","type":"price","action":"ADD","level":169,"dir":"at_or_below","note":"Add toward 1% only in the $160s"},{"ticker":"UNH","type":"weight","action":"ACCUMULATE","level":2.0,"dir":"toward","note":"BUY $475 \u00b7 accumulate toward ~2% of portfolio"},{"ticker":"UBER","type":"price","action":"ADD","level":68,"dir":"at_or_below","note":"Tranche 1 of staged add on sub-$68 weakness \u00b7 toward ~0.5% wt \u00b7 12-mo target $105"},{"ticker":"GEHC","type":"price","action":"ADD","level":62,"dir":"at_or_below","note":"Begin accumulating starter toward ~0.5% wt at or below $62 \u00b7 base value $92"}],"updated":"2026-10-02"};
 function RLIST(){ return (MANIFEST&&MANIFEST.reports)||RESEARCH_FALLBACK.reports; }
 function GLIST(){ return (GATES&&GATES.gates)||GATES_FALLBACK.gates; }
@@ -338,7 +431,7 @@ function setSub(t){document.querySelectorAll('.footsub').forEach(function(el){el
 function addSub(t){document.querySelectorAll('.footsub').forEach(function(el){el.textContent+=t;});}
 async function loadHoldings(){
   let r;
-  try { r = await fetch('holdings.json?_=' + Date.now(), { cache: 'no-store' }); }
+  try { r = await fetch('holdings.json'); }
   catch(e){ throw new Error('fetch-failed'); }
   if(!r.ok) throw new Error('http-'+r.status);
   const d = await r.json();
@@ -450,6 +543,7 @@ function renderKpis(divFwd){
   }
 }
 
+var SECTOR_FILTER=null; /* selected sector for the positions drill-down; null = top 15 */
 /* ---------------- render: sector donut + top 15 ---------------- */
 function arcPath(a0,a1,r,cx,cy){
   const x0=cx+r*Math.cos(a0), y0=cy+r*Math.sin(a0);
@@ -467,8 +561,8 @@ function renderSectors(){
     const s=pair[0], pv=pair[1], frac=pv/100;
     if(frac<=0) return;
     const a1=ang+frac*2*Math.PI, gap=0.008, col=COLORS[i%COLORS.length];
-    arcs+='<path d="'+arcPath(ang+gap,a1-gap,84,110,110)+'" stroke="'+col+'" stroke-width="30" fill="none"/>';
-    legs+='<div class="leg"><span class="sw" style="background:'+col+'"></span>'+esc(s)+'<b>'+pv.toFixed(1)+'%</b></div>';
+    arcs+='<path d="'+arcPath(ang+gap,a1-gap,84,110,110)+'" stroke="'+col+'" stroke-width="30" fill="none" data-sec="'+esc(s)+'" style="cursor:pointer"/>';
+    legs+='<div class="leg'+(s===SECTOR_FILTER?' sel':'')+'" data-sec="'+esc(s)+'"><span class="sw" style="background:'+col+'"></span>'+esc(s)+'<b>'+pv.toFixed(1)+'%</b></div>';
     ang=a1;
   });
   document.getElementById('sectorBody').innerHTML =
@@ -478,23 +572,52 @@ function renderSectors(){
     '<div class="legend">'+legs+'</div>';
   const fin = order.filter(function(p){return p[0]==='Financials';})[0];
   document.getElementById('sectorNote').textContent =
-    'Sectors mapped from holdings; TLXIX target-date shown separately.'+
+    'Sectors mapped from holdings; TLXIX target-date shown separately. Tap a sector to filter the positions list.'+
     (fin?(' Financials '+fin[1].toFixed(1)+'% (JPM/GS/MA/V/AXP) remains the largest active overweight.'):'');
 }
-function renderTop15(){
-  const t15 = tradeable().sort(function(a,b){return b.wt-a.wt;}).slice(0,15);
-  const ref = t15[0].wt;
-  document.getElementById('top15Body').innerHTML = t15.map(function(p){
-    return '<div class="hrow"><span class="ht">'+esc(p.t)+'</span>'+
+function renderPositions(){
+  var all = tradeable().sort(function(a,b){return b.wt-a.wt;});
+  var list = SECTOR_FILTER ? all.filter(function(p){return p.sector===SECTOR_FILTER;}) : all.slice(0,15);
+  var ref = list.length ? list[0].wt : 1;
+  document.getElementById('posTitle').textContent = SECTOR_FILTER ? SECTOR_FILTER+' positions' : 'Top 15 positions';
+  document.getElementById('posClear').style.display = SECTOR_FILTER ? '' : 'none';
+  document.getElementById('top15Body').innerHTML = list.length ? list.map(function(p){
+    return '<div class="hrow"><span class="ht tick" data-t="'+esc(p.t)+'">'+esc(p.t)+'</span>'+
       '<div class="hbar"><div class="hfill" style="width:'+(p.wt/ref*100).toFixed(1)+'%"></div></div>'+
       '<span class="hv">'+p.wt.toFixed(2)+'%</span>'+
       '<span class="hd '+cls(p.chg)+'">'+pct(p.chg)+'</span></div>';
-  }).join('');
-  const g = tradeable().sort(function(a,b){return b.chg-a.chg;})[0];
-  const d = tradeable().sort(function(a,b){return a.chg-b.chg;})[0];
-  document.getElementById('top15Note').textContent =
-    'Day change shown at right (vs. prior close). '+g.t+' '+pct(g.chg)+' led gainers; '+d.t+' '+pct(d.chg)+' led decliners.';
+  }).join('') : '<div class="empty">No tradeable positions in this sector.</div>';
+  var note;
+  if(SECTOR_FILTER){
+    var sw = 0;
+    POS.forEach(function(p){ if(p.sector===SECTOR_FILTER) sw += p.mv; });
+    note = list.length+' position'+(list.length===1?'':'s')+' \u00b7 '+(sw/TOTAL*100).toFixed(1)+
+      '% of portfolio. Tap the sector again or \u2715 to return to top 15.';
+  } else {
+    var g = all.slice().sort(function(a,b){return b.chg-a.chg;})[0];
+    var d = all.slice().sort(function(a,b){return a.chg-b.chg;})[0];
+    note = 'Day change shown at right (vs. prior close). '+g.t+' '+pct(g.chg)+' led gainers; '+d.t+' '+pct(d.chg)+' led decliners. Tap a sector to filter.';
+  }
+  document.getElementById('top15Note').textContent = note;
 }
+/* Sector drill-down: tap a legend row or donut arc to filter the positions card. */
+document.getElementById('sectorBody').addEventListener('click', function(e){
+  var el = e.target && e.target.closest ? e.target.closest('[data-sec]') : null;
+  if(!el) return;
+  var s = el.getAttribute('data-sec');
+  if(s==='Cash') return;
+  SECTOR_FILTER = (SECTOR_FILTER===s) ? null : s;
+  renderSectors(); renderPositions();
+});
+document.getElementById('posClear').addEventListener('click', function(){
+  SECTOR_FILTER = null; renderSectors(); renderPositions();
+});
+/* Ticker drill-down: any ticker on the Overview tab opens the holding card. */
+document.getElementById('tab-overview').addEventListener('click', function(e){
+  var el = e.target && e.target.closest ? e.target.closest('[data-t]') : null;
+  if(!el) return;
+  openHolding(el.getAttribute('data-t'));
+});
 /* ---------------- history + performance chart ---------------- */
 function loadHist(){
   try{ return JSON.parse(localStorage.getItem(HIST_KEY)) || []; }catch(e){ return []; }
@@ -569,7 +692,7 @@ function renderAttr(){
   const up = tr.slice().sort(function(a,b){return b.pnl-a.pnl;}).slice(0,5);
   const dn = tr.slice().sort(function(a,b){return a.pnl-b.pnl;}).slice(0,5);
   function arow(p){
-    return '<div class="mrow"><b>'+esc(p.t)+(p.live?'':' <span class="tag wb">wb</span>')+'</b>'+
+    return '<div class="mrow"><b><span class="tick" data-t="'+esc(p.t)+'">'+esc(p.t)+'</span>'+(p.live?'':' <span class="tag wb">wb</span>')+'</b>'+
       '<span class="'+cls(p.pnl)+'">'+moneyS(p.pnl)+' <small>('+pct(p.chg,1)+')</small></span></div>';
   }
   document.getElementById('attrUp').innerHTML = up.map(arow).join('');
@@ -587,7 +710,7 @@ function renderFV(){
   const disc = fv.slice().sort(function(a,b){return a.disc-b.disc;}).slice(0,10);
   const prem = fv.slice().sort(function(a,b){return b.disc-a.disc;}).slice(0,5);
   function row(r){
-    return '<tr><td><b>'+esc(r.t)+'</b></td><td class="num">$'+r.px.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+'</td>'+
+    return '<tr><td><b class="tick" data-t="'+esc(r.t)+'">'+esc(r.t)+'</b></td><td class="num">$'+r.px.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+'</td>'+
       '<td class="num">$'+Math.round(r.fv).toLocaleString('en-US')+'</td>'+
       '<td class="num '+cls(-r.disc)+'">'+(r.disc>=0?'+':'')+r.disc.toFixed(1)+'%</td>'+
       '<td class="num">'+esc(r.stars)+'</td></tr>';
@@ -638,11 +761,11 @@ function renderDividends(){
   document.getElementById('divFwd').textContent = money(d.fwdTotal);
   document.getElementById('divYld').textContent = (d.fwdTotal/TOTAL*100).toFixed(2)+'%';
   document.getElementById('divTop').innerHTML = d.rows.slice(0,8).map(function(r){
-    return '<div class="mrow"><b>'+esc(r.t)+'</b><span>'+money(r.fwd)+' <small>('+r.y.toFixed(2)+'%)</small></span></div>';
+    return '<div class="mrow"><b class="tick" data-t="'+esc(r.t)+'">'+esc(r.t)+'</b><span>'+money(r.fwd)+' <small>('+r.y.toFixed(2)+'%)</small></span></div>';
   }).join('');
   document.getElementById('divUpc').innerHTML = d.upcoming.length ?
     d.upcoming.map(function(u){
-      return '<div class="mrow"><b>'+esc(u.t)+'</b><span>'+
+      return '<div class="mrow"><b class="tick" data-t="'+esc(u.t)+'">'+esc(u.t)+'</b><span>'+
         u.dt.toLocaleDateString('en-US',{month:'short',day:'numeric'})+' · ~'+money(u.amt)+'</span></div>';
     }).join('') :
     '<div class="note">No scheduled payments in the next 60 days.</div>';
@@ -688,7 +811,7 @@ function renderEarnings(){
       when = dt.toLocaleDateString('en-US',{weekday:'short',month:'short',day:'numeric'});
     }catch(err){}
     const h = hh[e.hour] ? ' · '+hh[e.hour] : '';
-    return '<div class="mrow"><b>'+esc(e.symbol)+'</b><span>'+when+h+'</span></div>';
+    return '<div class="mrow"><b class="tick" data-t="'+esc(e.symbol)+'">'+esc(e.symbol)+'</b><span>'+when+h+'</span></div>';
   }).join('');
 }
 
@@ -701,7 +824,7 @@ function renderConc(){
     let flag='';
     if(p.wt>=5){ flag=' <span class="tag">concentrated</span>'; nBig++; }
     else if(p.wt<0.5){ flag=' <span class="tag">tail</span>'; nTail++; tailW+=p.wt; }
-    return '<div class="hrow"><span class="ht">'+esc(p.t)+flag+'</span>'+
+    return '<div class="hrow"><span class="ht"><span class="tick" data-t="'+esc(p.t)+'">'+esc(p.t)+'</span>'+flag+'</span>'+
       '<div class="hbar"><div class="hfill" style="width:'+(p.wt/ref*100).toFixed(1)+'%"></div></div>'+
       '<span class="hv">'+p.wt.toFixed(2)+'%</span>'+
       '<span class="hd '+cls(p.chg)+'">'+pct(p.chg,1)+'</span></div>';
@@ -745,7 +868,7 @@ function renderUG(){
   const losers = ug.slice().sort(function(a,b){return a.g-b.g;}).slice(0,5);
   const tot = ug.reduce(function(a,u){return a+u.g;},0);
   function row(u){
-    return '<tr><td><b>'+esc(u.t)+'</b></td><td class="num">'+money(u.mv)+'</td>'+
+    return '<tr><td><b class="tick" data-t="'+esc(u.t)+'">'+esc(u.t)+'</b></td><td class="num">'+money(u.mv)+'</td>'+
       '<td class="num '+cls(u.g)+'">'+moneyS(u.g)+'</td>'+
       '<td class="num '+cls(u.g)+'">'+(u.gpct>=0?'+':'')+u.gpct.toFixed(1)+'%</td></tr>';
   }
@@ -759,7 +882,7 @@ function renderTop20(){
   const t20 = POS.slice().sort(function(a,b){return b.wt-a.wt;}).slice(0,20);
   document.getElementById('top20Body').innerHTML = t20.map(function(p){
     const nm = p.name.length>36 ? p.name.slice(0,36)+'…' : p.name;
-    return '<tr><td><b>'+esc(p.t)+'</b></td><td>'+esc(nm)+'</td>'+
+    return '<tr><td><b class="tick" data-t="'+esc(p.t)+'">'+esc(p.t)+'</b></td><td>'+esc(nm)+'</td>'+
       '<td class="num">'+qtyFmt(p.qty)+'</td>'+
       '<td class="num">$'+p.px.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2})+(p.live?'':' <span class="tag wb">wb</span>')+'</td>'+
       '<td class="num">'+money(p.mv)+'</td><td class="num">'+p.wt.toFixed(2)+'%</td>'+
@@ -886,7 +1009,7 @@ function renderGates(){
       detail = w.toFixed(2)+'% of '+lv.toFixed(1)+'% target';
       bar = '<div class="gbar"><div class="gfill" style="width:'+pr.toFixed(0)+'%"></div></div>';
     } else { stat='—'; stc='watch'; detail='No live data'; }
-    return '<div class="grow"><div><b>'+g.ticker+'</b> <span class="pill '+(g.action==='ADD'?'buy':(g.action==='TRIM'?'sell':'hold'))+'">'+g.action+'</span>'+
+    return '<div class="grow"><div><b class="tick" data-t="'+esc(g.ticker)+'">'+esc(g.ticker)+'</b> <span class="pill '+(g.action==='ADD'?'buy':(g.action==='TRIM'?'sell':'hold'))+'">'+g.action+'</span>'+
       '<div class="gmeta">'+esc(nm)+' · '+esc(g.note||'')+'</div>'+bar+'</div>'+
       '<div style="text-align:right"><span class="pill '+stc+'">'+stat+'</span><div class="gmeta">'+detail+'</div></div></div>';
   }).join('');
@@ -897,35 +1020,86 @@ function renderGates(){
 /* ---------------- research tab ---------------- */
 let RES_FILTER = 'all';
 let RES_QUERY = '';
+let RES_ARCH = 'current'; // 'current' = latest edition per company/topic; 'archived' = superseded editions
 function repText(r){
   const isEq = !!r.ticker;
-  const nm = isEq ? ((BY[r.ticker]&&BY[r.ticker].name)||r.ticker) : (r.title||'');
+  const nm = isEq ? ((BY[r.ticker]&&BY[r.ticker].name)||r.name||r.ticker) : (r.title||'');
   return [r.ticker||'', nm, r.rating||'', r.target||'', r.summary||'', r.kind||'', r.sub||'', r.date||'', r.file||''].join(' ');
 }
 function renderResearch(f){
   RES_FILTER = f || RES_FILTER;
   f = RES_FILTER;
   function pill(r){
-    const c = r==='BUY'?'buy':(r==='HOLD'?'hold':(r==='SELL'?'sell':'neutral'));
+    // New conviction-anchored scale (Oct 2026, going forward) + legacy ratings.
+    const k = String(r||'').toUpperCase();
+    const c = k==='STRONG BUY'?'sbuy':(k==='BUY'?'buy':(k==='HOLD'?'hold':(k==='REDUCE'?'reduce':(k==='SELL'?'sell':'neutral'))));
     return '<span class="pill '+c+'">'+r+'</span>';
   }
   const list = RLIST();
+  // Archive logic (rev46): group reports by ticker (company/fund) or by kind+sub (thematic/weekly/market);
+  // the newest-dated report per group is "current", older editions are "archived".
+  function normDate(d){
+    d = String(d||'').trim();
+    var m = d.match(/^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)[a-z]*\s+(\d{4})$/i);
+    if(m){ var mi={jan:'01',feb:'02',mar:'03',apr:'04',may:'05',jun:'06',jul:'07',aug:'08',sep:'09',oct:'10',nov:'11',dec:'12'};
+      return m[2]+'-'+mi[m[1].toLowerCase().slice(0,3)]+'-01'; }
+    m = d.match(/^(\d{4})-(\d{2})-(\d{2})/);
+    if(m) return m[1]+'-'+m[2]+'-'+m[3];
+    return d;
+  }
+  function gkey(r){ return r.ticker ? ('T:'+String(r.ticker).toUpperCase()) : ('K:'+(r.kind||'')+'|'+(r.sub||'')); }
+  const best = {};
+  list.forEach(function(r){
+    const k = gkey(r), d = normDate(r.date);
+    if(!best[k] || d > best[k].date) best[k] = {date:d, disp:r.date||'', file:r.file};
+  });
+  function isArchived(r){ const b = best[gkey(r)]; return !!b && normDate(r.date) < b.date; }
   const words = RES_QUERY.trim().toLowerCase().split(/\s+/).filter(Boolean);
   const qlist = words.length ? list.filter(function(r){
     const t = repText(r).toLowerCase();
     return words.every(function(w){ return t.indexOf(w) !== -1; });
   }) : list;
+  const vlist = qlist.filter(function(r){ return RES_ARCH==='archived' ? isArchived(r) : !isArchived(r); });
+  var _allOn = Object.keys(RES_RATINGS).every(function(k){ return RES_RATINGS[k]; });
+  const rlist = _allOn ? vlist : vlist.filter(function(r){ return !!RES_RATINGS[normRating(r.rating)]; });
+  // Newest first (rev53): the manifest is chronological (oldest appended first),
+  // so display order is date-descending; ties keep later-appended entries first.
+  // This sorts only the display list — RLIST()/manifest order and the
+  // newest-per-group archive logic above are untouched.
+  const rIdx = new Map();
+  list.forEach(function(r,i){ rIdx.set(r,i); });
+  rlist.sort(function(a,b){
+    const da = normDate(a.date), db = normDate(b.date);
+    if(db!==da) return db<da ? -1 : 1;
+    return (rIdx.get(b)||0)-(rIdx.get(a)||0);
+  });
+  const archMatchNote = (words.length && !vlist.length && qlist.length)
+    ? ' '+qlist.filter(isArchived).length+' archived edition(s) match — switch to Archive to view them.' : '';
   function card(r){
     const isEq = !!r.ticker;
-    const nm = isEq ? esc((BY[r.ticker]&&BY[r.ticker].name)||r.ticker) : esc(r.title);
+    const nm = isEq ? esc((BY[r.ticker]&&BY[r.ticker].name)||r.name||r.ticker) : esc(r.title);
     const tag = isEq ? '<b>'+r.ticker+'</b> '+pill(r.rating) : '<span class="tag">'+esc(r.sub||r.kind)+'</span>';
     const meta = isEq ? ((r.target?('Target '+r.target+' · '):'')+r.date) : r.date;
     const cta = isEq ? 'Open full report →' : 'Open report →';
-    return '<a class="repcard" href="'+REPORT_BASE+r.file+'" target="_blank" rel="noopener">'+
+    const arch = isArchived(r);
+    const archNote = arch ? '<div class="rm archnote">Archived · superseded by the '+esc(best[gkey(r)].disp)+' edition</div>' : '';
+    return '<a class="repcard'+(arch?' archived':'')+'" href="'+REPORT_BASE+r.file+'" target="_blank" rel="noopener">'+
       tag+'<div class="rt">'+nm+'</div>'+
-      '<div class="rm">'+meta+'<br>'+cta+'</div></a>';
+      '<div class="rm">'+meta+'<br>'+cta+'</div>'+archNote+'</a>';
   }
-  const byKind = function(k){ return qlist.filter(function(r){return r.kind===k;}); };
+  const byKind = function(k){ return rlist.filter(function(r){return r.kind===k;}); };
+  // Ownership views: Held = report ticker is in current holdings (BY), Watchlist = company/fund report not in holdings.
+  const isHeld = function(r){ return !!r.ticker && !!BY[r.ticker]; };
+  function ownSections(own){
+    const h = own ? 'Held' : 'Watchlist';
+    const m = rlist.filter(function(r){ return (r.kind==='company'||r.kind==='fund') && !!r.ticker && (isHeld(r)===own); });
+    const mc = m.filter(function(r){return r.kind==='company';});
+    const mf = m.filter(function(r){return r.kind==='fund';});
+    let html = '';
+    if(mc.length) html += '<h3>'+h+' — company reports ('+mc.length+')</h3><div class="repgrid">'+mc.map(card).join('')+'</div>';
+    if(mf.length) html += '<h3>'+h+' — fund overviews ('+mf.length+')</h3><div class="repgrid">'+mf.map(card).join('')+'</div>';
+    return html || '<div class="empty">No '+(RES_ARCH==='archived'?'archived ':'')+(own?'held-company':'watchlist')+' reports in this view.</div>';
+  }
   const secs = {
     company:['<h3>Company reports ('+byKind('company').length+')</h3><div class="repgrid">'+byKind('company').map(card).join('')+'</div>'],
     thematic:['<h3>Thematic &amp; ranking</h3><div class="repgrid">'+byKind('thematic').map(card).join('')+'</div>'],
@@ -939,15 +1113,40 @@ function renderResearch(f){
   };
   const order = ['company','fund','thematic','weekly','market'];
   document.getElementById('researchLib').innerHTML =
-    (words.length && !qlist.length)
-      ? '<div class="empty">No reports match &ldquo;'+esc(RES_QUERY.trim())+'&rdquo;.<br>Try a ticker (e.g. NVDA) or a keyword (e.g. dividend).</div>'
-      : (f==='all' ? order.map(function(k){return secs[k][0];}).join('') : secs[f][0]);
+    (words.length && !vlist.length)
+      ? '<div class="empty">No reports match &ldquo;'+esc(RES_QUERY.trim())+'&rdquo;.'+esc(archMatchNote)+'<br>Try a ticker (e.g. NVDA) or a keyword (e.g. dividend).</div>'
+      : (f==='held' ? ownSections(true) : (f==='watch' ? ownSections(false) : (f==='all' ? order.map(function(k){return secs[k][0];}).join('') : secs[f][0])));
   document.querySelectorAll('#resFilters .fbtn').forEach(function(b){
     b.classList.toggle('on', b.getAttribute('data-f')===f);
   });
+  document.querySelectorAll('#resArch .fbtn').forEach(function(b){
+    b.classList.toggle('on', b.getAttribute('data-a')===RES_ARCH);
+  });
 }
+document.querySelectorAll('#resArch .fbtn').forEach(function(b){
+  b.addEventListener('click', function(){ RES_ARCH = b.getAttribute('data-a'); renderResearch(); });
+});
 document.querySelectorAll('#resFilters .fbtn').forEach(function(b){
   b.addEventListener('click', function(){ renderResearch(b.getAttribute('data-f')); });
+});
+/* Rating filter: multi-toggle pills; all on = no filtering. Legacy ratings mapped to the current scale. */
+var RES_RATINGS = {'STRONG BUY':true,'BUY':true,'HOLD':true,'REDUCE':true,'SELL':true};
+function normRating(r){
+  var k = String(r||'').toUpperCase();
+  if(k==='STRONG BUY') return 'STRONG BUY';
+  if(k==='BUY'||k==='ADD') return 'BUY';
+  if(k==='HOLD'||k==='KEEP') return 'HOLD';
+  if(k==='REDUCE'||k==='TRIM') return 'REDUCE';
+  if(k==='SELL') return 'SELL';
+  return null;
+}
+document.querySelectorAll('#resRatings .rfbtn').forEach(function(b){
+  b.addEventListener('click', function(){
+    var r = b.getAttribute('data-r');
+    RES_RATINGS[r] = !RES_RATINGS[r];
+    b.classList.toggle('on', RES_RATINGS[r]);
+    renderResearch();
+  });
 });
 document.getElementById('resSearch').addEventListener('input', function(){
   RES_QUERY = this.value; renderResearch();
@@ -1038,7 +1237,7 @@ function paintAll(){
   renderKpis(divFwd);
   renderGates();
   renderSectors();
-  renderTop15();
+  renderPositions();
   renderPerf();
   renderAttr();
   renderFV();
@@ -1138,107 +1337,19 @@ async function refreshQuotes(){
   }catch(e){ bootFail('setup/render', e); return; }
 })();
 </script>
-
-<!-- PCC-NARRATE:START -- universal narration widget, injected by scripts/inject_narration.py.
-     Reads the page aloud via the browser's built-in Web Speech API. Idempotent: this script
-     will not inject a second copy into a file that already references speechSynthesis. -->
-<style>
-  #pcc-narrate-bar{
-    position:fixed; bottom:18px; right:18px; z-index:2147483000;
-    display:flex; align-items:center; gap:6px;
-    background:#12395B; color:#fff; border-radius:999px; padding:8px 8px;
-    box-shadow:0 8px 24px rgba(10,22,40,.35);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  }
-  #pcc-narrate-bar button{
-    background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.20); color:#fff;
-    border-radius:999px; padding:7px 12px; font-size:12px; font-weight:700; cursor:pointer;
-    display:flex; align-items:center; gap:5px; line-height:1;
-  }
-  #pcc-narrate-bar button:hover{background:rgba(255,255,255,.20);}
-  #pcc-narrate-bar button:disabled{opacity:.4; cursor:default;}
-  #pcc-narrate-bar .pcc-narrate-speed{min-width:40px; justify-content:center;}
-  #pcc-narrate-bar .pcc-narrate-label{font-size:11px; color:#bcd0ea; padding:0 4px 0 6px; white-space:nowrap;}
-  .pcc-narrate-highlight{
-    background:rgba(59,130,246,.18) !important; outline:2px solid rgba(59,130,246,.35);
-    border-radius:6px; transition:background .15s ease;
-  }
-  @media print{ #pcc-narrate-bar{display:none !important;} }
-</style>
-<div id="pcc-narrate-bar" style="display:none">
-  <button type="button" id="pcc-narrate-play" aria-label="Play">&#9654; Listen</button>
-  <button type="button" id="pcc-narrate-stop" disabled aria-label="Stop">&#9632;</button>
-  <button type="button" id="pcc-narrate-speed" class="pcc-narrate-speed" disabled aria-label="Playback speed">1x</button>
-  <span class="pcc-narrate-label" id="pcc-narrate-status"></span>
-</div>
 <script>
 (function(){
-  if (!('speechSynthesis' in window)) return;
-  var SEL = 'h1,h2,h3,h4,h5,p,li';
-  var EXCLUDE_ANCESTOR = 'table';
-  var RATES = [1, 1.25, 1.5, 0.85];
-  var bar = document.getElementById('pcc-narrate-bar');
-  var playBtn = document.getElementById('pcc-narrate-play');
-  var stopBtn = document.getElementById('pcc-narrate-stop');
-  var speedBtn = document.getElementById('pcc-narrate-speed');
-  var statusEl = document.getElementById('pcc-narrate-status');
-  var nodes = [], idx = 0, rateIdx = 0, playing = false;
-
-  function collect(){
-    var all = Array.prototype.slice.call(document.querySelectorAll(SEL));
-    var seen = [];
-    return all.filter(function(el){
-      if (el.closest(EXCLUDE_ANCESTOR)) return false;
-      if (el.closest('#pcc-narrate-bar')) return false;
-      var text = (el.innerText || '').trim();
-      if (!text) return false;
-      var prev = seen[seen.length - 1];
-      if (prev && prev.contains(el)) return false;
-      seen.push(el);
-      return true;
-    });
+  var K='cio-theme', theme='dark';
+  var st=document.getElementById('themeLight'), b=document.getElementById('themeToggle');
+  try{ theme = localStorage.getItem(K) || 'dark'; }catch(e){}
+  function apply(){
+    st.disabled = (theme !== 'light');
+    b.textContent = (theme === 'dark') ? '\u2600\uFE0F Light' : '\uD83C\uDF19 Dark';
+    try{ localStorage.setItem(K, theme); }catch(e){}
   }
-  function clearHighlight(){
-    var h = document.querySelector('.pcc-narrate-highlight');
-    if (h) h.classList.remove('pcc-narrate-highlight');
-  }
-  function setStatus(){ statusEl.textContent = nodes.length ? (idx + 1) + ' / ' + nodes.length : ''; }
-  function speakNext(){
-    if (idx >= nodes.length) { stopAll(); return; }
-    var el = nodes[idx];
-    var text = el.innerText.trim();
-    clearHighlight();
-    el.classList.add('pcc-narrate-highlight');
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    setStatus();
-    var u = new SpeechSynthesisUtterance(text);
-    u.rate = RATES[rateIdx];
-    u.onend = function(){ if (playing) { idx++; speakNext(); } };
-    window.speechSynthesis.speak(u);
-  }
-  function play(){
-    if (!nodes.length) nodes = collect();
-    if (!nodes.length) return;
-    playing = true;
-    playBtn.innerHTML = '&#9208; Pause';
-    stopBtn.disabled = false;
-    speedBtn.disabled = false;
-    if (!window.speechSynthesis.speaking) speakNext();
-    else window.speechSynthesis.resume();
-  }
-  function pause(){ playing = false; window.speechSynthesis.pause(); playBtn.innerHTML = '&#9654; Resume'; }
-  function stopAll(){
-    playing = false; window.speechSynthesis.cancel(); idx = 0; clearHighlight();
-    playBtn.innerHTML = '&#9654; Listen'; stopBtn.disabled = true; speedBtn.disabled = true; statusEl.textContent = '';
-  }
-  playBtn.addEventListener('click', function(){ if (playing) pause(); else play(); });
-  stopBtn.addEventListener('click', stopAll);
-  speedBtn.addEventListener('click', function(){ rateIdx = (rateIdx + 1) % RATES.length; speedBtn.textContent = RATES[rateIdx] + 'x'; });
-  window.addEventListener('beforeunload', function(){ window.speechSynthesis.cancel(); });
-  bar.style.display = 'flex';
+  b.addEventListener('click', function(){ theme = (theme === 'dark') ? 'light' : 'dark'; apply(); });
+  apply();
 })();
 </script>
-<!-- PCC-NARRATE:END -->
-
 </body>
 </html>

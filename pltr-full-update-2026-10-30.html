@@ -1,0 +1,645 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>PLTR Full Update — October 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700;8..60,900&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+  :root{
+    --bg:#f4f2ec; --surface:#ffffff; --surface2:#eceae2; --ink:#17222c; --ink2:#46545f; --ink3:#6d7a84;
+    --line:#d8d4c8; --accent:#0e5f56; --accent-ink:#0a4a43; --amber:#9a6b1e; --red:#a83226; --green:#1d7a4f;
+    --cover1:#0c1a26; --cover2:#12303a; --cover3:#0e5f56;
+    --callout-bg:#fdf3e0; --callout-line:#d9a83f; --callout-ink:#5c430a;
+    --ladder-bg:#e9f2ef; --ladder-line:#0e5f56;
+    --shadow:0 1px 3px rgba(20,30,40,.08),0 8px 28px rgba(20,30,40,.07);
+    color-scheme:light;
+  }
+  [data-theme="dark"]{
+    --bg:#0e141a; --surface:#162029; --surface2:#1c2934; --ink:#e8e6df; --ink2:#b3bcc2; --ink3:#8b98a1;
+    --line:#2c3b47; --accent:#3ec2ae; --accent-ink:#7fd8c8; --amber:#e0aa4e; --red:#e07a6a; --green:#5cc48d;
+    --callout-bg:#2b2110; --callout-line:#8a6a24; --callout-ink:#eed9a4;
+    --ladder-bg:#12271f; --ladder-line:#3ec2ae;
+    --shadow:0 1px 3px rgba(0,0,0,.4),0 8px 28px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Public Sans",system-ui,sans-serif;font-size:16.5px;line-height:1.65;-webkit-font-smoothing:antialiased}
+  .mono{font-family:"IBM Plex Mono",monospace}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px 72px}
+
+  /* toolbar */
+  .toolbar{position:sticky;top:0;z-index:50;display:flex;justify-content:flex-end;gap:8px;padding:10px 20px;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);max-width:1060px;margin:0 auto}
+  .tbtn{font-family:"Public Sans",sans-serif;font-size:13px;font-weight:600;letter-spacing:.02em;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+  .tbtn:hover{border-color:var(--accent);color:var(--accent-ink)}
+  .tbtn svg{width:15px;height:15px;flex:none}
+  .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--bg);padding:10px 18px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;z-index:99;max-width:90vw;text-align:center}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  /* cover */
+  .cover{border-radius:18px;overflow:hidden;background:linear-gradient(128deg,var(--cover1) 0%,var(--cover2) 55%,var(--cover3) 130%);color:#eef2ee;padding:52px 48px 44px;position:relative;box-shadow:var(--shadow)}
+  .cover::after{content:"";position:absolute;inset:0;background:radial-gradient(620px 300px at 88% -10%,rgba(255,255,255,.13),transparent 60%);pointer-events:none}
+  .cover .over{font-size:12.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#9fd4c8}
+  .cover h1{font-family:"Source Serif 4",serif;font-weight:900;font-size:clamp(40px,6.4vw,68px);line-height:1.02;margin:14px 0 6px;letter-spacing:-.01em}
+  .cover .sub{font-family:"Source Serif 4",serif;font-size:clamp(19px,2.6vw,25px);font-weight:400;color:#cfe0da;line-height:1.35;max-width:640px}
+  .cover .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:28px;font-size:13.5px;color:#b9cbc4}
+  .cover .meta b{color:#fff;font-weight:600}
+  .cover .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .cover .tag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,255,255,.35);color:#eaf3ef;border-radius:999px;padding:5px 12px}
+  .cover .tag.solid{background:#e8b23f;border-color:#e8b23f;color:#241a02}
+
+  /* rating strip */
+  .strip{display:grid;grid-template-columns:repeat(5,1fr);background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-top:16px;box-shadow:var(--shadow);overflow:hidden}
+  .strip .cell{padding:18px 20px;border-left:1px solid var(--line)}
+  .strip .cell:first-child{border-left:none}
+  .strip .lab{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+  .strip .val{font-family:"Source Serif 4",serif;font-size:30px;font-weight:700;line-height:1.15;margin-top:3px}
+  .strip .val small{font-size:15px;color:var(--ink2);font-family:"Public Sans",sans-serif;font-weight:600}
+  .strip .note{font-size:12.5px;color:var(--ink2);margin-top:2px}
+  .up{color:var(--green)} .hold-c{color:var(--amber)}
+
+  /* report map */
+  .map{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 28px;margin-top:16px;box-shadow:var(--shadow)}
+  .map h2{font-family:"Source Serif 4",serif;font-size:21px;margin:0 0 12px;font-weight:700}
+  .map ol{margin:0;padding:0;list-style:none;columns:2;column-gap:44px}
+  .map li{break-inside:avoid;margin:0 0 7px}
+  .map a{color:var(--ink);text-decoration:none;font-size:15px;display:flex;gap:10px;align-items:baseline}
+  .map a:hover{color:var(--accent-ink)}
+  .map .n{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--accent);font-weight:600;min-width:22px}
+
+  /* sections */
+  section{margin-top:52px}
+  .kick{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+  h2.sec{font-family:"Source Serif 4",serif;font-size:clamp(27px,3.6vw,36px);font-weight:700;line-height:1.15;margin:0 0 14px;letter-spacing:-.01em}
+  p{margin:0 0 14px}
+  p.lede{font-size:18.5px;line-height:1.6;color:var(--ink)}
+  .muted{color:var(--ink2)}
+  strong{font-weight:700}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow)}
+  .card h3{font-family:"Source Serif 4",serif;font-size:19px;margin:0 0 8px;font-weight:700}
+  .card p:last-child{margin-bottom:0}
+
+  /* callouts */
+  .callout{border-radius:14px;padding:24px 26px;margin:22px 0;border:1px solid var(--callout-line);background:var(--callout-bg);color:var(--callout-ink)}
+  .callout .clab{font-size:11.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;margin-bottom:6px}
+  .callout h3{font-family:"Source Serif 4",serif;font-size:22px;margin:0 0 8px;font-weight:700;color:var(--callout-ink)}
+  .callout p{margin:0 0 10px}.callout p:last-child{margin-bottom:0}
+  .callout.ladder{background:var(--ladder-bg);border-color:var(--ladder-line);color:var(--ink)}
+  .callout.ladder h3{color:var(--ink)} .callout.ladder .clab{color:var(--accent)}
+
+  /* tables */
+  .tscroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:var(--shadow);margin:18px 0}
+  table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:560px}
+  caption{text-align:left;font-family:"Source Serif 4",serif;font-weight:700;font-size:16.5px;padding:14px 18px 4px;color:var(--ink)}
+  th{ text-align:left;font-size:11.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink3);font-weight:700;padding:10px 18px 8px;border-bottom:2px solid var(--line);white-space:nowrap}
+  td{padding:9px 18px;border-bottom:1px solid var(--line);vertical-align:top}
+  tr:last-child td{border-bottom:none}
+  td.num,th.num{text-align:right;font-family:"IBM Plex Mono",monospace;font-size:13.5px;white-space:nowrap}
+  td:first-child{font-weight:600}
+  .pos{color:var(--green);font-weight:600}.neg{color:var(--red);font-weight:600}
+  .subhead td{background:var(--surface2);font-weight:700;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2)}
+
+  /* chart */
+  .chartbox{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px 12px;box-shadow:var(--shadow);margin:18px 0}
+  .chartbox .ct{font-family:"Source Serif 4",serif;font-weight:700;font-size:17px}
+  .chartbox .cs{font-size:13px;color:var(--ink2);margin-bottom:6px}
+  svg text{font-family:"IBM Plex Mono",monospace}
+
+  /* ladder visual */
+  .ladder{margin:20px 0}
+  .lrow{display:grid;grid-template-columns:172px 1fr 118px;gap:14px;align-items:center;padding:11px 0;border-bottom:1px dashed var(--line)}
+  .lrow:last-child{border-bottom:none}
+  .lrow .ln{font-weight:700;font-size:14.5px}
+  .lrow .ln small{display:block;font-weight:500;color:var(--ink2);font-size:12.5px}
+  .lrow .bar{height:14px;border-radius:4px;background:var(--accent);opacity:.85;min-width:6px}
+  .lrow .bar.dim{opacity:.38}.lrow .bar.warn{background:var(--amber);opacity:.9}.lrow .bar.ref{background:var(--ink3);opacity:.65}
+  .lrow .lp{font-family:"IBM Plex Mono",monospace;font-size:14px;text-align:right;font-weight:600}
+
+  ul.tight{margin:6px 0 14px;padding-left:20px}
+  ul.tight li{margin-bottom:7px}
+  .verdict{font-family:"Source Serif 4",serif;font-size:20px;line-height:1.5;border-left:3px solid var(--accent);padding:4px 0 4px 20px;margin:20px 0}
+  .appendix{margin-top:64px;border-top:2px solid var(--line);padding-top:26px}
+  .appendix h2{font-family:"Source Serif 4",serif;font-size:24px;margin:0 0 6px}
+  .appendix h3{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);margin:22px 0 8px}
+  .appendix ul{margin:0;padding-left:18px;font-size:13.5px;color:var(--ink2)}
+  .appendix li{margin-bottom:5px;word-break:break-word}
+  .appendix a{color:var(--accent-ink)}
+  .fineprint{font-size:12.5px;color:var(--ink3);margin-top:30px}
+
+  @media (max-width:760px){
+    .strip{grid-template-columns:1fr 1fr}
+    .strip .cell{border-left:none;border-top:1px solid var(--line)}
+    .strip .cell:nth-child(-n+2){border-top:none}
+    .strip .cell:nth-child(even){border-left:1px solid var(--line)}
+    .map ol{columns:1}
+    .grid2{grid-template-columns:1fr}
+    .cover{padding:36px 24px 30px}
+    .lrow{grid-template-columns:1fr 74px}
+    .lrow .bar{display:none}
+    table{min-width:0}
+    .tscroll{overflow-x:visible}
+    td,th{padding:8px 10px}
+  }
+  @media print{
+    .toolbar,.toast{display:none!important}
+    body{background:#fff}
+    section{page-break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button class="tbtn" id="themeBtn" type="button" aria-label="Toggle dark and light theme">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+    <span id="themeLab">Dark</span>
+  </button>
+  <button class="tbtn" id="pdfBtn" type="button">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+    Download PDF
+  </button>
+</div>
+
+<div class="wrap" id="report">
+
+  <!-- COVER -->
+  <header class="cover">
+    <div class="over">Equity Research · Full Update</div>
+    <h1>Palantir Technologies</h1>
+    <div class="sub">The business has never executed better. The entry price has rarely demanded more. Hold the rating, rebuild the ladder, and let Monday's print set the terms.</div>
+    <div class="meta">
+      <span>Ticker <b>NASDAQ: PLTR</b></span>
+      <span>Date <b>October 30, 2026</b></span>
+      <span>Next catalyst <b>Q3 earnings — Monday, November 2, after the close</b></span>
+    </div>
+    <div class="tags">
+      <span class="tag solid">Not held — no position</span>
+      <span class="tag">Update ahead of Q3 2026 earnings</span>
+    </div>
+  </header>
+
+  <!-- RATING STRIP -->
+  <div class="strip" role="group" aria-label="Rating summary">
+    <div class="cell"><div class="lab">Rating</div><div class="val hold-c">Hold</div><div class="note">Maintained from October 4</div></div>
+    <div class="cell"><div class="lab">Conviction</div><div class="val">5<small> / 10</small></div><div class="note">Unchanged</div></div>
+    <div class="cell"><div class="lab">12-month target</div><div class="val">$200</div><div class="note">Maintained · ~59× 2026 guide sales</div></div>
+    <div class="cell"><div class="lab">Reference price</div><div class="val">$184.11</div><div class="note">NASDAQ close, October 30, 2026</div></div>
+    <div class="cell"><div class="lab">Implied upside</div><div class="val up">+8.6%</div><div class="note">To the $200 target</div></div>
+  </div>
+
+  <!-- REPORT MAP -->
+  <nav class="map" aria-label="Report map">
+    <h2>Report map</h2>
+    <ol>
+      <li><a href="#verdict"><span class="n">01</span>The verdict — conviction in the business, not the price</a></li>
+      <li><a href="#tape"><span class="n">02</span>The October tape — records, then two sector selloffs</a></li>
+      <li><a href="#q2"><span class="n">03</span>Q2 2026 — the blowout that set the bar</a></li>
+      <li><a href="#q3"><span class="n">04</span>The Q3 setup — consensus sits above guidance</a></li>
+      <li><a href="#news"><span class="n">05</span>October news flow — positioning, not bookings</a></li>
+      <li><a href="#valuation"><span class="n">06</span>Valuation — extreme on every conventional multiple</a></li>
+      <li><a href="#street"><span class="n">07</span>The Street — an $80 to $265 argument</a></li>
+      <li><a href="#risks"><span class="n">08</span>Risks, the bear case, and the bull case</a></li>
+      <li><a href="#entry"><span class="n">09</span>Entry discipline — the revised ladder</a></li>
+      <li><a href="#open"><span class="n">10</span>What could not be confirmed</a></li>
+      <li><a href="#sources"><span class="n">A</span>Appendix — sources</a></li>
+    </ol>
+  </nav>
+
+  <!-- 01 VERDICT -->
+  <section id="verdict">
+    <div class="kick">The desk call</div>
+    <h2 class="sec">High conviction in the business. Low conviction in the entry price.</h2>
+    <p class="lede">Palantir is <strong>Hold, maintained, at 5/10 conviction with the $200 target intact</strong>. Nothing in October weakened the operating story — Q2 was the strongest quarter in the company's history, the balance sheet holds $9.2bn of cash and short-term Treasuries with no interest-bearing debt, and the sell-side spent the month raising targets. What October changed is the entry arithmetic: the stock broke its 50-day moving average on the final session, closes the month 13.5% below its high, and goes into a Monday print where consensus already sits above the top of management's own guidance.</p>
+    <p>That combination — a superb business, a demanding multiple, and a binary catalyst three days out — is precisely what a Hold is for. The desk holds no Palantir shares, and this report starts none. It instead rebuilds the entry plan: the October 4 recommendation of a single starter level at or below $150 no longer works as the only rung, because $150 now sits below every major moving average, 18.5% under the reference price, and would likely fill only into a broken thesis. The revised structure is a ladder — a starter zone at $161–166, the $150 level retained as a deep second tranche, and a valuation anchor near $136 — armed <em>after</em> Monday's print, not before it.</p>
+    <div class="verdict">The framing, plainly: we would rather own this company at the right price after the print than own it at the wrong price before it. Patience is the position.</div>
+    <div class="grid2">
+      <div class="card">
+        <h3>What would change the rating upward</h3>
+        <p>A Q3 beat-and-raise — revenue above the $2.18bn consensus with a full-year guidance lift — followed by the stock holding the $161–166 zone, or reclaiming $186–187 with the thesis confirmed. Either path converts the ladder into a position on evidence rather than hope.</p>
+      </div>
+      <div class="card">
+        <h3>What would change the rating downward</h3>
+        <p>A print at or below the top of guidance with no full-year raise, U.S. commercial growth decelerating below roughly 120%, or bookings and retention rolling over from their Q2 peaks. At 54× guided 2026 sales, disappointment does not get a second chance from the multiple.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 TAPE -->
+  <section id="tape">
+    <div class="kick">Price action · October 2026</div>
+    <h2 class="sec">Records in the first fortnight, two sector selloffs after</h2>
+    <p>October had three acts. The stock melted up to records first — a $209.05 record close on October 9 and a $212.94 intraday high on October 12 — carried by an upgrade, a bullish initiation, and target raises. Then, on October 14–16, a broad selloff in AI and software names over AI-infrastructure financing worries took the stock down 7.2% in a single session to $186.03; contemporary reporting found no Palantir-specific news behind the move. A recovery into a $193–$202 range followed, and on October 30 a second broad software selloff, compounded by de-risking ahead of Monday's earnings, knocked the stock down $12.31 (−6.27%) to close at <strong>$184.11</strong> — undercutting the October 16 intraday low with a new October low of $180.81 and closing below the 50-day moving average for the first time in this pullback.</p>
+    <div class="chartbox">
+      <div class="ct">Daily closes — September 21 to October 30, 2026</div>
+      <div class="cs">Record close $209.05 on October 9 · October 16 selloff close $186.03 · October 30 close $184.11, below the 50-day average</div>
+      <svg id="tapeChart" viewBox="0 0 720 300" width="100%" role="img" aria-label="Line chart of Palantir daily closing prices from late September through October 30, 2026"></svg>
+    </div>
+    <div class="tscroll">
+      <table>
+        <caption>The tape in numbers</caption>
+        <thead><tr><th>Reference point</th><th class="num">Price</th><th class="num">Change</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>October 29 close</td><td class="num">$196.42</td><td class="num neg">−0.20%</td><td>Range $190.36–$198.51</td></tr>
+          <tr><td>October 30 close</td><td class="num">$184.11</td><td class="num neg">−$12.31 · −6.27%</td><td>Range $180.81–$193.92 · volume 27.0m · after-hours ~$184.51</td></tr>
+          <tr><td>vs October 4 reference ($188.75, the October 2 close)</td><td class="num">—</td><td class="num">+4.06% / −2.46%</td><td>At the October 29 / October 30 closes respectively</td></tr>
+          <tr><td>52-week high</td><td class="num">$212.94</td><td class="num">−13.5%</td><td>Intraday, October 12 · record close $209.05 on October 9</td></tr>
+          <tr><td>52-week low</td><td class="num">$106.37</td><td class="num pos">+73.1%</td><td>Distance above the low at the October 30 close</td></tr>
+          <tr><td>Short interest (October 15)</td><td class="num">56.09m sh</td><td class="num">2.54% of float</td><td>2.4 days to cover — neither a squeeze setup nor a major overhang</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The read-through matters more than the levels. Both October drawdowns were sector events, not company events: the multiple, not the business, is what the market has been repricing. That cuts both ways into Monday — a clean print can re-rate the stock quickly, but a merely adequate one has no valuation cushion to land on. Options markets price a ±11.7–12.4% move on the print, roughly $161–$207 around the October 30 close.</p>
+  </section>
+
+  <!-- 03 Q2 -->
+  <section id="q2">
+    <div class="kick">The base · Reported August 3, 2026</div>
+    <h2 class="sec">Q2 was a blowout, and the market paid up violently for it</h2>
+    <p>Palantir's second quarter, reported after the close on August 3, was the fastest growth in company history: revenue up 93% year on year, U.S. commercial revenue up 149%, U.S. government up 90%, and a Rule of 40 score of 155% — a figure no other large software company is currently printing. Against the single consensus source used throughout this report, MarketBeat, adjusted EPS of $0.41 beat the $0.3446 consensus by roughly 19%. The stock jumped 29.45% the next session to $162.66 and went on to the October records. Q2 is therefore both the proof of the thesis and the reason the Q3 bar is set where it is.</p>
+    <div class="tscroll">
+      <table>
+        <caption>Q2 2026 results — quarter ended June 30, 2026</caption>
+        <thead><tr><th>Metric</th><th class="num">Q2 2026</th><th class="num">Year-on-year</th></tr></thead>
+        <tbody>
+          <tr><td>Revenue</td><td class="num">$1,935.5m</td><td class="num pos">+93%</td></tr>
+          <tr><td>U.S. commercial revenue</td><td class="num">$764m</td><td class="num pos">+149%</td></tr>
+          <tr><td>U.S. government revenue</td><td class="num">$809m</td><td class="num pos">+90%</td></tr>
+          <tr><td>GAAP operating income</td><td class="num">$912m</td><td class="num">47% margin</td></tr>
+          <tr><td>Adjusted operating income</td><td class="num">$1,194m</td><td class="num">62% margin</td></tr>
+          <tr><td>EPS — GAAP and adjusted, diluted</td><td class="num">$0.41</td><td class="num">Beat: $0.3446 consensus</td></tr>
+          <tr><td>Rule of 40 score</td><td class="num">155%</td><td class="num">93% growth + 62% adj. margin</td></tr>
+          <tr><td>Total contract value closed</td><td class="num">$3,373m</td><td class="num pos">+49%</td></tr>
+          <tr><td>U.S. commercial remaining deal value</td><td class="num">$6,238m</td><td class="num pos">+124%</td></tr>
+          <tr><td>Total remaining deal value</td><td class="num">$13.1bn</td><td class="num pos">+83%</td></tr>
+          <tr><td>Remaining performance obligations</td><td class="num">$4.9bn</td><td class="num pos">+103%</td></tr>
+          <tr><td>Customers (trailing twelve months)</td><td class="num">1,049</td><td class="num pos">+24%</td></tr>
+          <tr><td>Net dollar retention</td><td class="num">157%</td><td class="num">—</td></tr>
+          <tr><td>Cash and short-term U.S. Treasuries</td><td class="num">$9.2bn</td><td class="num">No interest-bearing debt</td></tr>
+          <tr><td>Stock-based compensation</td><td class="num">$265m</td><td class="num">13.7% of revenue</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Two definitional cautions belong with these numbers. Remaining deal value and remaining performance obligations are different scopes — deal value presumes exercise of all contract options, while obligations are non-cancellable contracted revenue not yet recognised — and the two must not be added together. And part of the $0.41 GAAP EPS was non-operating: unrealised gains on the company's SpaceX position contributed a few cents. Neither point dents the quarter; both matter when annualising it.</p>
+    <p>Management raised guidance alongside the print, and that guidance still stands unchanged: full-year 2026 revenue of $8.150–$8.158bn (growth of about 82%), U.S. commercial revenue above $3.424bn, adjusted operating income of $4.889–$4.897bn, and adjusted free cash flow of $4.5–$4.7bn.</p>
+  </section>
+
+  <!-- 04 Q3 -->
+  <section id="q3">
+    <div class="kick">The print · Monday, November 2, after the close</div>
+    <h2 class="sec">The Q3 setup — and the trap inside it</h2>
+    <p>Palantir reports third-quarter results on <strong>Monday, November 2, 2026, following the close of U.S. markets</strong>, with a webcast at 5:00pm ET — a date and time the company confirmed on October 12. Consensus throughout this report is MarketBeat's, a single provider, never blended: EPS of $0.4072 on revenue of $2.18bn, up 84.3% year on year.</p>
+    <div class="callout">
+      <div class="clab">Callout — the setup trap</div>
+      <h3>Consensus sits above the top of guidance</h3>
+      <p>MarketBeat consensus revenue of $2.18bn is <strong>$16–20m above the top of management's Q3 guide of $2.160–$2.164bn</strong>. A print exactly at the top of guidance — a result management would describe as a successful quarter — therefore reads on the tape as a revenue miss. The bar for Monday is not guidance; it is a beat of consensus <em>plus</em> a full-year raise. Anything less invites the multiple, not the quarter, to do the talking.</p>
+    </div>
+    <div class="tscroll">
+      <table>
+        <caption>Q3 2026 expectations — MarketBeat consensus vs company guidance</caption>
+        <thead><tr><th>Measure</th><th class="num">MarketBeat consensus</th><th class="num">Company guidance</th><th>Read</th></tr></thead>
+        <tbody>
+          <tr><td>EPS</td><td class="num">$0.4072</td><td class="num">—</td><td>Vs $0.21 a year earlier (+93.9%)</td></tr>
+          <tr><td>Revenue</td><td class="num">$2.18bn</td><td class="num">$2.160–$2.164bn</td><td>Consensus is above the guide top</td></tr>
+          <tr><td>Adjusted operating income</td><td class="num">—</td><td class="num">$1.292–$1.296bn</td><td>Implies ~59.8% margin at the guide midpoint</td></tr>
+          <tr><td>Full-year 2026 revenue</td><td class="num">—</td><td class="num">$8.150–$8.158bn</td><td>A raise is the upside trigger</td></tr>
+          <tr><td>Options-implied move</td><td class="num">±11.7–12.4%</td><td class="num">~$161–$207</td><td>Around the October 30 close</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>The four questions that decide the print.</strong></p>
+    <ul class="tight">
+      <li><strong>U.S. commercial sustainability.</strong> Q2 grew 149%. Citi expects 140%+ growth in Q3 despite far harder comparisons. A print below roughly 130% will be read as deceleration — unfair, perhaps, but the market grades this stock on momentum.</li>
+      <li><strong>Government and contract momentum.</strong> U.S. government grew 90% in Q2. Watch total contract value, remaining deal value, and any commentary around the federal fiscal year-end on September 30 — the one bearish operating datapoint raised pre-print is a sequential dip in contract revenue.</li>
+      <li><strong>Margin.</strong> The Q3 guide implies an adjusted operating margin near 59.8%, down from Q2's 62%. A hold at or above 60% with disciplined stock compensation keeps the Rule of 40 story intact; slippage feeds the cost-of-growth critique.</li>
+      <li><strong>The guidance raise.</strong> Citi expects a full-year raise of roughly ten points of growth. Palantir's pattern is beat-and-raise; a beat without a raise has historically been treated by this stock as a miss.</li>
+    </ul>
+    <p class="muted">Other compilers publish different Q3 figures, and they are deliberately not mixed into the table above — a single named consensus keeps the beat-or-miss verdict on Monday unambiguous.</p>
+  </section>
+
+  <!-- 05 NEWS -->
+  <section id="news">
+    <div class="kick">October 5–30 · Positioning, not bookings</div>
+    <h2 class="sec">A month of partnerships — and not one disclosed dollar</h2>
+    <p>The single most important fact about October's news flow is what it does not contain: <strong>no announcement in the window disclosed a contract value or a revenue contribution</strong>. The deals are real, and several are strategically meaningful — sovereign AI infrastructure, federal cloud accreditation, enterprise licensing inside the Marine Corps — but they are pipeline and positioning evidence, not bookings. Treating them as revenue would overstate the quarter before it prints.</p>
+    <div class="tscroll">
+      <table>
+        <caption>Material developments, October 2026</caption>
+        <thead><tr><th>Date</th><th>Development</th><th>Terms disclosed</th></tr></thead>
+        <tbody>
+          <tr><td>Oct 1</td><td><strong>Armada sovereign-AI partnership</strong> — Palantir named Armada's inaugural Certified Modular Data Center Partner: a sovereign AI operating system on modular data centres, U.S./allied-manufactured and air-gappable. Just before the October 5 window; included here because the standing coverage flagged it.</td><td>None — no financial terms, timeline, or revenue; no dollar follow-up found in the window</td></tr>
+          <tr><td>Oct 15</td><td><strong>Customers Bank collaboration</strong> — Foundry and AIP deployed for deposit onboarding, with Palantir engineers embedded; a working version built in ten weeks and an onboarding-time target of days down to roughly twenty minutes.</td><td>None</td></tr>
+          <tr><td>Oct 19</td><td><strong>Knox Systems partnership</strong> — Palantir's accredited infrastructure combined with Knox's managed federal cloud and accelerated FedRAMP authorisation path for FedRAMP/IL5 customers.</td><td>None</td></tr>
+          <tr><td>Oct 20</td><td><strong>Marine Corps Maven expansion reported</strong> — enterprise licensing of the Maven Smart System effective October 1, extending to all echelons including the Reserves.</td><td>Adoption expansion under an existing ceiling — not a new award or dollar figure</td></tr>
+          <tr><td>Oct 21</td><td><strong>Sovereign-AI customer update</strong> — L3Harris (30+ ERP systems unified), McCarthy (30,000 hours a year saved), NVIDIA, and Tampa General Hospital named in a post-close release.</td><td>None — no values, bookings, or revenue</td></tr>
+          <tr><td>Oct 22</td><td><strong>Stagwell expanded partnership</strong> — Stagwell becomes premier marketing-transformation partner on Palantir platforms; <strong>Aplos Data</strong> elevated to the top Vanguard: Elite partner tier.</td><td>None</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>The debate that did develop in October was about the model, not the deals.</strong> Coverage on October 20–22 relayed a Gartner warning that by 2028 some 70% of enterprises will abandon agentic-AI applications built through forward-deployed engineering on cost and lock-in grounds — the FDE model being the engine of Palantir's commercial growth. On October 27–28, William Blair framed the related risk from the other side: large-language-model labs hiring Palantir's own forward-deployed engineers could rebuild similar applications more cheaply, while also estimating the Maven programme at close to a $1bn annual run-rate. Both arguments return in the risks section; neither is a company disclosure.</p>
+    <p><strong>Insiders and holders.</strong> October's identified insider sales were small — a few million dollars in aggregate — and, where the filings state it, executed under pre-set Rule 10b5-1 plans. The longer window is louder: $876.7m of open-market insider sales over twelve months with no open-market purchases, concentrated in a handful of founders and executives whose plans predate October. ARK Invest trimmed its position repeatedly between October 14 and 23. No capital actions — no buyback, dividend, split, offering, or debt transaction — were found in the window.</p>
+  </section>
+
+  <!-- 06 VALUATION -->
+  <section id="valuation">
+    <div class="kick">Fundamentals &amp; valuation · At the $184.11 close</div>
+    <h2 class="sec">Fortress finances, an extreme multiple — both at once</h2>
+    <p>Strip the price away and the fundamentals are close to flawless: revenue compounding at 82–93%, a 62% adjusted operating margin, a 63% adjusted free-cash-flow margin in Q2, $9.2bn of net cash, and dilution that has effectively paused — the diluted share count rose just 0.2% year on year, and stock compensation fell to 13.7% of revenue from 15.9%. The problem has never been the income statement. The problem is what the market already charges for it: even after a 13.5% pullback from the high, Palantir trades at roughly 54× its own guided 2026 sales and 97× forward earnings, with a trailing free-cash-flow yield under 1%.</p>
+    <div class="tscroll">
+      <table>
+        <caption>Valuation snapshot — October 30, 2026 close</caption>
+        <thead><tr><th>Metric</th><th class="num">Value</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>Market capitalisation</td><td class="num">$442.43bn</td><td>~2.403bn shares outstanding</td></tr>
+          <tr><td>Enterprise value</td><td class="num">$433.23bn</td><td>Net cash $9.20bn; no interest-bearing debt</td></tr>
+          <tr><td>Trailing P/E</td><td class="num">157.5×</td><td>Trailing revenue $6.16bn</td></tr>
+          <tr><td>Forward P/E</td><td class="num">96.8×</td><td>Definitions vary by provider — every definition is extreme</td></tr>
+          <tr><td>Price / sales — trailing</td><td class="num">71.9×</td><td>—</td></tr>
+          <tr><td>Price / sales — forward</td><td class="num">43.5×</td><td>On a next-twelve-months basis, not the 2026 guide</td></tr>
+          <tr><td>Price / sales — 2026 guide</td><td class="num">54.3×</td><td>Desk calculation on the $8.154bn guide midpoint</td></tr>
+          <tr><td>EV / EBITDA</td><td class="num">162.7×</td><td>Trailing</td></tr>
+          <tr><td>Free-cash-flow yield — trailing</td><td class="num">0.76%</td><td>—</td></tr>
+          <tr><td>Free-cash-flow yield — on guide</td><td class="num">1.04%</td><td>On the $4.6bn adjusted-FCF guide midpoint</td></tr>
+          <tr><td>Rule of 40 (Q2)</td><td class="num">155%</td><td>140% even on a GAAP margin basis</td></tr>
+          <tr><td>Desk target multiple</td><td class="num">~59×</td><td>$200 target on 2026 guide sales</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p><strong>On peers, honesty beats false precision.</strong> No single peer-multiple table on one consistent basis could be verified for this report, so none is presented. The one sourced datapoint available is indicative only and not like-for-like: Databricks, private, was valued in August 2026 at roughly 27× its revenue run-rate, against Palantir at roughly 73× trailing sales at the time. Palantir grows about twice as fast as the next listed peer and carries two to three times the sales multiple — whether that premium is earned depends entirely on sustaining 50%+ growth into 2027 and 2028. Its own history offers the sterner warning: the multiple has halved before without the business deteriorating at all, and that precedent is the bear case in miniature.</p>
+  </section>
+
+  <!-- 07 STREET -->
+  <section id="street">
+    <div class="kick">Analyst targets · Range $80 to $265</div>
+    <h2 class="sec">The Street spent October getting more bullish into a falling stock</h2>
+    <p>The dispersion on this name is extraordinary — an $80 bear target against a $265 bull target on the same set of financials — and October widened it. Nine firms upgraded, initiated, or raised targets after October 4, clustering at $230–$265, while the stock fell. The two standing bears did not move: RBC reiterated Underperform at $90 on October 28, and Jefferies' $80 dates from August 4. Consensus target figures differ by provider — snapshots run from $198.75 to $215.24 — and are not blended here; quoting one number without its provider would misstate a genuinely split Street. The desk's $200 sits deliberately inside that split: above the bears, well below the bull cluster, at roughly 59× guided 2026 sales.</p>
+    <div class="tscroll">
+      <table>
+        <caption>Street actions after October 4, 2026</caption>
+        <thead><tr><th>Date</th><th>Firm</th><th>Action</th><th>Rating</th><th class="num">Target</th></tr></thead>
+        <tbody>
+          <tr><td>Oct 6</td><td>Zacks Research</td><td>Downgrade</td><td>Strong Buy → Hold</td><td class="num">—</td></tr>
+          <tr><td>Oct 8</td><td>Goldman Sachs</td><td>Upgrade</td><td>Neutral → Buy</td><td class="num">$230</td></tr>
+          <tr><td>Oct 9</td><td>Barclays</td><td>Initiation</td><td>Overweight</td><td class="num">$265</td></tr>
+          <tr><td>Oct 12</td><td>Baird</td><td>Target raised</td><td>Outperform</td><td class="num">$200 → $250</td></tr>
+          <tr><td>Oct 15</td><td>Mizuho</td><td>Target raised</td><td>Outperform</td><td class="num">$215 → $245</td></tr>
+          <tr><td>Oct 22</td><td>Citigroup</td><td>Target raised</td><td>Buy</td><td class="num">$245 → $250</td></tr>
+          <tr><td>Oct 23</td><td>Piper Sandler</td><td>Target raised</td><td>Overweight</td><td class="num">$230 → $231</td></tr>
+          <tr><td>Oct 27</td><td>Rosenblatt</td><td>Target raised</td><td>Buy</td><td class="num">$225 → $260</td></tr>
+          <tr><td>Oct 28</td><td>RBC Capital</td><td>Reiterated</td><td>Underperform</td><td class="num">$90</td></tr>
+          <tr><td>Oct 29</td><td>JPMorgan</td><td>Initiation</td><td>Overweight</td><td class="num">$262</td></tr>
+          <tr><td>Oct 29</td><td>Oppenheimer</td><td>Target raised</td><td>Outperform</td><td class="num">$200 → $235</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tscroll">
+      <table>
+        <caption>Street actions before October 4, 2026 — latest on record</caption>
+        <thead><tr><th>Date</th><th>Firm</th><th>Action</th><th>Rating</th><th class="num">Target</th></tr></thead>
+        <tbody>
+          <tr><td>Jul 31</td><td>RBC Capital</td><td>Reiterated</td><td>Underperform</td><td class="num">$90</td></tr>
+          <tr><td>Aug 4</td><td>Jefferies</td><td>Reiterated</td><td>Underperform</td><td class="num">$80</td></tr>
+          <tr><td>Aug 4</td><td>Deutsche Bank</td><td>Upgrade</td><td>Buy</td><td class="num">—</td></tr>
+          <tr><td>Aug 4</td><td>Cantor Fitzgerald</td><td>Initiation</td><td>Overweight</td><td class="num">—</td></tr>
+          <tr><td>Aug 4</td><td>Citigroup</td><td>Target raised</td><td>—</td><td class="num">→ $245</td></tr>
+          <tr><td>Aug 26</td><td>William Blair</td><td>Reiterated</td><td>Outperform</td><td class="num">No target</td></tr>
+          <tr><td>Sep 11</td><td>DA Davidson</td><td>Target raised</td><td>Buy</td><td class="num">$200 → $250</td></tr>
+          <tr><td>Sep 2026</td><td>Morgan Stanley</td><td>—</td><td>Hold</td><td class="num">$205</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">Dashes mark actions where the sources read carried no target; none has been filled in. The JPMorgan target carries a December 2027 horizon. One further October initiation at a $250 target rests on a single secondary report and is excluded from the tables for that reason.</p>
+  </section>
+
+  <!-- 08 RISKS -->
+  <section id="risks">
+    <div class="kick">Risk assessment</div>
+    <h2 class="sec">The bear case needs no business failure — only a smaller multiple</h2>
+    <p><strong>Valuation is the first-order risk, and it has a precedent.</strong> Between November 2025 and June 2026 the shares fell 49% while revenue growth <em>accelerated</em> from 63% to 93%. The multiple compressed because it could. At 54× guided sales and a sub-1% free-cash-flow yield, the price already capitalises roughly a decade of exceptional compounding; a return to even 40× guided sales is $136 a share. The stock's beta near 1.6 means it falls roughly one and a half times the software complex on selloff days, as both October episodes showed.</p>
+    <p><strong>Concentration cuts against the growth story's durability.</strong> Just 1,049 customers generate the whole revenue base; the top twenty average $124m of trailing revenue each, and that concentration is rising as expansion outpaces new logos. The United States is 81% of revenue and government is 51% of the Q2 total, with most government contracts terminable for convenience and deal value that presumes options are exercised. No single customer exceeded 10% of first-half revenue, but the engine is geographically and sectorally narrow.</p>
+    <p><strong>Competition is now aimed at the moat itself.</strong> The forward-deployed-engineer model was Palantir's differentiator; the large-language-model labs now hire those same engineers, Gartner projects most enterprises will abandon FDE-built agentic applications by 2028 on cost and lock-in grounds, and well-capitalised rivals compete for the same defence and enterprise budgets. The defence — the Ontology, 157% net dollar retention, hard-won accreditations — is credible, but the model is no longer proprietary. Persistent plan-driven insider selling, $876.7m over twelve months with zero open-market buying, is a weaker signal than the others but removes a natural buyer and feeds the sceptical narrative; ARK's steady October trimming adds to the supply picture.</p>
+    <p><strong>What a 30–40% fall actually requires.</strong> A drop to roughly $129 (−30%) or $110 (−40%) needs only two of: revenue at or below the guide top with no full-year raise; U.S. commercial growth printing under 120%; a bookings or retention rollover; adjusted margin slipping under 58%; or a second leg of the sector selloff. Note the uncomfortable arithmetic — at $129 the stock would <em>still</em> trade near 38× guided 2026 sales. A 30% fall does not make Palantir cheap; it makes it less extreme. The options-implied move alone reaches only about $161, so a fall of that size requires a genuine guidance or credibility break, not one soft print.</p>
+    <div class="card">
+      <h3>The bull case</h3>
+      <p>Palantir is the best-executing enterprise-AI story in the market: compounding revenue near 90% with a 62% adjusted operating margin, a 63% free-cash-flow margin, 157% net dollar retention, more than $9bn of net cash, and no debt — from a base of barely a thousand customers whose spending is expanding far faster than the logo count, which makes the growth expansion-led and more durable than a land-grab. Its Ontology, forward-deployed engineers, and sovereign-AI stack are entrenched in the U.S. defence and intelligence core and spreading through commercial operations where keeping data and models under the customer's own control is becoming a board-level requirement that hyperscaler and model-lab offerings structurally struggle to match. If U.S. commercial growth holds above roughly 130%, government growth stays strong, and Monday brings another raise, the bull targets at $230–$265 are reachable on estimate revisions alone, with no further multiple expansion required — and twelve consecutive quarters of accelerating growth say the burden of proof sits with the bears.</p>
+    </div>
+  </section>
+
+  <!-- 09 ENTRY -->
+  <section id="entry">
+    <div class="kick">Entry discipline · Recommended only</div>
+    <h2 class="sec">Rebuild the ladder: $161–166 to start, $150 as the deep tranche</h2>
+    <p>The October 4 plan had one rung: a starter at or below $150 toward roughly 1% of the portfolio. Checked against today's tape and estimates, that single rung fails twice over. First, distance: $150 is 18.5% below the reference price and sits <em>below the 200-day moving average</em> — a fill there requires a full trend break on top of an earnings disappointment, which is exactly the scenario in which a mechanical buy is hardest to defend. Second, opportunity: if Monday is a beat-and-raise, the stock likely never visits $150, and the desk ends up owning nothing of a $200-target company it researched at $184. The $150 level is retained — but in its proper place, as the deep second tranche. It is not a chase level, and nothing in this section presents it as one.</p>
+    <div class="callout ladder">
+      <div class="clab">Callout — the revised entry ladder</div>
+      <h3>Arm the levels after Monday's print — no gate is installed by this report</h3>
+      <p><strong>Starter tranche: $161–166</strong> — the 100-day moving average, the September support zone, and the low end of the options-implied move all stack in the same place. A post-print hold there, with the Q3 tests cleared, starts the position toward ~1%.</p>
+      <p><strong>Deep tranche: at or below $150</strong> — retained from October 4; below the 200-day average, at 44× guided sales. This is dislocation pricing, filled only if the thesis survives the reason for the fall.</p>
+      <p><strong>Valuation anchor: ~$136</strong> — 40× guided 2026 sales. Below this, re-underwrite before adding; do not average mechanically.</p>
+      <p><strong>Confirmation: a reclaim of $186–187</strong> — the broken 50-day average. A post-print close back above it, on a beat-and-raise, is the trend signal that the pullback is over.</p>
+      <p style="margin-top:12px"><strong>Status:</strong> these levels are a desk recommendation only. No price gate is installed by this report and none is live. With a ±11.7–12.4% implied move into Monday, no level is armed before the print.</p>
+    </div>
+    <div class="ladder" aria-label="Entry ladder levels">
+      <div class="lrow"><div class="ln">Desk target<small>12-month · ~59× guide sales</small></div><div class="bar ref" style="width:100%"></div><div class="lp">$200</div></div>
+      <div class="lrow"><div class="ln">Reference price<small>October 30 close</small></div><div class="bar ref" style="width:87%"></div><div class="lp">$184.11</div></div>
+      <div class="lrow"><div class="ln">Confirmation<small>Reclaim the 50-day average</small></div><div class="bar" style="width:88%"></div><div class="lp">$186–187</div></div>
+      <div class="lrow"><div class="ln">50× guide sales<small>Valuation reference</small></div><div class="bar dim" style="width:76%"></div><div class="lp">$169.66</div></div>
+      <div class="lrow"><div class="ln">Starter tranche<small>100-day avg · September support</small></div><div class="bar" style="width:71%"></div><div class="lp">$161–166</div></div>
+      <div class="lrow"><div class="ln">200-day average<small>Trend line — $150 sits below it</small></div><div class="bar warn" style="width:66%"></div><div class="lp">~$153.50</div></div>
+      <div class="lrow"><div class="ln">Deep tranche<small>≤ $150 · retained from October 4</small></div><div class="bar" style="width:64%"></div><div class="lp">$150</div></div>
+      <div class="lrow"><div class="ln">Valuation anchor<small>40× guide sales · re-underwrite</small></div><div class="bar dim" style="width:55%"></div><div class="lp">~$136</div></div>
+      <div class="lrow"><div class="ln">Bear case<small>−30% / −40% · thesis review, not a buy</small></div><div class="bar warn" style="width:42%"></div><div class="lp">$129 / $110</div></div>
+    </div>
+    <div class="grid2">
+      <div class="tscroll" style="margin:0">
+        <table style="min-width:0">
+          <caption>Technical levels</caption>
+          <thead><tr><th>Level</th><th class="num">Price</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>20-day average</td><td class="num">~$197–198</td><td>Resistance — the October consolidation ceiling</td></tr>
+            <tr><td>50-day average</td><td class="num">$185.9–186.9</td><td><span class="neg">Broken October 30</span> — close $1.80–2.80 below</td></tr>
+            <tr><td>October 30 low</td><td class="num">$180.81</td><td>New October low; undercut the October 16 low of $184.45</td></tr>
+            <tr><td>100-day average</td><td class="num">~$161.0–161.3</td><td>Starter zone anchor · 12.5% below the close</td></tr>
+            <tr><td>September support</td><td class="num">$160–166</td><td>Confluence with the 100-day average</td></tr>
+            <tr><td>200-day average</td><td class="num">~$153.4–153.6</td><td>16.6% below the close · untested since August</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tscroll" style="margin:0">
+        <table style="min-width:0">
+          <caption>Valuation ladder — base: 2.403bn shares, 2026 guide sales $8.154bn</caption>
+          <thead><tr><th>Price</th><th class="num">× guide sales</th><th class="num">× 2027 est.</th></tr></thead>
+          <tbody>
+            <tr><td>$212.94 — 52-week high</td><td class="num">62.8×</td><td class="num">41.6×</td></tr>
+            <tr><td>$200 — desk target</td><td class="num">58.9×</td><td class="num">39.1×</td></tr>
+            <tr><td>$184.11 — reference</td><td class="num">54.3×</td><td class="num">36.0×</td></tr>
+            <tr><td>$169.66 — 50× guide sales</td><td class="num">50.0×</td><td class="num">33.1×</td></tr>
+            <tr><td>~$161 — 100-day average</td><td class="num">47.4×</td><td class="num">31.5×</td></tr>
+            <tr><td>$150 — deep tranche</td><td class="num">44.2×</td><td class="num">29.3×</td></tr>
+            <tr><td>$135.73 — 40× guide sales</td><td class="num">40.0×</td><td class="num">26.5×</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p style="margin-top:18px">Two pieces of ladder arithmetic deserve emphasis because they are so often quoted loosely. At $150 the stock still trades at 44.2× guided sales, 93× 2026 earnings, and a 1.28% free-cash-flow yield on the guide — a <em>relative</em> value level against $213, not an absolute one. And any "40× sales" claim for this stock is meaningless without its year: 40× on the 2026 guide is $135.73, while 40× on the 2027 estimate is roughly $205 — a $70 range hiding inside one phrase. Every level in this report states its base. Note also what changed since October 4 in the target's favour: the $200 target's implied multiple never moved, because guidance never moved — at $184.11 the stock already trades at 54.3×, so the target now requires only the 8.6% re-rating to a multiple the stock held for most of October. What stands between here and there is not valuation drift; it is Monday's binary and a broken 50-day average. Both argue for the ladder over the chase.</p>
+  </section>
+
+  <!-- 10 OPEN QUESTIONS -->
+  <section id="open">
+    <div class="kick">Verification limits</div>
+    <h2 class="sec">What could not be confirmed</h2>
+    <p>An honest report marks its own gaps. The following items could not be verified on a single consistent basis in the research behind this update, and no figure in the body depends on resolving them:</p>
+    <ul class="tight">
+      <li><strong>Moving-average precision.</strong> The 50-day, 100-day, and 200-day averages vary by roughly a dollar across providers; the 100-day in particular is shown as a range (~$161.0–161.3) rather than a point. No single authoritative exchange series was obtained.</li>
+      <li><strong>A single 2027 consensus.</strong> No one-provider 2027 revenue or EPS consensus was verified. Published figures span roughly $11.6–14.6bn of revenue depending on the estimator, so 2027 is treated throughout as a range, never a point.</li>
+      <li><strong>A consistent peer-multiple table.</strong> No one-provider, one-date comparison of peer sales and EBITDA multiples was obtained; the peer discussion is limited to the single sourced, non-like-for-like datapoint stated in the valuation section.</li>
+      <li><strong>Segment-level Q3 estimates beyond one provider.</strong> Only one compiler published Q3 segment and customer-count estimates; they could not be corroborated by a second provider and are not used in the expectations table.</li>
+      <li><strong>An exhaustive filings re-check to October 30.</strong> The most recent explicit check for new filings dates to mid-October. No October capital action or guidance change was found in news coverage through October 30, but the filings database was not exhaustively re-searched on the day.</li>
+      <li><strong>The attribution split of the October 30 fall.</strong> A broad software selloff plus pre-earnings de-risking is established; the precise mix of sector, rates, peer-earnings contagion, and valuation cannot be apportioned from the available reporting, and one same-day attribution was machine-generated commentary.</li>
+      <li><strong>Two immaterial date ambiguities.</strong> One October initiation is dated the 8th in some reports and the 9th in others (shown as October 9, the trading date), and one late-October target raise is dated the 27th or 28th depending on the compiler (shown as October 27). Neither affects any conclusion.</li>
+      <li><strong>One unverified media report</strong> of a sole-source government migration onto Palantir's platform, published October 12, has no primary contract disclosure behind it and is treated nowhere in this report as a contract win.</li>
+    </ul>
+  </section>
+
+  <!-- APPENDIX -->
+  <footer class="appendix" id="sources">
+    <h2>Appendix — sources</h2>
+    <p class="muted" style="font-size:14px">All figures are in USD. Consensus figures in the body are MarketBeat's throughout and are never blended with other providers. Analyst targets and opinions are labelled as such where they appear; calculated levels state their inputs in the entry section.</p>
+
+    <h3>Company and market data</h3>
+    <ul>
+      <li>Palantir Q2 2026 results release (BusinessWire, via Morningstar) — <a href="https://www.morningstar.com/news/business-wire/20260802523449/palantir-reports-q2-2026-us-comm-revenue-growth-of-149-yy-and-revenue-growth-of-93-yy-raises-fy-2026-revenue-guidance-to-82-yy-growth-and-us-comm-revenue-guidance-to-134-yy-crushing-consensus-expectations">morningstar.com</a></li>
+      <li>Palantir Q3 2026 earnings date announcement (BusinessWire, October 12, 2026) — <a href="https://www.businesswire.com/news/home/20261012995260/en/Palantir-Announces-Date-of-Third-Quarter-2026-Earnings-Release-and-Webcast">businesswire.com</a></li>
+      <li>Palantir Q2 2026 Form 10-Q (SEC EDGAR) — <a href="https://www.sec.gov/Archives/edgar/data/1321655/000132165526000041/pltr-20260630.htm">sec.gov</a></li>
+      <li>Palantir Q2 2026 earnings call transcript (StockAnalysis) — <a href="https://stockanalysis.com/stocks/pltr/transcripts/660319-q2-2026/">stockanalysis.com</a></li>
+      <li>Price history and daily closes (StockAnalysis) — <a href="https://StockAnalysis.com/stocks/pltr/history/">stockanalysis.com</a></li>
+      <li>Valuation statistics (StockAnalysis) — <a href="https://stockanalysis.com/stocks/pltr/statistics/?ref=marketreview.ai">stockanalysis.com</a></li>
+      <li>Quote, 52-week range and returns data (Finnhub, fetched October 30, 2026)</li>
+    </ul>
+
+    <h3>Consensus and analyst actions</h3>
+    <ul>
+      <li>MarketBeat — Q3 2026 earnings and consensus page — <a href="https://www.marketbeat.com/earnings/reports/2026-11-2-palantir-technologies-inc-stock/">marketbeat.com</a></li>
+      <li>MarketBeat — compiled analyst ratings — <a href="https://www.marketbeat.com/compare-stocks/?Symbols=NASDAQ%3APLTR%2CNYSE%3AACHR%2CNYSE%3AGS">marketbeat.com</a></li>
+      <li>TipRanks — analyst forecast roundup, October 27, 2026 — <a href="https://www.tipranks.com/news/palantir-stock-price-forecast-what-analysts-expect-ahead-of-november-2-earnings">tipranks.com</a></li>
+      <li>JPMorgan initiation (TradingView/Benzinga, October 29, 2026) — <a href="https://www.tradingview.com/news/tradingview:0af4c25ab7964:0-jp-morgan-initiates-coverage-of-palantir-technologies-at-overweight-sets-price-target-at-262/">tradingview.com</a></li>
+      <li>RBC reiteration (TradingView/GuruFocus, October 28, 2026) — <a href="https://www.tradingview.com/news/gurufocus:ed4ee68fd094b:0-palantir-stock-falls-after-rbc-delivers-fresh-warning-ahead-of-earnings/">tradingview.com</a></li>
+      <li>Citigroup note (TradingView/Seeking Alpha, October 22, 2026) — <a href="https://www.tradingview.com/news/seekingalpha:16271006d094b:0-palantir-continues-to-drive-up-us-government-commercial-deals-into-q3-earnings-citi/">tradingview.com</a></li>
+      <li>Goldman Sachs upgrade (ad-hoc, October 8, 2026) — <a href="https://www.ad-hoc-news.de/boerse/corporate-news/goldman-sachs-upgrades-palantir-to-buy-for-palantir-stock/70382287">ad-hoc-news.de</a></li>
+      <li>Barclays initiation (Motley Fool, October 9, 2026) — <a href="https://WWW.FOOL.COM/investing/2026/10/09/why-palantir-stock-powered-to-a-more-than-5-gain-today/">fool.com</a></li>
+      <li>Zacks Q3 preview (October 28, 2026; separate compiler, not blended) — <a href="https://www.zacks.com/stock/news/3016894/exploring-analyst-estimates-for-palantir-technologies-pltr-q3-earnings-beyond-revenue-and-eps">zacks.com</a></li>
+      <li>AlphaStreet Q3 preview (separate compiler, not blended) — <a href="https://news.alphastreet.com/palantir-technologies-pltr-q3-2026-preview-eps-est-0-41-reports-november-2/">news.alphastreet.com</a></li>
+    </ul>
+
+    <h3>News, technicals, insider and short-interest data</h3>
+    <ul>
+      <li>Armada partnership (StockWatch, October 1, 2026) — <a href="https://www.stockwatch.com/News/Item/U-b20261001185115-U!PLTR-20261001/U/PLTR">stockwatch.com</a></li>
+      <li>Customers Bank collaboration (BusinessWire via FinancialContent, October 15, 2026) — <a href="https://www.financialcontent.com/article/bizwire-2026-10-15-customers-bank-and-palantir-collaborate-to-build-an-ai-native-future-for-banking">financialcontent.com</a></li>
+      <li>Knox partnership (Motley Fool, October 19, 2026) — <a href="https://www.fool.com/investing/2026/10/19/why-palantir-technologies-stock-rallied-today/">fool.com</a></li>
+      <li>Marine Corps Maven expansion (DefenseScoop, October 20, 2026) — <a href="https://defensescoop.com/2026/10/20/marine-corps-maven-smart-system-access/">defensescoop.com</a></li>
+      <li>Sovereign-AI customer update (BusinessWire via Morningstar, October 21, 2026) — <a href="https://www.morningstar.com/news/business-wire/20261021782963/palantir-accelerates-delivery-of-sovereign-ai-to-new-wave-of-customers">morningstar.com</a></li>
+      <li>Stagwell expansion (AccessWire via TradingView, October 22, 2026) — <a href="https://www.tradingview.com/news/acceswire:90742c4a7094b:0-stagwell-stgw-and-palantir-pltr-expand-ai-partnership-to-transform-enterprise-marketing/">tradingview.com</a></li>
+      <li>Gartner forward-deployed-engineer warning (Investor's Business Daily, October 20, 2026) — <a href="https://www.investors.com/news/technology/palantir-stock-ai-sales-strategy-fde-gartner-warning/">investors.com</a></li>
+      <li>William Blair commentary (Barron's, October 27, 2026) — <a href="https://www.barrons.com/articles/palantir-technologies-stock-ai-a4443e84">barrons.com</a></li>
+      <li>October 16 selloff coverage (FX Leaders) — <a href="https://www.fxleaders.com/news/2026/10/16/pltr-stock-falls-below-190-as-ai-financing-risks-trigger-tech-sell-off/">fxleaders.com</a></li>
+      <li>October 30 selloff coverage (Investor's Business Daily) — <a href="https://www.investors.com/market-trend/stock-market-today/dow-jones-futures-stock-market-sells-off-apple-palantir-midterm-elections/">investors.com</a></li>
+      <li>Technical analysis (TipRanks) — <a href="https://www.tipranks.com/stocks/pltr/technical-analysis">tipranks.com</a> · (CoinCodex) — <a href="https://coincodex.com/stock/PLTR/price-prediction/">coincodex.com</a> · (FXEmpire, October 30, 2026) — <a href="https://www.fxempire.com/forecasts/article/palantir-pltr-price-forecast-earnings-loom-as-downside-risks-build-1641701">fxempire.com</a></li>
+      <li>Short interest (MarketBeat) — <a href="https://www.marketbeat.com/stocks/NASDAQ/PLTR/short-interest/">marketbeat.com</a> · (ChartExchange) — <a href="https://chartexchange.com/symbol/nasdaq-pltr/short-interest/">chartexchange.com</a></li>
+      <li>Insider transactions, Form 4 data (Massive) — <a href="https://massive.com/quote/pltr">massive.com</a></li>
+      <li>Q2 earnings reaction (TS2, August 2026) — <a href="https://ts2.tech/en/palantir-shares-steady-around-162-after-jumping-29-with-u-s-responsible-for-90-of-expansion/">ts2.tech</a></li>
+      <li>Growth and estimate history (TIKR, October 2, 2026) — <a href="https://www.tikr.com/blog/palantir-stock-rose-60-in-q3-heres-why-it-still-trades-at-roughly-half-its-year-start-earnings-multiple">tikr.com</a> · (SaaStr) — <a href="https://www.saastr.com/5-interesting-learnings-from-palantir-at-7-7-billion-arr-93-growth-157-nrr-and-a-rule-of-40-score-of-155/">saastr.com</a> · (Dividend-Line, October 2026) — <a href="https://dividend-line.com/analyses/pltr-2026-10/">dividend-line.com</a></li>
+    </ul>
+
+    <p class="fineprint">Palantir Technologies (NASDAQ: PLTR) — full update, October 30, 2026. Rating: Hold, maintained. Conviction 5/10. Twelve-month target $200, maintained. Reference price $184.11 (NASDAQ close, October 30, 2026). No position is held. Entry levels in this report are recommendations only; no price or weight gate is installed by this report. Prepared ahead of Q3 2026 earnings on Monday, November 2, 2026.</p>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+(function(){
+  // ---- theme ----
+  var root=document.documentElement, lab=document.getElementById('themeLab');
+  function systemDark(){return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;}
+  var theme = systemDark() ? 'dark' : 'light';
+  function apply(){ root.setAttribute('data-theme', theme); lab.textContent = theme==='dark' ? 'Light' : 'Dark'; drawChart(); }
+  document.getElementById('themeBtn').addEventListener('click', function(){ theme = theme==='dark' ? 'light' : 'dark'; apply(); });
+  root.setAttribute('data-theme', theme);
+
+  // ---- toast ----
+  var toast=document.getElementById('toast'), toastTimer=null;
+  function showToast(msg){ toast.textContent=msg; toast.classList.add('show'); clearTimeout(toastTimer); toastTimer=setTimeout(function(){toast.classList.remove('show');},3400); }
+
+  // ---- PDF ----
+  document.getElementById('pdfBtn').addEventListener('click', function(){
+    var el=document.getElementById('report');
+    if(typeof html2pdf==='undefined'){ showToast('PDF library unavailable — use your browser\u2019s Print \u2192 Save as PDF instead.'); return; }
+    showToast('Preparing PDF\u2026');
+    var dark = theme==='dark';
+    html2pdf().set({
+      margin:[10,10,10,10],
+      filename:'PLTR-Full-Update-October-2026.pdf',
+      image:{type:'jpeg',quality:0.96},
+      html2canvas:{scale:2, useCORS:true, backgroundColor: dark ? '#0e141a' : '#f4f2ec'},
+      jsPDF:{unit:'mm', format:'a4', orientation:'portrait'},
+      pagebreak:{mode:['css','legacy']}
+    }).from(el).save().then(function(){ showToast('PDF downloaded.'); }).catch(function(){ showToast('PDF generation failed — use your browser\u2019s Print \u2192 Save as PDF instead.'); });
+  });
+
+  // ---- tape chart ----
+  var data=[
+    ['Sep 21',183.09],['Sep 22',184.99],['Sep 23',191.79],['Sep 24',192.59],['Sep 25',189.67],
+    ['Sep 28',187.48],['Sep 29',186.97],['Sep 30',187.05],['Oct 1',190.04],['Oct 2',188.75],
+    ['Oct 5',189.40],['Oct 6',192.07],['Oct 7',194.12],['Oct 8',198.78],['Oct 9',209.05],
+    ['Oct 12',209.00],['Oct 13',208.67],['Oct 14',200.97],['Oct 15',200.50],['Oct 16',186.03],
+    ['Oct 19',194.15],['Oct 20',192.60],['Oct 21',201.72],['Oct 22',196.19],['Oct 23',196.75],
+    ['Oct 26',198.84],['Oct 27',198.73],['Oct 28',196.81],['Oct 29',196.42],['Oct 30',184.11]
+  ];
+  function drawChart(){
+    var svg=document.getElementById('tapeChart'); if(!svg) return;
+    var dark = theme==='dark';
+    var W=720,H=300,pl=46,pr=14,pt=26,pb=30, iw=W-pl-pr, ih=H-pt-pb;
+    var min=175, max=215;
+    function X(i){return pl + iw*i/(data.length-1);}
+    function Y(v){return pt + ih*(max-v)/(max-min);}
+    var s='';
+    var gridC = dark ? '#2c3b47' : '#ddd8ca', txtC = dark ? '#8b98a1' : '#6d7a84';
+    var lineC = dark ? '#3ec2ae' : '#0e5f56', refC = dark ? '#e0aa4e' : '#9a6b1e', redC = dark ? '#e07a6a' : '#a83226';
+    [180,190,200,210].forEach(function(v){
+      s+='<line x1="'+pl+'" y1="'+Y(v)+'" x2="'+(W-pr)+'" y2="'+Y(v)+'" stroke="'+gridC+'" stroke-width="1"/>';
+      s+='<text x="'+(pl-7)+'" y="'+(Y(v)+4)+'" font-size="10.5" fill="'+txtC+'" text-anchor="end">$'+v+'</text>';
+    });
+    // $200 target line
+    s+='<line x1="'+pl+'" y1="'+Y(200)+'" x2="'+(W-pr)+'" y2="'+Y(200)+'" stroke="'+refC+'" stroke-width="1.4" stroke-dasharray="5 4"/>';
+    s+='<text x="'+(W-pr)+'" y="'+(Y(200)-6)+'" font-size="10.5" fill="'+refC+'" text-anchor="end">$200 target</text>';
+    // area + line
+    var path='', area='';
+    data.forEach(function(d,i){ var x=X(i).toFixed(1), y=Y(d[1]).toFixed(1); path+=(i?'L':'M')+x+' '+y+' '; });
+    area=path+'L'+X(data.length-1).toFixed(1)+' '+(pt+ih)+' L'+pl+' '+(pt+ih)+' Z';
+    s+='<path d="'+area+'" fill="'+lineC+'" opacity="0.10"/>';
+    s+='<path d="'+path+'" fill="none" stroke="'+lineC+'" stroke-width="2.2" stroke-linejoin="round"/>';
+    // markers
+    function mark(i,label,dy,color){
+      var x=X(i), y=Y(data[i][1]);
+      s+='<circle cx="'+x+'" cy="'+y+'" r="4" fill="'+color+'" stroke="'+(dark?'#162029':'#ffffff')+'" stroke-width="1.6"/>';
+      s+='<text x="'+x+'" y="'+(y+dy)+'" font-size="10.5" fill="'+color+'" text-anchor="middle" font-weight="600">'+label+'</text>';
+    }
+    mark(14,'$209.05 record close',-10,lineC);
+    mark(19,'Oct 16: $186.03',30,redC);
+    mark(29,'Oct 30: $184.11',-12,redC);
+    // x labels
+    [[0,'Sep 21'],[9,'Oct 2'],[14,'Oct 9'],[19,'Oct 16'],[24,'Oct 23'],[29,'Oct 30']].forEach(function(p){
+      s+='<text x="'+X(p[0])+'" y="'+(H-8)+'" font-size="10.5" fill="'+txtC+'" text-anchor="middle">'+p[1]+'</text>';
+    });
+    svg.innerHTML=s;
+  }
+  apply();
+})();
+</script>
+</body>
+</html>

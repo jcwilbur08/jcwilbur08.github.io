@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
+<meta name="color-scheme" content="light dark"/>
+<link rel="icon" href="data:,"/>
+<title>Capital Allocation Ranking — October 30, 2026</title>
+<style>
+:root{
+  --navy:#0b1f33; --navy2:#16364f; --teal:#0c766d; --gold:#b8862b;
+  --bg:#eef2f5; --page:#ffffff; --ink:#172331; --muted:#5c6b78; --line:#dbe2e8; --soft:#f5f7f9;
+  --green:#16704a; --red:#9b2c2c; --blue:#1c5d99; --amber:#a66b00;
+  --callout:#eef7f6; --warn:#fff7e8; --risk:#fff1f1; --thbg:#0b1f33; --thfg:#fff;
+  --chip:#eef3f7; --shadow:0 6px 26px rgba(28,51,73,.12);
+}
+html[data-theme="dark"]{
+  --bg:#0d141b; --page:#131e29; --ink:#e6edf3; --muted:#9db0c0; --line:#2a3c4d; --soft:#182635;
+  --green:#4cc38a; --red:#ff8a80; --blue:#6cb2f5; --amber:#e0a83e;
+  --callout:#12291f; --warn:#2b2110; --risk:#2d1518; --thbg:#0b1f33; --chip:#1b2c3e; --shadow:none;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 -apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+.page{max-width:1180px;margin:22px auto;background:var(--page);box-shadow:var(--shadow)}
+.cover{background:linear-gradient(128deg,var(--navy),var(--navy2) 63%,#155c67);color:#fff;padding:54px 56px 44px;border-top:7px solid var(--gold)}
+.eyebrow{text-transform:uppercase;letter-spacing:.17em;font-size:11px;color:#bcd0dd}
+h1{font:700 42px/1.05 Georgia,"Times New Roman",serif;margin:12px 0 14px;max-width:920px}
+.dek{font-size:18px;line-height:1.45;max-width:950px;color:#e7eef3}
+.covertools{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}
+.covertools button{background:#ffffff14;border:1px solid #ffffff40;color:#fff;padding:9px 16px;border-radius:6px;font-size:13px;cursor:pointer}
+.covertools button:hover{background:#ffffff28}
+.strip{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:28px}
+.strip div{background:#ffffff10;border:1px solid #ffffff2c;padding:12px 14px}
+.strip span{display:block;font-size:9.5px;text-transform:uppercase;letter-spacing:.08em;color:#c7d7e2}
+.strip b{display:block;margin-top:4px;font-size:15px}
+main{padding:34px 44px 52px}
+h2{font:700 24px/1.2 Georgia,serif;color:var(--ink);border-bottom:2px solid var(--gold);padding-bottom:7px;margin:34px 0 6px}
+.kicker{color:var(--muted);font-size:13.5px;margin:0 0 14px;font-style:italic}
+h3{font-size:16px;color:var(--blue);margin:18px 0 7px}
+p{margin:9px 0}
+.lead{font-size:16.5px;line-height:1.6}
+.callout{background:var(--callout);border-left:5px solid var(--teal);padding:15px 18px;margin:16px 0}
+.callout.warn{background:var(--warn);border-left-color:var(--gold)}
+.callout.risk{background:var(--risk);border-left-color:var(--red)}
+.callout h3{margin-top:0;color:var(--ink)}
+.toc{border:1px solid var(--line);padding:18px 22px;background:var(--soft)}
+.toc h2{border:0;margin-top:0}
+.toc ol{margin:6px 0;padding-left:20px;columns:2;column-gap:40px}
+.toc li{margin:6px 0;break-inside:avoid}
+.toc a{color:var(--blue);text-decoration:none}
+.toc a:hover{text-decoration:underline}
+.tblwrap{overflow-x:auto;margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:12.5px;min-width:760px}
+th{background:var(--thbg);color:var(--thfg);text-align:left;padding:8px 7px;vertical-align:bottom;white-space:nowrap}
+td{border-bottom:1px solid var(--line);padding:7px;vertical-align:top}
+.num{text-align:right;white-space:nowrap}
+.up{color:var(--green);font-weight:700}.down{color:var(--red);font-weight:700}
+.tag{display:inline-block;background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:2px 7px;font-size:10.5px;white-space:nowrap}
+.tier1{border-top:3px solid var(--green)} .tier2{border-top:3px solid var(--amber)} .tier3{border-top:3px solid var(--red)}
+.small{font-size:11.5px;color:var(--muted)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.card{border:1px solid var(--line);padding:15px 17px;background:var(--page)}
+.card h3{margin-top:0}
+ul{margin:7px 0;padding-left:20px} li{margin:5px 0}
+footer{border-top:1px solid var(--line);margin-top:30px;padding-top:14px;color:var(--muted);font-size:11.5px}
+.source-list li{margin:7px 0;word-break:break-word;font-size:12.5px}
+a{color:var(--blue)}
+@media(max-width:800px){
+  .page{margin:0}.cover{padding:40px 22px}h1{font-size:32px}main{padding:24px 18px}
+  .strip{grid-template-columns:1fr 1fr}.toc ol{columns:1}.grid2{grid-template-columns:1fr}
+  table{min-width:0;font-size:11.5px}
+}
+@media print{
+  @page{size:Letter;margin:.5in}
+  body{background:#fff}.page{box-shadow:none;margin:0;max-width:none}
+  .covertools{display:none} h2{break-after:avoid} tr{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="page" id="report">
+  <header class="cover">
+    <div class="eyebrow">Retirement Portfolio · CIO Desk · Capital Allocation</div>
+    <h1>Capital Allocation Ranking — October 30, 2026</h1>
+    <p class="dek">Where the next dollar goes, in order — across the entire researched equity universe, held and not held. Friday's sector selloff put the three highest-conviction names inside their entry levels at the same time; the queue below is built around that fact, and around the prints that argue for patience everywhere else.</p>
+    <div class="covertools">
+      <button id="themeBtn" type="button">Toggle dark / light</button>
+      <button id="pdfBtn" type="button">Download PDF</button>
+    </div>
+    <div class="strip">
+      <div><span>Universe</span><b>50 individual equities — 32 held, 18 researched-but-not-held</b></div>
+      <div><span>Baseline</span><b>Export 66 · Prices: Friday Oct 30, 2026 closes (Finnhub)</b></div>
+      <div><span>Book at Oct 30 closes</span><b>$1,724,760 — incl. $43,000 cash convention</b></div>
+      <div><span>Scope</span><b>Funds &amp; ETFs excluded from the ranking</b></div>
+    </div>
+  </header>
+
+  <main>
+    <nav class="toc" aria-label="Report map">
+      <h2>Report map</h2>
+      <ol>
+        <li><a href="#verdict">The verdict in one page</a></li>
+        <li><a href="#method">How this ranking is built — method, the Friday selloff, gate states</a></li>
+        <li><a href="#tier1">Tier 1 — Deploy at current prices (ranks 1–12)</a></li>
+        <li><a href="#tier2">Tier 2 — Staged, or wait for the level or the print (ranks 13–25)</a></li>
+        <li><a href="#tier3">Tier 3 — No new money at current prices</a></li>
+        <li><a href="#queue">Deployment queue — illustrative $5,000 sleeves</a></li>
+        <li><a href="#calendar">Earnings calendar &amp; corrections to earlier desk material</a></li>
+        <li><a href="#universe">Full universe table — all names</a></li>
+        <li><a href="#appendix">Appendix — sources</a></li>
+      </ol>
+    </nav>
+
+    <section id="verdict">
+      <h2>§1 · The verdict in one page</h2>
+      <p class="kicker">Three Strong Buys inside entry at once — that is the whole story of this edition.</p>
+      <p class="lead">Friday October 30 was a sector selloff, not a company event — and it did the desk a favour. Broadcom closed at $326.08, inside its recommended ≤$340 entry toward a ~3% build. Uber closed at $65.25, inside the ≤$68 gate zone with tranche 2 now the live question. Nvidia closed at $204.64, below the low end of its $215–235 core add band. Those three — all Strong Buy, all 8/10 conviction, all with room to build — take the first three ranks, and this week the conviction-weighted method and the position-building method agree on them.</p>
+      <p>Behind them, the queue mixes held names the selloff cheapened (GEV, DELL, META) with two researched-but-unheld names already inside their second-tranche zones (CAT at $622.75, HOOD at $84.99). DELL deserves a specific note: Cam's October 30 ruling moved its gate to the $419–424 zone and said wait for the October 30 close — the close, $424.30, sits inside the zone.</p>
+      <p>Everything else is discipline. Alphabet's post-print washout earns a starter zone only, with the deeper $240–250 level named. Adobe adds happen at the ≤$235 gate or not at all. Qualcomm's −11.1% Friday fall was Intel contagion, not earnings — but its own print is November 4, so it waits. And a full third of the universe gets no new money at current prices, each for a stated reason: above target (LLY, V, XOM), entry level far away (HD at ≤$260, LOW at ≤$165, COST at ≤$850), or a rating under review (BMY).</p>
+      <div class="callout warn">
+        <h3>Cash caveat — read before acting on the queue</h3>
+        <p>Cash is held at $43,000 by the standing convention, but it is <b>unverified this round</b> after the VIS exit — the sale proceeds' destination is not visible in export 66. The deployment queue in §6 is therefore a rank order with illustrative share math, not a funded order. Rankings are advisory; Cam executes.</p>
+        <p>One open item: dashboard notes mention a CRM/QCOM reconciliation pending. Export 66 remains canonical until a new export says otherwise; neither name is treated as sold.</p>
+      </div>
+    </section>
+
+    <section id="method">
+      <h2>§2 · How this ranking is built</h2>
+      <p class="kicker">Conviction-weighted upside, tempered by entry discipline and the weight still to build.</p>
+      <div class="callout">
+        <h3>Method note</h3>
+        <p>The desk ranks on <b>conviction-weighted upside</b> — rating conviction × upside to target — tempered by <b>entry discipline</b> (no adds above a standing entry level, and no adds into an imminent print) and by <b>current weight versus target weight</b>. Cam's October 15 ranking weighted position-building priority instead, which put UBER and TSM first. The two methods converge at the top this week because Friday's selloff put AVGO, UBER, and NVDA all inside entry at once. Where a name's price is above its entry level or its print is imminent, it is demoted to Tier 2 or Tier 3 regardless of its raw score — GEHC, with +20.1% upside and 7/10 conviction, ranks 21st for exactly that reason.</p>
+      </div>
+      <div class="callout risk">
+        <h3>What actually happened on Friday, October 30</h3>
+        <p>October 30 was a sector selloff, not a company event. Intel's Q4 guide miss after the close on October 29 — revenue $15–16B versus $17.07B expected, EPS $0.25 versus $0.43, a PC slowdown guided through H1 2027 on memory prices plus the Israel fab explosion — combined with Amazon's AI-capex and free-cash-flow print to hit semis and software: Intel −28.6%, Nasdaq 100 −3.46%, S&amp;P 500 −1.82%. Qualcomm's −11.1% was Intel contagion, <b>not</b> earnings — its FQ4 print is November 4. The FOMC on October 28 held at 3.75–4.00%, 10–2, with Cook and Hammack dissenting for a 25bp hike.</p>
+      </div>
+      <div class="callout warn">
+        <h3>Gate-state summary</h3>
+        <p><b>Live:</b> DELL $419–424 zone (Cam's ruling, superseding ≤$450) · ADBE ≤$235 · GEHC ≤$62 · UNH accumulate toward 2% · UBER ≤$68 (tranche 1 done).</p>
+        <p><b>Fired / executed:</b> TSM ≤$460 · NVDA ≤$220 · ASML ≤$1,700.</p>
+        <p><b>Recommended, NOT installed:</b> AVGO ≤$340 · CAT ≤$670 entry · PLTR $161–166 / $150 ladder · LOW ≤$165 · HD ≤$260 · NVO ≤$34 · KMB ≤$90 · CTAS ≤$180 · COST ≤$850 · SIEGY ≤$135 · LLY ≤$1,300 re-entry · AAPL ≤$310 · MA ≤$520 · CEG ≤$260.</p>
+        <p>The panel stays buy-side-only; gates enter it only with Cam's explicit approval.</p>
+      </div>
+    </section>
+
+    <section id="tier1">
+      <h2>§3 · Tier 1 — Deploy at current prices</h2>
+      <p class="kicker">Price inside entry, and no blocking print. Twelve names, in rank order.</p>
+      <div class="tblwrap"><table class="tier1">
+        <thead><tr><th>#</th><th>Ticker</th><th>Rating</th><th>Conv.</th><th class="num">Close</th><th class="num">Target</th><th class="num">Upside</th><th class="num">Weight</th><th>Preferred entry</th><th>Desk note</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><b>AVGO</b></td><td>Strong Buy</td><td>8/10</td><td class="num">$326.08</td><td class="num">$535</td><td class="num up">+64.1%</td><td class="num">2.21%</td><td>$320–340</td><td>The recommended ≤$340 gate level toward ~3%. Gate NOT installed — installing it is Cam's call.</td></tr>
+          <tr><td>2</td><td><b>UBER</b></td><td>Strong Buy</td><td>8/10</td><td class="num">$65.25</td><td class="num">$105</td><td class="num up">+60.9%</td><td class="num">0.37%</td><td>≤$68 gate zone</td><td>Tranche 2 — tranche 1 complete per export 65.</td></tr>
+          <tr><td>3</td><td><b>NVDA</b></td><td>Strong Buy</td><td>8/10</td><td class="num">$204.64</td><td class="num">$328</td><td class="num up">+60.3%</td><td class="num">0.72%</td><td>$200–220</td><td>Core add band, below the $215 low end. Staged build toward ~1%. Print ~Nov 18.</td></tr>
+          <tr><td>4</td><td><b>CAT</b> <span class="tag">not held</span></td><td>Buy</td><td>6/10</td><td class="num">$622.75</td><td class="num">$850</td><td class="num up">+36.5%</td><td class="num">—</td><td>$620–650</td><td>Second-tranche zone already reached; $606 floor is the invalidation. No gate installed — Cam's call.</td></tr>
+          <tr><td>5</td><td><b>HOOD</b> <span class="tag">not held</span></td><td>Buy</td><td>6/10</td><td class="num">$84.99</td><td class="num">$130</td><td class="num up">+53.0%</td><td class="num">—</td><td>$80–90</td><td>Below the recommended ≤$98 level. Q3 reported Oct 27; the Oct 30 fall followed the $6.3B Binance hack — hack overhang, size small.</td></tr>
+          <tr><td>6</td><td><b>GEV</b></td><td>Buy</td><td>7/10</td><td class="num">$857.87</td><td class="num">$1,200</td><td class="num up">+39.9%</td><td class="num">1.49%</td><td>$840–875</td><td>The recommended ≤$875 zone, never installed as a gate; the stock traded through $815 and back.</td></tr>
+          <tr><td>7</td><td><b>DELL</b></td><td>Buy</td><td>6/10</td><td class="num">$424.30</td><td class="num">$580</td><td class="num up">+36.7%</td><td class="num">0.10%</td><td>$419–424</td><td>Per Cam's Oct 30 ruling — gate moved to this zone from ≤$450; the Oct 30 close sits inside it. Q3 prints Nov 24; invalidation: Q3 FCF &lt;$1B or a guide cut.</td></tr>
+          <tr><td>8</td><td><b>META</b></td><td>Buy</td><td>6/10</td><td class="num">$614.99</td><td class="num">$850</td><td class="num up">+38.2%</td><td class="num">2.25%</td><td>$600–625</td><td>Starter entry at current prices.</td></tr>
+          <tr><td>9</td><td><b>CRM</b></td><td>Buy</td><td>7/10</td><td class="num">$229.17</td><td class="num">$285</td><td class="num up">+24.4%</td><td class="num">1.32%</td><td>$220–235</td><td>Starter entry. BofA double-upgraded to $285 on Oct 12. Earnings Dec 2 (not yet company-confirmed).</td></tr>
+          <tr><td>10</td><td><b>AMT</b></td><td>Buy</td><td>7/10</td><td class="num">$187.78</td><td class="num">$225</td><td class="num up">+19.8%</td><td class="num">2.52%</td><td>$180–190</td><td>Q3 Oct 27 beat with a third guide raise; fell 2.36% anyway.</td></tr>
+          <tr><td>11</td><td><b>TSM</b></td><td>Strong Buy</td><td>8/10</td><td class="num">$406.13</td><td class="num">$545</td><td class="num up">+34.2%</td><td class="num">1.04%</td><td>$395–415</td><td>Add on weakness. No live gate — the ≤$460 gate fired and executed.</td></tr>
+          <tr><td>12</td><td><b>SPCX</b> <span class="tag">not held</span></td><td>Buy</td><td>6/10</td><td class="num">$134.72</td><td class="num">$220</td><td class="num up">+63.3%</td><td class="num">—</td><td>$125–135</td><td>At the recommended ≤$130 level. No gate installed; below $105 = reassess.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="tier2">
+      <h2>§4 · Tier 2 — Staged, or wait for the level or the print</h2>
+      <p class="kicker">Real upside, wrong moment — each name names its trigger.</p>
+      <div class="tblwrap"><table class="tier2">
+        <thead><tr><th>#</th><th>Ticker</th><th>Rating</th><th>Conv.</th><th class="num">Close</th><th class="num">Target</th><th class="num">Upside</th><th class="num">Weight</th><th>Preferred entry</th><th>Desk note</th></tr></thead>
+        <tbody>
+          <tr><td>13</td><td><b>GOOG</b></td><td>Buy</td><td>6/10</td><td class="num">$278.22</td><td class="num">$430</td><td class="num up">+54.6%</td><td class="num">2.34%</td><td>$270–285 starter; $240–250 deeper</td><td>Post-print washout (the report reference was the $324.89 Oct 28 close); 2027 capex unquantified; the GOOG refresh offer remains open. No gate.</td></tr>
+          <tr><td>14</td><td><b>ADBE</b></td><td>Buy</td><td>7/10</td><td class="num">$250.23</td><td class="num">$320</td><td class="num up">+27.9%</td><td class="num">0.57%</td><td>≤$235 gate only</td><td>Gate live, not triggered. Buys above it are discretionary.</td></tr>
+          <tr><td>15</td><td><b>CEG</b> <span class="tag">not held</span></td><td>Buy</td><td>6/10</td><td class="num">$262.38</td><td class="num">$345</td><td class="num up">+31.5%</td><td class="num">—</td><td>≤$260</td><td>Q3 Nov 9.</td></tr>
+          <tr><td>16</td><td><b>QCOM</b></td><td>Buy</td><td>7/10</td><td class="num">$164.79</td><td class="num">$215</td><td class="num up">+30.5%</td><td class="num">1.00%</td><td>$160–170, post-print only</td><td>After the Nov 4 print. Friday's fall was sector contagion, not earnings.</td></tr>
+          <tr><td>17</td><td><b>ASML</b></td><td>Buy</td><td>6/10</td><td class="num">$1,565.90</td><td class="num">$2,050</td><td class="num up">+30.9%</td><td class="num">0.73%</td><td>—</td><td>NO further adds per the Oct 22 update (gate executed, 8 shares). Hold.</td></tr>
+          <tr><td>18</td><td><b>UNH</b></td><td>Strong Buy</td><td>8/10</td><td class="num">$406.97</td><td class="num">$475</td><td class="num up">+16.7%</td><td class="num">1.18%</td><td>$375–395</td><td>Accumulate toward 2% on weakness. No add into strength.</td></tr>
+          <tr><td>19</td><td><b>MSFT</b></td><td>Buy</td><td>7/10</td><td class="num">$521.91</td><td class="num">$590</td><td class="num up">+13.0%</td><td class="num">3.03%</td><td>$515–530 starter; $480 deeper</td><td>Fiscal Q1 Oct 28 beat: revenue $92.28B +19%, Azure $33.2B +48%, RPO $677B +73%; street targets raised to $650–722 after the print. Desk target $590 stands.</td></tr>
+          <tr><td>20</td><td><b>AXP</b></td><td>Buy</td><td>7/10</td><td class="num">$319.11</td><td class="num">$365</td><td class="num up">+14.4%</td><td class="num">1.85%</td><td>$305–320</td><td>Q3 Oct 23 beat; the guide raise was one-off-driven (5% workforce cut, $336m charge).</td></tr>
+          <tr><td>21</td><td><b>GEHC</b></td><td>Buy</td><td>7/10</td><td class="num">$76.57</td><td class="num">$92</td><td class="num up">+20.1%</td><td class="num">0.23%</td><td>≤$62 gate only</td><td>NO ADD above $75 per Cam's stop rule. Q3 Oct 28 beat with guidance raised.</td></tr>
+          <tr><td>22</td><td><b>PLTR</b> <span class="tag">not held</span></td><td>Hold</td><td>5/10</td><td class="num">$184.11</td><td class="num">$200</td><td class="num up">+8.6%</td><td class="num">—</td><td>$161–166 starter; ≤$150 deep</td><td>Post-print ladder only — starter armed AFTER the Nov 2 print. No gate installed. Setup trap: consensus revenue of $2.18B sits above management's $2.164B guide top.</td></tr>
+          <tr><td>23</td><td><b>DIS</b></td><td>Buy</td><td>7/10</td><td class="num">$110.94</td><td class="num">$125</td><td class="num up">+12.7%</td><td class="num">1.26%</td><td>$105–112, post-print</td><td>Wait for the Nov 17 print.</td></tr>
+          <tr><td>24</td><td><b>SIEGY</b> <span class="tag">not held</span></td><td>Buy</td><td>6/10</td><td class="num">$153.45</td><td class="num">$166</td><td class="num up">+8.2%</td><td class="num">—</td><td>≤$135 only</td><td>Q4 Nov 12.</td></tr>
+          <tr><td>25</td><td><b>NVO</b> <span class="tag">not held</span></td><td>Buy</td><td>6/10</td><td class="num">$40.00</td><td class="num">$46</td><td class="num up">+15.0%</td><td class="num">—</td><td>≤$34 only</td><td>Q3 Nov 4; CagriSema FDA decision still pending (expected Q4 2026).</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="tier3">
+      <h2>§5 · Tier 3 — No new money at current prices</h2>
+      <p class="kicker">Every name here carries its reason — above target, entry too far away, or a call under review.</p>
+      <div class="tblwrap"><table class="tier3">
+        <thead><tr><th>Ticker</th><th>Rating</th><th>Conv.</th><th class="num">Close</th><th class="num">Target</th><th class="num">Upside</th><th>Preferred entry</th><th>Reason</th></tr></thead>
+        <tbody>
+          <tr><td><b>AMZN</b></td><td>Buy</td><td>7/10</td><td class="num">$240.35</td><td class="num">$315</td><td class="num up">+31.1%</td><td>—</td><td>Already full-sized — the book's largest single-stock position; no programmatic adds. Q3 Oct 29: headline sales/EPS miss, AWS +39.3%, TTM FCF −$42.4B.</td></tr>
+          <tr><td><b>LOW</b> <span class="tag">not held</span></td><td>Buy</td><td>7/10</td><td class="num">$209.07</td><td class="num">$225</td><td class="num up">+7.6%</td><td>≤$165 only</td><td>Entry level far away. Q3 Nov 18.</td></tr>
+          <tr><td><b>HD</b> <span class="tag">not held</span></td><td>Buy</td><td>7/10</td><td class="num">$329.20</td><td class="num">$340</td><td class="num up">+3.3%</td><td>≤$260 only</td><td>Entry level far away. Q3 Nov 17.</td></tr>
+          <tr><td><b>LLY</b> <span class="tag">not held</span></td><td>Buy</td><td>7/10</td><td class="num">$1,417.54</td><td class="num">$1,300</td><td class="num down">−8.3%</td><td>≤$1,300</td><td>ABOVE target. Q3 Oct 29 blowout — revenue +39%, guide raised. No entry; wait for ≤$1,300.</td></tr>
+          <tr><td><b>V</b></td><td>Buy</td><td>7/10</td><td class="num">$413.59</td><td class="num">$405</td><td class="num down">−2.1%</td><td>≤$385 on weakness</td><td>Above target. Q3 beat but the FY27 guide was limited.</td></tr>
+          <tr><td><b>JNJ</b> <span class="tag">not held</span></td><td>Hold</td><td>5/10</td><td class="num">$273.20</td><td class="num">$275</td><td class="num up">+0.7%</td><td>≤$255</td><td>Q3 Oct 13 beat and raise, fell 5.73% on MedTech softness and $1.36/sh 2027 dilution.</td></tr>
+          <tr><td><b>KHC</b> <span class="tag">not held</span></td><td>Hold</td><td>5/10</td><td class="num">$24.34</td><td class="num">$24</td><td class="num down">−1.4%</td><td>≤$21</td><td>At/above target. Q3 Nov 4.</td></tr>
+          <tr><td><b>WMT</b> <span class="tag">not held</span></td><td>Buy</td><td>6/10</td><td class="num">$123.51</td><td class="num">$120</td><td class="num down">−2.8%</td><td>≤$110</td><td>Above target. Q3 Nov 19 expected.</td></tr>
+          <tr><td><b>KMB</b> <span class="tag">not held</span></td><td>Hold</td><td>5/10</td><td class="num">$107.94</td><td class="num">$115</td><td class="num up">+6.5%</td><td>≤$90 only</td><td>Q3 Nov 5; Kenvue exchange offers expire Nov 2, 5:00pm ET.</td></tr>
+          <tr><td><b>CTAS</b> <span class="tag">not held</span></td><td>Hold</td><td>6/10</td><td class="num">$219.82</td><td class="num">$216</td><td class="num down">−1.7%</td><td>≤$180 only</td><td>Above target; entry level far away.</td></tr>
+          <tr><td><b>COST</b> <span class="tag">not held</span></td><td>Hold</td><td>5/10</td><td class="num">$1,012.28</td><td class="num">$1,050</td><td class="num up">+3.7%</td><td>≤$850 only</td><td>Entry level far away.</td></tr>
+          <tr><td><b>CLX</b> <span class="tag">not held</span></td><td>Hold</td><td>5/10</td><td class="num">$88.00</td><td class="num">$92</td><td class="num up">+4.5%</td><td>≤$82</td><td>No chase into the Nov 2 print.</td></tr>
+          <tr><td><b>MA</b></td><td>Buy</td><td>7/10</td><td class="num">$638.01</td><td class="num">$650</td><td class="num up">+1.9%</td><td>≤$520 recommended</td><td>Q3 beat Oct 29; no new money; recommended entry far away; no trim (tax-punitive).</td></tr>
+          <tr><td><b>JPM</b></td><td>Hold</td><td>5/10</td><td class="num">$337.04</td><td class="num">$360</td><td class="num up">+6.8%</td><td>—</td><td>No adds; trim discipline above ~$365.</td></tr>
+          <tr><td><b>GS</b></td><td>Buy</td><td>6/10</td><td class="num">$894.55</td><td class="num">$1,050</td><td class="num up">+17.4%</td><td>—</td><td>Trim menu on a re-test of the $920s; no adds.</td></tr>
+          <tr><td><b>XOM</b></td><td>Hold</td><td>5/10</td><td class="num">$187.25</td><td class="num">$168</td><td class="num down">−10.3%</td><td>—</td><td>Above target. Q3 beat Oct 30 on refining; trim candidate above ~$180 per standing discipline — Cam's call, tax-aware.</td></tr>
+          <tr><td><b>SO</b></td><td>Buy</td><td>6/10</td><td class="num">$93.71</td><td class="num">$92</td><td class="num down">−1.8%</td><td>—</td><td>Above target; hold for income. Q3 Nov 5.</td></tr>
+          <tr><td><b>PM</b></td><td>Buy</td><td>6/10</td><td class="num">$208.79</td><td class="num">$210</td><td class="num up">+0.6%</td><td>—</td><td>At target; hold.</td></tr>
+          <tr><td><b>KO</b></td><td>Hold</td><td>5/10</td><td class="num">$94.08</td><td class="num">$94</td><td class="num down">−0.1%</td><td>—</td><td>At target. Q3 beat-and-raise Oct 27; hold.</td></tr>
+          <tr><td><b>PEP</b></td><td>Hold</td><td>5/10</td><td class="num">$137.34</td><td class="num">$140</td><td class="num up">+1.9%</td><td>—</td><td>Hold; the $120 add gate was withdrawn on the guidance cut.</td></tr>
+          <tr><td><b>NFLX</b></td><td>Buy</td><td>6/10</td><td class="num">$62.08</td><td class="num">$80</td><td class="num up">+28.9%</td><td>—</td><td>Hold the 500 shares; no add into the washout.</td></tr>
+          <tr><td><b>AAPL</b></td><td>Hold</td><td>5/10</td><td class="num">$344.63</td><td class="num">$350</td><td class="num up">+1.6%</td><td>≤$310</td><td>No action into the Nov 2 print.</td></tr>
+          <tr><td><b>BMY</b></td><td>Under review</td><td>—</td><td class="num">$62.48</td><td class="num">$68*</td><td class="num">—</td><td>—</td><td><b>Rating under review</b> after the Oct 29 split print — revenue guide raised, adjusted EPS guide cut on IPR&amp;D/licensing charges. No new money until the full update. *The Oct 4 Buy/$68 line is stale.</td></tr>
+          <tr><td><b>BATRA</b></td><td>Hold</td><td>5/10</td><td class="num">$54.72</td><td class="num">$60</td><td class="num up">+9.6%</td><td>—</td><td>Stub holding; hold. Q3 Nov 4.</td></tr>
+          <tr><td><b>ORCL</b> <span class="tag">not held</span></td><td>Buy — coverage only</td><td>7/10</td><td class="num">$130.67</td><td class="num">$200</td><td class="num up">+53.1%</td><td>None — no entry, no gate</td><td>COVERAGE ONLY — Cam does not plan to add. Drawdown driver intact: ~$169B debt, $300B OpenAI concentration, negative FY26 free cash flow, BBB− downgrade.</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="queue">
+      <h2>§6 · Deployment queue</h2>
+      <p class="kicker">Illustrative $5,000 sleeves at entry midpoints — rank order, not a funded order.</p>
+      <p>Cash is unverified this round (see §1), so this queue sequences intent rather than committing dollars. Each Tier 1 name is shown as a standard $5,000 sleeve struck at the midpoint of its preferred entry range.</p>
+      <div class="tblwrap"><table>
+        <thead><tr><th>#</th><th>Ticker</th><th class="num">Sleeve</th><th class="num">Entry midpoint</th><th class="num">Illustrative shares</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><b>AVGO</b></td><td class="num">$5,000</td><td class="num">$330</td><td class="num">~15 sh</td></tr>
+          <tr><td>2</td><td><b>UBER</b></td><td class="num">$5,000</td><td class="num">$66</td><td class="num">~76 sh</td></tr>
+          <tr><td>3</td><td><b>NVDA</b></td><td class="num">$5,000</td><td class="num">$210</td><td class="num">~24 sh</td></tr>
+          <tr><td>4</td><td><b>CAT</b></td><td class="num">$5,000</td><td class="num">$635</td><td class="num">~8 sh</td></tr>
+          <tr><td>5</td><td><b>HOOD</b></td><td class="num">$5,000</td><td class="num">$85</td><td class="num">~59 sh</td></tr>
+          <tr><td>6</td><td><b>GEV</b></td><td class="num">$5,000</td><td class="num">$860</td><td class="num">~6 sh</td></tr>
+          <tr><td>7</td><td><b>DELL</b></td><td class="num">$5,000</td><td class="num">$422</td><td class="num">~12 sh</td></tr>
+          <tr><td>8</td><td><b>META</b></td><td class="num">$5,000</td><td class="num">$615</td><td class="num">~8 sh</td></tr>
+          <tr><td>9</td><td><b>CRM</b></td><td class="num">$5,000</td><td class="num">$228</td><td class="num">~22 sh</td></tr>
+          <tr><td>10</td><td><b>AMT</b></td><td class="num">$5,000</td><td class="num">$188</td><td class="num">~27 sh</td></tr>
+          <tr><td>11</td><td><b>TSM</b></td><td class="num">$5,000</td><td class="num">$406</td><td class="num">~12 sh</td></tr>
+          <tr><td>12</td><td><b>SPCX</b></td><td class="num">$5,000</td><td class="num">$132</td><td class="num">~38 sh</td></tr>
+        </tbody>
+      </table></div>
+    </section>
+
+    <section id="calendar">
+      <h2>§7 · Earnings calendar &amp; corrections</h2>
+      <p class="kicker">The next 30 days are print-dense — half the Tier 2 list is waiting on this board.</p>
+      <div class="grid2">
+        <div class="card">
+          <h3>Upcoming prints</h3>
+          <ul>
+            <li><b>Mon Nov 2 (AMC):</b> AAPL · CLX · PLTR</li>
+            <li><b>Wed Nov 4:</b> QCOM · KHC · NVO · BATRA</li>
+            <li><b>Thu Nov 5:</b> KMB · SO</li>
+            <li><b>Mon Nov 9:</b> CEG</li>
+            <li><b>Thu Nov 12:</b> SIEGY</li>
+            <li><b>Tue Nov 17:</b> DIS · HD</li>
+            <li><b>Wed Nov 18:</b> LOW · NVDA (~)</li>
+            <li><b>Thu Nov 19:</b> WMT</li>
+            <li><b>Tue Nov 24:</b> DELL</li>
+            <li><b>Wed Dec 2:</b> CRM (not yet company-confirmed)</li>
+            <li><b>Wed Dec 9:</b> AVGO FQ4</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Corrections to earlier desk material</h3>
+          <ul>
+            <li>Kraft Heinz did <b>not</b> report October 28 — Q3 is November 4 BMO.</li>
+            <li>Constellation Energy is November 9 BMO, not November 6.</li>
+            <li>Lowe's is November 18 BMO (tentative), not November 19.</li>
+            <li>Walmart November 19 BMO is expected but unresolved against older November 20 sources.</li>
+            <li>Lilly reported October 29, not October 23.</li>
+            <li>Qualcomm's October 30 fall was Intel contagion, not an earnings event.</li>
+          </ul>
+          <h3>Could not be confirmed</h3>
+          <ul>
+            <li>CRM's December 2 date — not yet company-confirmed.</li>
+            <li>WMT November 19 versus 20.</li>
+            <li>CTAS next print date.</li>
+            <li>A single 2027 consensus for PLTR.</li>
+            <li>ORCL's exact close to the cent is Finnhub's $130.67 — stated as the Finnhub close, not as a cross-verified exchange print.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="universe">
+      <h2>§8 · Full universe table</h2>
+      <p class="kicker">Every researched individual equity — held and not held — with its entry range and next catalyst.</p>
+      <div class="tblwrap"><table>
+        <thead><tr><th>Ticker</th><th>Status</th><th class="num">Shares</th><th class="num">Weight</th><th>Rating</th><th>Conv.</th><th class="num">Target</th><th class="num">Close (Oct 30)</th><th class="num">Upside</th><th>Preferred entry</th><th>Next catalyst</th></tr></thead>
+        <tbody id="univBody"></tbody>
+      </table></div>
+      <p class="small">Weights are struck at October 30 closes on the $1,724,760 book (including the $43,000 cash convention). ORCL's close is the Finnhub close. SIEGY is an ADR (2 ADRs = 1 Xetra share); euro figures in its underlying coverage are for the Xetra share, not the ADR.</p>
+    </section>
+
+    <section id="appendix">
+      <h2>Appendix — sources</h2>
+      <p class="kicker">Sources only. All references live here; the body carries none.</p>
+      <ul class="source-list">
+        <li>Finnhub — October 30, 2026 closing quotes for the universe, including QCOM $164.79, DELL $424.30, LLY $1,417.54, HOOD $84.99, AMT $187.78, ORCL $130.67, ASML $1,565.90.</li>
+        <li>Market-data price history files for QCOM and DELL, fetched October 30, 2026 (23:25 UTC).</li>
+        <li>StockAnalysis — TSM October 30 close ($406.13) and market history.</li>
+        <li>Zacks — consensus estimates and earnings coverage for KO, V, AMT, AXP, JNJ, QCOM, DIS, HD, LOW, WMT, KHC, CLX, AAPL, MA, CEG.</li>
+        <li>Briefing.com (FactSet consensus) — Visa fiscal Q4 print and FY27 outlook.</li>
+        <li>Motley Fool earnings-call transcripts — KO (Oct 27), AMT (Oct 27), V (Oct 27).</li>
+        <li>Company press releases and filings — AXP Q3 release; LLY Q3 release via PR Newswire; KMB preliminary Q3 figures (8-K, Oct 15) and Kenvue exchange-offer extension (PR Newswire, Oct 27); QCOM FQ4 scheduling release (Oct 22); DIS FQ4 date announcement (Oct 12); BATRA Q3 call scheduling (Business Wire, Oct 16).</li>
+        <li>LSEG — consensus figures for AMZN, BMY, XOM, CVX, LLY, HOOD, and Intel's Q4 guide comparison.</li>
+        <li>AlphaStreet — LLY Q3 consensus comparison.</li>
+        <li>Morningstar / Dow Jones (Oct 30) — semiconductor selloff coverage; Reuters via Morningstar — Oracle investor day (Oct 28) and Intel guide.</li>
+        <li>The Edge market wrap (Oct 30) — index closes: S&amp;P 500 −1.82%, Nasdaq 100 −3.46%, Nasdaq Composite −2.86%.</li>
+        <li>Federal Reserve coverage via Rate.com and Longbridge — FOMC October 28 decision (held 3.75–4.00%, 10–2).</li>
+        <li>MarketBeat — PLTR Q3 consensus and implied move; HOOD adjusted-EPS consensus basis.</li>
+        <li>TipRanks, Barchart, Kalkine, CoinDesk, Invezz, Northland News Radio, SourceFirst News — analyst actions, previews, and Oct 29–30 print coverage for MA, AMZN, BMY, XOM, CVX, HOOD, CEG, COST, WMT.</li>
+        <li>Desk records — export 66 positions and weights; standing ratings, targets, conviction scores, gates, and entry levels from the October 2026 company reports and updates (incl. DELL Oct 29 update and Oct 30 gate ruling; PLTR Oct 30 update; GOOG Oct 28; AMZN Oct 29; CAT Oct 29; ASML Oct 22; META Oct 21; NFLX Oct 20).</li>
+      </ul>
+      <footer>
+        <p>Prepared for the CIO. Prices are Friday, October 30, 2026 closes unless noted. Ratings, targets, and entry levels are the desk's standing calls as updated through October 30, 2026; BMY is under review. This ranking is advisory — execution, gate installation, and sizing remain Cam's decisions. Cash of $43,000 is carried by standing convention and is unverified this round.</p>
+      </footer>
+    </section>
+  </main>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+(function(){
+  var root=document.documentElement;
+  var btn=document.getElementById('themeBtn');
+  function prefersDark(){return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;}
+  root.setAttribute('data-theme', prefersDark() ? 'dark' : 'light');
+  btn.addEventListener('click',function(){
+    root.setAttribute('data-theme', root.getAttribute('data-theme')==='dark' ? 'light' : 'dark');
+  });
+  document.getElementById('pdfBtn').addEventListener('click',function(){
+    var el=document.getElementById('report');
+    if(window.html2pdf){
+      html2pdf().set({margin:0.4, filename:'capital-allocation-ranking-2026-10-30.pdf', image:{type:'jpeg',quality:0.96}, html2canvas:{scale:2}, jsPDF:{unit:'in',format:'letter',orientation:'portrait'}}).from(el).save();
+    }
+  });
+
+  // Full universe data: [ticker, held, shares, weight, rating, conv, target, close, upside, entry, catalyst]
+  var U=[
+    ["AVGO",1,"117","2.21%","Strong Buy","8/10",535,326.08,"+64.1%","$320–340","FQ4 Dec 9"],
+    ["UBER",1,"97","0.37%","Strong Buy","8/10",105,65.25,"+60.9%","≤$68 gate zone","Q3 early Nov"],
+    ["NVDA",1,"61","0.72%","Strong Buy","8/10",328,204.64,"+60.3%","$200–220","Print ~Nov 18"],
+    ["CAT",0,"—","—","Buy","6/10",850,622.75,"+36.5%","$620–650","—"],
+    ["HOOD",0,"—","—","Buy","6/10",130,84.99,"+53.0%","$80–90","Post-Q3 (Oct 27)"],
+    ["GEV",1,"30","1.49%","Buy","7/10",1200,857.87,"+39.9%","$840–875","—"],
+    ["DELL",1,"4","0.10%","Buy","6/10",580,424.30,"+36.7%","$419–424","Q3 Nov 24"],
+    ["META",1,"63","2.25%","Buy","6/10",850,614.99,"+38.2%","$600–625","—"],
+    ["CRM",1,"99","1.32%","Buy","7/10",285,229.17,"+24.4%","$220–235","FQ3 Dec 2†"],
+    ["AMT",1,"231.9","2.52%","Buy","7/10",225,187.78,"+19.8%","$180–190","Post-Q3 (Oct 27)"],
+    ["TSM",1,"44","1.04%","Strong Buy","8/10",545,406.13,"+34.2%","$395–415","—"],
+    ["SPCX",0,"—","—","Buy","6/10",220,134.72,"+63.3%","$125–135","Lockup / print week"],
+    ["GOOG",1,"145","2.34%","Buy","6/10",430,278.22,"+54.6%","$270–285 / $240–250","Q4 print; 2027 capex"],
+    ["ADBE",1,"39","0.57%","Buy","7/10",320,250.23,"+27.9%","≤$235 gate only","FQ4 Dec 9"],
+    ["CEG",0,"—","—","Buy","6/10",345,262.38,"+31.5%","≤$260","Q3 Nov 9"],
+    ["QCOM",1,"104.4","1.00%","Buy","7/10",215,164.79,"+30.5%","$160–170 post-print","FQ4 Nov 4"],
+    ["ASML",1,"8","0.73%","Buy","6/10",2050,1565.90,"+30.9%","— (no further adds)","—"],
+    ["UNH",1,"50.2","1.18%","Strong Buy","8/10",475,406.97,"+16.7%","$375–395","—"],
+    ["MSFT",1,"100","3.03%","Buy","7/10",590,521.91,"+13.0%","$515–530 / $480","—"],
+    ["AXP",1,"100","1.85%","Buy","7/10",365,319.11,"+14.4%","$305–320","Post-Q3 (Oct 23)"],
+    ["GEHC",1,"52","0.23%","Buy","7/10",92,76.57,"+20.1%","≤$62 gate only","Post-Q3 (Oct 28)"],
+    ["PLTR",0,"—","—","Hold","5/10",200,184.11,"+8.6%","$161–166 / ≤$150","Q3 Nov 2 AMC"],
+    ["DIS",1,"196.2","1.26%","Buy","7/10",125,110.94,"+12.7%","$105–112 post-print","FQ4 Nov 17"],
+    ["SIEGY",0,"—","—","Buy","6/10",166,153.45,"+8.2%","≤$135 only","FQ4 Nov 12"],
+    ["NVO",0,"—","—","Buy","6/10",46,40.00,"+15.0%","≤$34 only","Q3 Nov 4; CagriSema FDA"],
+    ["AMZN",1,"520","7.25%","Buy","7/10",315,240.35,"+31.1%","— (full-sized)","Post-Q3 (Oct 29)"],
+    ["LOW",0,"—","—","Buy","7/10",225,209.07,"+7.6%","≤$165 only","Q3 Nov 18"],
+    ["HD",0,"—","—","Buy","7/10",340,329.20,"+3.3%","≤$260 only","Q3 Nov 17"],
+    ["LLY",0,"—","—","Buy","7/10",1300,1417.54,"−8.3%","≤$1,300","Post-Q3 (Oct 29)"],
+    ["V",1,"100","2.40%","Buy","7/10",405,413.59,"−2.1%","≤$385","Post-Q3 (Oct 27)"],
+    ["JNJ",0,"—","—","Hold","5/10",275,273.20,"+0.7%","≤$255","DePuy decision"],
+    ["KHC",0,"—","—","Hold","5/10",24,24.34,"−1.4%","≤$21","Q3 Nov 4"],
+    ["WMT",0,"—","—","Buy","6/10",120,123.51,"−2.8%","≤$110","Q3 Nov 19*"],
+    ["KMB",0,"—","—","Hold","5/10",115,107.94,"+6.5%","≤$90 only","Q3 Nov 5"],
+    ["CTAS",0,"—","—","Hold","6/10",216,219.82,"−1.7%","≤$180 only","Next print unconfirmed"],
+    ["COST",0,"—","—","Hold","5/10",1050,1012.28,"+3.7%","≤$850 only","October sales (early Nov)"],
+    ["CLX",0,"—","—","Hold","5/10",92,88.00,"+4.5%","≤$82","FQ1 Nov 2 AMC"],
+    ["MA",1,"173.1","6.40%","Buy","7/10",650,638.01,"+1.9%","≤$520 recommended","Post-Q3 (Oct 29)"],
+    ["JPM",1,"357.9","6.99%","Hold","5/10",360,337.04,"+6.8%","—","—"],
+    ["GS",1,"105","5.45%","Buy","6/10",1050,894.55,"+17.4%","—","—"],
+    ["XOM",1,"379.4","4.12%","Hold","5/10",168,187.25,"−10.3%","—","Post-Q3 (Oct 30)"],
+    ["SO",1,"381.4","2.07%","Buy","6/10",92,93.71,"−1.8%","—","Q3 Nov 5"],
+    ["PM",1,"182.6","2.21%","Buy","6/10",210,208.79,"+0.6%","—","—"],
+    ["KO",1,"297.2","1.62%","Hold","5/10",94,94.08,"−0.1%","—","Post-Q3 (Oct 27)"],
+    ["PEP",1,"165","1.31%","Hold","5/10",140,137.34,"+1.9%","—","Q4 early Feb 2027"],
+    ["NFLX",1,"500","1.80%","Buy","6/10",80,62.08,"+28.9%","—","Post-Q3 (Oct 20)"],
+    ["AAPL",1,"340","6.79%","Hold","5/10",350,344.63,"+1.6%","≤$310","FQ4 Nov 2 AMC"],
+    ["BMY",1,"320","1.16%","Under review","—",68,62.48,"—","—","Full update pending"],
+    ["BATRA",1,"25","0.08%","Hold","5/10",60,54.72,"+9.6%","—","Q3 Nov 4"],
+    ["ORCL",0,"—","—","Buy — coverage only","7/10",200,130.67,"+53.1%","None","—"]
+  ];
+  function fmt(n){return n>=1000? n.toLocaleString('en-US',{maximumFractionDigits:0}) : (''+n);}
+  function fmtPx(n){return '$'+(n>=1000? n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2}) : n.toFixed(2));}
+  var html='';
+  for(var i=0;i<U.length;i++){
+    var r=U[i], up=r[8], cls=up.indexOf('+')===0?'up':(up.indexOf('−')===0?'down':'');
+    html+='<tr><td><b>'+r[0]+'</b></td><td>'+(r[1]?'Held':'Not held')+'</td><td class="num">'+r[2]+'</td><td class="num">'+r[3]+'</td><td>'+r[4]+'</td><td>'+r[5]+'</td><td class="num">$'+fmt(r[6])+'</td><td class="num">'+fmtPx(r[7])+'</td><td class="num '+cls+'">'+up+'</td><td>'+r[9]+'</td><td>'+r[10]+'</td></tr>';
+  }
+  document.getElementById('univBody').innerHTML=html;
+})();
+</script>
+</body>
+</html>
