@@ -431,7 +431,7 @@ function setSub(t){document.querySelectorAll('.footsub').forEach(function(el){el
 function addSub(t){document.querySelectorAll('.footsub').forEach(function(el){el.textContent+=t;});}
 async function loadHoldings(){
   let r;
-  try { r = await fetch('holdings.json?_=' + Date.now(), { cache: 'no-store' }); }
+  try { r = await fetch('holdings.json'); }
   catch(e){ throw new Error('fetch-failed'); }
   if(!r.ok) throw new Error('http-'+r.status);
   const d = await r.json();
@@ -1062,6 +1062,17 @@ function renderResearch(f){
   const vlist = qlist.filter(function(r){ return RES_ARCH==='archived' ? isArchived(r) : !isArchived(r); });
   var _allOn = Object.keys(RES_RATINGS).every(function(k){ return RES_RATINGS[k]; });
   const rlist = _allOn ? vlist : vlist.filter(function(r){ return !!RES_RATINGS[normRating(r.rating)]; });
+  // Newest first (rev53): the manifest is chronological (oldest appended first),
+  // so display order is date-descending; ties keep later-appended entries first.
+  // This sorts only the display list — RLIST()/manifest order and the
+  // newest-per-group archive logic above are untouched.
+  const rIdx = new Map();
+  list.forEach(function(r,i){ rIdx.set(r,i); });
+  rlist.sort(function(a,b){
+    const da = normDate(a.date), db = normDate(b.date);
+    if(db!==da) return db<da ? -1 : 1;
+    return (rIdx.get(b)||0)-(rIdx.get(a)||0);
+  });
   const archMatchNote = (words.length && !vlist.length && qlist.length)
     ? ' '+qlist.filter(isArchived).length+' archived edition(s) match — switch to Archive to view them.' : '';
   function card(r){
