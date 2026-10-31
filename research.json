@@ -1489,6 +1489,17 @@
    "sub": "Ranking",
    "date": "2026-10-30",
    "summary": "Capital allocation ranking (Oct 30, 2026; export-66 baseline; Finnhub Oct 30 closes): 50 individual equities \u2014 32 held, 18 researched-not-held. Book $1,724,760 incl $43K cash convention. Tier 1 deploy: AVGO SB 8/10 $535 (+64.1%, $326.08, entry $320-340), UBER SB 8/10 $105 (+60.9%, $65.25, \u2264$68), NVDA SB 8/10 $328 (+60.3%, $204.64, $200-220 band), CAT Buy 6/10 $850 (+36.5%, $622.75, $620-650), HOOD Buy 6/10 $130 (+53.0%, $84.99, $80-90), GEV Buy 7/10 $1,200 (+39.9%, $857.87, $840-875), DELL Buy 6/10 $580 (+36.7%, $424.30, $419-424 zone per Cam's ruling), META, CRM, AMT, TSM, SPCX. Friday selloff was Intel-contagion (Intel Q4 guide miss), not company news; QCOM -11.1% was sector, FQ4 Nov 4. BMY rating under review (split print) \u2014 no new money. ORCL coverage only. Corrections: KHC Nov 4, CEG Nov 9, LOW Nov 18, LLY reported Oct 29 (above target, no entry). Gates: DELL $419-424 zone, ADBE \u2264$235, GEHC \u2264$62, UNH accumulate\u21922%, UBER \u2264$68 live; AVGO \u2264$340/CAT \u2264$670/PLTR ladder recommended, not installed. AMZN corrected to $240.35 close (+31.1%), 7.25% weight."
+  },
+  {
+   "ticker": null,
+   "name": "S&P 500 Sector Top 10 \u2014 October 2026",
+   "file": "sp500-sector-top10-2026-10-30.html",
+   "rating": null,
+   "target": null,
+   "kind": "thematic",
+   "sub": "Sector Ranking",
+   "date": "2026-10-30",
+   "summary": "S&P 500 Sector Top 10 (Oct 30, 2026): ranked top 10 in all 11 GICS sectors (110 names) with a sector investment thesis each, set against Cam's export-66 exposure. Stances (opinion): Health Care OVERWEIGHT, Financials OVERWEIGHT selective, Industrials OVERWEIGHT selective, Real Estate UNDERWEIGHT selective, Energy NEUTRAL tactical, rest NEUTRAL. Exposure verdicts: Health Care 2.6% vs 9.1% index = clearest gap to close; Tech 17.5% vs ~39.9% = largest underweight, close selectively; Financials 23.1% vs 11.4% = double-weight, no adds (weight overrides stance); Industrials 2.4% vs 8.1% underweight; Materials 0.0% vs 1.7% no exposure. Index: S&P 500 7,580.07, FactSet fwd P/E 18.7x vs 10-yr 19.1x; IT fwd P/E 19.0x (Yardeni). HONESTY FLAG: most individual prices/multiples/yields in the dossier were NOT verified \u2014 every n/v cell is marked 'not confirmed \u2014 re-price from StockAnalysis before trading'; only explicitly sourced figures appear as numbers. November binary calendar verified dates only. Files: sp500-sector-top10-2026-10-30.html/.pdf."
   }
  ],
  "updated": "2026-10-28"
