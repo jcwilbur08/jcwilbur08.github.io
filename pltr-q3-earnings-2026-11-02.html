@@ -1,0 +1,595 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <title>PLTR Q3 Earnings — November 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --paper:#f4f7f8;
+      --surface:#ffffff;
+      --ink:#12242a;
+      --muted:#53676d;
+      --faint:#7b8d92;
+      --line:#d9e2e4;
+      --navy:#0b2634;
+      --blue:#0c4a6e;
+      --teal:#087f7a;
+      --aqua:#72e7d4;
+      --lime:#b9e769;
+      --gold:#e7b458;
+      --red:#bc4d54;
+      --soft-teal:#e8f6f3;
+      --soft-blue:#e9f2f7;
+      --soft-gold:#fbf3e3;
+      --soft-red:#f9ecec;
+      --shadow:0 18px 50px rgba(13,42,50,.10);
+      --zone:rgba(8,127,122,.14);
+      --grid:rgba(83,103,109,.18);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --paper:#091418;
+        --surface:#102126;
+        --ink:#eef7f5;
+        --muted:#b6c8c9;
+        --faint:#8ea1a3;
+        --line:#2a3f44;
+        --navy:#061b27;
+        --blue:#0a3f5e;
+        --teal:#0d8e86;
+        --soft-teal:#112f2f;
+        --soft-blue:#102b38;
+        --soft-gold:#342b1c;
+        --soft-red:#332022;
+        --shadow:0 18px 50px rgba(0,0,0,.28);
+        --zone:rgba(114,231,212,.13);
+        --grid:rgba(182,200,201,.16);
+      }
+    }
+    :root[data-theme="dark"] {
+      --paper:#091418;
+      --surface:#102126;
+      --ink:#eef7f5;
+      --muted:#b6c8c9;
+      --faint:#8ea1a3;
+      --line:#2a3f44;
+      --navy:#061b27;
+      --blue:#0a3f5e;
+      --teal:#0d8e86;
+      --soft-teal:#112f2f;
+      --soft-blue:#102b38;
+      --soft-gold:#342b1c;
+      --soft-red:#332022;
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+      --zone:rgba(114,231,212,.13);
+      --grid:rgba(182,200,201,.16);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;font-size:16px;line-height:1.62}
+    a{color:inherit}
+    .report{width:min(1120px,100%);margin:0 auto;background:var(--surface);box-shadow:var(--shadow)}
+    .cover{min-height:720px;padding:72px 76px 56px;display:flex;flex-direction:column;justify-content:space-between;color:#f7fffd;position:relative;overflow:hidden;background:linear-gradient(138deg,#071f2c 0%,#0b4560 44%,#087c78 100%)}
+    .cover:after{content:"";position:absolute;width:560px;height:560px;right:-220px;bottom:-270px;border:1px solid rgba(255,255,255,.18);border-radius:50%;box-shadow:0 0 0 68px rgba(255,255,255,.05),0 0 0 138px rgba(255,255,255,.035)}
+    .cover-top,.cover-main,.cover-foot{position:relative;z-index:1}
+    .cover-top{display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:.84rem;font-weight:700;letter-spacing:.06em}
+    .cover-top .type{padding:8px 12px;border:1px solid rgba(255,255,255,.42);border-radius:999px}
+    .cover-main{max-width:840px;margin:70px 0}
+    .company{font-size:clamp(3.2rem,8vw,7.2rem);font-weight:700;line-height:.88;letter-spacing:-.065em;margin:0 0 28px}
+    .cover h1{font-family:"Libre Baskerville",serif;font-size:clamp(2rem,4.5vw,4.2rem);line-height:1.08;letter-spacing:-.04em;margin:0 0 26px;max-width:780px}
+    .dek{font-size:clamp(1rem,1.6vw,1.22rem);max-width:730px;color:#d8f2ee;margin:0}
+    .cover-foot{display:flex;justify-content:space-between;gap:36px;align-items:end;border-top:1px solid rgba(255,255,255,.22);padding-top:22px}
+    .cover-meta strong{display:block;font-size:1.1rem}.cover-meta span{display:block;color:#c9e7e3;font-size:.86rem}
+    .cover-monogram{font-family:"Libre Baskerville",serif;font-size:2.3rem;font-weight:700;letter-spacing:-.06em}
+    .rating-strip{display:grid;grid-template-columns:1.2fr repeat(4,1fr);background:#071c25;color:white}
+    .rating-cell{padding:22px 24px;border-right:1px solid rgba(255,255,255,.12)}
+    .rating-cell:last-child{border:0}.rating-cell span{display:block;color:#95bfc3;font-size:.69rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:5px}.rating-cell strong{font-size:1.18rem;letter-spacing:-.02em}.rating-cell small{display:block;color:#95bfc3;font-size:.78rem;margin-top:3px}.rating-cell.primary{background:var(--lime);color:#10231d}.rating-cell.primary span{color:#31513e}.rating-cell.primary strong{font-size:1.5rem}
+    .toolbar{display:flex;justify-content:flex-end;gap:10px;padding:16px 76px;background:var(--surface);border-bottom:1px solid var(--line)}
+    .tool-btn{display:inline-flex;align-items:center;gap:9px;text-decoration:none;background:var(--ink);color:var(--surface);padding:10px 15px;border:0;border-radius:8px;font-size:.84rem;font-weight:700;font-family:inherit;cursor:pointer}
+    .tool-btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+    .tool-btn svg{width:16px;height:16px}
+    .page{padding:62px 76px}
+    .page + .page{border-top:1px solid var(--line)}
+    .section-kicker{display:flex;align-items:center;gap:12px;color:var(--teal);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}.section-kicker:before{content:"";width:36px;height:3px;background:var(--teal)}
+    h2{font-family:"Libre Baskerville",serif;font-size:clamp(2rem,4vw,3.25rem);line-height:1.15;letter-spacing:-.035em;margin:0 0 24px;color:var(--ink)}
+    h3{font-size:1.12rem;line-height:1.3;margin:30px 0 10px;letter-spacing:-.01em}
+    p{margin:0 0 16px}.lead{font-family:"Libre Baskerville",serif;font-size:1.24rem;line-height:1.65;color:var(--ink);max-width:880px}
+    .muted{color:var(--muted)} .small{font-size:.88rem}
+    .toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;counter-reset:toc}
+    .toc a{counter-increment:toc;display:flex;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:600}.toc a:before{content:counter(toc,decimal-leading-zero);color:var(--teal);font-size:.75rem;font-weight:800;letter-spacing:.08em}.toc a span{margin-left:auto;color:var(--faint);font-size:.8rem;text-align:right}
+    .callout{padding:26px 28px;background:var(--soft-teal);border-radius:4px;margin:26px 0}.callout h3{margin:0 0 10px}.callout p:last-child{margin:0}
+    .callout.gold{background:var(--soft-gold)}
+    .callout.red{background:var(--soft-red)}
+    .verdict{background:var(--navy);color:#ecf8f5;padding:30px;margin:26px 0}.verdict h3{margin:0 0 10px;color:#8fe0d4}.verdict p{color:#d2e5e5}.verdict p:last-child{margin:0}.verdict strong{color:#fff}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:30px 0}.metric{background:var(--soft-blue);padding:20px 18px;min-height:126px}.metric .label{display:block;color:var(--muted);font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}.metric strong{display:block;font-family:"Libre Baskerville",serif;font-size:1.75rem;line-height:1.1}.metric small{display:block;color:var(--muted);margin-top:7px;line-height:1.35}
+    .two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .data-table{width:100%;border-collapse:collapse;margin:24px 0 8px}.data-table th{text-align:left;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;padding:10px 12px;border-bottom:2px solid var(--ink)}.data-table th.num,.data-table td.num{text-align:right}.data-table td{padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top}.data-table td.num{font-variant-numeric:tabular-nums;font-weight:700}.data-table .accent{color:var(--teal)}.data-table .down{color:var(--red)}.data-table tr.total td{border-top:2px solid var(--ink);border-bottom:0;font-weight:700}
+    .table-note{font-size:.84rem;color:var(--muted);margin:6px 0 18px}
+    .chart{margin:28px 0;padding:24px;background:var(--soft-blue)}.chart-title{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:18px;flex-wrap:wrap}.chart-title h3{margin:0}.chart-title p{font-size:.8rem;color:var(--muted);margin:0}
+    .chart svg{width:100%;height:auto;display:block}
+    .chart .axis{font-size:11px;fill:var(--faint);font-family:"DM Sans",sans-serif}
+    .chart .lbl{font-size:11.5px;font-weight:700;fill:var(--ink);font-family:"DM Sans",sans-serif}
+    .watchlist{list-style:none;padding:0;margin:24px 0 0}.watchlist li{display:grid;grid-template-columns:42px 1fr;gap:16px;padding:17px 0;border-bottom:1px solid var(--line)}.watchlist .n{width:32px;height:32px;display:grid;place-items:center;background:var(--ink);color:var(--surface);font-weight:800;font-size:.78rem}.watchlist strong{display:block}.watchlist span{color:var(--muted)}
+    .plainlist{list-style:none;padding:0;margin:18px 0}.plainlist li{padding:11px 0;border-bottom:1px solid var(--line)}.plainlist li:last-child{border-bottom:0}
+    .quote{border-left:3px solid var(--teal);padding:4px 0 4px 20px;margin:20px 0;font-family:"Libre Baskerville",serif;font-size:1.05rem;line-height:1.6}.quote span{display:block;font-family:"DM Sans",sans-serif;font-size:.8rem;color:var(--muted);margin-top:6px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+    .note{padding:18px 20px;background:var(--soft-gold);font-size:.9rem;color:var(--ink);margin:26px 0}.note p:last-child{margin:0}
+    .appendix{background:color-mix(in srgb,var(--paper) 75%,var(--surface));font-size:.84rem}.source-list{list-style:none;padding:0;margin:22px 0 0;counter-reset:sources}.source-list li{counter-increment:sources;display:grid;grid-template-columns:36px 1fr;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.source-list li:before{content:counter(sources,decimal-leading-zero);color:var(--teal);font-weight:800}.source-list a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:3px}
+    .disclosure{font-size:.78rem;color:var(--muted);margin-top:32px}
+    @media(max-width:760px){.report{box-shadow:none}.cover{min-height:650px;padding:44px 24px 36px}.cover-top{align-items:flex-start}.cover-main{margin:52px 0}.cover-foot{align-items:flex-start;flex-direction:column}.rating-strip{grid-template-columns:repeat(2,1fr)}.rating-cell{border-bottom:1px solid rgba(255,255,255,.12)}.rating-cell.primary{grid-column:1/-1}.toolbar{padding:14px 20px}.page{padding:48px 22px}.toc,.two-col,.metrics{grid-template-columns:1fr}.metrics{gap:8px}.metric{min-height:auto}.data-table,.data-table tbody,.data-table tr,.data-table td{display:block}.data-table thead{display:none}.data-table tr{padding:12px 0;border-bottom:1px solid var(--line)}.data-table td{display:flex;justify-content:space-between;gap:22px;padding:5px 0;border:0;text-align:left}.data-table td:before{content:attr(data-label);color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700}.data-table td.num{text-align:right}.chart{padding:18px 14px}}
+    @media print{body{background:white}.report{width:100%;box-shadow:none}.cover{min-height:100vh;page-break-after:always}.toolbar{display:none}.page{padding:48px 54px;page-break-inside:auto}.page + .page{page-break-before:always}.appendix{background:#fff}.callout,.verdict,.metric,.chart{break-inside:avoid}.source-list a{text-decoration:none;color:#111}.rating-strip{page-break-after:always}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<main class="report" id="report">
+  <section class="cover">
+    <div class="cover-top"><span class="type">POST-EARNINGS UPDATE · Q3 2026</span><span>November 2, 2026</span></div>
+    <div class="cover-main">
+      <div class="company">PALANTIR</div>
+      <h1>The beat was clean. The bookings weren&rsquo;t.</h1>
+      <p class="dek">Palantir&rsquo;s third quarter cleared every bar that mattered &mdash; revenue, earnings, guidance, all raised &mdash; and the stock still faded after hours, because new contract signings slowed to single digits. The business strengthened; the entry discipline holds.</p>
+    </div>
+    <div class="cover-foot">
+      <div class="cover-meta"><strong>Palantir Technologies Inc.</strong><span>NASDAQ: PLTR &middot; Software &mdash; applications</span></div>
+      <div class="cover-monogram">PLTR</div>
+    </div>
+  </section>
+
+  <section class="rating-strip" aria-label="Investment rating summary">
+    <div class="rating-cell primary"><span>Rating</span><strong>HOLD &middot; MAINTAINED</strong></div>
+    <div class="rating-cell"><span>Conviction</span><strong>5 / 10</strong></div>
+    <div class="rating-cell"><span>12-month price target</span><strong>$200</strong><small>Maintained</small></div>
+    <div class="rating-cell"><span>Reference price</span><strong>$178.34</strong><small>Regular-session close, Nov 2, 2026</small></div>
+    <div class="rating-cell"><span>Implied upside</span><strong>+12.2%</strong></div>
+  </section>
+
+  <div class="toolbar">
+    <button class="tool-btn ghost" id="themeToggle" type="button" aria-label="Toggle dark and light theme">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"/></svg>
+      <span id="themeLabel">Dark mode</span>
+    </button>
+    <button class="tool-btn" id="pdfBtn" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14"/></svg>
+      Download PDF
+    </button>
+  </div>
+
+  <section class="page" id="toc">
+    <div class="section-kicker">Contents</div>
+    <h2>Report map</h2>
+    <nav class="toc" aria-label="Report sections">
+      <a href="#verdict">Verdict &amp; position<span>Hold maintained &middot; the two questions</span></a>
+      <a href="#print">The print<span>Actuals vs the bar &middot; segments &middot; bookings</span></a>
+      <a href="#guidance">Guidance<span>Raised on every line</span></a>
+      <a href="#call">The call<span>Sovereign AI, and what wasn&rsquo;t asked</span></a>
+      <a href="#reaction">Market reaction<span>Close vs after-hours, kept separate</span></a>
+      <a href="#valuation">Valuation<span>One provider, pre-print denominators</span></a>
+      <a href="#analysts">Analyst actions<span>None after the print, by the cutoff</span></a>
+      <a href="#risks">Risks &amp; what changed<span>Bear, bull, and the numbers to watch</span></a>
+      <a href="#sources">Appendix<span>Sources only</span></a>
+    </nav>
+  </section>
+
+  <section class="page" id="verdict">
+    <div class="section-kicker">01 &middot; Verdict</div>
+    <h2>A stronger business. The same Hold.</h2>
+    <p class="lead">The print strengthened the business and the entry got cheaper &mdash; but the bookings question and a forward multiple still near 97&times; leave conviction at 5. High conviction in the business, low conviction in the entry price, unchanged.</p>
+    <p>Third-quarter revenue of $2,313.4m grew 96% year on year and beat the consensus bar used for this verdict by roughly $133m; adjusted earnings per share of $0.44 beat by $0.0339. Guidance was raised on every line, for the fourth quarter and the full year. U.S. commercial revenue overtook U.S. government revenue for the first time. On the numbers that describe the business today, this was the strongest quarter in the company&rsquo;s history.</p>
+    <p>On the numbers that describe tomorrow&rsquo;s business, it was the softest in two years. Total contract value closed in the quarter rose just 6% year on year, against 49% in the second quarter, and U.S. commercial signings rose 11% against 153%. The stock&rsquo;s path told the same story: an initial after-hours rise on the beat, then a fade through the call to $170.84, then a partial recovery. Nothing in the print broke the thesis; nothing in it retired the valuation question either. The Hold, the 5/10 conviction, and the $200 target are all maintained.</p>
+    <p class="small muted">One correction to the October 30 preview, flagged up front: the consensus earnings-per-share bar used for the verdict in this report is $0.4061, not the $0.4072 the preview carried &mdash; $0.0011 lower. The revenue bar, $2.18bn, is unchanged, and the verdict is identical on either bar. The reconciliation sits with the consensus table in the print section.</p>
+
+    <div class="verdict">
+      <h3>The verdict &mdash; beat and raise, with one open question</h3>
+      <p><strong>Beat:</strong> revenue $2,313.4m vs a $2.18bn bar (+6.1%); adjusted EPS $0.44 vs $0.4061 (+8.3%). The setup trap was <strong>cleared</strong>, not fired: the consensus revenue bar sat $16m <em>above</em> the top of management&rsquo;s own $2.160&ndash;2.164bn guide, so a print merely at guidance would have read as a miss. The actual cleared the guide top by $149m.</p>
+      <p><strong>Raise:</strong> full-year revenue guidance moved to $8.530&ndash;8.534bn (91% growth), adjusted operating income to $5.245&ndash;5.249bn, and adjusted free cash flow to $4.8&ndash;5.0bn.</p>
+      <p><strong>The question:</strong> bookings. Total contract value +6% year on year and U.S. commercial remaining deal value up only 4% sequentially, against U.S. commercial revenue up 29% sequentially. Management attributes the shape to shorter-duration Sovereign AI deals. That explanation is plausible and unproven; it is now the swing factor into the fourth quarter.</p>
+    </div>
+
+    <div class="callout gold">
+      <h3>Entry discipline &mdash; revised in October, unchanged by this print (recommended only; no gate installed)</h3>
+      <p>The <strong>$161&ndash;166 starter zone stands</strong>. No after-hours snapshot on November 2 entered it &mdash; the low was $170.84. The <strong>deep tranche at or below $150</strong> is retained, as is the <strong>~$136 valuation anchor</strong>. A reclaim of <strong>$186&ndash;187</strong> would be confirmation, not an entry. No adds above the $172&ndash;178 zone into strength; the next add comes only in the $161&ndash;166 zone, or on a print that shows bookings re-accelerating. If you want the starter zone armed as a live gate, that takes your word &mdash; nothing here installs one.</p>
+    </div>
+
+    <div class="callout">
+      <h3>Your position</h3>
+      <p>You now hold <strong>4 shares</strong>, added after hours on November 2 at around <strong>$172</strong> &mdash; your own execution, a very small starter. Two things stated plainly: the fill sits <strong>above</strong> the recommended $161&ndash;166 starter zone (and below the $178.34 close), so it is a discretionary buy above the desk&rsquo;s level, at tiny size; and the position is <strong>pending export confirmation</strong> &mdash; the share count is not treated as confirmed until the next portfolio export shows it.</p>
+    </div>
+  </section>
+
+  <section class="page" id="print">
+    <div class="section-kicker">02 &middot; The print</div>
+    <h2>Record revenue. Flat margins. Slow signings.</h2>
+    <p class="lead">Growth accelerated for a thirteenth consecutive quarter &mdash; the Rule of 40 score rose to 158%, also for a thirteenth straight quarter. But both operating margins were identical to the second quarter, free-cash-flow margin thinned, and the bookings lines decelerated hard.</p>
+
+    <div class="metrics">
+      <div class="metric"><span class="label">Revenue</span><strong>$2,313.4m</strong><small>+96% year on year &middot; +20% sequentially</small></div>
+      <div class="metric"><span class="label">Adjusted EPS</span><strong>$0.44</strong><small>GAAP EPS also $0.44 &middot; vs $0.21 a year ago</small></div>
+      <div class="metric"><span class="label">Rule of 40</span><strong>158%</strong><small>96% growth + 62% adjusted operating margin &middot; +3 points sequentially</small></div>
+      <div class="metric"><span class="label">Total contract value</span><strong>$2,918m</strong><small>Only +6% year on year &middot; the soft spot</small></div>
+    </div>
+
+    <h3>The quarter, against the second quarter</h3>
+    <table class="data-table">
+      <thead><tr><th>Metric (USD)</th><th class="num">Q3 2026</th><th class="num">Year on year</th><th class="num">Sequential</th><th class="num">Q2 2026</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Metric">Revenue</td><td class="num" data-label="Q3 2026">$2,313.4m</td><td class="num" data-label="YoY">+96%</td><td class="num" data-label="QoQ">+20%</td><td class="num" data-label="Q2 2026">$1,935m</td></tr>
+        <tr><td data-label="Metric">U.S. revenue</td><td class="num" data-label="Q3 2026">$1,937m</td><td class="num" data-label="YoY">+119%</td><td class="num" data-label="QoQ">+23%</td><td class="num" data-label="Q2 2026">&mdash;</td></tr>
+        <tr><td data-label="Metric">U.S. commercial revenue</td><td class="num" data-label="Q3 2026">$984m</td><td class="num" data-label="YoY">+148%</td><td class="num" data-label="QoQ">+29%</td><td class="num" data-label="Q2 2026">$764m</td></tr>
+        <tr><td data-label="Metric">U.S. government revenue</td><td class="num" data-label="Q3 2026">$953m</td><td class="num" data-label="YoY">+96%</td><td class="num" data-label="QoQ">+18%</td><td class="num" data-label="Q2 2026">$809m</td></tr>
+        <tr><td data-label="Metric">GAAP operating income / margin</td><td class="num" data-label="Q3 2026">$1,084.8m / 47%</td><td class="num" data-label="YoY">+176%</td><td class="num" data-label="QoQ">&mdash;</td><td class="num" data-label="Q2 2026">$912m / 47%</td></tr>
+        <tr><td data-label="Metric">Adjusted operating income / margin</td><td class="num" data-label="Q3 2026">$1,426.8m / 62%</td><td class="num" data-label="YoY">vs $600.5m / 51%</td><td class="num" data-label="QoQ">&mdash;</td><td class="num" data-label="Q2 2026">$1,194m / 62%</td></tr>
+        <tr><td data-label="Metric">Adjusted EBITDA / margin</td><td class="num" data-label="Q3 2026">$1,433.9m / 62%</td><td class="num" data-label="YoY">&mdash;</td><td class="num" data-label="QoQ">&mdash;</td><td class="num" data-label="Q2 2026">&mdash;</td></tr>
+        <tr><td data-label="Metric">GAAP net income attributable / margin</td><td class="num" data-label="Q3 2026">$1,128.0m / 49%</td><td class="num" data-label="YoY">vs $475.6m</td><td class="num" data-label="QoQ">&mdash;</td><td class="num" data-label="Q2 2026">$1,062m / 55%</td></tr>
+        <tr><td data-label="Metric">GAAP EPS, diluted</td><td class="num" data-label="Q3 2026">$0.44</td><td class="num" data-label="YoY">vs $0.18</td><td class="num" data-label="QoQ">&mdash;</td><td class="num" data-label="Q2 2026">$0.41</td></tr>
+        <tr><td data-label="Metric">Adjusted EPS, diluted</td><td class="num" data-label="Q3 2026">$0.44</td><td class="num" data-label="YoY">vs $0.21</td><td class="num" data-label="QoQ">&mdash;</td><td class="num" data-label="Q2 2026">$0.41</td></tr>
+        <tr><td data-label="Metric">Operating cash flow / margin</td><td class="num" data-label="Q3 2026">$1,204.6m / 52%</td><td class="num" data-label="YoY">vs $507.7m</td><td class="num" data-label="QoQ">&mdash;</td><td class="num" data-label="Q2 2026">$1,216m</td></tr>
+        <tr><td data-label="Metric">Adjusted free cash flow / margin</td><td class="num" data-label="Q3 2026">$1,216.1m / 53%</td><td class="num" data-label="YoY">vs $539.9m / 46%</td><td class="num" data-label="QoQ">&mdash;</td><td class="num" data-label="Q2 2026">$1,220m / 63%</td></tr>
+        <tr><td data-label="Metric">Total contract value closed</td><td class="num" data-label="Q3 2026">$2,918m</td><td class="num down" data-label="YoY">+6%</td><td class="num down" data-label="QoQ">&minus;13.5%</td><td class="num" data-label="Q2 2026">$3,373m</td></tr>
+        <tr><td data-label="Metric">U.S. commercial contract value</td><td class="num" data-label="Q3 2026">$1,463m</td><td class="num down" data-label="YoY">+11%</td><td class="num" data-label="QoQ">&mdash;</td><td class="num" data-label="Q2 2026">$2,132m</td></tr>
+        <tr><td data-label="Metric">U.S. commercial remaining deal value</td><td class="num" data-label="Q3 2026">$6,517m</td><td class="num" data-label="YoY">+79%</td><td class="num" data-label="QoQ">+4%</td><td class="num" data-label="Q2 2026">$6,238m</td></tr>
+        <tr><td data-label="Metric">Deals closed &ge;$1m / &ge;$5m / &ge;$10m</td><td class="num" data-label="Q3 2026">212 / 107 / 64</td><td class="num" data-label="YoY">&mdash;</td><td class="num" data-label="QoQ">&mdash;</td><td class="num" data-label="Q2 2026">220 / 98 / 73</td></tr>
+        <tr><td data-label="Metric">Stock-based compensation</td><td class="num" data-label="Q3 2026">$318.9m</td><td class="num" data-label="YoY">+85%</td><td class="num" data-label="QoQ">&mdash;</td><td class="num" data-label="Q2 2026">&mdash;</td></tr>
+        <tr><td data-label="Metric">Diluted weighted-average shares</td><td class="num" data-label="Q3 2026">2,573.9m</td><td class="num" data-label="YoY">+0.1%</td><td class="num" data-label="QoQ">&mdash;</td><td class="num" data-label="Q2 2026">&mdash;</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">Actuals from the company&rsquo;s third-quarter release. Employer payroll taxes on stock-based compensation were a further $23.1m; stock-based compensation was 13.8% of revenue, down from 14.6% a year ago despite the 85% dollar increase &mdash; dilution was contained on a share-count basis this quarter.</p>
+
+    <h3>The verdict bars &mdash; one source, as in the preview</h3>
+    <p>The October 30 preview judged this print against a single consensus source, and this verdict uses the same one. The correction flagged in the verdict section: the preview carried an EPS bar of $0.4072; the locked bar on that source&rsquo;s post-print page is $0.4061. The revenue bar is $2.18bn in both. Other providers&rsquo; bars are shown separately below and are never averaged into the verdict.</p>
+    <table class="data-table">
+      <thead><tr><th>Verdict source &mdash; MarketBeat</th><th class="num">Bar</th><th class="num">Actual</th><th class="num">Result</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Metric">Adjusted EPS</td><td class="num" data-label="Bar">$0.4061</td><td class="num" data-label="Actual">$0.44</td><td class="num accent" data-label="Result">Beat +$0.0339 (+8.3%)</td></tr>
+        <tr><td data-label="Metric">Revenue</td><td class="num" data-label="Bar">$2.18bn</td><td class="num" data-label="Actual">$2.313bn</td><td class="num accent" data-label="Result">Beat +$133m (+6.1%)</td></tr>
+      </tbody>
+    </table>
+    <table class="data-table">
+      <thead><tr><th>Other providers &mdash; separate, never averaged</th><th class="num">EPS bar</th><th class="num">Revenue bar</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Provider">Zacks</td><td class="num" data-label="EPS bar">$0.41</td><td class="num" data-label="Revenue bar">$2.17bn</td><td data-label="Note">Surprises of +7.32% and +6.54% on its own bars</td></tr>
+        <tr><td data-label="Provider">LSEG</td><td class="num" data-label="EPS bar">$0.41</td><td class="num" data-label="Revenue bar">$2.18bn</td><td data-label="Note">&mdash;</td></tr>
+        <tr><td data-label="Provider">FactSet</td><td class="num" data-label="EPS bar">$0.41 / $0.40</td><td class="num" data-label="Revenue bar">~$2.2bn</td><td data-label="Note">Conflict: $0.41 in one report, $0.40 in another &mdash; unresolved, not picked</td></tr>
+        <tr><td data-label="Provider">IBD (provider unnamed)</td><td class="num" data-label="EPS bar">$0.41</td><td class="num" data-label="Revenue bar">$2.177bn</td><td data-label="Note">&mdash;</td></tr>
+        <tr><td data-label="Provider">S&amp;P Global</td><td class="num" data-label="EPS bar">$0.41</td><td class="num" data-label="Revenue bar">$2.18bn</td><td data-label="Note">&mdash;</td></tr>
+        <tr><td data-label="Provider">Robinhood data</td><td class="num" data-label="EPS bar">$0.39</td><td class="num" data-label="Revenue bar">&mdash;</td><td data-label="Note">Outlier &mdash; kept separate</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">Provider names appear inside the consensus and valuation tables because they are the data &mdash; which provider&rsquo;s bar, which provider&rsquo;s multiple. Removing them would hide the conflicts shown above. Nowhere else in this report is a provider named in the text; all sources are collected in the appendix.</p>
+
+    <h3>Segments &mdash; commercial crosses over</h3>
+    <p>U.S. commercial revenue of $984m overtook U.S. government revenue of $953m for the first time in the company&rsquo;s history. Total U.S. revenue of $1,937m, up 119%, is now 84% of the total. International revenue &mdash; not broken out in the release, and derived here as total revenue less U.S. revenue &mdash; was $376m, up 26%: respectable anywhere else, and the clear laggard in this print. Concentration rose again.</p>
+    <table class="data-table">
+      <thead><tr><th>Segment (USD)</th><th class="num">Q3 2026</th><th class="num">Year on year</th><th class="num">Sequential</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Segment">U.S. commercial</td><td class="num" data-label="Q3 2026">$984m</td><td class="num" data-label="YoY">+148%</td><td class="num" data-label="QoQ">+29%</td></tr>
+        <tr><td data-label="Segment">U.S. government</td><td class="num" data-label="Q3 2026">$953m</td><td class="num" data-label="YoY">+96%</td><td class="num" data-label="QoQ">+18%</td></tr>
+        <tr><td data-label="Segment">Commercial, total *</td><td class="num" data-label="Q3 2026">$1,168m</td><td class="num" data-label="YoY">+113%</td><td class="num" data-label="QoQ">+24%</td></tr>
+        <tr><td data-label="Segment">Government, total *</td><td class="num" data-label="Q3 2026">$1,146m</td><td class="num" data-label="YoY">+81%</td><td class="num" data-label="QoQ">+16%</td></tr>
+        <tr><td data-label="Segment">International commercial *</td><td class="num" data-label="Q3 2026">$184m</td><td class="num" data-label="YoY">+21%</td><td class="num" data-label="QoQ">+1%</td></tr>
+        <tr><td data-label="Segment">International government *</td><td class="num" data-label="Q3 2026">$192m</td><td class="num" data-label="YoY">+31%</td><td class="num" data-label="QoQ">+6%</td></tr>
+        <tr class="total"><td data-label="Segment">Total revenue</td><td class="num" data-label="Q3 2026">$2,313.4m</td><td class="num" data-label="YoY">+96%</td><td class="num" data-label="QoQ">+20%</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">* Disclosed on the earnings call only, not in the release. International total of $376m is derived (total less U.S.); its +26% growth rate is as reported in financial press coverage of the print. Commercial and government revenue both crossed $1bn in a quarter for the first time, as did GAAP operating income.</p>
+
+    <h3>Bookings, backlog, and a disclosure that narrowed again</h3>
+    <p>The release itself discloses only one backlog metric: U.S. commercial remaining deal value, $6,517m, up 79% year on year but just 4% sequentially &mdash; against U.S. commercial revenue up 29% sequentially. The remaining backlog figures were given on the call only: total remaining deal value of $13.4bn, up 55% year on year and 2% sequentially; remaining performance obligation of $4.9bn, up 88% year on year and flat sequentially; net dollar retention of 165%, up 800 basis points from 157%; U.S. commercial customers of 686, up 29%; and average trailing-twelve-month revenue from the top 20 customers of $146m, up 76%.</p>
+    <p><strong>Total customer count was not disclosed anywhere</strong> &mdash; not in the release, not on the call. It is not carried forward from the second quarter&rsquo;s 1,049 in this report. One third-party tracker published a figure of 1,090 customers; it is that tracker&rsquo;s own metric, not a company actual, and it is not used here.</p>
+    <p>Cash needs one flag of its own. The release headline is $10.4bn of cash, cash equivalents and U.S. Treasury securities, up from $9.2bn. But the balance sheet&rsquo;s own lines &mdash; cash and equivalents of $3,619.4m plus marketable securities of $6,942.1m &mdash; sum to $10.56bn. The roughly $162m gap is not reconciled in the release. The likely explanation is that not all marketable securities are Treasuries, but the release does not say so, and this report does not assert it: $10.4bn is the company headline, and the gap is an open item for the quarterly filing.</p>
+  </section>
+
+  <section class="page" id="guidance">
+    <div class="section-kicker">03 &middot; Guidance</div>
+    <h2>Raised on every line. Nothing for 2027.</h2>
+    <p class="lead">Every guidance line moved up &mdash; fourth-quarter revenue and operating income are newly guided, and the full-year set was raised across revenue, U.S. commercial revenue, operating income, and free cash flow. No 2027 guidance was given in the release or on the call.</p>
+    <table class="data-table">
+      <thead><tr><th>Guidance (USD)</th><th class="num">Prior set (Q2)</th><th class="num">New set (Q3)</th><th>Change</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Guidance">Q4 2026 revenue</td><td class="num" data-label="Prior">&mdash;</td><td class="num" data-label="New">$2.649&ndash;2.653bn</td><td data-label="Change">New guide; ~$190m above the ~$2.46bn consensus</td></tr>
+        <tr><td data-label="Guidance">Q4 2026 adjusted operating income</td><td class="num" data-label="Prior">&mdash;</td><td class="num" data-label="New">$1.640&ndash;1.644bn</td><td data-label="Change">New guide; 62% margin at the midpoint</td></tr>
+        <tr><td data-label="Guidance">FY2026 revenue</td><td class="num" data-label="Prior">$8.150&ndash;8.158bn</td><td class="num" data-label="New">$8.530&ndash;8.534bn</td><td data-label="Change">Raised; midpoint +$378m &mdash; 91% growth</td></tr>
+        <tr><td data-label="Guidance">FY2026 U.S. commercial revenue</td><td class="num" data-label="Prior">&gt;$3.424bn (&ge;134%)</td><td class="num" data-label="New">&gt;$3.559bn (&ge;143%)</td><td data-label="Change">Raised; floor +$135m</td></tr>
+        <tr><td data-label="Guidance">FY2026 adjusted operating income</td><td class="num" data-label="Prior">$4.889&ndash;4.897bn</td><td class="num" data-label="New">$5.245&ndash;5.249bn</td><td data-label="Change">Raised; midpoint +$354m</td></tr>
+        <tr><td data-label="Guidance">FY2026 adjusted free cash flow</td><td class="num" data-label="Prior">$4.5&ndash;4.7bn</td><td class="num" data-label="New">$4.8&ndash;5.0bn</td><td data-label="Change">Raised; +$300m at both ends</td></tr>
+        <tr><td data-label="Guidance">GAAP operating &amp; net income</td><td class="num" data-label="Prior">Expected each quarter of 2026</td><td class="num" data-label="New">Reaffirmed</td><td data-label="Change">Maintained</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">A housekeeping correction from the preview&rsquo;s shorthand: the $1.292&ndash;1.296bn adjusted operating income figure quoted as prior guidance was the <em>third-quarter</em> guide, not the full-year guide. The third-quarter actual, $1,426.8m, beat it by $131&ndash;135m. Full-year prior guidance was $4.889&ndash;4.897bn, as shown above. Fourth-quarter adjusted operating income consensus is itself conflicted between trackers &mdash; $1.41bn on one, $1.43bn on another &mdash; and is kept out of the table for that reason; the guide clears either figure comfortably.</p>
+    <p>The fourth-quarter revenue guide implies growth of about 88% year on year at the midpoint &mdash; a modest deceleration from the third quarter&rsquo;s 96%, on a much larger base. The full-year free-cash-flow guide implies roughly $1.44&ndash;1.64bn of adjusted free cash flow in the fourth quarter alone, a step up from the third quarter&rsquo;s $1,216.1m; that arithmetic rests on a nine-month adjusted free-cash-flow sum of about $3,361m that remains to be verified against the quarterly filing, and is flagged as such in the final section.</p>
+  </section>
+
+  <section class="page" id="call">
+    <div class="section-kicker">04 &middot; The call</div>
+    <h2>Sovereign AI is the story. Bookings got one answer.</h2>
+    <p class="lead">Prepared remarks ran about 28 minutes and Q&amp;A took just three questions. The tone was expansive and combative &mdash; a civilisational framing of &ldquo;Sovereign AI&rdquo; &mdash; and the only defensive passage in the entire call was the explanation of the bookings shape.</p>
+    <p>Four voices carried the call: the chief executive, the chief technology officer, the chief financial officer, and the chief revenue officer. (No executive named Moore participated, despite the name appearing in pre-print briefings.) The five statements that matter:</p>
+
+    <div class="quote">&ldquo;In this quarter, our commercial business eclipsed our government business. In fact, the market value of that probably justifies our current valuation, given our aggregate business growing at 96%.&rdquo;<span>Chief Executive &mdash; on the commercial crossover and valuation</span></div>
+    <p>On the AI labs, the same speaker was dismissive of any rivalry: the U.S. market is &ldquo;insatiable,&rdquo; the labs are symbiotic rather than competitive at this point, and they are &ldquo;helping it explode.&rdquo; No analyst asked about valuation; the justification line above was volunteered.</p>
+
+    <div class="quote">&ldquo;We signed multiple eight-figure deals in the quarter that were shorter in duration than usual as customers rapidly adopted initial Sovereign AI capabilities&hellip; over time, we expect both the duration and size of these contracts to increase.&rdquo;<span>Chief Financial Officer &mdash; the bookings explanation</span></div>
+    <p>This is the sentence the fourth quarter will be judged against. The same remarks disclosed the call-only backlog figures &mdash; total remaining deal value, performance obligations, retention, and the U.S. commercial customer count &mdash; and attributed a 53% year-on-year rise in adjusted expense to technical hiring and AI-platform investment. No headcount figure was given.</p>
+
+    <div class="quote">&ldquo;The conceit that the labs have wrong is the belief that the atomic unit of the enterprise is the individual knowledge worker. It is not. The fundamental unit of the enterprise is the workflow&hellip; We are the diffusion layer, not just of choice, but of necessity.&rdquo;<span>Chief Technology Officer &mdash; the anti-lab thesis</span></div>
+    <p>The supporting evidence offered: a 30-billion-parameter post-trained model deployed in a Pacific Command exercise with &ldquo;superior task-specific performance&rdquo; to a frontier model of three trillion parameters, and a major insurer&rsquo;s underwriting workflow running inside the company&rsquo;s platform, cited from that lab partner&rsquo;s own regulatory filing.</p>
+
+    <div class="quote">&ldquo;We don&rsquo;t have even the bandwidth to serve that demand&hellip; the Sovereign AI revolution, we launched this last quarter&hellip; we&rsquo;re at the very beginning of this.&rdquo;<span>Chief Revenue Officer &mdash; demand and capacity</span></div>
+    <p>On government: U.S. government growth of 96% ran &ldquo;across civil and defense, with Maven as our foundational work&rdquo; &mdash; Maven now exceeds 100,000 users &mdash; alongside a prime agreement for eight TITAN systems for the Army. No contract value was attached to TITAN, and no shutdown, funding, or backlog question was raised in Q&amp;A.</p>
+
+    <p>The fifth thread was deterrence. Asked about the shareholder letter&rsquo;s framing, the chief executive described the products as &ldquo;built to avoid war, meaning the adversary knows that they will have such pain inflicted upon them that, in fact, it is not worth going to war,&rdquo; and closed by thanking retail investors. The technology chief added that deterrence &ldquo;is not something you accomplish by hope. You actually have to build it brick by brick.&rdquo;</p>
+
+    <h3>What Q&amp;A covered &mdash; and what it never touched</h3>
+    <p>Three questions in total: one on Sovereign AI bootcamps (Yorkville), one pressing the labs-competition question directly (D.A. Davidson), and one on the letter&rsquo;s anti-war framing (Deutsche Bank). No analyst pressed the contract-value deceleration &mdash; the bookings question was answered in prepared remarks and never tested. There was <strong>no Q&amp;A on valuation, none on buybacks or capital allocation, none on hiring numbers, and none on 2027</strong>. Capital allocation was not addressed anywhere on the call; a claim circulating in a podcast summary that the repurchase programme was terminated earlier this year is single-sourced and unverified, and is not treated as fact here.</p>
+
+    <h3>Names and conversions</h3>
+    <p>Customers named in prepared remarks, none with a contract value: Optum Serve, L3Harris (a fine-tuned open model beating a frontier model in under 48 hours at 95% lower cost), NVIDIA, AIG, McCarthy Building Companies (30,000 hours a year saved), Tampa General, the FAA, and the U.S. Army. The pilot-to-production conversions were given without names: an industrial materials company from a ~$3m pilot to $29m of annual contract value; a global athletic company from $1.6m to ~$21m; a home-appliance company from $1m to $3m to $15m; an apparel company from $2.5m to $11.5m. Those four conversions are the bull case for the bookings explanation &mdash; short first deals that expand fast.</p>
+    <p>Europe was explicitly ducked: &ldquo;You see it in Europe, which I spent half my life in. At this point, we should kind of avoid talking about it because of what&rsquo;s going on.&rdquo; No European deal was disclosed, and international growth was not a Q&amp;A topic. The &ldquo;sovereign&rdquo; deals named were U.S. customers and a Pacific Command exercise.</p>
+    <div class="note">
+      <p><strong>On the shareholder letter:</strong> the letter dated November 2, 2026 exists and is listed among the company&rsquo;s published letters, but its full text could not be retrieved for this report. Everything attributed to it here comes through the release, the call, or press quotation of it &mdash; including the &ldquo;most dramatic dichotomy between haves and have nots&rdquo; line in the release and the anti-war passage put to management in Q&amp;A. No letter-only disclosure is relied on anywhere in this report.</p>
+    </div>
+  </section>
+
+  <section class="page" id="reaction">
+    <div class="section-kicker">05 &middot; Market reaction</div>
+    <h2>Down on the day. Up, then down, then halfway back after hours.</h2>
+    <p class="lead">The regular session and the after-hours session were different trades, and this report keeps them strictly separate. &ldquo;Lower after hours&rdquo; is true of the late-evening snapshots only &mdash; the immediate reaction to the print was a rise.</p>
+
+    <h3>The regular session &mdash; before the release</h3>
+    <table class="data-table">
+      <thead><tr><th>November 2, regular session</th><th class="num">Level</th><th class="num">Change</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Item">Close</td><td class="num" data-label="Level">$178.34</td><td class="num down" data-label="Change">&minus;$5.77 (&minus;3.13%)</td></tr>
+        <tr><td data-label="Item">Open / high / low</td><td class="num" data-label="Level">$186.52 / $187.55 / $178.13</td><td class="num" data-label="Change">Prior close $184.11 (Oct 30)</td></tr>
+        <tr><td data-label="Item">Volume</td><td class="num" data-label="Level">34,351,190 shares</td><td class="num" data-label="Change">See note</td></tr>
+        <tr><td data-label="Item">Nasdaq Composite</td><td class="num" data-label="Level">&mdash;</td><td class="num down" data-label="Change">&minus;1.07%</td></tr>
+        <tr><td data-label="Item">S&amp;P 500</td><td class="num" data-label="Level">&mdash;</td><td class="num down" data-label="Change">&minus;0.51%</td></tr>
+        <tr><td data-label="Item">Dow Jones Industrial Average</td><td class="num" data-label="Level">&mdash;</td><td class="num accent" data-label="Change">+0.41%</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">The regular-session fall preceded the release: it was a broad technology and AI selloff day, not a reaction to the print. Volume is shown as 34,351,190 shares in the price-history record used here; published counts elsewhere ranged from 31.8m to 36.2m at different snapshots &mdash; the variance is flagged, not resolved.</p>
+
+    <h3>After hours &mdash; snapshots, each with its time</h3>
+    <table class="data-table">
+      <thead><tr><th>Time (ET, Nov 2)</th><th class="num">Price</th><th class="num">Vs $178.34 close</th><th>Snapshot source</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Time">~4:40 PM</td><td class="num" data-label="Price">$180.77</td><td class="num accent" data-label="Vs close">+1.4%</td><td data-label="Source">Dow Jones Newswires</td></tr>
+        <tr><td data-label="Time">4:41 PM</td><td class="num" data-label="Price">$181.32</td><td class="num accent" data-label="Vs close">+1.67%</td><td data-label="Source">StockAnalysis</td></tr>
+        <tr><td data-label="Time">4:54 PM</td><td class="num" data-label="Price">$180.03</td><td class="num accent" data-label="Vs close">+0.9%</td><td data-label="Source">Robinhood data, via wire</td></tr>
+        <tr><td data-label="Time">5:07 PM</td><td class="num" data-label="Price">~$180.69</td><td class="num accent" data-label="Vs close">+1.32%</td><td data-label="Source">Closing-look newsletter</td></tr>
+        <tr><td data-label="Time">5:41 PM</td><td class="num" data-label="Price">$170.84</td><td class="num down" data-label="Vs close">&minus;4.21%</td><td data-label="Source">StockAnalysis</td></tr>
+        <tr><td data-label="Time">Untimestamped</td><td class="num" data-label="Price">$171.66</td><td class="num down" data-label="Vs close">&minus;3.8%</td><td data-label="Source">Barron&rsquo;s</td></tr>
+        <tr><td data-label="Time">6:20 PM</td><td class="num" data-label="Price">$173.81</td><td class="num down" data-label="Vs close">&minus;2.54%</td><td data-label="Source">Finnhub</td></tr>
+        <tr><td data-label="Time">6:22&ndash;6:24 PM</td><td class="num" data-label="Price">$173.98</td><td class="num down" data-label="Vs close">&minus;2.45%</td><td data-label="Source">Finnhub</td></tr>
+      </tbody>
+    </table>
+    <p>The shape: an initial pop that partly recovered the regular-session fall, a fade through and after the call to the $170.84&ndash;$171.66 zone, then a partial recovery by about 6:20 PM. At the $170.84 low the stock was 7.2% below the October 30 close &mdash; and still <strong>above</strong> the $161&ndash;166 starter zone, and well above the &le;$150 deep tranche. No snapshot reached either level. Your ~$172 fill sits inside this evening&rsquo;s range, below every snapshot taken before 5:41 PM and above the low.</p>
+    <p>Contemporaneous coverage attributes the fade to bookings &mdash; contract-value and remaining-deal-value deceleration &mdash; not to guidance or margin, neither of which can explain it on the numbers. One further observation from the coverage: the revenue surprise, at +6.1% against the verdict bar, was slightly narrower in percentage terms than the second quarter&rsquo;s, though similar in dollars.</p>
+
+    <h3>The implied move, and what actually happened</h3>
+    <p>There is no single implied-move figure: pre-print estimates ranged from 11.5% to 13.3% depending on source and method (11.65%, &plusmn;12.1%, and &plusmn;12.7% in between), against an average absolute post-earnings swing of about 12.8% over the prior four reports. The largest deviation from the close seen by this report&rsquo;s cutoff was &minus;4.21% &mdash; well inside what options had priced. The realised earnings move is only settled at the November 3 close, which had not happened at the cutoff.</p>
+
+    <h3>Peers, same evening (6:20 PM snapshots)</h3>
+    <table class="data-table">
+      <thead><tr><th>Peer</th><th class="num">Regular close</th><th class="num">After hours</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Peer">Apple</td><td class="num" data-label="Close">$338.32 (&minus;1.83%)</td><td class="num down" data-label="After hours">$330.12 (&minus;2.42%)</td><td data-label="Note">Also reported after the bell, and also beat</td></tr>
+        <tr><td data-label="Peer">NVIDIA</td><td class="num" data-label="Close">$202.06 (&minus;1.26%)</td><td class="num accent" data-label="After hours">+0.95%</td><td data-label="Note">&mdash;</td></tr>
+        <tr><td data-label="Peer">Microsoft</td><td class="num" data-label="Close">$507.12 (&minus;2.83%)</td><td class="num accent" data-label="After hours">+0.34%</td><td data-label="Note">&mdash;</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">Peer figures are after-hours snapshots, not closes. No same-evening earnings reaction for other software peers was found by the cutoff.</p>
+
+    <div class="chart">
+      <div class="chart-title"><h3>One year of closes, and the levels that matter</h3><p>Daily closes, Oct 2025 &ndash; Nov 2, 2026</p></div>
+      <svg viewBox="0 0 960 360" role="img" aria-label="Line chart of Palantir daily closing prices over one year, ending at the $178.34 close on November 2, 2026, with the $200 target, the $161 to $166 starter zone, and the $150 deep tranche marked">
+        <rect x="8" y="165.0" width="944" height="12.8" fill="var(--zone)"/>
+        <line x1="8" y1="270" x2="952" y2="270" stroke="var(--grid)" stroke-width="1"/>
+        <line x1="8" y1="206" x2="952" y2="206" stroke="var(--grid)" stroke-width="1"/>
+        <line x1="8" y1="142" x2="952" y2="142" stroke="var(--grid)" stroke-width="1"/>
+        <line x1="8" y1="78" x2="952" y2="78" stroke="var(--teal)" stroke-width="1.4" stroke-dasharray="7 5"/>
+        <path d="M8.0,125.1 L11.6,125.3 L15.3,140.7 L18.9,128.0 L22.5,117.3 L26.2,105.7 L29.8,104.6 L33.4,81.0 L37.0,92.0 L40.7,76.8 L44.3,59.6 L47.9,101.7 L51.6,109.0 L55.2,141.9 L58.8,134.5 L62.5,94.4 L66.1,101.1 L69.7,118.5 L73.4,149.3 L77.0,144.5 L80.6,151.6 L84.2,161.6 L87.9,166.5 L91.5,191.3 L95.1,193.6 L98.8,174.6 L102.4,171.3 L106.0,165.6 L109.7,158.8 L113.3,161.2 L116.9,153.0 L120.6,139.2 L124.2,134.5 L127.8,124.7 L131.4,125.4 L135.1,124.5 L138.7,109.0 L142.3,109.9 L146.0,120.1 L149.6,120.9 L153.2,109.4 L156.9,136.1 L160.5,114.6 L164.1,94.9 L167.8,93.4 L171.4,93.0 L175.0,92.9 L178.6,106.9 L182.3,118.5 L185.9,127.0 L189.5,135.0 L193.2,160.3 L196.8,144.5 L200.4,129.9 L204.1,124.9 L207.7,137.2 L211.3,135.6 L215.0,130.7 L218.6,131.9 L222.2,133.3 L225.8,136.7 L229.5,152.3 L233.1,158.6 L236.7,166.8 L240.4,165.3 L244.0,155.8 L247.6,161.3 L251.3,165.8 L254.9,187.2 L258.5,201.2 L262.2,214.7 L265.8,211.7 L269.4,185.8 L273.0,232.8 L276.7,257.2 L280.3,242.1 L283.9,224.2 L287.6,232.9 L291.2,242.7 L294.8,259.4 L298.5,253.6 L302.1,249.5 L305.7,243.4 L309.4,244.7 L313.0,243.8 L316.6,255.7 L320.2,260.2 L323.9,246.5 L327.5,242.0 L331.1,238.8 L334.8,218.4 L338.4,213.1 L342.0,197.8 L345.7,199.2 L349.3,187.7 L352.9,189.5 L356.6,203.1 L360.2,201.9 L363.8,197.0 L367.4,203.6 L371.1,199.0 L374.7,193.0 L378.3,198.9 L382.0,191.5 L385.6,204.3 L389.2,178.2 L392.9,193.8 L396.5,193.3 L400.1,212.2 L403.8,223.8 L407.4,237.9 L411.0,215.5 L414.6,215.0 L418.3,209.9 L421.9,211.3 L425.5,205.8 L429.2,229.7 L432.8,255.9 L436.4,262.2 L440.1,251.1 L443.7,242.6 L447.3,226.1 L451.0,224.5 L454.6,215.2 L458.2,216.5 L461.8,216.3 L465.5,199.3 L469.1,227.6 L472.7,223.7 L476.4,223.7 L480.0,228.6 L483.6,236.8 L487.3,233.9 L490.9,221.2 L494.5,216.2 L498.2,242.1 L501.8,247.5 L505.4,239.2 L509.0,237.2 L512.7,239.6 L516.3,241.8 L519.9,257.1 L523.6,247.7 L527.2,247.0 L530.8,244.0 L534.5,243.7 L538.1,238.9 L541.7,238.2 L545.4,239.6 L549.0,240.3 L552.6,250.8 L556.2,223.0 L559.9,189.3 L563.5,178.7 L567.1,200.4 L570.8,226.0 L574.4,227.2 L578.0,243.0 L581.7,240.6 L585.3,251.9 L588.9,256.7 L592.6,254.4 L596.2,262.3 L599.8,245.1 L603.4,248.9 L607.1,255.6 L610.7,261.1 L614.3,284.1 L618.0,291.2 L621.6,299.4 L625.2,315.4 L628.9,300.9 L632.5,293.8 L636.1,291.3 L639.8,268.1 L643.4,259.0 L647.0,250.7 L650.6,246.0 L654.3,251.5 L657.9,259.7 L661.5,265.4 L665.2,257.1 L668.8,247.7 L672.4,247.6 L676.1,245.8 L679.7,251.1 L683.3,244.8 L687.0,250.4 L690.6,271.1 L694.2,274.2 L697.8,275.3 L701.5,253.3 L705.1,273.8 L708.7,275.1 L712.4,277.0 L716.0,275.0 L719.6,268.3 L723.3,173.6 L726.9,184.4 L730.5,190.8 L734.2,149.7 L737.8,141.4 L741.4,142.2 L745.0,152.1 L748.7,131.7 L752.3,144.5 L755.9,148.3 L759.6,150.9 L763.2,141.5 L766.8,144.7 L770.5,129.4 L774.1,139.7 L777.7,147.8 L781.4,135.6 L785.0,114.0 L788.6,113.1 L792.2,112.9 L795.9,129.4 L799.5,156.2 L803.1,122.7 L806.8,143.7 L810.4,154.0 L814.0,156.0 L817.7,165.4 L821.3,161.9 L824.9,146.3 L828.6,148.2 L832.2,143.7 L835.8,138.8 L839.4,135.2 L843.1,121.3 L846.7,116.4 L850.3,99.0 L854.0,97.0 L857.6,104.4 L861.2,110.1 L864.9,111.4 L868.5,111.2 L872.1,103.5 L875.8,106.8 L879.4,105.1 L883.0,98.3 L886.6,93.1 L890.3,81.1 L893.9,54.8 L897.5,55.0 L901.2,55.8 L904.8,75.5 L908.4,76.7 L912.1,113.8 L915.7,93.0 L919.3,96.9 L923.0,73.6 L926.6,87.8 L930.2,86.3 L933.8,81.0 L937.5,81.3 L941.1,86.2 L944.7,87.2 L948.4,118.7 L952.0,133.4" fill="none" stroke="var(--blue)" stroke-width="1.8"/>
+        <circle cx="952" cy="133.4" r="4.5" fill="var(--red)"/>
+        <text class="lbl" x="946" y="70" text-anchor="end">Target $200</text>
+        <text class="lbl" x="946" y="158" text-anchor="end">Starter zone $161&ndash;166</text>
+        <text class="lbl" x="946" y="199" text-anchor="end">Deep tranche &le;$150</text>
+        <text class="lbl" x="940" y="124" text-anchor="end">$178.34 &middot; Nov 2 close</text>
+        <text class="axis" x="8" y="352">Oct 2025</text>
+        <text class="axis" x="193" y="352">Jan</text>
+        <text class="axis" x="335" y="352">Mar</text>
+        <text class="axis" x="491" y="352">May</text>
+        <text class="axis" x="640" y="352">Jul</text>
+        <text class="axis" x="796" y="352">Sep</text>
+        <text class="axis" x="952" y="352" text-anchor="end">Nov 2026</text>
+        <text class="axis" x="12" y="66">$200</text>
+        <text class="axis" x="12" y="130">$175</text>
+        <text class="axis" x="12" y="258">$125</text>
+      </svg>
+      <p class="table-note" style="margin-bottom:0">The 52-week high is $212.94 and the 200-day average $153.57: every price in this report sits above the long-term average and well below the high. The after-hours low of $170.84 left the stock 19.7% below that high &mdash; a fifth of the de-rating the bears demand has already happened on price alone.</p>
+    </div>
+  </section>
+
+  <section class="page" id="valuation">
+    <div class="section-kicker">06 &middot; Valuation</div>
+    <h2>Cheaper than Friday. Still extreme.</h2>
+    <p class="lead">The multiple barely de-rated: it fell almost exactly in line with the price. One provider is used for every multiple in this section, on that provider&rsquo;s pre-print denominators &mdash; trailing revenue of $6.16bn, EBITDA of $2.66bn, free cash flow of $3.36bn, net cash of $9.20bn, and 2.40bn shares outstanding &mdash; because its tables had not yet restated for the quarter at the time they were read.</p>
+    <table class="data-table">
+      <thead><tr><th>StockAnalysis (sole provider)</th><th class="num">Oct 30 levels *</th><th class="num">At $178.34 close</th><th class="num">At $170.84 &dagger;</th><th class="num">At $173.81 &dagger;</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Multiple">Forward P/E</td><td class="num" data-label="Oct 30">96.8&times;</td><td class="num" data-label="Close">96.84&times;</td><td class="num" data-label="At $170.84">~92.8&times;</td><td class="num" data-label="At $173.81">~94.4&times;</td></tr>
+        <tr><td data-label="Multiple">Price / sales, trailing</td><td class="num" data-label="Oct 30">&mdash;</td><td class="num" data-label="Close">69.69&times;</td><td class="num" data-label="At $170.84">~66.8&times;</td><td class="num" data-label="At $173.81">~67.9&times;</td></tr>
+        <tr><td data-label="Multiple">Price / sales, forward</td><td class="num" data-label="Oct 30">43.5&times;</td><td class="num" data-label="Close">42.14&times;</td><td class="num" data-label="At $170.84">~40.4&times;</td><td class="num" data-label="At $173.81">~41.1&times;</td></tr>
+        <tr><td data-label="Multiple">EV / EBITDA</td><td class="num" data-label="Oct 30">162.7&times;</td><td class="num" data-label="Close">157.66&times;</td><td class="num" data-label="At $170.84">~150.9&times;</td><td class="num" data-label="At $173.81">~153.6&times;</td></tr>
+        <tr><td data-label="Multiple">Trailing P/E</td><td class="num" data-label="Oct 30">&mdash;</td><td class="num" data-label="Close">152.53&times;</td><td class="num" data-label="At $170.84">~146.1&times;</td><td class="num" data-label="At $173.81">~148.7&times;</td></tr>
+        <tr><td data-label="Multiple">Free-cash-flow yield, trailing</td><td class="num" data-label="Oct 30">0.76%</td><td class="num" data-label="Close">0.78%</td><td class="num" data-label="At $170.84">~0.82%</td><td class="num" data-label="At $173.81">~0.80%</td></tr>
+        <tr><td data-label="Multiple">Market capitalisation</td><td class="num" data-label="Oct 30">&mdash;</td><td class="num" data-label="Close">$428.56bn</td><td class="num" data-label="At $170.84">~$410.5bn</td><td class="num" data-label="At $173.81">~$417.7bn</td></tr>
+        <tr><td data-label="Multiple">Enterprise value</td><td class="num" data-label="Oct 30">&mdash;</td><td class="num" data-label="Close">$419.36bn</td><td class="num" data-label="At $170.84">~$401.3bn</td><td class="num" data-label="At $173.81">~$408.5bn</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">* October 30 levels as carried in the preview; the provider behind them was not stated, so the comparison is indicative, not like-for-like. &dagger; After-hours columns are arithmetic price-scalings of the close multiples and denominators, calculated for this report &mdash; they are <strong>not</strong> provider-published figures.</p>
+    <p>Read the October comparison carefully. Forward price/sales (43.5&times; to 42.14&times;) and EV/EBITDA (162.7&times; to 157.66&times;) each fell about 3.1% &mdash; almost exactly the price fall from $184.11 to $178.34 &mdash; which means the underlying forward estimates behind them did not move. Forward P/E, by contrast, was flat (96.8&times; to 96.84&times;) despite the lower price, which arithmetically implies a lower forward earnings denominator in the newer snapshot. Because the October figure&rsquo;s provider is unstated, that flatness must not be read as estimates rising; it is a warning about mixing vintages, not a signal.</p>
+    <h3>Forward P/E is provider-dependent &mdash; do not mix</h3>
+    <table class="data-table">
+      <thead><tr><th>Provider</th><th class="num">Forward P/E</th><th>Basis</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Provider">Barron&rsquo;s</td><td class="num" data-label="Forward P/E">81&times;</td><td data-label="Basis">Projected next-twelve-months earnings, pre-print</td></tr>
+        <tr><td data-label="Provider">LSEG</td><td class="num" data-label="Forward P/E">83.38&times;</td><td data-label="Basis">12-month forward, pre-print</td></tr>
+        <tr><td data-label="Provider">StockAnalysis</td><td class="num" data-label="Forward P/E">96.84&times;</td><td data-label="Basis">At the November 2 close &mdash; the basis used throughout this report</td></tr>
+      </tbody>
+    </table>
+    <p>The spread is different estimate sets, not data errors. Two further yardsticks, both calculations rather than provider figures: on the quarter&rsquo;s diluted share count (2,573.9m) rather than shares outstanding, market capitalisation at the close would be about $459.0bn; and the raised full-year adjusted free-cash-flow guide, at its $4.9bn midpoint, is a forward yield of only about 1.2% on the after-hours market value &mdash; below 1.2% even after the raise. No verified series for the stock&rsquo;s own historical multiple range was available to this report, so no claim is made about where today&rsquo;s multiples sit against its own history; on price alone, the shares are 11% below their level of a year ago on one measure and the after-hours low sits 19.7% under the 52-week high.</p>
+  </section>
+
+  <section class="page" id="analysts">
+    <div class="section-kicker">07 &middot; Analyst actions</div>
+    <h2>No post-print actions by the cutoff.</h2>
+    <p class="lead">Research cutoff: about 6:24 PM ET, November 2, 2026. By that time, <strong>no rating or price-target change in reaction to the print had been published</strong>. Most firms publish on the Tuesday morning after a Monday-evening print; anything that appears overnight is outside this report and should be re-checked on November 3.</p>
+    <p>The single post-print analyst note found is commentary, not an action: a sell-side analyst at the firm shown below was quoted in post-print coverage calling U.S. commercial bookings growth of 11% &ldquo;the lowest since 2023.&rdquo; No rating or target change was stated; the firm&rsquo;s standing rating is Outperform, with no price target. Every action in the table is <strong>pre-print</strong> and must not be read as a reaction to the quarter.</p>
+    <table class="data-table">
+      <thead><tr><th>Date</th><th>Firm / analyst</th><th>Action</th><th>Rating</th><th class="num">Target</th><th>Timing</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Date">Nov 2</td><td data-label="Firm">William Blair / DiPalma</td><td data-label="Action">Bookings commentary only</td><td data-label="Rating">No change stated (standing: Outperform)</td><td class="num" data-label="Target">None</td><td data-label="Timing"><strong>Post-print</strong></td></tr>
+        <tr><td data-label="Date">Nov 2, pre-market</td><td data-label="Firm">Cantor Fitzgerald / Blakey</td><td data-label="Action">Target raised</td><td data-label="Rating">Neutral, maintained</td><td class="num" data-label="Target">$156 &rarr; $207</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Date">Oct 29</td><td data-label="Firm">Oppenheimer / Singh</td><td data-label="Action">Reiterated, target raised</td><td data-label="Rating">Outperform</td><td class="num" data-label="Target">$200 &rarr; $235</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Date">Oct 29</td><td data-label="Firm">JPMorgan / Essex</td><td data-label="Action">Initiated coverage</td><td data-label="Rating">Overweight</td><td class="num" data-label="Target">$262 (Dec 2027)</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Date">Oct 29</td><td data-label="Firm">Barclays / Valentini</td><td data-label="Action">Reiterated</td><td data-label="Rating">Buy</td><td class="num" data-label="Target">$265</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Date">Oct 27</td><td data-label="Firm">Rosenblatt / McPeake</td><td data-label="Action">Target raised</td><td data-label="Rating">Buy</td><td class="num" data-label="Target">$225 &rarr; $260</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Date">Oct 23</td><td data-label="Firm">Piper Sandler</td><td data-label="Action">Maintained</td><td data-label="Rating">Overweight</td><td class="num" data-label="Target">$231</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Date">Oct 22&ndash;23</td><td data-label="Firm">Citigroup</td><td data-label="Action">Maintained, target raised</td><td data-label="Rating">Buy</td><td class="num" data-label="Target">$245 &rarr; $250</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Date">Pre-print</td><td data-label="Firm">Baird / Power</td><td data-label="Action">Reiterated</td><td data-label="Rating">Outperform</td><td class="num" data-label="Target">$250</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Date">Pre-print</td><td data-label="Firm">RBC Capital / Jaluria</td><td data-label="Action">Reiterated</td><td data-label="Rating">Sell / Underperform</td><td class="num" data-label="Target">$90</td><td data-label="Timing">Pre-print</td></tr>
+        <tr><td data-label="Date">Pre-print</td><td data-label="Firm">Jefferies</td><td data-label="Action">&mdash;</td><td data-label="Rating">&mdash;</td><td class="num" data-label="Target">$80</td><td data-label="Timing">Pre-print</td></tr>
+      </tbody>
+    </table>
+    <p class="table-note">Pre-print tracker snapshots &mdash; not post-print consensus, and reported separately because the trackers disagree on universe and vintage: a target range of $80&ndash;$265 across about 17 attributed targets; one tracker&rsquo;s consensus of $210.30 with a Moderate Buy stance; another&rsquo;s average of $212.50 across 32 analysts; a third&rsquo;s average between $218.95 and $221.27. This desk&rsquo;s $200 target sits below all three averages.</p>
+  </section>
+
+  <section class="page" id="risks">
+    <div class="section-kicker">08 &middot; Risks &amp; what changed</div>
+    <h2>The swing factor moved from revenue to bookings.</h2>
+    <p class="lead">Against the October 30 update: momentum strengthened, margins held at a record level rather than expanding, cash margin thinned, concentration rose, dilution stayed contained &mdash; and bookings durability weakened. That last item is the new centre of the thesis.</p>
+    <ul class="plainlist">
+      <li><strong>Momentum &mdash; strengthened.</strong> Growth accelerated for a thirteenth straight quarter to a record 96%; U.S. commercial crossed U.S. government for the first time; commercial revenue, government revenue, and GAAP operating income each crossed $1bn in a quarter for the first time; the fourth-quarter guide implies a further 88% growth.</li>
+      <li><strong>Margin trajectory &mdash; flat at a record level.</strong> GAAP 47% and adjusted 62% are unchanged sequentially; the Rule of 40&rsquo;s +3 points came entirely from growth, against +10 points in the second quarter. Adjusted expense rose 53% year on year on hiring and platform investment &mdash; the cost line to watch.</li>
+      <li><strong>Bookings durability &mdash; weakened; the key swing factor.</strong> Contract value +6% year on year, U.S. commercial contract value +11% against +153% in the second quarter, U.S. commercial remaining deal value +4% sequentially against revenue +29%, performance obligations flat sequentially. Shorter Sovereign AI durations explain part of it; the burden of proof for the fourth quarter is now on signings, not revenue.</li>
+      <li><strong>Cash generation &mdash; strong dollars, thinner margin.</strong> Adjusted free cash flow of $1,216.1m is flat against the second quarter&rsquo;s $1,220m, and its margin fell from 63% to 53%. The cash headline rose to $10.4bn &mdash; subject to the unreconciled balance-sheet gap flagged in the print section.</li>
+      <li><strong>Concentration &mdash; up.</strong> The U.S. is 84% of revenue; international growth of 26% against 119% for the U.S. widens the question of how well the model travels, and Europe was not addressed on the call.</li>
+      <li><strong>Dilution &mdash; contained this quarter.</strong> Stock-based compensation of $318.9m rose 85% in dollars but fell as a share of revenue, to 13.8%; the diluted share count rose just 0.1% year on year. The dilution story is compensation intensity, not share-count growth.</li>
+    </ul>
+
+    <div class="two-col">
+      <div>
+        <h3>The bear case</h3>
+        <p>Third-quarter optics may be peak optics: revenue is converting a backlog signed in a longer-duration era while new signing has stalled &mdash; contract value up 6%, U.S. commercial signings up 11%, remaining deal value up 4% sequentially and performance obligations flat, against 29% sequential U.S. commercial revenue growth &mdash; so growth must decelerate sharply unless Sovereign AI deals lengthen and enlarge as management promises. International growth of 26% suggests the model does not travel as easily as the U.S. narrative implies. At roughly 93&ndash;97&times; forward earnings depending on provider, about 40&ndash;42&times; forward sales, and a sub-1% trailing free-cash-flow yield, with compensation running at $319m a quarter, expenses up 53%, and the labs hiring the company&rsquo;s forward-deployed engineers to replicate its application layer more cheaply, any fourth-quarter bookings disappointment &mdash; or a broader AI-multiple de-rating &mdash; leaves no valuation cushion. The fade to $170.84 on a clean beat-and-raise is the market pricing exactly that asymmetry.</p>
+      </div>
+      <div>
+        <h3>The bull case</h3>
+        <p>Sovereign AI may be a step-change rather than a cycle: 96% growth with 62% adjusted operating margins, 53% adjusted free-cash-flow margins, retention at 165%, top-20 customer spend up 76%, U.S. commercial customers up 29% with revenue per customer up 88%, and a fourth-quarter guide implying 88% growth &mdash; while customers demonstrably keep their data and models sovereign in a way the frontier labs structurally cannot offer, and the government moat deepens with Maven above 100,000 users and the TITAN award. Bookings softness reads as a duration artefact of a one-quarter-old motion converting pilots to production in weeks &mdash; four pilot-to-$11.5&ndash;29m conversions were disclosed on the call &mdash; trailing U.S. commercial contract value is still up 62%, and total remaining deal value is still up 55% at $13.4bn. On that reading, the multiple, however extreme optically, is falling fast against fundamentals, and the slide from the $212.94 high to $170.84 has already done much of the de-rating work.</p>
+      </div>
+    </div>
+
+    <h3>Three numbers to watch into the fourth quarter</h3>
+    <ol class="watchlist">
+      <li><span class="n">1</span><div><strong>U.S. commercial signings and deal value, sequentially &mdash; plus duration</strong><span>Third quarter: contract value +11% year on year, remaining deal value +4% sequentially. The replenishment test: if signings stay in single digits while revenue grows near 90%, the engine is consuming backlog rather than refilling it.</span></div></li>
+      <li><span class="n">2</span><div><strong>Fourth-quarter revenue against the $2.649&ndash;2.653bn guide &mdash; and international growth</strong><span>The guide implies +88% year on year. A print at the guide with international still growing in the mid-20s would entrench the U.S.-concentration question rather than answer it.</span></div></li>
+      <li><span class="n">3</span><div><strong>Performance obligations and retention &mdash; against expense and compensation</strong><span>Third quarter: obligations flat sequentially at $4.9bn, retention 165%, adjusted expense $887m (+53%), compensation $318.9m. Whether non-cancellable backlog and retention keep pace with the expense ramp being funded for Sovereign AI hiring.</span></div></li>
+    </ol>
+
+    <h3>What could not be confirmed by the cutoff</h3>
+    <ul class="plainlist">
+      <li><strong>Post-print analyst actions after ~6:24 PM ET</strong> &mdash; none found by the cutoff; most firms publish Tuesday morning. Re-check November 3.</li>
+      <li><strong>The November 3 reaction</strong> &mdash; the realised earnings move settles only at the November 3 close.</li>
+      <li><strong>The shareholder letter&rsquo;s full text</strong> &mdash; listed but not retrievable for this report; relied on only via the release, the call, and press quotation.</li>
+      <li><strong>The earnings 8-K exhibit</strong> &mdash; actuals here are from the company&rsquo;s press release; no filing-only disclosure is claimed.</li>
+      <li><strong>The quarterly presentation and 10-Q</strong> &mdash; not yet available. Open items that depend on them: the definition behind the $10.4bn vs $10.56bn cash gap; the nine-month adjusted free-cash-flow sum behind the implied fourth-quarter cash figure; and total customer count, if it is shown there at all.</li>
+      <li><strong>One consensus conflict</strong> &mdash; a major provider&rsquo;s EPS bar is reported as $0.41 in one outlet and $0.40 in another; unresolved, and it does not touch the verdict source.</li>
+      <li><strong>Buyback status</strong> &mdash; not addressed on the call; a podcast claim of an earlier termination is single-sourced and unverified.</li>
+      <li><strong>Volume</strong> &mdash; published counts for November 2 ranged from 31.8m to 36.2m; the 34,351,190 figure used here is from the price-history record.</li>
+      <li><strong>Headcount</strong> &mdash; no third-quarter figure was disclosed in the release or the call.</li>
+      <li><strong>Your position</strong> &mdash; 4 shares at around $172 after hours are recorded from your own report of the trade, pending confirmation in the next portfolio export.</li>
+    </ul>
+    <p class="disclosure">This report is an internal research document prepared for the portfolio manager&rsquo;s own decision-making. It is not investment advice to any other person, and it is not an offer or solicitation. Prices are as labelled by session and time; after-hours prices are snapshots, not closes. Figures are in USD throughout.</p>
+  </section>
+
+  <section class="page appendix" id="sources">
+    <div class="section-kicker">Appendix</div>
+    <h2>Sources</h2>
+    <p class="muted">Sources only, collected here in full. Research cutoff approximately 6:24 PM ET, November 2, 2026. Actuals are from the primary release; call-only figures are from the full call transcript; prices and multiples are from the market-data sources listed, each labelled in the body by session and time.</p>
+    <ol class="source-list">
+      <li><span><strong>Palantir Q3 2026 earnings release</strong> (BusinessWire, November 2, 2026) &mdash; all release actuals, guidance, and financial statements.<br><a href="https://www.businesswire.com/news/home/20261101396214/en/Palantir-Reports-Q3-2026-U.S.-Comm-Revenue-Growth-of-148-YY-and-Revenue-Growth-of-96-YY-Raises-FY-2026-Revenue-Guidance-to-91-YY-Growth-and-U.S.-Comm-Revenue-Guidance-to-143-YY-Crushing-Consensus-Expectations">businesswire.com/news/home/20261101396214</a></span></li>
+      <li><span><strong>Palantir Q3 2026 earnings call transcript and earnings page</strong> (MarketBeat) &mdash; full transcript; call-only disclosures; consensus figures for the verdict.<br><a href="https://www.marketbeat.com/earnings/reports/2026-11-02-palantir-technologies-inc-stock/">marketbeat.com/earnings/reports/2026-11-02-palantir-technologies-inc-stock</a></span></li>
+      <li><span><strong>Price history file</strong> (fetched November 2, 2026, 23:23 UTC) &mdash; daily closes charted in the market-reaction section; November 2 close of $178.34; final intraday bar $173.81.</span></li>
+      <li><span><strong>Finnhub market-data pages</strong> (snapshots 6:20&ndash;6:24 PM ET, November 2) &mdash; regular-session open/high/low/close; after-hours $173.81&ndash;$173.98; peer closes and after-hours snapshots.<br><a href="https://finnhub.io/?q=%22PLTR%22">finnhub.io/?q=&quot;PLTR&quot;</a> &middot; <a href="https://finnhub.io/?q=%22NVDA%22">NVDA</a> &middot; <a href="https://finnhub.io/?q=%22MSFT%22">MSFT</a> &middot; <a href="https://finnhub.io/?q=%22AAPL%22">AAPL</a></span></li>
+      <li><span><strong>StockAnalysis &mdash; PLTR statistics</strong> (read November 2, 2026) &mdash; sole valuation provider; close and after-hours snapshots; trailing denominators.<br><a href="https://stockanalysis.com/stocks/pltr/statistics/">stockanalysis.com/stocks/pltr/statistics</a></span></li>
+      <li><span><strong>StockAnalysis &mdash; PLTR price history</strong> &mdash; November 2 volume of 34,351,190 shares.<br><a href="https://StockAnalysis.com/stocks/pltr/history/">stockanalysis.com/stocks/pltr/history</a></span></li>
+      <li><span><strong>Reuters</strong> (November 2, 2026) &mdash; consensus via LSEG; fourth-quarter guide context; forward multiple comparison.<br><a href="https://www.reuters.com/technology/palantir-tops-third-quarter-revenue-estimates-strong-ai-software-demand-2026-11-02/">reuters.com/technology/palantir-tops-third-quarter-revenue-estimates</a></span></li>
+      <li><span><strong>Dow Jones Newswires via Morningstar</strong> (November 2, 2026, 4:40 PM ET and update) &mdash; first after-hours snapshot; one side of the consensus conflict.<br><a href="https://www.morningstar.com/news/dow-jones/2026110211168/palantir-3q-profit-up-lifts-outlook-as-us-commercial-revenue-overtakes-government-business">morningstar.com/news/dow-jones/2026110211168</a> &middot; <a href="https://www.morningstar.com/news/dow-jones/2026110211830/palantir-3q-profit-soars-as-us-commercial-revenue-overtakes-government-business-update">update</a></span></li>
+      <li><span><strong>Barron&rsquo;s</strong> (November 2, 2026) &mdash; after-hours snapshot of $171.66; international growth; pre-print forward multiple; the other side of the consensus conflict.<br><a href="https://www.barrons.com/articles/palantir-earnings-stock-price-d18e9a00">barrons.com/articles/palantir-earnings-stock-price</a> &middot; <a href="https://www.barrons.com/articles/palantir-technologies-stock-ai-a4443e84">pre-print coverage</a></span></li>
+      <li><span><strong>Wall Street Journal live coverage</strong> (November 2, 2026) &mdash; after-hours move recap.<br><a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-02-2026/card/stocks-to-watch-intel-apple-kioxia-dSm4MkfX3b5QXw8QUzJ9">wsj.com/livecoverage/stock-market-today-11-02-2026</a></span></li>
+      <li><span><strong>Investor&rsquo;s Business Daily</strong> (November 2, 2026) &mdash; post-print bookings commentary; after-hours snapshot; thirteenth straight acceleration.<br><a href="https://www.investors.com/news/technology/palantir-stock-pltr-palantir-earnings-q32026-news-ai-software/">investors.com/news/technology/palantir-stock-pltr-palantir-earnings-q32026</a></span></li>
+      <li><span><strong>Zacks</strong> (November 2, 2026) &mdash; its own consensus bars and key-metrics table, kept separate from the verdict source.<br><a href="https://www.zacks.com/stock/news/3021130/palantir-technologies-inc-pltr-tops-q3-earnings-and-revenue-estimates">zacks.com/stock/news/3021130</a> &middot; <a href="https://www.zacks.com/stock/news/3021214/heres-what-key-metrics-tell-us-about-palantir-technologies-pltr-q3-earnings">key metrics</a></span></li>
+      <li><span><strong>Analyst-action trackers</strong> &mdash; pre-print actions and tracker averages.<br><a href="https://www.tradingview.com/news/tradingview:ca9c09e879441:0-cantor-fitzgerald-maintains-palantir-technologies-at-neutral-raises-price-target-to-207-from-156/">tradingview.com &mdash; Cantor Fitzgerald note</a> &middot; <a href="https://tickeron.com/blogs/palantir-pltr-central-analyst-target-at-220-suggests-19-5-upside-25249/">tickeron.com &mdash; target range review</a> &middot; TipRanks analyst-action items (target raises and initiations, October 23&ndash;29, 2026)</span></li>
+      <li><span><strong>Implied-move sources</strong> &mdash; options-implied move estimates, methods differing.<br><a href="https://www.tipranks.com/news/palantir-stock-could-swing-11-65-after-q3-earnings-on-november-2">tipranks.com &mdash; 11.65%</a> &middot; <a href="https://www.tipranks.com/news/palantir-q3-earnings-are-on-nov-2-options-traders-brace-for-a-13-3-move-in-pltr-stock">13.3%</a> &middot; <a href="https://optionscout.ai/earnings/pltr">optionscout.ai &mdash; &plusmn;12.1%</a> &middot; <a href="https://earnings-watcher.com/wiki/pltr-implied-move">earnings-watcher.com &mdash; &plusmn;12.7%</a> &middot; <a href="https://www.binance.com/en/square/post/384011218050802">CNBC figure via Binance Square &mdash; 11.5%</a></span></li>
+      <li><span><strong>Prior-quarter context</strong> &mdash; Q2 2026 guidance set and Rule of 40 record; customer-count disclosure history.<br><a href="https://r40.io/news/pltr-q2-2026-earnings-rule-of-40-155/">r40.io &mdash; Q2 2026 Rule of 40</a> &middot; <a href="https://stockanalysis.com/stocks/pltr/transcripts/660319-q2-2026/">Q2 2026 call transcript</a> &middot; <a href="https://www.trefis.com/stock/pltr/articles/614685/palantir-changed-the-number-it-wants-you-to-judge-it-by/2026-09-09">trefis.com &mdash; disclosure change</a></span></li>
+      <li><span><strong>Market context, November 2, 2026</strong> &mdash; index closes and peer earnings colour.<br><a href="https://schwabnetwork.com/articles/closing-bell-tech-stocks-weak-apple-and-palantir-earnings-beat">schwabnetwork.com &mdash; Closing Bell</a> &middot; <a href="https://cappnotes.substack.com/p/closing-look-monday-november-2-2026">Closing Look, November 2</a> &middot; <a href="https://tradersunion.com/news/companies/show/4068685-after-hours-earnings-tech-consumer-stocks/">tradersunion.com &mdash; after-hours earnings</a> &middot; <a href="https://rockandturner.substack.com/p/mon-nov-02-2026-the-market-today">The Market Today, November 2</a></span></li>
+      <li><span><strong>Corroborating coverage</strong> (November 2, 2026) &mdash; release figures, bookings, guidance, and after-hours snapshots cross-checked across WebProNews, SiliconANGLE, Motley Fool, Invezz, StockVolt, FXStreet, Seeking Alpha, and MarketFlux reports of the print.</span></li>
+    </ol>
+    <p class="disclosure">Desk conventions applied throughout: one consensus source for the verdict, named in the consensus table; other providers&rsquo; bars kept separate and never averaged; one valuation provider, named in the valuation table; after-hours prices always labelled with their time and never presented as the close; metrics the company no longer discloses are dropped rather than carried forward.</p>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var label = document.getElementById('themeLabel');
+    function effectiveTheme() {
+      var t = root.getAttribute('data-theme');
+      if (t) return t;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function syncLabel() {
+      label.textContent = effectiveTheme() === 'dark' ? 'Light mode' : 'Dark mode';
+    }
+    document.getElementById('themeToggle').addEventListener('click', function () {
+      root.setAttribute('data-theme', effectiveTheme() === 'dark' ? 'light' : 'dark');
+      syncLabel();
+    });
+    syncLabel();
+
+    document.getElementById('pdfBtn').addEventListener('click', function () {
+      var btn = this;
+      if (typeof html2pdf === 'undefined') {
+        btn.textContent = 'PDF unavailable here — use your browser’s Print → Save as PDF';
+        return;
+      }
+      btn.disabled = true;
+      var prev = btn.innerHTML;
+      btn.textContent = 'Preparing PDF…';
+      var el = document.getElementById('report');
+      var opt = {
+        margin: 0,
+        filename: 'pltr-q3-2026-earnings-update.pdf',
+        image: { type: 'jpeg', quality: 0.96 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak: { mode: ['css', 'legacy'] }
+      };
+      html2pdf().set(opt).from(el).save().then(function () {
+        btn.disabled = false;
+        btn.innerHTML = prev;
+      }).catch(function () {
+        btn.disabled = false;
+        btn.innerHTML = prev;
+      });
+    });
+  })();
+</script>
+</body>
+</html>

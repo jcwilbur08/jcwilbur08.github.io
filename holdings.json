@@ -1,7 +1,7 @@
 {
- "asOf": "2026-10-29",
+ "asOf": "2026-11-02",
  "cash": 43000,
- "source": "retirement-portfolio-62.xlsx",
+ "source": "retirement-portfolio-67.xlsx",
  "holdings": [
   {
    "ticker": "TLXIX",
@@ -12,12 +12,12 @@
    "costBasis": 60695.1548,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 39.89,
+   "fallbackPrice": 39.26,
    "finnhub": false,
    "dps": 0.88627,
    "divSched": null,
    "divFreq": "Annually",
-   "lastPrice": 39.89
+   "lastPrice": 39.26
   },
   {
    "ticker": "AMZN",
@@ -26,14 +26,14 @@
    "sector": "Cons. Disc.",
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 7935.2,
-   "fairValue": 300,
+   "fairValue": 280,
    "fwdYield": 0,
-   "fallbackPrice": 243.79,
+   "fallbackPrice": 245.63,
    "finnhub": true,
    "dps": 0,
    "divSched": null,
    "divFreq": null,
-   "lastPrice": 243.79
+   "lastPrice": 245.63
   },
   {
    "ticker": "JPM",
@@ -43,13 +43,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 20626.53164,
    "fairValue": 330,
-   "fwdYield": 1.9452,
-   "fallbackPrice": 343.58,
+   "fwdYield": 1.9582,
+   "fallbackPrice": 340.58,
    "finnhub": true,
    "dps": 6.15,
    "divSched": "Jan, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 343.58
+   "lastPrice": 340.58
   },
   {
    "ticker": "AAPL",
@@ -59,13 +59,13 @@
    "stars": "\u2605\u2605",
    "costBasis": 7480,
    "fairValue": 290,
-   "fwdYield": 0.3141,
-   "fallbackPrice": 348.91,
+   "fwdYield": 0.3134,
+   "fallbackPrice": 338.32,
    "finnhub": true,
    "dps": 1.06,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 348.91
+   "lastPrice": 338.32
   },
   {
    "ticker": "MA",
@@ -75,13 +75,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 12953.7716049,
    "fairValue": 550,
-   "fwdYield": 0.5701999999999999,
-   "fallbackPrice": 635.7,
+   "fwdYield": 0.5454,
+   "fallbackPrice": 658.1,
    "finnhub": true,
    "dps": 3.48,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 635.7
+   "lastPrice": 658.1
   },
   {
    "ticker": "GS",
@@ -91,13 +91,13 @@
    "stars": "\u2605\u2605",
    "costBasis": 18483.15,
    "fairValue": 730,
-   "fwdYield": 2.1618,
-   "fallbackPrice": 927.73,
+   "fwdYield": 2.2358,
+   "fallbackPrice": 898.72,
    "finnhub": true,
    "dps": 18,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 927.73
+   "lastPrice": 898.72
   },
   {
    "ticker": "XOM",
@@ -107,13 +107,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 22876.575243799998,
    "fairValue": 162,
-   "fwdYield": 2.2635,
-   "fallbackPrice": 183.29,
+   "fwdYield": 2.2857,
+   "fallbackPrice": 179.67,
    "finnhub": true,
    "dps": 4.12,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 183.29
+   "lastPrice": 179.67
   },
   {
    "ticker": "MSFT",
@@ -123,13 +123,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 32427.440000000002,
    "fairValue": 600,
-   "fwdYield": 0.7382,
-   "fallbackPrice": 530.14,
+   "fwdYield": 0.7511,
+   "fallbackPrice": 507.12,
    "finnhub": true,
    "dps": 3.64,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 530.14
+   "lastPrice": 507.12
   },
   {
    "ticker": "VXUS",
@@ -140,12 +140,12 @@
    "costBasis": 44763.9384,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 83.65,
+   "fallbackPrice": 82.59,
    "finnhub": true,
    "dps": 2.188402,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 83.65
+   "lastPrice": 82.59
   },
   {
    "ticker": "AMT",
@@ -155,13 +155,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 29934.5940082,
    "fairValue": 225,
-   "fwdYield": 3.8966000000000003,
-   "fallbackPrice": 185.88,
+   "fwdYield": 3.8129999999999997,
+   "fallbackPrice": 188.3,
    "finnhub": true,
    "dps": 7.07,
    "divSched": "Feb, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 185.88
+   "lastPrice": 188.3
   },
   {
    "ticker": "V",
@@ -171,13 +171,13 @@
    "stars": "\u2605\u2605",
    "costBasis": 13650,
    "fairValue": 330,
-   "fwdYield": 0.6689999999999999,
-   "fallbackPrice": 410.54,
+   "fwdYield": 0.6479999999999999,
+   "fallbackPrice": 425.51,
    "finnhub": true,
    "dps": 2.68,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 410.54
+   "lastPrice": 425.51
   },
   {
    "ticker": "GOOG",
@@ -187,13 +187,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 9285.597,
    "fairValue": 450,
-   "fwdYield": 0.2734,
-   "fallbackPrice": 282.32,
+   "fwdYield": 0.3163,
+   "fallbackPrice": 278.04,
    "finnhub": true,
    "dps": 0.86,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 282.32
+   "lastPrice": 278.04
   },
   {
    "ticker": "AVGO",
@@ -203,13 +203,13 @@
    "stars": "\u2605\u2605\u2605\u2605\u2605",
    "costBasis": 43750.395,
    "fairValue": 650,
-   "fwdYield": 0.739,
-   "fallbackPrice": 345,
+   "fwdYield": 0.7974,
+   "fallbackPrice": 322.23,
    "finnhub": true,
    "dps": 2.6,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 345
+   "lastPrice": 322.23
   },
   {
    "ticker": "META",
@@ -219,13 +219,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 20599.803,
    "fairValue": 850,
-   "fwdYield": 0.34290000000000004,
-   "fallbackPrice": 624.52,
+   "fwdYield": 0.3415,
+   "fallbackPrice": 606.73,
    "finnhub": true,
    "dps": 2.1,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 624.52
+   "lastPrice": 606.73
   },
   {
    "ticker": "PM",
@@ -235,13 +235,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 15197.7983731,
    "fairValue": 190,
-   "fwdYield": 3.1583,
-   "fallbackPrice": 208.5,
+   "fwdYield": 3.0653,
+   "fallbackPrice": 208.29,
    "finnhub": true,
    "dps": 6.01,
    "divSched": "Jan, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 208.5
+   "lastPrice": 208.29
   },
   {
    "ticker": "VFFSX",
@@ -252,12 +252,12 @@
    "costBasis": 5000,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 377.93,
+   "fallbackPrice": 369.22,
    "finnhub": false,
    "dps": 3.9731,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 377.93
+   "lastPrice": 369.22
   },
   {
    "ticker": "SO",
@@ -267,13 +267,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 3188.5039999999995,
    "fairValue": 83,
-   "fwdYield": 3.3217000000000003,
-   "fallbackPrice": 92.99,
+   "fwdYield": 3.2440999999999995,
+   "fallbackPrice": 94.61,
    "finnhub": true,
    "dps": 3,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 92.99
+   "lastPrice": 94.61
   },
   {
    "ticker": "AXP",
@@ -283,13 +283,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 7680,
    "fairValue": 338,
-   "fwdYield": 1.1952,
-   "fallbackPrice": 323.71,
+   "fwdYield": 1.1908,
+   "fallbackPrice": 327.98,
    "finnhub": true,
    "dps": 3.67,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 323.71
+   "lastPrice": 327.98
   },
   {
    "ticker": "AVUV",
@@ -300,44 +300,44 @@
    "costBasis": 32182.0709,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 124.26,
+   "fallbackPrice": 123.97,
    "finnhub": true,
    "dps": 1.5612,
    "divSched": null,
    "divFreq": "Irregular",
-   "lastPrice": 124.26
+   "lastPrice": 123.97
   },
   {
    "ticker": "FSMDX",
    "name": "Fidelity Mid Cap Index Fund",
-   "qty": 737.19,
+   "qty": 746.19,
    "sector": "US Mid Cap",
    "stars": "\u2605\u2605\u2605\u2605f",
-   "costBasis": 27773.264655000003,
+   "costBasis": 28154.942604000003,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 43.2,
+   "fallbackPrice": 42.72,
    "finnhub": false,
    "dps": 0.322,
    "divSched": null,
    "divFreq": "Semi-Annually",
-   "lastPrice": 43.2
+   "lastPrice": 42.72
   },
   {
    "ticker": "FSSNX",
    "name": "Fidelity Small Cap Index Fund",
-   "qty": 880.84,
+   "qty": 891.84,
    "sector": "US Small Cap",
    "stars": "\u2605\u2605\u2605f",
-   "costBasis": 25178.459064,
+   "costBasis": 25560.937056000002,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 35.92,
+   "fallbackPrice": 35.25,
    "finnhub": false,
    "dps": 0.388,
    "divSched": null,
    "divFreq": "Semi-Annually",
-   "lastPrice": 35.92
+   "lastPrice": 35.25
   },
   {
    "ticker": "NFLX",
@@ -348,12 +348,12 @@
    "costBasis": 4715,
    "fairValue": 80,
    "fwdYield": 0,
-   "fallbackPrice": 62.05,
+   "fallbackPrice": 62.34,
    "finnhub": true,
    "dps": 0,
    "divSched": null,
    "divFreq": null,
-   "lastPrice": 62.05
+   "lastPrice": 62.34
   },
   {
    "ticker": "KO",
@@ -363,13 +363,13 @@
    "stars": "\u2605\u2605",
    "costBasis": 12492.9687938,
    "fairValue": 80,
-   "fwdYield": 2.3111,
-   "fallbackPrice": 92.82,
+   "fwdYield": 2.2534,
+   "fallbackPrice": 95.83,
    "finnhub": true,
    "dps": 2.1,
    "divSched": "Apr, Jul, Oct, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 92.82
+   "lastPrice": 95.83
   },
   {
    "ticker": "GEV",
@@ -379,13 +379,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 30097.806,
    "fairValue": 1080,
-   "fwdYield": 0.2278,
-   "fallbackPrice": 887.85,
+   "fwdYield": 0.23310000000000003,
+   "fallbackPrice": 862.25,
    "finnhub": true,
    "dps": 2,
    "divSched": "Feb, Apr, Jul, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 887.85
+   "lastPrice": 862.25
   },
   {
    "ticker": "CRM",
@@ -395,13 +395,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 20956.32,
    "fairValue": 270,
-   "fwdYield": 0.7269,
-   "fallbackPrice": 230.9,
+   "fwdYield": 0.768,
+   "fallbackPrice": 226.18,
    "finnhub": true,
    "dps": 1.736,
    "divSched": "Jan, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 230.9
+   "lastPrice": 226.18
   },
   {
    "ticker": "PEP",
@@ -411,13 +411,13 @@
    "stars": "\u2605\u2605\u2605\u2605\u2605",
    "costBasis": 22521.344999999998,
    "fairValue": 169,
-   "fwdYield": 4.4635,
-   "fallbackPrice": 133.79,
+   "fwdYield": 4.310499999999999,
+   "fallbackPrice": 140.42,
    "finnhub": true,
    "dps": 5.805,
    "divSched": "Jan, Mar, Jun, Sep",
    "divFreq": "Quarterly",
-   "lastPrice": 133.79
+   "lastPrice": 140.42
   },
   {
    "ticker": "DIS",
@@ -427,13 +427,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 15770.1063,
    "fairValue": 125,
-   "fwdYield": 1.3756000000000002,
-   "fallbackPrice": 110.91,
+   "fwdYield": 1.3521,
+   "fallbackPrice": 113.11,
    "finnhub": true,
    "dps": 1.5,
    "divSched": "Jan, Jul",
    "divFreq": "Semi-Annually",
-   "lastPrice": 110.91
+   "lastPrice": 113.11
   },
   {
    "ticker": "SCHD",
@@ -444,12 +444,12 @@
    "costBasis": 20040.513,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 35.61,
+   "fallbackPrice": 35.9,
    "finnhub": true,
    "dps": 1.048,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 35.61
+   "lastPrice": 35.9
   },
   {
    "ticker": "UNH",
@@ -459,13 +459,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 11924.739,
    "fairValue": 475,
-   "fwdYield": 2.2795,
-   "fallbackPrice": 410.91,
+   "fwdYield": 2.2803,
+   "fallbackPrice": 400.44,
    "finnhub": true,
    "dps": 9.06,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 410.91
+   "lastPrice": 400.44
   },
   {
    "ticker": "IJH",
@@ -476,12 +476,12 @@
    "costBasis": 4646.4752568,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 74.2,
+   "fallbackPrice": 73.92,
    "finnhub": true,
    "dps": 0.888367,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 74.2
+   "lastPrice": 73.92
   },
   {
    "ticker": "BMY",
@@ -491,13 +491,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 17974.4,
    "fairValue": 70,
-   "fwdYield": 4.160500000000001,
-   "fallbackPrice": 61.39,
+   "fwdYield": 4.0333,
+   "fallbackPrice": 63.02,
    "finnhub": true,
    "dps": 2.52,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 61.39
+   "lastPrice": 63.02
   },
   {
    "ticker": "QCOM",
@@ -507,13 +507,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 5809.650600000001,
    "fairValue": 170,
-   "fwdYield": 2.0113,
-   "fallbackPrice": 185.41,
+   "fwdYield": 2.2331,
+   "fallbackPrice": 162.08,
    "finnhub": true,
    "dps": 3.62,
    "divSched": "Mar, Jun, Sep, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 185.41
+   "lastPrice": 162.08
   },
   {
    "ticker": "TSM",
@@ -523,13 +523,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 18717.182,
    "fairValue": 534,
-   "fwdYield": 0.8578,
-   "fallbackPrice": 431.81,
+   "fwdYield": 0.9282999999999999,
+   "fallbackPrice": 398.63,
    "finnhub": true,
    "dps": 3.769968,
    "divSched": "Jan, Apr, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 431.81
+   "lastPrice": 398.63
   },
   {
    "ticker": "VTWO",
@@ -540,12 +540,12 @@
    "costBasis": 3528,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 114.72,
+   "fallbackPrice": 112.79,
    "finnhub": true,
    "dps": 1.3091,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 114.72
+   "lastPrice": 112.79
   },
   {
    "ticker": "ASML",
@@ -555,13 +555,13 @@
    "stars": "\u2605\u2605\u2605",
    "costBasis": 13787.7,
    "fairValue": 2050,
-   "fwdYield": 0.5598,
-   "fallbackPrice": 1675.7,
+   "fwdYield": 0.5943999999999999,
+   "fallbackPrice": 1526.14,
    "finnhub": true,
    "dps": 9.308422,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 1675.7
+   "lastPrice": 1526.14
   },
   {
    "ticker": "NVDA",
@@ -571,13 +571,13 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 13496.8417,
    "fairValue": 310,
-   "fwdYield": 0.46430000000000005,
-   "fallbackPrice": 213.66,
+   "fwdYield": 0.48869999999999997,
+   "fallbackPrice": 202.06,
    "finnhub": true,
    "dps": 0.52,
    "divSched": "Apr, Jun, Oct, Dec",
    "divFreq": "Quarterly",
-   "lastPrice": 213.66
+   "lastPrice": 202.06
   },
   {
    "ticker": "GRID",
@@ -588,12 +588,12 @@
    "costBasis": 11269.9086,
    "fairValue": null,
    "fwdYield": null,
-   "fallbackPrice": 170.34,
+   "fallbackPrice": 164.28,
    "finnhub": true,
    "dps": 1.4296,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 170.34
+   "lastPrice": 164.28
   },
   {
    "ticker": "ADBE",
@@ -604,12 +604,12 @@
    "costBasis": 9149.598899999999,
    "fairValue": 344,
    "fwdYield": 0,
-   "fallbackPrice": 248.12,
+   "fallbackPrice": 251.47,
    "finnhub": true,
    "dps": 0,
    "divSched": null,
    "divFreq": "Quarterly",
-   "lastPrice": 248.12
+   "lastPrice": 251.47
   },
   {
    "ticker": "UBER",
@@ -620,12 +620,12 @@
    "costBasis": 6697.1807,
    "fairValue": 76,
    "fwdYield": 0,
-   "fallbackPrice": 65.74,
+   "fallbackPrice": 66.71,
    "finnhub": true,
    "dps": 0,
    "divSched": null,
    "divFreq": null,
-   "lastPrice": 65.74
+   "lastPrice": 66.71
   },
   {
    "ticker": "GEHC",
@@ -635,29 +635,29 @@
    "stars": "\u2605\u2605\u2605\u2605",
    "costBasis": 3622.84,
    "fairValue": 88,
-   "fwdYield": 0.211,
-   "fallbackPrice": 76.42,
+   "fwdYield": 0.209,
+   "fallbackPrice": 79.55,
    "finnhub": true,
    "dps": 0.145,
    "divSched": "Feb, May, Aug, Nov",
    "divFreq": "Quarterly",
-   "lastPrice": 76.42
+   "lastPrice": 79.55
   },
   {
    "ticker": "DELL",
    "name": "Dell Technologies Inc Ordinary Shares - Class C",
-   "qty": 4,
+   "qty": 6,
    "sector": "Technology",
    "stars": "",
-   "costBasis": 1767.04,
+   "costBasis": 2604,
    "fairValue": 490,
-   "fwdYield": 0.5103,
-   "fallbackPrice": 475.51,
+   "fwdYield": 0.5939,
+   "fallbackPrice": 392.78,
    "finnhub": true,
    "dps": 2.415,
-   "divSched": null,
+   "divSched": "Jan, May, Jul, Oct",
    "divFreq": "Quarterly",
-   "lastPrice": 475.51
+   "lastPrice": 392.78
   },
   {
    "ticker": "BATRA",
@@ -668,12 +668,28 @@
    "costBasis": 1314,
    "fairValue": 53.765495,
    "fwdYield": 0,
-   "fallbackPrice": 54.59,
+   "fallbackPrice": 55.29,
    "finnhub": true,
    "dps": 0,
    "divSched": null,
    "divFreq": null,
-   "lastPrice": 54.59
+   "lastPrice": 55.29
+  },
+  {
+   "ticker": "PLTR",
+   "name": "Palantir Technologies Inc Ordinary Shares - Class A",
+   "qty": 4,
+   "sector": "Technology",
+   "stars": "\u2605\u2605\u2605",
+   "costBasis": 707.12,
+   "fairValue": 153,
+   "fwdYield": 0,
+   "fallbackPrice": 178.34,
+   "finnhub": true,
+   "dps": 0,
+   "divSched": null,
+   "divFreq": null,
+   "lastPrice": 178.34
   }
  ]
 }
