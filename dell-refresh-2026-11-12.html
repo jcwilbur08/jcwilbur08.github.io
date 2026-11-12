@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Dell — Refresh, November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#f2f5f6; --surface:#ffffff; --ink:#12242a; --muted:#52676d; --faint:#7b8d92;
+    --line:#d9e2e4; --navy:#0b2634; --blue:#0c4a6e; --teal:#087f7a; --lime:#b9e769; --gold:#c98f2d;
+    --red:#bc4d54; --green:#2e7d4f;
+    --soft-teal:#e8f6f3; --soft-blue:#e9f2f7; --soft-gold:#fbf3e3; --soft-red:#fbeeee;
+    --shadow:0 18px 50px rgba(13,42,50,.10);
+    --chart-grid:#d9e2e4; --chart-line:#0c4a6e;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      color-scheme: dark;
+      --paper:#091418; --surface:#102126; --ink:#eef7f5; --muted:#b6c8c9; --faint:#8ea1a3;
+      --line:#2a3f44; --navy:#061b27; --soft-teal:#112f2f; --soft-blue:#102b38; --soft-gold:#342b1c; --soft-red:#332022;
+      --shadow:0 18px 50px rgba(0,0,0,.28); --chart-grid:#2a3f44; --chart-line:#72e7d4;
+    }
+  }
+  :root[data-theme="dark"]{
+    color-scheme: dark;
+    --paper:#091418; --surface:#102126; --ink:#eef7f5; --muted:#b6c8c9; --faint:#8ea1a3;
+    --line:#2a3f44; --navy:#061b27; --soft-teal:#112f2f; --soft-blue:#102b38; --soft-gold:#342b1c; --soft-red:#332022;
+    --shadow:0 18px 50px rgba(0,0,0,.28); --chart-grid:#2a3f44; --chart-line:#72e7d4;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;font-size:16px;line-height:1.62}
+  a{color:inherit}
+  button,[role="button"]{min-height:2rem}
+  .report{width:min(1120px,100%);margin:0 auto;background:var(--surface);box-shadow:var(--shadow)}
+  /* Cover */
+  .cover{min-height:700px;padding:72px 76px 56px;display:flex;flex-direction:column;justify-content:space-between;color:#f7fffd;position:relative;overflow:hidden;background:linear-gradient(138deg,#071f2c 0%,#0b4560 44%,#087c78 100%)}
+  .cover:after{content:"";position:absolute;width:560px;height:560px;right:-220px;bottom:-270px;border:1px solid rgba(255,255,255,.18);border-radius:50%;box-shadow:0 0 0 68px rgba(255,255,255,.05),0 0 0 138px rgba(255,255,255,.035)}
+  .cover-top,.cover-main,.cover-foot{position:relative;z-index:1}
+  .cover-top{display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:.84rem;font-weight:700;letter-spacing:.06em;flex-wrap:wrap}
+  .cover-top .type{padding:8px 12px;border:1px solid rgba(255,255,255,.42);border-radius:999px}
+  .cover-main{max-width:840px;margin:64px 0}
+  .company{font-size:clamp(3.2rem,8vw,7rem);font-weight:700;line-height:.88;letter-spacing:-.065em;margin:0 0 26px}
+  .cover h1{font-family:"Libre Baskerville",serif;font-size:clamp(1.9rem,4.2vw,3.9rem);line-height:1.1;letter-spacing:-.03em;margin:0 0 24px;max-width:780px}
+  .dek{font-size:clamp(1rem,1.6vw,1.2rem);max-width:720px;color:#d8f2ee;margin:0}
+  .cover-foot{display:flex;justify-content:space-between;gap:36px;align-items:end;border-top:1px solid rgba(255,255,255,.22);padding-top:22px}
+  .cover-meta strong{display:block;font-size:1.1rem}.cover-meta span{display:block;color:#c9e7e3;font-size:.86rem}
+  .cover-monogram{font-family:"Libre Baskerville",serif;font-size:2.3rem;font-weight:700;letter-spacing:-.06em}
+  /* Rating strip */
+  .rating-strip{display:grid;grid-template-columns:1.25fr repeat(4,1fr);background:#071c25;color:#fff}
+  .rating-cell{padding:22px 24px;border-right:1px solid rgba(255,255,255,.12)}
+  .rating-cell:last-child{border:0}
+  .rating-cell span{display:block;color:#95bfc3;font-size:.69rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:5px}
+  .rating-cell strong{font-size:1.14rem;letter-spacing:-.02em}
+  .rating-cell small{display:block;color:#95bfc3;font-size:.78rem;margin-top:3px}
+  .rating-cell.primary{background:var(--lime);color:#10231d}
+  .rating-cell.primary span{color:#31513e}.rating-cell.primary small{color:#31513e}
+  .rating-cell.primary strong{font-size:1.5rem}
+  /* Toolbar */
+  .toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 76px;background:var(--surface);border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .toolbar .note-line{font-size:.82rem;color:var(--muted);max-width:560px}
+  .toolbar-actions{display:flex;gap:10px;flex-wrap:wrap}
+  .btn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--surface);border:0;padding:10px 15px;border-radius:8px;font-size:.84rem;font-weight:700;cursor:pointer;font-family:inherit}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .btn svg{width:16px;height:16px;flex:none}
+  /* Pages / sections */
+  .page{padding:60px 76px}
+  .page + .page{border-top:1px solid var(--line)}
+  .section-kicker{display:flex;align-items:center;gap:12px;color:var(--teal);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+  .section-kicker:before{content:"";width:36px;height:3px;background:var(--teal);flex:none}
+  h2{font-family:"Libre Baskerville",serif;font-size:clamp(1.9rem,3.8vw,3.1rem);line-height:1.15;letter-spacing:-.03em;margin:0 0 22px;color:var(--ink)}
+  h3{font-size:1.12rem;line-height:1.3;margin:30px 0 10px;letter-spacing:-.01em}
+  h3:first-child{margin-top:0}
+  p{margin:0 0 16px}
+  .lead{font-family:"Libre Baskerville",serif;font-size:1.2rem;line-height:1.65;color:var(--ink);max-width:880px}
+  .muted{color:var(--muted)}
+  .small{font-size:.86rem}
+  .up{color:var(--green);font-weight:700}
+  .down{color:var(--red);font-weight:700}
+  /* TOC */
+  .toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;counter-reset:toc}
+  .toc a{counter-increment:toc;display:flex;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:600}
+  .toc a:before{content:counter(toc,decimal-leading-zero);color:var(--teal);font-size:.75rem;font-weight:800;letter-spacing:.08em}
+  .toc a span{margin-left:auto;color:var(--faint);font-size:.8rem;font-weight:500;text-align:right}
+  /* Callouts */
+  .callout{padding:26px 28px;background:var(--soft-teal);border-radius:4px;margin:26px 0}
+  .callout h3{margin:0 0 10px}
+  .callout p:last-child{margin:0}
+  .verdict{background:var(--navy);color:#ecf8f5;padding:30px;margin:26px 0}
+  .verdict h3{margin:0 0 10px;color:#8fe0d4}
+  .verdict p{color:#d2e5e5}
+  .verdict p:last-child{margin:0}
+  .verdict strong{color:#fff}
+  .warnbox{padding:22px 26px;background:var(--soft-red);border-radius:4px;margin:26px 0}
+  .warnbox h3{margin:0 0 8px;color:var(--red)}
+  .warnbox p:last-child{margin:0}
+  .note{padding:18px 20px;background:var(--soft-gold);font-size:.9rem;margin-top:26px;border-radius:4px}
+  .note p:last-child{margin:0}
+  /* Metrics */
+  .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0}
+  .metric{background:var(--soft-blue);padding:20px 18px;min-height:124px;border-radius:4px}
+  .metric .label{display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+  .metric strong{display:block;font-family:"Libre Baskerville",serif;font-size:1.65rem;line-height:1.1}
+  .metric small{display:block;color:var(--muted);margin-top:7px;line-height:1.35}
+  /* Layout helpers */
+  .two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+  .exec-list{margin:0;padding:0;list-style:none}
+  .exec-list li{padding:15px 0 15px 26px;border-bottom:1px solid var(--line);position:relative}
+  .exec-list li:before{content:"";position:absolute;left:0;top:24px;width:10px;height:10px;background:var(--teal);border-radius:2px}
+  .exec-list li:last-child{border-bottom:0}
+  /* Tables */
+  .table-wrap{margin:24px 0 8px;overflow-x:auto}
+  .data-table{width:100%;border-collapse:collapse;min-width:520px}
+  .data-table caption{text-align:left;font-weight:700;font-size:.95rem;padding:0 0 10px;color:var(--ink)}
+  .data-table th{text-align:left;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;padding:10px 12px;border-bottom:2px solid var(--ink);white-space:nowrap}
+  .data-table td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+  .data-table td.num,.data-table th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .data-table td.num{font-weight:700}
+  .data-table .accent{color:var(--teal)}
+  .table-note{font-size:.8rem;color:var(--muted);margin:6px 0 18px}
+  /* Chart */
+  .chart{margin:28px 0;padding:24px;background:var(--soft-blue);border-radius:4px}
+  .chart-title{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+  .chart-title h3{margin:0}
+  .chart-title p{font-size:.8rem;color:var(--muted);margin:0}
+  .chart svg{width:100%;height:auto;display:block}
+  .chart-legend{display:flex;gap:20px;flex-wrap:wrap;font-size:.78rem;color:var(--muted);margin-top:12px}
+  .chart-legend i{display:inline-block;width:22px;height:0;border-top:2px solid var(--chart-line);vertical-align:middle;margin-right:6px}
+  .chart-legend i.dash{border-top-style:dashed;border-top-color:var(--teal)}
+  .chart-legend i.red{border-top-style:dashed;border-top-color:var(--red)}
+  .chart-legend i.gold{border-top-style:dashed;border-top-color:var(--gold)}
+  /* Watchlist / timeline */
+  .watchlist{list-style:none;padding:0;margin:24px 0 0}
+  .watchlist li{display:grid;grid-template-columns:42px 1fr;gap:16px;padding:17px 0;border-bottom:1px solid var(--line)}
+  .watchlist .n{width:32px;height:32px;display:grid;place-items:center;background:var(--ink);color:var(--surface);font-weight:800;font-size:.78rem;border-radius:4px}
+  .watchlist strong{display:block}
+  .watchlist span{color:var(--muted)}
+  .timeline{display:grid;grid-template-columns:150px 1fr;gap:0 26px;margin-top:26px}
+  .timeline .date,.timeline .event{padding:16px 0;border-top:1px solid var(--line)}
+  .timeline .date{font-weight:800;color:var(--teal)}
+  .timeline .event strong{display:block}
+  .timeline .event span{color:var(--muted)}
+  .pillar{padding:22px 0;border-top:3px solid var(--ink)}
+  .pillar h3{margin:0 0 8px}
+  .pillar p{color:var(--muted);margin:0}
+  /* Appendix */
+  .appendix{background:color-mix(in srgb,var(--paper) 75%,var(--surface));font-size:.88rem}
+  .source-list{list-style:none;padding:0;margin:22px 0 0;counter-reset:sources}
+  .source-list li{counter-increment:sources;display:grid;grid-template-columns:36px 1fr;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+  .source-list li:before{content:counter(sources,decimal-leading-zero);color:var(--teal);font-weight:800}
+  .source-list a{color:var(--ink);text-decoration-thickness:1px;text-underline-offset:3px}
+  .flag-list{margin:10px 0 0;padding-left:20px}
+  .flag-list li{padding:6px 0}
+  .disclosure{font-size:.78rem;color:var(--muted);margin-top:32px}
+  @media(max-width:760px){
+    .report{box-shadow:none}
+    .cover{min-height:620px;padding:44px 24px 36px}
+    .cover-main{margin:48px 0}
+    .cover-foot{align-items:flex-start;flex-direction:column}
+    .rating-strip{grid-template-columns:repeat(2,1fr)}
+    .rating-cell{border-bottom:1px solid rgba(255,255,255,.12)}
+    .rating-cell.primary{grid-column:1/-1}
+    .toolbar{padding:14px 20px}
+    .page{padding:46px 22px}
+    .toc,.two-col,.metrics{grid-template-columns:1fr}
+    .metrics{gap:8px}.metric{min-height:auto}
+    .timeline{grid-template-columns:100px 1fr;gap:0 14px}
+    .chart{padding:18px 14px}
+    .table-wrap{overflow-x:visible}
+    .data-table{min-width:0}
+    .data-table,.data-table tbody,.data-table tr,.data-table td{display:block}
+    .data-table thead{display:none}
+    .data-table caption{display:block}
+    .data-table tr{padding:12px 0;border-bottom:1px solid var(--line)}
+    .data-table td{display:flex;justify-content:space-between;gap:22px;padding:5px 0;border:0;text-align:left}
+    .data-table td:before{content:attr(data-label);color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;white-space:nowrap;flex:none}
+    .data-table td.num{text-align:right;white-space:normal;overflow-wrap:break-word;min-width:0}
+  }
+  @media print{
+    body{background:#fff}
+    .report{width:100%;box-shadow:none}
+    .cover{min-height:100vh;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .toolbar{display:none}
+    .rating-strip{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .page{padding:44px 50px}
+    .page + .page{page-break-before:always}
+    .appendix{background:#fff}
+    .callout,.verdict,.metric,.chart,.warnbox{break-inside:avoid;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .source-list a{text-decoration:none;color:#111}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<main class="report">
+
+  <!-- ============ COVER ============ -->
+  <section class="cover">
+    <div class="cover-top"><span class="type">REFRESHED ANALYSIS · EQUITY RESEARCH</span><span>November 12, 2026</span></div>
+    <div class="cover-main">
+      <div class="company">DELL</div>
+      <h1>The reclaim is real this time. Met, failed, re-met — and held.</h1>
+      <p class="dek">Dell closed above its 200-day average on Monday, failed it on Tuesday by a single dollar, then reclaimed it on Wednesday and held it on Thursday — through a 10% gap down on a competitor's governance shock that it bought all the way back. The framework's technical leg is met and the suspension lifts. The business is unchanged, and the November 24 print is still the arbiter.</p>
+    </div>
+    <div class="cover-foot">
+      <div class="cover-meta"><strong>Dell Technologies Inc.</strong><span>NYSE: DELL · AI servers &amp; infrastructure · All figures USD</span></div>
+      <div class="cover-monogram">DELL</div>
+    </div>
+  </section>
+
+  <!-- ============ RATING STRIP ============ -->
+  <section class="rating-strip" aria-label="Investment rating summary">
+    <div class="rating-cell primary"><span>Rating · Conviction</span><strong>BUY · 6/10</strong><small>Maintained</small></div>
+    <div class="rating-cell"><span>Close · Nov 12, 2026</span><strong>$371.17</strong><small>−0.67% on the day</small></div>
+    <div class="rating-cell"><span>Desk target</span><strong>$580</strong><small>+56.3% from the close</small></div>
+    <div class="rating-cell"><span>Accumulation</span><strong>SUSPENSION LIFTED</strong><small>Reclaim leg met — no gate, no add</small></div>
+    <div class="rating-cell"><span>Position</span><strong>12 shares</strong><small>@ $407.12 blended average cost</small></div>
+  </section>
+
+  <!-- ============ TOOLBAR ============ -->
+  <div class="toolbar">
+    <p class="note-line">Research cutoff: Thursday, November 12, 2026, ~5:50 PM ET, after the close. Prices are regular-session closes unless labelled otherwise. This is a tape/framework refresh, not a re-underwrite.</p>
+    <div class="toolbar-actions">
+      <button class="btn ghost" id="themeToggle" type="button" aria-label="Toggle dark and light theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <span id="themeLabel">Dark / light</span>
+      </button>
+      <button class="btn" id="pdfBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+        Download PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- ============ REPORT MAP ============ -->
+  <section class="page" id="map">
+    <div class="section-kicker">Contents</div>
+    <h2>Report map</h2>
+    <nav class="toc" aria-label="Report contents">
+      <a href="#verdict">Desk verdict <span>Buy maintained; the suspension lifts</span></a>
+      <a href="#reclaim">The reclaim, day by day <span>Met, failed, re-met, held</span></a>
+      <a href="#nov12">The November 12 session <span>A 10% gap down, bought back</span></a>
+      <a href="#tape">The tape, November 9–12 <span>Relief rally inside an unresolved drawdown</span></a>
+      <a href="#news">Dell news, November 9–12 <span>Thin — and the print setup is unchanged</span></a>
+      <a href="#technicals">Technical position <span>Above the 200-day, below everything else</span></a>
+      <a href="#valuation">Valuation reset <span>Re-rated by price, not by denominators</span></a>
+      <a href="#changed">What changed vs November 6 <span>Thesis vs tape, bear vs bull</span></a>
+      <a href="#watch">Into November 24 <span>The numbers that decide it</span></a>
+      <a href="#appendix">Appendix <span>Sources &amp; unverified items</span></a>
+    </nav>
+  </section>
+
+  <!-- ============ 01 VERDICT ============ -->
+  <section class="page" id="verdict">
+    <div class="section-kicker">01 · Desk verdict</div>
+    <h2>Buy maintained. The suspension lifts — the print still decides.</h2>
+    <p class="lead">The framework asked for one of two things before new Dell capital could even be considered: a 200-day reclaim on a close, or the November 24 print. The first has now happened — twice, after failing once. That changes the framework's status. It changes nothing about the business, and it is not a reason to chase a stock up 12.98% in four sessions.</p>
+
+    <div class="verdict">
+      <h3>Verdict — Buy, conviction 6/10, $580 target maintained</h3>
+      <p><strong>The suspension LIFTS.</strong> The reclaim leg of the November 5/6 framework — no new Dell capital until a 200-day reclaim on a regular-session close OR the November 24 print, with $300 as invalidation — is now met on <strong>two consecutive closes</strong> (Wednesday $373.68, Thursday $371.17) after a one-day failure on Tuesday. The technical condition the framework demanded has been satisfied.</p>
+      <p><strong>What that does NOT mean.</strong> It is a technical condition met, not a fundamental all-clear. The print is in 12 days — Tuesday, November 24, after the close — and remains the arbiter of every fundamental question: backlog conversion, margins, cash. The stock is up 12.98% in four sessions from $328.53 and still closes $35.95 below your cost. <strong>No chase. No gate is installed, no ladder is re-armed, and no add is recommended</strong> — whether any further Dell capital goes in from here is the reader's call, made against a print twelve days out.</p>
+      <p><strong>$300 invalidation stands, unchanged.</strong> A close back below the 200-day average would re-impose the suspension (Section 02 sets out exactly what counts as a break).</p>
+    </div>
+
+    <div class="metrics">
+      <div class="metric"><span class="label">Holding value</span><strong>$4,454.04</strong><small>12 shares at the $371.17 close</small></div>
+      <div class="metric"><span class="label">Cost basis</span><strong>$4,885.44</strong><small>12 shares at $407.12 blended average</small></div>
+      <div class="metric"><span class="label">Unrealised</span><strong>−$431.40</strong><small>−8.83% vs cost (−$35.95 per share)</small></div>
+      <div class="metric"><span class="label">Street average target</span><strong>$590</strong><small>+59.0% from the close; consensus Buy (detail in Section 05)</small></div>
+    </div>
+
+    <h3>Executive summary</h3>
+    <ul class="exec-list">
+      <li><strong>Reclaim anatomy — met, failed, re-met, held.</strong> Monday's close of $346.31 was $10.92 above the desk 200-day (~$335.39); Tuesday's $334.38 close failed it by $1.01; Wednesday's $373.68 and Thursday's $371.17 closes put two consecutive closes above it, $38.29 and $35.78 clear. The same pattern holds on the second provider's $337.46 line.</li>
+      <li><strong>November 12 was a wild, competitor-driven session — not a Dell event.</strong> Dell gapped down ~10% at the open, printed a $335.20 low that touched the 200-day intraday, then recovered the full $47.48 range to close −0.67%. No Dell-specific news explains the gap; Section 03 tells the session.</li>
+      <li><strong>The market has stabilised only partially — it is still fragile.</strong> The S&amp;P 500 is +2.92% from the November 6 close and the VIX has fallen from 25.64 to 18.70, but Thursday's breadth was poor, the Russell 2000 fell 1.66%, and the 10-year yield closed at 5.10% — its highest since October 21 — with a December hike now essentially priced in.</li>
+      <li><strong>Dell-specific news in the window is thin and immaterial.</strong> One analyst action (a Buy reiteration with no published target), minor product and partner items, and no pre-announcement, channel check, or new reporting on the quarter's cash flow, inventories or working capital.</li>
+      <li><strong>The November 24 print setup is unchanged in substance.</strong> The consensus bar sits modestly above guidance on every provider — but the providers disagree with each other by $1.35 billion of revenue, which is itself a source of print-day volatility. Providers are kept separate throughout; they are never averaged.</li>
+      <li><strong>Technical position: above the 200-day, far below everything else.</strong> The close is +10.67% above the desk 200-day but −27.34% below the 50-day, −37.67% below the 52-week high, and $41.83 below the October 30 intraday low — which is now overhead resistance, not support.</li>
+      <li><strong>Valuation has re-rated with price, not de-rated.</strong> On the single provider used for Section 07: forward earnings multiple 13.15x, enterprise-value/EBITDA 14.85x, price/sales 1.58x, free-cash-flow yield 3.57% — almost exactly the arithmetic scaling of November 6's levels by the price rise. The margin of safety that existed at $328 has narrowed by roughly the 13% the stock has risen.</li>
+      <li><strong>Bottom line:</strong> hold the 12 shares. The technical condition for resuming consideration of new capital is met; nothing in November 9–12 changed Dell's business momentum, margin trajectory, backlog durability, cash generation or balance sheet — all of that is still to be proven on November 24.</li>
+    </ul>
+  </section>
+
+  <!-- ============ 02 RECLAIM ============ -->
+  <section class="page" id="reclaim">
+    <div class="section-kicker">02 · The framework test · The 200-day average</div>
+    <h2>Met on Monday. Failed on Tuesday. Re-met on Wednesday — and held on Thursday.</h2>
+    <p class="lead">This is the report's spine, told day by day and honestly: the reclaim was not clean. Dell failed its first test by a dollar before passing the second — and Thursday it defended the line intraday, at the low, before closing $35.78 above it.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>The reclaim, day by day — Dell daily bars vs the 200-day average (two provider lines; the conclusion is identical on either)</caption>
+        <thead><tr><th>Session</th><th class="num">Open</th><th class="num">High</th><th class="num">Low</th><th class="num">Close</th><th class="num">vs 200-day $335.39</th><th class="num">vs 200-day $337.46</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Session">Mon Nov 9</td><td class="num" data-label="Open">$337.35</td><td class="num" data-label="High">$354.50</td><td class="num" data-label="Low">$328.30</td><td class="num" data-label="Close">$346.31 (+5.41%)</td><td class="num" data-label="vs $335.39">+$10.92 (+3.26%)</td><td class="num" data-label="vs $337.46">+$8.85 (+2.62%)</td><td data-label="Status"><span class="up">Reclaimed</span></td></tr>
+          <tr><td data-label="Session">Tue Nov 10</td><td class="num" data-label="Open">$337.78</td><td class="num" data-label="High">$346.75</td><td class="num" data-label="Low">$321.25</td><td class="num" data-label="Close">$334.38 (−3.44%)</td><td class="num" data-label="vs $335.39">−$1.01 (−0.30%)</td><td class="num" data-label="vs $337.46">−$3.08 (−0.91%)</td><td data-label="Status"><span class="down">Failed</span></td></tr>
+          <tr><td data-label="Session">Wed Nov 11</td><td class="num" data-label="Open">$360.40</td><td class="num" data-label="High">$384.69</td><td class="num" data-label="Low">$358.52</td><td class="num" data-label="Close">$373.68 (+11.75%)</td><td class="num" data-label="vs $335.39">+$38.29 (+11.42%)</td><td class="num" data-label="vs $337.46">+$36.22 (+10.73%)</td><td data-label="Status"><span class="up">Reclaimed</span></td></tr>
+          <tr><td data-label="Session">Thu Nov 12</td><td class="num" data-label="Open">$336.085</td><td class="num" data-label="High">$382.68</td><td class="num" data-label="Low">$335.20</td><td class="num" data-label="Close">$371.17 (−0.67%)</td><td class="num" data-label="vs $335.39">+$35.78 (+10.67%)</td><td class="num" data-label="vs $337.46">+$33.71 (+9.99%)</td><td data-label="Status"><span class="up">Held</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Two consecutive closes above the 200-day (November 11–12); three of the last four closes above it. Note that Monday's low ($328.30) and Tuesday's low ($321.25) both traded below the average intraday — until Wednesday, the reclaim was a closing-basis event only. Thursday's low of $335.20 was $0.19 below the desk line intraday ($2.26 below the $337.46 line), and the stock still closed $35.78 above it: an intraday test that held on a closing basis. Moving-average levels are provider-dependent (a third statistics page carries a 200-day of $342.26, on which the close is +8.45% above the line); $335.39 is the desk's level, not an exchange-official figure.</p>
+
+    <div class="chart">
+      <div class="chart-title">
+        <h3>Dell — daily closes, October 2025 to November 12, 2026</h3>
+        <p>Closes through November 12; reference lines at blended cost, the desk 200-day and the $300 invalidation</p>
+      </div>
+      <div id="priceChart" role="img" aria-label="Line chart of Dell daily closing prices from October 2025 to November 12, 2026, showing the run to the September high near $595, the October–November collapse to the $316.91 November 5 close, and the recovery to $371.17 on November 12, above the 200-day average line near $335."></div>
+      <div class="chart-legend">
+        <span><i></i>Daily close</span>
+        <span><i class="gold"></i>Blended cost $407.12</span>
+        <span><i class="dash"></i>200-day ~$335.39</span>
+        <span><i class="red"></i>$300 invalidation</span>
+      </div>
+    </div>
+
+    <div class="callout">
+      <h3>What confirms the reclaim — and what breaks it</h3>
+      <p><strong>Confirm:</strong> a third consecutive close above the 200-day (Friday, November 13), and ideally a close that holds above ~$352 through next week's volatility. A weekly close above the line would be stronger than two daily closes. <strong>Break:</strong> a close back below the 200-day. Tuesday's failure was by only $1.01 on the desk line — a marginal break, and a repeat break of $1–3 would be ambiguous and need a second confirming close. A close $5 or more (≳1.5%) below the line, or two consecutive closes below it, would be a clean failure and would re-impose the framework suspension. An intraday dip below the line — as on Thursday — does <em>not</em> break the reclaim: the framework is written on closes.</p>
+    </div>
+  </section>
+
+  <!-- ============ 03 NOVEMBER 12 SESSION ============ -->
+  <section class="page" id="nov12">
+    <div class="section-kicker">03 · The session · Thursday, November 12</div>
+    <h2>A 10% gap down on someone else's crisis — bought back to flat by the close.</h2>
+    <p>Nothing about Thursday's open was Dell's doing. After Wednesday's close, reports emerged that the board of the AI complex's dominant chip supplier was preparing to remove its chief executive; the stock fell 8.27% after hours and Dell fell 3.83% with it. On Thursday morning the company confirmed its CEO had resigned, effective immediately — its finance chief steps in as interim CEO, and the governance filing, accepted November 11, gives no reason. The supplier's shares opened at $151.01, printed a $148.80 low, and closed down 4.34%. Dell's session was that stock's session, mirrored and then unwound.</p>
+
+    <div class="callout">
+      <h3>November 12, in one box</h3>
+      <p><strong>Open $336.085</strong> — a ~10% gap down from Wednesday's $373.68 close. <strong>Low $335.20</strong> — a touch of the 200-day average intraday, $0.19 below the desk line. <strong>High $382.68. Close $371.17, −0.67%</strong> — a full <strong>$47.48 intraday recovery</strong> from low to close. The gap was set overnight by the supplier's governance shock, not by any Dell news: Dell recovered as the supplier bounced off its lows and as two other large AI hardware names rotated higher (+5.54% and +5.86% on the day). A stock that gaps down 10% on a partner's crisis and closes essentially flat has shown you where its buyers are: at the 200-day.</p>
+    </div>
+
+    <p>The honest caveat sits alongside the compliment. Thursday's defence of the line was real, but it was delivered by a tape rally and a governance headline at another company — not by anything Dell disclosed. The same dependence cuts the other way: the supplier reports earnings on Tuesday, November 17, and Dell's stock will trade that print a week before its own. The reclaim's durability will be tested by other companies' news before Dell gets to speak for itself on November 24.</p>
+  </section>
+
+  <!-- ============ 04 TAPE ============ -->
+  <section class="page" id="tape">
+    <div class="section-kicker">04 · The tape · November 9–12</div>
+    <h2>A sharp relief rally inside an unresolved drawdown.</h2>
+    <p class="lead">Two strong days sandwiched two down days. Each up day was driven by a single narrative — an oil slide, one earnings report — while the down days were driven by data and governance. A market that needs a perfect headline each morning is not yet stable.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>Index closes, November 9–12 (day move in parentheses)</caption>
+        <thead><tr><th>Session</th><th class="num">S&amp;P 500</th><th class="num">Nasdaq Comp.</th><th class="num">Dow</th><th class="num">Russell 2000</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Session">Mon Nov 9</td><td class="num" data-label="S&P 500">7,549.94 (+2.35%)</td><td class="num" data-label="Nasdaq">25,253.14 (+2.74%)</td><td class="num" data-label="Dow">52,389.75 (+2.15%)</td><td class="num" data-label="Russell 2000">2,840.81 (+3.15%)</td></tr>
+          <tr><td data-label="Session">Tue Nov 10</td><td class="num" data-label="S&P 500">7,520.93 (−0.38%)</td><td class="num" data-label="Nasdaq">25,065.87 (−0.74%)</td><td class="num" data-label="Dow">52,231.89 (−0.30%)</td><td class="num" data-label="Russell 2000">2,821.38 (−0.68%)</td></tr>
+          <tr><td data-label="Session">Wed Nov 11</td><td class="num" data-label="S&P 500">7,619.38 (+1.31%)</td><td class="num" data-label="Nasdaq">25,466.19 (+1.60%)</td><td class="num" data-label="Dow">52,486.49 (+0.49%)</td><td class="num" data-label="Russell 2000">2,846.26 (+0.88%)</td></tr>
+          <tr><td data-label="Session">Thu Nov 12</td><td class="num" data-label="S&P 500">7,592.40 (−0.35%)</td><td class="num" data-label="Nasdaq">25,366.09 (−0.39%)</td><td class="num" data-label="Dow">52,297.09 (−0.36%)</td><td class="num" data-label="Russell 2000">2,799.06 (−1.66%)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">From the November 6 close to November 12: S&amp;P 500 +2.92%, Nasdaq +3.20%, Dow +1.97%. The November 5 rout has been roughly half-recovered at index level; the S&amp;P remains ~2.9% below its October 6 record close. Locked November 12 ETF closes: SPY $757.12 (−0.35%), QQQ $688.17 (−0.32%).</p>
+
+    <h3>What drove each session</h3>
+    <p><strong>Monday, November 9 — best day since April.</strong> The S&amp;P's +2.35% was its best session since April 8. Brent crude fell ~6% as the US signalled it was unlikely to renew attacks on Iran while talks progress; chip stocks rebounded from the prior week's rout — except the AI bellwether, which fell 4.27% after its board opened an independent investigation into its CEO. All 11 sectors rose, though new lows still exceeded new highs underneath: a strong up day on weak internals.</p>
+    <p><strong>Tuesday, November 10 — hot CPI stalls the rally.</strong> October CPI came in +0.4% on the headline and +0.3% core, both a tenth hotter than expected — the third straight +0.3% core print. (No year-on-year rate was published: October 2025 prices were not collected during the government shutdown.) A Fed governor, speaking hours before the release, said he was leaning toward a 25 bp December hike and that a core print of ~0.3% or higher should put a 50 bp hike on the table — the print met his condition; that is one governor's view, not the Committee's. The 10-year yield closed at 4.98%.</p>
+    <p><strong>Wednesday, November 11 — one earnings report reignites the AI trade.</strong> A major AI cloud customer reported revenue of $3.66 billion (+168% year-on-year, ahead of consensus), a $132.5 billion backlog, and raised its 2026 revenue guide to $13.0–13.3 billion with capex of $37–39 billion; its stock rose 24.71%. The semiconductor index closed +5.66%; technology led sectors at +3.23%; Dell rose 11.75% — the financial press explicitly linked the move to Dell's role as that customer's server supplier. The bond market was closed for Veterans Day. After the close came the first reports of the chip supplier's board preparing to remove its CEO.</p>
+    <p><strong>Thursday, November 12 — resignation confirmed; yields break 5.10%.</strong> Covered in Section 03 for Dell; for the market: the 10-year settled at 5.102–5.103%, up ~10.5 bp from Tuesday (the bond market was closed Wednesday) — its largest two-day gain since April 2025 and its highest close since October 21; the 2-year rose to 4.86%. Drivers: the post-CPI hike repricing, a presidential post that the US "doesn't need a deal with Iran" (oil rose), and a poorly received $25 billion 30-year auction. One correction worth making: at least one daily digest attributed Thursday to a "hot inflation print" — no CPI was released on November 12. CPI was November 10; October PPI is due Friday, November 13. Thursday's inflation leg was the <em>repricing</em> of Tuesday's print, not a new one.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>The AI supply chain, November 9–12 — closes (locked November 12 closes) and four-day move</caption>
+        <thead><tr><th>Name</th><th class="num">Nov 9</th><th class="num">Nov 10</th><th class="num">Nov 11</th><th class="num">Nov 12</th><th class="num">Nov 6 → Nov 12</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Name">DELL</td><td class="num" data-label="Nov 9">346.31 (+5.41%)</td><td class="num" data-label="Nov 10">334.38 (−3.44%)</td><td class="num" data-label="Nov 11">373.68 (+11.75%)</td><td class="num" data-label="Nov 12">371.17 (−0.67%)</td><td class="num" data-label="4-day"><span class="up">+12.98%</span></td></tr>
+          <tr><td data-label="Name">NVDA</td><td class="num" data-label="Nov 9">178.67 (−4.27%)</td><td class="num" data-label="Nov 10">168.89 (−5.47%)</td><td class="num" data-label="Nov 11">173.73 (+2.87%)</td><td class="num" data-label="Nov 12">166.19 (−4.34%)</td><td class="num" data-label="4-day"><span class="down">−10.96%</span></td></tr>
+          <tr><td data-label="Name">AVGO</td><td class="num" data-label="Nov 9">319.48 (+8.78%)</td><td class="num" data-label="Nov 10">331.98 (+3.91%)</td><td class="num" data-label="Nov 11">345.22 (+3.99%)</td><td class="num" data-label="Nov 12">364.36 (+5.54%)</td><td class="num" data-label="4-day"><span class="up">+24.07%</span></td></tr>
+          <tr><td data-label="Name">TSM</td><td class="num" data-label="Nov 9">388.62 (+3.51%)</td><td class="num" data-label="Nov 10">396.48 (+2.02%)</td><td class="num" data-label="Nov 11">413.35 (+4.25%)</td><td class="num" data-label="Nov 12">405.49 (−1.90%)</td><td class="num" data-label="4-day"><span class="up">+8.00%</span></td></tr>
+          <tr><td data-label="Name">HPE</td><td class="num" data-label="Nov 9">47.54 (+6.19%)</td><td class="num" data-label="Nov 10">47.93 (+0.82%)</td><td class="num" data-label="Nov 11">50.25 (+4.84%)</td><td class="num" data-label="Nov 12">50.16 (−0.18%)</td><td class="num" data-label="4-day"><span class="up">+12.04%</span></td></tr>
+          <tr><td data-label="Name">SMCI</td><td class="num" data-label="Nov 9">28.60 (−0.56%)</td><td class="num" data-label="Nov 10">27.79 (−2.83%)</td><td class="num" data-label="Nov 11">30.43 (+9.50%)</td><td class="num" data-label="Nov 12">26.99 (−11.30%)</td><td class="num" data-label="4-day"><span class="down">−6.16%</span></td></tr>
+          <tr><td data-label="Name">INTC</td><td class="num" data-label="Nov 9">59.37 (+5.49%)</td><td class="num" data-label="Nov 10">58.13 (−2.09%)</td><td class="num" data-label="Nov 11">62.50 (+7.52%)</td><td class="num" data-label="Nov 12">61.20 (−2.08%)</td><td class="num" data-label="4-day"><span class="up">+8.74%</span></td></tr>
+          <tr><td data-label="Name">MU</td><td class="num" data-label="Nov 9">733.15 (+6.25%)</td><td class="num" data-label="Nov 10">725.11 (−1.10%)</td><td class="num" data-label="Nov 11">811.30 (+11.89%)</td><td class="num" data-label="Nov 12">798.44 (−1.59%)</td><td class="num" data-label="4-day"><span class="up">+15.71%</span></td></tr>
+          <tr><td data-label="Name">AMD</td><td class="num" data-label="Nov 9">508.58 (+13.26%)</td><td class="num" data-label="Nov 10">515.21 (+1.30%)</td><td class="num" data-label="Nov 11">552.90 (+7.32%)</td><td class="num" data-label="Nov 12">585.30 (+5.86%)</td><td class="num" data-label="4-day"><span class="up">+30.35%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">The pattern is dispersion, not a uniform AI tape: two names rose every session (+30.35% and +24.07% over the four days); the governance-hit bellwether fell three of four (−10.96% net); one name is net negative despite a +9.50% Wednesday. A small number of history pages show marginally different November 12 closes for five of these names; the locked closes above are used throughout.</p>
+
+    <h3>Volatility, yields, breadth</h3>
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>VIX and Treasury yields, November 6–12</caption>
+        <thead><tr><th>Measure</th><th class="num">Nov 6</th><th class="num">Nov 9</th><th class="num">Nov 10</th><th class="num">Nov 11</th><th class="num">Nov 12</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Measure">VIX close</td><td class="num" data-label="Nov 6">25.64</td><td class="num" data-label="Nov 9">19.92</td><td class="num" data-label="Nov 10">19.46</td><td class="num" data-label="Nov 11">17.49</td><td class="num" data-label="Nov 12">18.70 (+6.92%)</td></tr>
+          <tr><td data-label="Measure">10-year yield</td><td class="num" data-label="Nov 6">~4.85–4.87%*</td><td class="num" data-label="Nov 9">~4.87%</td><td class="num" data-label="Nov 10">4.98%</td><td class="num" data-label="Nov 11">~5.00%†</td><td class="num" data-label="Nov 12">5.10%</td></tr>
+          <tr><td data-label="Measure">2-year yield</td><td class="num" data-label="Nov 6">—</td><td class="num" data-label="Nov 9">~4.56%</td><td class="num" data-label="Nov 10">4.74%</td><td class="num" data-label="Nov 11">~4.76%</td><td class="num" data-label="Nov 12">4.86%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">*The November 6 10-year figure is an approximate chart reading, not a firmly established close — flagged in the Appendix. †Bond market closed November 11 for Veterans Day; the figure is an indicative snapshot. One vendor shows the November 12 VIX at 18.88 rather than 18.70; 18.70 is used.</p>
+    <p>Breadth tells the fragile half of the story. Monday was broad (418 advancers / 80 decliners in the S&amp;P 500) but new lows still exceeded new highs. Wednesday was broad and tech-led. Thursday was poor: 137 advancers against 361 decliners in the S&amp;P 500, and 1,404 against 4,129 across the broad market. Energy (+1.51%) was the only sector higher; materials (−1.28%) was worst; ten of eleven sectors fell — and technology fell only 0.34% because the two big gainers offset most of the bellwether's drop. Tuesday's breadth could not be firmly established and is not stated (Appendix).</p>
+
+    <h3>The Fed — December 8–9, after the hot jobs print and the hotter CPI</h3>
+    <p>The October jobs report (Friday, November 6) beat on every line: payrolls +165,000 against +65,000 consensus, unemployment 4.1%, wages +0.4% on the month, prior months revised up a combined +84,000. Hike odds jumped that day to roughly 77–80%. Since then the October CPI has landed hot as well, and the question is no longer hike-or-hold — it is 25 or 50. The figures are venue- and time-dependent and are presented as ranges; no single number is settled:</p>
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>December hike pricing — reported ranges (venues named in-table, per desk convention)</caption>
+        <thead><tr><th>Measure</th><th class="num">Reported range</th><th>Venue / timing</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Measure">Any December hike — Nov 6, post-jobs</td><td class="num" data-label="Range">~77–78%</td><td data-label="Venue">CME FedWatch / press reports, Nov 6</td></tr>
+          <tr><td data-label="Measure">Any December hike — post-CPI, Nov 10–11</td><td class="num" data-label="Range">~100% in one account</td><td data-label="Venue">CME FedWatch as reported Nov 10–11</td></tr>
+          <tr><td data-label="Measure">Any December hike — Nov 12 (latest)</td><td class="num" data-label="Range"><span class="accent">~93–97%</span></td><td data-label="Venue">CME FedWatch reports / prediction markets, Nov 12</td></tr>
+          <tr><td data-label="Measure">25 bp hike — Nov 12</td><td class="num" data-label="Range">~86–93%</td><td data-label="Venue">CME FedWatch as reported Nov 12</td></tr>
+          <tr><td data-label="Measure">50 bp hike — Nov 12</td><td class="num" data-label="Range">~9–14%</td><td data-label="Venue">CME FedWatch / prediction markets, Nov 10–12</td></tr>
+          <tr><td data-label="Measure">Further +25 bp in January</td><td class="num" data-label="Range">~62–67%</td><td data-label="Venue">CME FedWatch as reported Nov 12</td></tr>
+          <tr><td data-label="Measure">Two hikes through end-January</td><td class="num" data-label="Range">~70% (vs 11% a week ago)</td><td data-label="Venue">Market reporting, Nov 12</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The current target range is 3.75–4.00%; a 25 bp hike takes it to 4.00–4.25%. The FOMC meets December 8–9, decision Wednesday, December 9 at 2:00 PM ET, with updated projections. The calendar matters for the vote: the November jobs report lands Friday, December 4, October PCE on November 25 — and November CPI on December 10, the day <em>after</em> the meeting, so Tuesday's October CPI is the last inflation print the Committee sees before voting. For Dell, the practical consequence is a higher discount rate and a 5%+ 10-year — a headwind for a hardware name whose AI story is partly financed by customers' debt-funded build-outs.</p>
+
+    <div class="warnbox">
+      <h3>Stabilisation verdict — partial, and still fragile</h3>
+      <p>For: two +1.3% to +2.4% index days in four sessions; the VIX down ~32% in three sessions into Wednesday (a fall of that speed has happened only a handful of times since 1990); the S&amp;P back above its own 200-day average. Against: Thursday's ~1:3 breadth; the rate-sensitive Russell 2000 below its Monday close; the 10-year back above 5% with the market pricing <em>more</em> tightening, not less; and leadership rotating daily between AI hardware winners and losers. The honest characterisation is a sharp relief rally inside an unresolved drawdown, with volatility still elevated.</p>
+    </div>
+  </section>
+
+  <!-- ============ 05 NEWS ============ -->
+  <section class="page" id="news">
+    <div class="section-kicker">05 · Company news · November 9–12</div>
+    <h2>Thin, immaterial — and nothing that pre-answers the print.</h2>
+    <p class="lead">There were no Dell earnings, guidance, pre-announcement, buyback, dividend, management or filing items in the window. The last results were September 1; the next event is the November 24 call. What follows is everything that did surface — none of it was cited as moving the stock.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>Analyst actions — the November 9–12 window, with the immediately preceding actions for context (firms named in-table; they are the data)</caption>
+        <thead><tr><th>Date</th><th>Firm</th><th>Analyst</th><th>Action</th><th>Rating</th><th class="num">Price target</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Date"><strong>Nov 9, 2026</strong></td><td data-label="Firm"><strong>Bank of America Securities</strong></td><td data-label="Analyst"><strong>Wamsi Mohan</strong></td><td data-label="Action"><strong>Maintains / reiterates</strong></td><td data-label="Rating"><strong>Buy</strong></td><td class="num" data-label="Target"><strong>n/a — none published</strong></td></tr>
+          <tr><td data-label="Date">Nov 3, 2026</td><td data-label="Firm">Goldman Sachs</td><td data-label="Analyst">Katherine Murphy</td><td data-label="Action">Reiterates</td><td data-label="Rating">Buy</td><td class="num" data-label="Target">$570 → $590</td></tr>
+          <tr><td data-label="Date">Nov 3, 2026</td><td data-label="Firm">Weiss Ratings</td><td data-label="Analyst">—</td><td data-label="Action">Downgrade</td><td data-label="Rating">Buy (B) → Buy (B−)</td><td class="num" data-label="Target">—</td></tr>
+          <tr><td data-label="Date">Oct 26, 2026</td><td data-label="Firm">Bernstein</td><td data-label="Analyst">Mark Newman</td><td data-label="Action">Maintains</td><td data-label="Rating">Buy</td><td class="num" data-label="Target">$650</td></tr>
+          <tr><td data-label="Date">Oct 14, 2026</td><td data-label="Firm">Barclays</td><td data-label="Analyst">Tim Long</td><td data-label="Action">Downgrade</td><td data-label="Rating">Overweight → Equal Weight</td><td class="num" data-label="Target">$603 → $574</td></tr>
+          <tr><td data-label="Date">Oct 8, 2026</td><td data-label="Firm">Citi</td><td data-label="Analyst">Asiya Merchant</td><td data-label="Action">Maintains</td><td data-label="Rating">Buy</td><td class="num" data-label="Target">$515 → $600</td></tr>
+          <tr><td data-label="Date">Sep 10, 2026</td><td data-label="Firm">RBC Capital</td><td data-label="Analyst">—</td><td data-label="Action">Initiates coverage</td><td data-label="Rating">Outperform</td><td class="num" data-label="Target">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Consensus, kept provider-separate: one aggregator's 29-analyst set rates the stock Buy with a $590 average target (low $490, median $600, high $700); a second's 36-analyst set rates it Moderate Buy at a $569.96 average (high $735, low $289). The desk's $580 sits between the two averages. The November 9 reiteration's <em>reasoning</em> was not retrievable from the public aggregators — the action is verified, the content is not (Appendix).</p>
+
+    <h3>Product and partner items — real, minor, not price drivers</h3>
+    <p><strong>AI Data Platform expansion.</strong> Dell expanded its AI data platform — agentic-AI context with a unified semantic layer and enterprise knowledge graph, GPU-accelerated data preparation, new search and analytics engines, integration of its scale-out storage with the latest AI factory racks, and a software-defined storage option. Two outlets date the announcement November 9; another summarised it as a November 11 item, and no dated company press release was found. The date is unresolved (Appendix) and immaterial either way: the financial press attributed Monday's +5.41% to the broad tape and Wednesday's +11.75% to the cloud customer's earnings — not to this announcement.</p>
+    <p><strong>Storage rack with a flash partner (November 11).</strong> A "world's first" 157-petabyte object-storage solution in a single 42U rack — 640 high-density SSDs across 16 Dell servers running Dell's object-storage software. Minor product/partner news; no price or stock-move attribution.</p>
+    <p><strong>University HPC/AI centre (November 11)</strong> — Dell servers, accelerators, high-speed interconnect and storage at the core of a university's new high-performance computing centre, part-funded by a federal institute. Minor customer news. <strong>Five new Pro headsets (November 11)</strong> with AI noise cancellation. Immaterial.</p>
+    <p><strong>Memory.</strong> A large AI lab's amended IPO filing named a memory maker for a $1 billion allocation in its concurrent private placement; memory names rallied hard on Wednesday. No Dell-specific memory-supply headline was found — Dell's September-quarter commentary, that memory constraints are the primary bottleneck, remains the last word. And critically: <strong>no new reporting on Dell's third-quarter operating or free cash flow, inventories, or working capital was found in the window.</strong> The absence is reported as "not found," not as proof none exists.</p>
+
+    <h3>The November 24 print setup — unchanged in substance</h3>
+    <p>No drift was measurable in the window: one provider states its estimate was unchanged over the prior 30 days, and the figures below are the latest available as of November 12. Providers disagree and are never averaged — the $1.35 billion revenue spread between the lowest and highest is itself a source of print-day volatility: a print at $50.0 billion would beat one bar by ~1.5% and miss another by ~1.2%.</p>
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>Q3 FY27 consensus vs guidance — by provider (providers named in-table; they are the data)</caption>
+        <thead><tr><th>Provider</th><th class="num">EPS</th><th class="num">Revenue</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Provider">MarketBeat</td><td class="num" data-label="EPS">$6.57</td><td class="num" data-label="Revenue">$49.28B</td><td data-label="Note">Prior-year quarter: $2.59 / $27.01B; Dell has beaten EPS in 7 of the last 8 quarters</td></tr>
+          <tr><td data-label="Provider">Zacks Consensus</td><td class="num" data-label="EPS">$6.63</td><td class="num" data-label="Revenue">$50.63B</td><td data-label="Note">Unchanged over the prior 30 days; FY27 $26.09 / $195.68B</td></tr>
+          <tr><td data-label="Provider">Finnhub (estimate)</td><td class="num" data-label="EPS">$6.685</td><td class="num" data-label="Revenue">$50.194B</td><td data-label="Note">A third provider's estimate, shown for completeness — not a consensus</td></tr>
+          <tr><td data-label="Provider"><strong>Guide (Sep 1, Dell)</strong></td><td class="num" data-label="EPS"><strong>$6.50</strong></td><td class="num" data-label="Revenue"><strong>$49.0B</strong></td><td data-label="Note"><strong>The bar every provider sits above</strong>; ~$19B of AI-server revenue is implied in the quarter's guide</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">The print: Tuesday, November 24, after the close; call at 4:30 PM ET. Beyond the cloud customer's read-through (positive for AI-server demand) and the chip supplier's governance overhang (negative for sentiment, not for Dell's order book), no channel check or pre-print commentary touching Dell's quarter was found in the window.</p>
+  </section>
+
+  <!-- ============ 06 TECHNICALS ============ -->
+  <section class="page" id="technicals">
+    <div class="section-kicker">06 · Technical position · Close $371.17, November 12</div>
+    <h2>Above the 200-day. A long way below everything else.</h2>
+    <p class="lead">The reclaim repaired the shortest timeframe only. On the intermediate timeframe the stock remains in a deep downtrend: the 50-day average is the next objective, not a nearby level, and the October 30 low has flipped from support to overhead resistance.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>Key levels vs the $371.17 close</caption>
+        <thead><tr><th>Level</th><th class="num">Value</th><th class="num">Distance from close</th><th>Read</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Level">52-week high (Sep 18, intraday)</td><td class="num" data-label="Value">$595.51</td><td class="num" data-label="Distance">−$224.34 (−37.67%)</td><td data-label="Read">Not a near-term reference; the stock has lost more than a third in ~8 weeks</td></tr>
+          <tr><td data-label="Level">50-day average — desk</td><td class="num" data-label="Value">~$510.83</td><td class="num" data-label="Distance">−$139.66 (−27.34%)</td><td data-label="Read">The next technical objective, not a nearby level</td></tr>
+          <tr><td data-label="Level">50-day average — statistics page</td><td class="num" data-label="Value">$496.90</td><td class="num" data-label="Distance">−$125.73 (−25.30%)</td><td data-label="Read">Same message on a second provider's convention</td></tr>
+          <tr><td data-label="Level">October 30 intraday low (close $424.30)</td><td class="num" data-label="Value">$413.00</td><td class="num" data-label="Distance">−$41.83 (−10.13%)</td><td data-label="Read">Now overhead resistance, not support</td></tr>
+          <tr><td data-label="Level">Invalidated ~$352 level</td><td class="num" data-label="Value">~$352</td><td class="num" data-label="Distance">+$19.17 (+5.45%)</td><td data-label="Read">Reclaimed Wednesday; a close back below it is the first sign of fraying</td></tr>
+          <tr><td data-label="Level">200-day average — desk</td><td class="num" data-label="Value">~$335.39</td><td class="num" data-label="Distance">+$35.78 (+10.67%)</td><td data-label="Read">Two consecutive closes above; the framework line</td></tr>
+          <tr><td data-label="Level">200-day average — second provider</td><td class="num" data-label="Value">$337.46</td><td class="num" data-label="Distance">+$33.71 (+9.99%)</td><td data-label="Read">Same reclaim conclusion</td></tr>
+          <tr><td data-label="Level">200-day average — statistics page</td><td class="num" data-label="Value">$342.26</td><td class="num" data-label="Distance">+$28.91 (+8.45%)</td><td data-label="Read">Same reclaim conclusion</td></tr>
+          <tr><td data-label="Level">November 5 intraday low (rout)</td><td class="num" data-label="Value">$315.00</td><td class="num" data-label="Distance">−$56.17 (−15.13%)</td><td data-label="Read">Next support below the 200-day, per technician coverage</td></tr>
+          <tr><td data-label="Level">$300 invalidation</td><td class="num" data-label="Value">$300.00</td><td class="num" data-label="Distance">+$71.17 (+23.72%)</td><td data-label="Read">A fall to $300 is −19.18% from here; the level sits just below the rout low</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">Nearest overhead references: Wednesday's high of $384.69 (+3.64%) and Thursday's $382.68. Momentum: RSI 39.19 — recovering from oversold (daily RSI touched ~26 in the rout week) but still below 50. Beta 1.44–1.51 (provider-dependent). Volume: Thursday ~7.9–8.7 million shares (vendors differ; flagged in the Appendix), Wednesday 9.31 million — elevated, but not capitulation-level against the rout day's 14.23 million. Technician coverage in the window cited the $335–$337 zone itself and $315 below it; no technician target or resistance call above $413 was found.</p>
+  </section>
+
+  <!-- ============ 07 VALUATION ============ -->
+  <section class="page" id="valuation">
+    <div class="section-kicker">07 · Valuation reset · One provider, one base price</div>
+    <h2>The multiple expanded because the price did. The denominators did not move.</h2>
+    <p class="lead">At $328 on November 6 the stock screened as a deep-value AI name. At $371.17 it screens as a low-teens-multiple hardware name — still well below the desk's $580 target, but the rout discount has narrowed by roughly the 13% the stock has risen.</p>
+
+    <div class="table-wrap">
+      <table class="data-table">
+        <caption>Valuation — single provider: StockAnalysis (statistics &amp; forecast pages, read November 12, 2026), base price $371.17</caption>
+        <thead><tr><th>Multiple</th><th class="num">Provider-published</th><th>Denominator (provider)</th><th class="num">Arithmetic scaling*</th><th class="num">Nov 6 level</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Multiple">Forward P/E</td><td class="num" data-label="Published">13.15x</td><td data-label="Denominator">Implied forward EPS $28.23</td><td class="num" data-label="Scaling">13.17x</td><td class="num" data-label="Nov 6">11.65x</td></tr>
+          <tr><td data-label="Multiple">EV / EBITDA</td><td class="num" data-label="Published">14.85x</td><td data-label="Denominator">EV $259.63B; EBITDA (TTM) $17.73B</td><td class="num" data-label="Scaling">14.83x</td><td class="num" data-label="Nov 6">13.12x</td></tr>
+          <tr><td data-label="Multiple">Price / sales (trailing)</td><td class="num" data-label="Published">1.58x</td><td data-label="Denominator">Revenue (TTM) $151.20B</td><td class="num" data-label="Scaling">1.58x</td><td class="num" data-label="Nov 6">1.40x (arithmetic only)</td></tr>
+          <tr><td data-label="Multiple">Free-cash-flow yield</td><td class="num" data-label="Published">3.57%</td><td data-label="Denominator">FCF (TTM) $8.56B; $13.46/share; P/FCF 27.99x</td><td class="num" data-label="Scaling">3.63%</td><td class="num" data-label="Nov 6">4.10%</td></tr>
+          <tr><td data-label="Multiple">(Memo) Trailing P/E</td><td class="num" data-label="Published">21.66x</td><td data-label="Denominator">EPS (TTM) $17.14</td><td class="num" data-label="Scaling">—</td><td class="num" data-label="Nov 6">—</td></tr>
+          <tr><td data-label="Multiple">(Memo) EV / sales</td><td class="num" data-label="Published">1.74x</td><td data-label="Denominator">EV $259.63B / revenue $151.20B</td><td class="num" data-label="Scaling">—</td><td class="num" data-label="Nov 6">—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note">*Arithmetic scalings are <strong>not</strong> provider-published: the November 6 multiples scaled by the price ratio 371.17 ÷ 328.38 = 1.1303 (FCF yield divided by the same ratio). They land within 0.02x / 0.06 pp of the provider-published figures at $371.17 — the entire November 6 → 12 multiple expansion is explained by the +13.03% price move from the $328.38 base, with no material change in the denominators. (The EV/EBITDA scaling is an approximation: net debt of $23.63B does not scale with price.) No market-capitalisation figure is presented: the provider's figure is inconsistent with ~636M shares × $371.17. The enterprise value shown is consistent with that share-count arithmetic plus net debt. Small internal differences exist inside the provider's own figures (EV ÷ EBITDA divides to 14.64x against the published 14.85x) — the published figures are the headline; the checks are disclosed in the Appendix.</p>
+
+    <div class="warnbox">
+      <h3>A definitional warning on "forward"</h3>
+      <p>The same forecast page that publishes the 13.15x forward multiple also publishes a fiscal-2027 average EPS of $25.92 across 24 analysts — which implies <strong>14.32x</strong> on the $371.17 close. The 13.15x therefore rests on a different forward earnings figure (~$28.23, a next-twelve-months basis), not on the fiscal-2027 number. Do not quote "13.15x on $25.92" — the two come from different earnings definitions on the same page. And on the like-for-like fiscal-year basis, the page's own history (FY26 9.88x, FY25 11.36x, FY24 12.84x, FY23 7.03x, FY22 8.32x) puts today's 14.32x <em>above</em> every year in that five-year table: on a forward fiscal-year basis the stock is no longer optically cheap, even though the next-twelve-months figure looks low. That is a matter of definition, not of opinion — and it is exactly why the November 6 margin of safety should be treated as narrowed, not intact.</p>
+    </div>
+
+    <p>Other figures from the same provider, for context: dividend $2.52 a year (0.68% yield), buyback yield 5.75%, shareholder yield 6.42%; gross margin 19.91%, operating margin 9.90%, FCF margin 5.66% (all trailing twelve months); cash $11.57 billion against debt of $35.28 billion (net debt $23.63 billion, $37.17 per share); return on invested capital 29.36%; debt/EBITDA 1.95x; interest coverage 9.60x. A secondary note dated November 10 put the trailing multiple at 19.4x, a 39% discount to its sector median, at a $333.38 price — a third-party opinion, not the provider used here, and not carried into the headline multiples.</p>
+  </section>
+
+  <!-- ============ 08 CHANGED ============ -->
+  <section class="page" id="changed">
+    <div class="section-kicker">08 · What changed vs the November 6 update</div>
+    <h2>The thesis did not change. The tape did — again.</h2>
+
+    <div class="two-col">
+      <div class="pillar">
+        <h3>Pure tape — no thesis change</h3>
+        <p><strong>The entire November 9–12 price action.</strong> The +5.41%, −3.44%, +11.75% and −0.67% moves are explained, in order, by a broad oil-led relief rally, a hot CPI print, a customer's earnings, and a supplier's CEO resignation — none of which is a Dell fundamental. Business momentum, margin trajectory, backlog durability ($95B, a second-quarter figure), cash generation and balance sheet are <strong>unchanged on the evidence of this window</strong>, because no Dell disclosure touched any of them. The 200-day reclaim is a technical fact about the share price, not new information about the business.</p>
+      </div>
+      <div class="pillar">
+        <h3>Second-order — marginally thesis-relevant</h3>
+        <p><strong>(a)</strong> The cloud customer's raise — 2026 capex of $37–39B and a $132.5B backlog — is a positive read-through for AI-server <em>demand durability</em>, Dell's core debate; it is one customer's print, and that customer's own funding costs remain a watch item. <strong>(b)</strong> The supplier's governance shock is a negative read-through for the ecosystem's key supplier — but there is <strong>no evidence as of November 12</strong> that it disrupts GPU supply or customer confidence; Dell's dependence is on supply, not on who runs the supplier. <strong>(c)</strong> The rate repricing (December hike ~93–97% priced, 10-year at 5.10%) tightens conditions for Dell's customers and for Dell's debt-funded working capital — real, but slow-moving, not a November 24 binary.</p>
+      </div>
+    </div>
+
+    <h3>The bear case</h3>
+    <p>The bear case is that the November 9–12 rally is a bear-market bounce in a stock that has lost 38% from its September high for fundamental reasons that have not gone away: AI-server revenue is low-margin, GPU-constrained and working-capital-hungry, so the $95B backlog converts slowly and dilutes group margins; memory prices are rising — the market pricing memory scarcity on Wednesday is pricing a <em>cost</em> for Dell, not a benefit; the PC business faces the demand warning a chip rival issued on October 30; the balance sheet carries $35.28B of debt against $11.57B of cash with negative book equity; and the stock now sits 13% above its November 6 low, on two closes above a 200-day it failed the first time it tested it, into a print where consensus already sits above guide — where a miss on backlog conversion or margin would re-open the $315 rout low and the $300 invalidation, with a 5%+ 10-year and a near-certain December hike removing the valuation cushion that existed at 11.65x forward earnings.</p>
+
+    <h3>The bull case</h3>
+    <p>The bull case is that the tape has finally stopped punishing Dell for other companies' problems, and the fundamentals into November 24 are intact: the AI-server backlog is $95B — larger than the entire fiscal-2027 AI-server revenue guide of $74B — with record second-quarter AI orders of $60.9B and AI revenue that doubled to $16.4B; a major cloud customer just raised its capex and backlog, confirming end-demand for AI compute is not slowing; the stock at $371.17 trades at 13.15x forward earnings and a 3.57% free-cash-flow yield, with a 6.42% shareholder yield, against a $590 average Street target and the desk's $580; the reclaim on two closes after a one-day failure is the kind of bottoming structure that preceded the May–September run from ~$300 to $595; and Thursday's session — a 10% gap down on a governance shock at another company, bought back to flat — showed sellers exhausted at the 200-day and a marginal buyer willing to own Dell through AI-ecosystem noise. A clean November 24 print — backlog conversion plus margin stability — re-rates the stock toward the high-$400s first and the $500s thereafter.</p>
+  </section>
+
+  <!-- ============ 09 INTO NOV 24 ============ -->
+  <section class="page" id="watch">
+    <div class="section-kicker">09 · The print · November 24</div>
+    <h2>The numbers that decide whether the reclaim was a repair or a relief rally.</h2>
+    <p class="lead">The framework's technical leg is met. Its fundamental leg is untouched: the print — Tuesday, November 24, after the close, call at 4:30 PM ET — remains the arbiter for every question this refresh could not answer.</p>
+
+    <ol class="watchlist">
+      <li><span class="n">1</span><div><strong>AI-server revenue and backlog conversion</strong><span>Against the ~$19B of AI-server revenue implied by the quarter's guide and the $95B backlog at the second quarter: did the backlog grow, hold or shrink — and did revenue convert without a margin give-back? This is the durability test.</span></div></li>
+      <li><span class="n">2</span><div><strong>Gross margin and infrastructure-segment operating margin</strong><span>Second-quarter gross margin was 21.1% (19.91% trailing twelve months on the valuation provider's figures); memory-cost pressure is the known headwind. A stable or rising margin on $49B+ of revenue is the bull confirmation; a margin miss is the bear trigger, whatever revenue does.</span></div></li>
+      <li><span class="n">3</span><div><strong>Operating cash flow, free cash flow and working capital</strong><span>The second-quarter AI ramp was working-capital intensive. The print must show cash conversion — inventories and customer deposits included — not just revenue. No new data on any of these was found for November 9–12, which is precisely why they are the watch items.</span></div></li>
+    </ol>
+
+    <div class="callout">
+      <h3>The framework — as it now stands</h3>
+      <p><strong>Lifted:</strong> the suspension on considering new Dell capital, because the reclaim leg is met on two consecutive closes. <strong>Not changed:</strong> the rating (Buy, 6/10), the $580 target, the $300 invalidation, and the standing rule that the November 24 print is the fundamental arbiter. <strong>No gate is installed and no add is recommended</strong> — the framework change is permission, not a buy signal at a price up 12.98% in four sessions. <strong>Re-imposition:</strong> a close back below the 200-day average — cleanly, per the test in Section 02 — puts the suspension back on. The disciplined reading: the door is open, the price is not obviously the entry, and the print decides whether the reclaim was the start of a repair or a relief rally that fails at the 50-day.</p>
+    </div>
+
+    <h3>Calendar into the print</h3>
+    <div class="timeline">
+      <div class="date">Fri Nov 13</div><div class="event"><strong>October PPI — 8:30 AM ET; third close test</strong><span>The second inflation input to December 9, and the session that can deliver a third consecutive close above the 200-day.</span></div>
+      <div class="date">Tue Nov 17</div><div class="event"><strong>AI bellwether earnings — after the close</strong><span>The ecosystem's key supplier reports under an interim CEO; its GPU supply and demand tone lands a week before Dell's own print.</span></div>
+      <div class="date">Tue Nov 24</div><div class="event"><strong>Dell Q3 FY27 — after the close, call 4:30 PM ET</strong><span>The bar: $6.57–$6.63 EPS / $49.28–$50.63B revenue by provider, against guidance of $6.50 / $49.0B. The framework's fundamental trigger.</span></div>
+      <div class="date">Fri Dec 4</div><div class="event"><strong>November employment report — 8:30 AM ET</strong><span>The last jobs print before the FOMC.</span></div>
+      <div class="date">Dec 8–9</div><div class="event"><strong>FOMC — decision December 9, 2:00 PM ET</strong><span>A hike is ~93–97% priced (ranges in Section 04); 25 bp to 4.00–4.25% is the central case, with a 50 bp tail.</span></div>
+    </div>
+
+    <div class="note">
+      <p><strong>Position note.</strong> The holding is 12 shares at a $407.12 blended average — $4,885.44 of cost against $4,454.04 of market value at Thursday's close, an unrealised loss of $431.40 (−8.83%). Thursday's close is the first since the position was doubled that sits within reach of cost on a framework the desk itself set. The desk's line is unchanged in substance: hold the shares, let the print arbitrate, and treat any decision on further capital as the reader's — made with the reclaim met, the 50-day still 27% overhead, and twelve days of headline risk in between.</p>
+    </div>
+  </section>
+
+  <!-- ============ APPENDIX ============ -->
+  <section class="page appendix" id="appendix">
+    <div class="section-kicker">Appendix</div>
+    <h2>Sources</h2>
+    <p class="muted">Sources only — per desk convention, no source markers appear in the body of this report; provider and firm names inside data tables are the data itself (which provider's figure, which firm's action). All figures USD. Research cutoff Thursday, November 12, 2026, ~5:50 PM ET (market closed 4:00 PM ET).</p>
+    <ol class="source-list">
+      <li><span>Finnhub — locked regular-session closes, November 12, 2026 (DELL $371.17 and the AI-complex closes in Sections 01–04), supplied as the report's locked price set; corroborated against Finnhub search results, Nov 12, 22:46 UTC. <a href="https://finnhub.io/">finnhub.io</a></span></li>
+      <li><span>StockAnalysis — Dell history page (daily bars November 5–12, volume, October 30 low $413.00, September 18 high $595.51), read live Nov 12, 22:50 UTC. <a href="https://stockanalysis.com/stocks/dell/history/">stockanalysis.com/stocks/dell/history</a></span></li>
+      <li><span>StockAnalysis — Dell statistics page (all Section 07 provider multiples and denominators; 50-day $496.90, 200-day $342.26, RSI 39.19), read live Nov 12, 22:50 UTC. <a href="https://stockanalysis.com/stocks/dell/statistics/">stockanalysis.com/stocks/dell/statistics</a></span></li>
+      <li><span>StockAnalysis — Dell forecast &amp; ratings pages (29-analyst consensus, average target $590; analyst actions incl. the November 9 reiteration; FY27 EPS $25.92 and the forward-multiple history table), read live Nov 12, 22:50 UTC. <a href="https://stockanalysis.com/stocks/dell/forecast/">stockanalysis.com/stocks/dell/forecast</a> · <a href="https://stockanalysis.com/stocks/dell/ratings/">ratings</a></span></li>
+      <li><span>StockAnalysis — history pages for NVDA, AVGO, TSM, HPE, SMCI, INTC, MU, AMD (November 9–11 closes in Section 04), read live Nov 12, 22:50 UTC. <a href="https://stockanalysis.com/stocks/nvda/history/">stockanalysis.com/stocks/{ticker}/history</a></span></li>
+      <li><span>MarketBeat — Dell Q3 FY27 earnings page (consensus $6.57 / $49.28B; November 24, after the close; call 4:30 PM ET; 7-of-8 EPS beats) and forecast page (36 analysts, Moderate Buy, $569.96 average), read Nov 12, 2026. <a href="https://www.marketbeat.com/earnings/reports/2026-11-24-dell-technologies-inc-stock/">marketbeat.com</a> · <a href="https://www.marketbeat.com/stocks/NYSE/DELL/forecast/">forecast</a></span></li>
+      <li><span>Zacks — "Here Is What to Know Beyond Why Dell Is a Trending Stock," Nov 6, 2026 (consensus $6.63 / $50.63B, unchanged 30 days; FY27 $26.09 / $195.68B); and "Stock Market News for Nov 9, 2026" (November 6 index closes; VIX 25.64). <a href="https://www.zacks.com/stock/news/3025340/here-is-what-to-know-beyond-why-dell-technologies-inc-dell-is-a-trending-stock">zacks.com</a> · <a href="https://www.zacks.com/stock/news/3026040/stock-market-news-for-nov-9-2026">Nov 9 news</a></span></li>
+      <li><span>Edge Consultancy — "US Market Wrap 9 November" (November 9 closes, sectors, oil). <a href="https://edgeconsultancykw.com/us-market-wrap-09-november-2026/">edgeconsultancykw.com</a></span></li>
+      <li><span>CurveAhead Market Strategies — market-structure notes, November 10 &amp; 12, 2026 (breadth and new highs/lows, yields, November 11 sectors and breadth). <a href="https://www.curveaheadmarketstrategies.com/market-structure-broad-rebound-narrow-proof-november-10-2026/">curveaheadmarketstrategies.com</a> · <a href="https://www.curveaheadmarketstrategies.com/market-structure-ai-leadership-meets-5-percent-rate-test-november-12-2026/">Nov 12 note</a></span></li>
+      <li><span>StockMarketWatch — market digests, November 9–12, 2026 (index closes, VIX 18.70 on Nov 12). <a href="https://stockmarketwatch.com/digest/2026-11-12">stockmarketwatch.com/digest/2026-11-12</a></span></li>
+      <li><span>FXNews — "Nasdaq closes 1.6% higher…," Nov 11, 2026 (official November 11 closes). <a href="https://fxnews.ai/news/nasdaq-sp500-dow-veterans-day-november-11-2026-us-close/">fxnews.ai</a></span></li>
+      <li><span>Polstob — "Chip index closes up 5.66%…" (November 11 SOX and Nasdaq-100 closes). <a href="https://polstob.com/news/chip-index-closes-up-5-66-nasdaq-100-up-2-28/">polstob.com</a></span></li>
+      <li><span>Swingfolio — US Close, November 11 &amp; 12, 2026 (closes, breadth, November 12 sector scorecard). <a href="https://swingfolio.com/daily/us/2026-11-11/afternoon">swingfolio.com/daily/us/2026-11-11</a> · <a href="https://swingfolio.com/daily/us/2026-11-12/afternoon">Nov 12</a></span></li>
+      <li><span>The Trade Signal — close brief, Nov 12, 2026 (breadth 1,404 vs 4,129; sectors; Nasdaq-100 close; VIX 18.88 variant). <a href="https://thetradesignal.com/brief/2026-11-12/close">thetradesignal.com</a></span></li>
+      <li><span>USA Today — October CPI report, Nov 10, 2026 (+0.4% headline / +0.3% core). <a href="https://www.usatoday.com/story/money/economy/inflation-cost-of-living/2026/11/10/october-2026-cpi-report-inflation/92628283007/">usatoday.com</a></span></li>
+      <li><span>Seoul Economic Daily — "Even Fed doves float half-point hike after hot October CPI," Nov 11, 2026 (Waller's condition; FedWatch 100% / 50 bp odds). <a href="https://en.sedaily.com/world/2026/11/11/even-fed-doves-float-half-point-hike-after-hot-october-cpi">en.sedaily.com</a></span></li>
+      <li><span>Tech&amp;Money Press — "Our take: October CPI, December Fed rate hike," Nov 10, 2026 (CPI detail; 50 bp at 13.6%). <a href="https://techandmoneypress.com/our-take-october-cpi-december-fed-rate-hike/">techandmoneypress.com</a></span></li>
+      <li><span>Realtor.com — mortgage rates, week of Nov 12, 2026 (CME: 25 bp December &gt;93%; January 67%). <a href="https://www.realtor.com/news/trends/mortgage-rates-this-week-november-12-2026/">realtor.com</a></span></li>
+      <li><span>FXStreet — Nov 12, 2026 (CME: 25 bp 90% / 50 bp 10%; January ~62%). <a href="https://www.fxstreet.com/analysis/the-canadian-dollars-14250-break-is-back-and-crude-is-the-reason-202611121523">fxstreet.com</a></span></li>
+      <li><span>PredictionMarketsPicks — Fed rate tracker, December 2026 (prediction-market pricing Nov 12, 13:30 ET: any hike 97%). <a href="https://predictionmarketspicks.com/tools/fed-rate-tracker/december-2026">predictionmarketspicks.com</a></span></li>
+      <li><span>Morningstar / MarketWatch — "The bond market now has an even bigger fear than AI fallout," Nov 12, 2026 (2-year 4.86%, 10-year 5.10%; two hikes through January ~70% vs 11% a week ago). <a href="https://www.morningstar.com/news/marketwatch/20261112182/the-bond-market-now-has-an-even-bigger-fear-than-ai-fallout">morningstar.com</a></span></li>
+      <li><span>WSJ live coverage, Nov 12, 2026 — bond yields card (10-year 5.102% vs 4.982% Tuesday). <a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-11-12-2026/card/bond-yields-rise-after-trump-s-iran-comments-pvfsEB7vSmlOm7WUGqog">wsj.com</a></span></li>
+      <li><span>Kinzan — US 10-year yield daily closes (4.983% Nov 10; 4.998% Nov 11; 5.103% Nov 12). <a href="https://kinzan.io/markets/rates/us-10-year-yield/">kinzan.io</a></span></li>
+      <li><span>YCharts — VIX index history (19.92 / 19.46 / 17.49, November 9–11). <a href="https://ycharts.com/indicators/vix_volatility_index">ycharts.com</a></span></li>
+      <li><span>USA Today — "Jensen Huang resigns," Nov 12, 2026; TechCrunch — resignation and interim-CEO coverage, Nov 12, 2026; 8-K summary (resignation effective immediately, accepted Nov 11, no reason given; November 17 earnings confirmed). <a href="https://www.usatoday.com/story/tech/2026/11/12/jensen-huang-nvidia-ceo-resigns-affair-investigation/92734431007/">usatoday.com</a> · <a href="https://techcrunch.com/2026/11/12/nvidias-jensen-huang-resigns-chipmaker-names-cfo-colette-kress-as-interim-ceo/">techcrunch.com</a> · <a href="https://alfw.ai/article/jensen-huang-resigns-nvidia-gives-no-reason/">alfw.ai</a></span></li>
+      <li><span>KuCoin flash, Nov 12, 2026 (after-hours moves Nov 11: NVDA −8.27%, DELL −3.83%, CRWV −6.76%, SMCI −4.40%). <a href="https://www.kucoin.com/news/flash/u-s-stocks-rise-nvidia-shares-drop-after-post-market-rumors">kucoin.com</a></span></li>
+      <li><span>HeyGoTrade — memory/CoreWeave news, Nov 11–12, 2026 (MU +11.89%; cloud customer's $3.66B revenue and $132.5B backlog; the $1B memory placement). <a href="https://www.heygotrade.com/en/news/micron-mu-stock-news-november-12-2026/">heygotrade.com</a></span></li>
+      <li><span>Finpulze — "Why Dell rose Wednesday, November 11, 2026" (CoreWeave attribution; 20-day $423.67, 50-day $499.36 levels; product items). <a href="https://finpulze.com/why-dell-rose-wednesday-november-11-2026/">finpulze.com</a></span></li>
+      <li><span>CRN — Dell AI Data Platform expansion coverage, November 2026. <a href="https://www.crn.com/news/storage/2026/dell-supercharges-enterprise-ai-push-with-new-agents-accelerated-data-prep-and-cloud-storage">crn.com</a></span></li>
+      <li><span>BusinessWire via HPCwire / Minyanville — "Kioxia and Dell collaborate on 157 PB single-rack object store," Nov 11, 2026. <a href="https://www.hpcwire.com/bigdatawire/this-just-in/kioxia-and-dell-collaborate-on-157-pb-single-rack-object-store/">hpcwire.com</a></span></li>
+      <li><span>The Lincolnian Online — "Dell Technologies shares gap down — here's why," Nov 12, 2026 (gap-down framing; a fourth provider's levels — 50-day $499.22, 200-day $339.97 — noted here only). <a href="https://www.thelincolnianonline.com/2026/11/12/dell-technologies-nysedell-shares-gap-down-heres-why.html">thelincolnianonline.com</a></span></li>
+      <li><span>Price history series — daily DELL bars through the November 6 close (chart in Section 02), with the November 9–12 closes appended from the locked close set and the history page above.</span></li>
+    </ol>
+
+    <h3 style="margin-top:36px">Not verified — flagged, not settled</h3>
+    <ul class="flag-list">
+      <li><strong>BofA November 9 note content.</strong> The action — Buy maintained/reiterated, no price target — is carried by the rating aggregators; the note's reasoning was not retrievable. An older note from the same firm citing a $180 target that surfaces in search results is stale (pre-2026 run-up) and must not be confused with the November 9 action.</li>
+      <li><strong>AI Data Platform expansion date.</strong> Dated November 9 by two outlets and summarised as a November 11 item by another; no dated company press release was found. Treated as a November 9–11 window item; immaterial either way.</li>
+      <li><strong>A claimed fresh downgrade to Neutral by a major bank (November 12).</strong> A single AI-generated article asserts it; no dated action from that bank appears in any of the three rating lists checked for November 9–12. Uncorroborated — excluded from the analyst table and from the thesis.</li>
+      <li><strong>Fed-odds figures.</strong> Venue- and time-dependent snapshots; the report carries ranges (~93–97% for any December hike on November 12) rather than a single settled number.</li>
+      <li><strong>November 10 breadth.</strong> No reliable advancer/decliner figure was found in the sources read; not stated in the body.</li>
+      <li><strong>November 12 VIX close.</strong> 18.70 (+6.92%) in the digest used vs 18.88 (+7.33%) in one other brief; 18.70 is used, difference noted.</li>
+      <li><strong>Dell November 12 volume.</strong> ~7.94M shares on one history page vs ~8.68M implied by other feeds; both around the ~8.2M average. Neither is asserted as official.</li>
+      <li><strong>November 6 10-year yield.</strong> Only an approximate ~4.85% chart reading covering November 6–9 was found; shown as approximate in Section 04.</li>
+      <li><strong>Two other analyst actions in the AI complex (November 11–12)</strong> — a downgrade of the chip supplier and a Negative initiation on a server peer — appear only in social/carousel summaries (one in a floor-recap video). Not independently verified; not used.</li>
+      <li><strong>Valuation provider's internal arithmetic.</strong> EV ÷ EBITDA divides to 14.64x against the published 14.85x; FCF per share ÷ price gives 3.63% against the published 3.57%. Published figures are the headline; the differences are small provider rounding/definition effects, disclosed here rather than hidden.</li>
+      <li><strong>Market capitalisation not presented.</strong> Per desk instruction: the provider's figure is inconsistent with ~636M shares × $371.17. The enterprise value used ($259.63B) is consistent with that share count plus net debt of $23.63B.</li>
+      <li><strong>Absence of Dell news, November 9–12.</strong> No pre-announcement, channel check, or new Q3 operating/free-cash-flow, inventory or working-capital reporting was found in the sources searched — an absence of evidence in those sources, not proof none exists.</li>
+      <li><strong>Technician volume-profile claim.</strong> One November 6 technical video cites an "air pocket" between ~$300–$390 (only ~6% of yearly volume traded there). A claim about volume distribution, not independently verified; the levels it cites ($335–$337, $315) are used, the profile claim is not relied on.</li>
+    </ul>
+
+    <p class="disclosure">This report is an internal desk analysis prepared for the portfolio manager's own decision-making. It is not investment advice to any other person, not a solicitation, and not an offer to buy or sell any security. Prices are regular-session closes for Thursday, November 12, 2026 unless labelled intraday or after-hours. Forward-looking statements — including the $580 target, which depends on the November 24, 2026 earnings print — are judgements as of the research cutoff and will be wrong in ways that cannot be known in advance. Verify any figure against its appendix source before trading on it.</p>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  // ---- Theme toggle (in-memory only) ----
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  function currentTheme(){
+    if (root.getAttribute('data-theme')) return root.getAttribute('data-theme');
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function syncLabel(){
+    document.getElementById('themeLabel').textContent = currentTheme() === 'dark' ? 'Switch to light' : 'Switch to dark';
+  }
+  btn.addEventListener('click', function(){
+    root.setAttribute('data-theme', currentTheme() === 'dark' ? 'light' : 'dark');
+    syncLabel();
+    drawChart();
+  });
+  syncLabel();
+
+  // ---- PDF ----
+  document.getElementById('pdfBtn').addEventListener('click', function(){ window.print(); });
+
+  // ---- Price chart (daily closes; Nov 9-12 appended from the locked close set) ----
+  var DATA = [["2025-10-24",158.64],["2025-10-27",162.19],["2025-10-28",164.88],["2025-10-29",163.6],["2025-10-30",161.01],["2025-10-31",162.01],["2025-11-03",160.11],["2025-11-04",154.64],["2025-11-05",152.41],["2025-11-06",149.18],["2025-11-07",146.7],["2025-11-10",142.69],["2025-11-11",138.76],["2025-11-12",140.71],["2025-11-13",133.94],["2025-11-14",133.76],["2025-11-17",122.48],["2025-11-18",122.69],["2025-11-19",119.38],["2025-11-20",117.4],["2025-11-21",122.51],["2025-11-24",127.22],["2025-11-25",125.92],["2025-11-26",133.26],["2025-11-28",133.35],["2025-12-01",132.09],["2025-12-02",135.95],["2025-12-03",133.63],["2025-12-04",138.99],["2025-12-05",138.91],["2025-12-08",140.41],["2025-12-09",138.22],["2025-12-10",140.63],["2025-12-11",138.6],["2025-12-12",129.98],["2025-12-15",130.51],["2025-12-16",133.75],["2025-12-17",127.89],["2025-12-18",122.94],["2025-12-19",126.42],["2025-12-22",126.61],["2025-12-23",127.62],["2025-12-24",128.38],["2025-12-26",129.24],["2025-12-29",127.46],["2025-12-30",127.92],["2025-12-31",125.88],["2026-01-02",127.8],["2026-01-05",124.01],["2026-01-06",123.93],["2026-01-07",120.07],["2026-01-08",118.5],["2026-01-09",120.62],["2026-01-12",120.47],["2026-01-13",119.66],["2026-01-14",118.69],["2026-01-15",119.66],["2026-01-16",120.53],["2026-01-20",111.07],["2026-01-21",113.26],["2026-01-22",117.17],["2026-01-23",115.43],["2026-01-26",115.93],["2026-01-27",114.66],["2026-01-28",117.32],["2026-01-29",118.49],["2026-01-30",114.44],["2026-02-02",119.16],["2026-02-03",117.15],["2026-02-04",122.04],["2026-02-05",115.39],["2026-02-06",121.05],["2026-02-09",120.91],["2026-02-10",126.01],["2026-02-11",124.16],["2026-02-12",112.82],["2026-02-13",117.49],["2026-02-17",116.09],["2026-02-18",116.78],["2026-02-19",119.06],["2026-02-20",122.27],["2026-02-23",119.14],["2026-02-24",119.78],["2026-02-25",123.48],["2026-02-26",121.45],["2026-02-27",148.08],["2026-03-02",153.55],["2026-03-03",145.18],["2026-03-04",147.1],["2026-03-05",146.52],["2026-03-06",146.48],["2026-03-09",146.51],["2026-03-10",143.8],["2026-03-11",147.37],["2026-03-12",149.91],["2026-03-13",151.62],["2026-03-16",156.54],["2026-03-17",153.01],["2026-03-18",149.21],["2026-03-19",156.76],["2026-03-20",157.67],["2026-03-23",164.59],["2026-03-24",176.91],["2026-03-25",184.01],["2026-03-26",175.82],["2026-03-27",171.81],["2026-03-30",164.66],["2026-03-31",164.13],["2026-04-01",169.38],["2026-04-02",174.37],["2026-04-06",173.18],["2026-04-07",177.69],["2026-04-08",185.47],["2026-04-09",181.46],["2026-04-10",177.8],["2026-04-13",189.79],["2026-04-14",184.51],["2026-04-15",177.28],["2026-04-16",193.09],["2026-04-17",196.55],["2026-04-20",204.24],["2026-04-21",212.36],["2026-04-22",214.65],["2026-04-23",212.14],["2026-04-24",216.09],["2026-04-27",215.97],["2026-04-28",205.93],["2026-04-29",205.66],["2026-04-30",208.95],["2026-05-01",210.17],["2026-05-04",211.64],["2026-05-05",216.32],["2026-05-06",238.8],["2026-05-07",230.27],["2026-05-08",260.46],["2026-05-11",247.04],["2026-05-12",238.94],["2026-05-13",243.87],["2026-05-14",247.89],["2026-05-15",241.99],["2026-05-18",238.03],["2026-05-19",235.26],["2026-05-20",242.93],["2026-05-21",252.8],["2026-05-22",295.19],["2026-05-26",305.08],["2026-05-27",305.32],["2026-05-28",317.05],["2026-05-29",420.91],["2026-06-01",465.96],["2026-06-02",435.31],["2026-06-03",421.08],["2026-06-04",422.05],["2026-06-05",394.39],["2026-06-08",400.77],["2026-06-09",381.78],["2026-06-10",369.83],["2026-06-11",391.45],["2026-06-12",395.57],["2026-06-15",409.07],["2026-06-16",404.08],["2026-06-17",419.32],["2026-06-18",409.5],["2026-06-22",418.71],["2026-06-23",427.78],["2026-06-24",434.06],["2026-06-25",409.45],["2026-06-26",399.49],["2026-06-29",414.61],["2026-06-30",431.46],["2026-07-01",425.25],["2026-07-02",394.32],["2026-07-06",411.8],["2026-07-07",417.28],["2026-07-08",431.97],["2026-07-09",450.22],["2026-07-10",434.97],["2026-07-13",427.11],["2026-07-14",457.54],["2026-07-15",412.68],["2026-07-16",391.38],["2026-07-17",396.34],["2026-07-20",381.88],["2026-07-21",404.15],["2026-07-22",441.8],["2026-07-23",439.34],["2026-07-24",437.5],["2026-07-27",426.91],["2026-07-28",392.1],["2026-07-29",369.64],["2026-07-30",404.81],["2026-07-31",405.37],["2026-08-03",429.02],["2026-08-04",467.27],["2026-08-05",462.7],["2026-08-06",437.65],["2026-08-07",453.77],["2026-08-10",457.88],["2026-08-11",440.97],["2026-08-12",484.5],["2026-08-13",494.51],["2026-08-14",490.81],["2026-08-17",479.81],["2026-08-18",468.65],["2026-08-19",437.55],["2026-08-20",434.78],["2026-08-21",442.08],["2026-08-24",433.19],["2026-08-25",451.5],["2026-08-26",463.82],["2026-08-27",472.26],["2026-08-28",456.24],["2026-08-31",456.01],["2026-09-01",425],["2026-09-02",492.2],["2026-09-03",516.39],["2026-09-04",524.14],["2026-09-08",533.88],["2026-09-09",535.25],["2026-09-10",506.62],["2026-09-11",567.29],["2026-09-14",534.28],["2026-09-15",543.51],["2026-09-16",563.29],["2026-09-17",588.4],["2026-09-18",568.06],["2026-09-21",575.31],["2026-09-22",548.92],["2026-09-23",549.83],["2026-09-24",536.02],["2026-09-25",562.89],["2026-09-28",543.43],["2026-09-29",539.59],["2026-09-30",537.95],["2026-10-01",541.74],["2026-10-02",562.52],["2026-10-05",552.29],["2026-10-06",574],["2026-10-07",578.96],["2026-10-08",574.55],["2026-10-09",586.06],["2026-10-12",576.76],["2026-10-13",572.47],["2026-10-14",507.93],["2026-10-15",473.39],["2026-10-16",451.71],["2026-10-19",455.44],["2026-10-20",461.56],["2026-10-21",485.88],["2026-10-22",452.95],["2026-10-23",456.44],["2026-10-26",467.09],["2026-10-27",501.96],["2026-10-28",493.79],["2026-10-29",475.51],["2026-10-30",424.3],["2026-11-02",392.78],["2026-11-03",408.4],["2026-11-04",372.36],["2026-11-05",316.91],["2026-11-06",328.53],["2026-11-09",346.31],["2026-11-10",334.38],["2026-11-11",373.68],["2026-11-12",371.17]];
+
+  function cssVar(name){ return getComputedStyle(document.documentElement).getPropertyValue(name).trim(); }
+
+  function drawChart(){
+    var host = document.getElementById('priceChart');
+    if (!host) return;
+    var W = 920, H = 380, padL = 52, padR = 14, padT = 16, padB = 34;
+    var iw = W - padL - padR, ih = H - padT - padB;
+    var min = 80, max = 640;
+    function X(i){ return padL + (i / (DATA.length - 1)) * iw; }
+    function Y(v){ return padT + (1 - (v - min) / (max - min)) * ih; }
+    var grid = cssVar('--chart-grid') || '#d9e2e4';
+    var line = cssVar('--chart-line') || '#0c4a6e';
+    var muted = cssVar('--muted') || '#52676d';
+    var teal = cssVar('--teal') || '#087f7a';
+    var red = cssVar('--red') || '#bc4d54';
+    var gold = cssVar('--gold') || '#c98f2d';
+    var s = '<svg viewBox="0 0 ' + W + ' ' + H + '" xmlns="http://www.w3.org/2000/svg" role="presentation">';
+    [100,200,300,400,500,600].forEach(function(v){
+      s += '<line x1="' + padL + '" y1="' + Y(v) + '" x2="' + (W - padR) + '" y2="' + Y(v) + '" stroke="' + grid + '" stroke-width="1"/>';
+      s += '<text x="' + (padL - 8) + '" y="' + (Y(v) + 4) + '" text-anchor="end" font-size="11" fill="' + muted + '">$' + v + '</text>';
+    });
+    function ref(v, color, label){
+      s += '<line x1="' + padL + '" y1="' + Y(v) + '" x2="' + (W - padR) + '" y2="' + Y(v) + '" stroke="' + color + '" stroke-width="1.4" stroke-dasharray="6 4"/>';
+      s += '<text x="' + (W - padR - 4) + '" y="' + (Y(v) - 6) + '" text-anchor="end" font-size="11" font-weight="700" fill="' + color + '">' + label + '</text>';
+    }
+    ref(407.12, gold, 'Cost $407.12');
+    ref(335.39, teal, '200-day ~$335');
+    ref(300, red, '$300 invalidation');
+    var d = '';
+    DATA.forEach(function(p, i){ d += (i === 0 ? 'M' : 'L') + X(i).toFixed(1) + ' ' + Y(p[1]).toFixed(1) + ' '; });
+    s += '<path d="' + d + 'L' + X(DATA.length - 1).toFixed(1) + ' ' + Y(min) + ' L' + X(0).toFixed(1) + ' ' + Y(min) + ' Z" fill="' + line + '" opacity="0.10" stroke="none"/>';
+    s += '<path d="' + d + '" fill="none" stroke="' + line + '" stroke-width="2"/>';
+    var last = DATA[DATA.length - 1];
+    s += '<circle cx="' + X(DATA.length - 1) + '" cy="' + Y(last[1]) + '" r="4.5" fill="' + teal + '"/>';
+    s += '<text x="' + (X(DATA.length - 1) - 6) + '" y="' + (Y(last[1]) - 12) + '" text-anchor="end" font-size="12" font-weight="700" fill="' + teal + '">Nov 12: $371.17</text>';
+    var months = [['2025-11-03','Nov 25'],['2026-01-02','Jan'],['2026-03-02','Mar'],['2026-05-01','May'],['2026-07-01','Jul'],['2026-09-01','Sep'],['2026-11-02','Nov 26']];
+    DATA.forEach(function(p, i){
+      months.forEach(function(m){ if (p[0] === m[0]) { s += '<text x="' + X(i) + '" y="' + (H - 10) + '" text-anchor="middle" font-size="11" fill="' + muted + '">' + m[1] + '</text>'; } });
+    });
+    s += '</svg>';
+    host.innerHTML = s;
+  }
+  drawChart();
+  var rt;
+  window.addEventListener('resize', function(){ clearTimeout(rt); rt = setTimeout(drawChart, 150); });
+  if (window.matchMedia) {
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    if (mq.addEventListener) mq.addEventListener('change', drawChart);
+  }
+})();
+</script>
+</body>
+</html>
