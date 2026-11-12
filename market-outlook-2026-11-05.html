@@ -1,0 +1,707 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>Market Outlook — November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --paper:#f4f7f8; --surface:#ffffff; --surface2:#eef3f4;
+    --ink:#12242a; --muted:#53676d; --faint:#7b8d92; --line:#d9e2e4;
+    --navy:#0b2634; --blue:#0c4a6e; --teal:#087f7a; --aqua:#72e7d4; --lime:#b9e769;
+    --gold:#e7b458; --red:#bc4d54; --red-ink:#a33338;
+    --soft-teal:#e8f6f3; --soft-blue:#e9f2f7; --soft-gold:#fbf3e3; --soft-red:#f9ecec;
+    --shadow:0 18px 50px rgba(13,42,50,.10);
+    --cover-grad:linear-gradient(135deg,#061b27 0%,#0b2634 45%,#0c4a6e 78%,#087f7a 130%);
+  }
+  [data-theme="dark"]{
+    --paper:#091418; --surface:#102126; --surface2:#0d1b20;
+    --ink:#eef7f5; --muted:#b6c8c9; --faint:#8ea1a3; --line:#2a3f44;
+    --navy:#061b27; --blue:#0a3f5e; --teal:#0d8e86; --red-ink:#e58a8f;
+    --soft-teal:#112f2f; --soft-blue:#102b38; --soft-gold:#342b1c; --soft-red:#332022;
+    --shadow:0 18px 50px rgba(0,0,0,.28);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",system-ui,sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px 80px}
+  h1,h2,h3{line-height:1.15;margin:0}
+  p{margin:0 0 14px}
+  a{color:var(--teal)}
+  .serif{font-family:"Libre Baskerville",Georgia,serif}
+
+  /* ---------- toolbar ---------- */
+  .toolbar{display:flex;gap:8px;justify-content:flex-end;padding:14px 0 0}
+  .tbtn{appearance:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);font:inherit;font-size:13.5px;font-weight:700;padding:8px 14px;border-radius:999px;cursor:pointer}
+  .tbtn:hover{border-color:var(--teal);color:var(--teal)}
+
+  /* ---------- cover ---------- */
+  .cover{background:var(--cover-grad);color:#eef7f5;border-radius:22px;padding:52px 46px 40px;margin-top:14px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+  .cover::after{content:"";position:absolute;inset:auto -120px -180px auto;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(114,231,212,.28),transparent 65%)}
+  .cover .kicker{font-size:12.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--aqua);margin-bottom:16px}
+  .cover h1{font-family:"Libre Baskerville",Georgia,serif;font-size:clamp(34px,5.4vw,54px);font-weight:700;max-width:15ch}
+  .cover .sub{margin-top:16px;font-size:clamp(16px,2.2vw,19.5px);color:#cfe3e0;max-width:62ch;line-height:1.55}
+  .cover .dateline{margin-top:22px;font-size:13.5px;color:#9fc0bd;letter-spacing:.04em}
+  .stance{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px;position:relative;z-index:1}
+  .stance .pill{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.22);border-radius:12px;padding:12px 16px;min-width:180px;flex:1}
+  .stance .pill b{display:block;font-size:15.5px;color:#fff}
+  .stance .pill span{font-size:13px;color:#bcd6d3}
+  .stance .pill.hot b{color:var(--gold)}
+  .coverstats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.16);border-radius:14px;overflow:hidden;margin-top:26px;position:relative;z-index:1}
+  .coverstats div{background:rgba(6,27,39,.55);padding:14px 16px}
+  .coverstats .n{font-size:clamp(20px,3vw,27px);font-weight:900;color:#fff;font-variant-numeric:tabular-nums}
+  .coverstats .n.neg{color:#f0929a}
+  .coverstats .l{font-size:12px;color:#a9c6c3;letter-spacing:.06em;text-transform:uppercase;margin-top:2px}
+
+  /* ---------- report map ---------- */
+  .map{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px 28px;margin-top:26px;box-shadow:var(--shadow)}
+  .map h2{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+  .map ol{margin:0;padding:0;list-style:none;counter-reset:map;display:grid;grid-template-columns:1fr 1fr;gap:6px 34px}
+  .map li{counter-increment:map;border-bottom:1px dashed var(--line);padding:7px 0}
+  .map li::before{content:counter(map,decimal-leading-zero);color:var(--faint);font-weight:700;margin-right:10px;font-size:13px}
+  .map a{color:var(--ink);text-decoration:none;font-weight:500}
+  .map a:hover{color:var(--teal)}
+
+  /* ---------- sections ---------- */
+  section{margin-top:58px}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+  section h2{font-family:"Libre Baskerville",Georgia,serif;font-size:clamp(25px,3.6vw,34px);font-weight:700;margin-bottom:14px}
+  section h3{font-size:18.5px;font-weight:900;margin:26px 0 8px}
+  .lede{font-size:17.5px;color:var(--ink)}
+  .muted{color:var(--muted)}
+  .small{font-size:13.5px}
+  ul.tight{margin:0 0 14px;padding-left:20px}
+  ul.tight li{margin-bottom:7px}
+  strong.neg,.neg{color:var(--red-ink)}
+  .pos{color:var(--teal)}
+
+  /* ---------- callouts ---------- */
+  .callout{border-radius:16px;padding:24px 28px;margin:24px 0;border:1px solid var(--line)}
+  .callout .ct{font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px}
+  .callout h3{margin:0 0 10px;font-size:21px}
+  .callout p:last-child{margin-bottom:0}
+  .callout.verdict{background:var(--soft-teal)}
+  .callout.verdict .ct{color:var(--teal)}
+  .callout.alert{background:var(--soft-red);border-color:rgba(188,77,84,.35)}
+  .callout.alert .ct{color:var(--red-ink)}
+  .callout.gold{background:var(--soft-gold)}
+  .callout.gold .ct{color:#9a742a}
+  [data-theme="dark"] .callout.gold .ct{color:var(--gold)}
+
+  /* ---------- tables ---------- */
+  .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface);margin:16px 0 8px}
+  table{border-collapse:collapse;width:100%;font-size:14.5px}
+  th,td{padding:10px 14px;text-align:right;font-variant-numeric:tabular-nums;white-space:normal}
+  th:first-child,td:first-child{text-align:left}
+  thead th{background:var(--surface2);color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--line)}
+  tbody tr{border-bottom:1px solid var(--line)}
+  tbody tr:last-child{border-bottom:none}
+  tbody tr.total td{font-weight:900;background:var(--surface2)}
+  td.l,th.l{text-align:left}
+  .tag{display:inline-block;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;letter-spacing:.03em}
+  .tag.breach{background:var(--soft-red);color:var(--red-ink)}
+  .tag.live{background:var(--soft-teal);color:var(--teal)}
+  .tag.stale{background:var(--soft-gold);color:#9a742a}
+  [data-theme="dark"] .tag.stale{color:var(--gold)}
+  .tag.hold{background:var(--soft-blue);color:var(--blue)}
+  [data-theme="dark"] .tag.hold{color:#9cc4dd}
+  .note{font-size:13px;color:var(--faint);margin:4px 0 14px}
+
+  /* ---------- chart ---------- */
+  .chart{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px 12px;margin:16px 0 8px}
+  .chart .ct{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+  .chart svg{width:100%;height:auto;display:block}
+  .chart text{font-family:"DM Sans",sans-serif}
+
+  /* ---------- scenario cards ---------- */
+  .scen{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+  .scen .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  .scen .prob{font-size:34px;font-weight:900;font-variant-numeric:tabular-nums}
+  .scen .name{font-weight:900;font-size:16.5px;margin:2px 0 8px}
+  .scen .card p{font-size:14.5px;color:var(--muted);margin:0}
+  .scen .base .prob{color:var(--teal)} .scen .bear .prob{color:var(--red-ink)} .scen .bull .prob{color:var(--blue)}
+  [data-theme="dark"] .scen .bull .prob{color:#9cc4dd}
+
+  .tranche{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+  .tranche .card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+  .tranche .tn{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+  .tranche h3{margin:6px 0 8px;font-size:17px}
+  .tranche p{font-size:14.5px;color:var(--muted);margin:0}
+
+  footer.sources{margin-top:70px;border-top:2px solid var(--line);padding-top:26px}
+  footer.sources h2{font-family:"Libre Baskerville",Georgia,serif;font-size:24px;margin-bottom:6px}
+  footer.sources ol{padding-left:20px;color:var(--muted);font-size:14px}
+  footer.sources li{margin-bottom:6px;overflow-wrap:anywhere}
+  footer.sources a{color:var(--muted);text-decoration:underline}
+  .disclaimer{margin-top:34px;font-size:12.5px;color:var(--faint);border-top:1px solid var(--line);padding-top:16px}
+
+  @media (max-width:760px){
+    .cover{padding:38px 24px 30px}
+    .coverstats{grid-template-columns:1fr 1fr}
+    .map ol{grid-template-columns:1fr}
+    .scen,.tranche{grid-template-columns:1fr}
+    body{font-size:16px}
+  }
+  /* Phone: each table row becomes a stacked, labelled card — no sideways scroll. */
+  @media (max-width:680px){
+    .tblwrap{overflow-x:visible}
+    table,tbody,tr,td{display:block;width:100%}
+    thead{display:none}
+    tbody tr{border-bottom:2px solid var(--line);padding:8px 0 10px}
+    tbody tr:last-child{border-bottom:none}
+    td{display:flex;justify-content:space-between;align-items:baseline;gap:18px;text-align:right;padding:4px 14px;border:none}
+    td::before{content:attr(data-th);flex:0 0 auto;font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);text-align:left;padding-top:2px}
+    td:first-child{font-weight:700;text-align:left;justify-content:flex-start;font-size:15.5px}
+    td:first-child::before{display:none}
+    td:empty{display:none}
+  }
+  @media print{
+    .toolbar{display:none}
+    body{background:#fff}
+    section{margin-top:34px}
+    .cover{box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="toolbar">
+    <button class="tbtn" id="themeBtn" type="button">Dark / light</button>
+    <button class="tbtn" id="pdfBtn" type="button">Download PDF</button>
+  </div>
+
+  <!-- ================= COVER ================= -->
+  <header class="cover">
+    <div class="kicker">Market Outlook · CIO Desk</div>
+    <h1>The AI sleeve took the hit. The thesis has not broken — yet.</h1>
+    <p class="sub">November 5 was the worst session since April 2025, and it was led, precisely, by the AI supply chain: semiconductors fell 12.25% in a day while the platforms you own fell a fraction of that. This outlook separates the verified trigger from the noise, sizes the damage to your book, and sets the staged rules for deploying new capital — after capitulation, not into the first washout.</p>
+    <div class="dateline">Thursday, November 5, 2026 · After the close · All closes November 5, 2026 unless noted</div>
+    <div class="stance">
+      <div class="pill"><b>Hold the sleeve</b><span>Your stated plan stands. Nothing on November 5 confirms a demand break.</span></div>
+      <div class="pill hot"><b>No capitulation yet</b><span>No intraday reversal, no VIX close above 30. Extreme fear is a condition, not an event.</span></div>
+      <div class="pill"><b>Deploy staged, on triggers</b><span>New capital waits for the signals in §7 — in tranches, confirmed by the close.</span></div>
+    </div>
+    <div class="coverstats">
+      <div><div class="n neg">−4.36%</div><div class="l">S&amp;P 500 · 7,353.73</div></div>
+      <div><div class="n neg">−12.25%</div><div class="l">Semiconductors (SOX) · 9,011.14</div></div>
+      <div><div class="n">28.18</div><div class="l">VIX · +69.7% on the day</div></div>
+      <div><div class="n">20</div><div class="l">Fear &amp; Greed · Extreme Fear</div></div>
+    </div>
+  </header>
+
+  <!-- ================= REPORT MAP ================= -->
+  <nav class="map" aria-label="Report map">
+    <h2>Report map</h2>
+    <ol>
+      <li><a href="#day">November 5 — the day</a></li>
+      <li><a href="#drivers">What drove it: a verified trigger</a></li>
+      <li><a href="#twoday">The two-day damage</a></li>
+      <li><a href="#portfolio">What it did to your book</a></li>
+      <li><a href="#technicals">Technical state of the sleeve</a></li>
+      <li><a href="#valuation">The valuation reset</a></li>
+      <li><a href="#verdict">The verdict: hold, stage, wait</a></li>
+      <li><a href="#dell">Dell: the ladder is invalidated</a></li>
+      <li><a href="#macro">Macro ahead: jobs Friday, the Fed in December</a></li>
+      <li><a href="#earnings">Earnings wrap</a></li>
+      <li><a href="#scenarios">Scenarios for the next 2–4 weeks</a></li>
+      <li><a href="#catalysts">Catalyst calendar</a></li>
+      <li><a href="#open">Open questions — what could not be verified</a></li>
+      <li><a href="#sources">Appendix — sources</a></li>
+    </ol>
+  </nav>
+
+  <!-- ================= 1. THE DAY ================= -->
+  <section id="day">
+    <div class="kicker">Section 01 · The tape</div>
+    <h2>November 5 — the day</h2>
+    <p class="lede">The post-midterm rally of November 4 was erased in a single session, and then some. Every index fell hard, every one of the eleven sectors closed lower — but the losses were anything but evenly spread.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Index</th><th>Close · Nov 5</th><th>Day move</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>S&amp;P 500</td><td>7,353.73</td><td class="neg">−4.36%</td><td class="l">Worst day since April 2025</td></tr>
+          <tr><td>Nasdaq Composite</td><td>24,315.00</td><td class="neg">−5.52%</td><td class="l">In correction: −11.9% vs the Oct 6 record of 27,599.89</td></tr>
+          <tr><td>Nasdaq 100</td><td>26,629.81</td><td class="neg">−6.36%</td><td class="l">Worst day since March 2020</td></tr>
+          <tr><td>Dow Jones</td><td>51,523.06</td><td class="neg">−3.44%</td><td class="l">−1,833 points</td></tr>
+          <tr><td>Russell 2000</td><td>2,729.89</td><td class="neg">−4.45%</td><td class="l"></td></tr>
+          <tr><td>Semiconductors (SOX)</td><td>9,011.14</td><td class="neg">−12.25%</td><td class="l">Worst day since ~March 16, 2020</td></tr>
+          <tr><td>S&amp;P MidCap 400</td><td>3,582.28</td><td class="neg">−3.85%</td><td class="l"></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">For reference, the November 4 session these losses unwound: S&amp;P 500 7,688.62 (+1.58%), Dow 53,356.12 (+3.03%), Nasdaq 25,736.51 (+1.44%).</p>
+
+    <h3>Sectors — concentrated in cause, broad in effect</h3>
+    <p>Technology fell roughly eight percent while the three most defensive sectors fell less than one percent — yet <em>every</em> sector closed lower, and breadth inside the S&amp;P 500 was 71 advancers against 431 decliners. This was a growth-and-chips rout that dragged the whole tape, not a clean rotation into defensives.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Sector</th><th>Nov 5 move</th><th>Sector</th><th>Nov 5 move</th></tr></thead>
+        <tbody>
+          <tr><td>Technology</td><td class="neg">−8.00%</td><td>Financials</td><td class="neg">−2.87%</td></tr>
+          <tr><td>Industrials</td><td class="neg">−4.12%</td><td>Health Care</td><td class="neg">−2.50%</td></tr>
+          <tr><td>Consumer Discretionary</td><td class="neg">−3.83%</td><td>Real Estate</td><td class="neg">−1.82%</td></tr>
+          <tr><td>Energy</td><td class="neg">−2.98%</td><td>Consumer Staples</td><td class="neg">−0.75%</td></tr>
+          <tr><td>Materials</td><td class="neg">−2.91%</td><td>Utilities</td><td class="neg">−0.71%</td></tr>
+          <tr><td>Communication Services</td><td class="neg">−0.59%</td><td></td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Sector moves are ETF-proxy based; a second provider's price-feed table differs by up to ~1.3 points on individual sectors. The ranking — and the roughly seven-point spread between leader and laggard — is the same in both.</p>
+    <p><strong>What held up:</strong> the defensives above, two reporting utilities that closed green on the day, and gold — spot gold rose 0.69% to $4,088.28, though it made its gain overnight and softened during the New York session. Treasuries rallied on stress, not on data (see §9). Bitcoin fell roughly 5–6% to about $75,800 — no haven bid there. And there was <strong>no intraday reversal</strong>: the Nasdaq-100 ETF closed at its session low, below its 200-day average. That fact matters for the verdict in §7.</p>
+  </section>
+
+  <!-- ================= 2. DRIVERS ================= -->
+  <section id="drivers">
+    <div class="kicker">Section 02 · Causation</div>
+    <h2>What drove it: a verified trigger, not just mood</h2>
+    <p class="lede">Two identifiable triggers, both reported, neither of them a demand print. Distinguish them from the commentary that followed.</p>
+    <h3>Trigger one — the midterm sweep repriced data-centre risk</h3>
+    <p>The Democratic sweep of both chambers on November 3 put data-centre permitting at the centre of the tape. In Texas — roughly 30% of the US data-centre capacity due online in 2028 — the governor-elect won on a campaign promising a temporary data-centre moratorium and the end of tax incentives; governors elected in Georgia and Ohio also campaigned on pauses. One bank estimates roughly 30% of expected 2028 US data-centre additions could face delays; another called the sweep a "Worst-Case Near-Term Scenario" for AI and cut its 2030 new-capacity forecast by about 8%.</p>
+    <p><strong>The caveat is load-bearing:</strong> no data-centre project was reported cancelled on November 5, and no new law or rule exists. The Texas governor-elect takes office in January, and a moratorium would need legislative or executive action. November 5 repriced a <em>risk</em>; it did not confirm one. That distinction is the entire basis for holding rather than selling — and it is also why a concrete moratorium, if one ever lands, would change the view.</p>
+    <h3>Trigger two — a handset miss set the tone at the open</h3>
+    <p>The chip complex sold off from the open after the previous evening's handset-heavy earnings print (detailed in §10): handset revenue down 26% year on year and below the bar, with rising memory costs squeezing device demand, and forward EPS guidance a cent light at the midpoint. That is precisely the market's live fear — memory inflation pressuring both device volumes and chip margins — arriving in print form.</p>
+    <h3>What it was not</h3>
+    <ul class="tight">
+      <li><strong>Not a macro verdict.</strong> The day's data was firm and was ignored: initial jobless claims of 189,000 (below expectations, lowest since mid-July), third-quarter productivity +3.6% annualised against +2.8% expected, unit labour costs −0.7%.</li>
+      <li><strong>Not new.</strong> The AI trade had been sliding since mid-October, and the split was already visible on November 4: the broad market rose 1.58% while semiconductors fell about 3.1%. November 5 is when the split collapsed into a uniform rout.</li>
+      <li><strong>Not indiscriminate.</strong> The platforms held up far better than the chain — Microsoft −3.58%, Alphabet −1.94%, Apple −1.53% against memory and server names down 12–17%. And the day's biggest winner was an earnings beat, up 31% (§10). The market is discriminating on AI-adjacent earnings; it is not selling everything.</li>
+    </ul>
+    <p class="muted">Commentary, labelled as such: one strategist argued the buildout <em>should</em> slow — better to let air out of the bubble than let it burst; another called the moves more knee-jerk than fundamental, with risk-reward improving for longer-term investors; a third pointed to weeks of hedge-fund selling in chip names — "shooting the generals" — ahead of year-end. Retail investors were net sellers of about $358M of individual stocks by early afternoon, on track for the largest retail selling day since 2020 — one data provider's characterisation of that flow as "total capitulation" is an interpretation, not an established fact, and §7 explains why the desk does not accept it yet.</p>
+  </section>
+
+  <!-- ================= 3. TWO-DAY ================= -->
+  <section id="twoday">
+    <div class="kicker">Section 03 · The damage</div>
+    <h2>The two-day damage: the sleeve fell 4–8× the market</h2>
+    <p class="lede">Measured November 3 close to November 5 close, your supply-chain names fell between 11.6% and 22.4% while the S&amp;P 500 fell 2.8%. Note the asymmetry inside the two days: November 4 was a split session — the broad market rallied while the chain was already falling — and November 5 removed the split.</p>
+    <div class="chart" role="img" aria-label="Bar chart of two-day percentage moves, November 3 to November 5, 2026">
+      <div class="ct">Two-day move · Nov 3 close → Nov 5 close</div>
+      <svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg">
+        <line x1="150" y1="10" x2="150" y2="310" stroke="var(--line)" stroke-width="1"/>
+        <!-- bars: scale 20px per 1% => value*20 -->
+        <g font-size="13.5" fill="var(--ink)">
+          <text x="140" y="34" text-anchor="end" font-weight="700">MU *</text>
+          <rect x="150" y="20" width="465" height="18" rx="3" fill="#bc4d54"/>
+          <text x="623" y="34" font-weight="700" fill="var(--red-ink)">−23.2%</text>
+
+          <text x="140" y="70" text-anchor="end" font-weight="700">DELL</text>
+          <rect x="150" y="56" width="448" height="18" rx="3" fill="#bc4d54"/>
+          <text x="606" y="70" font-weight="700" fill="var(--red-ink)">−22.4%</text>
+
+          <text x="140" y="106" text-anchor="end" font-weight="700">AMD *</text>
+          <rect x="150" y="92" width="329" height="18" rx="3" fill="#bc4d54" opacity=".82"/>
+          <text x="487" y="106" font-weight="700" fill="var(--red-ink)">−16.4%</text>
+
+          <text x="140" y="142" text-anchor="end" font-weight="700">TSM</text>
+          <rect x="150" y="128" width="255" height="18" rx="3" fill="#bc4d54" opacity=".82"/>
+          <text x="413" y="142" font-weight="700" fill="var(--red-ink)">−12.8%</text>
+
+          <text x="140" y="178" text-anchor="end" font-weight="700">AVGO</text>
+          <rect x="150" y="164" width="244" height="18" rx="3" fill="#bc4d54" opacity=".82"/>
+          <text x="402" y="178" font-weight="700" fill="var(--red-ink)">−12.2%</text>
+
+          <text x="140" y="214" text-anchor="end" font-weight="700">NVDA</text>
+          <rect x="150" y="200" width="243" height="18" rx="3" fill="#bc4d54" opacity=".82"/>
+          <text x="401" y="214" font-weight="700" fill="var(--red-ink)">−12.1%</text>
+
+          <text x="140" y="250" text-anchor="end" font-weight="700">PLTR</text>
+          <rect x="150" y="236" width="233" height="18" rx="3" fill="#bc4d54" opacity=".82"/>
+          <text x="391" y="250" font-weight="700" fill="var(--red-ink)">−11.6%</text>
+
+          <text x="140" y="286" text-anchor="end" font-weight="700">S&amp;P 500</text>
+          <rect x="150" y="272" width="57" height="18" rx="3" fill="var(--teal)"/>
+          <text x="215" y="286" font-weight="700">−2.8%</text>
+        </g>
+        <text x="150" y="330" font-size="12" fill="var(--faint)">* Not held — shown as the de-grossing epicentre of the complex.</text>
+      </svg>
+    </div>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Name</th><th>Nov 3 close</th><th>Nov 4 close</th><th>Nov 5 close</th><th>Nov 5 day</th><th>Two-day</th><th>vs 52-wk high</th></tr></thead>
+        <tbody>
+          <tr><td>DELL</td><td>$408.40</td><td>$372.36</td><td>$316.91</td><td class="neg">−14.89%</td><td class="neg">−22.40%</td><td class="neg">−46.8%</td></tr>
+          <tr><td>TSM</td><td>$404.80</td><td>$395.75</td><td>$353.10</td><td class="neg">−10.78%</td><td class="neg">−12.77%</td><td class="neg">−27.6%</td></tr>
+          <tr><td>AVGO</td><td>$332.13</td><td>$325.48</td><td>$291.53</td><td class="neg">−10.43%</td><td class="neg">−12.22%</td><td class="neg">−41.1%</td></tr>
+          <tr><td>NVDA</td><td>$206.69</td><td>$200.13</td><td>$181.60</td><td class="neg">−9.26%</td><td class="neg">−12.14%</td><td class="neg">−25.4%</td></tr>
+          <tr><td>PLTR</td><td>$175.40</td><td>$171.70</td><td>$154.99</td><td class="neg">−9.73%</td><td class="neg">−11.64%</td><td class="neg">−27.2%</td></tr>
+          <tr><td>ASML</td><td>—</td><td>$1,496.30</td><td>$1,356.65</td><td class="neg">−9.33%</td><td>—</td><td>—</td></tr>
+          <tr><td>ADBE</td><td>$246.14</td><td>—</td><td>$246.44</td><td class="neg">−0.82%</td><td class="pos">+0.12%</td><td>—</td></tr>
+          <tr><td>MU *</td><td>$855.10</td><td>$795.23</td><td>$656.39</td><td class="neg">−17.46%</td><td class="neg">−23.24%</td><td class="neg">−47.7%</td></tr>
+          <tr><td>AMD *</td><td>$483.90</td><td>$488.78</td><td>$404.40</td><td class="neg">−17.26%</td><td class="neg">−16.43%</td><td class="neg">−38.6%</td></tr>
+          <tr><td>S&amp;P 500</td><td>7,568</td><td>7,688.62</td><td>7,353.73</td><td class="neg">−4.36%</td><td class="neg">−2.83%</td><td class="neg">−6.0% vs record</td></tr>
+          <tr><td>Nasdaq Composite</td><td>25,372</td><td>25,736.51</td><td>24,315.00</td><td class="neg">−5.52%</td><td class="neg">−4.17%</td><td class="neg">−11.9% vs record</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Two-day figures are arithmetic from the closes shown. * MU and AMD are not held; they mark where the selling was most violent. A dash means the November 3 close was not available in the sources consulted — not zero.</p>
+    <h3>Against October: this is a deepening, not a repeat</h3>
+    <p>On October 30 the semiconductor index fell 7.2% and the Nasdaq 2.86%, after a PC-guidance shock from a chip name (−28.6% that day) landed on top of AI-spending worries. October as a whole took the semiconductor index down 15.4%. By late October it sat about 26% below its June closing peak of 14,634.72. At the November 5 close of 9,011.14 it is <strong>38.4% below that peak</strong>, and November 5 alone (−12.25%) was worse than any single October day. The drawdown has materially deepened past the late-October level — which cuts both ways: more damage is done, and more of the adjustment is behind us, but the trend, as §5 shows, is still pointing down.</p>
+    <p>Also on November 5, across the wider complex: Microsoft $535.93 (−3.58%), Alphabet $281.74 (−1.94%), Meta $605.08 (−3.96%), Apple $344.17 (−1.53%), Salesforce $222.41 (−2.07%), Adobe $246.44 (−0.82%) — against HPE $44.16 (−11.84%), Intel $52.25 (−10.33%), Super Micro $27.08 (−8.51%) and Qualcomm $156.75 (−9.49%). SPY closed $733.00 (−4.41%) and QQQ $647.05 (−6.49%).</p>
+  </section>
+
+  <!-- ================= 4. PORTFOLIO ================= -->
+  <section id="portfolio">
+    <div class="kicker">Section 04 · Your book</div>
+    <h2>What it did to your book: the platforms cushioned the chain</h2>
+    <p class="lede">Your thirteen-name AI sleeve lost 4.4% on November 5 alone — but over the full week it is down only 1.2%, because the platform names you hold rose into the selloff while the supply chain fell out of it. The damage is concentrated exactly where the trigger pointed.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>AI sleeve (13 held names)</th><th>Value</th><th>Change</th><th></th></tr></thead>
+        <tbody>
+          <tr><td>Value · November 2 (export basis)</td><td>$376,248.77</td><td>—</td><td></td></tr>
+          <tr><td>Value · November 4</td><td>$388,613.67</td><td class="pos">+$12,364.90</td><td></td></tr>
+          <tr><td>Value · November 5</td><td>$371,677.57</td><td class="neg">−$16,936.10 on the day (−4.4%)</td><td></td></tr>
+          <tr class="total"><td>Week · Nov 2 → Nov 5</td><td></td><td class="neg">−$4,571.20 (−1.2%)</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Supply-chain sub-sleeve · 7 names</th><th>Nov 3</th><th>Nov 5</th><th>Two-day</th></tr></thead>
+        <tbody>
+          <tr><td>NVDA, AVGO, TSM, DELL, PLTR, QCOM, ADBE</td><td>$100,113.67</td><td>$89,222.64</td><td class="neg">−$10,891.03 (−10.9%)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">All portfolio figures are arithmetic from the locked November 5 closes applied to the quantities and November 2 values in your latest export — computed for this report, not market data.</p>
+    <p>The cushion, by name, November 2 → November 5: Microsoft <span class="pos">+$2,881</span>, Apple <span class="pos">+$1,989</span>, Alphabet <span class="pos">+$536</span>. That is the whole story of the week in one line — the sleeve's diversification <em>within</em> AI worked: the earnings-and-cash-flow platforms absorbed what the capex-exposed chain could not. It is also the argument against treating "the AI sleeve" as one position when the deployment decision comes (§7): the chain and the platforms are now different trades.</p>
+  </section>
+
+  <!-- ================= 5. TECHNICALS ================= -->
+  <section id="technicals">
+    <div class="kicker">Section 05 · Levels</div>
+    <h2>Technical state: four of five core names are below their 200-day</h2>
+    <p class="lede">Whatever the fundamentals say, the trend has broken in the near term. All five core names sit below their 50-day averages; four of five are below their 200-day. That is the mechanical reason deployment waits for repair rather than reaching for falling levels.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Name</th><th>Close</th><th>50-day</th><th>vs 50-day</th><th>200-day</th><th>vs 200-day</th><th>Standing level</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>NVDA</td><td>$181.60</td><td>$220.64</td><td class="neg">−17.7%</td><td>$204.66</td><td class="neg">−11.3%</td><td class="l">$200–220 band · target $328</td><td><span class="tag breach">Band broken</span></td></tr>
+          <tr><td>AVGO</td><td>$291.53</td><td>$349.44</td><td class="neg">−16.6%</td><td>$367.20</td><td class="neg">−20.6%</td><td class="l">Gate ≤$340 · target $535</td><td><span class="tag live">Gate passed through</span></td></tr>
+          <tr><td>TSM</td><td>$353.10</td><td>$434.04</td><td class="neg">−18.7%</td><td>$400.48</td><td class="neg">−11.8%</td><td class="l">Target $545</td><td><span class="tag breach">Below 200-day</span></td></tr>
+          <tr><td>DELL</td><td>$316.91</td><td>~$510.83</td><td class="neg">−38.0%</td><td>~$335.39</td><td class="neg">−5.5%</td><td class="l">$368–370 / ~$352 ladder</td><td><span class="tag breach">Invalidated</span></td></tr>
+          <tr><td>PLTR</td><td>$154.99</td><td>$186.87</td><td class="neg">−17.1%</td><td>$153.57–153.89</td><td class="pos">+0.9%</td><td class="l">200-day is the line</td><td><span class="tag live">Holding — barely</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Moving averages are provider prints as of the November 5 close; the two providers consulted differ by ~$1–3 on Dell's averages, which is immaterial to the conclusion. AVGO sits just 0.5% above its 52-week low of $289.96 — that low is now a hard line, addressed in §7. NVDA's 50-day still sits above its 200-day (no death cross); AVGO's 50-day is already below its 200-day — an established downtrend structure.</p>
+    <ul class="tight">
+      <li><strong>NVDA:</strong> the old $200–220 band is now overhead resistance, not support. First reclaim level is the 200-day at $204.66; support below is the 52-week low at $164.27. The $328 desk target implies roughly +81% from here — unchanged as a target, but the path now requires trend repair first.</li>
+      <li><strong>AVGO:</strong> the price has passed <em>through</em> the ≤$340 gate — the condition is met, but the gate was written for a different tape. Buying into a −20.6%-below-200-day downtrend with no stabilisation is a different decision than the gate assumed (§7).</li>
+      <li><strong>TSM:</strong> below its 200-day for the first time in this episode. Analyst targets have not followed the price down — one house <em>raised</em> its target to $600 on November 4; the consensus sits near $534 against the $545 desk target.</li>
+      <li><strong>PLTR:</strong> the only core name still above its 200-day — by less than 1%. Hold that line and it stays a later-tranche candidate; lose it on a close and it joins Dell on hold.</li>
+    </ul>
+  </section>
+
+  <!-- ================= 6. VALUATION ================= -->
+  <section id="valuation">
+    <div class="kicker">Section 06 · Multiples</div>
+    <h2>The valuation reset: multiples compressed; earnings estimates have not — yet</h2>
+    <p class="lede">Forward multiples on the three largest chain names have roughly halved against their own three-year averages. Read that carefully: the compression is entirely in the price. The earnings in the denominator have not been cut for a slower buildout — if data-centre delays eventually cut 2027 estimates, today's "cheap" forward multiple rises again.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Name · provider: FinanceCharts</th><th>TTM P/E</th><th>Forward P/E</th><th>Fwd P/E · 3-yr avg</th><th>P/S</th><th>EV/EBITDA</th><th>As of</th></tr></thead>
+        <tbody>
+          <tr><td>NVDA</td><td>22.96x</td><td><strong>24.88x</strong></td><td>44.74x</td><td>14.67x</td><td>21.75x</td><td class="l">Nov 5</td></tr>
+          <tr><td>AVGO</td><td>37.23x</td><td><strong>19.42x</strong></td><td>73.29x</td><td>17.78x</td><td>31.08x</td><td class="l">P/S &amp; EV/EBITDA: Nov 3 <span class="tag stale">Stale</span></td></tr>
+          <tr><td>TSM</td><td>20.52x</td><td><strong>21.41x</strong></td><td>24.90x</td><td>11.77x</td><td>15.19x</td><td class="l">P/S &amp; EV/EBITDA: Nov 4 <span class="tag stale">Stale</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">One provider throughout, per desk convention — figures are never averaged across providers. The forward P/E column is the clean November 5 comparison. The flagged AVGO and TSM price/sales and EV/EBITDA prints predate the November 5 close and will be lower at November 5 prices, all else equal; they are shown for scale, not as November 5 values.</p>
+    <p>The same provider's discounted-cash-flow models put fair value for the two US names far above the November 5 closes. Treat those as model outputs that embed the same un-cut growth assumptions as the forward multiples — supporting evidence for "the reset is in the price," not a promise about where the price goes next.</p>
+  </section>
+
+  <!-- ================= 7. VERDICT ================= -->
+  <section id="verdict">
+    <div class="kicker">Section 07 · The call</div>
+    <h2>The verdict: hold the sleeve; deploy only after capitulation, in stages</h2>
+    <div class="callout verdict">
+      <div class="ct">Desk verdict</div>
+      <h3>Hold. Do not deploy the first tranche into the November 5 washout.</h3>
+      <p>Your stated plan — hold the sleeve, deploy new capital after capitulation — is endorsed, with one sharpening: <strong>capitulation has not happened yet.</strong> November 5 printed extreme fear, but no intraday reversal (the Nasdaq-100 ETF closed at its session low, below its 200-day), no VIX close above 30, and no breadth washout on verified data. One day of extreme fear is a condition, not a capitulation event. New capital is therefore staged behind the explicit triggers below — confirmed by closes, never by opens — with Dell excluded from the first tranche entirely (§8).</p>
+    </div>
+    <h3>Capitulation scoreboard — what has printed, what has not</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Signal</th><th>November 5 reading</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Fear &amp; Greed index</td><td>20 — Extreme Fear (was 27, then 30 a week ago, 43 a month ago)</td><td><span class="tag live">Printed</span></td></tr>
+          <tr><td>VIX one-day surge</td><td>28.18, +69.7% from 16.61 — biggest one-day surge in almost two years</td><td><span class="tag live">Printed</span></td></tr>
+          <tr><td>Investor sentiment survey (week ending Nov 4)</td><td>34.1% bullish / 48.4% bearish — bears highest since mid-September</td><td><span class="tag live">Printed — pre-selloff</span></td></tr>
+          <tr><td>Retail flow</td><td>Net selling ~$358M by early afternoon, tracking the biggest retail selling day since 2020</td><td><span class="tag live">Printed</span></td></tr>
+          <tr><td>Equity put/call above 1.0</td><td>1.05 — single, non-primary source; not verified against the exchange</td><td><span class="tag stale">Indicative only</span></td></tr>
+          <tr><td>VIX close above 30</td><td>28.18 — elevated, short of the line</td><td><span class="tag breach">Not seen</span></td></tr>
+          <tr><td>Intraday reversal / close off the lows</td><td>None — QQQ closed at its session low, below its 200-day ($679.44)</td><td><span class="tag breach">Not seen</span></td></tr>
+          <tr><td>Breadth washout (% of S&amp;P above 50-day)</td><td>72% above the 50-day at the Nov 4 close; the Nov 5 close figure could not be verified</td><td><span class="tag breach">Not seen</span></td></tr>
+          <tr><td>Breadth thrust / 90% up-volume day after a washout</td><td>Has not occurred</td><td><span class="tag breach">Not seen</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">The survey reading was published November 5 but covers the week ending November 4 — it does not capture November 5 sentiment. Treat it as the pre-existing bearish backdrop, not as a reaction print.</p>
+    <h3>The staged framework</h3>
+    <div class="tranche">
+      <div class="card">
+        <div class="tn">Tranche 1 · Probe</div>
+        <h3>Only after a capitulation trigger</h3>
+        <p>Deploy when at least two print: VIX intraday above 30–35 with equities closing materially off the lows; a 90%-down-volume day followed by a 90%-up day or a strong reversal on volume; Fear &amp; Greed below 10 or equity put/call above 1.2; or a benign Friday jobs print <em>and</em> the market holds its gains into the close. Names: <strong>NVDA and TSM</strong> — highest quality, clearest earnings visibility. Not Dell.</p>
+      </div>
+      <div class="card">
+        <div class="tn">Tranche 2 · Trend repair</div>
+        <h3>When the averages start to come back</h3>
+        <p>Deploy when NVDA reclaims its 200-day ($204.66) or the semiconductor index reclaims ~10,000 on volume — or after NVDA's November 17 print, if revenue meets the ~$108B guide and forward guidance is held or raised. Names: <strong>AVGO</strong> (gate already passed through; §5) and <strong>TSM</strong>.</p>
+      </div>
+      <div class="card">
+        <div class="tn">Tranche 3 · Confirmation</div>
+        <h3>Only on proof, not hope</h3>
+        <p>Deploy only if the 50-day is reclaimed (NVDA $220.64; AVGO $349.44) or a concrete political de-escalation occurs — moratorium proposals dropped or limited, or a state approval that restores the 2028 pipeline. Names: <strong>PLTR</strong>, provided it is still holding its 200-day, and <strong>DELL</strong> only after the November 24 print (§8).</p>
+      </div>
+    </div>
+    <h3>Name by name</h3>
+    <ul class="tight">
+      <li><strong>NVDA ($181.60 · target $328):</strong> support is the 52-week low $164.27, then the November 5 close itself — a close below it opens the low. Resistance $204.66 (200-day), then $220.64 (50-day). Staged buying per the tranches; no chase above ~$205 ahead of the November 17 print.</li>
+      <li><strong>AVGO ($291.53 · target $535 · gate ≤$340):</strong> the gate is met on price but the context has changed — treat it as <em>permission to stage</em>, not a buy signal. Tranche 1 only on a capitulation trigger, with the 52-week low $289.96 as hard invalidation: a close below it means no new money until a base forms.</li>
+      <li><strong>TSM ($353.10 · target $545):</strong> Tranche 1 candidate — the lowest forward multiple of the three (21.41x) with foundry pricing power. Watch the November 10 monthly sales update as the first data point of the new quarter. Resistance $400.48 (200-day), then $434.04 (50-day).</li>
+      <li><strong>PLTR ($154.99):</strong> the 200-day ($153.57–153.89) is the whole position in one line. Hold it and PLTR is a Tranche 2/3 candidate; lose it on a close and it goes on hold with Dell.</li>
+      <li><strong>DELL ($316.91):</strong> excluded from Tranches 1–2. See §8.</li>
+    </ul>
+    <div class="callout gold">
+      <div class="ct">What not to do</div>
+      <h3>Four ways to make this worse</h3>
+      <ul class="tight" style="margin-bottom:0">
+        <li><strong>Do not sell the sleeve into the washout.</strong> The move is sentiment- and politics-led with no confirmed demand break, and it has already printed extreme fear; selling into the contrarian extremes on the scoreboard above has historically been the wrong side of those indicators. A tendency, not a guarantee — but it is your stated plan, and nothing on November 5 refutes it.</li>
+        <li><strong>Do not chase a Friday-morning gap</strong> on the jobs print, and do not deploy the full intended amount on a single day or a single trigger. Stage it, and require the close to confirm.</li>
+        <li><strong>Do not buy levels written for a different tape</strong> — not Dell on the old ladder, and not AVGO merely because it is "below $340."</li>
+        <li><strong>Do not reach for the most damaged names first.</strong> The memory names (−23% and −16% in two days) are the de-grossing epicentre and can overshoot further; they are Tranche 3 at the earliest, and only on evidence the memory cycle is intact. No leverage, no short-dated options to "catch the bottom" ahead of two binary prints (jobs Friday; NVDA November 17, with roughly ±11% priced in the options market).</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= 8. DELL ================= -->
+  <section id="dell">
+    <div class="kicker">Section 08 · Position discipline</div>
+    <h2>Dell: the ladder is invalidated — the print is now the only arbiter</h2>
+    <div class="callout alert">
+      <div class="ct">Ladder invalidated</div>
+      <h3>The $316.91 close breached both rungs. The November 4 ladder is retired.</h3>
+      <p>Dell's November 5 close of $316.91 sits <strong>below</strong> the ~$352 deep level <em>and</em> below the 200-day average (~$335.39) — the first loss of its long-term average in this drawdown, after the November 4 close ($372.36) had held 11% above it. A close through a 200-day after holding above it is a trend break, not a wobble. The standing re-arm ladder from the November 4 refresh is therefore invalidated as support: the $368–370 zone and ~$352 are resistance now, not rungs. Do not average down into breached levels.</p>
+    </div>
+    <h3>The replacement framework</h3>
+    <ul class="tight">
+      <li><strong>No new Dell capital</strong> until one of two things happens: the stock reclaims and holds <strong>$335.39</strong> (the 200-day) — the desk's working standard is two closes — or the <strong>November 24 print</strong> clears the cash question.</li>
+      <li><strong>A probe is conceivable only on a base:</strong> if the stock bases between roughly $300–317 and prints a reversal, a probe tranche may be considered — with <strong>$300 as invalidation</strong>. Note honestly: $300 is a round-number, psychological level, not a verified technical support.</li>
+      <li><strong>A close below $300 with volume re-opens the thesis itself</strong> — stand down entirely until after earnings. The drawdown from the 52-week high is now 46.8%, beyond a normal correction, and the memory-cost squeeze documented in §10 is a live margin risk into the print.</li>
+      <li><strong>The suspension stands.</strong> The desk's gate verdict from the November 4 refresh — accumulation suspended until the November 24 print — is unchanged and, after this close, stronger. The print (after the close, 4:30 PM ET; consensus EPS $6.57, revenue $49.28B; prior guidance ~$49B revenue, ~$19B AI-server revenue, adjusted EPS ~$6.50) is now the only arbiter for Dell.</li>
+    </ul>
+    <p>Context for the position: 6 shares held at a $434.00 average. Nothing in this section is a sell call — it is a no-new-capital call, consistent with holding the sleeve while refusing to add to the one name whose structure has actually broken.</p>
+  </section>
+
+  <!-- ================= 9. MACRO ================= -->
+  <section id="macro">
+    <div class="kicker">Section 09 · Macro ahead</div>
+    <h2>Rates fell, fear spiked — and Friday's jobs print is the next test</h2>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Rates, volatility, sentiment</th><th>Nov 5</th><th>Move</th><th>Reference point</th></tr></thead>
+        <tbody>
+          <tr><td>10-year Treasury yield</td><td>4.84%</td><td class="neg">−6bp on the day</td><td class="l">−11bp since Nov 3 (4.952%); lowest in ~two months</td></tr>
+          <tr><td>2-year Treasury yield</td><td>4.46%</td><td class="neg">−12bp on the day</td><td class="l">−17bp since Nov 3 (4.631%)</td></tr>
+          <tr><td>30-year Treasury yield</td><td>5.25%</td><td class="neg">−3bp</td><td class="l">Curve: 2s10s ≈ +38bp</td></tr>
+          <tr><td>VIX</td><td>28.18</td><td class="neg">+69.7% from 16.61</td><td class="l">Highest in seven months — but below 30 (see §13)</td></tr>
+          <tr><td>Gold (spot)</td><td>$4,088.28</td><td class="pos">+0.69%</td><td class="l">Futures and settlement prints differ by contract — §13</td></tr>
+          <tr><td>WTI crude</td><td>$90.52–90.96</td><td class="pos">+2.7–3.2%</td><td class="l">Rebound after Wednesday's ~8% collapse</td></tr>
+          <tr><td>Fear &amp; Greed index</td><td>20 — Extreme Fear</td><td class="neg">From 27 (Fear)</td><td class="l">Momentum, put/call, VIX and haven components all extreme fear</td></tr>
+          <tr><td>Sentiment survey · wk ending Nov 4</td><td>34.1% bull / 48.4% bear</td><td class="neg">Spread −14.3 pts</td><td class="l">Published Nov 5; predates the selloff</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The bond rally was stress-driven, not data-driven — the day's claims and productivity figures were firm. Yields fell at every maturity from three months out. Overseas, the Bank of England <em>hiked</em> 25bp to 4.00% on the morning of November 5, and a Cleveland Fed president said the same day she favours a gradual path of rate <em>hikes</em>. Keep that word in mind for December.</p>
+    <h3>Friday 8:30 AM ET — the October jobs report</h3>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Consensus · provider: TradingKey</th><th>Expected</th><th>September</th></tr></thead>
+        <tbody>
+          <tr><td>Nonfarm payrolls</td><td>+65,000</td><td>+29,000</td></tr>
+          <tr><td>Unemployment rate</td><td>4.2%</td><td>4.2%</td></tr>
+          <tr><td>Average hourly earnings (MoM)</td><td>+0.3%</td><td>+0.1%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Published forecasts run roughly +50,000 to +65,000 across previews (one outlier at +100,000) — presented as a spread, never averaged. A separate wire-compiled consensus carried +55,000; that is a different compilation, not a conflicting fact. Also Friday: preliminary November consumer sentiment at 10:00 AM ET, consensus 48, unchanged.</p>
+    <ul class="tight">
+      <li><strong>Hot</strong> (payrolls well above ~65,000 and/or wages +0.4% MoM, unemployment ≤4.1%): locks in the December <em>hike</em>, lifts front-end yields — a headwind for growth multiples — but undercuts the growth-scare leg of the selloff. Net near-term negative for the sleeve, via the rates channel.</li>
+      <li><strong>Cold</strong> (payrolls below ~40,000 and/or wages ≤+0.1%, unemployment 4.3%+): takes the hike off the table and pulls yields down — normally good for growth, <em>but</em> in this tape a cold print can be read as a growth scare and extend the selloff. The mix matters more than the headline: weak jobs with soft wages is dovish relief; weak jobs with hot wages is the stagflationary worst case.</li>
+      <li><strong>In line</strong> (~50–70,000, 4.2%, +0.3%): neutral to slightly positive; keeps December as base case and returns the focus to NVDA on November 17 and to data-centre politics.</li>
+    </ul>
+    <h3>December 9 — a hike is priced, not a cut. Read the odds carefully.</h3>
+    <p>There are effectively no cut expectations to track: prediction markets price a December cut at roughly 2–3%. What is priced is a 25bp <em>hike</em> from the current 3.75–4.00% target range (held on October 28), which would take the range to 4.00–4.25%. Hike odds <strong>fell sharply on November 5</strong> as stocks fell and yields dropped — that direction is unambiguous. The level is not: post-close calculations ranged from about 69% (down 17 points from 86% at Wednesday's close, and from 92% on Thursday morning) through "roughly two-thirds," up to ~81.5% on other futures prints. <strong>The desk presents ~two-thirds as the post-close read and flags the range as unresolved (§13) — no single figure is settled.</strong> For the sleeve, the practical read is simpler: December is a tightening risk priced into a growth selloff, and Friday's wages line is the first lever on it.</p>
+  </section>
+
+  <!-- ================= 10. EARNINGS ================= -->
+  <section id="earnings">
+    <div class="kicker">Section 10 · Earnings wrap</div>
+    <h2>Earnings wrap: the non-AI economy did not break</h2>
+    <p class="lede">Prints since November 4 split cleanly. The handset print lit the fuse; a utility and a staples name — both in your book — beat and held up; and the day's biggest winner proved the market still pays for AI-adjacent growth when it arrives with margins.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Company</th><th>Actual</th><th>Consensus</th><th>Consensus provider</th><th>Result</th></tr></thead>
+        <tbody>
+          <tr><td>Qualcomm — adj. revenue</td><td>$10.44B</td><td>$10.11B</td><td class="l">LSEG</td><td><span class="tag live">Beat</span></td></tr>
+          <tr><td>Qualcomm — adj. EPS</td><td>$2.17</td><td>$2.16</td><td class="l">LSEG</td><td><span class="tag live">Beat by $0.01</span></td></tr>
+          <tr><td>Qualcomm — handset revenue</td><td>$5.14B (−26% YoY)</td><td>$5.25B</td><td class="l">Visible Alpha</td><td><span class="tag breach">Miss — the trigger</span></td></tr>
+          <tr><td>Qualcomm — Q1 EPS guide, midpoint</td><td>$2.25</td><td>$2.27</td><td class="l">LSEG</td><td><span class="tag breach">Just below</span></td></tr>
+          <tr><td>Southern Co — adj. EPS</td><td>$1.94</td><td>$1.71</td><td class="l">OneTrader / Bullfincher</td><td><span class="tag live">Beat by $0.23</span></td></tr>
+          <tr><td>Southern Co — revenue</td><td>$8.843B (+13% YoY)</td><td>$8.38B</td><td class="l">OneTrader / Bullfincher</td><td><span class="tag live">Beat</span></td></tr>
+          <tr><td>Kimberly-Clark — adj. EPS</td><td>$1.70</td><td>$1.65</td><td class="l">Seeking Alpha / EarningsHub</td><td><span class="tag live">Beat</span></td></tr>
+          <tr><td>Kimberly-Clark — revenue</td><td>$4.13B</td><td>$4.13B</td><td class="l">Seeking Alpha / EarningsHub</td><td><span class="tag hold">In line</span></td></tr>
+          <tr><td>AppLovin — EPS</td><td>$4.30</td><td>$4.03</td><td class="l">Markets Daily / FiscalAI</td><td><span class="tag live">Beat</span></td></tr>
+          <tr><td>AppLovin — revenue</td><td>$2.18B (+55% YoY)</td><td>$2.07B</td><td class="l">Markets Daily / FiscalAI</td><td><span class="tag live">Beat · stock +31.04%</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="note">Providers are kept separate and never averaged, per desk convention. Qualcomm's desk line stands — Buy 6/10, $215 target — per the desk's own first read, which was scored against a different compiler's bars (EPS $2.17 vs $2.16; revenue $10.44B vs $10.15B). This outlook does not re-rate it. Southern's desk line also stands: Buy 6/10, $92, with the FY26 guide of $4.50–4.60 un-revised; at the November 5 close the name trades above target, so the Buy rests on total return, not price upside.</p>
+    <ul class="tight">
+      <li><strong>Qualcomm — the beat was in the wrong place.</strong> Headline numbers cleared the bar, but handset revenue missed, automotive hit its first ~$2B quarter (+89%), and data-centre revenue was $650M — real, reiterated to a $5B FY2027 target, but small against a $10.4B quarter. Management blamed broad wafer, assembly, test, packaging and memory cost increases and is raising prices, with margin relief only in the second half of its fiscal 2027. Read-through: this validates the memory-cost pressure that is also Dell's primary bottleneck. For your book it is a tape driver — Qualcomm is in the sleeve, and it fell 9.49% on the day.</li>
+      <li><strong>Southern Co — the utility leg of the AI trade reported fine.</strong> Warmer weather, customer growth and higher usage — including large commercial and industrial demand — drove the beat. Shares closed <em>up</em> 0.24% on a −4.4% day. The problem for the AI buildout is permitting and politics, not realised power demand.</li>
+      <li><strong>Kimberly-Clark — a classic defensive beat.</strong> Soft demand (organic sales −1.3%, with a China social-media disruption), cost discipline, outlook reaffirmed, the Kenvue acquisition completed earlier in the week. Shares +1.53%. It supports the "defensives held up" tape; it says nothing about the AI thesis either way.</li>
+      <li><strong>The pattern after the bell:</strong> beats were rewarded and guidance cuts were punished severely — a cloud name +~17% and a lodging platform +~7% after hours, against a software name −~16% despite a beat and a sports-betting name −~18% on a miss and cut guide. Those after-hours moves are single-sourced (§13). The pattern itself — a stock-picker's tape inside a macro rout — is the point.</li>
+    </ul>
+  </section>
+
+  <!-- ================= 11. SCENARIOS ================= -->
+  <section id="scenarios">
+    <div class="kicker">Section 11 · Outlook</div>
+    <h2>Scenarios for the next 2–4 weeks</h2>
+    <p class="lede">Probabilities are the desk's judgement, labelled as such — not a forecast. Note what the base case is <em>not</em>: it is not a call that the low is in. It is a call that the next few weeks are more likely range-bound and news-driven than a straight line in either direction.</p>
+    <div class="scen">
+      <div class="card base">
+        <div class="prob">45%</div>
+        <div class="name">Base — choppy stabilisation, no V-recovery</div>
+        <p>Multiples are already compressed (forward P/E ~19–25x) and earnings have not broken — the data-centre ramp, the utility beat and the $108B guide all printed intact — while sentiment is already bearish. But there is no reversal yet and NVDA earnings are twelve days out. The S&amp;P trades roughly 7,350–7,700; semiconductors base between 9,000–10,000; leadership rotates to defensives and quality while the chain chops. Deployment works only in tranches, on weakness, with confirmation.</p>
+      </div>
+      <div class="card bear">
+        <div class="prob">35%</div>
+        <div class="name">Bear — a second leg down</div>
+        <p>No intraday reversal; the Nasdaq-100 ETF below its 200-day; the semiconductor index −38% from its June peak and still falling; the political risk open-ended precisely because no legislation exists yet to resolve it; December hike odds still ~two-thirds — tightening into a slowdown; and a binary NVDA print on November 17. The S&amp;P works toward 7,000; NVDA toward its $164.27 low; Dell toward $300. In this branch, the capitulation signals finally print — and <em>then</em> the durable low forms.</p>
+      </div>
+      <div class="card bull">
+        <div class="prob">20%</div>
+        <div class="name">Bull — a sharp relief rally</div>
+        <p>Extreme Fear at 20 and 48.4% survey bears are contrarian extremes; forward multiples sit at or near three-year lows; a benign jobs print Friday could cut hike odds sharply; and any walk-back on moratoriums removes the trigger — hyperscaler capex, notably, has not been cut. A fast 5–10% snap-back in the most beaten names, led by the memory and server names, with the semiconductor index reclaiming 10,000. Without an NVDA beat on November 17 it likely fades: treat it as relief, not a new uptrend, until the 200-days are reclaimed.</p>
+      </div>
+    </div>
+    <p><strong>What would change the view, in order of arrival:</strong> a hot or cold jobs print Friday; any concrete data-centre moratorium or legislation — as opposed to campaign rhetoric; NVDA's November 17 print against its $108B guide. Everything else is positioning.</p>
+  </section>
+
+  <!-- ================= 12. CATALYSTS ================= -->
+  <section id="catalysts">
+    <div class="kicker">Section 12 · The calendar</div>
+    <h2>Catalyst calendar — November 6 to December 9</h2>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Date</th><th>Event</th><th>What matters</th></tr></thead>
+        <tbody>
+          <tr><td>Fri Nov 6 · 8:30 AM ET</td><td class="l">October jobs report</td><td class="l">Consensus +65,000 / 4.2% / +0.3% wages (§9). The wages line moves December.</td></tr>
+          <tr><td>Fri Nov 6 · 10:00 AM ET</td><td class="l">Consumer sentiment, preliminary November</td><td class="l">Consensus 48, unchanged.</td></tr>
+          <tr><td>Fri Nov 6</td><td class="l">Earnings before the open</td><td class="l">Humana, Vistra, Moderna, Charter, PPL, Franklin Resources; Berkshire Hathaway per calendar.</td></tr>
+          <tr><td>Tue Nov 10</td><td class="l">TSM October monthly sales</td><td class="l">First monthly read of the new quarter for the foundry leg of the sleeve.</td></tr>
+          <tr><td>Thu Nov 12 · after close</td><td class="l">Cisco, Applied Materials</td><td class="l">Networking and equipment reads on the buildout.</td></tr>
+          <tr><td>Tue Nov 17 · after close</td><td class="l"><strong>NVDA Q3 FY2027</strong> <span class="tag stale">Date flagged</span></td><td class="l">Consensus EPS $2.47, revenue $108.8B; company guide $108.0B ±2%, gross margin 74.0% ±0.5%. Some calendars list Nov 18 — the date is not settled (§13). First reaction Nov 18.</td></tr>
+          <tr><td>Wed Nov 18</td><td class="l">Palo Alto Networks</td><td class="l"></td></tr>
+          <tr><td>Thu Nov 19</td><td class="l">Walmart, Intuit</td><td class="l">The consumer read.</td></tr>
+          <tr><td>Tue Nov 24 · after close</td><td class="l"><strong>DELL Q3 FY2027</strong></td><td class="l">Consensus EPS $6.57, revenue $49.28B. The only arbiter for Dell (§8).</td></tr>
+          <tr><td>Wed Dec 9 · 2:00 PM ET</td><td class="l"><strong>FOMC decision</strong></td><td class="l">A 25bp hike is priced (~two-thirds, range unresolved); a cut ~2–3%.</td></tr>
+          <tr><td>Wed Dec 9 · after close</td><td class="l"><strong>AVGO FQ4</strong> <span class="tag stale">Date flagged</span></td><td class="l">Same day as the Fed. Consensus EPS ~$3.89, revenue ~$35.6B; company guided AI semiconductor revenue ~$21.7B. Some calendars estimate Dec 10.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ================= 13. OPEN QUESTIONS ================= -->
+  <section id="open">
+    <div class="kicker">Section 13 · Honesty box</div>
+    <h2>Open questions — what could not be verified</h2>
+    <p class="lede">Every figure in this report that could not be nailed down is listed here rather than smoothed over. Where a number is used anyway, the conflict is stated at the point of use as well.</p>
+    <ul class="tight">
+      <li><strong>% of S&amp;P 500 stocks above their 50-day at the November 5 close:</strong> not verified. The November 4 close (72% above the 50-day, 69% above the 200-day) is verified; November 5 sources conflict or appear stale/intraday and are inconsistent with a −4.4% close. No November 5 figure is quoted anywhere in this report.</li>
+      <li><strong>Equity put/call ratio of 1.05 for November 5:</strong> single, non-primary source; not verified against the exchange directly. Treated as indicative throughout.</li>
+      <li><strong>VIX close:</strong> 28.18 in three sources against 25.7 in one. 28.18 is used; the discrepancy is unresolved. Either print is below 30, so the verdict in §7 does not turn on it.</li>
+      <li><strong>December hike probability:</strong> post-close prints ranged ~66–82% by source, time and method. Direction (down sharply on November 5) is certain; the level is not.</li>
+      <li><strong>Sector moves:</strong> the two providers consulted differ by up to ~1.3 points on individual sectors. The table in §1 uses the ETF-proxy set; the ranking is identical in both.</li>
+      <li><strong>AVGO and TSM price/sales and EV/EBITDA at the November 5 close:</strong> the latest verified prints from the single valuation provider are November 3 and November 4 respectively. Flagged as stale in §6, never presented as November 5 values.</li>
+      <li><strong>NVDA's print date:</strong> November 17 (the company-named date) against November 18 on some calendars. November 17 is used, flagged in §12.</li>
+      <li><strong>AVGO's print date:</strong> December 9 (company-indicated) against December 10 on some calendars.</li>
+      <li><strong>October 28 FOMC dissent count:</strong> reported inconsistently across sources (two dissents; also "three hawkish dissents"). The hold itself is not in dispute; the count is not relied on anywhere in this report.</li>
+      <li><strong>After-hours earnings moves on November 5</strong> (the cloud, lodging, software and sports-betting names in §10): single-sourced, not independently confirmed before the research cutoff.</li>
+      <li><strong>Gold:</strong> spot (+0.69% to $4,088.28), futures (+0.67%) and the exchange settlement (+0.99%) differ by contract and timing. All point the same way; the spot figure is used.</li>
+      <li><strong>Russell 2000's November 3 close</strong>, used in its two-day figure, is implied from the November 4 close and its stated gain — approximate. Its November 5 level also appears 5 points lower in one source; the figure used here is the one three sources agree on.</li>
+      <li><strong>No verified November 5 readings</strong> were found for the share of stocks in oversold territory, consecutive-down-day counts, or total exchange volume. None are quoted.</li>
+    </ul>
+  </section>
+
+  <!-- ================= SOURCES ================= -->
+  <footer class="sources" id="sources">
+    <h2>Appendix — sources</h2>
+    <p class="small muted">Research cutoff: Thursday, November 5, 2026, ~8:00 PM ET. Closes are the locked November 5, 2026 prints specified for this report. Portfolio figures are arithmetic from those closes and the reader's November 2 export. Scenario probabilities are desk judgement.</p>
+    <ol>
+      <li>CNN — "Massive tech sell-off wipes $2.5 trillion from the stock market," Nov 5, 2026 — <a href="https://www.cnn.com/2026/11/05/investing/tech-heavy-nasdaq-plunges">cnn.com/2026/11/05/investing/tech-heavy-nasdaq-plunges</a></li>
+      <li>The Retest — "Nasdaq closes in a correction as chip stocks sink 12%; S&amp;P 500 falls 4.4%," Nov 5, 2026 — <a href="https://theretest.com/brief/2026-11-05-close">theretest.com/brief/2026-11-05-close</a></li>
+      <li>The Edge — "US Market Wrap 5 November: Tech Selloff Sends the Nasdaq 100 Down 6.36%," Nov 5, 2026 — <a href="https://edgeconsultancykw.com/us-market-wrap-05-november-2026/">edgeconsultancykw.com/us-market-wrap-05-november-2026</a></li>
+      <li>CappNotes — "Closing Look — Thursday, November 5, 2026" — <a href="https://cappnotes.substack.com/p/closing-look-thursday-november-5">cappnotes.substack.com/p/closing-look-thursday-november-5</a></li>
+      <li>The Weekend Spread — "The Close: Thursday, November 5, 2026" — <a href="https://theweekendspread.substack.com/p/the-close-thursday-november-5-2026">theweekendspread.substack.com/p/the-close-thursday-november-5-2026</a></li>
+      <li>Ausecure — "Gold Closes Up 0.7% at $4,088.28," Nov 5, 2026 — <a href="https://www.ausecure.com/gold-market-close-nov-5-2026/">ausecure.com/gold-market-close-nov-5-2026</a></li>
+      <li>Reuters (via Euronext) — "AI, data-center stocks slip as Democratic sweep clouds expansion plans," Nov 5, 2026 — <a href="https://live.euronext.com/en/financial-news/ai-data-center-stocks-slip-democratic-sweep-clouds-expansion-plans">live.euronext.com</a></li>
+      <li>Barron's — "Everything Is Going Wrong for Chip Stocks. 5 Names at Fire-Sale Prices," Nov 5, 2026 — <a href="https://www.barrons.com/articles/chip-stocks-nvidia-amd-broadcom-selloff-4f4e25a4">barrons.com</a></li>
+      <li>Bloomberg (via Insurance Journal) — "AI Data Center Boom Set for Upheaval After US Election Rout," Nov 5, 2026 — <a href="https://www.insurancejournal.com/news/southcentral/2026/11/05/891726.htm">insurancejournal.com</a></li>
+      <li>TradingKey — "US October Nonfarm Payrolls Preview," Nov 5, 2026 — <a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262279310-us-nfp-preview-october-employment-recovery-stocks-dollar-gold-test-tradingkey">tradingkey.com</a></li>
+      <li>TickerGrove — "Qualcomm Beat Estimates as Phone Revenue Fell 26%," Nov 4, 2026 — <a href="https://tickergrove.com/stories/qualcomm-fiscal-q4-2026-earnings-20261104">tickergrove.com</a></li>
+      <li>OneTrader — "US Top Earnings Today, November 5, 2026" — <a href="https://onetrader.in/us-top-earnings-today-november-5-2026/">onetrader.in</a></li>
+      <li>Seeking Alpha — Kimberly-Clark earnings — <a href="https://seekingalpha.com/symbol/KMB/earnings">seekingalpha.com/symbol/KMB/earnings</a></li>
+      <li>ETF.net — "Chip woes drag Nasdaq, S&amp;P 500 to worst day since June," Oct 30, 2026 — <a href="https://etf.net/news/intel-outlook-sparks-chip-selloff-2026-10-30">etf.net</a></li>
+      <li>FinanceCharts — price/earnings, bulls-bears and financial-ratio pages for NVDA, AVGO and TSM (Nov 5, 2026) — <a href="https://www.financecharts.com/stocks/NVDA/value/pe-ratio">financecharts.com/stocks/NVDA/value/pe-ratio</a> · <a href="https://www.financecharts.com/stocks/AVGO/value/pe-ratio">AVGO/value/pe-ratio</a> · <a href="https://www.financecharts.com/stocks/TSM/value/pe-ratio">TSM/value/pe-ratio</a> · <a href="https://www.financecharts.com/stocks/NVDA/bulls-bears">NVDA/bulls-bears</a> · <a href="https://www.financecharts.com/stocks/AVGO/bulls-bears">AVGO/bulls-bears</a> · <a href="https://www.financecharts.com/stocks/TSM/financial-ratios">TSM/financial-ratios</a></li>
+      <li>AAII Sentiment Survey — <a href="https://www.aaii.com/sentimentsurvey?a=webupdate102915mem">aaii.com/sentimentsurvey</a></li>
+      <li>FGScore — CNN Fear &amp; Greed tracking, Nov 5, 2026 — <a href="https://fgscore.com/en/markets/sp500">fgscore.com/en/markets/sp500</a></li>
+      <li>MarketBeat — NVDA earnings, Nov 17, 2026 — <a href="https://www.marketbeat.com/earnings/reports/2026-11-17-nvidia-co-stock/">marketbeat.com/earnings/reports/2026-11-17-nvidia-co-stock</a>; DELL earnings, Nov 24, 2026 — <a href="https://www.marketbeat.com/earnings/reports/2026-11-24-dell-technologies-inc-stock/">marketbeat.com/earnings/reports/2026-11-24-dell-technologies-inc-stock</a></li>
+      <li>StockAnalysis — MU price history — <a href="https://StockAnalysis.com/stocks/mu/history/">stockanalysis.com/stocks/mu/history</a>; Trefis — NVDA, Nov 5, 2026 — <a href="https://www.trefis.com/stock/nvda/articles/622423/nvidia-stock-to-129/2026-11-05">trefis.com</a></li>
+      <li>QuantFlowLab — "Semiconductor Cycle History: SOX Drawdowns" — <a href="https://quantflowlab.com/semiconductor-cycle-history/">quantflowlab.com/semiconductor-cycle-history</a></li>
+      <li>Locked closes: Finnhub, November 5, 2026, as specified for this report. Two-day moves, index-versus-record and versus-moving-average percentages, and all portfolio figures are desk arithmetic from those closes and levels.</li>
+    </ol>
+    <p class="disclaimer">Advisory research only; not investment advice. Figures carry the hedges stated where they appear — in particular §13, which lists everything that could not be verified. Levels, gates and targets referenced are the desk's standing marks as of November 5, 2026.</p>
+  </footer>
+
+</div>
+<script>
+  (function(){
+    // Label every cell with its column header so phone-width stacked rows stay readable.
+    var tables=document.querySelectorAll('table');
+    for(var i=0;i<tables.length;i++){
+      var heads=tables[i].querySelectorAll('thead th');
+      var rows=tables[i].querySelectorAll('tbody tr');
+      for(var r=0;r<rows.length;r++){
+        var cells=rows[r].children;
+        for(var c=0;c<cells.length;c++){
+          if(heads[c]){ cells[c].setAttribute('data-th', heads[c].textContent.trim()); }
+        }
+      }
+    }
+    var root=document.documentElement;
+    var stored=null;
+    function apply(t){ if(t){ root.setAttribute('data-theme',t); } else { root.removeAttribute('data-theme'); } }
+    // No persistence (static snapshot): follow the system until toggled this session.
+    var dark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    document.getElementById('themeBtn').addEventListener('click',function(){
+      var cur = root.getAttribute('data-theme') || (dark ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      apply(next); dark = next === 'dark';
+    });
+    document.getElementById('pdfBtn').addEventListener('click',function(){ window.print(); });
+  })();
+</script>
+</body>
+</html>
