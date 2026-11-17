@@ -1,0 +1,1007 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:," />
+<title>TSM Complete Underwriting — November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    color-scheme: light;
+    --paper:#f4f7f8; --surface:#ffffff; --ink:#12242a; --muted:#53676d; --faint:#7b8d92;
+    --line:#d9e2e4; --navy:#0b2634; --blue:#0c4a6e; --teal:#087f7a; --aqua:#72e7d4;
+    --lime:#b9e769; --gold:#e7b458; --red:#bc4d54;
+    --soft-teal:#e8f6f3; --soft-blue:#e9f2f7; --soft-gold:#fbf3e3; --soft-red:#f9ecec;
+    --shadow:0 18px 50px rgba(13,42,50,.10);
+    --chart-line:#0c4a6e; --chart-grid:#d9e2e4; --chart-accent:#bc4d54;
+  }
+  html[data-theme="dark"]{
+    color-scheme: dark;
+    --paper:#091418; --surface:#102126; --ink:#eef7f5; --muted:#b6c8c9; --faint:#8ea1a3;
+    --line:#2a3f44; --navy:#061b27; --blue:#0a3f5e; --teal:#0d8e86;
+    --soft-teal:#112f2f; --soft-blue:#102b38; --soft-gold:#342b1c; --soft-red:#332022;
+    --shadow:0 18px 50px rgba(0,0,0,.28);
+    --chart-line:#72e7d4; --chart-grid:#2a3f44; --chart-accent:#e08a90;
+  }
+  @media (prefers-color-scheme: dark){
+    html:not([data-theme="light"]){
+      color-scheme: dark;
+      --paper:#091418; --surface:#102126; --ink:#eef7f5; --muted:#b6c8c9; --faint:#8ea1a3;
+      --line:#2a3f44; --navy:#061b27; --blue:#0a3f5e; --teal:#0d8e86;
+      --soft-teal:#112f2f; --soft-blue:#102b38; --soft-gold:#342b1c; --soft-red:#332022;
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+      --chart-line:#72e7d4; --chart-grid:#2a3f44; --chart-accent:#e08a90;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;font-size:16px;line-height:1.62}
+  a{color:inherit}
+  button,[role="button"],select,summary,input:not([type="checkbox"],[type="radio"]){min-height:2.25rem}
+  .report{width:min(1120px,100%);margin:0 auto;background:var(--surface);box-shadow:var(--shadow)}
+
+  /* ---------- Cover ---------- */
+  .cover{min-height:720px;padding:64px 76px 52px;display:flex;flex-direction:column;justify-content:space-between;color:#f7fffd;position:relative;overflow:hidden;background:linear-gradient(138deg,#071f2c 0%,#0b4560 44%,#087c78 100%)}
+  .cover:after{content:"";position:absolute;width:560px;height:560px;right:-220px;bottom:-270px;border:1px solid rgba(255,255,255,.18);border-radius:50%;box-shadow:0 0 0 68px rgba(255,255,255,.05),0 0 0 138px rgba(255,255,255,.035)}
+  .cover-top,.cover-main,.cover-foot,.cover-banner{position:relative;z-index:1}
+  .cover-top{display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:.84rem;font-weight:700;letter-spacing:.06em;flex-wrap:wrap}
+  .cover-top .type{padding:8px 12px;border:1px solid rgba(255,255,255,.42);border-radius:999px}
+  .cover-banner{margin-top:34px;background:rgba(188,77,84,.92);color:#fff;padding:16px 20px;border-radius:6px;font-size:.95rem;line-height:1.5}
+  .cover-banner strong{letter-spacing:.02em}
+  .cover-main{max-width:840px;margin:56px 0}
+  .company{font-size:clamp(3.2rem,8vw,7rem);font-weight:700;line-height:.88;letter-spacing:-.065em;margin:0 0 24px}
+  .cover h1{font-family:"Libre Baskerville",serif;font-size:clamp(1.9rem,4.2vw,3.6rem);line-height:1.12;letter-spacing:-.03em;margin:0 0 24px;max-width:780px}
+  .dek{font-size:clamp(1rem,1.6vw,1.2rem);max-width:730px;color:#d8f2ee;margin:0}
+  .dek strong{color:#fff}
+  .cover-foot{display:flex;justify-content:space-between;gap:36px;align-items:end;border-top:1px solid rgba(255,255,255,.22);padding-top:22px;flex-wrap:wrap}
+  .cover-meta strong{display:block;font-size:1.05rem}
+  .cover-meta span{display:block;color:#c9e7e3;font-size:.85rem}
+  .cover-monogram{font-family:"Libre Baskerville",serif;font-size:2.2rem;font-weight:700;letter-spacing:-.06em}
+
+  /* ---------- Rating strip ---------- */
+  .rating-strip{display:grid;grid-template-columns:1.25fr repeat(4,1fr);background:#071c25;color:#fff}
+  .rating-cell{padding:22px 24px;border-right:1px solid rgba(255,255,255,.12)}
+  .rating-cell:last-child{border-right:0}
+  .rating-cell span{display:block;color:#95bfc3;font-size:.69rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:5px}
+  .rating-cell strong{font-size:1.15rem;letter-spacing:-.02em}
+  .rating-cell small{display:block;color:#b9d4d2;font-size:.78rem;margin-top:3px;line-height:1.4}
+  .rating-cell.primary{background:var(--gold);color:#2b1f08}
+  .rating-cell.primary span{color:#5c4512}
+  .rating-cell.primary strong{font-size:1.5rem}
+
+  /* ---------- Toolbar ---------- */
+  .toolbar{display:flex;justify-content:flex-end;gap:10px;padding:16px 76px;background:var(--surface);border-bottom:1px solid var(--line);flex-wrap:wrap}
+  .tool-btn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--surface);border:0;padding:10px 15px;border-radius:8px;font-size:.84rem;font-weight:700;cursor:pointer;font-family:inherit}
+  .tool-btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+  .tool-btn svg{width:16px;height:16px;flex:none}
+
+  /* ---------- Pages / sections ---------- */
+  .page{padding:60px 76px}
+  .page + .page{border-top:1px solid var(--line)}
+  .section-kicker{display:flex;align-items:center;gap:12px;color:var(--teal);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}
+  .section-kicker:before{content:"";width:36px;height:3px;background:var(--teal);flex:none}
+  h2{font-family:"Libre Baskerville",serif;font-size:clamp(1.9rem,3.8vw,3.1rem);line-height:1.15;letter-spacing:-.03em;margin:0 0 22px}
+  h3{font-size:1.12rem;line-height:1.3;margin:30px 0 10px;letter-spacing:-.01em}
+  h3:first-child{margin-top:0}
+  p{margin:0 0 16px}
+  .lead{font-family:"Libre Baskerville",serif;font-size:1.2rem;line-height:1.65;max-width:880px}
+  .muted{color:var(--muted)} .small{font-size:.88rem}
+  ul,ol{margin:0 0 16px;padding-left:22px}
+  li{margin-bottom:7px}
+  strong.num{white-space:nowrap}
+
+  /* ---------- TOC ---------- */
+  .toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;counter-reset:toc}
+  .toc a{counter-increment:toc;display:flex;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:600;min-height:2.25rem}
+  .toc a:before{content:counter(toc,decimal-leading-zero);color:var(--teal);font-size:.75rem;font-weight:800;letter-spacing:.08em}
+  .toc a span{margin-left:auto;color:var(--faint);font-size:.8rem;text-align:right}
+
+  /* ---------- Components ---------- */
+  .callout{padding:26px 28px;background:var(--soft-teal);border-radius:4px;margin:24px 0}
+  .callout h3{margin:0 0 10px}
+  .callout p:last-child{margin:0}
+  .callout.gold{background:var(--soft-gold)}
+  .callout.red{background:var(--soft-red)}
+  .verdict{background:var(--navy);color:#ecf8f5;padding:30px;border-radius:4px;margin:24px 0}
+  .verdict h3{margin:0 0 10px;color:#8fe0d4}
+  .verdict p{color:#d2e5e5}.verdict p:last-child{margin:0}
+  .verdict strong{color:#fff}
+  .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:28px 0}
+  .metric{background:var(--soft-blue);padding:20px 18px;min-height:120px;border-radius:4px}
+  .metric .label{display:block;color:var(--muted);font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}
+  .metric strong{display:block;font-family:"Libre Baskerville",serif;font-size:1.65rem;line-height:1.1}
+  .metric small{display:block;color:var(--muted);margin-top:7px;line-height:1.4}
+  .two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+  .three-col{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .thesis-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:start;margin-top:30px}
+
+  /* ---------- Tables ---------- */
+  .table-wrap{margin:20px 0 28px;overflow-x:auto}
+  table{border-collapse:collapse;width:100%;font-size:.93rem}
+  caption{text-align:left;font-weight:700;font-size:.95rem;padding-bottom:10px;caption-side:top}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+  thead th{font-size:.74rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);border-bottom:2px solid var(--line)}
+  td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  td.c,th.c{text-align:center}
+  tr.hl td{background:var(--soft-gold);font-weight:700}
+  tr.total td{border-top:2px solid var(--ink);font-weight:700}
+  .tag{display:inline-block;padding:2px 9px;border-radius:999px;font-size:.72rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase}
+  .tag.buy{background:var(--gold);color:#2b1f08}
+  .tag.rec{background:var(--soft-teal);color:var(--teal)}
+  .tag.warn{background:var(--soft-red);color:var(--red)}
+
+  /* ---------- Chart ---------- */
+  .chart-box{background:var(--soft-blue);border-radius:4px;padding:24px;margin:24px 0}
+  .chart-box h3{margin-top:0}
+  .chart-box svg{width:100%;height:auto;display:block}
+  .chart-note{font-size:.83rem;color:var(--muted);margin:10px 0 0}
+
+  /* ---------- DCF interactive ---------- */
+  .dcf-calc{background:var(--soft-blue);border-radius:4px;padding:26px 28px;margin:24px 0}
+  .dcf-calc h3{margin-top:0}
+  .slider-row{display:grid;grid-template-columns:170px 1fr 92px;gap:16px;align-items:center;margin:14px 0}
+  .slider-row label{font-weight:700;font-size:.9rem}
+  .slider-row output{font-family:"Libre Baskerville",serif;font-size:1.15rem;text-align:right}
+  input[type="range"]{width:100%;accent-color:var(--teal);min-height:2.25rem}
+  .dcf-out{display:flex;gap:28px;flex-wrap:wrap;align-items:baseline;border-top:1px solid var(--line);padding-top:16px;margin-top:8px}
+  .dcf-out .big{font-family:"Libre Baskerville",serif;font-size:2.1rem;line-height:1}
+  .dcf-out .lbl{font-size:.74rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:700;display:block;margin-bottom:6px}
+
+  /* ---------- Gates ---------- */
+  .gate-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:24px 0}
+  .gate{border:1px solid var(--line);border-radius:6px;padding:22px}
+  .gate .lvl{font-family:"Libre Baskerville",serif;font-size:2rem;line-height:1.05}
+  .gate .kind{font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);display:block;margin-bottom:8px}
+  .gate p{font-size:.9rem;margin:10px 0 0;color:var(--muted)}
+  .gate.stop .kind{color:var(--red)}
+
+  /* ---------- Risks ---------- */
+  .risk-list{counter-reset:risk;list-style:none;padding:0}
+  .risk-list li{counter-increment:risk;display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);margin:0}
+  .risk-list li:before{content:counter(risk);flex:none;width:34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:.9rem}
+  .risk-list strong{display:block;margin-bottom:3px}
+  .risk-list p{margin:0;color:var(--muted);font-size:.94rem}
+
+  /* ---------- Appendix ---------- */
+  .sources{font-size:.88rem}
+  .sources li{margin-bottom:6px;word-break:break-word}
+  .sources a{color:var(--blue);text-decoration:underline}
+  html[data-theme="dark"] .sources a{color:var(--aqua)}
+  @media (prefers-color-scheme: dark){ html:not([data-theme="light"]) .sources a{color:var(--aqua)} }
+  .foot-note{border-top:1px solid var(--line);padding:28px 76px 44px;font-size:.85rem;color:var(--muted)}
+
+  /* ---------- Responsive ---------- */
+  @media (max-width:860px){
+    .cover{padding:44px 24px 40px;min-height:0}
+    .cover-main{margin:40px 0}
+    .page{padding:44px 24px}
+    .toolbar{padding:14px 24px}
+    .foot-note{padding:24px}
+    .rating-strip{grid-template-columns:repeat(2,1fr)}
+    .rating-cell.primary{grid-column:1/-1}
+    .toc{grid-template-columns:1fr}
+    .metrics{grid-template-columns:repeat(2,1fr)}
+    .two-col,.three-col,.thesis-grid,.gate-grid{grid-template-columns:1fr}
+    .slider-row{grid-template-columns:1fr;gap:4px}
+    .slider-row output{text-align:left}
+    table{font-size:.84rem}
+    th,td{padding:7px 8px}
+    td:first-child{white-space:normal}
+  }
+  @media print{
+    .toolbar{display:none}
+    body{background:#fff}
+    .report{box-shadow:none;width:100%}
+    .page{page-break-inside:avoid}
+    .cover{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .rating-strip,.verdict,.metric,.callout,.gate,.dcf-calc,.chart-box{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+<div class="report">
+
+  <!-- ================= COVER ================= -->
+  <section class="cover">
+    <div class="cover-top">
+      <span>Complete Underwriting · Updated Analysis</span>
+      <span class="type">Equity Research</span>
+    </div>
+    <div class="cover-banner" role="note">
+      <strong>Reference &amp; timing — read first.</strong> This report is built off the <strong>Monday, November 16, 2026 regular-session close of $373.45</strong> and is written <strong>before Nvidia's fiscal Q3 print tonight</strong> (after the close). Every table and multiple uses $373.45. Today's intraday level — $359.32 at 12:08 p.m. ET — is context only, never the reference. The print is the arbiter: a beat with a strong Q4 guide is the cleanest path to a re-rating; a guide cut hits TSMC's order visibility directly.
+    </div>
+    <div class="cover-main">
+      <p class="company">TSM</p>
+      <h1>The DCF challenges the target. The earnings case survives — at a lower multiple.</h1>
+      <p class="dek">Taiwan Semiconductor Manufacturing Co. (NYSE: TSM ADR; TWSE: 2330). The desk <strong>downgrades TSM from Strong Buy 8/10, $545 to Buy, conviction 6/10, $450</strong>. The first desk DCF on the name values the ADR at roughly $259 at the provider WACC — the old target embedded a ~6% cost of capital that a 5.12% risk-free rate does not support. What survives is the earnings case: consensus FY2027 EPS rose to $22.90, October revenue was a company record, and Q4 is tracking ahead of the guide's low end. The new $450 target is 19.7× that FY2027 estimate — the stock's own average forward multiple — and it is labelled plainly: <strong>a multiples target, not DCF-supported</strong>.</p>
+    </div>
+    <div class="cover-foot">
+      <div class="cover-meta">
+        <strong>45 shares · $424.65 average cost</strong>
+        <span>Cost basis $19,109.18 · Market value $16,805.25 at the Nov 16 close · −$2,303.93 (−12.1%)</span>
+      </div>
+      <div class="cover-meta">
+        <strong>November 17, 2026</strong>
+        <span>Research cutoff ~12:30 p.m. ET, market open · Supersedes the Nov 12 complete update</span>
+      </div>
+      <div class="cover-meta">
+        <strong>Gates installed Nov 17, 2026 — at the reader's approval</strong>
+        <span>≤$355 starter (toward ~1.25% weight) · ≤$343.50 deep (15× FY2027E) · $300 reassess line · The old ≤$460 gate is spent — fired and executed Oct 8, 2026 — and replaced</span>
+      </div>
+      <div class="cover-monogram">TSMC</div>
+    </div>
+  </section>
+
+  <!-- ================= RATING STRIP ================= -->
+  <div class="rating-strip" role="group" aria-label="Desk rating summary">
+    <div class="rating-cell primary">
+      <span>Rating — Downgraded</span>
+      <strong>Buy</strong>
+      <small>From Strong Buy (Nov 12)</small>
+    </div>
+    <div class="rating-cell">
+      <span>Conviction</span>
+      <strong>6 / 10</strong>
+      <small>From 8 / 10</small>
+    </div>
+    <div class="rating-cell">
+      <span>Price target</span>
+      <strong>$450</strong>
+      <small>From $545 · Multiples-based, not DCF-supported</small>
+    </div>
+    <div class="rating-cell">
+      <span>Reference close · Nov 16</span>
+      <strong>$373.45</strong>
+      <small>Upside to target +20.5%</small>
+    </div>
+    <div class="rating-cell">
+      <span>DCF base case</span>
+      <strong>~$259</strong>
+      <small>WACC 10.84% · Verdict on $545: Challenge</small>
+    </div>
+  </div>
+
+  <!-- ================= TOOLBAR ================= -->
+  <div class="toolbar">
+    <button class="tool-btn ghost" id="themeToggle" type="button" aria-label="Toggle dark and light mode">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      Dark / light
+    </button>
+    <button class="tool-btn" id="pdfBtn" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      Download PDF
+    </button>
+  </div>
+
+  <!-- ================= REPORT MAP ================= -->
+  <section class="page" id="map">
+    <div class="section-kicker">Contents</div>
+    <h2>Report map</h2>
+    <nav class="toc" aria-label="Report contents">
+      <a href="#call">The call — a genuine downgrade<span>Why $545 falls</span></a>
+      <a href="#new">What's new since November 12<span>The two-session fall</span></a>
+      <a href="#nvidia">Nvidia tonight — the pending catalyst<span>Written before the print</span></a>
+      <a href="#dcf">The DCF — the core new work<span>Full model, shown</span></a>
+      <a href="#valuation">Valuation refresh<span>Multiples &amp; the Street</span></a>
+      <a href="#gates">Purchase gates<span>Installed Nov 17</span></a>
+      <a href="#fundamentals">Fundamentals refresh<span>Q3 &amp; October tracking</span></a>
+      <a href="#landscape">Demand, memory, competition, geopolitics<span>The wider board</span></a>
+      <a href="#thesis">Thesis, risks &amp; what to watch<span>Bull, bear, ranked risks</span></a>
+      <a href="#appendix">Appendix<span>Sources · Open questions</span></a>
+    </nav>
+  </section>
+
+  <!-- ================= 1. THE CALL ================= -->
+  <section class="page" id="call">
+    <div class="section-kicker">Section 01 · The desk call</div>
+    <h2>Buy, 6/10, $450 — the DCF took the old target down</h2>
+    <p class="lead">This is a genuine downgrade, not a trim. The reader asked for a DCF; the DCF answered, and its answer challenges both the $545 target and, at the provider's own discount rate, the current price. The desk is keeping the earnings-multiple case and conceding the discount-rate case — that combination is a Buy at $450, not a Strong Buy at $545.</p>
+
+    <div class="metrics">
+      <div class="metric"><span class="label">New target</span><strong>$450</strong><small>+20.5% from the $373.45 reference close</small></div>
+      <div class="metric"><span class="label">Target basis</span><strong>19.7×</strong><small>FY2027E EPS $22.90 (Zacks) — the stock's own ~19.5× average forward multiple; 15.8× FY2028E $28.50</small></div>
+      <div class="metric"><span class="label">DCF base case</span><strong>~$259</strong><small>WACC 10.84%, terminal growth 3.0% — 31% below the reference price</small></div>
+      <div class="metric"><span class="label">What $545 needed</span><strong>~6.04%</strong><small>Implied WACC on the desk FCF path — ~90bp over the risk-free rate. No named provider supports it.</small></div>
+    </div>
+
+    <div class="thesis-grid">
+      <div>
+        <h3>Why the target falls</h3>
+        <p>The $545 target was set on October 15 at ~24.4× FY2027E consensus EPS of $22.30. Two things have changed since. First, the discount-rate environment: the 10-year Treasury is ~5.12%, beta is 1.23, and a standard build-up lands at a ~10–11% WACC. On the desk's five-year FCF path, $545 requires a WACC of ~6.04% — pricing TSMC as if it carried almost no equity risk premium. Second, the 2027 capex surge: Deutsche Bank's $84B 2027 forecast holds free cash flow to ~$49B even as revenue grows 33%, so the cash-flow case cannot carry a 24× multiple either.</p>
+        <p>The new $450 target concedes that point directly. It is struck at 19.7× FY2027E EPS of $22.90 — roughly the stock's own average forward multiple of ~19.5× — and 15.8× FY2028E EPS of $28.50. <strong>It is a multiples target and is not DCF-supported.</strong> At the provider WACC the DCF says ~$259; the exit-multiple cross-check says $353.50. The desk is underwriting the earnings path and the moat, with eyes open about what the bond market does to the arithmetic.</p>
+        <h3>Why conviction is 6, not 7</h3>
+        <p>Four deductions, each documented in this report: the DCF challenge itself; a price 7.4% below its 200-day moving average with the tape still falling into the print; the Nvidia print tonight still unresolved, with the governance overhang running into December 1–3–10 congressional hearings; and the 2027 capex surge holding FCF to ~$49B. Against those: estimates rose, October was a record, Q4 tracks ahead, and Morningstar carries a $534 fair value at 5 stars. That balance is a 6.</p>
+      </div>
+      <div>
+        <div class="verdict">
+          <h3>DCF verdict on $545 — Challenge</h3>
+          <p>Built on the named provider's WACC (10.84%), a stated FCF path anchored to consensus revenue and Deutsche capex, and 3% terminal growth, the DCF values TSM at <strong>~$259 per ADR — 52% below $545</strong> and 31% below the $373.45 reference. The full model — inputs, projection, sensitivity — is in Section 04. It is not hidden behind a single number.</p>
+        </div>
+        <div class="callout">
+          <h3>The position</h3>
+          <p>45 shares at a $424.65 average cost — $19,109.18 basis against $16,805.25 of market value at the reference close, <strong>−$2,303.93 (−12.1%)</strong>. The downgrade is a valuation call, not a sell call: nothing in the operating business deteriorated. Two new gates for adding were installed at the reader's approval on November 17 — Section 06.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3>Decision-relevant findings</h3>
+    <ul>
+      <li><strong>Fundamentals accelerated; the multiple compressed.</strong> Q3 revenue NT$1,494.24B (+50.9% YoY), net income NT$763.06B (+68.7%), gross margin 66.4%. October revenue was a record NT$586.89B (+59.7% YoY) — 34.6% of the Q4 guide midpoint in a single month.</li>
+      <li><strong>Consensus EPS rose after the $545 target was set.</strong> FY2027E is now $22.90 (Zacks, Nov 16), up from the $22.30 the target was built on; FY2028E is $28.50. At $373.45 the stock is 16.3× FY2027E and 13.1× FY2028E.</li>
+      <li><strong>The fall was de-risking, not a TSMC event.</strong> No earnings, guidance cut, or material demand filing landed Nov 13–16. The drivers were the Nvidia leadership crisis, December Fed-hike pricing (90–96% for +25bp), and a broad AI-complex selloff — MU −7.6%, AMD −5.6%, NVDA −4.1% on Nov 16.</li>
+      <li><strong>Positioning is fragile, not washed out.</strong> RSI 38.7 — weak, not oversold. The Nov 5 session low of $353.10 is the next support, 5.5% below the reference, and the intraday tape on Nov 17 was already testing it.</li>
+      <li><strong>The Street has not moved.</strong> Averages sit at ~$586–589 across providers, the common low is $500, and no analyst action on TSM was found Nov 13–17. Morningstar: $534 fair value, 5 stars, Wide moat.</li>
+      <li><strong>Geopolitics is live.</strong> The PRC's unannounced Nov 1–6 isolation exercise still had ~70 vessels on station Nov 13. No TSMC operational disruption has been reported.</li>
+    </ul>
+  </section>
+
+  <!-- ================= 2. WHAT'S NEW ================= -->
+  <section class="page" id="new">
+    <div class="section-kicker">Section 02 · Since November 12</div>
+    <h2>Two sessions, −7.9% — and none of it was TSMC's own news</h2>
+    <p class="lead">TSM fell from $405.49 on November 12 to $373.45 on November 16 — a $32.04, 7.9% drop in two sessions, on roughly 1.7–1.9× the prior session's volume. The close left the price 7.4% below its 200-day moving average and 13.0% below its 50-day. RSI is 38.7: weak, not oversold.</p>
+
+    <div class="table-wrap">
+      <table>
+        <caption>The November tape — TSM ADR sessions</caption>
+        <thead><tr><th>Session</th><th class="n">Open</th><th class="n">High</th><th class="n">Low</th><th class="n">Close</th><th class="n">Change</th><th class="n">Volume</th></tr></thead>
+        <tbody>
+          <tr><td>Thu Nov 12</td><td class="n">$394.62</td><td class="n">$411.77</td><td class="n">$393.91</td><td class="n"><strong>$405.49</strong></td><td class="n">−1.90%</td><td class="n">~11.3m</td></tr>
+          <tr><td>Fri Nov 13</td><td class="n">$407.60</td><td class="n">$408.09</td><td class="n">$391.50</td><td class="n"><strong>$398.73</strong></td><td class="n">−1.67%</td><td class="n">~10.6–10.8m</td></tr>
+          <tr class="hl"><td>Mon Nov 16</td><td class="n">$379.59</td><td class="n">$385.47</td><td class="n">$372.46</td><td class="n"><strong>$373.45</strong></td><td class="n">−6.34%</td><td class="n">19.18–19.65m</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted">Closes and OHLC agree across providers; volume does not agree exactly and is quoted as a range. Nov 16 volume ran ~1.3× the 20-day average of 14.83m — a capitulation-type day, not a drift. In Taiwan, TSMC ordinary shares fell 5.74% on Nov 16 and the TAIEX fell 6.03%, its worst day of the drawdown, with TSMC contributing roughly 1,000 points.</p>
+
+    <div class="chart-box">
+      <h3>The drawdown in context</h3>
+      <svg viewBox="0 0 720 300" role="img" aria-label="Line chart of TSM closes from the November 5 session low of 353.10 dollars, rebounding to 413.35 by November 11, then falling through 405.49 on November 12 and 398.73 on November 13 to 373.45 on November 16, against the 200-day moving average at 403.27 and the 50-day at 429 dollars.">
+        <line x1="60" y1="42" x2="690" y2="42" stroke="var(--chart-grid)" stroke-width="1"/>
+        <line x1="60" y1="110" x2="690" y2="110" stroke="var(--chart-grid)" stroke-width="1"/>
+        <line x1="60" y1="178" x2="690" y2="178" stroke="var(--chart-grid)" stroke-width="1"/>
+        <line x1="60" y1="246" x2="690" y2="246" stroke="var(--chart-grid)" stroke-width="1"/>
+        <text x="52" y="46" text-anchor="end" font-size="11" fill="var(--muted)">$440</text>
+        <text x="52" y="114" text-anchor="end" font-size="11" fill="var(--muted)">$400</text>
+        <text x="52" y="182" text-anchor="end" font-size="11" fill="var(--muted)">$360</text>
+        <!-- 50-day MA 429 -> y = 42 + (440-429)*1.7 = 60.7 -->
+        <line x1="60" y1="61" x2="690" y2="61" stroke="var(--chart-accent)" stroke-width="1.5" stroke-dasharray="7 5"/>
+        <text x="686" y="54" text-anchor="end" font-size="11" font-weight="700" fill="var(--chart-accent)">50-day $429.00</text>
+        <!-- 200-day MA 403.27 -> y = 42 + (440-403.27)*1.7 = 104.4 -->
+        <line x1="60" y1="104" x2="690" y2="104" stroke="var(--gold)" stroke-width="1.5" stroke-dasharray="7 5"/>
+        <text x="686" y="97" text-anchor="end" font-size="11" font-weight="700" fill="var(--muted)">200-day $403.27</text>
+        <!-- Points: x: Nov5=90, Nov11=270, Nov12=390, Nov13=510, Nov16=660 ; y = 42+(440-p)*1.7 -->
+        <!-- 353.10 -> 189.7 ; 413.35 -> 87.3 ; 405.49 -> 100.7 ; 398.73 -> 112.2 ; 373.45 -> 155.1 -->
+        <polyline points="90,190 270,87 390,101 510,112 660,155" fill="none" stroke="var(--chart-line)" stroke-width="2.5"/>
+        <circle cx="90" cy="190" r="4.5" fill="var(--chart-line)"/>
+        <circle cx="270" cy="87" r="4.5" fill="var(--chart-line)"/>
+        <circle cx="390" cy="101" r="4.5" fill="var(--chart-line)"/>
+        <circle cx="510" cy="112" r="4.5" fill="var(--chart-line)"/>
+        <circle cx="660" cy="155" r="5.5" fill="var(--chart-accent)"/>
+        <text x="90" y="212" text-anchor="middle" font-size="11" fill="var(--muted)">Nov 5 low</text>
+        <text x="90" y="228" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink)">$353.10</text>
+        <text x="270" y="72" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink)">$413.35</text>
+        <text x="270" y="262" text-anchor="middle" font-size="11" fill="var(--muted)">Nov 11</text>
+        <text x="390" y="86" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink)">$405.49</text>
+        <text x="390" y="262" text-anchor="middle" font-size="11" fill="var(--muted)">Nov 12</text>
+        <text x="510" y="97" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink)">$398.73</text>
+        <text x="510" y="262" text-anchor="middle" font-size="11" fill="var(--muted)">Nov 13</text>
+        <text x="660" y="140" text-anchor="middle" font-size="11" font-weight="700" fill="var(--chart-accent)">$373.45</text>
+        <text x="660" y="262" text-anchor="middle" font-size="11" fill="var(--muted)">Nov 16</text>
+      </svg>
+      <p class="chart-note">Closes Nov 11–16 and the Nov 5 session low (the level where buyers stepped in, followed by a +17% rebound in four sessions). Moving averages at the Nov 16 close. The Nov 17 intraday low of $353.50 — context only — was already testing the Nov 5 support zone.</p>
+    </div>
+
+    <h3>Why it fell — drivers, ranked by evidence</h3>
+    <ol>
+      <li><strong>The Nvidia overhang (largest TSMC-specific driver).</strong> Jensen Huang resigned Nov 12 (board accepted Nov 11). On Nov 16, reporting based on three sources said the board is <em>not</em> considering bringing him back, despite a 180,000-signature petition, public support from Elon Musk, and President Trump saying he "would not mind" a return; the board is focused on a conduct/national-security probe and a successor search. Late Nov 16, the Justice Department opened a criminal investigation into Megaspeed — reported second-hand, flagged as such in the appendix. NVDA fell 13% last week and a further 4.1% on Nov 16 to $156.14. TSMC is Nvidia's sole leading-edge foundry; a governance crisis at its largest AI customer is a direct demand-visibility risk, and ruling out a return removed the relief rally.</li>
+      <li><strong>New export controls.</strong> A BIS interim final rule on Nov 16 — "Addressing Remote Access to Advanced Semiconductors" — requires licences for advanced AI chips shipped to Singapore, Malaysia, Indonesia, Thailand and Brazil, and for any data centre worldwide giving China/Macau/Country Group D:5-headquartered companies more than 12,000,000 aggregate TPP of remote compute. Effective on Federal Register publication, scheduled Nov 19, with a 90-day transition for existing data centres. TSMC's impact is second-order — it sells wafers, not chips — but the rule raises friction on the Singapore/Malaysia data-centre demand that feeds TSMC orders.</li>
+      <li><strong>December Fed-hike pricing.</strong> The 10-year Treasury sits at ~5.12%, up from 4.86% on Nov 6. Pricing for a December +25bp hike runs 90–96% across venues (CME 95%, LSEG 96%, Kalshi 90%) — venue-dependent, never one settled number. Long-duration growth de-rates mechanically in this tape; TSM's DCF is duration-heavy, as Section 04 shows.</li>
+      <li><strong>The broader AI selloff.</strong> The Nov 5 S&amp;P 500 −4.3% day set the tone. Discussion Nov 13–16 centred on analyst demand-forecast cuts, short positioning in the semiconductor complex, rotation into staples, and doubts about supplier-financed AI demand. No TSMC-specific demand cut was published Nov 13–17.</li>
+      <li><strong>Memory — indirect.</strong> Record memory prices lift HBM/CoWoS demand for TSMC but tax its smartphone and PC customers and inflate hyperscaler build costs. Two-sided; covered in Section 08.</li>
+    </ol>
+
+    <div class="callout">
+      <h3>TSMC's own news, Nov 13–17 — nothing material to demand</h3>
+      <p>The freshest company news remains Nov 10: the record October revenue, ~$40.93B of board-approved capital appropriations (including 2027 R&amp;D capex), the Q3 dividend raised to NT$9.00 (+28.6%), and authorisations of up to $500m each for Anthropic IPO shares and OpenAI preferred stock — spending ceilings, not completed purchases. Nov 12 brought a Form 6-K on employee personal data appearing on an external website; TSMC says there is no evidence its own systems were compromised and the matter is unrelated to operations or customer data. On Nov 15–16, Bloomberg reported Nvidia sought TSMC's advice in a Taiwanese chip-diversion prosecution of an Nvidia manager; TSMC declined to get involved and declined to comment. <strong>Analyst action on TSM Nov 13–17: none found</strong> in the sources searched — stated as "none found," not a verified absence.</p>
+    </div>
+
+    <h3>The Huang calendar — what is actually scheduled</h3>
+    <p>House: closed-door transcribed interviews — Huang on <strong>Dec 1</strong>, General Counsel Tim Teter on <strong>Dec 2</strong> — requested by the Foreign Affairs, China Select, and Intelligence chairs, with a subpoena threat if Huang had not confirmed by Nov 14. As of Nov 15, Huang had agreed and dates were still being discussed; a Nov 17 report states the Dec 1 appearance is confirmed. Senate Banking: public hearing with Huang on <strong>Dec 3</strong>; Commerce Secretary Lutnick on <strong>Dec 10</strong>. An earlier report of a closed-door briefing "before Thanksgiving" conflicts with the Dec 1 date and is treated as superseded. The substance: questions around a former Megaspeed executive described in a classified US memo as a suspected MSS recruit (not charged; China denies), Megaspeed's alleged chip smuggling (denied; ~$4.8B of Nvidia chips bought in 2–3 years per reports), and whether export controls were compromised. <strong>No TSMC involvement is alleged in any source found.</strong> Separately, Senate and House Democrats opened a second front Nov 12–13 into the administration's approval and taxation of H200 exports to China.</p>
+  </section>
+
+  <!-- ================= 3. NVIDIA TONIGHT ================= -->
+  <section class="page" id="nvidia">
+    <div class="section-kicker">Section 03 · The pending catalyst</div>
+    <h2>Nvidia reports tonight. This report is written before the print.</h2>
+    <p class="lead">Nvidia's fiscal Q3 FY2027 results land after today's close — release ~4:20 p.m. ET, call 5:00 p.m. ET. The quarter ended October 25, before the resignation: the reported numbers describe the old leadership's quarter. Only the guide and the call describe the transition. The first full session on the print is Wednesday, Nov 18.</p>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Consensus bars — one named provider each, kept separate, never averaged</caption>
+        <thead><tr><th>Provider</th><th class="n">EPS</th><th class="n">Revenue</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td><strong>MarketBeat</strong></td><td class="n">$2.47</td><td class="n">$108.84B</td><td>Prior year $1.30 / $57.01B; beat EPS consensus in 7 of last 8 quarters</td></tr>
+          <tr><td><strong>Zacks</strong> (Nov 12)</td><td class="n">$2.49</td><td class="n">$108.99B</td><td>+91.5% / +91.2% YoY; Earnings ESP −0.55% — model does not conclusively predict a beat</td></tr>
+          <tr><td><strong>LSEG</strong> (via previews, Nov 10–13)</td><td class="n">~$2.48</td><td class="n">~$109.2B</td><td>Cross-checks: Visible Alpha $109.4B revenue (Nov 13)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The bars are <strong>essentially unchanged from Nov 12</strong> — the market has not re-cut estimates for the leadership change. The risk is in the guide, not the reported quarter. Company guide (Aug 26): revenue $108.0B ±2% ($105.84–110.16B), gross margin 74.0% ±50bp, no Data Center compute revenue from China assumed. Consensus sits 0.8–1.1% above the guide midpoint, inside the band. Q2 FY2027 actuals for scale: revenue $96.22B, Data Center $89.0B.</p>
+
+    <h3>What to watch</h3>
+    <ol>
+      <li><strong>Data Center revenue vs ~$101.8B consensus</strong> — the line that decides the reaction. A print near $108B total but soft in Data Center (mix toward gaming/pro viz) reads badly for TSMC's leading-edge wafer demand.</li>
+      <li><strong>The Q4 FY2027 guide</strong> — the single most important number for TSMC. No provider Q4 guide consensus was retrieved, so this is a qualitative bar: a guide that holds the ~12–13% sequential growth pace validates TSMC's Q4 guide and 2027 capex; caution on HBM4 or Rubin supply cuts TSMC's Q1 2027 order visibility.</li>
+      <li><strong>Vera Rubin ramp</strong> — declared in full production Oct 21; TSMC 3nm, 288GB HBM4 per GPU. Supply-chain estimates run 5,000–7,000 racks in H2 2026 and 11,000–21,000 in 2027; the bottleneck is HBM4 first, CoWoS second. Watch rack shipments and any HBM4 allocation trims. A forum claim of a rack-delivery cut is unverified and is flagged as such.</li>
+      <li><strong>Colette Kress's first print as interim CEO</strong> — tone on the transition, CEO-search timeline, and whether she defends the guide she set as CFO. Any disclosure on the probe's scope is a headline risk, not a fundamentals input.</li>
+      <li><strong>Gross margin vs the 74.0% guide</strong> — HBM4 cost pass-through and Rubin mix; a miss signals cost pressure TSMC would eventually share via wafer pricing.</li>
+    </ol>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Read-through framework for TSMC</caption>
+        <thead><tr><th>Nvidia outcome tonight</th><th>Read for TSMC's Q4 guide &amp; 2027 demand</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Good</strong> — revenue ≥$110B, Data Center ≥$103B, strong Q4 guide, Rubin on schedule, Kress steady</td><td><strong>Positive.</strong> Validates the $52.3–54.3B Q4 guide and the October run-rate; supports 2027 capex expectations and CoWoS/3nm tightness; the Nov 16–17 selloff reads as de-risking ahead of a known event.</td></tr>
+          <tr><td><strong>Neutral</strong> — revenue $108–110B, Data Center ~$101–102B, guide in line, no new Rubin disclosure</td><td><strong>Neutral.</strong> Q4 tracking already implies the guide; Wednesday's TSM move is then about the multiple — Fed, hearings — not the order book.</td></tr>
+          <tr><td><strong>Bad</strong> — revenue &lt;$108B, Data Center &lt;$100B, guide cut or Rubin/HBM4 caution, evasive transition commentary</td><td><strong>Negative.</strong> Q1 2027 wafer starts at risk; 2027 capex expectations ($76–84B) re-cut; the DCF's 2027 FCF trough deepens; the "demand far above supply" thesis faces its first contrary data point since Q3.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="muted">Note the timing asymmetry: Nvidia's quarter ended Oct 25, and TSMC's record October revenue already captures the shipments that fed it. Tonight is a <em>forward</em> signal for TSMC — Q4 guide, Rubin, 2027 orders — not a backward check on Q3. FOMC minutes from the October meeting also land Wednesday, Nov 18: a second catalyst in the same session.</p>
+  </section>
+
+  <!-- ================= 4. DCF ================= -->
+  <section class="page" id="dcf">
+    <div class="section-kicker">Section 04 · Valuation — the core new work</div>
+    <h2>The DCF, in full: ~$259 at the provider's own WACC</h2>
+    <p class="lead">There was no prior desk DCF on TSM; this underwrite adds one, and it is shown whole — inputs, build-up, projection, present values, sensitivity — because its verdict is the reason for the downgrade. Base case: WACC 10.84% (the provider's published WACC for TSM), terminal growth 3.0%. Verdict on the old $545 target: <strong>challenge</strong>. Verdict on the new $450 target: it is a multiples target and is not DCF-supported either — the desk says so plainly rather than dressing it up.</p>
+
+    <h3>Free cash flow history</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Period</th><th class="n">FCF</th><th>Basis</th></tr></thead>
+        <tbody>
+          <tr><td>Q3 2026</td><td class="n">NT$476.56B (~$14.99B)</td><td>Operating cash flow NT$919.77B less capex NT$443.21B (TSMC Q3 presentation)</td></tr>
+          <tr><td>Q2 2026</td><td class="n">NT$287.36B</td><td>TSMC Q3 presentation</td></tr>
+          <tr><td>Q3 2025</td><td class="n">NT$139.38B</td><td>TSMC Q3 presentation</td></tr>
+          <tr><td>9M 2026</td><td class="n">NT$1,146.54B (~$36.05B)</td><td>TSMC financial statements</td></tr>
+          <tr><td>TTM to Sep 30, 2026</td><td class="n">NT$1,480.7B (~$46.57B)</td><td>Provider TTM figure: $45.01B (OCF $95.06B − capex $50.06B). The ~$1.6B gap is FX/method; both shown, neither hidden.</td></tr>
+          <tr><td>FY2025</td><td class="n">$31.66B</td><td>Full-year reported</td></tr>
+          <tr><td>FY2026E (desk-derived)</td><td class="n">~$47B</td><td>9M actual plus Q4 FCF of NT$274–401B implied by the guide and the $60–64B full-year capex guide</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout gold">
+      <h3>An honest gap: there is no FCF consensus to anchor to</h3>
+      <p>A FY2027/FY2028 free-cash-flow consensus from a named provider could not be found — searched Nov 17 across the usual providers; none publishes a retrievable TSMC FCF consensus. <strong>That is flagged, not filled.</strong> The projection below is therefore built transparently from consensus revenue, an assumed operating-cash-flow margin, and a named capex forecast, with every step shown. One independent (non-consensus) model puts 2027 equity FCF at ~$62.5B and 2028 at ~$85.4B — but on capex of only $68B/$72B, well below Deutsche Bank's $84B/$100B, so it is used only as a cross-check (Section 04, below), not as the base case.</p>
+    </div>
+
+    <h3>WACC inputs and build-up</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Input</th><th class="n">Value</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>Risk-free rate (10-yr US Treasury)</td><td class="n">5.12%</td><td>Nov 17 (range across sources 5.11–5.13%)</td></tr>
+          <tr><td>Beta (5-yr)</td><td class="n">1.23</td><td>Provider figure. Dispersion flagged: other providers print 0.92 and 1.44 — the sensitivity table absorbs this.</td></tr>
+          <tr><td>Market risk premium</td><td class="n">5.0%</td><td><strong>Desk assumption, labelled</strong> — not provider-published</td></tr>
+          <tr><td>Cost of equity (CAPM)</td><td class="n">11.27%</td><td>5.12% + 1.23 × 5.0%</td></tr>
+          <tr><td>Cost of debt (pre-tax)</td><td class="n">5.50%</td><td><strong>Desk assumption, labelled</strong> — risk-free + ~40bp; no TSMC bond yield was retrieved. Justification: interest coverage 238.7×, Debt/EBITDA 0.30×, net cash.</td></tr>
+          <tr><td>Effective tax rate</td><td class="n">17.21%</td><td>TTM (Q3 16.2%, Q2 18.1%)</td></tr>
+          <tr><td>After-tax cost of debt</td><td class="n">4.55%</td><td>5.50% × (1 − 17.21%)</td></tr>
+          <tr><td>Capital weights</td><td class="n">98.30% E / 1.70% D</td><td>Market cap $1,936.9B + debt $33.57B</td></tr>
+          <tr><td><strong>WACC (desk build-up)</strong></td><td class="n"><strong>≈11.16%</strong></td><td>0.9830 × 11.27% + 0.0170 × 4.55%</td></tr>
+          <tr class="hl"><td><strong>WACC (provider) — DCF base case</strong></td><td class="n"><strong>10.84%</strong></td><td>Provider's published WACC for TSM; implies a ~4.65% MRP at beta 1.23. Used as the base so the model is anchored to a named provider, not the desk's MRP.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Share count and net cash</h3>
+    <p>Shares outstanding (ADR-equivalent): <strong>5,186,474,000</strong> — ordinary shares 25.93bn ÷ 5 (1 ADR = 5 ordinary shares), reconciled across providers. Cash and marketable securities: NT$4,016.98B at Sep 30, 2026. Interest-bearing debt: $33.57B (~NT$1,068B at NT$31.8; another provider puts total debt at NT$981.30B — range flagged). <strong>Net cash used in the DCF: $92.48B</strong> (provider figure; desk arithmetic from the TSMC presentation gives $95.46B — the difference is +$0.58/ADR and immaterial to the verdict). Market cap (desk): 5,186,474,000 × $373.45 = <strong>$1,936.9B</strong>; enterprise value $1,844.4B. One provider's page shows a $1.71T market cap that does not reconcile with its own share count and price — flagged in the appendix; the desk figure, which agrees with another provider's $1.94T, is used.</p>
+
+    <h3>The capex path — the model's swing factor</h3>
+    <p>2026 guide: <strong>$60–64B</strong> (raised Jul 16 from $52–56B; reiterated Oct 15), with Q1–Q3 actuals of $40.64B implying a heavy $19.36–23.36B Q4. For 2027, Deutsche Bank (Oct 20) forecasts <strong>$84B</strong>, and <strong>$100B</strong> for 2028, against market consensus of $76B/$88B. Corroboration clusters high: Goldman Sachs $85B, UBS $90B, BofA $80–85B, Citi $81B for 2027. The base case uses Deutsche's $84B/$100B — the hawkish end — because it is the most recent named sell-side forecast and because using consensus $76B would flatter FCF. Management was more cautious on the Oct 15 call, citing component price rises and macro uncertainty; that tension is flagged. Every $10B of 2027 capex is ~$1.93/ADR of FCF in that year.</p>
+
+    <h3>Five-year FCF projection (desk model — assumptions stated)</h3>
+    <p>Method: FCF = operating cash flow − capex; OCF = consensus revenue × an assumed <strong>58% OCF margin</strong> (below Q3's 61.6%, allowing for the 3–4pp overseas-fab dilution TSMC itself guides and for memory-cost pass-through lag). Revenue: FY2027 Zacks; FY2028–29 the only retrieved consensus for those years; FY2030–31 grown at +15%/+12% (desk assumptions, deliberately below the 36.7% three-year revenue CAGR). Capex plateaus at $95–100B after 2028 — <strong>the single most optimistic judgement in the model</strong>, and what lets FCF inflect in 2029.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Year</th><th class="n">Revenue ($B)</th><th class="n">OCF @58% ($B)</th><th class="n">Capex ($B)</th><th class="n">FCF used ($B)</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>2026E</td><td class="n">172.50</td><td class="n">—</td><td class="n">62 (mid-guide)</td><td class="n">~47</td><td>Desk-derived, see history table</td></tr>
+          <tr><td>2027E</td><td class="n">229.95</td><td class="n">133.4</td><td class="n">84</td><td class="n"><strong>49</strong></td><td>Capex: Deutsche Bank</td></tr>
+          <tr><td>2028E</td><td class="n">292.07</td><td class="n">169.4</td><td class="n">100</td><td class="n"><strong>69</strong></td><td>Capex: Deutsche Bank</td></tr>
+          <tr><td>2029E</td><td class="n">351.97</td><td class="n">204.1</td><td class="n">100 (assumed)</td><td class="n"><strong>88</strong></td><td>Raw arithmetic $104B, haircut to $88B</td></tr>
+          <tr><td>2030E</td><td class="n">404.77 (+15% ass.)</td><td class="n">234.8</td><td class="n">95 (assumed)</td><td class="n"><strong>105</strong></td><td>Raw $140B, haircut to $105B</td></tr>
+          <tr><td>2031E</td><td class="n">453.34 (+12% ass.)</td><td class="n">262.9</td><td class="n">95 (assumed)</td><td class="n"><strong>120</strong></td><td>Raw $168B, haircut to $120B</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted">The 2029–31 haircuts (~15–29%) are an explicit conservatism overlay for overseas-fab margin dilution, working-capital absorption as revenue scales, and the risk that capex does not plateau. They are disclosed so they can be challenged: removing them would raise the base-case value materially. Cross-checks: the independent model's higher FCF path (~$13–16B/yr above this base, entirely a capex difference) would lift the DCF by roughly $60–70/ADR. Implied FCF margins here run 21% (2027) to 26% (2031) — <em>below</em> the 29–30% TTM margin, so the projection assumes no margin expansion. FCF per share: $9.45 in 2027, $23.14 in 2031.</p>
+
+    <h3>The base case, line by line</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Year</th><th class="n">FCF ($B)</th><th class="n">Discount factor @10.84%</th><th class="n">PV of FCF ($B)</th></tr></thead>
+        <tbody>
+          <tr><td>2027</td><td class="n">49</td><td class="n">0.9022</td><td class="n">44.21</td></tr>
+          <tr><td>2028</td><td class="n">69</td><td class="n">0.8140</td><td class="n">56.16</td></tr>
+          <tr><td>2029</td><td class="n">88</td><td class="n">0.7344</td><td class="n">64.63</td></tr>
+          <tr><td>2030</td><td class="n">105</td><td class="n">0.6626</td><td class="n">69.57</td></tr>
+          <tr><td>2031</td><td class="n">120</td><td class="n">0.5977</td><td class="n">71.73</td></tr>
+          <tr class="total"><td>PV of 5-year FCF</td><td class="n"></td><td class="n"></td><td class="n">306.30</td></tr>
+          <tr><td>Terminal value — $123.6B ÷ (10.84% − 3.0%) = $1,576.53B</td><td class="n"></td><td class="n">0.5977</td><td class="n">942.36</td></tr>
+          <tr class="total"><td>Enterprise value</td><td class="n"></td><td class="n"></td><td class="n">1,248.66</td></tr>
+          <tr><td>+ Net cash</td><td class="n"></td><td class="n"></td><td class="n">+92.48</td></tr>
+          <tr class="total"><td>Equity value ÷ 5,186,474,000 shares</td><td class="n"></td><td class="n"></td><td class="n"><strong>$258.6 → ~$259 / ADR</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Sensitivity — implied value per ADR</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>WACC \ Terminal growth</th><th class="n">2.0%</th><th class="n">3.0%</th><th class="n">4.0%</th></tr></thead>
+        <tbody>
+          <tr><td>9.00%</td><td class="n">$299</td><td class="n">$338</td><td class="n">$393</td></tr>
+          <tr><td>10.00%</td><td class="n">$262</td><td class="n">$290</td><td class="n">$328</td></tr>
+          <tr class="hl"><td>10.84% (base, provider)</td><td class="n">$237</td><td class="n"><strong>$259</strong></td><td class="n">$287</td></tr>
+          <tr><td>12.00%</td><td class="n">$209</td><td class="n">$225</td><td class="n">$246</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Read the table honestly: the value exceeds the $373.45 reference only in the top-right corner — WACC 9% <em>and</em> 4% perpetual growth ($393). At the provider WACC, no plausible terminal growth rate (2–4%) reaches the current price, let alone $545 or $450. Full sensitivity range across the grid: <strong>$209–$393</strong>.</p>
+
+    <div class="dcf-calc">
+      <h3>Run the model yourself</h3>
+      <p class="small muted">Same FCF path ($49B / $69B / $88B / $105B / $120B), same net cash ($92.48B) and share count (5,186,474,000). Move the discount rate and terminal growth and watch what the price has to assume.</p>
+      <div class="slider-row">
+        <label for="waccRange">WACC</label>
+        <input type="range" id="waccRange" min="5" max="13" step="0.02" value="10.84" />
+        <output id="waccOut">10.8%</output>
+      </div>
+      <div class="slider-row">
+        <label for="gRange">Terminal growth</label>
+        <input type="range" id="gRange" min="1" max="5" step="0.25" value="3" />
+        <output id="gOut">3.00%</output>
+      </div>
+      <div class="dcf-out">
+        <div><span class="lbl">Implied value / ADR</span><span class="big" id="dcfValue">$259</span></div>
+        <div><span class="lbl">vs $373.45 reference</span><span class="big" id="dcfVsRef">−31%</span></div>
+        <div><span class="lbl">vs $450 target</span><span class="big" id="dcfVsTgt">−43%</span></div>
+      </div>
+      <p class="chart-note">Desk tool, Gordon-growth terminal value. At the base settings it reproduces the table above (~$259). To reach $545 on this FCF path at 3% growth, drag WACC down to ~6.0% — about 90bp over the risk-free rate.</p>
+    </div>
+
+    <div class="two-col">
+      <div class="callout">
+        <h3>Exit-multiple cross-check</h3>
+        <p>Terminal value as 20.0× 2031 FCF ($2,400B) gives <strong>$353.50 per ADR</strong> — still 35% below the old $545 target and 5% below the reference price. At 25.0× the value is ~$423 — still below $545, and below the new $450 target. The exit-multiple route is more generous than Gordon growth; it is shown as an alternative, not the base.</p>
+      </div>
+      <div class="callout red">
+        <h3>What would change the verdict</h3>
+        <p>Three things: a sustained fall in the 10-year yield toward ~4% (WACC ~9.5–10%); a capex plateau <em>proven by TSMC's own January 2027 guidance</em> rather than forecast by a bank; or FCF margins returning to the ~30% TTM level a year earlier than modelled. Until one of those lands, the gap is driven, in order, by (1) the discount rate, (2) the 2027–28 capex surge, (3) terminal growth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 5. VALUATION ================= -->
+  <section class="page" id="valuation">
+    <div class="section-kicker">Section 05 · Valuation refresh</div>
+    <h2>Cheap on earnings, expensive on cash flow — both statements are true</h2>
+    <p class="lead">At the $373.45 reference close, TSM trades at 16.3× FY2027E earnings and 13.1× FY2028E — undemanding against 33% revenue growth. On cash flow it trades at ~36–38× TTM FCF for a 2.3–2.6% yield, because the capex supercycle is eating the cash. The downgrade lives in that tension.</p>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Provider-published multiples at the $373.45 close (one named provider; TTM denominators)</caption>
+        <thead><tr><th>Multiple</th><th class="n">Value</th><th>Denominator</th></tr></thead>
+        <tbody>
+          <tr><td>Trailing P/E</td><td class="n">25.21×</td><td>EPS $14.81</td></tr>
+          <tr><td>Forward P/E</td><td class="n">17.87×</td><td>Implied forward EPS $20.90 — the provider's own figure; differs from Zacks FY2026 $17.36, flagged</td></tr>
+          <tr><td>Price / Sales</td><td class="n">11.00×</td><td>Revenue $155.16B</td></tr>
+          <tr><td>Forward P/S</td><td class="n">7.68×</td><td>Implied forward revenue</td></tr>
+          <tr><td>EV / EBITDA</td><td class="n">14.33×</td><td>EBITDA $112.97B; provider EV $1.62T (see note)</td></tr>
+          <tr><td>EV / Sales</td><td class="n">10.43×</td><td>Revenue $155.16B</td></tr>
+          <tr><td>EV / FCF</td><td class="n">35.97×</td><td>FCF $45.01B</td></tr>
+          <tr><td>P / FCF</td><td class="n">37.93×</td><td>FCF/share $8.68</td></tr>
+          <tr><td>FCF yield</td><td class="n">2.64%</td><td>Provider basis; 2.32% on desk market-cap arithmetic</td></tr>
+          <tr><td>Dividend yield</td><td class="n">1.20%</td><td>$4.49/yr trailing</td></tr>
+          <tr><td>Price / Book</td><td class="n">7.77×</td><td>Book value/share $42.34</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted">Provider identity and full source list are in the appendix. Desk arithmetic on the same denominators but the reconciled market cap ($1,936.9B) and EV ($1,844.4B) gives the more conservative read: FCF yield 2.32%, EV/EBITDA 16.33×, EV/Sales 11.89×, P/S 12.48×. The provider's lower EV multiples follow entirely from its unreconciled $1.71T market-cap figure. Cross-provider forward P/E prints span 16.0–18.7×; the 17.87× figure sits inside that range.</p>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Multiples on consensus EPS — desk arithmetic, providers kept separate</caption>
+        <thead><tr><th>Price</th><th class="n">FY2026E $17.36</th><th class="n">FY2027E $22.90</th><th class="n">FY2027E $23.39</th><th class="n">FY2028E $28.50</th></tr></thead>
+        <tbody>
+          <tr><td><strong>$373.45</strong> (reference)</td><td class="n">21.51×</td><td class="n"><strong>16.31×</strong></td><td class="n">15.96×</td><td class="n"><strong>13.10×</strong></td></tr>
+          <tr class="hl"><td><strong>$450</strong> (new target)</td><td class="n">25.92×</td><td class="n"><strong>19.65×</strong></td><td class="n">19.24×</td><td class="n"><strong>15.79×</strong></td></tr>
+          <tr><td>$545 (old target)</td><td class="n">31.39×</td><td class="n">23.80×</td><td class="n">23.30×</td><td class="n">19.12×</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Note what estimate growth did to the old target: on the $22.30 FY2027E EPS it was struck against, $545 was 24.4×; on today's $22.90 it is 23.8×. The target got <em>less</em> demanding as estimates rose — and the DCF still challenges it, because the objection was never really the earnings multiple. It is the discount rate. The $545 target implied +45.9% upside from the reference; $450 implies +20.5%.</p>
+
+    <h3>The Street — providers kept separate, never averaged</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Provider (date)</th><th class="n">Analysts</th><th class="n">Low</th><th class="n">Average</th><th class="n">Median</th><th class="n">High</th><th>Consensus</th></tr></thead>
+        <tbody>
+          <tr><td>StockAnalysis / S&amp;P Global (Nov 16–17)</td><td class="n">21</td><td class="n">$500*</td><td class="n"><strong>$586.69</strong></td><td class="n">$538.50†</td><td class="n">$1,000*</td><td>Strong Buy</td></tr>
+          <tr><td>FMP (Nov 10)</td><td class="n">25</td><td class="n">$500</td><td class="n"><strong>$585.57</strong></td><td class="n">$560</td><td class="n">$700</td><td>Buy — 18 Buy / 7 Hold / 0 Sell</td></tr>
+          <tr><td>GlobalBankingAndFinance (Nov 1)</td><td class="n">42</td><td class="n">$500</td><td class="n"><strong>$589.00</strong></td><td class="n">$577</td><td class="n">$700</td><td>—</td></tr>
+          <tr><td>TipRanks, London listing (Nov 13)</td><td class="n">—</td><td class="n">$500</td><td class="n">$563.75</td><td class="n">—</td><td class="n">$670</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="small muted">*The $1,000 high is a stale/outlier vintage; the $500–$700 ranges from the Nov 1 and Nov 10 providers are the cleaner current reads. †Median is an Oct 15 vintage. The $500 low is common to all providers — even the Street's low is +33.9% above the reference; the averages imply ~+57%. <strong>None of these targets is new since Nov 12.</strong> The desk's $450 now sits deliberately below the entire Street range: it is the DCF concession made visible.</p>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Recent analyst actions</caption>
+        <thead><tr><th>Date</th><th>Firm / Analyst</th><th>Action</th><th class="n">Target</th></tr></thead>
+        <tbody>
+          <tr><td>Nov 4, 2026</td><td>Bernstein / Mark Li</td><td>Maintained Outperform</td><td class="n"><strong>$600</strong> (from $554)</td></tr>
+          <tr><td>Oct 20, 2026</td><td>Deutsche Bank</td><td>Buy</td><td class="n">NT$3,000 (≈$471.70/ADR at NT$31.8 — desk conversion)</td></tr>
+          <tr><td>Oct 16, 2026</td><td>Barclays / Simon Coles</td><td>Maintained Overweight</td><td class="n"><strong>$670</strong> (from $665)</td></tr>
+          <tr><td>Oct 16, 2026</td><td>DA Davidson</td><td>Maintained Buy</td><td class="n"><strong>$500</strong></td></tr>
+          <tr><td>Oct 15–16, 2026</td><td>Needham / Charles Shi</td><td>Maintained (positive)</td><td class="n"><strong>$560</strong></td></tr>
+          <tr><td>Oct 15, 2026</td><td>Bank of America / Haas Liu</td><td>Buy</td><td class="n"><strong>$620</strong></td></tr>
+          <tr><td>Oct 15, 2026</td><td>Freedom Capital / Egor Tolmachev</td><td>Raised</td><td class="n"><strong>$560</strong></td></tr>
+          <tr><td>~Jul 2026</td><td>Citi</td><td>Buy</td><td class="n">NT$4,000 (≈$628.93/ADR — desk conversion)</td></tr>
+          <tr><td>Undated (2026)</td><td>TD Cowen / Krish Sankar</td><td>Hold — the sole Hold in the recent feed</td><td class="n"><strong>$440</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      <h3>Morningstar — $534 fair value, 5 stars</h3>
+      <p>Fair value estimate <strong>$534 per ADR</strong>; rating moved to <strong>5 stars</strong> in the week ended Nov 6 (from 4 stars, after a −7.56% week); <strong>Wide Economic Moat, Medium Uncertainty</strong>. Morningstar raised fair value from $428 to $534 after the Q3 beat-and-raise. At the $373.45 reference, $534 implies +43.0% upside. Note the ordering the desk is now publishing: DCF ~$259 &lt; desk target $450 &lt; Morningstar $534 &lt; Street average ~$587. The desk target is a deliberate step down that ladder — it keeps the earnings case and drops the part of the old target that only a ~6% WACC could carry.</p>
+    </div>
+  </section>
+
+  <!-- ================= 6. GATES ================= -->
+  <section class="page" id="gates">
+    <div class="section-kicker">Section 06 · Purchase gates</div>
+    <h2>Two gates installed — November 17, 2026</h2>
+    <p class="lead">At the reader's approval, both gates below were <strong>installed on November 17, 2026</strong>. They replace the old ≤$460 gate, which is spent — it fired and was executed on October 8, 2026, and the market has since traded $86.55 (18.8%) through it. The 12-month target against both gates is the new $450.</p>
+
+    <div class="gate-grid">
+      <div class="gate">
+        <span class="kind">Gate 1 — Starter · Installed</span>
+        <div class="lvl">≤ $355</div>
+        <p><strong>Toward ~1.25% portfolio weight.</strong> Set just above the Nov 5 session low of $353.10 — the level where buyers stepped in and produced a +17% rebound in four sessions — and ≈15.5× FY2027E EPS. It has held once; it has not been tested twice. The Nov 17 intraday low of $353.50 (context only) was already probing this zone.</p>
+      </div>
+      <div class="gate">
+        <span class="kind">Gate 2 — Deep · Installed</span>
+        <div class="lvl">≤ $343.50</div>
+        <p><strong>The valuation floor: exactly 15× FY2027E EPS of $22.90.</strong> Trailing dividend yield there is 1.31% (~1.65% on the run-rate dividend). A print at this level most plausibly requires a further leg down — a bad Nvidia print tonight is the obvious candidate — which is precisely when a pre-set gate earns its keep.</p>
+      </div>
+      <div class="gate stop">
+        <span class="kind">Reassess line — Not a gate</span>
+        <div class="lvl">$300</div>
+        <p><strong>Below $300, reassess the thesis before adding anything.</strong> ~$290–300 is the DCF base-case band at WACC 10–10.84% (value $259–$290) and the lower third of the 52-week range. Reaching it would most likely mean the thesis itself has broken — a guide cut, hearing escalation, a hawkish Fed surprise — not merely that the price fell.</p>
+      </div>
+    </div>
+
+    <h3>The technical picture the gates are set against</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Level</th><th class="n">Value</th><th>Distance / note</th></tr></thead>
+        <tbody>
+          <tr><td>50-day moving average</td><td class="n">$429.00</td><td>Price is −12.96% below it (provider range $428.86–$430.12)</td></tr>
+          <tr><td>200-day moving average</td><td class="n">$403.27</td><td><strong>Price is −7.40% below the 200-day — stated plainly.</strong> First closed below it Nov 13. The 50-day remains above the 200-day; no death cross.</td></tr>
+          <tr><td>52-week range</td><td class="n">$266.82 – $487.47</td><td>Price is 23.4% below the high, 40.0% above the low — ~48% of the way through the range</td></tr>
+          <tr><td>RSI (14)</td><td class="n">38.69</td><td>Neutral-to-weak, <strong>not oversold</strong> (&lt;30). MACD −12.05, bearish.</td></tr>
+          <tr><td>Support</td><td class="n">$353.10</td><td>Nov 5 session low; −5.46% below the reference. Next support below is the 52-week low.</td></tr>
+          <tr><td>Resistance</td><td class="n">$403.27 / $429.00</td><td>200-day (+8.0%), then the 50-day (+14.9%); 20-day EMA $404.90 sits with the 200-day</td></tr>
+          <tr><td>Short interest</td><td class="n">0.66% of shares out</td><td>32.20m shares, 2.78 days to cover — negligible short overhang</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Valuation thresholds — desk arithmetic</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Multiple</th><th class="n">On FY2027E $22.90</th><th class="n">On FY2028E $28.50</th><th class="n">Trailing yield at FY27 price</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>15×</td><td class="n"><strong>$343.50</strong> — Gate 2</td><td class="n">$427.50</td><td class="n">1.31%</td></tr>
+          <tr><td>17×</td><td class="n">$389.30</td><td class="n">$484.50</td><td class="n">1.15%</td></tr>
+          <tr><td>19×</td><td class="n">$435.10</td><td class="n">$541.50</td><td class="n">1.03%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The reference price sits between 15× and 17× FY2027E (16.31×) and below 15× FY2028E (13.10×). The Nov 5 low of $353.10 was ≈15.4× FY2027E — the last capitulation low printed almost exactly at the 15× level, which is the evidence behind Gate 2's placement. Yields use the trailing $4.49/yr dividend; on the run-rate dividend (NT$9.00/quarter per common share ≈ $5.66/yr per ADR if held four quarters — desk arithmetic at NT$31.8, not a provider forecast) yields would run ~0.31pp higher at each price.</p>
+    <p>One check on the old target, for the record: $545 ÷ 1.40 = $389.29, so at $373.45 the old target did imply more than 40% upside (+45.9%). Upside was never the problem with $545. The discount rate was.</p>
+  </section>
+
+  <!-- ================= 7. FUNDAMENTALS ================= -->
+  <section class="page" id="fundamentals">
+    <div class="section-kicker">Section 07 · Fundamentals refresh</div>
+    <h2>Q3 was a record quarter. October was a record month.</h2>
+    <p class="lead">Nothing in this section supports a downgrade — and the desk wants that on the record. The downgrade is about what the market will pay for these numbers at a 5.12% risk-free rate, not about the numbers.</p>
+
+    <div class="table-wrap">
+      <table>
+        <caption>Q3 2026 — verified against TSMC's primary reporting (Oct 15)</caption>
+        <thead><tr><th>Metric</th><th class="n">Q3 2026</th><th class="n">Q2 2026</th><th class="n">Q3 2025</th><th>Change</th></tr></thead>
+        <tbody>
+          <tr><td>Revenue (NT$)</td><td class="n"><strong>NT$1,494.24B</strong></td><td class="n">NT$1,270.38B</td><td class="n">NT$989.92B</td><td>+17.6% QoQ, <strong>+50.9% YoY</strong></td></tr>
+          <tr><td>Revenue (US$)</td><td class="n"><strong>$46.72B</strong></td><td class="n">$40.20B</td><td class="n">$33.10B</td><td>+16.2% QoQ, +41.2% YoY — beat the top of the $44.6–45.8B guide by ~2%</td></tr>
+          <tr><td>Net income (NT$)</td><td class="n"><strong>NT$763.06B</strong></td><td class="n">NT$706.56B</td><td class="n">NT$452.30B</td><td>+8.0% QoQ, <strong>+68.7% YoY</strong>; beat the smart-estimate by ~2.2%</td></tr>
+          <tr><td>Gross margin</td><td class="n"><strong>66.4%</strong></td><td class="n">67.7%</td><td class="n">59.5%</td><td>−1.3pp QoQ, +6.9pp YoY; inside the 65–67% guide</td></tr>
+          <tr><td>Operating margin</td><td class="n"><strong>58.7%</strong></td><td class="n">—</td><td class="n">50.6%</td><td>Beat the 56–58% guide</td></tr>
+          <tr><td>EPS</td><td class="n"><strong>NT$29.43 / $4.60 per ADR</strong></td><td class="n">NT$27.25</td><td class="n">NT$17.44</td><td>Beat consensus EPS by ~3.4%</td></tr>
+          <tr><td>Free cash flow</td><td class="n">NT$476.56B</td><td class="n">NT$287.36B</td><td class="n">NT$139.38B</td><td>+65.8% QoQ</td></tr>
+          <tr><td>Mix</td><td class="n" colspan="3">Advanced nodes (≤7nm) 79% of wafer revenue · 2nm = 8% of wafer revenue (first real revenue) · HPC ~68% of revenue · ROE 45.5% annualised</td><td>Net margin 51.1% (−4.5pp QoQ — non-operating income normalised after Q2's one-off gains)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>October vs the Q4 guide — tracking ahead of the low end, in line-to-ahead of the midpoint</h3>
+    <p>October revenue was <strong>NT$586.89B, +59.7% YoY, +14.7% MoM — the largest month in TSMC's published history</strong>. Against the Q4 guide of $52.3–54.3B (GM 65–67%, OM 56.5–58.5%, at NT$31.8), October alone is 34.6% of the midpoint. November and December must average <strong>NT$538.1B/month for the low end, NT$554.0B for the midpoint, NT$569.9B for the high end</strong> — October exceeded all three required averages. Verdict: Q4 is on pace for the top half of the guide if November merely holds near October's level. A November print below ~NT$538B would be the first sign of slippage. November revenue lands ~Dec 10.</p>
+    <p class="muted">Hold the tape contradiction in view: the stock fell 7.9% in the two sessions <em>after</em> this record print was already public. The market is discounting forward risks — Nvidia, the Fed, geopolitics — not the October run-rate.</p>
+
+    <div class="two-col">
+      <div>
+        <h3>Consensus (one named provider, Nov 16)</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th></th><th class="n">FY2026E</th><th class="n">FY2027E</th></tr></thead>
+            <tbody>
+              <tr><td>Revenue</td><td class="n">$172.50B</td><td class="n">$229.95B (+33.3%)</td></tr>
+              <tr><td>EPS</td><td class="n">$17.36</td><td class="n"><strong>$22.90</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted">Company guide: FY2026 revenue ~+44% in USD — the third raise of 2026. Q1–Q3 actuals plus the Q4 guide imply $175.12–177.12B for FY2026, slightly <em>above</em> the $172.50B consensus — consensus revenue sits a touch below the guide-implied run-rate. FY2028 (single provider, Nov 1): revenue $292.07B, EPS $28.50. Next print: Q4 results ~mid-January 2027 — two providers estimate different dates (Jan 13 vs Jan 21) and bases; not reconciled, flagged in the appendix.</p>
+      </div>
+      <div>
+        <h3>Dividend — raised 28.6%</h3>
+        <p><strong>Q3 2026 dividend: NT$9.00 per common share</strong> (~US$1.37 per ADR), +28.6% vs NT$7.00 — the largest quarterly increase in the company's history on one count. Ex-dividend Mar 11, 2027; distribution Apr 8, 2027. Q3 payout ratio 30.6%.</p>
+        <p><strong>Q2 2026 dividend: NT$7.00</strong> (~US$1.08 per ADR). <strong>Ex-dividend Dec 10, 2026</strong> — the same day November revenue lands; distribution Jan 7, 2027. From this distribution, foreign shareholders may elect to receive dividends in USD. Trailing four quarters: NT$29.00 per common share.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 8. LANDSCAPE ================= -->
+  <section class="page" id="landscape">
+    <div class="section-kicker">Section 08 · The wider board</div>
+    <h2>Demand, memory, competition, geopolitics</h2>
+
+    <h3>Hyperscaler capex into 2027 — definitions differ, so the range is the finding</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Source</th><th>2027 AI capex read</th></tr></thead>
+        <tbody>
+          <tr><td>Goldman Sachs</td><td>$1.01T in 2027 (+32% vs $765B in 2026); $7.6T cumulative 2026–31</td></tr>
+          <tr><td>J.P. Morgan</td><td>&gt;$1.1T in 2027 vs ~$650B in 2026; $5.5T through 2030</td></tr>
+          <tr><td>Consensus, big four only</td><td>$934.5B in 2027 (Google $284.8B, Amazon $256.5B, Microsoft $207.6B, Meta $185.6B)</td></tr>
+          <tr><td>UBS (broader definition)</td><td>$1.009T in 2026 → $1.447T in 2027 → $1.619T in 2028</td></tr>
+          <tr><td>S&amp;P Global Ratings</td><td>&gt;$1.3T combined by 2027 — and <strong>all six largest hyperscalers FCF-negative in 2026 and 2027</strong>, recovery not expected until 2029</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The demand is real and the backlogs are large — Microsoft commercial RPO $678B, Google Cloud backlog $514B, AWS ~$496B. But it is increasingly funded with debt and equity: ~$170B of hyperscaler bonds issued in 2026, an $85B Alphabet equity issue, hyperscaler FCF of −$40B in Q3 2026. That funding shift is exactly what the Nov 5–16 selloff is repricing — and it is the demand-side mirror of the DCF's discount-rate problem.</p>
+
+    <h3>Memory — a two-sided tailwind and tax</h3>
+    <p>Conventional DRAM contract prices rose +93–98% in Q1 2026, +58–63% in Q2, +13–18% in Q3, with +10–15% forecast for Q4. Q3 global DRAM revenue rose +369% YoY to ~$200B — on bit shipments up only 4% QoQ. The growth is price, not volume. Suppliers guide tightness through 2028–2030.</p>
+    <p>For TSMC the effect cuts both ways. <strong>Positive:</strong> HBM is the binding constraint on Rubin/Blackwell racks, so memory scarcity raises the value of TSMC's CoWoS capacity — every HBM stack must be packaged by TSMC — and supports the 2027 capex case. <strong>Negative:</strong> memory is now 30–40% of a smartphone's bill of materials (vs 10–15% a year ago), squeezing TSMC's handset and PC customers, and it inflates the data-centre build costs that compete with wafer orders for the same hyperscaler budgets. Net: a tailwind for TSMC's AI mix, a headwind for its non-AI mix and for customer affordability. A Nov 14 court ruling allowed a DRAM price-fixing class action to proceed past dismissal — the allegations are unproven and denied; response due Dec 7.</p>
+
+    <h3>Custom silicon — diversification with a circularity wrinkle</h3>
+    <p>Anthropic's Nov 10 filing amendment disclosed that seven suppliers agreed to buy <strong>$26B of Anthropic stock at the IPO price</strong> — Nvidia $10B, Google $10B, AMD $2.5B, Broadcom $1B, Micron $1B, Microsoft $1B, and <strong>TSMC $500m</strong>. Broadcom additionally stands behind $42B of lending to Anthropic and is arranging &gt;$50B for the custom chips it is building with OpenAI. Anthropic will deploy 1 GW of Ironwood TPUs in 2026, 5 GW of the next generation in 2027, 10 GW in 2028, and is set to become Broadcom's largest XPU customer in 2027.</p>
+    <p>Every Broadcom/Google TPU and OpenAI inference accelerator is a TSMC wafer order — custom silicon diversifies TSMC away from Nvidia-only dependence, which matters more this week than it did last week. But TSMC is now an equity holder in two customers whose demand it helps finance, and the custom-silicon mix carries lower wafer prices than merchant GPUs. The circularity question is one the market started asking on Nov 5; it has not been answered.</p>
+
+    <h3>Competition and the moat — intact</h3>
+    <ul>
+      <li><strong>2nm (N2):</strong> in volume production since Q4 2025; 8% of Q3 wafer revenue; reported yields 60–70%; capacity ~50–60k wafers/month in H1 2026, targeting 100k by end-2026 and 120k in early 2027. Order visibility stretches to 2028, with room seen for 5–10% advanced-process wafer price rises in 2027.</li>
+      <li><strong>CoWoS:</strong> fully booked through 2027; capacity ~70k wafers/month at end-2025 → &gt;130k by end-2026 → 200k targeted in 2027; demand still ~3× supply; Nvidia takes &gt;60% of output. CoWoS, not logic wafers, remains the binding constraint on AI accelerator shipments.</li>
+      <li><strong>Samsung:</strong> 2nm yield climbed to ~60% from ~30% in mid-2025 — still below the threshold major customers require; foundry share 6.8%, down from 9.3% YoY. A Samsung–Broadcom supply MOU (&gt;$200B through 2030) is a watch item, not yet an order.</li>
+      <li><strong>Intel:</strong> 18A yield reports conflict — 85% in one source, 55–75% in others in the same search set; treated as an unverified range, not a fact. Claimed design wins are single-sourced and unverified. Foundry losses of ~$7B a year and no proven external AI-scale customer remain the consensus read.</li>
+      <li><strong>Arizona:</strong> $165B, six fabs; 2nm will not be produced there until 2028 at the earliest. Overseas fabs are guided to dilute gross margin by ~3–4pp over the next few years.</li>
+    </ul>
+    <p>Net: no credible second source at the leading edge for 2026–28. Samsung and Intel are narrowing the yield gap at the margin; neither changes the underwriting.</p>
+
+    <h3>Taiwan Strait — live, not theoretical</h3>
+    <p>The PRC's unannounced exercise ran Nov 1–6: 100+ naval and coast-guard vessels at peak, simulating isolation of Taiwan from outside intervention, with a carrier group conducting area-denial drills. Roughly 70 vessels remained on station Nov 13, and the package was thinning in hull count by Nov 16–17 without giving back ground. G7 foreign ministers (Nov 10–11) called the activity east of Taiwan a threat to regional stability; Beijing objected, Taipei welcomed the statement. <strong>Watch Nov 19:</strong> the Trump–Xi meeting at APEC Shenzhen, with chips and AI export curbs on the agenda — whether the naval package eases or spikes around the meeting is the tell. The market currently prices the exercise as background risk, not the proximate driver: the TAIEX rose 1.35% on Nov 13 despite the drills and fell 6.03% on Nov 16 on the Nvidia/Fed tape. No TSMC operational disruption has been reported.</p>
+
+    <h3>The December FOMC — the second discount-rate event</h3>
+    <p>The FOMC meets Dec 8–9, decision Dec 9. Hike pricing across venues: <strong>90–96% for +25bp</strong> (CME 95%, LSEG 96%, Kalshi 90%), with a 50bp hike priced at 4–6% everywhere — essentially priced out. One secondary source claiming "100% priced" is not corroborated by any venue and is disregarded. Yields: 10-year 5.11–5.13%, 2-year 4.81%, 30-year 5.47%. For TSM a hike is a double hit — a higher discount rate on a long-duration cash-flow stream (every 1pp of WACC is worth roughly $30–50/ADR at 3% terminal growth, per the sensitivity grid) and tighter funding costs for the hyperscalers who fund the order book.</p>
+  </section>
+
+  <!-- ================= 9. THESIS & RISKS ================= -->
+  <section class="page" id="thesis">
+    <div class="section-kicker">Section 09 · Thesis, risks &amp; what to watch</div>
+    <h2>The bull case strengthened. The bear case is the discount rate.</h2>
+
+    <div class="two-col">
+      <div class="callout">
+        <h3>Bull case — what strengthened since Nov 12</h3>
+        <p>Operating momentum accelerated: October was the largest revenue month in company history and puts Q4 on pace for the top half of a guide raised three times in 2026. Consensus FY2027 EPS rose to $22.90, so the multiple case got cheaper as the price fell — 16.3× FY2027E, 13.1× FY2028E, against 33% revenue growth. The moat is intact: 2nm at 8% of wafer revenue, CoWoS sold out through 2027, no second source at the leading edge. Hyperscaler capex heads to ~$1T in 2027 on ~$1.7T of combined cloud backlogs. Morningstar moved to 5 stars at $534; the Street averages ~$586 with zero Sell ratings. The dividend rose 28.6% and the balance sheet holds ~$92–95B of net cash. On this reading, the selloff is macro and governance de-risking into a known catalyst — and the October print is the evidence.</p>
+      </div>
+      <div class="callout red">
+        <h3>Bear case — what weakened since Nov 12</h3>
+        <p>The price action is Exhibit A: −7.9% in two sessions, 7.4% below the 200-day, RSI 38.7 and falling, with $353.10 the only nearby support and the tape still falling into the print. The Nvidia crisis is escalating into a Dec 1–3–10 congressional calendar, a DOJ criminal probe, and a new BIS rule aimed at the Singapore/Malaysia data-centre channel. The Fed is ~95% priced to <em>hike</em> with the 10-year above 5.1% — the exact environment that punishes a duration stock, and the desk's own DCF says ~$259 at the provider WACC: the market price still embeds a ~6–7% WACC the bond market does not support. The 2027 capex surge holds FCF to ~$49B, so "cheap on FY2027 earnings" is partly a capex-deferral argument. Memory hyperinflation taxes non-AI customers, and ~70 PRC vessels on station are a standing reminder that the Taiwan discount is not a historical artefact.</p>
+      </div>
+    </div>
+
+    <h3>For and against the old call — the evidence the desk weighed</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th></th><th>For keeping Strong Buy 8/10 + $545</th><th>Against — cut conviction and/or target</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Estimates</strong></td><td>FY2027 EPS consensus rose ($22.30 → $22.90); Q3 beat; October record</td><td>FY2027 FCF troughs on $84B capex; no FCF consensus exists to anchor the bull case</td></tr>
+          <tr><td><strong>Valuation</strong></td><td>16.3× FY2027E, 13.1× FY2028E; Street avg ~$586; Morningstar $534, 5 stars</td><td>DCF base ~$259 at provider WACC 10.84%; $545 embeds WACC ~6.04%; even the exit-multiple alternative is ~$354</td></tr>
+          <tr><td><strong>Technicals</strong></td><td>Nov 5 low held once; RSI not oversold; 50-day still above 200-day</td><td>Below the 200-day by 7.4%; −7.9% in two sessions; intraday still falling</td></tr>
+          <tr><td><strong>Catalysts</strong></td><td>Nvidia print tonight could re-rate; November revenue Dec 10; Q4 print in January</td><td>Nvidia print could cut; Dec 1–3–10 hearings; Dec 9 FOMC hike ~95% priced</td></tr>
+          <tr><td><strong>Thesis</strong></td><td>Moat intact; CoWoS sold out through 2027; hyperscaler capex ~$1T in 2027</td><td>Governance overhang at the largest customer; Taiwan isolation exercise ongoing; circular-financing doubts</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>The desk's resolution: keeping $545 while cutting conviction would have acknowledged the DCF without answering it. Cutting toward the DCF (~$259) would mean abandoning the Street consensus, Morningstar, and the estimate momentum on the strength of one discount-rate assumption. <strong>$450 at 6/10 is the honest middle</strong>: it concedes that the ~24× multiple $545 needed is gone, keeps the earnings case at the stock's own average forward multiple, and labels itself a multiples target that the DCF does not support.</p>
+
+    <h3>The three numbers to watch next</h3>
+    <ol>
+      <li><strong>Nvidia tonight (Nov 17, after the close)</strong> — revenue vs the $108.84–109.2B bars, Data Center vs ~$101.8B, and above all the Q4 guide and Rubin commentary.</li>
+      <li><strong>November monthly revenue, ~Dec 10</strong> — needs ≥NT$538B to stay on pace for the Q4 low end, ≥NT$554B for the midpoint; a print near October's NT$587B confirms the top half of the guide. Same day as the NT$7.00 ex-dividend date.</li>
+      <li><strong>Q4 print, ~mid-January 2027, and the 2027 capex signal</strong> — the January call is when TSMC confirms (or doesn't) a 2027 capex number in the $76–84B range. That single number moves the DCF's 2027 FCF by ~$2/ADR per $10B and is the most important fundamental input after tonight's guide.</li>
+    </ol>
+
+    <h3>Key risks, ranked</h3>
+    <ol class="risk-list">
+      <li><div><strong>Nvidia demand / governance shock</strong><p>A guide cut or Rubin delay tonight; escalation at the Dec 1–3–10 hearings; further BIS tightening. A direct hit to TSMC's largest AI order stream.</p></div></li>
+      <li><div><strong>Rates / Fed hawkishness</strong><p>A December hike (90–96% priced) plus a hawkish 2027 path. A 10-year above 5.25% re-rates the whole AI complex lower regardless of fundamentals.</p></div></li>
+      <li><div><strong>Taiwan Strait escalation</strong><p>The PRC exercise demonstrated isolation capability without announcement. A blockade or quarantine scenario is the one risk that is not diversifiable and not in any multiple.</p></div></li>
+      <li><div><strong>Capex / margin dilution</strong><p>2027 capex of $84–100B with 3–4pp of overseas-fab dilution. If the hoped-for 5–10% wafer price rises for 2027 do not land, margins compress while FCF troughs.</p></div></li>
+      <li><div><strong>Memory-cost squeeze on customers</strong><p>DRAM/NAND hyperinflation hitting handset and PC demand and hyperscaler build budgets — a demand air-pocket in non-AI segments.</p></div></li>
+      <li><div><strong>Custom-silicon share shift</strong><p>Broadcom/Google/OpenAI ASICs growing faster than merchant GPUs. TSMC still manufactures them, but at different wafer economics and with customer concentration shifting.</p></div></li>
+      <li><div><strong>Circular financing</strong><p>Supplier equity and debt funding of AI-lab demand (the $26B Anthropic supplier stock purchase; $42B of Broadcom lending). If lab funding tightens, the order book's quality gets questioned.</p></div></li>
+    </ol>
+  </section>
+
+  <!-- ================= APPENDIX ================= -->
+  <section class="page" id="appendix">
+    <div class="section-kicker">Appendix</div>
+    <h2>Sources &amp; open questions</h2>
+    <p class="muted">All references live here, per house style — the body carries none. Research cutoff: Tuesday, November 17, 2026, ~12:30 p.m. ET, market open. Figures are USD unless stated in NT$. FX NT$31.8/$ (TSMC's Q4 guide rate) unless stated.</p>
+
+    <h3>Open questions — what could not be verified</h3>
+    <ul>
+      <li><strong>FY2027/FY2028 FCF consensus:</strong> none retrievable from a named provider (searched Nov 17). The DCF's FCF path is desk-built from consensus revenue, an OCF-margin assumption, and Deutsche capex. If a true FCF consensus is obtained, the projection should be re-run.</li>
+      <li><strong>Nvidia Q4 FY2027 guide consensus:</strong> no provider figure retrieved; the read-through framework therefore uses qualitative thresholds, not a numbered bar.</li>
+      <li><strong>TSMC cost of debt:</strong> no bond yield retrieved; the 5.50% pre-tax figure is a desk assumption (immaterial — debt is 1.7% of capital; ±100bp moves WACC by ~1.4bp).</li>
+      <li><strong>Market risk premium:</strong> 5.0% is a desk assumption; the provider WACC (10.84%) is the base case precisely to avoid depending on it.</li>
+      <li><strong>Nov 16 volume:</strong> 19.18m–19.65m across providers; quoted as a range throughout.</li>
+      <li><strong>Provider market cap:</strong> one provider's $1.71T figure is irreconcilable with its own share count and price; the desk figure ($1,936.9B) agrees with another provider and is used.</li>
+      <li><strong>Intel 18A yields:</strong> 85% in one source vs 55–75% in others; claimed design wins single-sourced and unverified.</li>
+      <li><strong>House briefing date:</strong> a "before Thanksgiving" briefing report conflicts with the Dec 1–2 written request; treated as superseded.</li>
+      <li><strong>DOJ criminal investigation into Megaspeed:</strong> reported second-hand; no primary DOJ release retrieved at this cutoff.</li>
+      <li><strong>Analyst action Nov 13–17:</strong> none found in the sources searched — not a verified absence.</li>
+      <li><strong>Q4 earnings date:</strong> estimated Jan 13 by one provider, Jan 21 by another; not reconciled.</li>
+      <li><strong>Intraday figures</strong> (Nov 17, ~12:08 p.m. ET) are a snapshot, not a close, and are used only as labelled context.</li>
+    </ul>
+
+    <h3>Sources</h3>
+    <ol class="sources">
+      <li>TSMC Q3 2026 presentation (primary), Oct 15, 2026 — <a href="https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/9f58506f6f114f91cefbf86820cc63297b39b130/3Q26%20Presentation%20%28E%29.pdf">investor.tsmc.com</a></li>
+      <li>TSMC Q3 2026 management report (primary) — <a href="https://investor.tsmc.com/english/encrypt/files/encrypt_file/qr/phase4_reports/2026-10/f53a64fd40fc0b453f94e077e5aba8cad506f27b/3Q26%20ManagementReport.pdf">investor.tsmc.com</a></li>
+      <li>TSMC latest dividend (primary) — <a href="https://investor.tsmc.com/english/latest-dividend">investor.tsmc.com/english/latest-dividend</a></li>
+      <li>TSMC board resolutions, Aug 11, 2026 (primary) — <a href="https://pr.tsmc.com/english/news/3332">pr.tsmc.com/english/news/3332</a></li>
+      <li>StockAnalysis — TSM statistics, multiples, WACC, technicals (opened live Nov 17, 2026) — <a href="https://stockanalysis.com/stocks/tsm/statistics/">stockanalysis.com/stocks/tsm/statistics</a></li>
+      <li>Finnhub — TSM history and quotes — <a href="https://finnhub.io/?q=%22TSM%22">finnhub.io</a></li>
+      <li>TipRanks — TSM historical prices and statistics — <a href="https://www.tipranks.com/stocks/tsm/historical-prices">tipranks.com/stocks/tsm/historical-prices</a> · <a href="https://www.tipranks.com/stocks/tsm/statistics">statistics</a></li>
+      <li>StockInvest — TSM price history — <a href="https://stockinvest.us/stock-price/TSM">stockinvest.us/stock-price/TSM</a></li>
+      <li>ChartExchange — TSM history — <a href="https://chartexchange.com/symbol/nyse-tsm/historical/">chartexchange.com/symbol/nyse-tsm/historical</a></li>
+      <li>Zacks — TSM detailed estimates (Nov 16) — <a href="https://www.zacks.com/stock/quote/TSM/detailed-earning-estimates?icid=SITE_SECTION-SUB_SECTION-quote_nav_tracking-zcom-left_subnav_quote_navbar-detailed_earning_estimates">zacks.com</a></li>
+      <li>Zacks — Nvidia Q3 preview (Nov 12) — <a href="https://www.zacks.com/stock/news/3028349/nvidia-gears-up-for-q3-earnings-should-investors-buy-the-stock">zacks.com/stock/news/3028349</a></li>
+      <li>MarketBeat — Nvidia Q3 FY2027 earnings — <a href="https://www.marketbeat.com/earnings/reports/2026-11-17-nvidia-co-stock/">marketbeat.com</a></li>
+      <li>MarketBeat — TSM — <a href="https://www.marketbeat.com/stocks/NYSE/TSM/?Vote=0">marketbeat.com/stocks/NYSE/TSM</a></li>
+      <li>SentiSense — big-tech earnings week (Data Center consensus) — <a href="https://sentisense.ai/blog/big-tech-earnings-this-week/">sentisense.ai</a></li>
+      <li>Invezz — Nvidia preview (Nov 13, LSEG figures) — <a href="https://invezz.com/news/2026/11/13/nvidia-earnings-preview-q3-kress-huang/">invezz.com</a></li>
+      <li>FutureAIWire — Nvidia preview (Visible Alpha) — <a href="https://futureaiwire.com/nvidia-q3-earnings-preview/">futureaiwire.com</a></li>
+      <li>GlobalBankingAndFinance — TSM analysts (Nov 1) — <a href="https://www.globalbankingandfinance.com/markets/tsm/analysts/">globalbankingandfinance.com/markets/tsm/analysts</a></li>
+      <li>StockExpertAI — TSM Q3 recap, FMP targets (Nov 10) — <a href="https://www.stockexpertai.com/journal/2026-11-10/taiwan-semiconductor-tsm-q3-2026-revenue-rose-margins-eased-from-a-peak-710588ce9aab">stockexpertai.com</a></li>
+      <li>Morningstar — 4 new 5-star stocks (week ended Nov 6) — <a href="https://www.morningstar.com/stocks/4-new-5-star-stocks-this-week-3">morningstar.com</a></li>
+      <li>Morningstar — best AI stocks (Nov 3 data) — <a href="https://www.morningstar.com/stocks/best-ai-stocks-buy-now">morningstar.com/stocks/best-ai-stocks-buy-now</a></li>
+      <li>Deutsche Bank TSMC note (Oct 20, via TTM Financial) — <a href="https://ttm.financial/news/1112680184">ttm.financial</a></li>
+      <li>VLSI — TSMC October revenue — <a href="https://www.vlsi.kr/en/tsmc-oct-record-mb-en/">vlsi.kr</a></li>
+      <li>Edge Consultancy — TSMC board, dividend, appropriations — <a href="https://edgeconsultancykw.com/tsmc-board-anthropic-openai-stakes-500-million-dividend-nt-9-capital-appropriations-40-93-billion/">edgeconsultancykw.com</a></li>
+      <li>Investopedia — 5 things to know, Nov 17 (FedWatch) — <a href="https://www.investopedia.com/5-things-to-know-stock-market-november-17-2026-12260055">investopedia.com</a></li>
+      <li>Morningstar / Dow Jones — Treasury yields, Nov 17 — <a href="https://www.morningstar.com/news/dow-jones/202611171350/us-treasury-eurozone-bond-yields-edge-lower-as-fresh-drivers-are-sought-update">morningstar.com</a></li>
+      <li>Sovereign Magazine — Huang / Lutnick testimony — <a href="https://www.sovereignmagazine.com/article/jensen-huang-testify-congress-lutnick">sovereignmagazine.com</a></li>
+      <li>Suaragarut — Huang House questioning (Nov 17) — <a href="https://suaragarut.id/en/huang-house-nvidia-security">suaragarut.id</a></li>
+      <li>Euronext / Reuters — Nvidia board rules out Huang return (Nov 16) — <a href="https://live.euronext.com/en/financial-news/nvidia-rules-out-huang-comeback-campaign-his-return-grows">live.euronext.com</a></li>
+      <li>Techi — BIS remote-access rule — <a href="https://www.techi.com/us-ai-chip-export-rule-nvidia-revenue-exposure/">techi.com</a></li>
+      <li>Heyday — Taiwan stocks fall, Nov 16 — <a href="https://heyday.news/articles/taiwan-stocks-fall-china-october-retail-sales-15c4dc09">heyday.news</a></li>
+      <li>IO Fund — AI capex $1T (Goldman Sachs) — <a href="https://io-fund.com/ai-stocks/ai-capex-1-trillion-estimates-too-low">io-fund.com</a></li>
+      <li>Barron's — hyperscaler capex (J.P. Morgan) — <a href="https://www.barrons.com/articles/ai-spending-tech-stocks-data-center-cf1bf59e">barrons.com</a></li>
+      <li>Wilson's Media / Counterpoint — DRAM revenue Q3 2026 — <a href="https://www.wilsonsmedia.com/memory-price-skyrockets-as-demand-for-ai-data-centers-drives-369-year-over-year-surge/">wilsonsmedia.com</a></li>
+      <li>IS Magazine — memory squeeze (TrendForce) — <a href="https://ismagazine.com/Home/Post/8928/Why-Is-RAM-So-Expensive-in-2026-The-AI-Memory-Squeeze-Explained">ismagazine.com</a></li>
+      <li>TweakTown — DRAM price-fixing suit — <a href="https://www.tweaktown.com/news/114689/samsung-sk-hynix-and-micron-accused-of-working-together-to-drive-up-ram-prices/index.html">tweaktown.com</a></li>
+      <li>Sanie Institute — suppliers as Anthropic shareholders — <a href="https://sanieinstitute.substack.com/p/why-ai-chip-suppliers-are-now-shareholders">sanieinstitute.substack.com</a></li>
+      <li>Motley Fool — tech sell-off, Broadcom/Anthropic (Nov 11) — <a href="https://www.fool.com/investing/2026/11/11/tech-sell-off-two-ai-stocks-that-are-screaming-buys-right-now/">fool.com</a></li>
+      <li>TheCodeW — TSMC foundry deep dive (Nov 8) — <a href="https://www.thecodew.com/2026/11/company-deep-dive-tsmc-foundry-dominance.html">thecodew.com</a></li>
+      <li>VLSI — Vera Rubin production volumes — <a href="https://www.vlsi.kr/en/vera-rubin-production-volume-deep-dive-en/">vlsi.kr</a></li>
+      <li>Pomegra — PRC drills brief (Nov 13) — <a href="https://pomegra.io/briefs/2026-11-13-taiwan-china-silent-intimidation-drills">pomegra.io</a></li>
+      <li>Political.org — China–Taiwan briefing, Nov 11 — <a href="https://political.org/china-taiwan-archive/cn-briefing-2026-11-11/">political.org</a></li>
+      <li>VentureAtlas — TSMC timeline (Xintec, diversion case) — <a href="https://www.ventureatlas.org/company/tsmc">ventureatlas.org/company/tsmc</a></li>
+      <li>AI Agent Update — TSMC employee data leak (Nov 13) — <a href="https://aiagentupdate.com/post/tsmc-employee-data-leak-2026-11-13">aiagentupdate.com</a></li>
+      <li>Tickeron — TSM analyst targets (Nov 8) — <a href="https://cdn.tickeron.com/ticker/TSM/price-charts/">tickeron.com</a></li>
+      <li>ZeroGamma — TSM investor deep dive (Oct 16) — <a href="https://www.zerogammaresearch.com/research/tsm-investor-deep-dive.pdf">zerogammaresearch.com</a></li>
+      <li>Watcher / NewsLiquid — TSM model (FCF cross-check, non-consensus) — <a href="https://watcher.newsliquid.com/reports/TSM_deep_research_2026-07-31.en.html">watcher.newsliquid.com</a></li>
+      <li>StockRow — TSM financials — <a href="https://stockrow.com/TSM">stockrow.com/TSM</a></li>
+      <li>PreTickt — TSM technicals — <a href="https://www.pretickt.com/stocks/tsm/">pretickt.com/stocks/tsm</a></li>
+      <li>EquitiesRadar — TSM technicals — <a href="https://equitiesradar.com/stocks/TSM">equitiesradar.com/stocks/TSM</a></li>
+    </ol>
+  </section>
+
+  <div class="foot-note">
+    <p style="margin:0">TSM Complete Underwriting — November 2026 · Desk rating: <strong>Buy, conviction 6/10, target $450</strong> (downgraded from Strong Buy 8/10, $545 on Nov 12). Reference price: Nov 16, 2026 close, $373.45. Written before Nvidia's fiscal Q3 print on Nov 17, 2026. Gates installed Nov 17, 2026 at the reader's approval: ≤$355 starter (toward ~1.25% weight), ≤$343.50 deep; $300 reassess line. This page is an internal research document, not investment advice.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  // ---- Theme toggle ----
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  function currentTheme(){
+    var t = root.getAttribute('data-theme');
+    if (t) return t;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  btn.addEventListener('click', function(){
+    root.setAttribute('data-theme', currentTheme() === 'dark' ? 'light' : 'dark');
+  });
+
+  // ---- PDF download (print-to-PDF) ----
+  document.getElementById('pdfBtn').addEventListener('click', function(){
+    window.print();
+  });
+
+  // ---- DCF calculator ----
+  var FCF = [49, 69, 88, 105, 120];      // $B, 2027-2031 desk projection
+  var NET_CASH = 92.48;                   // $B
+  var SHARES = 5.186474;                  // bn ADR-equivalent
+  var wacc = document.getElementById('waccRange');
+  var g = document.getElementById('gRange');
+  var waccOut = document.getElementById('waccOut');
+  var gOut = document.getElementById('gOut');
+  var valEl = document.getElementById('dcfValue');
+  var refEl = document.getElementById('dcfVsRef');
+  var tgtEl = document.getElementById('dcfVsTgt');
+
+  function fmtPct(x){ return (x >= 0 ? '+' : '') + Math.round(x) + '%'; }
+  function compute(){
+    var w = parseFloat(wacc.value) / 100;
+    var gr = parseFloat(g.value) / 100;
+    waccOut.textContent = (w * 100).toFixed(1) + '%';
+    gOut.textContent = (gr * 100).toFixed(2) + '%';
+    if (w <= gr) { valEl.textContent = 'n/a'; refEl.textContent = '—'; tgtEl.textContent = '—'; return; }
+    var pv = 0, df = 1;
+    for (var t = 0; t < FCF.length; t++){
+      df = df / (1 + w);
+      pv += FCF[t] * df;
+    }
+    var tv = FCF[FCF.length - 1] * (1 + gr) / (w - gr);
+    pv += tv * df;
+    var perShare = (pv + NET_CASH) / SHARES;
+    valEl.textContent = '$' + Math.round(perShare);
+    refEl.textContent = fmtPct((perShare / 373.45 - 1) * 100);
+    tgtEl.textContent = fmtPct((perShare / 450 - 1) * 100);
+  }
+  wacc.addEventListener('input', compute);
+  g.addEventListener('input', compute);
+  compute();
+})();
+</script>
+</body>
+</html>
