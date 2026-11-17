@@ -1590,7 +1590,37 @@
    "kind": "company",
    "date": "2026-11-12",
    "summary": "TSM complete update (2026-11-12, desk; research.json entry 170): Strong Buy 8/10, $545 MAINTAINED (+34.4% from $405.49 close). October revenue record NT$586.89B (+59.7% YoY, +14.7% MoM) — tracking ahead of the Q4 guide pace ($52.3–54.3B; Nov+Dec need only NT$538.1B/mo for the low end). Q3: rev NT$1,494.24B (+50.9%), net NT$763.06B (+68.7%, 6th record), GM 66.4%, OM 58.7%; HPC 68% of revenue; 2nm 8% of wafer revenue. Nov 10 board: record NT$9.00/share Q3 dividend (+28.6%), ~$40.93B capacity appropriations, up to $500m each in Anthropic/OpenAI (ceilings, not completed deals). Huang resignation Nov 12: no TSMC statement, no order cut, no downgrade — NVDA print Nov 17 is the first hard test. Valuation (StockAnalysis): fwd P/E 19.47x, EV/EBITDA 15.38x, FCF yield 2.44%, div yield 1.11%; $545 = ~24.4x FY2027E EPS $22.30 (TIKR) — delivery plus re-rating, not delivery alone. Street (S&P Global via StockAnalysis): 21 analysts, Strong Buy, avg $586.69, median $560, low $440, high $1,000; Bernstein raised $554→$600 Nov 4; Morningstar FV $534, 4★. Position (export 68): 45 sh, $18,247.05 (-4.51%). No live add gate. Upload the attached HTML as tsm-complete-update-2026-11-12.html."
+  },
+  {
+   "ticker": "TTWO",
+   "name": "Take-Two Interactive — Complete Analysis, November 2026",
+   "file": "ttwo-complete-analysis-2026-11-14.html",
+   "rating": "Buy 6/10, $300",
+   "target": 300.0,
+   "kind": "company",
+   "date": "2026-11-14",
+   "summary": "TTWO complete analysis, fresh coverage (2026-11-14, desk; research.json entry 171): Buy 6/10, $300 (+31.7% from $227.82 Nov 13 close). Not held — new coverage. GTA VI launches Thu Nov 19, 2026 (PS5/Xbox Series X|S only, no PC date), $79.99/$99.99; pre-load live; pre-orders >$1bn on third-party Sensor Tower estimates (no company figure disclosed). Q2 FY2027 (Nov 9): bookings $1.60bn -18% YoY, BELOW guide $1.62–1.67bn and Zacks $1.66bn; adj EPS $1.00 vs Zacks $0.90 beat; stock +8.31% Nov 10 on the launch/pre-orders. FY2027 bookings guidance REITERATED $8.0–8.2bn (not raised); Q3 bookings $3.35–3.50bn; H2 needs $5.01–5.21bn. Central tension: guidance-implied GTA VI ~19–27m copies Oct–Mar vs Street 35–45m. TTM: rev $6.41bn, GM 57.7%, op margin -1.8%, net loss -$240.5m, FCF $62.6m; FY2027 guided GAAP net income $109–142m = first GAAP profit FY23–27 if delivered. Net debt ~$0.85bn SEC (~1.2x TTM EBITDA); $600m notes due Apr 2027. No dividend; no buyback FY24–26. Valuation (StockAnalysis): fwd P/E 23.71x, P/S 6.65x, FCF yield 0.15% TTM; $300 = 30.7x Zacks FY2028E EPS $9.76, 23.0x BofA FY2028E $13.03 — target works only if the GTA Online tail lands closer to BofA. Street: avg $283.86, Strong Buy, 29 analysts; recent actions are target cuts with ratings held (UBS $300→$295; BTIG $313→$262; BofA $368→$330). ENTRY (recommended only, NO gate): do not chase at $227.82; starter $207–208, deep $195–200. Next earnings date CONFLICTS (Zacks Feb 2 vs Feb 8, 2027) — not settled. Upload the attached HTML as ttwo-complete-analysis-2026-11-14.html."
+  },
+  {
+   "ticker": "TSM",
+   "name": "Taiwan Semiconductor — Complete Underwriting, November 2026",
+   "file": "tsm-complete-underwriting-2026-11-17.html",
+   "rating": "Buy 6/10, $450",
+   "target": 450.0,
+   "kind": "company",
+   "date": "2026-11-17",
+   "summary": "TSM complete underwriting (2026-11-17, desk; research.json entry 172): DOWNGRADED to Buy 6/10, $450 (was Strong Buy 8/10, $545) — +20.5% from the Nov 16 reference close $373.45. The DCF CHALLENGES $545: base case ~$259/ADR at the provider WACC 10.84% (sensitivity $209–$393; exit-multiple alternative $353.50); $545 embeds WACC ~6.04%, which no named provider supports at a 5.12% 10-yr. $450 = 19.7x FY2027E EPS $22.90 (Zacks) — the stock's own average forward multiple — and 15.8x FY2028E $28.50 (GBF); labelled a multiples target, not DCF-supported. Fundamentals NOT deteriorated: Q3 beat, October record NT$586.89B, Q4 tracking ahead of the low end; consensus EPS rose ($22.30→$22.90); Morningstar FV $534, 5★. Price 7.4% below the 200-day ($403.27), RSI 38.7; fell 7.9% Nov 12→16 on the Nvidia/Huang overhang, Dec hike pricing (~95%), and the AI selloff. GATES INSTALLED Nov 17 at Cam's approval: ≤$355 starter (toward ~1.25% wt) and ≤$343.50 deep (15x FY2027E); $300 = reassess; replaces the spent ≤$460 gate. Written BEFORE Nvidia's Q3 print tonight (AMC) — the print is the arbiter. Position (export 68): 45 sh, $16,805.25 (-12.1%). Upload the attached HTML as tsm-complete-underwriting-2026-11-17.html."
+  },
+  {
+   "ticker": null,
+   "name": "Capital Allocation Ranking — November 17, 2026",
+   "file": "capital-allocation-ranking-2026-11-17.html",
+   "rating": null,
+   "target": null,
+   "kind": "thematic",
+   "date": "2026-11-17",
+   "summary": "Cam's own capital allocation ranking (2026-11-17; research.json entry 173): 48 public equities ranked (33 held + 15 research-only) plus 10 funds and 2 private watchlist names (Anthropic, SpaceX); export 68 verified (SHA-256 match). Top next-dollar: TSM, UBER, GOOG, DELL, AVGO (all 8/10); NVDA event-gated 7/10. $43K cash in three waves ($10K initial / $12K evidence-gated / $21K reserve). Intraday cut ~2:27pm ET, indicative value $1,709,362 (IEX indications + stale Nov 12 fund NAVs — not a close). Entry bands per name; TSM starter $330–365 / deep $295–330. Upload the attached HTML as capital-allocation-ranking-2026-11-17.html."
   }
  ],
- "updated": "2026-11-12"
+ "updated": "2026-11-17"
 }
