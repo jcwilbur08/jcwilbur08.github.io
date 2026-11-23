@@ -72,4 +72,106 @@
 <ul class="small"><li><b>Market data:</b> Alpaca IEX latest trades around 19:19–19:20 UTC, Nov 20, 2026; percentage change vs previous daily close from that feed. IEX is a limited venue, quotes not necessarily NBBO. The report is intraday, not a confirmed official market close.</li><li><b>Portfolio:</b> Exact retirement-portfolio-68.xlsx checksum verified against manifest; 44 spreadsheet lines and historical workbook value about $1,749,399.92. All direct position weights and quantities use this workbook only. No other personal balances are substituted.</li><li><b>Valuation:</b> Older company theses supplied previously reviewed DCF scenarios and EPS estimates with their as-of dates. This is a capital-allocation refresh, <b>not</b> a newly completed bottom-up model for each security. Market price and older DCF forecasts are explicitly separated; forecast revisions could materially change theoretical upside.</li><li><b>Mandate:</b> Long-term retirement capital; stage entries and avoid duplicate AI/infrastructure exposure. Entry ranges and research conviction are conditional judgment, not automated CIO status changes or executable orders.</li><li><b>Uncertainties:</b> No full-market closing data, complete mutual-fund NAV refresh, all 44 live prices, updated current cash, fresh real-time 2027/2028 street consensus across 16 names, or exhaustive look-through factor exposure was established. Accordingly no accurate live portfolio NAV/weight or guaranteed downside support is claimed.</li><li><b>Provenance:</b> Internal research thesis-registry as of Nov 19, 2026; manifest as of Nov 12; public primary/news sources below. The existing two nonterminal unrelated research assignments were not modified and no new CIO decision was recorded.</li></ul>
 <ol class="sources"><li><b>S1.</b> <a href="https://www.reuters.com/world/china/global-markets-global-markets-2026-11-20/">Reuters, global market selloff / AI, November 20</a></li><li><b>S2.</b> <a href="https://www.schwab.com/learn/story/stock-market-update-open">Charles Schwab, Friday market update, November 20</a></li><li><b>S3.</b> <a href="https://apnews.com/article/206c84045137824feabe052a29ff6140">AP, market decline November 19</a></li><li><b>S4.</b> <a href="https://pr.tsmc.com/english/news/3349">TSMC, October revenue released November 10</a></li><li><b>S5.</b> <a href="https://pr.tsmc.com/english/news/3346">TSMC, Q3 2026 release</a></li><li><b>S6.</b> <a href="https://investors.delltechnologies.com/news-events/press-releases/detail/1661/dell-technologies-to-hold-conference-call-nov-24-to-discuss-third-quarter-fiscal-2027-financial-results">Dell, November 24 Q3 FY2027 call announcement</a></li><li><b>S7.</b> <a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announce-fourth-quarter-and-fiscal-year-2026">Broadcom, December 9 FY2026 results announcement</a></li><li><b>S8.</b> <a href="https://www.reuters.com/world/china/tsmc-tightens-china-ai-chip-curbs-new-us-rules-close-manufacturing-loophole-2026-11-19/">Reuters, TSMC China chip restriction development, November 19</a></li><li><b>S9.</b> <a href="https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm">Adobe, Q3 FY2026 earnings materials (SEC)</a></li><li><b>S10.</b> <a href="https://github.com/jcwilbur08/Portfolio-Summary/blob/claude/automatic-portfolio-review-yicftu/agent-state/portfolio/manifest.json">Portfolio-Summary canonical workbook manifest (authorized repository)</a></li><li><b>S11.</b> <a href="https://github.com/jcwilbur08/Portfolio-Summary/blob/claude/automatic-portfolio-review-yicftu/agent-state/research/thesis-registry.json">Portfolio-Summary research thesis registry</a></li></ol>
 <p class="footer-note">Prepared November 20, 2026. For investor decision support; subject to rapid intraday market changes. Publication status: delivered for review; not submitted to the Portfolio Command Center. Do not substitute an old canonical workbook, or treat qualitative conviction as financial advice or a final Portfolio CIO authorization.</p>
-</main></div></body></html>
+</main></div>
+<!-- PCC-NARRATE:START -- universal narration widget, injected by scripts/inject_narration.py.
+     Reads the page aloud via the browser's built-in Web Speech API. Idempotent: this script
+     will not inject a second copy into a file that already references speechSynthesis. -->
+<style>
+  #pcc-narrate-bar{
+    position:fixed; bottom:18px; right:18px; z-index:2147483000;
+    display:flex; align-items:center; gap:6px;
+    background:#12395B; color:#fff; border-radius:999px; padding:8px 8px;
+    box-shadow:0 8px 24px rgba(10,22,40,.35);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  #pcc-narrate-bar button{
+    background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.20); color:#fff;
+    border-radius:999px; padding:7px 12px; font-size:12px; font-weight:700; cursor:pointer;
+    display:flex; align-items:center; gap:5px; line-height:1;
+  }
+  #pcc-narrate-bar button:hover{background:rgba(255,255,255,.20);}
+  #pcc-narrate-bar button:disabled{opacity:.4; cursor:default;}
+  #pcc-narrate-bar .pcc-narrate-speed{min-width:40px; justify-content:center;}
+  #pcc-narrate-bar .pcc-narrate-label{font-size:11px; color:#bcd0ea; padding:0 4px 0 6px; white-space:nowrap;}
+  .pcc-narrate-highlight{
+    background:rgba(59,130,246,.18) !important; outline:2px solid rgba(59,130,246,.35);
+    border-radius:6px; transition:background .15s ease;
+  }
+  @media print{ #pcc-narrate-bar{display:none !important;} }
+</style>
+<div id="pcc-narrate-bar" style="display:none">
+  <button type="button" id="pcc-narrate-play" aria-label="Play">&#9654; Listen</button>
+  <button type="button" id="pcc-narrate-stop" disabled aria-label="Stop">&#9632;</button>
+  <button type="button" id="pcc-narrate-speed" class="pcc-narrate-speed" disabled aria-label="Playback speed">1x</button>
+  <span class="pcc-narrate-label" id="pcc-narrate-status"></span>
+</div>
+<script>
+(function(){
+  if (!('speechSynthesis' in window)) return;
+  var SEL = 'h1,h2,h3,h4,h5,p,li';
+  var EXCLUDE_ANCESTOR = 'table';
+  var RATES = [1, 1.25, 1.5, 0.85];
+  var bar = document.getElementById('pcc-narrate-bar');
+  var playBtn = document.getElementById('pcc-narrate-play');
+  var stopBtn = document.getElementById('pcc-narrate-stop');
+  var speedBtn = document.getElementById('pcc-narrate-speed');
+  var statusEl = document.getElementById('pcc-narrate-status');
+  var nodes = [], idx = 0, rateIdx = 0, playing = false;
+
+  function collect(){
+    var all = Array.prototype.slice.call(document.querySelectorAll(SEL));
+    var seen = [];
+    return all.filter(function(el){
+      if (el.closest(EXCLUDE_ANCESTOR)) return false;
+      if (el.closest('#pcc-narrate-bar')) return false;
+      var text = (el.innerText || '').trim();
+      if (!text) return false;
+      var prev = seen[seen.length - 1];
+      if (prev && prev.contains(el)) return false;
+      seen.push(el);
+      return true;
+    });
+  }
+  function clearHighlight(){
+    var h = document.querySelector('.pcc-narrate-highlight');
+    if (h) h.classList.remove('pcc-narrate-highlight');
+  }
+  function setStatus(){ statusEl.textContent = nodes.length ? (idx + 1) + ' / ' + nodes.length : ''; }
+  function speakNext(){
+    if (idx >= nodes.length) { stopAll(); return; }
+    var el = nodes[idx];
+    var text = el.innerText.trim();
+    clearHighlight();
+    el.classList.add('pcc-narrate-highlight');
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setStatus();
+    var u = new SpeechSynthesisUtterance(text);
+    u.rate = RATES[rateIdx];
+    u.onend = function(){ if (playing) { idx++; speakNext(); } };
+    window.speechSynthesis.speak(u);
+  }
+  function play(){
+    if (!nodes.length) nodes = collect();
+    if (!nodes.length) return;
+    playing = true;
+    playBtn.innerHTML = '&#9208; Pause';
+    stopBtn.disabled = false;
+    speedBtn.disabled = false;
+    if (!window.speechSynthesis.speaking) speakNext();
+    else window.speechSynthesis.resume();
+  }
+  function pause(){ playing = false; window.speechSynthesis.pause(); playBtn.innerHTML = '&#9654; Resume'; }
+  function stopAll(){
+    playing = false; window.speechSynthesis.cancel(); idx = 0; clearHighlight();
+    playBtn.innerHTML = '&#9654; Listen'; stopBtn.disabled = true; speedBtn.disabled = true; statusEl.textContent = '';
+  }
+  playBtn.addEventListener('click', function(){ if (playing) pause(); else play(); });
+  stopBtn.addEventListener('click', stopAll);
+  speedBtn.addEventListener('click', function(){ rateIdx = (rateIdx + 1) % RATES.length; speedBtn.textContent = RATES[rateIdx] + 'x'; });
+  window.addEventListener('beforeunload', function(){ window.speechSynthesis.cancel(); });
+  bar.style.display = 'flex';
+})();
+</script>
+<!-- PCC-NARRATE:END -->
+
+</body></html>
