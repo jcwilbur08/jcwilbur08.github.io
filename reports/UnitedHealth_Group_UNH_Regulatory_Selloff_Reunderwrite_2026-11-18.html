@@ -118,4 +118,106 @@ small,.muted{color:#627689;} .small{font-size:8.2pt;} .tiny{font-size:7.3pt;}
 <ol class="sources"><li><b>CMS</b> — <a href="https://www.cms.gov/newsroom/fact-sheets/comprehensive-regulations-uncover-suspicious-healthcare-crush-proposed-rule-cms-6098-p">CRUSH proposed rule fact sheet (Nov. 16, 2026)</a></li><li><b>CMS</b> — <a href="https://www.cms.gov/newsroom/press-releases/cms-crush-proposed-rule-aims-reap-nearly-90-billion-taxpayers-savings-targeting-fraud-across">CRUSH press release and estimated Federal savings</a></li><li><b>CMS</b> — <a href="https://public-inspection.federalregister.gov/2026-23461.pdf">Official rule text (CMS-6098-P)</a></li><li><b>SEC</b> — <a href="https://www.sec.gov/Archives/edgar/data/731766/000073176626000255/earningsrelease3q26unh.htm">UnitedHealth Group Q3 2026 earnings release, Oct. 13</a></li><li><b>SEC</b> — <a href="https://www.sec.gov/ixviewer/ix.html?doc=%2FArchives%2Fedgar%2Fdata%2F731766%2F000073176626000266%2Funh-20260930.htm">UnitedHealth Form 10-Q for Sept. 30, 2026</a></li><li><b>Press</b> — <a href="https://finance.yahoo.com/healthcare/article/unitedhealth-and-other-insurance-stocks-drag-down-the-dow-after-cms-proposes-new-anti-fraud-rule-173851810.html">Yahoo Finance same-day managed-care peer decline</a></li><li><b>Press</b> — <a href="https://ca.investing.com/news/stock-market-news/why-is-unitedhealth-stock-sliding-today-93CH-4967385">Investing.com Nov. 18 account of stock move</a></li><li><b>Market feed</b> — Alpaca IEX snapshots: UNH last trade $345.83 at 2026-11-18 19:33:34Z, IEX prior Nov. 17 daily close $389.695. Limited-venue prints may differ from consolidated exchange last trade.</li><li><b>Internal research</b> — Portfolio-Summary /agent-state/research/thesis-registry.json, UNH Nov. 13 research record; agent-state/portfolio/manifest.json and designated v68 workbook. The Nov. 13 source case is historical and is not a current price quote.</li></ol>
 <div class="callout green"><b>Conclusion:</b> Today’s move is anchored to a real regulatory event with asymmetric and currently unquantified financial consequences. At $345.83 the stock may offer attractive long-run returns if the recovery thesis holds and legal exposure is contained, but an aggressive add would confuse a lower quote with a lower risk. Preserve position size, monitor the regulatory record, and demand a margin of safety.</div>
 <p class="tiny">Professional research opinion; not investment advice or a trade instruction. All quantitative forecasts are estimates with meaningful uncertainty. Analysis cutoff: November 18, 2026, approximately 2:33 p.m. ET.</p>
-</main></body></html>
+</main>
+<!-- PCC-NARRATE:START -- universal narration widget, injected by scripts/inject_narration.py.
+     Reads the page aloud via the browser's built-in Web Speech API. Idempotent: this script
+     will not inject a second copy into a file that already references speechSynthesis. -->
+<style>
+  #pcc-narrate-bar{
+    position:fixed; bottom:18px; right:18px; z-index:2147483000;
+    display:flex; align-items:center; gap:6px;
+    background:#12395B; color:#fff; border-radius:999px; padding:8px 8px;
+    box-shadow:0 8px 24px rgba(10,22,40,.35);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  #pcc-narrate-bar button{
+    background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.20); color:#fff;
+    border-radius:999px; padding:7px 12px; font-size:12px; font-weight:700; cursor:pointer;
+    display:flex; align-items:center; gap:5px; line-height:1;
+  }
+  #pcc-narrate-bar button:hover{background:rgba(255,255,255,.20);}
+  #pcc-narrate-bar button:disabled{opacity:.4; cursor:default;}
+  #pcc-narrate-bar .pcc-narrate-speed{min-width:40px; justify-content:center;}
+  #pcc-narrate-bar .pcc-narrate-label{font-size:11px; color:#bcd0ea; padding:0 4px 0 6px; white-space:nowrap;}
+  .pcc-narrate-highlight{
+    background:rgba(59,130,246,.18) !important; outline:2px solid rgba(59,130,246,.35);
+    border-radius:6px; transition:background .15s ease;
+  }
+  @media print{ #pcc-narrate-bar{display:none !important;} }
+</style>
+<div id="pcc-narrate-bar" style="display:none">
+  <button type="button" id="pcc-narrate-play" aria-label="Play">&#9654; Listen</button>
+  <button type="button" id="pcc-narrate-stop" disabled aria-label="Stop">&#9632;</button>
+  <button type="button" id="pcc-narrate-speed" class="pcc-narrate-speed" disabled aria-label="Playback speed">1x</button>
+  <span class="pcc-narrate-label" id="pcc-narrate-status"></span>
+</div>
+<script>
+(function(){
+  if (!('speechSynthesis' in window)) return;
+  var SEL = 'h1,h2,h3,h4,h5,p,li';
+  var EXCLUDE_ANCESTOR = 'table';
+  var RATES = [1, 1.25, 1.5, 0.85];
+  var bar = document.getElementById('pcc-narrate-bar');
+  var playBtn = document.getElementById('pcc-narrate-play');
+  var stopBtn = document.getElementById('pcc-narrate-stop');
+  var speedBtn = document.getElementById('pcc-narrate-speed');
+  var statusEl = document.getElementById('pcc-narrate-status');
+  var nodes = [], idx = 0, rateIdx = 0, playing = false;
+
+  function collect(){
+    var all = Array.prototype.slice.call(document.querySelectorAll(SEL));
+    var seen = [];
+    return all.filter(function(el){
+      if (el.closest(EXCLUDE_ANCESTOR)) return false;
+      if (el.closest('#pcc-narrate-bar')) return false;
+      var text = (el.innerText || '').trim();
+      if (!text) return false;
+      var prev = seen[seen.length - 1];
+      if (prev && prev.contains(el)) return false;
+      seen.push(el);
+      return true;
+    });
+  }
+  function clearHighlight(){
+    var h = document.querySelector('.pcc-narrate-highlight');
+    if (h) h.classList.remove('pcc-narrate-highlight');
+  }
+  function setStatus(){ statusEl.textContent = nodes.length ? (idx + 1) + ' / ' + nodes.length : ''; }
+  function speakNext(){
+    if (idx >= nodes.length) { stopAll(); return; }
+    var el = nodes[idx];
+    var text = el.innerText.trim();
+    clearHighlight();
+    el.classList.add('pcc-narrate-highlight');
+    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    setStatus();
+    var u = new SpeechSynthesisUtterance(text);
+    u.rate = RATES[rateIdx];
+    u.onend = function(){ if (playing) { idx++; speakNext(); } };
+    window.speechSynthesis.speak(u);
+  }
+  function play(){
+    if (!nodes.length) nodes = collect();
+    if (!nodes.length) return;
+    playing = true;
+    playBtn.innerHTML = '&#9208; Pause';
+    stopBtn.disabled = false;
+    speedBtn.disabled = false;
+    if (!window.speechSynthesis.speaking) speakNext();
+    else window.speechSynthesis.resume();
+  }
+  function pause(){ playing = false; window.speechSynthesis.pause(); playBtn.innerHTML = '&#9654; Resume'; }
+  function stopAll(){
+    playing = false; window.speechSynthesis.cancel(); idx = 0; clearHighlight();
+    playBtn.innerHTML = '&#9654; Listen'; stopBtn.disabled = true; speedBtn.disabled = true; statusEl.textContent = '';
+  }
+  playBtn.addEventListener('click', function(){ if (playing) pause(); else play(); });
+  stopBtn.addEventListener('click', stopAll);
+  speedBtn.addEventListener('click', function(){ rateIdx = (rateIdx + 1) % RATES.length; speedBtn.textContent = RATES[rateIdx] + 'x'; });
+  window.addEventListener('beforeunload', function(){ window.speechSynthesis.cancel(); });
+  bar.style.display = 'flex';
+})();
+</script>
+<!-- PCC-NARRATE:END -->
+
+</body></html>
