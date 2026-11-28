@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dell Technologies (DELL) — Full Post-Earnings Update, November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f4f7f8; --surface:#ffffff; --surface2:#eef4f5; --ink:#12262e; --ink2:#3d5560; --ink3:#63798a;
+  --line:#d9e2e4; --teal:#087c78; --teal-deep:#0b4560; --gold:#b98a1e; --gold-bg:#fbf3e3;
+  --green:#1d7a3a; --green-bg:#e7f4ea; --red:#bc4d54; --red-bg:#faecec; --amber:#9a6a00; --amber-bg:#fdf3dd;
+  --cover1:#071f2c; --cover2:#0b4560; --cover3:#087c78;
+  color-scheme: light;
+}
+[data-theme="dark"]{
+  --bg:#0a161c; --surface:#10222b; --surface2:#0d1c24; --ink:#e8f1f4; --ink2:#b3c6cd; --ink3:#8499a3;
+  --line:#24404c; --teal:#3ec6bd; --teal-deep:#7fc4dd; --gold:#e7b458; --gold-bg:#2b2413;
+  --green:#6fce8b; --green-bg:#12301c; --red:#e88a90; --red-bg:#33191c; --amber:#eec25e; --amber-bg:#33280e;
+  color-scheme: dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"DM Sans",sans-serif;font-size:16.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+/* ---------- cover ---------- */
+.cover{background:linear-gradient(138deg,var(--cover1) 0%,var(--cover2) 44%,var(--cover3) 100%);color:#fff;padding:52px 0 0;position:relative;overflow:hidden}
+.cover .wrap{position:relative;z-index:1}
+.cover-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.cover-kicker{font-size:12.5px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#9fd8d2}
+.cover h1{font-family:"Libre Baskerville",serif;font-weight:700;font-size:clamp(30px,5.4vw,50px);line-height:1.14;margin:14px 0 6px}
+.cover .tickerline{font-size:15px;color:#cfe6e3;letter-spacing:.04em}
+.cover .deck{font-size:clamp(16px,2.4vw,19.5px);line-height:1.55;color:#eaf6f4;max-width:820px;margin:20px 0 8px}
+.cover .deck strong{color:#fff}
+.theme-btn{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);color:#fff;border-radius:999px;padding:10px 18px;font-family:"DM Sans",sans-serif;font-size:13.5px;font-weight:700;cursor:pointer;min-height:40px;white-space:nowrap}
+.theme-btn:hover{background:rgba(255,255,255,.22)}
+.rating-strip{display:flex;flex-wrap:wrap;gap:0;margin-top:30px;border-top:1px solid rgba(255,255,255,.25)}
+.rstat{flex:1 1 150px;padding:18px 18px 22px;border-right:1px solid rgba(255,255,255,.16)}
+.rstat:last-child{border-right:none}
+.rstat .lab{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#9fd8d2}
+.rstat .val{font-size:clamp(24px,3.6vw,34px);font-weight:900;line-height:1.15;margin-top:4px}
+.rstat .val.buy{color:#b9e769}
+.rstat .sub{font-size:12.5px;color:#cfe6e3;margin-top:2px}
+.cover-meta{background:rgba(0,0,0,.28)}
+.cover-meta .wrap{display:flex;flex-wrap:wrap;gap:8px 34px;padding-top:14px;padding-bottom:14px;font-size:13px;color:#d8ecea}
+.cover-meta b{color:#fff;font-weight:700}
+/* ---------- layout ---------- */
+main{padding:38px 0 10px}
+.toc{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px 26px;margin-bottom:40px}
+.toc h2{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+.toc ol{list-style:none;counter-reset:toc;display:grid;grid-template-columns:1fr 1fr;gap:4px 30px}
+.toc li{counter-increment:toc}
+.toc a{display:flex;gap:10px;align-items:baseline;color:var(--ink);text-decoration:none;padding:7px 6px;border-radius:8px;font-size:15px;font-weight:500;min-height:36px}
+.toc a:hover{background:var(--surface2)}
+.toc a::before{content:counter(toc,decimal-leading-zero);font-family:"DM Mono",monospace;font-size:12px;color:var(--teal);font-weight:500}
+section{margin-bottom:52px;scroll-margin-top:20px}
+.kicker{font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--teal);margin-bottom:6px}
+h2.sec{font-family:"Libre Baskerville",serif;font-size:clamp(23px,3.6vw,31px);line-height:1.25;font-weight:700;margin-bottom:14px}
+h3.sub{font-size:18px;font-weight:700;margin:26px 0 8px}
+p{margin-bottom:13px;color:var(--ink)}
+p.lede{font-size:18px;line-height:1.6}
+.mut{color:var(--ink2)} .small{font-size:13.5px}
+strong{font-weight:700}
+blockquote{border-left:3px solid var(--gold);padding:6px 0 6px 18px;margin:16px 0;font-family:"Libre Baskerville",serif;font-style:italic;font-size:16.5px;color:var(--ink)}
+blockquote .who{display:block;font-family:"DM Sans",sans-serif;font-style:normal;font-size:13px;color:var(--ink3);margin-top:6px;letter-spacing:.02em}
+/* callouts */
+.callout{border-radius:12px;padding:20px 22px;margin:20px 0}
+.callout .ct{font-size:12px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:8px}
+.callout p:last-child{margin-bottom:0}
+.co-verdict{background:var(--gold-bg);border:1px solid var(--gold)}
+.co-verdict .ct{color:var(--gold)}
+.co-warn{background:var(--red-bg);border:1px solid var(--red)}
+.co-warn .ct{color:var(--red)}
+.co-note{background:var(--surface2);border:1px solid var(--line)}
+.co-note .ct{color:var(--teal)}
+/* tables */
+.twrap{overflow-x:auto;margin:16px 0 8px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px;min-width:520px}
+th{background:var(--surface2);text-align:left;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink2);padding:11px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td .delta{font-size:12.5px;color:var(--ink3)}
+.pos{color:var(--green);font-weight:700}.neg{color:var(--red);font-weight:700}
+.pill{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.06em;padding:3px 10px;border-radius:999px;white-space:nowrap}
+.pill.pass{background:var(--green-bg);color:var(--green);border:1px solid var(--green)}
+.pill.fail{background:var(--red-bg);color:var(--red);border:1px solid var(--red)}
+.pill.hold{background:var(--amber-bg);color:var(--amber);border:1px solid var(--amber)}
+.tnote{font-size:13px;color:var(--ink3);margin:4px 0 14px}
+/* stat grid */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:18px 0}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
+.stat .lab{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+.stat .val{font-size:24px;font-weight:900;margin-top:3px;font-variant-numeric:tabular-nums}
+.stat .sub{font-size:12.5px;color:var(--ink2)}
+ul.tight{margin:6px 0 14px 20px}
+ul.tight li{margin-bottom:7px}
+figure{margin:20px 0}
+figure svg{width:100%;height:auto;display:block;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+figcaption{font-size:13px;color:var(--ink3);margin-top:8px}
+.dl-row{display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 6px}
+.dl-btn{background:var(--teal-deep);color:#fff;border:none;border-radius:10px;padding:13px 22px;font-family:"DM Sans",sans-serif;font-size:15px;font-weight:700;cursor:pointer;min-height:48px}
+.dl-btn:hover{opacity:.88}
+[data-theme="dark"] .dl-btn{background:var(--teal);color:#06222a}
+footer{border-top:1px solid var(--line);margin-top:20px;padding:30px 0 60px}
+footer h2{font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);margin-bottom:14px}
+footer ol{margin-left:20px;font-size:14px;color:var(--ink2)}
+footer ol li{margin-bottom:8px}
+.foot-note{font-size:13px;color:var(--ink3);margin-top:22px}
+@media (max-width:680px){
+  .toc ol{grid-template-columns:1fr}
+  .rstat{flex:1 1 42%;border-right:none}
+  table{font-size:12.5px;min-width:0}
+  th,td{padding:7px 7px}
+  th{white-space:normal}
+  td.num,th.num{white-space:normal}
+  .pill{white-space:normal;text-align:center}
+  body{font-size:15.5px}
+}
+@media print{
+  .theme-btn,.dl-row{display:none!important}
+  body{background:#fff;color:#000;font-size:12pt}
+  .cover{padding-top:24px}
+  .twrap{overflow:visible}
+}
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="cover-top">
+      <div>
+        <div class="cover-kicker">Full Post-Earnings Update · November 2026</div>
+        <h1>Dell Technologies</h1>
+        <div class="tickerline">NYSE: DELL &nbsp;·&nbsp; Q3 FY2027 print, reported Tuesday, November 24, 2026 (after the close)</div>
+      </div>
+      <button class="theme-btn" id="themeBtn" type="button" aria-label="Toggle dark and light theme">Dark / Light</button>
+    </div>
+    <p class="deck">A record beat-and-raise on every line — revenue <strong>$54.937B (+103%)</strong>, non-GAAP EPS <strong>$9.45</strong>, AI-server revenue <strong>$22.031B</strong>, backlog <strong>$132.3B</strong>, free cash flow <strong>$3.474B</strong> — into a tape that had already sold the stock 11.83% before the print. The fundamentals pass every test the desk set. The technicals fail both of theirs. The rating holds; the suspension stays; the $300 line is now the whole question.</p>
+    <div class="rating-strip">
+      <div class="rstat"><div class="lab">Rating</div><div class="val buy">BUY</div><div class="sub">Maintained — was Buy</div></div>
+      <div class="rstat"><div class="lab">Conviction</div><div class="val">6<span style="font-size:.55em">/10</span></div><div class="sub">Held — technicals fail, Q4 ISG margin steps down</div></div>
+      <div class="rstat"><div class="lab">12-Mo Target</div><div class="val">$580</div><div class="sub">Maintained · 19.4× FY27E</div></div>
+      <div class="rstat"><div class="lab">Reference Close</div><div class="val">$295.28</div><div class="sub">Tue Nov 24, 2026 · locked · pre-print · −11.83%</div></div>
+      <div class="rstat"><div class="lab">Upside to Target</div><div class="val">+96.4%</div><div class="sub">From the reference close</div></div>
+      <div class="rstat"><div class="lab">Suspension</div><div class="val">KEEP</div><div class="sub">No new capital · no gate · boundary at $300</div></div>
+    </div>
+  </div>
+  <div class="cover-meta">
+    <div class="wrap">
+      <span><b>Report date:</b> Wednesday, November 25, 2026</span>
+      <span><b>Reference:</b> Tuesday, November 24, 2026 regular-session closes</span>
+      <span><b>Holdings:</b> export 68 — 12 sh, cost $4,885.44 (blended avg $407.12)</span>
+      <span><b>Supersedes:</b> the November 12, 2026 refresh</span>
+    </div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+<nav class="toc" aria-label="Report map">
+  <h2>Report map</h2>
+  <ol>
+    <li><a href="#verdict">The verdict — a demolition the tape ignored</a></li>
+    <li><a href="#print">The print — Q3 FY2027 in full</a></li>
+    <li><a href="#bars">The bars — what the print had to beat</a></li>
+    <li><a href="#segments">Segments &amp; margins — the failure mode that didn't happen</a></li>
+    <li><a href="#cashflow">Cash flow — the Q2 flag, answered</a></li>
+    <li><a href="#backlog">Backlog &amp; demand — $132.3B and widening</a></li>
+    <li><a href="#call">The call — what Dell did and did not confirm on pricing</a></li>
+    <li><a href="#tape">The tape &amp; the position</a></li>
+    <li><a href="#street">The Street — pure multiple compression</a></li>
+    <li><a href="#valuation">Valuation — why $580 stands</a></li>
+    <li><a href="#suspension">Suspension &amp; gates — KEEP, and the $300 boundary</a></li>
+    <li><a href="#corrections">Corrections &amp; open items</a></li>
+    <li><a href="#close-addendum">Close addendum — Nov 25, 2026: $297.06, boundary failed</a></li>
+  </ol>
+</nav>
+
+<!-- 1 VERDICT -->
+<section id="verdict">
+  <div class="kicker">Section 01 · The Verdict</div>
+  <h2 class="sec">A record beat-and-raise, sold before it landed</h2>
+  <p class="lede">Q3 FY2027 was a demolition on every bar the desk tracks. Revenue of $54.937B (+103%) cleared the company's own $49.0B guide by $5.94B; non-GAAP EPS of $9.45 (+265%) cleared the $6.50 guide by 45.4%; AI-server revenue of $22.031B (+291%) built a record $132.3B backlog; guidance was raised on every line; and free cash flow of $3.474B (+587%) reversed the Q2 flag that anchored the October downgrade. The flagged failure mode — a revenue and AI beat bought with margin compression — did not occur: non-GAAP gross margin rose to 21.2% and ISG operating margin expanded 460 basis points sequentially to 17.0%.</p>
+  <p>And yet the stock fell 11.83% to $295.28 in the regular session <em>before</em> the print — an AI-hardware selloff day, not a reaction to results — and traded lower again on November 25. The reference close sits $4.72 below the $300 line and $54.86 below the 200-day average. That split is the whole underwrite: the print does not invalidate the thesis, so no rating or target change is triggered — but the suspension cannot lift while both technical legs fail and the $300 line is breached.</p>
+  <div class="callout co-verdict">
+    <div class="ct">Desk decision</div>
+    <p><strong>Buy 6/10, $580 maintained. Suspension: KEEP.</strong> The $300 level was the "re-opens the thesis" line, and this print <em>is</em> the re-examination: it clears the thesis on every fundamental prong — beat on every bar, AI revenue $22.031B, FCF $3.474B against the $1B line, guidance raised on every line, margins expanded. A price-only invalidation on the day of a record beat-and-raise would let the tape overrule the fundamentals. <strong>Boundary, stated explicitly: a further regular-session close below $300 converts KEEP to invalidation triggered.</strong> The November 25 close is the immediate test; a close-lock addendum tonight checks it. (Thursday, November 26 is Thanksgiving — market closed.)</p>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="lab">Revenue</div><div class="val">$54.94B</div><div class="sub">+103% YoY · vs $49.0B guide</div></div>
+    <div class="stat"><div class="lab">Non-GAAP EPS</div><div class="val">$9.45</div><div class="sub">+265% YoY · vs $6.50 guide</div></div>
+    <div class="stat"><div class="lab">AI-Server Revenue</div><div class="val">$22.03B</div><div class="sub">+291% YoY</div></div>
+    <div class="stat"><div class="lab">AI Backlog</div><div class="val">$132.3B</div><div class="sub">Record · from $95B in Q2</div></div>
+    <div class="stat"><div class="lab">Free Cash Flow</div><div class="val">$3.47B</div><div class="sub">+587% YoY · Q2 flag reversed</div></div>
+    <div class="stat"><div class="lab">FY27 EPS Guide</div><div class="val">$29.68</div><div class="sub">Raised from $25.50</div></div>
+  </div>
+</section>
+
+<!-- 2 PRINT -->
+<section id="print">
+  <div class="kicker">Section 02 · The Print</div>
+  <h2 class="sec">Q3 FY2027: every line, raised or beaten</h2>
+  <p>Reported Tuesday, November 24, 2026, after the close, for the quarter ended October 30, 2026. These are furnished, unaudited figures — the Q3 Form 10-Q had not been filed at the time of writing. No metric carried in the prior quarter's release was dropped from this one.</p>
+  <div class="twrap"><table>
+    <tr><th>Metric</th><th class="num">Q3 FY2027</th><th>Note</th></tr>
+    <tr><td>Revenue</td><td class="num"><strong>$54,937m</strong></td><td>+103% YoY · vs $49.0B guide (+$5.94B, +12.1%)</td></tr>
+    <tr><td>GAAP diluted EPS</td><td class="num"><strong>$8.82</strong></td><td>+287% YoY · vs $6.10 guide</td></tr>
+    <tr><td>Non-GAAP diluted EPS</td><td class="num"><strong>$9.45</strong></td><td>+265% YoY · vs $6.50 guide (+$2.95, +45.4%)</td></tr>
+    <tr><td>Net income</td><td class="num">$5,673m</td><td>+266% YoY · diluted shares 643m (vs 680m, −5%)</td></tr>
+    <tr><td>GAAP gross margin</td><td class="num">21.0%</td><td>$11,559m · vs 20.7% a year ago</td></tr>
+    <tr><td>Non-GAAP gross margin</td><td class="num">21.2%</td><td>$11,659m · +10bp YoY</td></tr>
+    <tr><td>GAAP operating income</td><td class="num">13.5%</td><td>$7,442m · +251% YoY</td></tr>
+    <tr><td>Non-GAAP operating income</td><td class="num">14.2%</td><td>$7,826m · +213% YoY · rate +490bp</td></tr>
+    <tr><td>Non-GAAP operating expenses</td><td class="num">7.0% of rev.</td><td>$3,833m · −480bp · lowest opex ratio in company history</td></tr>
+    <tr><td>Cash flow from operations</td><td class="num">$4,459m</td><td>+280% YoY · record Q3</td></tr>
+    <tr><td>Shareholder return (as stated)</td><td class="num">$4.9bn</td><td>Record · repurchases $4,379m; dividends paid $398m</td></tr>
+    <tr><td>Buyback authorization</td><td class="num">+$25.0bn</td><td>Increase announced with the print</td></tr>
+  </table></div>
+  <h3 class="sub">Guidance — raised on every line</h3>
+  <div class="twrap"><table>
+    <tr><th>Guide</th><th class="num">New</th><th class="num">Was</th><th>Note</th></tr>
+    <tr><td>Q4 FY27 revenue</td><td class="num">$56.3bn</td><td class="num">—</td><td>+69% YoY · GAAP EPS $7.90 · non-GAAP EPS $8.40 (+116%)</td></tr>
+    <tr><td>FY27 revenue</td><td class="num">$202.0bn</td><td class="num">$192.0bn</td><td>Implied Q4 cross-check: $202.0B − $145.75B = $56.25B ≈ guided $56.3B</td></tr>
+    <tr><td>FY27 GAAP EPS</td><td class="num">$28.24</td><td class="num">$24.37</td><td></td></tr>
+    <tr><td>FY27 non-GAAP EPS</td><td class="num">$29.68</td><td class="num">$25.50</td><td>Implied Q4: $29.68 − $21.32 = $8.36 ≈ guided $8.40</td></tr>
+    <tr><td>FY27 AI-server revenue</td><td class="num">$78.0bn</td><td class="num">$74.0bn</td><td>Q4 AI ≈ $23.5B (call) · implied $23.4B from guide less nine-month actuals</td></tr>
+  </table></div>
+  <p class="tnote">The Q4 guide itself beats the pre-print FactSet bar ($53.6B revenue / $7.49 EPS) by +5.0% / +12.1%. One sequential caveat: Q4 non-GAAP EPS of $8.40 is guided <em>down</em> from Q3's $9.45 despite higher revenue — see the margin discussion in Section 04.</p>
+  <h3 class="sub">Balance sheet at October 30, 2026</h3>
+  <div class="twrap"><table>
+    <tr><th>Item</th><th class="num">Oct 30, 2026</th><th>Note</th></tr>
+    <tr><td>Cash</td><td class="num">$13,553m</td><td>Cash and investments $16.3B, +$2B sequentially · core leverage 0.7×</td></tr>
+    <tr><td>Inventories</td><td class="num">$29,444m</td><td>vs $10,437m at Jan 30, 2026 and $21,290m at Q2 — up a further ~$8.2B in the quarter</td></tr>
+    <tr><td>Receivables</td><td class="num">$28,948m</td><td></td></tr>
+    <tr><td>Payables</td><td class="num">$57,799m</td><td></td></tr>
+    <tr><td>Total debt</td><td class="num">$37,697m</td><td>Shareholders' deficit $(456)m</td></tr>
+  </table></div>
+</section>
+
+<!-- 3 BARS -->
+<section id="bars">
+  <div class="kicker">Section 03 · The Bars</div>
+  <h2 class="sec">The verdict does not turn on which bar you use</h2>
+  <p>The quarterly verdict bar is <strong>LSEG: EPS $6.59 / revenue $49.32B</strong> — the single named quarterly consensus source. StockAnalysis publishes no quarterly EPS consensus (its poll covers annual EPS and price targets, used in Sections 09–10), so LSEG carries the quarterly verdict; TheFly's print-time consensus corroborates the LSEG EPS bar to the cent. Against LSEG, the print beat by <strong>+$2.86 on EPS (+43.4%)</strong> and <strong>+$5.62B on revenue (+11.4%)</strong>. Provider bars are kept separate below and never averaged — and the smallest beat on the table, against Zacks, is still +39.8% on EPS.</p>
+  <div class="twrap"><table>
+    <tr><th>Provider</th><th class="num">EPS bar</th><th class="num">Revenue bar</th><th>Actual vs bar ($9.45 / $54.937B)</th></tr>
+    <tr><td><strong>LSEG — verdict bar</strong></td><td class="num">$6.59</td><td class="num">$49.32B</td><td><span class="pos">+43.4% / +11.4%</span></td></tr>
+    <tr><td>FactSet</td><td class="num">$6.60</td><td class="num">$49.32B</td><td><span class="pos">+43.2% / +11.4%</span></td></tr>
+    <tr><td>MarketBeat</td><td class="num">$6.55</td><td class="num">$49.32B</td><td><span class="pos">+44.3% / +11.4%</span> <span class="delta">· earlier vintage $6.57 / $49.28B</span></td></tr>
+    <tr><td>Zacks (Nov 23 preview)</td><td class="num">$6.76</td><td class="num">$50.87B</td><td><span class="pos">+39.8% / +8.0%</span> <span class="delta">· drifted up into the print: $6.63 (Oct 16) → $6.70 (Nov 19) → $6.76</span></td></tr>
+    <tr><td>Finnhub (print time)</td><td class="num">$6.745</td><td class="num">$50.305B</td><td><span class="pos">+40.1% / +9.2%</span> <span class="delta">· per the desk brief; not independently re-pulled for this edition</span></td></tr>
+    <tr><td>Management guide</td><td class="num">$6.50</td><td class="num">$49.0B</td><td><span class="pos">+45.4% / +12.1%</span></td></tr>
+  </table></div>
+  <p>The bar got <em>harder</em>, not easier, into the print — Zacks drifted up across October and November while MarketBeat held essentially flat — and the print cleared every version of it by roughly 40% on EPS. There is no bar-shopping question to settle here.</p>
+</section>
+
+<!-- 4 SEGMENTS -->
+<section id="segments">
+  <div class="kicker">Section 04 · Segments &amp; Margins</div>
+  <h2 class="sec">The failure mode that didn't happen</h2>
+  <p class="lede">The desk's flagged failure mode for this print was precise: a revenue and AI beat delivered with margin compression — the AI mix diluting the P&amp;L faster than scale could offset it. It did not occur. Gross margin rose year over year on both measures, and ISG operating margin expanded from 15.0% in Q2 to 17.0% — helped by record traditional-server (+235%) and storage (+24%, margin-rich Dell IP) performance alongside AI, not by AI alone.</p>
+  <div class="twrap"><table>
+    <tr><th>Segment</th><th class="num">Revenue</th><th class="num">Op. income</th><th class="num">Margin</th><th>Note</th></tr>
+    <tr><td><strong>ISG</strong></td><td class="num">$41,974m</td><td class="num">$7,118m</td><td class="num">17.0%</td><td>+198% revenue · margin vs 12.4% a year ago, 15.0% in Q2 · op. income +308%</td></tr>
+    <tr><td>AI-Optimized Servers</td><td class="num">$22,031m</td><td class="num">—</td><td class="num">—</td><td>+291% · vs ~$19B expected (+16.0%) · nine-month AI revenue $54,564m, +247%</td></tr>
+    <tr><td>Traditional Servers &amp; Networking</td><td class="num">$15,013m</td><td class="num">—</td><td class="num">—</td><td>+235%</td></tr>
+    <tr><td>Storage</td><td class="num">$4,930m</td><td class="num">—</td><td class="num">—</td><td>+24%</td></tr>
+    <tr><td><strong>CSG</strong></td><td class="num">$12,886m</td><td class="num">$704m</td><td class="num">5.5%</td><td>+3% revenue · margin vs 6.0% a year ago · op. income −6% · commercial +6%, consumer −15%</td></tr>
+  </table></div>
+  <div class="callout co-note">
+    <div class="ct">Two margin caveats, carried plainly</div>
+    <p><strong>AI-server margin itself is still thin and undisclosed.</strong> Dell does not publish an AI-server-only margin line; on the call, the business was characterised qualitatively as operating "in the mid-single digits." The 17.0% ISG figure is a blend. <strong>Q4 ISG margin is guided to step down sequentially</strong> — North America mix normalising — described only qualitatively ("above the high end of our range," with sequential moderation); no numeric Q4 ISG margin was given. That guided step-down is one reason conviction stays at 6.</p>
+  </div>
+  <p>CSG is the soft spot, and management named the mechanism: in a softer PC unit market, customers are "prioritizing their budgets near term to servers and storage, electing to defer some PC-related refresh." Dell is prioritising ISG over CSG for constrained supply — PC wafer capacity reallocated to servers. The mix shift is structural in management's telling: ISG was 38% of revenue in FY2024; over the last four quarters that rose to 68%, and ISG's share of operating income from 54% to 83% — "and I expect the trend to continue into our next fiscal year."</p>
+</section>
+
+<!-- 5 CASH FLOW -->
+<section id="cashflow">
+  <div class="kicker">Section 05 · Cash Flow</div>
+  <h2 class="sec">The Q2 flag, answered decisively</h2>
+  <p class="lede">The October downgrade was anchored on cash conversion: Q2 free cash flow of $986M, down 47%, with roughly 88% of Q2's adjusted FCF made of add-backs rather than operating cash. Q3 reversed it on the clean measure. GAAP free cash flow — operating cash flow less capex and capitalised software, Dell's own definition in both quarters — rose to $3,474M, +587% year over year and 3.5× the desk's $1B invalidation line. The adjusted measure is far cleaner this quarter too: add-backs of $814M are ~19% of adjusted FCF, against $7,163M (~88%) in Q2.</p>
+  <div class="twrap"><table>
+    <tr><th>Item</th><th class="num">Q3 FY2027</th><th class="num">Q3 FY2026</th><th class="num">Change</th></tr>
+    <tr><td>Cash flow from operations</td><td class="num">$4,459m</td><td class="num">$1,172m</td><td class="num"><span class="pos">+280%</span></td></tr>
+    <tr><td>Capex + capitalised software</td><td class="num">($985m)</td><td class="num">($666m)</td><td class="num">—</td></tr>
+    <tr><td><strong>Free cash flow (CFO − capex)</strong></td><td class="num"><strong>$3,474m</strong></td><td class="num">$506m</td><td class="num"><span class="pos">+587%</span></td></tr>
+    <tr><td>Financing-receivables add-back</td><td class="num">$661m</td><td class="num">$1,135m</td><td class="num">—</td></tr>
+    <tr><td>Operating-leases add-back</td><td class="num">$153m</td><td class="num">$29m</td><td class="num">—</td></tr>
+    <tr><td><strong>Adjusted free cash flow</strong></td><td class="num"><strong>$4,288m</strong></td><td class="num">$1,670m</td><td class="num"><span class="pos">+157%</span></td></tr>
+  </table></div>
+  <p class="tnote">Sequential read: GAAP FCF $986M (Q2) → $3,474M (Q3). Adjusted FCF fell sequentially, $8,149M → $4,288M, only because Q2's add-backs were extraordinary; the GAAP measure is the clean comparison. The desk's Q3 watch metric — operating cash flow well above Q2's $2,225M — was also cleared: it doubled.</p>
+  <p>Management's explanation was thin: operating cash flow was attributed to "sequential revenue growth and higher profitability," with no working-capital bridge offered and no analyst pressing the definition. The balance sheet tells the more interesting story — inventory rose a further ~$8.2B in the quarter to $29,444M, so the cash improvement came <em>despite</em> the build, evidently on payables and receivables timing. Two arithmetic flags, stated as arithmetic and not as management claims: Q3 buybacks of $4,379m exceeded Q3 GAAP free cash flow of $3,474m, so the record return was funded partly from the balance sheet; and the stated $4.9bn returned sits ~$120m above the $4,379m + $398m of cash-flow components, unexplained in the release.</p>
+</section>
+
+<!-- 6 BACKLOG -->
+<section id="backlog">
+  <div class="kicker">Section 06 · Backlog &amp; Demand</div>
+  <h2 class="sec">$132.3B of backlog, and demand still outrunning supply</h2>
+  <div class="twrap"><table>
+    <tr><th>Item</th><th class="num">Q3 FY2027</th><th class="num">Q2 FY2027</th></tr>
+    <tr><td>AI-server backlog (end of quarter)</td><td class="num"><strong>$132.3B — record</strong></td><td class="num">$95B</td></tr>
+    <tr><td>AI orders in the quarter</td><td class="num">$60.2B</td><td class="num">$60.9B</td></tr>
+    <tr><td>AI orders, trailing four quarters</td><td class="num">$180B</td><td class="num">—</td></tr>
+    <tr><td>AI shipments, trailing four quarters</td><td class="num">~$66B</td><td class="num">—</td></tr>
+    <tr><td>Five-quarter pipeline</td><td class="num">Growing — "multiples of our backlog"</td><td class="num">—</td></tr>
+    <tr><td>Dell AI Factory customers</td><td class="num">&gt;7,500</td><td class="num">3,000 in the first 8 quarters</td></tr>
+  </table></div>
+  <p class="tnote">$132.3B is the <strong>AI-server</strong> backlog only — Dell did not disclose a total-company backlog figure.</p>
+  <p>Backlog quality was the call's emphasis: every order is vetted for access to capital, end-customer quality, trade and export compliance, and land and power — due diligence at purchase order and again before production. Financing is "selective and short term" through Dell Financial Services, and financing receivables grew only ~$500M in the quarter against $22B of AI shipments. The majority of new orders are based on NVIDIA's Vera Rubin NVL72 platform.</p>
+  <blockquote>"We've had no customers reschedule business."<span class="who">— Jeff Clarke, Q3 FY2027 earnings call, November 24, 2026</span></blockquote>
+  <blockquote>"Infrastructure demand continues to outpace supply. As we look into next year, the gap between component supply and end-user demand continues to widen."<span class="who">— Jeff Clarke, Q3 FY2027 earnings call</span></blockquote>
+  <p>The constraints named were memory above all — enterprise DRAM and NAND demand "way ahead of supply," with DRAM wafer capacity diverted to GPUs and HBM — plus CPUs, optical transceivers, and site readiness and power. One desk arithmetic flag: backlog of $95B plus $60.2B of orders less $22.0B of AI revenue implies $133.2B against the reported $132.3B — a ~$0.9B gap consistent with vetting removals or rounding. Dell did not reconcile the walk, so the gap is flagged, not explained. <strong>No FY2028 guidance was given.</strong></p>
+</section>
+
+<!-- 7 CALL -->
+<section id="call">
+  <div class="kicker">Section 07 · The Call</div>
+  <h2 class="sec">The reported 25–45% price increases: not confirmed</h2>
+  <p class="lede">A November 22 press report said Dell, HPE, Lenovo and Supermicro were seeking 25–45% increases on selected server transactions <em>after contracts had been signed</em>, citing memory and circuit-board costs — and that XTX had sued Dell's Irish unit in June 2026 alleging a fixed $549M price, with Dell then seeking an additional $62–70M. <strong>None of that is confirmed.</strong> Dell never mentioned the report, the 25–45% figures, post-signature repricing, or XTX anywhere in the release or on the call, and no analyst asked about it directly. The figures remain reported, not confirmed — they are not Dell facts and are not used anywhere in this underwrite.</p>
+  <p>What Dell <em>did</em> confirm is directional: prices to customers are rising with component inflation, and the memory crunch runs into 2027.</p>
+  <blockquote>"Not as inflationary is still a cost increase to our customers in the form of price… there's nothing that suggests that we're going to see price declines in enterprise NAND and DRAM for servers. The demand for those categories of memory continues to be way ahead of the supply… We think that crunch continues clearly into '27."<span class="who">— Jeff Clarke, on DRAM/NAND pricing, Q3 FY2027 call</span></blockquote>
+  <blockquote>"Do I think the rate of increase slows? Yes. Do I still think that a significant price implication to our customers? Yes."<span class="who">— Jeff Clarke, Q3 FY2027 call</span></blockquote>
+  <p>On the forward book, Vera Rubin systems are "priced with the expected delivery date" — priced for future delivery, not described as a retroactive change to signed contracts. On the P&amp;L, the operating-income-rate gain was attributed to "scale and pricing discipline despite the impact of record AI mix," with operating expenses at 7.0% of revenue, "the lowest in 42 years." Customer acceptance of higher prices <em>in general</em> is evidenced indirectly — $60.2B of orders in the quarter and "I don't know of a customer that's on the sideline." Acceptance of a 25–45% <em>retroactive</em> hike specifically is <strong>not established</strong>: the nearest analyst question, on who bears "inventory and repricing risk" if build-outs are delayed, was answered as a vetting and credit question, not a pricing one. One analyst floated that Dell "passed on perhaps more than the cost increase"; the premise was neither confirmed nor denied. This question stays open, and it is one of the three reasons conviction is held at 6 rather than raised.</p>
+</section>
+
+<!-- 8 TAPE -->
+<section id="tape">
+  <div class="kicker">Section 08 · The Tape &amp; The Position</div>
+  <h2 class="sec">Three sessions, two routs and a snap-back</h2>
+  <div class="twrap"><table>
+    <tr><th>Date</th><th class="num">Close</th><th class="num">Day change</th><th>Note</th></tr>
+    <tr><td>Fri Nov 20, 2026</td><td class="num">$278.02</td><td class="num"><span class="neg">−11.04%</span></td><td>First breach of $300</td></tr>
+    <tr><td>Mon Nov 23, 2026</td><td class="num">$334.91</td><td class="num"><span class="pos">+20.46%</span></td><td>Huang-reinstatement snap-back across AI hardware · $300 reclaimed for a session</td></tr>
+    <tr><td><strong>Tue Nov 24, 2026</strong></td><td class="num"><strong>$295.28</strong></td><td class="num"><span class="neg">−11.83%</span></td><td><strong>Reference close — pre-print.</strong> AI-hardware selloff; an HPE margin warning and a target cut were cited in same-day coverage. Volume 21,584,228</td></tr>
+  </table></div>
+  <p>The November 24 fall came <em>before</em> the print, not in reaction to it — it was the second −11%+ session in three. Five-session return −15.62%; one-month return −41.69%. The 52-week range is $110.22–$595.51. November 25 context, labelled as what it is: premarket −7.29%, and <strong>intraday ~$272 at 10:28 a.m. ET (−7.88%)</strong> — intraday context only, never used for a rating, band, or gate call. The November 24 after-hours reports conflicted in sign across sources and are unreconciled; no after-hours figure is used anywhere in this report.</p>
+  <figure>
+    <svg viewBox="0 0 720 300" role="img" aria-label="Line chart of DELL regular-session closes, November 16 to 24, 2026, against the $300 line and the 200-day average at $350.14">
+      <line x1="60" y1="42.6" x2="690" y2="42.6" stroke="#bc4d54" stroke-width="1.4" stroke-dasharray="7 5"/>
+      <text x="64" y="34" font-size="12.5" fill="#bc4d54" font-weight="700">200-day SMA $350.14</text>
+      <line x1="60" y1="150.4" x2="690" y2="150.4" stroke="#9a6a00" stroke-width="1.4" stroke-dasharray="7 5"/>
+      <text x="64" y="142" font-size="12.5" fill="#9a6a00" font-weight="700">$300 line</text>
+      <polyline points="90,106.3 185,101.5 280,122.3 375,123.5 470,197.6 565,75.4 660,160.6" fill="none" stroke="#087c78" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/>
+      <g fill="#087c78"><circle cx="90" cy="106.3" r="4"/><circle cx="185" cy="101.5" r="4"/><circle cx="280" cy="122.3" r="4"/><circle cx="375" cy="123.5" r="4"/><circle cx="470" cy="197.6" r="4.5"/><circle cx="565" cy="75.4" r="4"/><circle cx="660" cy="160.6" r="5"/></g>
+      <g font-size="12" fill="currentColor">
+        <text x="90" y="92" text-anchor="middle">320.55</text><text x="185" y="87" text-anchor="middle">322.79</text><text x="280" y="140" text-anchor="middle">313.11</text><text x="375" y="141" text-anchor="middle">312.54</text><text x="470" y="218" text-anchor="middle">278.02</text><text x="565" y="61" text-anchor="middle">334.91</text><text x="652" y="182" text-anchor="middle" font-weight="700">295.28</text>
+        <text x="90" y="262" text-anchor="middle">Nov 16</text><text x="185" y="262" text-anchor="middle">Nov 17</text><text x="280" y="262" text-anchor="middle">Nov 18</text><text x="375" y="262" text-anchor="middle">Nov 19</text><text x="470" y="262" text-anchor="middle">Nov 20</text><text x="565" y="262" text-anchor="middle">Nov 23</text><text x="660" y="262" text-anchor="middle">Nov 24</text>
+      </g>
+    </svg>
+    <figcaption>Regular-session closes, November 16–24, 2026. No regular-session close has been above the 200-day average since November 13; the November 23 snap-back still closed below it. The November 24 close breached $300 for the second time in three sessions.</figcaption>
+  </figure>
+  <h3 class="sub">The position at the reference close</h3>
+  <div class="twrap"><table>
+    <tr><th>Item</th><th class="num">Value</th><th>Note</th></tr>
+    <tr><td>Holdings (export 68)</td><td class="num">12 sh</td><td>Cost $4,885.44 · blended avg $407.12</td></tr>
+    <tr><td>Value at Nov 24 close</td><td class="num">$3,543.36</td><td>12 × $295.28</td></tr>
+    <tr><td>Unrealised P&amp;L</td><td class="num"><span class="neg">−$1,342.08 (−27.47%)</span></td><td>One-day change vs Nov 23: −$475.56 · vs the Nov 20 close: +$207.12 (+6.21%)</td></tr>
+    <tr><td>Weight</td><td class="num">0.20%</td><td>Nov 24-close value against the export-68 book total of $1,749,399.92 — not a revalued book</td></tr>
+  </table></div>
+  <h3 class="sub">The reference close against the desk's levels</h3>
+  <div class="twrap"><table>
+    <tr><th>Level</th><th class="num">$295.28 vs level</th></tr>
+    <tr><td><strong>$300 line</strong> ("re-opens the thesis")</td><td class="num"><span class="neg">$4.72 below (−1.57%) — breached on the close</span></td></tr>
+    <tr><td>200-day moving average, $350.14 (computed; matches the published figure to the cent)</td><td class="num"><span class="neg">$54.86 below (−15.67%) — not reclaimed</span></td></tr>
+    <tr><td>$419–$424 former add zone</td><td class="num">$123.72 below the $419 bottom (−29.5%) — roughly 30% under it, not a near miss</td></tr>
+    <tr><td>Nov 20 close $278.02 / intraday low $274.35</td><td class="num">+$17.26 above the Nov 20 close · +$20.93 above its intraday low</td></tr>
+  </table></div>
+  <p>The 200-day is itself still rising — early-2026 closes of roughly $110–$170 are rolling out of the window — so the gap has widened from both sides. Reclaim history, re-verified: the condition was met November 9, failed November 10, re-met November 11, held November 12–13 (thinly, +$1.13 on the 13th), and failed again November 16.</p>
+</section>
+
+<!-- 9 STREET -->
+<section id="street">
+  <div class="kicker">Section 09 · The Street</div>
+  <h2 class="sec">Pure multiple compression — nobody cut an estimate story</h2>
+  <p class="lede">Into the print, the setup was already cautious: on November 16, Morgan Stanley reiterated Equal Weight and cut its target $511 → $403, arguing its own above-Street expectations were already priced in; Citi kept its Buy and cut $600 → $550 "to reflect multiple compression across traditional hardware peers." Options priced a ±13.11% move — the November 24 session's −11.83% landed inside that band; the November 25 follow-through takes the two-day move beyond it. After the print: <strong>ten target cuts and one raise, and zero rating changes in either direction.</strong> Every firm kept its rating; the target actions were cuts almost to a firm, into a record beat. That is multiple compression, not a fundamental downgrade.</p>
+  <div class="twrap"><table>
+    <tr><th>Firm</th><th>Action</th><th class="num">Target</th><th>When</th></tr>
+    <tr><td>Morgan Stanley (Woodring)</td><td>Equal Weight reiterated</td><td class="num">$511 → $403</td><td>Nov 16 · pre-print</td></tr>
+    <tr><td>Citi (Merchant)</td><td>Buy retained</td><td class="num">$600 → $550</td><td>Nov 16 · pre-print</td></tr>
+    <tr><td>Evercore (Daryanani)</td><td>Target cut</td><td class="num">$650 → $400</td><td>Nov 24 · intraday, pre-print</td></tr>
+    <tr><td>J.P. Morgan (Cardoso)</td><td>Target cut</td><td class="num">$635 → $515</td><td>Nov 24 · pre-print*</td></tr>
+    <tr><td>Citi</td><td>Target reiterated</td><td class="num">$550</td><td>Nov 24 · pre-print*</td></tr>
+    <tr><td>Barclays</td><td>Target cut</td><td class="num">$574 → $344 (−40.1%)</td><td>Nov 25 · post-print</td></tr>
+    <tr><td>Wells Fargo</td><td>Target cut</td><td class="num">$545 → $400</td><td>Nov 25 · post-print</td></tr>
+    <tr><td>Deutsche Bank</td><td>Target cut</td><td class="num">$420 → $400</td><td>Nov 25 · post-print</td></tr>
+    <tr><td>Mizuho</td><td>Target cut</td><td class="num">$650 → $500</td><td>Nov 25 · post-print</td></tr>
+    <tr><td>BofA</td><td>Target cut</td><td class="num">$600 → $500</td><td>Nov 25 · post-print</td></tr>
+    <tr><td>Goldman Sachs</td><td>Target cut</td><td class="num">$590 → $510</td><td>Nov 25 · post-print</td></tr>
+    <tr><td>Raymond James</td><td>Target cut</td><td class="num">$617 → $570</td><td>Nov 25 · post-print</td></tr>
+    <tr><td>Bernstein</td><td>Target cut</td><td class="num">$650 → $580</td><td>Nov 25 · post-print</td></tr>
+    <tr><td>Piper Sandler</td><td>Target cut</td><td class="num">$558 → $555</td><td>Nov 25 · post-print</td></tr>
+    <tr><td><strong>Morgan Stanley</strong></td><td><strong>Target raised — the only raise</strong></td><td class="num"><strong>$403 → $408 (+1.2%)</strong></td><td>Nov 25 · post-print</td></tr>
+    <tr><td>KeyBanc</td><td>Hold reiterated, no target</td><td class="num">—</td><td>Nov 25 · post-print</td></tr>
+  </table></div>
+  <p class="tnote">*Dated November 24 in the ratings record and classified pre-print on that dating; timing within the day was not independently confirmed. A further post-print cut (TD Cowen) was reported on the morning of November 25, but its from/to values could not be retrieved — it is not counted above. The deepest cuts land at roughly the price: Barclays' $344 is only ~3% above the November 23 close.</p>
+  <h3 class="sub">Consensus snapshot — November 25</h3>
+  <div class="twrap"><table>
+    <tr><th>Poll</th><th>Rating</th><th class="num">Avg target</th><th class="num">Median</th><th class="num">Low / High</th><th>Mix</th></tr>
+    <tr><td>StockAnalysis (S&amp;P Global), 29 analysts, read Nov 25, 10:28 a.m. ET</td><td>Buy</td><td class="num">$527.68</td><td class="num">$545</td><td class="num">$325 / $700</td><td>14 Strong Buy · 6 Buy · 9 Hold · 0 Sell</td></tr>
+    <tr><td>MarketBeat, 36 analysts (separate provider)</td><td>Moderate Buy</td><td class="num">$557.72</td><td class="num">—</td><td class="num">—</td><td>—</td></tr>
+  </table></div>
+  <p class="tnote">The average target was $590 on November 12 — down 10.6% in thirteen days while FY27 estimates rose (Section 10). The $325 low is unattributed in the sources retrieved; no firm is cited for it.</p>
+</section>
+
+<!-- 10 VALUATION -->
+<section id="valuation">
+  <div class="kicker">Section 10 · Valuation</div>
+  <h2 class="sec">$580 stands — the earnings leg did the work</h2>
+  <p>The $580 target was set on October 16 as a multiples target: ~22× the then-consensus FY27 EPS of $26.09 — precisely 22.2×. No discounted-cash-flow valuation exists in the October report or the November refresh, and none is manufactured here. Since November 12, FY27 consensus EPS has risen 15.1% to <strong>$29.84</strong> — just $0.16 above management's own raised $29.68 guide, meaning the Street has essentially converged onto the guide — while the Street's average target <em>fell</em> 10.6%. The entire target decline across the Street is multiple compression, not estimate cuts: the Street's implied multiple on FY27 earnings fell from ~22.8× to ~17.7×, and the market's own multiple at the reference close is 9.89× (it was 14.32× at $371.17 on November 12).</p>
+  <div class="twrap"><table>
+    <tr><th>Multiple</th><th class="num">× FY27E $29.84</th><th class="num">× FY28E $32.26</th><th>Note</th></tr>
+    <tr><td><strong>22.2× — the held framework multiple</strong></td><td class="num"><strong>$662</strong></td><td class="num"><strong>$716</strong></td><td>Arithmetic only — <strong>not adopted</strong> (see below)</td></tr>
+    <tr><td>20×</td><td class="num">$597</td><td class="num">$645</td><td></td></tr>
+    <tr><td>18×</td><td class="num">$537</td><td class="num">$581</td><td></td></tr>
+    <tr><td>15×</td><td class="num">$448</td><td class="num">$484</td><td></td></tr>
+    <tr><td>12×</td><td class="num">$358</td><td class="num">$387</td><td></td></tr>
+    <tr><td>10× — ≈ the market's current multiple</td><td class="num">$298</td><td class="num">$323</td><td>The reference close itself is $295.28</td></tr>
+  </table></div>
+  <div class="callout co-verdict">
+    <div class="ct">Why $580 is neither raised nor cut</div>
+    <p><strong>Not raised to $662:</strong> the multiple that arithmetic assumes no longer exists. The market pays ~9.9×, the Street's own implied multiple has compressed to ~17.7×, and the post-print broker actions cut targets almost to a firm — ten cuts against a single trivial raise — into a record beat. Raising the desk target 14% on the same print that cut the stock 12% in-session would repeat the September error — targets of $600+ set at 23–24× immediately before a 40–50% drawdown. <strong>$580 is already demanding:</strong> it now implies 19.4× FY27E and 18.0× FY28E — roughly a doubling of the market's current multiple — and it already sits +9.9% above the Street average ($527.68) and +6.4% above the median ($545). On November 12 it sat 1.7% <em>below</em> the Street average; the desk did not move, the Street moved under it. The print strengthening the earnings leg is precisely why $580 now costs fewer multiple turns than when it was set — not a reason to spend the gain by raising it.</p>
+    <p><strong>Not cut:</strong> the print answers the cash-conversion question the October downgrade was anchored on — operating cash flow $4,459m against $2,225m in Q2, free cash flow $3,474m against $986m — and guidance was raised on every line. Cutting the target into a print that beat every bar by 40%+ on EPS would be a price-chasing cut, not an analytical one.</p>
+  </div>
+  <p><strong>Rating: Buy 6/10 maintained.</strong> The print strengthens the fundamentals and passes every invalidation prong, but the technical legs fail, the tape is still falling (November 25 intraday ~$272 at 10:28 a.m. ET, context only), Q4 ISG margin is guided to step down sequentially, and the reported-repricing question is unresolved. No upgrade case is made; no downgrade case is made — no fundamental invalidation trigger fired. One data caveat: the FY27E consensus of $29.84 currently rests on 13 analysts, down from 24 on November 12 — the poll is mid-update as post-print estimates flow in, and the figure may move. FY27E consensus revenue is $202.83B against the $202.0B guide; FY28E EPS is $32.26.</p>
+</section>
+
+<!-- 11 SUSPENSION -->
+<section id="suspension">
+  <div class="kicker">Section 11 · Suspension &amp; Gates</div>
+  <h2 class="sec">KEEP — and the boundary is now explicit</h2>
+  <p>The suspension framework set six tests for this print. Four fundamental prongs pass decisively; both technical legs fail. The desk's ruling on the $300 fork follows the table.</p>
+  <div class="twrap"><table>
+    <tr><th>Prong</th><th>Evidence</th><th>Result</th></tr>
+    <tr><td>(a) Revenue / EPS vs print-time bars</td><td>$54.937B / $9.45 — beat on every bar (LSEG $6.59 / $49.32B; Zacks $6.76 / $50.87B; Finnhub $6.745 / $50.305B; guide $6.50 / $49.0B)</td><td><span class="pill pass">PASS</span></td></tr>
+    <tr><td>(b) AI-server revenue &amp; margin</td><td>$22,031m, +291% vs ~$19B expected; backlog $132.3B; ISG margin 17.0% vs 15.0% in Q2 — no margin compression</td><td><span class="pill pass">PASS</span></td></tr>
+    <tr><td>(c) Q3 FCF vs the &lt;$1B line</td><td>GAAP FCF $3,474m; adjusted $4,288m — clears the line by $2,474m on the GAAP measure, 4.3× on the adjusted</td><td><span class="pill pass">PASS</span></td></tr>
+    <tr><td>(d) Guidance</td><td>Raised on every line — FY27 revenue $192B → $202B, AI $74B → $78B, non-GAAP EPS $25.50 → $29.68; Q4 guide beats the pre-print bar</td><td><span class="pill pass">PASS</span></td></tr>
+    <tr><td>(e) 200-day technical condition</td><td>Reference close $295.28 vs the 200-day average of $350.14 — $54.86 (−15.67%) below; no close above the line since Nov 13</td><td><span class="pill fail">FAIL</span></td></tr>
+    <tr><td>(f) $300 line</td><td>Reference close $295.28 is $4.72 below $300 — second breach in three sessions (Nov 20 $278.02; Nov 23 reclaim $334.91)</td><td><span class="pill fail">BREACHED</span></td></tr>
+  </table></div>
+  <div class="callout co-warn">
+    <div class="ct">Verdict — suspension KEEP · boundary condition</div>
+    <p><strong>KEEP the suspension: no new DELL capital; no gate, no ladder, no add.</strong> LIFT is rejected — both technical legs fail, and the close is further below the 200-day than when the suspension reverted on November 16; a record print does not lift a technically imposed suspension while both legs fail. Thesis-kill invalidation is <strong>not</strong> triggered — no fundamental invalidation trigger fired, and the desk rules that the $300 breach, on a tape-driven down day that preceded the print with a reclaim in between, is answered by the print itself: the print is the re-examination the $300 line called for, and it clears the thesis on every fundamental prong. <strong>The boundary: a further regular-session close below $300 converts KEEP to invalidation triggered.</strong> The November 25 close is the immediate test — a close-lock addendum tonight rules on it. The separate close-below-$440 invalidation, fired October 30, stands as an already-fired item and is unchanged by this print.</p>
+  </div>
+  <h3 class="sub">Desk-rule test — no change off one print unless it invalidates</h3>
+  <div class="twrap"><table>
+    <tr><th>Invalidation trigger</th><th>Test vs the print</th><th>Result</th></tr>
+    <tr><td>Q3 FCF &lt; $1B</td><td>FCF $3,474m (adjusted $4,288m); operating cash flow $4,459m — 3.5× the threshold</td><td><span class="pill pass">NOT TRIGGERED</span></td></tr>
+    <tr><td>Guide cut</td><td>Guidance raised on every line</td><td><span class="pill pass">NOT TRIGGERED — THE OPPOSITE</span></td></tr>
+    <tr><td>Close &lt; $440</td><td>Already fired October 30 as a separate, pre-existing invalidation; this print adds no new trigger on that leg</td><td><span class="pill hold">PRE-EXISTING</span></td></tr>
+  </table></div>
+  <h3 class="sub">Gates — none proposed, none live</h3>
+  <p>No new gate is warranted, for a structural reason beyond the suspension itself: any buy level near the tape collides with the $300 line. The November 24 close of $295.28 would have fired <em>both</em> a ≤$295 buy gate and the $300 reassess rule on a single close — one close cannot simultaneously mean "buy" and "re-open the thesis" without a precedence ruling, and none exists. Levels above the price are dead (the November 4 refresh ladder was invalidated November 5), and deeper levels lack valuation support until the $300 question is ruled on by price. What would warrant a gate later: a regular-session close back above the 200-day, <em>plus</em> the $300 boundary resolved, <em>plus</em> a fresh valuation-anchored level. The DELL entry carried in the gates panel at $424 is display only, per the November 2 decision; its close-below-$440 stop fired October 30. <strong>There is no live DELL gate.</strong> Two stale notes elsewhere in the gates file are flagged for correction — one still carries a superseded $475 target for UNH (now $420) and one a superseded $328 target for NVDA (now $265) — and a fired-and-executed NVDA gate remains listed; all three are operations items awaiting a decision, flagged here and not resolved.</p>
+</section>
+
+<!-- 12 CORRECTIONS -->
+<section id="corrections">
+  <div class="kicker">Section 12 · Corrections &amp; Open Items</div>
+  <h2 class="sec">What this edition corrects, and what is still open</h2>
+  <h3 class="sub">Corrections — stated plainly</h3>
+  <ul class="tight">
+    <li><strong>Entry number:</strong> the November 12, 2026 DELL refresh is <strong>entry 169</strong>, not 149 as carried in the commissioning brief.</li>
+    <li><strong>Attribution:</strong> the pre-print Q3 expectation of $49.7B revenue / $6.75 EPS belongs to <strong>Citi's Asiya Merchant</strong>, not Morgan Stanley. Morgan Stanley's Woodring said his expectations were "well above the Street's" and that his checks indicated at least $90B of AI-server revenue for the year against $74B guidance. Both houses' expectations were beaten by a wide margin (actual Q3 $54.94B / $9.45; Q4 guide $56.3B / $8.40 against Citi's expected $53.7B / $7.51).</li>
+    <li><strong>Dividend:</strong> the desk-carried <strong>$0.63/quarter is NOT confirmed by this release</strong> — the release states no quarterly dividend rate and no declaration. The only primary-source fact is $398m of dividends paid in the quarter. The rate must be re-verified before any income claim is made off it.</li>
+    <li><strong>After-hours, November 24:</strong> reports conflict in sign — one source carried roughly +2%, another −2.29%. Unreconciled; no single after-hours price is verified, and neither figure is quoted in this report as the move.</li>
+    <li><strong>Morningstar fair value:</strong> a November 25 headline confirms a fair-value cut ("Dell's Record Quarter Lifts Estimates, but We Cut Fair Value on AI-Cycle Risk"), but the new value is paywalled and the prior value is not established in the record. <strong>No new Morningstar fair value is carried in this report.</strong></li>
+    <li><strong>Consensus breadth:</strong> FY27E EPS of $29.84 rests on 13 analysts, down from 24 on November 12 — mid-update; it may move as post-print estimates land.</li>
+  </ul>
+  <h3 class="sub">Open items</h3>
+  <ul class="tight">
+    <li><strong>The November 25 close is not locked.</strong> It is the immediate test of the $300 boundary in Section 11; the close-lock addendum runs tonight. November 26 is a market holiday.</li>
+    <li><strong>The Q3 Form 10-Q had not been filed</strong> at the time of writing; segment and inventory detail here is from the earnings release, not the 10-Q.</li>
+    <li><strong>The reported 25–45% post-signature price increases and the XTX claim</strong> remain reported, not confirmed — no Dell statement exists in the release or the call transcript (Section 07).</li>
+    <li><strong>AI-server-only operating margin</strong> is not disclosed; only the qualitative "mid-single digits" characterisation and the blended ISG 17.0% exist.</li>
+    <li><strong>Q4 ISG operating margin</strong> is guided only qualitatively — sequential moderation, no number given.</li>
+    <li><strong>Two unreconciled arithmetic gaps</strong> are flagged, not explained: the ~$0.9B backlog walk (Section 06) and the ~$120m between stated shareholder return and its components (Section 05).</li>
+    <li><strong>The Finnhub print-time bar</strong> ($6.745 / $50.305B) is carried per the desk brief and was not independently re-pulled for this edition; the verdict does not depend on it (Section 03).</li>
+  </ul>
+  <div class="dl-row">
+    <button class="dl-btn" id="dlBtn" type="button">Download this report</button>
+  </div>
+  <p class="small mut">Downloads the standalone report file, which prints cleanly to PDF from any browser.</p>
+</section>
+
+<!-- CLOSE ADDENDUM — NOV 25, 2026 -->
+<section id="close-addendum">
+  <div class="kicker">Close Addendum · November 25, 2026</div>
+  <h2 class="sec">The $300 test fails: KEEP converts to invalidation triggered</h2>
+  <p class="lede">Dell closed the regular session on Wednesday, November 25, 2026 at <strong>$297.06</strong>, up $1.78 (+0.60%) on the day — but <strong>$2.94 below the $300 line</strong>. The boundary stated in Sections 01 and 11 was explicit: a further regular-session close below $300 converts KEEP to invalidation triggered. That condition has now fired. This addendum supersedes the suspension verdict as stated on the cover and in Sections 01 and 11; the November 24 reference close, the intraday flag, and every other figure in this edition stand as written. This addendum also closes the open item in Section 12 — the November 25 close is now locked.</p>
+  <div class="callout co-warn">
+    <div class="ct">Boundary test — failed · verdict converts</div>
+    <p><strong>Invalidation triggered.</strong> The November 25 close of $297.06 is the second consecutive regular-session close below $300 (November 24: $295.28), and it is the further close below the line that the boundary required. The suspension verdict therefore converts from KEEP to <strong>invalidation triggered</strong>. The rating and target are <strong>unchanged at Buy 6/10, $580</strong> — this lock moves no rating and no target. A rating that stands alongside a triggered invalidation is a contradiction the desk must now rule on: whether Buy 6/10, $580 survives the invalidation or is cut is a desk ruling, not a consequence of this close. No new DELL capital in any event. There is no live DELL gate, and none is proposed.</p>
+  </div>
+  <h3 class="sub">The session — a round trip that still failed the line</h3>
+  <p>The stock gapped down at the open to $267.57 (−9.38% against the November 24 close), printed an intraday low of $265.00, then recovered through the session to a high of $297.89 — a $32.06 (+12.10%) round trip off the low — and closed at $297.06. The recovery retook the November 24 close but not the line that mattered: the close sits $2.94 (0.98%) below $300 and $53.08 (15.16%) below the 200-day average of $350.14. Only the regular-session close counts for the boundary, and it failed.</p>
+  <div class="twrap"><table>
+    <tr><th>Item</th><th class="num">November 25, 2026</th><th>Note</th></tr>
+    <tr><td><strong>Regular-session close (locked)</strong></td><td class="num"><strong>$297.06</strong></td><td>+$1.78 (+0.60%) vs the November 24 close of $295.28</td></tr>
+    <tr><td>Open / high / low</td><td class="num">$267.57 / $297.89 / $265.00</td><td>Opened −9.38% below the November 24 close; intraday low $265.00</td></tr>
+    <tr><td>Distance below the $300 line</td><td class="num"><span class="neg">$2.94 (0.98%)</span></td><td>Second consecutive close below $300</td></tr>
+    <tr><td>Distance below the 200-day average</td><td class="num"><span class="neg">$53.08 (15.16%)</span></td><td>200-day SMA $350.14 — not reclaimed</td></tr>
+    <tr><td>Upside to the $580 target</td><td class="num">+95.25%</td><td>Target unchanged; desk ruling required (see above)</td></tr>
+  </table></div>
+  <h3 class="sub">The position at the locked close</h3>
+  <div class="twrap"><table>
+    <tr><th>Item</th><th class="num">Value</th><th>Note</th></tr>
+    <tr><td>Holdings (export 68)</td><td class="num">12 sh</td><td>Cost $4,885.44 · blended avg $407.12</td></tr>
+    <tr><td>Value at Nov 25 close</td><td class="num">$3,564.72</td><td>12 × $297.06</td></tr>
+    <tr><td>Unrealised P&amp;L</td><td class="num"><span class="neg">−$1,320.72 (−27.03%)</span></td><td>One-day change vs Nov 24: +$21.36 (+0.60%)</td></tr>
+  </table></div>
+  <p class="small mut">Method: the close is the Finnhub quote pulled twice after the 4:00 p.m. ET close — identical both times, timestamped 4:00 p.m. ET — corroborated by the Finnhub session table, which separates the regular-session close ($297.06) from the after-hours price ($296.10 at 4:08 p.m. ET). After-hours is not counted: only the regular-session close tests the boundary. StockAnalysis served a stale 3:44 p.m. intraday snapshot at check time and was not used for the close. Thursday, November 26 is Thanksgiving and the market is closed, so this is the last close before the holiday; the next regular session is Friday, November 27.</p>
+</section>
+
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <h2>Appendix — Sources</h2>
+    <ol>
+      <li>Dell Technologies Q3 FY2027 earnings release, Form 8-K Exhibit 99.1, November 24, 2026 (SEC accession 0001571996-26-000050; quarter ended October 30, 2026) — all print, segment, cash-flow, balance-sheet and guidance figures.</li>
+      <li>Dell Technologies Q2 FY2027 earnings release, Form 8-K Exhibit 99.1, September 1, 2026 (accession 0001571996-26-000039) — Q2 free-cash-flow split and definition.</li>
+      <li>Dell Technologies Q3 FY2027 earnings call, November 24, 2026, 4:30 p.m. ET (Clarke, Kennedy, Frantz) — transcript via Motley Fool, cross-checked against the StockAnalysis transcript and the Dombey Capital Q&amp;A summary.</li>
+      <li>Finnhub — quotes and daily candles, November 16–25, 2026 (all closes; the 200-day average computed from daily candles and cross-checked to the cent against StockAnalysis, with Morningstar and Nasdaq historical data as further cross-checks).</li>
+      <li>LSEG consensus via Reuters, November 24, 2026 (post-print) — quarterly verdict bar; FactSet via Investor's Business Daily and Barron's; MarketBeat earnings alert, November 24, 2026; Zacks preview, November 23, 2026, and November 19 vintage; TheFly print-time consensus; Finnhub estimates per the desk brief.</li>
+      <li>StockAnalysis (S&amp;P Global poll), forecast, statistics and ratings pages, read November 25, 2026 — annual EPS consensus, price-target consensus and post-print target actions; MarketBeat, November 25, 2026 — separate consensus poll; TipRanks, November 24–25, 2026 — pre-print target actions and the ±13.11% options-implied move; Barron's, November 16, 2026.</li>
+      <li>Financial Times, November 22, 2026 — the 25–45% repricing report and XTX litigation (reported, not confirmed; flagged as such wherever mentioned). Seeking Alpha, November 25, 2026 — TD Cowen action (values unverified). Morningstar, November 25, 2026 — fair-value headline only (value paywalled). Benzinga, Reuters and Investor's Business Daily, November 24, 2026 — conflicting after-hours reports (unreconciled, unused).</li>
+      <li>Desk record — holdings export 68 (November 12, 2026); the October 16, 2026 DELL report (Buy 6/10, $580) and the November 12, 2026 refresh (entry 169); the gates file as updated November 17, 2026.</li>
+    </ol>
+    <p class="foot-note">Reference prices are Tuesday, November 24, 2026 regular-session closes throughout, except where a figure is explicitly labelled intraday with its timestamp (November 25 context only). Provider consensus bars are kept separate and never averaged. This report is analysis for the portfolio desk; it is not investment advice and executes nothing — gate installation and deployment decisions rest with the portfolio manager.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var mq=window.matchMedia('(prefers-color-scheme: dark)');
+  function apply(dark){ root.setAttribute('data-theme', dark?'dark':'light'); }
+  apply(mq.matches);
+  document.getElementById('themeBtn').addEventListener('click',function(){
+    apply(root.getAttribute('data-theme')!=='dark');
+  });
+  if(mq.addEventListener){ mq.addEventListener('change',function(e){ apply(e.matches); }); }
+  document.getElementById('dlBtn').addEventListener('click',function(){
+    var html='<!DOCTYPE html>\n'+document.documentElement.outerHTML;
+    var blob=new Blob([html],{type:'text/html'});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement('a');
+    a.href=url; a.download='dell-post-earnings-full-update-november-2026.html';
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); },2000);
+  });
+})();
+</script>
+</body>
+</html>

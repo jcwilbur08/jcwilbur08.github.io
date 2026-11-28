@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" href="data:," />
+  <title>Capital Allocation Ranking — 5th Edition, November 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: light dark;
+      --paper:#f4f7f8;
+      --surface:#ffffff;
+      --ink:#12242a;
+      --muted:#53676d;
+      --faint:#7b8d92;
+      --line:#d9e2e4;
+      --navy:#0b2634;
+      --blue:#0c4a6e;
+      --teal:#087f7a;
+      --aqua:#72e7d4;
+      --lime:#b9e769;
+      --gold:#e7b458;
+      --red:#bc4d54;
+      --soft-teal:#e8f6f3;
+      --soft-blue:#e9f2f7;
+      --soft-gold:#fbf3e3;
+      --soft-red:#f9ecec;
+      --shadow:0 18px 50px rgba(13,42,50,.10);
+    }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        --paper:#091418;
+        --surface:#102126;
+        --ink:#eef7f5;
+        --muted:#b6c8c9;
+        --faint:#8ea1a3;
+        --line:#2a3f44;
+        --navy:#061b27;
+        --blue:#0a3f5e;
+        --teal:#2bb3aa;
+        --soft-teal:#112f2f;
+        --soft-blue:#102b38;
+        --soft-gold:#342b1c;
+        --soft-red:#332022;
+        --shadow:0 18px 50px rgba(0,0,0,.28);
+      }
+    }
+    :root[data-theme="dark"] {
+      --paper:#091418;
+      --surface:#102126;
+      --ink:#eef7f5;
+      --muted:#b6c8c9;
+      --faint:#8ea1a3;
+      --line:#2a3f44;
+      --navy:#061b27;
+      --blue:#0a3f5e;
+      --teal:#2bb3aa;
+      --soft-teal:#112f2f;
+      --soft-blue:#102b38;
+      --soft-gold:#342b1c;
+      --soft-red:#332022;
+      --shadow:0 18px 50px rgba(0,0,0,.28);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;font-size:16px;line-height:1.62}
+    a{color:inherit}
+    .report{width:min(1120px,100%);margin:0 auto;background:var(--surface);box-shadow:var(--shadow)}
+    .cover{min-height:720px;padding:72px 76px 56px;display:flex;flex-direction:column;justify-content:space-between;color:#f7fffd;position:relative;overflow:hidden;background:linear-gradient(138deg,#071f2c 0%,#0b4560 44%,#087c78 100%)}
+    .cover:after{content:"";position:absolute;width:560px;height:560px;right:-220px;bottom:-270px;border:1px solid rgba(255,255,255,.18);border-radius:50%;box-shadow:0 0 0 68px rgba(255,255,255,.05),0 0 0 138px rgba(255,255,255,.035)}
+    .cover-top,.cover-main,.cover-foot{position:relative;z-index:1}
+    .cover-top{display:flex;justify-content:space-between;align-items:center;gap:24px;font-size:.84rem;font-weight:700;letter-spacing:.06em}
+    .cover-top .type{padding:8px 12px;border:1px solid rgba(255,255,255,.42);border-radius:999px}
+    .cover-main{max-width:840px;margin:70px 0}
+    .company{font-size:clamp(2.6rem,6.5vw,5.4rem);font-weight:700;line-height:.92;letter-spacing:-.055em;margin:0 0 28px}
+    .cover h1{font-family:"Libre Baskerville",serif;font-size:clamp(1.9rem,4.2vw,3.6rem);line-height:1.12;letter-spacing:-.03em;margin:0 0 26px;max-width:780px}
+    .dek{font-size:clamp(1rem,1.6vw,1.22rem);max-width:730px;color:#d8f2ee;margin:0}
+    .cover-foot{display:flex;justify-content:space-between;gap:36px;align-items:end;border-top:1px solid rgba(255,255,255,.22);padding-top:22px}
+    .cover-meta strong{display:block;font-size:1.05rem}.cover-meta span{display:block;color:#c9e7e3;font-size:.86rem}
+    .cover-monogram{font-family:"Libre Baskerville",serif;font-size:2.3rem;font-weight:700;letter-spacing:-.06em}
+    .rating-strip{display:grid;grid-template-columns:1.25fr repeat(4,1fr);background:#071c25;color:white}
+    .rating-cell{padding:22px 24px;border-right:1px solid rgba(255,255,255,.12)}
+    .rating-cell:last-child{border:0}.rating-cell span{display:block;color:#95bfc3;font-size:.69rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:5px}.rating-cell strong{font-size:1.18rem;letter-spacing:-.02em}.rating-cell.primary{background:var(--lime);color:#10231d}.rating-cell.primary span{color:#31513e}.rating-cell.primary strong{font-size:1.5rem}
+    .toolbar{display:flex;justify-content:flex-end;gap:10px;padding:16px 76px;background:var(--surface);border-bottom:1px solid var(--line)}
+    .toolbtn{display:inline-flex;align-items:center;gap:9px;background:var(--ink);color:var(--surface);border:0;padding:10px 15px;border-radius:8px;font-size:.84rem;font-weight:700;font-family:inherit;cursor:pointer;min-height:40px}
+    .toolbtn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+    .toolbtn svg{width:16px;height:16px;flex:none}
+    .page{padding:62px 76px}
+    .page + .page{border-top:1px solid var(--line)}
+    .section-kicker{display:flex;align-items:center;gap:12px;color:var(--teal);font-size:.78rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px}.section-kicker:before{content:"";width:36px;height:3px;background:var(--teal)}
+    h2{font-family:"Libre Baskerville",serif;font-size:clamp(2rem,4vw,3.25rem);line-height:1.15;letter-spacing:-.035em;margin:0 0 24px;color:var(--ink)}
+    h3{font-size:1.12rem;line-height:1.3;margin:30px 0 10px;letter-spacing:-.01em}
+    p{margin:0 0 16px}.lead{font-family:"Libre Baskerville",serif;font-size:1.24rem;line-height:1.65;color:var(--ink);max-width:880px}
+    .muted{color:var(--muted)}
+    .toc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 48px;counter-reset:toc}
+    .toc a{counter-increment:toc;display:flex;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);text-decoration:none;font-weight:600;min-height:44px}.toc a:before{content:counter(toc,decimal-leading-zero);color:var(--teal);font-size:.75rem;font-weight:800;letter-spacing:.08em}.toc a span{margin-left:auto;color:var(--faint);font-size:.8rem;text-align:right}
+    .callout{padding:26px 28px;background:var(--soft-teal);border-radius:4px}.callout h3{margin:0 0 10px}.callout p:last-child{margin:0}
+    .verdict{background:var(--navy);color:#ecf8f5;padding:30px}.verdict h3{margin:0 0 10px;color:#8fe0d4}.verdict p{color:#d2e5e5}.verdict p:last-child{margin:0}
+    .corrections{padding:28px 30px;background:var(--soft-red);border-top:4px solid var(--red)}
+    .corrections h3{margin:0 0 6px;color:var(--red)}
+    .corrections ol,.corrections ul{margin:14px 0 0;padding-left:22px}
+    .corrections li{margin:0 0 13px}
+    .corrections li:last-child{margin-bottom:0}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:30px 0}.metric{background:var(--soft-blue);padding:20px 18px;min-height:126px}.metric .label{display:block;color:var(--muted);font-size:.73rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:10px}.metric strong{display:block;font-family:"Libre Baskerville",serif;font-size:1.75rem;line-height:1.1}.metric small{display:block;color:var(--muted);margin-top:7px;line-height:1.35}
+    .two-col{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:34px}
+    .data-table{width:100%;border-collapse:collapse;margin:24px 0 8px;font-size:.94rem}.data-table th{text-align:left;color:var(--muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;padding:10px 12px;border-bottom:2px solid var(--ink)}.data-table td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}.data-table td.num{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;white-space:nowrap}.data-table th.num{text-align:right}.data-table .accent{color:var(--teal)}
+    .data-table tr.grp td{background:var(--soft-blue);font-weight:800;font-size:.78rem;text-transform:uppercase;letter-spacing:.09em;color:var(--blue);padding:9px 12px}
+    .tk{font-weight:800;letter-spacing:.01em;white-space:nowrap}
+    .pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:.74rem;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+    .pill.sb{background:var(--lime);color:#10231d}
+    .pill.buy{background:var(--teal);color:#fff}
+    .pill.hold{background:var(--gold);color:#3a2c08}
+    .pill.review{background:var(--red);color:#fff}
+    .pill.none{background:var(--soft-blue);color:var(--muted)}
+    .up{color:var(--teal);font-weight:700}.down{color:var(--red);font-weight:700}
+    .chart{margin:28px 0;padding:24px;background:var(--soft-blue)}.chart-title{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:22px}.chart-title h3{margin:0}.chart-title p{font-size:.8rem;color:var(--muted);margin:0}.bars{display:grid;gap:16px}.bar-row{display:grid;grid-template-columns:210px 1fr 92px;align-items:center;gap:14px}.bar-label{font-size:.86rem;font-weight:700}.bar-track{height:16px;background:color-mix(in srgb,var(--line) 70%,transparent);position:relative}.bar-fill{height:100%;background:var(--teal)}.bar-fill.gold{background:var(--gold)}.bar-fill.red{background:var(--red)}.bar-fill.navy{background:var(--blue)}.bar-value{text-align:right;font-weight:800;font-size:.9rem;font-variant-numeric:tabular-nums}
+    .flag{display:inline-block;background:var(--soft-gold);color:var(--ink);padding:2px 9px;border-radius:3px;font-size:.78rem;font-weight:700}
+    .note{padding:18px 20px;background:var(--soft-gold);font-size:.9rem;color:var(--ink);margin-top:26px}.note p:last-child{margin:0}
+    .watchlist{list-style:none;padding:0;margin:24px 0 0}.watchlist li{display:grid;grid-template-columns:42px 1fr;gap:16px;padding:17px 0;border-bottom:1px solid var(--line)}.watchlist .n{width:32px;height:32px;display:grid;place-items:center;background:var(--ink);color:var(--surface);font-weight:800;font-size:.78rem}.watchlist strong{display:block}.watchlist span{color:var(--muted)}
+    .appendix{background:color-mix(in srgb,var(--paper) 75%,var(--surface));font-size:.88rem}.source-list{list-style:none;padding:0;margin:22px 0 0;counter-reset:sources}.source-list li{counter-increment:sources;display:grid;grid-template-columns:36px 1fr;gap:10px;padding:13px 0;border-bottom:1px solid var(--line);overflow-wrap:anywhere}.source-list li:before{content:counter(sources,decimal-leading-zero);color:var(--teal);font-weight:800}.disclosure{font-size:.78rem;color:var(--muted);margin-top:32px}
+    @media(max-width:760px){.report{box-shadow:none}.cover{min-height:650px;padding:44px 24px 36px}.cover-top{align-items:flex-start}.cover-main{margin:52px 0}.cover-foot{align-items:flex-start;flex-direction:column}.rating-strip{grid-template-columns:repeat(2,1fr)}.rating-cell{border-bottom:1px solid rgba(255,255,255,.12)}.rating-cell.primary{grid-column:1/-1}.toolbar{padding:14px 20px}.page{padding:48px 22px}.toc,.two-col,.metrics{grid-template-columns:1fr}.metrics{gap:8px}.metric{min-height:auto}.bar-row{grid-template-columns:120px 1fr 74px;gap:8px}.chart{padding:18px 14px}.corrections{padding:22px 20px}
+      .data-table,.data-table tbody,.data-table tr,.data-table td{display:block}.data-table thead{display:none}.data-table tr{padding:12px 0;border-bottom:1px solid var(--line)}.data-table tr.grp{display:block;padding:0}.data-table td{display:flex;justify-content:space-between;gap:22px;padding:5px 0;border:0;text-align:left}.data-table td:before{content:attr(data-label);color:var(--muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;font-weight:700;flex:none}.data-table td.num{text-align:right}.data-table td.td-tk:before{content:""}.data-table td.td-tk{font-size:1.05rem}}
+    @media print{body{background:white}.report{width:100%;box-shadow:none}.cover{min-height:100vh;page-break-after:always}.toolbar{display:none}.page{padding:48px 54px;page-break-inside:auto}.page + .page{page-break-before:always}.appendix{background:#fff}.callout,.verdict,.metric,.chart,.corrections{break-inside:avoid}.rating-strip{page-break-after:always}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+<main class="report">
+  <section class="cover">
+    <div class="cover-top"><span class="type">CAPITAL ALLOCATION RANKING</span><span>November 27, 2026</span></div>
+    <div class="cover-main">
+      <div class="company">5th Edition</div>
+      <h1>Capital Allocation Ranking — November 2026</h1>
+      <p class="dek">The full universe re-run on one reference date: 55 equities plus SPCX and ANT, and the ten funds — 67 names. Three downgrades on the 10% upside bar, one target raise, and $10,326.72 deployable without a blocker now that both TSM gates have fired.</p>
+    </div>
+    <div class="cover-foot">
+      <div class="cover-meta"><strong>Reference: Friday, November 27, 2026 regular-session closes (early close, 1:00pm ET)</strong><span>Holdings per export 68 · Portfolio at Nov 27 closes (mixed marks): $1,696,893.38 · Research entry 178</span></div>
+      <div class="cover-monogram">V</div>
+    </div>
+  </section>
+
+  <section class="rating-strip" aria-label="Deployment summary">
+    <div class="rating-cell primary"><span>Deployable without a blocker</span><strong>$10,326.72</strong></div>
+    <div class="rating-cell"><span>TSM deep — fired, unfunded</span><strong>$2,826.72</strong></div>
+    <div class="rating-cell"><span>Held for named reasons</span><strong>$11,500</strong></div>
+    <div class="rating-cell"><span>Reserve — untouched</span><strong>$21,000</strong></div>
+    <div class="rating-cell"><span>Total cash</span><strong>$43,000</strong></div>
+  </section>
+
+  <div class="toolbar">
+    <button class="toolbtn ghost" id="themeToggle" type="button" aria-label="Toggle dark and light mode">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <span id="themeLabel">Dark / light</span>
+    </button>
+    <button class="toolbtn" id="pdfBtn" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+      Download report
+    </button>
+  </div>
+
+  <section class="page" id="map">
+    <div class="section-kicker">Report map</div>
+    <h2>What is in this edition</h2>
+    <nav class="toc" aria-label="Report contents">
+      <a href="#ranking">1 · The ranking <span>57 equity-like names + 10 funds</span></a>
+      <a href="#changes">2 · Rating changes <span>Three downgrades, one raise</span></a>
+      <a href="#gates">3 · Entry levels and gates <span>Installed vs recommended-only</span></a>
+      <a href="#deployment">4 · Deployment <span>$43,000 in three buckets</span></a>
+      <a href="#funds">5 · Funds <span>Band re-test at Nov 27 closes</span></a>
+      <a href="#macro">6 · Macro <span>The rate path and the hurdle</span></a>
+      <a href="#earnings">7 · Earnings calendar <span>Nov 28 – Dec 10</span></a>
+      <a href="#flags">8 · Corrections and open flags <span>Owned, on the record</span></a>
+      <a href="#sources">Sources <span>Appendix</span></a>
+    </nav>
+    <div class="metrics">
+      <div class="metric"><span class="label">Universe</span><strong>67 names</strong><small>55 equities + SPCX + ANT + 10 funds. The 4th edition's “66” was one short — TTWO was omitted from its ranking table.</small></div>
+      <div class="metric"><span class="label">Portfolio — Nov 27 (mixed marks)</span><strong>$1,696,893</strong><small>−$52,506.54 (−3.00%) vs export 68. Four mutual funds carried at stale Nov 12 marks; the true total waits on fresh NAVs.</small></div>
+      <div class="metric"><span class="label">Rating moves</span><strong>4</strong><small>HD, LOW, DIS to Hold 5/10 (targets held). MA target $715 → $750, Buy 7/10 kept. All other lines carried.</small></div>
+      <div class="metric"><span class="label">The hurdle</span><strong>4.94%</strong><small>10-year yield, Nov 27 close — first sub-5% daily close since Nov 12. No multiple-expansion assumptions in any wave.</small></div>
+    </div>
+  </section>
+  <section class="page" id="ranking">
+    <div class="section-kicker">Section 1 · The ranking</div>
+    <h2>Master ranking — Nov 27 closes</h2>
+    <p class="lead">Ordered by desk conviction, then upside to target. Bands are starter / deep. Gates fire on the regular-session close only. Share counts govern from export 68: AMZN 520 sh, GOOG 145 sh, MSFT 100 sh. COST is coverage-only, not held.</p>
+    <table class="data-table">
+      <thead><tr><th>Ticker</th><th>Held?</th><th class="num">Nov 27 close</th><th>Desk rating</th><th class="num">Target</th><th class="num">Upside</th><th>Entry bands — starter / deep</th><th>Gate state</th></tr></thead>
+      <tbody>
+        <tr class="grp"><td colspan="8">Strong Buy — conviction 8/10</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">UBER</span></td><td data-label="Held?">97 sh</td><td class="num" data-label="Close">$66.63</td><td data-label="Rating"><span class="pill sb">Strong Buy · 8/10</span></td><td class="num" data-label="Target">$105</td><td class="num up" data-label="Upside">+57.6%</td><td data-label="Bands">$65–72 / $60–65</td><td data-label="Gate">≤$68 fired Oct 2 — tranche 1 complete</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">AVGO</span></td><td data-label="Held?">117 sh</td><td class="num" data-label="Close">$312.34</td><td data-label="Rating"><span class="pill sb">Strong Buy · 8/10</span></td><td class="num" data-label="Target">$535</td><td class="num up" data-label="Upside">+71.3%</td><td data-label="Bands">$320–345 / $290–320 — price inside deep band</td><td data-label="Gate">≤$340 recommended gate WITHDRAWN — see §3</td></tr>
+        <tr class="grp"><td colspan="8">Buy — conviction 7/10</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">ADBE</span></td><td data-label="Held?">39 sh</td><td class="num" data-label="Close">$234.79</td><td data-label="Rating"><span class="pill buy">Buy · 7/10</span></td><td class="num" data-label="Target">$320</td><td class="num up" data-label="Upside">+36.3%</td><td data-label="Bands">$225–240 / $205–225</td><td data-label="Gate">≤$235 installed — FIRED Oct 7; Nov 27 third session below</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">MSFT</span></td><td data-label="Held?">100 sh</td><td class="num" data-label="Close">$492.85</td><td data-label="Rating"><span class="pill buy">Buy · 7/10</span></td><td class="num" data-label="Target">$590</td><td class="num up" data-label="Upside">+19.7%</td><td data-label="Bands">$460–490 / $420–460 — $2.85 above starter top</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">AMZN</span></td><td data-label="Held?">520 sh</td><td class="num" data-label="Close">$254.12</td><td data-label="Rating"><span class="pill buy">Buy · 7/10</span></td><td class="num" data-label="Target">$315</td><td class="num up" data-label="Upside">+24.0%</td><td data-label="Bands">$230–250 / $205–230</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">MA</span></td><td data-label="Held?">173.061 sh</td><td class="num" data-label="Close">$666.96</td><td data-label="Rating"><span class="pill buy">Buy · 7/10</span></td><td class="num" data-label="Target">$750</td><td class="num up" data-label="Upside">+12.4%</td><td data-label="Bands">$600–630 / $560–600 (rec. only)</td><td data-label="Gate">≤~$520 rec. WITHDRAWN — never installed</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">GEV</span></td><td data-label="Held?">30 sh</td><td class="num" data-label="Close">$735.31</td><td data-label="Rating"><span class="pill buy">Buy · 7/10</span></td><td class="num" data-label="Target">$1,200</td><td class="num up" data-label="Upside">+63.2%</td><td data-label="Bands">$700–760 / $640–700 — close INSIDE starter (new)</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">GEHC</span></td><td data-label="Held?">52 sh</td><td class="num" data-label="Close">$84.62</td><td data-label="Rating"><span class="pill buy">Buy · 7/10</span> <span class="flag">Flagged</span></td><td class="num" data-label="Target">$92</td><td class="num up" data-label="Upside">+8.7%</td><td data-label="Bands">$72–80 / $64–72</td><td data-label="Gate">≤$62 installed — live, untriggered</td></tr>
+        <tr class="grp"><td colspan="8">Buy — conviction 6/10</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">NVDA</span></td><td data-label="Held?">61 sh</td><td class="num" data-label="Close">$150.49</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$265</td><td class="num up" data-label="Upside">+76.1%</td><td data-label="Bands">$140–155 / $126–140; reassess below $124.50</td><td data-label="Gate">Contingent ≤$150 rec. — NOT installed; price $0.49 above</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">TSM</span></td><td data-label="Held?">45 sh</td><td class="num" data-label="Close">$353.34</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$450</td><td class="num up" data-label="Upside">+27.4%</td><td data-label="Bands">Bands = the installed gates</td><td data-label="Gate">≤$355 / ≤$343.50 installed — BOTH FIRED</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">ASML</span></td><td data-label="Held?">8 sh</td><td class="num" data-label="Close">$1,325.82</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$2,050</td><td class="num up" data-label="Upside">+54.6%</td><td data-label="Bands">No further adds</td><td data-label="Gate">≤$1,700 fired + executed</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">QCOM</span></td><td data-label="Held?">104.415 sh</td><td class="num" data-label="Close">$179.27</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$215</td><td class="num up" data-label="Upside">+19.9%</td><td data-label="Bands">$160–180 / $145–160 — RE-DRAWN</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">DELL</span></td><td data-label="Held?">12 sh</td><td class="num" data-label="Close">$316.96</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$580</td><td class="num up" data-label="Upside">+83.0%</td><td data-label="Bands">No new capital, no gate, no ladder</td><td data-label="Gate">$424 zone CLOSED; invalidation triggered (technical only)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">GS</span></td><td data-label="Held?">105 sh</td><td class="num" data-label="Close">$812.87</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$1,050</td><td class="num up" data-label="Upside">+29.2%</td><td data-label="Bands">Trim on re-test of $920s — 13% above, off the table</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">GOOG</span></td><td data-label="Held?">145 sh</td><td class="num" data-label="Close">$272.44</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$430</td><td class="num up" data-label="Upside">+57.8%</td><td data-label="Bands">$265–285 / $245–265 — close INSIDE starter</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">META</span></td><td data-label="Held?">63 sh</td><td class="num" data-label="Close">$628.96</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$850</td><td class="num up" data-label="Upside">+35.1%</td><td data-label="Bands">$535–585 / $475–535</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">CAT</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$561.74</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$850</td><td class="num up" data-label="Upside">+51.3%</td><td data-label="Bands">$540–560 / $490–530 — $1.74 above starter top</td><td data-label="Gate">≤$670 rec. RETIRED</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">CEG</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$238.10</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$345</td><td class="num up" data-label="Upside">+44.9%</td><td data-label="Bands">$250–265 / $225–250</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">NVO</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$41.07</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$46</td><td class="num up" data-label="Upside">+12.0%</td><td data-label="Bands">$36–40 / $32–36</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">SIEGY</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">— *</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$166</td><td class="num" data-label="Upside">—</td><td data-label="Bands">$130–142 / $115–130</td><td data-label="Gate">None — quote-gated</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">UNH</span></td><td data-label="Held?">50.22 sh</td><td class="num" data-label="Close">$351.41</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$420</td><td class="num up" data-label="Upside">+19.5%</td><td data-label="Bands">$310–340 / $280–310</td><td data-label="Gate">Accumulate →2% installed — adds PAUSED</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">SPCX</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$133.59</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$220</td><td class="num up" data-label="Upside">+64.7%</td><td data-label="Bands">$130–142 / $118–130 — close INSIDE starter</td><td data-label="Gate">≤$130 retained as rec. level — NOT proposed for install</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">ORCL</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$107.13</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$200</td><td class="num up" data-label="Upside">+86.7%</td><td data-label="Bands">$105–120 / $90–105</td><td data-label="Gate">None — coverage only; no add planned</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">TTWO</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$230.22</td><td data-label="Rating"><span class="pill buy">Buy · 6/10</span></td><td class="num" data-label="Target">$300</td><td class="num up" data-label="Upside">+30.3%</td><td data-label="Bands">$207–208 / $195–200 (rec. only) — do not chase</td><td data-label="Gate">None</td></tr>
+        <tr class="grp"><td colspan="8">Hold — conviction 6/10 and 5/10</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">CTAS</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$228.58</td><td data-label="Rating"><span class="pill hold">Hold · 6/10</span></td><td class="num" data-label="Target">$216</td><td class="num down" data-label="Upside">−5.5%</td><td data-label="Bands">$185–200 / $165–185</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">JPM</span></td><td data-label="Held?">357.851 sh</td><td class="num" data-label="Close">$322.96</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span></td><td class="num" data-label="Target">$360</td><td class="num up" data-label="Upside">+11.5%</td><td data-label="Bands">No add $285–310 / $260–285</td><td data-label="Gate">None — trim discipline above ~$365 stands</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">PLTR</span></td><td data-label="Held?">5 sh</td><td class="num" data-label="Close">$172.17</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span></td><td class="num" data-label="Target">$200</td><td class="num up" data-label="Upside">+16.2%</td><td data-label="Bands">Ladder: $161–166 passed through / deep ≤$150 / anchor ~$136 / reclaim $186–187</td><td data-label="Gate">Ladder rec. only — NOT installed</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">PEP</span></td><td data-label="Held?">165 sh</td><td class="num" data-label="Close">$144.60</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span></td><td class="num" data-label="Target">$140</td><td class="num down" data-label="Upside">−3.2%</td><td data-label="Bands">$130–140 / $118–130</td><td data-label="Gate">$120 gate withdrawn</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">XOM</span></td><td data-label="Held?">379.363 sh</td><td class="num" data-label="Close">$160.18</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span></td><td class="num" data-label="Target">$168</td><td class="num up" data-label="Upside">+4.9%</td><td data-label="Bands">$140–153 / $128–140</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">KMB</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$109.11</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span></td><td class="num" data-label="Target">$115</td><td class="num up" data-label="Upside">+5.4%</td><td data-label="Bands">$95–105 / $85–95</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">COST</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$1,097.81</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span></td><td class="num" data-label="Target">$1,050</td><td class="num down" data-label="Upside">−4.4%</td><td data-label="Bands">$900–975 / $820–900 — coverage only</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">BATRA</span></td><td data-label="Held?">25 sh</td><td class="num" data-label="Close">$59.29</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span></td><td class="num" data-label="Target">$60</td><td class="num up" data-label="Upside">+1.2%</td><td data-label="Bands">$45–50 / $39–45</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">AAPL</span></td><td data-label="Held?">340 sh</td><td class="num" data-label="Close">$358.54</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span></td><td class="num" data-label="Target">$350</td><td class="num down" data-label="Upside">−2.4%</td><td data-label="Bands">$310–335 / $285–310</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">SO</span></td><td data-label="Held?">381.4 sh</td><td class="num" data-label="Close">$95.04</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span></td><td class="num" data-label="Target">$98</td><td class="num up" data-label="Upside">+3.1%</td><td data-label="Bands">$82–89 / $75–82</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">NFLX</span></td><td data-label="Held?">500 sh</td><td class="num" data-label="Close">$60.93</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span></td><td class="num" data-label="Target">$72</td><td class="num up" data-label="Upside">+18.2%</td><td data-label="Bands">$55–60 / $50–55 — $0.93 above starter top</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">HOOD</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$67.92</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span></td><td class="num" data-label="Target">$95</td><td class="num up" data-label="Upside">+39.9%</td><td data-label="Bands">$55–65 / $45–55</td><td data-label="Gate">None</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">HD</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$362.15</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span> <span class="flag">Downgraded</span></td><td class="num" data-label="Target">$375</td><td class="num up" data-label="Upside">+3.5%</td><td data-label="Bands">$330–350 / $300–330 (rec. only) — RE-DRAWN</td><td data-label="Gate">≤$260 rec. — NOT installed</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">LOW</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$236.46</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span> <span class="flag">Downgraded</span></td><td class="num" data-label="Target">$245</td><td class="num up" data-label="Upside">+3.6%</td><td data-label="Bands">$215–230 / $195–215 (rec. only) — RE-DRAWN</td><td data-label="Gate">≤$165 rec. — NOT installed</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">DIS</span></td><td data-label="Held?">196.17 sh</td><td class="num" data-label="Close">$127.24</td><td data-label="Rating"><span class="pill hold">Hold · 5/10</span> <span class="flag">Downgraded</span></td><td class="num" data-label="Target">$135</td><td class="num up" data-label="Upside">+6.1%</td><td data-label="Bands">$110–122 / $98–110</td><td data-label="Gate">None</td></tr>
+      </tbody>
+    </table>
+    <p class="muted">* SIEGY: no Nov 27 close — the quote is timestamped Nov 24; the last price of $138.41 is not used as a close and no upside is computed.</p>
+
+    <h3>Under review / no desk rating — Cam's line carried</h3>
+    <p>Street figures are context only; no desk target is set for any name in this table. ANT carries no desk rating — initiation declined (see §2).</p>
+    <table class="data-table">
+      <thead><tr><th>Ticker</th><th>Held?</th><th class="num">Nov 27 close</th><th>Status</th><th>Cam's line (Nov 17) — starter / deep</th><th class="num">Street avg</th></tr></thead>
+      <tbody>
+        <tr><td class="td-tk" data-label=""><span class="tk">BMY</span></td><td data-label="Held?">320 sh</td><td class="num" data-label="Close">$61.12</td><td data-label="Status"><span class="pill review">Under review — no new money</span></td><td data-label="Cam's line">5/10 Watch — $45–52 / $38–45</td><td class="num" data-label="Street avg">$65.29 (28)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">CRM</span></td><td data-label="Held?">99 sh</td><td class="num" data-label="Close">$198.21</td><td data-label="Status"><span class="pill none">No desk rating</span></td><td data-label="Cam's line">7/10 — $185–205 / $160–185 — close INSIDE starter</td><td class="num" data-label="Street avg">$282.37 (55)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">AXP</span></td><td data-label="Held?">100 sh</td><td class="num" data-label="Close">$316.40</td><td data-label="Status"><span class="pill none">No desk rating</span></td><td data-label="Cam's line">5/10 Hold / Deep Add — $280–305 / $255–280</td><td class="num" data-label="Street avg">$364.79 (29)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">V</span></td><td data-label="Held?">100 sh</td><td class="num" data-label="Close">$429.56</td><td data-label="Status"><span class="pill none">No desk rating</span></td><td data-label="Cam's line">5/10 Hold / Deep Add — $350–380 / $320–350</td><td class="num" data-label="Street avg">$454.10 (41)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">KO</span></td><td data-label="Held?">297.187 sh</td><td class="num" data-label="Close">$97.40</td><td data-label="Status"><span class="pill none">No desk rating</span></td><td data-label="Cam's line">4/10 Hold / No Add — $78–88 / $70–78</td><td class="num" data-label="Street avg">$99.84 (26)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">PM</span></td><td data-label="Held?">182.609 sh</td><td class="num" data-label="Close">$187.80</td><td data-label="Status"><span class="pill none">No desk rating</span></td><td data-label="Cam's line">5/10 Hold / Deep Add — $170–183 / $155–170</td><td class="num" data-label="Street avg">$212.69 (17)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">AMT</span></td><td data-label="Held?">231.917 sh</td><td class="num" data-label="Close">$184.93</td><td data-label="Status"><span class="pill none">No desk rating</span></td><td data-label="Cam's line">6/10 Selective Add — $165–180 / $148–165</td><td class="num" data-label="Street avg">$216.13 (26)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">BKNG</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$150.39</td><td data-label="Status"><span class="pill none">No desk coverage</span></td><td data-label="Cam's line">7/10 — $130–145 / $115–130</td><td class="num" data-label="Street avg">$215.06 (36)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">CRWV</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$44.15</td><td data-label="Status"><span class="pill none">No desk coverage</span></td><td data-label="Cam's line">3/10 Watch / Speculative — $35–42 / $27–35</td><td class="num" data-label="Street avg">$114.45 (41) †</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">ARM</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$171.55</td><td data-label="Status"><span class="pill none">No desk coverage</span></td><td data-label="Cam's line">4/10 Watch — $105–130 / $90–105</td><td class="num" data-label="Street avg">$268.15 (43)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">INTC</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$57.40</td><td data-label="Status"><span class="pill none">No desk coverage</span></td><td data-label="Cam's line">4/10 Watch — $38–45 / $32–38</td><td class="num" data-label="Street avg">$89.91 (49)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">GLW</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$105.08</td><td data-label="Status"><span class="pill none">No desk coverage</span></td><td data-label="Cam's line">6/10 Selective Add — $85–100 / $75–85</td><td class="num" data-label="Street avg">$171.89 (19)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">CLX</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$111.26</td><td data-label="Status"><span class="pill none">No desk coverage</span></td><td data-label="Cam's line">4/10 Watch — $80–90 / $70–80</td><td class="num" data-label="Street avg">$97.69 (18)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">CVS</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$82.61</td><td data-label="Status"><span class="pill none">No desk coverage</span></td><td data-label="Cam's line">6/10 Checkpoint Add — $75–85 / $65–75 — close INSIDE starter</td><td class="num" data-label="Street avg">$109.31 (28)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">WM</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$246.49</td><td data-label="Status"><span class="pill none">No desk coverage</span></td><td data-label="Cam's line">5/10 Watch / Deep Value — $205–225 / $185–205</td><td class="num" data-label="Street avg">$256.84 (28)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">BRK.B</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$580.79</td><td data-label="Status"><span class="pill none">No desk coverage</span></td><td data-label="Cam's line">6/10 Selective Add — $520–555 / $480–520</td><td class="num" data-label="Street avg">$564.67 (4) ‡</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">ANT</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$91.88</td><td data-label="Status"><span class="pill none">No desk rating — initiation declined</span></td><td data-label="Cam's line">Coverage only — first public quarterly report gates coverage</td><td class="num" data-label="Street avg">$136.33 (15)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">WMT</span></td><td data-label="Held?">Not held</td><td class="num" data-label="Close">$133.13</td><td data-label="Status"><span class="pill none">Context only</span></td><td data-label="Cam's line">5/10 — $155–175 / $135–155</td><td class="num" data-label="Street avg">$136.80 (44)</td></tr>
+      </tbody>
+    </table>
+    <p class="muted">† CRWV Street range $39–$268 — treat as stale-target risk. ‡ BRK.B poll is thin (4 analysts) and stale (targets last updated Oct 22) — low information. Street label for ANT: Strong Buy; median $130, low $92, high $300.</p>
+  </section>
+  <section class="page" id="changes">
+    <div class="section-kicker">Section 2 · Rating changes</div>
+    <h2>Four moves. One test: the 10% upside bar.</h2>
+    <p class="lead">The desk scale requires 10%+ upside for a Buy. Three names no longer clear it at unchanged targets; one target is raised to restore it. Everything else in §1 is carried unchanged.</p>
+    <table class="data-table">
+      <thead><tr><th>Name</th><th>From → To</th><th class="num">Close → Target</th><th class="num">Upside</th><th>Basis — terse</th></tr></thead>
+      <tbody>
+        <tr><td class="td-tk" data-label=""><span class="tk">HD</span></td><td data-label="Move">Buy 6/10 → <strong>Hold 5/10</strong>, $375 held</td><td class="num" data-label="Close → Target">$362.15 → $375</td><td class="num up" data-label="Upside">+3.5%</td><td data-label="Basis">Street avg $375.41 equals the target. Q3: sales beat, split EPS verdict, guide narrowed. Nothing supports a higher target. Bands re-drawn (rec. only): starter $330–350 / deep $300–330.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">LOW</span></td><td data-label="Move">Buy 6/10 → <strong>Hold 5/10</strong>, $245 held</td><td class="num" data-label="Close → Target">$236.46 → $245</td><td class="num up" data-label="Upside">+3.6%</td><td data-label="Basis">Street avg $249.91 at the target. Q3 headline beat flattered by a $0.34/share tariff refund; ex-refund EPS ~$2.76 missed both bars; FY26 guide unchanged, implied Q4 ~$1.72 vs $1.96 consensus. Bands re-drawn (rec. only): starter $215–230 / deep $195–215.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">DIS</span></td><td data-label="Move">Buy 7/10 → <strong>Hold 5/10</strong>, $135 held</td><td class="num" data-label="Close → Target">$127.24 → $135</td><td class="num up" data-label="Upside">+6.1%</td><td data-label="Basis">Street avg $131.34 sits below the target; median $135 equals it. Nov 17 print calendar-flattered by the 53rd week — ex-extra-week, both lines were below bars.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">MA</span></td><td data-label="Move">Buy 7/10 kept — <strong>target $715 → $750</strong></td><td class="num" data-label="Close → Target">$666.96 → $750</td><td class="num up" data-label="Upside">+12.4%</td><td data-label="Basis">Upside to $715 is +7.2% — below the Buy bar; $750 restores +12.4%. Anchors: Wedbush initiated Outperform at $751 (Nov 24); Tigress raised $735 → $770 (Nov 25); Street median $731, avg $722.73. The ≤~$520 recommended gate is withdrawn; proposed bands $600–630 / $560–600 are recommended only, not installed.</td></tr>
+      </tbody>
+    </table>
+    <div class="two-col">
+      <div class="callout">
+        <h3>GEHC — carried with flag, not downgraded</h3>
+        <p>Buy 7/10, $92 stands. Upside +8.7% is just below the 10% bar; Street avg $88.25 sits below the target. One more session restores the bar — re-test at the next edition or on the Feb 8 print rather than downgrading on a week's noise. Gate ≤$62 live, untriggered.</p>
+      </div>
+      <div class="callout">
+        <h3>ANT — initiation declined</h3>
+        <p>No desk rating. No desk DCF, no public quarterly report, and a Street range of $92–$300 too wide to anchor a target. Carried coverage-only: Street avg $136.33, median $130 (15 analysts). The first public quarterly report is the gating item for coverage.</p>
+      </div>
+    </div>
+    <h3>Other tape notes, Nov 18 → Nov 27</h3>
+    <table class="data-table">
+      <thead><tr><th>Name</th><th class="num">Move since Nov 18</th><th>Note</th></tr></thead>
+      <tbody>
+        <tr><td class="td-tk" data-label=""><span class="tk">QCOM</span></td><td class="num up" data-label="Move">+12.18%</td><td data-label="Note">Best mover in the semis group. Bands re-drawn to $160–180 / $145–160 — the old starter band is behind the price. Buy 6/10, $215 unchanged.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">AVGO</span></td><td class="num down" data-label="Move">−11.78%</td><td data-label="Note">Worst mover in the semis group. Price $312.34 is inside the deep band $305–320. FQ4 prints Dec 9. SB 8/10, $535 unchanged.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">ADBE</span></td><td class="num up" data-label="Move">+3.80%</td><td data-label="Note">Street avg cut hard, $354.80 → $266.91, label Buy → Hold — the downgrade wave is now in the consensus. CEO change Dec 1. FQ4 prints Dec 9. Buy 7/10, $320 unchanged.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">NVDA</span></td><td class="num" data-label="Move">−0.31% (closes basis)</td><td data-label="Note">Huang reinstated as President and CEO Nov 23, unanimous vote; Kress reverts to CFO. Q3 FY2027: revenue $115.844B +103%, adj EPS $2.68, Data Center $107.6B +110%, Q4 guide $130bn ±3%. Probes remain open; conviction held 6/10. Target $265 = 16× FY2028E consensus EPS $16.61.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">DELL</span></td><td class="num up" data-label="Move">+6.70% on Nov 27</td><td data-label="Note">Q3 FY2027 record beat-and-raise on every line; margins expanded — the compression failure mode did not occur. $580 = 19.5× FY27 guided EPS $29.68. STAND ruling stands; see §3 for the reclaim proposal.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">TSM</span></td><td class="num down" data-label="Move">−2.56%</td><td data-label="Note">Fundamentals not deteriorated. $450 = 19.7× FY2027E EPS $22.90 — a multiples target, not DCF-supported. November revenue due Dec 10.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">UNH</span></td><td class="num up" data-label="Move">+0.43%</td><td data-label="Note">Street avg essentially unchanged ($476.16 → $473.69) — the Street has not cut post-CRUSH; the desk target $420 sits $53.69 below the Street avg. Adds stay paused until UNH quantifies CRUSH exposure.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">GS</span></td><td class="num down" data-label="Move">−6.91%</td><td data-label="Note">Worst mover in the financials group. Trim zone ($920s) is 13% above the close — trim off the table at this price.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page" id="gates">
+    <div class="section-kicker">Section 3 · Entry levels and gates</div>
+    <h2>The gate sweep — closes only</h2>
+    <p class="lead">All nine installed gates checked against regular-session closes, Nov 17–27. The panel stays buy-side-only. No gate was edited in this edition; staleness is flagged for Cam's word in §8.</p>
+    <h3>Installed gates (9)</h3>
+    <table class="data-table">
+      <thead><tr><th>Gate</th><th>Status at Nov 27 close</th><th>Detail</th></tr></thead>
+      <tbody>
+        <tr><td class="td-tk" data-label=""><span class="tk">TSM ≤$355</span> starter</td><td data-label="Status"><strong>FIRED</strong></td><td data-label="Detail">Nov 19 close $352.09 — first crossing close. No fire on install day (Nov 17, $359.69) or Nov 18 ($362.62). Sizing locked: 8 sh.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">TSM ≤$343.50</span> deep</td><td data-label="Status"><strong>FIRED</strong></td><td data-label="Detail">Nov 20 close $318.71 — first crossing close. $300 reassess NOT triggered (lowest close in window $318.71). Sizing locked: 8 sh.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">ADBE ≤$235</span></td><td data-label="Status"><strong>FIRED</strong></td><td data-label="Detail">First trigger Oct 7, close $232.77. Every close Nov 18–27 below $235; Nov 18 $226.20 was the second trigger; Nov 27 is the third session below. FQ4 print Dec 9 is the proving ground — the gate and the print are separate inputs.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">GEHC ≤$62</span></td><td data-label="Status">Live, untriggered</td><td data-label="Detail">Lowest close in window $80.64 (Nov 20), 30.1% above the gate. Nov 27 close $84.62 is 36.5% above.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">UNH accumulate →2%</span></td><td data-label="Status">Live — adds PAUSED</td><td data-label="Detail">Weight target, no price trigger. Pause stands until UNH quantifies CRUSH exposure; no quantification as of Nov 27.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">NVDA ≤$220</span></td><td data-label="Status">Fired — historical, spent</td><td data-label="Detail">Fired Oct 15, executed Oct 16 (56 → 58 sh). Still listed as live; no new NVDA gate installed. The Nov 27 close below $220 is not a live trigger.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">UBER ≤$68</span></td><td data-label="Status">Fired — historical, spent</td><td data-label="Detail">Fired Oct 2; tranche 1 complete. Price $66.63 sits below the fired level; the gate is spent.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">ASML ≤$1,700</span></td><td data-label="Status">Fired — historical, executed</td><td data-label="Detail">Fired Oct 14, executed Oct 21 (7 → 8 sh at $1,667). No new gate; no further adds.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">DELL $424 zone</span></td><td data-label="Status">CLOSED — display only</td><td data-label="Detail">No live trigger. See the reclaim proposal below.</td></tr>
+      </tbody>
+    </table>
+    <h3>TSM fired-gate sizing — counts locked Nov 23, re-priced at the Nov 27 close ($353.34)</h3>
+    <table class="data-table">
+      <thead><tr><th>Tranche</th><th>Gate</th><th>Fired</th><th class="num">8 sh at fire close</th><th class="num">8 sh at Nov 27 close</th><th class="num">Sleeve</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Tranche">Starter</td><td data-label="Gate">≤$355</td><td data-label="Fired">Nov 19 — $352.09</td><td class="num" data-label="At fire">$2,816.72</td><td class="num" data-label="At Nov 27">$2,826.72</td><td class="num" data-label="Sleeve">$3,000</td><td data-label="Verdict"><strong>Fits</strong> — $173.28 headroom</td></tr>
+        <tr><td data-label="Tranche">Deep</td><td data-label="Gate">≤$343.50</td><td data-label="Fired">Nov 20 — $318.71</td><td class="num" data-label="At fire">$2,549.68</td><td class="num" data-label="At Nov 27">$2,826.72</td><td class="num" data-label="Sleeve">$3,000</td><td data-label="Verdict"><strong>Fits</strong> — $173.28 headroom</td></tr>
+        <tr><td data-label="Tranche">Combined</td><td data-label="Gate">—</td><td data-label="Fired">—</td><td class="num" data-label="At fire">$5,366.40</td><td class="num" data-label="At Nov 27">$5,653.44 (16 sh)</td><td class="num" data-label="Sleeve">$43,000 cash</td><td data-label="Verdict">$37,346.56 cash remains if both execute</td></tr>
+      </tbody>
+    </table>
+    <p class="muted">The deep tranche as installed carried no dollar sleeve; the $3,000 figure mirrors the starter sleeve. Funding for the deep tranche is a separate decision — see §4.</p>
+    <h3>Recommended-only levels — decisions in this edition</h3>
+    <table class="data-table">
+      <thead><tr><th>Level</th><th class="num">Nov 27 close</th><th>Decision / status</th></tr></thead>
+      <tbody>
+        <tr><td class="td-tk" data-label=""><span class="tk">AVGO ≤$340</span></td><td class="num" data-label="Close">$312.34</td><td data-label="Decision"><strong>WITHDRAWN as stale</strong> — price is 8.14% below the level. No replacement gate is proposed before the Dec 9 FQ4 print; the entry is re-set after the print. The deep band $305–320 stands as the entry picture, and the price is inside it.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">NVDA ≤$150</span> contingent starter</td><td class="num" data-label="Close">$150.49</td><td data-label="Decision"><strong>Not triggered</strong> — $0.49 above the level. CEO blocker resolved; probes open. Install-or-wait is Cam's call. The gate and the $124.50 reassess level are disjoint — $25.50 of daylight, no overlap.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">SPCX ≤$130</span></td><td class="num" data-label="Close">$133.59</td><td data-label="Decision">Retained as a recommended entry level, <strong>not proposed for installation</strong>. The Nov 25 close of $127.44 printed below it while uninstalled; the starter band $130–142 governs and the Nov 27 close is inside it. Main 180-day lock-up ends Dec 8.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">MA ≤~$520</span></td><td class="num" data-label="Close">$666.96</td><td data-label="Decision"><strong>WITHDRAWN</strong> — 28.2% below price, never installed. Replaced by proposed bands $600–630 / $560–600, recommended only.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">PLTR ladder</span></td><td class="num" data-label="Close">$172.17</td><td data-label="Decision">Starter $161–166 passed through upward; deep ≤$150 is the live zone ($22.17 away). Recommended only.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">HD ≤$260 / LOW ≤$165</span></td><td class="num" data-label="Close">$362.15 / $236.46</td><td data-label="Decision">Both reaffirmed, not installed — 39.3% and 43.3% above price respectively.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">TTWO $207–208 / $195–200</span></td><td class="num" data-label="Close">$230.22</td><td data-label="Decision">Recommended only. Starter 11% below price; do not chase.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">CAT ≤$670</span></td><td class="num" data-label="Close">$561.74</td><td data-label="Decision">Retired Nov 19 — price already below it; entry validated. Bands $540–560 / $490–530 govern.</td></tr>
+      </tbody>
+    </table>
+    <div class="note">
+      <p><strong>DELL reclaim rule — proposed, Cam's word.</strong> Two consecutive regular-session closes above $300 would convert the triggered invalidation back to a suspension — not a lift. Lifting the suspension requires reclaiming the 200-day average, $350.14. The invalidation remains triggered today: the Nov 27 close of $316.96 is the first close above $300 since Nov 24, and one close does not meet the proposed rule. Rating Buy 6/10, $580 stands under the Nov 26 STAND ruling; no new DELL capital, no gate, no ladder.</p>
+    </div>
+    <h3>Now in band at the Nov 27 close</h3>
+    <p>GEV $735.31 inside starter $700–760 (new). GOOG $272.44 inside $265–285. CRM $198.21 inside $185–205. CVS $82.61 inside $75–85. SPCX $133.59 inside $130–142. AVGO $312.34 inside deep $305–320. CAT $561.74 effectively at starter ($1.74 above the $540–560 top). MSFT $492.85 is $2.85 above its starter top; NFLX $60.93 is $0.93 above its top — both at the band. GS trim zone is off the table; TTWO is not in band.</p>
+  </section>
+
+  <section class="page" id="deployment">
+    <div class="section-kicker">Section 4 · Deployment</div>
+    <h2>$43,000 — three buckets, reconciled</h2>
+    <p class="lead">The desk's proposal; Cam executes. Deployable rises from $7,500 in the 4th edition to $10,326.72 — the TSM starter tranche joins UBER, ADBE and GOOG now that both TSM gates have fired and the NVDA CEO and DELL print blockers have resolved.</p>
+    <div class="chart" aria-label="Deployment of the 43,000 dollars of cash">
+      <div class="chart-title"><h3>The $43,000, by status at Nov 27 closes</h3><p>Waves + reserve</p></div>
+      <div class="bars">
+        <div class="bar-row"><span class="bar-label">Deployable without a blocker</span><div class="bar-track"><div class="bar-fill" style="width:24%"></div></div><span class="bar-value">$10,326.72</span></div>
+        <div class="bar-row"><span class="bar-label">Held for named reasons</span><div class="bar-track"><div class="bar-fill red" style="width:26.7%"></div></div><span class="bar-value">$11,500</span></div>
+        <div class="bar-row"><span class="bar-label">Reserve — untouched through Dec 9–10</span><div class="bar-track"><div class="bar-fill navy" style="width:48.8%"></div></div><span class="bar-value">$21,000</span></div>
+        <div class="bar-row"><span class="bar-label">Wave 1 sleeve remainder</span><div class="bar-track"><div class="bar-fill gold" style="width:0.4%"></div></div><span class="bar-value">$173.28</span></div>
+      </div>
+    </div>
+    <h3>Wave 1 — $10,000</h3>
+    <table class="data-table">
+      <thead><tr><th>Name</th><th class="num">Sleeve</th><th class="num">Nov 27 close</th><th>Test</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td class="td-tk" data-label=""><span class="tk">TSM</span> starter</td><td class="num" data-label="Sleeve">$3,000</td><td class="num" data-label="Close">$353.34</td><td data-label="Test">In Cam's $330–365 band; ≤$355 gate fired Nov 19</td><td data-label="Verdict"><strong>Deployable — 8 sh = $2,826.72</strong></td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">UBER</span></td><td class="num" data-label="Sleeve">$2,500</td><td class="num" data-label="Close">$66.63</td><td data-label="Test">In Cam's $65–72 band, lower half; no blocker</td><td data-label="Verdict"><strong>Deployable — $2,500</strong></td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">ADBE</span></td><td class="num" data-label="Sleeve">$2,000</td><td class="num" data-label="Close">$234.79</td><td data-label="Test">In Cam's $225–240 band; ≤$235 gate fired Oct 7, in-trigger every close Nov 18–27</td><td data-label="Verdict"><strong>Deployable — $2,000</strong> (Dec 9 print noted, not a hold)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">DELL</span></td><td class="num" data-label="Sleeve">$2,500</td><td class="num" data-label="Close">$316.96</td><td data-label="Test">Print cleared every fundamental prong; price back above $300</td><td data-label="Verdict"><strong>Held — $2,500</strong> (STAND ruling Nov 26: no new DELL capital)</td></tr>
+      </tbody>
+    </table>
+    <p>Wave 1 deployable: <strong>$7,326.72</strong>. Held: $2,500. Sleeve remainder: $173.28.</p>
+    <h3>Wave 2 — $12,000</h3>
+    <table class="data-table">
+      <thead><tr><th>Name</th><th class="num">Sleeve</th><th class="num">Nov 27 close</th><th>Test</th><th>Verdict</th></tr></thead>
+      <tbody>
+        <tr><td class="td-tk" data-label=""><span class="tk">NVDA</span></td><td class="num" data-label="Sleeve">$3,000</td><td class="num" data-label="Close">$150.49</td><td data-label="Test">CEO blocker resolved. Price inside Cam's $145–160 band but $0.49 above the recommended ≤$150 level</td><td data-label="Verdict"><strong>Held — $3,000.</strong> Hold for a close at or below $150, or Cam's call. Probes still open.</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">GOOG</span></td><td class="num" data-label="Sleeve">$3,000</td><td class="num" data-label="Close">$272.44</td><td data-label="Test">In Cam's $265–285 band; no blocker</td><td data-label="Verdict"><strong>Deployable — $3,000</strong></td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">CRM</span></td><td class="num" data-label="Sleeve">$3,000</td><td class="num" data-label="Close">$198.21</td><td data-label="Test">In Cam's $185–205 band</td><td data-label="Verdict"><strong>Held — $3,000</strong> until after the Dec 2 print</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">ASML / AVGO</span> shared</td><td class="num" data-label="Sleeve">$3,000</td><td class="num" data-label="Close">$1,325.82 / $312.34</td><td data-label="Test">ASML back inside Cam's $1,200–1,380 band, but the desk line is no further adds; AVGO print-gated to Dec 9</td><td data-label="Verdict"><strong>Held — $3,000</strong></td></tr>
+      </tbody>
+    </table>
+    <p>Wave 2 deployable: <strong>$3,000</strong> (GOOG). Held: $9,000.</p>
+    <h3>Totals</h3>
+    <table class="data-table">
+      <thead><tr><th>Bucket</th><th class="num">Amount</th><th>Composition</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Bucket"><strong>Deployable without a blocker</strong></td><td class="num" data-label="Amount">$10,326.72</td><td data-label="Composition">TSM starter $2,826.72 + UBER $2,500 + ADBE $2,000 + GOOG $3,000</td></tr>
+        <tr><td data-label="Bucket">Held for named reasons</td><td class="num" data-label="Amount">$11,500</td><td data-label="Composition">DELL $2,500 (ruling) · NVDA $3,000 (price $0.49 above rec. level) · CRM $3,000 (Dec 2 print) · ASML/AVGO $3,000 (no-add + Dec 9 print)</td></tr>
+        <tr><td data-label="Bucket">Reserve</td><td class="num" data-label="Amount">$21,000</td><td data-label="Composition">Untouched through Dec 4 (jobs), Dec 9 (FOMC + AVGO/ADBE) and Dec 10 (COST + TSM November revenue)</td></tr>
+        <tr><td data-label="Bucket">Wave 1 sleeve remainder</td><td class="num" data-label="Amount">$173.28</td><td data-label="Composition">TSM starter 8 sh priced below its $3,000 sleeve</td></tr>
+        <tr><td data-label="Bucket"><strong>Total</strong></td><td class="num" data-label="Amount"><strong>$43,000</strong></td><td data-label="Composition">Reconciles exactly</td></tr>
+      </tbody>
+    </table>
+    <div class="verdict">
+      <h3>The TSM deep tranche — fired, unfunded</h3>
+      <p>The deep gate fired Nov 20 and the count is locked at 8 sh — $2,826.72 at the Nov 27 close. The Wave 1 sleeve covers only the starter tranche, so the deep tranche needs funding from held sleeves, Wave 2, or the reserve. That call is Cam's. The desk does not recommend breaking the $21,000 reserve ahead of Dec 9.</p>
+    </div>
+  </section>
+  <section class="page" id="funds">
+    <div class="section-kicker">Section 5 · Funds</div>
+    <h2>The ten funds — band re-test</h2>
+    <p class="lead">One band change since Nov 18: IJH moves in → out. No fund is a top next-dollar priority; funds remain asset-allocation tools, not pseudo-stock picks.</p>
+    <table class="data-table">
+      <thead><tr><th>Fund</th><th class="num">Qty</th><th class="num">Nov 18</th><th class="num">Nov 27</th><th class="num">Change</th><th class="num">Market value</th><th>Band — starter / deep</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="td-tk" data-label=""><span class="tk">VXUS</span></td><td class="num" data-label="Qty">534</td><td class="num" data-label="Nov 18">$79.24</td><td class="num" data-label="Nov 27">$79.52</td><td class="num up" data-label="Change">+0.35%</td><td class="num" data-label="MV">$42,463.68</td><td data-label="Band">$76–81 / $70–76</td><td data-label="Status"><strong>IN starter</strong></td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">AVUV</span></td><td class="num" data-label="Qty">259</td><td class="num" data-label="Nov 18">$119.38</td><td class="num" data-label="Nov 27">$119.90</td><td class="num up" data-label="Change">+0.44%</td><td class="num" data-label="MV">$31,054.10</td><td data-label="Band">$112–120 / $104–112</td><td data-label="Status"><strong>IN starter</strong> ($0.10 below band top)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">SCHD</span></td><td class="num" data-label="Qty">610</td><td class="num" data-label="Nov 18">$34.70</td><td class="num" data-label="Nov 27">$35.67</td><td class="num up" data-label="Change">+2.80%</td><td class="num" data-label="MV">$21,758.70</td><td data-label="Band">$33–36 / $30–33</td><td data-label="Status"><strong>IN starter</strong></td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">IJH</span></td><td class="num" data-label="Qty">271.576</td><td class="num" data-label="Nov 18">$71.94</td><td class="num" data-label="Nov 27">$72.65</td><td class="num up" data-label="Change">+0.99%</td><td class="num" data-label="MV">$19,730.00</td><td data-label="Band">$67–72 / $62–67</td><td data-label="Status"><strong>OUT — was IN</strong> ($0.65 above band top)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">VTWO</span></td><td class="num" data-label="Qty">126</td><td class="num" data-label="Nov 18">$109.11</td><td class="num" data-label="Nov 27">$110.62</td><td class="num up" data-label="Change">+1.38%</td><td class="num" data-label="MV">$13,938.12</td><td data-label="Band">$102–109 / $94–102</td><td data-label="Status">OUT ($1.62 above top)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">GRID</span></td><td class="num" data-label="Qty">61</td><td class="num" data-label="Nov 18">$155.18</td><td class="num" data-label="Nov 27">$153.65</td><td class="num down" data-label="Change">−0.99%</td><td class="num" data-label="MV">$9,372.65</td><td data-label="Band">$135–149 / $125–135</td><td data-label="Status">OUT ($4.65 above top); <strong>no new allocation in any case</strong></td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">TLXIX</span></td><td class="num" data-label="Qty">4,089.97</td><td class="num" data-label="Nov 18">—</td><td class="num" data-label="Nov 27">—</td><td class="num" data-label="Change">—</td><td class="num" data-label="MV">n/a</td><td data-label="Band">Systematic additions</td><td data-label="Status">No price — cannot test (NAV stale Oct 15)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">VFFSX</span></td><td class="num" data-label="Qty">100</td><td class="num" data-label="Nov 18">—</td><td class="num" data-label="Nov 27">—</td><td class="num" data-label="Change">—</td><td class="num" data-label="MV">n/a</td><td data-label="Band">Rebalancing / 8–12% drawdown</td><td data-label="Status">No price — cannot test (NAV stale Oct 15)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">FSMDX</span></td><td class="num" data-label="Qty">746.19</td><td class="num" data-label="Nov 18">—</td><td class="num" data-label="Nov 27">—</td><td class="num" data-label="Change">—</td><td class="num" data-label="MV">n/a</td><td data-label="Band">Allocation short / 8–12% pullback</td><td data-label="Status">No price — cannot test (NAV stale Oct 15)</td></tr>
+        <tr><td class="td-tk" data-label=""><span class="tk">FSSNX</span></td><td class="num" data-label="Qty">891.84</td><td class="num" data-label="Nov 18">—</td><td class="num" data-label="Nov 27">—</td><td class="num" data-label="Change">—</td><td class="num" data-label="MV">n/a</td><td data-label="Band">Allocation short / 10–15% pullback</td><td data-label="Status">No price — cannot test (NAV stale Oct 15)</td></tr>
+      </tbody>
+    </table>
+    <p>ETF-only market value at Nov 27 closes: <strong>$138,317.25</strong> (+0.85% vs Nov 18). Mutual-fund NAVs are dated Oct 15 — 43 days old, past the 5-day rule — so no band test is possible; the nightly-NAV route needs a re-run before the next edition. Standing flags: SO / IJH / VTWO / VFFSX recorded cost bases are implausible — verify before any sale. FSMDX/IJH and VTWO/FSSNX sit in different retirement accounts; no cross-account consolidation, and VTWO is the keep vehicle in its account.</p>
+  </section>
+
+  <section class="page" id="macro">
+    <div class="section-kicker">Section 6 · Macro</div>
+    <h2>Rates, the Fed, inflation</h2>
+    <table class="data-table">
+      <thead><tr><th>Item</th><th>Reading</th><th>Change vs 4th edition</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Item">10-year yield, Nov 27 close</td><td data-label="Reading"><strong>4.94%</strong> (2-year 4.69%, 30-year 5.33%)</td><td data-label="Change">−12.8bp vs 5.068% on Nov 18. First sub-5% daily close since Nov 12.</td></tr>
+        <tr><td data-label="Item">Fed funds target range</td><td data-label="Reading"><strong>3.75–4.00%</strong> (held Oct 27–28, 10–2 vote)</td><td data-label="Change">Unchanged.</td></tr>
+        <tr><td data-label="Item">Dec 8–9 FOMC — 25bp hike pricing</td><td data-label="Reading"><strong>~93–99% across venues</strong> (CME FedWatch 97%; futures-implied 98.6–99%; Kalshi 93.5%; Polymarket 94.5–95%)</td><td data-label="Change">Firmer than ~90–96% on Nov 19; the 50bp tail has shrunk to ~0–3%.</td></tr>
+        <tr><td data-label="Item">Dec 8–9 FOMC — hold / cut</td><td data-label="Reading">Hold ~1–4.5%; cut ~0%</td><td data-label="Change">Unchanged in substance.</td></tr>
+        <tr><td data-label="Item">October PCE (printed Nov 25)</td><td data-label="Reading">Headline +0.3% m/m, <strong>+3.8% y/y</strong> (in line); core +0.3% m/m, <strong>+3.3% y/y</strong></td><td data-label="Change">Core above the 3.2% expected (Sept 3.1%) — hot on core. Next PCE Dec 23.</td></tr>
+        <tr><td data-label="Item">November jobs report</td><td data-label="Reading"><strong>Fri Dec 4, 8:30am ET</strong></td><td data-label="Change">Unchanged. October: +165K payrolls, 4.1% unemployment.</td></tr>
+        <tr><td data-label="Item">FOMC decision</td><td data-label="Reading"><strong>Wed Dec 9, 2:00pm ET</strong>, with dot plot</td><td data-label="Change">Unchanged.</td></tr>
+      </tbody>
+    </table>
+    <div class="callout">
+      <h3>What it means for allocation</h3>
+      <p>The hurdle has eased ~13bp but not moved: a 4.94% risk-free rate with a ~97% priced December hike means new money still earns its place against a ~5% hurdle, not a cutting-cycle hurdle. The hot core PCE is what firmed the hike pricing. Pay only inside starter bands; keep the reserve intact through Dec 4 and Dec 9.</p>
+    </div>
+  </section>
+
+  <section class="page" id="earnings">
+    <div class="section-kicker">Section 7 · Earnings calendar</div>
+    <h2>Nov 28 – Dec 10 — three held names report</h2>
+    <p class="lead">All 43 export-68 positions were checked. Three held names report in the window; every other held position reported in the Oct–Nov cycle or next reports Jan–Feb.</p>
+    <table class="data-table">
+      <thead><tr><th>Date</th><th>Name</th><th>Held?</th><th>Event</th><th>Time (ET)</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Date">Tue Dec 1</td><td class="td-tk" data-label=""><span class="tk">NVDA</span></td><td data-label="Held?">Held — 61 sh</td><td data-label="Event">House closed-door interview (Huang)</td><td data-label="Time">—</td><td data-label="Status">Confirmed</td></tr>
+        <tr><td data-label="Date">Wed Dec 2</td><td class="td-tk" data-label=""><span class="tk">CRM</span></td><td data-label="Held?">Held — 99 sh</td><td data-label="Event">Q3 FY2027 earnings</td><td data-label="Time">After close, 5:00pm</td><td data-label="Status"><strong>Company-confirmed.</strong> Guide: revenue $11.42–11.50B, non-GAAP EPS $3.42–3.44</td></tr>
+        <tr><td data-label="Date">Wed Dec 2</td><td class="td-tk" data-label=""><span class="tk">NVDA</span></td><td data-label="Held?">Held — 61 sh</td><td data-label="Event">GC Tim Teter interview</td><td data-label="Time">—</td><td data-label="Status">Confirmed</td></tr>
+        <tr><td data-label="Date">~Dec 4</td><td class="td-tk" data-label=""><span class="tk">NVDA</span></td><td data-label="Held?">Held — 61 sh</td><td data-label="Event">Form 10-Q deadline (approximate)</td><td data-label="Time">—</td><td data-label="Status">A filing with new risk factors would be a scope signal on the SEC probe</td></tr>
+        <tr><td data-label="Date">Fri Dec 4</td><td class="td-tk" data-label=""><span class="tk">—</span></td><td data-label="Held?">Macro</td><td data-label="Event">November jobs report</td><td data-label="Time">8:30am</td><td data-label="Status">BLS schedule</td></tr>
+        <tr><td data-label="Date">Wed Dec 9</td><td class="td-tk" data-label=""><span class="tk">—</span></td><td data-label="Held?">Macro</td><td data-label="Event">FOMC decision + dot plot</td><td data-label="Time">2:00pm</td><td data-label="Status">Fed calendar. Dec 9 is the heaviest day in the window</td></tr>
+        <tr><td data-label="Date">Wed Dec 9</td><td class="td-tk" data-label=""><span class="tk">AVGO</span></td><td data-label="Held?">Held — 117 sh</td><td data-label="Event">Q4 + FY2026 earnings</td><td data-label="Time">After close, 5:00pm</td><td data-label="Status"><strong>Company-confirmed.</strong> Guide: revenue ~$34.8B, AI semis $21.7B</td></tr>
+        <tr><td data-label="Date">Wed Dec 9</td><td class="td-tk" data-label=""><span class="tk">ADBE</span></td><td data-label="Held?">Held — 39 sh</td><td data-label="Event">Q4 FY2026 earnings</td><td data-label="Time">After close, 5:00pm</td><td data-label="Status"><strong>Company-confirmed</strong> — upgraded this edition. Guide: revenue $6.80–6.85B, non-GAAP EPS $6.30–6.35</td></tr>
+        <tr><td data-label="Date">Thu Dec 10</td><td class="td-tk" data-label=""><span class="tk">COST</span></td><td data-label="Held?">Coverage only — NOT held</td><td data-label="Event">Q1 FY2027 earnings</td><td data-label="Time">After close, 5:00pm (est.)</td><td data-label="Status">Confirmed</td></tr>
+        <tr><td data-label="Date">Thu Dec 10</td><td class="td-tk" data-label=""><span class="tk">TSM</span></td><td data-label="Held?">Held — 45 sh</td><td data-label="Event">November revenue (monthly, not earnings)</td><td data-label="Time">12:30am</td><td data-label="Status">Per TSMC financial calendar. Q4 guide $52.3–54.3B</td></tr>
+      </tbody>
+    </table>
+    <p class="muted">Also in the window, coverage-only and not held: ORCL — Dec 9 expected, not company-confirmed. Just reported, for the record: DELL Q3 Nov 24 (record beat-and-raise); NVDA Q3 Nov 17 (beat-and-raise).</p>
+  </section>
+
+  <section class="page" id="flags">
+    <div class="section-kicker">Section 8 · Corrections and open flags</div>
+    <h2>Corrections owned in this edition</h2>
+    <div class="corrections">
+      <h3>Carried from the 4th edition and the desk record</h3>
+      <ol>
+        <li><strong>Universe count.</strong> The 4th edition's “66” is one short — the true count is 67. TTWO was omitted from its ranking table despite carrying a desk rating (Buy 6/10, $300); it is ranked in §1 here.</li>
+        <li><strong>COST held status.</strong> The 4th edition wrongly labelled COST “HELD.” No COST position exists in export 68; it is coverage-only throughout this edition.</li>
+        <li><strong>Share counts.</strong> The 4th edition's AMZN / GOOG / MSFT counts (210 / 233 / 103) were wrong. Export 68 governs: 520 / 145 / 100. Every table here uses those counts.</li>
+        <li><strong>ADBE Dec 9 status.</strong> The print is company-confirmed via Adobe's IR upcoming-events calendar. The 4th edition's “not company-confirmed” is superseded.</li>
+        <li><strong>DELL multiple.</strong> $580 = 19.5× FY27 guided EPS of $29.68. The 22.2× figure in the DELL update used the pre-print $26.09 estimate — stale.</li>
+        <li><strong>ADBE gate record.</strong> The ≤$235 gate fired Oct 7 (close $232.77); it was recorded as “installed, not triggered” for six weeks before being owned. Re-confirmed in this edition's sweep.</li>
+      </ol>
+    </div>
+    <h3>Flags awaiting Cam's word — nothing below was edited</h3>
+    <ul class="watchlist">
+      <li><span class="n">1</span><div><strong>Gate file notes are stale in three places.</strong><span> The UNH note still reads “BUY $475” against the $420 target; the NVDA note still reads “12-mo target $328” against $265; the NVDA ≤$220 gate is still listed as live though fired and executed Oct 15/16. The DELL $424 note's “wait for Oct 30 close / close below $440 = stop” language is stale narrative on a closed zone.</span></div></li>
+      <li><span class="n">2</span><div><strong>Holdings file data is stale in three places.</strong><span> NVDA fair value $310 against the corrected $250; 16 stale star fields; dividends per share for JPM, MSFT and UNH (correct figures: JPM $6.60/yr, MSFT $3.92/yr, UNH $9.28/yr).</span></div></li>
+      <li><span class="n">3</span><div><strong>TSM execution.</strong><span> Both gates fired; sizing locked at 8 sh each. Execution is Cam's and is not confirmed.</span></div></li>
+      <li><span class="n">4</span><div><strong>META Class C stock dividend.</strong><span> The 1:1 dividend's charter is effective Jan 19, 2027; record and payment dates and the ticker are still not set as of Nov 27. Cam's 63 Class A shares become 63 A + 63 C when it pays.</span></div></li>
+      <li><span class="n">5</span><div><strong>Mutual-fund NAVs.</strong><span> The only NAV file in the workspace is dated Oct 15. The nightly-NAV route needs a re-run before the next edition; until then the portfolio total in this edition is a mixed-marks figure.</span></div></li>
+      <li><span class="n">6</span><div><strong>Uploads.</strong><span> The research index stands at 177 entries locally; the report files for entries 171–177 await upload.</span></div></li>
+    </ul>
+    <h3>Open questions and data caveats</h3>
+    <table class="data-table">
+      <thead><tr><th>Item</th><th>State</th></tr></thead>
+      <tbody>
+        <tr><td data-label="Item">DELL reclaim rule</td><td data-label="State">Proposed in §3 — two consecutive closes above $300 converts the triggered invalidation back to a suspension. Awaiting Cam's word. The invalidation remains triggered.</td></tr>
+        <tr><td data-label="Item">TSM deep tranche funding</td><td data-label="State">Fired, sized, unfunded within the waves ($2,826.72). Funding source is Cam's call; the desk does not recommend breaking the reserve ahead of Dec 9.</td></tr>
+        <tr><td data-label="Item">ADBE Nov 27 close</td><td data-label="State">Two prints exist: $234.79 and $234.45. Both sit below the $235 gate, so no conclusion changes; this edition uses $234.79 throughout. The desk should pick one print for the record.</td></tr>
+        <tr><td data-label="Item">SIEGY Nov 27 close</td><td data-label="State">None exists — the quote is timestamped Nov 24. Carried quote-gated; no Nov 27 position value is computed for it.</td></tr>
+        <tr><td data-label="Item">Earnings-date conflicts</td><td data-label="State">Not settled: UNH Q4 (Jan 20 vs 25 vs 26, 2027); TTWO Q3 (Feb 2 vs Feb 8); CAT Q4 (Feb 2 vs Feb 4); XOM Q4 (Jan 28 vs 29); PM Q4 (Feb 4 vs 5); CLX Q2 (Feb 1 vs 2); CVS Q4 (Feb 8 vs 9). ORCL's next print (~Dec 9 / mid-Dec) is not company-confirmed.</td></tr>
+        <tr><td data-label="Item">Thin or stale consensus</td><td data-label="State">BRK.B: 4 analysts, targets last updated Oct 22 — low information. CRWV: Street range $39–$268 — stale-target risk. CLX: the consensus average differs between two pages of the same source ($97 vs $97.69); $97.69 is used.</td></tr>
+        <tr><td data-label="Item">October gate history</td><td data-label="State">The ADBE Oct 7 first-trigger close ($232.77) is desk-recorded; October daily closes were not independently re-pulled in this sweep.</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section class="page appendix" id="sources">
+    <div class="section-kicker">Appendix</div>
+    <h2>Sources</h2>
+    <ol class="source-list">
+      <li><span><strong>Closes.</strong> Finnhub quote service, Nov 27, 2026 regular-session closes (close and prior close), cross-checked against StockAnalysis daily history — 8 of 8 spot checks agree to the cent.</span></li>
+      <li><span><strong>Holdings.</strong> Export 68 holdings file (as of Nov 12, 2026): 43 positions, securities $1,706,399.92 plus cash $43,000. Quantities multiplied by last price reconcile exactly to the export total.</span></li>
+      <li><span><strong>Consensus.</strong> StockAnalysis forecast pages (analysts polled by S&P Global), read Nov 27, 2026 — one source for every name. Provider bars are kept separate and never averaged. Where no figure was available for a rated name (UBER, CEG, SIEGY), none is shown.</span></li>
+      <li><span><strong>Gates.</strong> The desk gates file (9 installed gates), read-only for this edition — not edited. Close histories Nov 17–27 from Finnhub and StockAnalysis daily history; October first-trigger closes are desk-recorded.</span></li>
+      <li><span><strong>Macro.</strong> U.S. Treasury Daily Par Yield Curve Rates (Nov 27); CME FedWatch; futures-implied probabilities; Kalshi; Polymarket; BEA News Release 26-51 (October PCE, Nov 25); BLS release schedule; Federal Reserve meeting calendar.</span></li>
+      <li><span><strong>Company and primary sources.</strong> NVIDIA board announcement and GlobeNewswire release (Nov 23 reinstatement); Dell Q3 FY2027 earnings release and call (Nov 24); TSMC Q3 earnings and Nov 23 executive remarks; Salesforce investor announcement (Nov 10, Dec 2 earnings); Broadcom release (Nov 9, Dec 9 earnings); Adobe investor-relations events calendar (Dec 9 call) and Adobe newsroom (Sep 3, CEO change Dec 1); HHS release (Nov 16) and Federal Register vol. 91 (Nov 19, CRUSH proposed rule); Take-Two / Rockstar announcement (Nov 20); SpaceX prospectus on SEC EDGAR (Jun 12, 2026 IPO); Anthropic listing and placement disclosure (Nov 19–20).</span></li>
+      <li><span><strong>Desk record.</strong> Standing analyst cards and prior editions, including the 4th-edition capital allocation ranking (entry 175, Nov 19), the UnitedHealth update (entry 174), the TSMC underwriting (entry 172), the Take-Two initiation (entry 171), the NVIDIA update (entry 176) and the Dell update with the Nov 26 STAND ruling (entry 177).</span></li>
+    </ol>
+    <p class="disclosure">Reference discipline: every price, band test and gate call in this edition is made on the Friday, November 27, 2026 regular-session close (early close, 1:00pm ET; the market was closed Nov 26 for Thanksgiving). Ratings use the desk's conviction-anchored scale: Strong Buy = conviction 8–10 with 15%+ upside; Buy = conviction 6–7 with 10%+ upside; Hold = conviction 4–5, or high conviction with thin upside; Reduce = conviction 3; Sell = conviction 1–2. Conviction is stated explicitly for every rated name. Items marked “proposed” or “recommended” are desk recommendations; gates are installed only on Cam's word, and deployment decisions are his. This report is research and analysis for the portfolio's CIO; it is not an instruction to trade, and nothing in it executes, publishes or files anything.</p>
+  </section>
+</main>
+<script>
+  (function () {
+    var root = document.documentElement;
+    var btn = document.getElementById('themeToggle');
+    var label = document.getElementById('themeLabel');
+    function currentDark() {
+      var t = root.getAttribute('data-theme');
+      if (t === 'dark') return true;
+      if (t === 'light') return false;
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+    function sync() { label.textContent = currentDark() ? 'Switch to light' : 'Switch to dark'; }
+    btn.addEventListener('click', function () {
+      root.setAttribute('data-theme', currentDark() ? 'light' : 'dark');
+      sync();
+    });
+    sync();
+    document.getElementById('pdfBtn').addEventListener('click', function () {
+      var html = '<!doctype html>\n' + document.documentElement.outerHTML;
+      var blob = new Blob([html], { type: 'text/html' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'capital-allocation-ranking-2026-11-27.html';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+    });
+  })();
+</script>
+</body>
+</html>
